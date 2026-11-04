@@ -1,0 +1,206 @@
+[
+  {
+    "id": "cc-d3-c05",
+    "reason": "Replace unrelated routing and presentation distractors with plausible Copilot access mechanisms.",
+    "changes": {
+      "prompt": "Copilot is configured and all representatives have the required security privileges. Only the escalation team should receive the selected Copilot features. Which configuration should define that team's feature access?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Enable the selected features in a custom experience profile and assign it to that team."
+        },
+        {
+          "id": "b",
+          "text": "Enable the features in the default experience profile assigned to every representative."
+        },
+        {
+          "id": "c",
+          "text": "Enable recording of Copilot interactions for the escalation team."
+        },
+        {
+          "id": "d",
+          "text": "Apply a preset knowledge filter for the team's subject area."
+        }
+      ],
+      "answer": "Enable the selected features in a custom experience profile and assign it to that team.",
+      "explanation": "Experience profiles determine the Copilot features available to assigned representatives. A shared default profile does not isolate the team; recording captures interactions, and knowledge filters restrict response content rather than feature access."
+    }
+  },
+  {
+    "id": "cc-d3-c06",
+    "reason": "Replace queue/profile distractors with realistic variable scope and initialization errors.",
+    "changes": {
+      "options": [
+        {
+          "id": "a",
+          "text": "Into a topic variable in Conversation Start, then reference it directly from every topic."
+        },
+        {
+          "id": "b",
+          "text": "Into a global variable in Conversation Start."
+        },
+        {
+          "id": "c",
+          "text": "Into a global variable in the later topic where the number is first needed."
+        },
+        {
+          "id": "d",
+          "text": "Into a separate topic variable by reading Activity.From.Name again in each later topic."
+        }
+      ],
+      "answer": "Into a global variable in Conversation Start.",
+      "explanation": "Activity.From.Name is available only in Conversation Start. Copy it there into a global variable for subsequent topics. A topic-only variable lacks direct cross-topic scope; waiting to read the system variable in later topics loses the documented access point."
+    }
+  },
+  {
+    "id": "cc-d4-c06",
+    "reason": "Replace repeated absolute-ceiling and display-label distractors with competing capacity-path diagnoses.",
+    "changes": {
+      "prompt": "A supervisor manually assigns an extra conversation beyond a representative's configured capacity. Automatic assignments respect the limit. Which explanation best fits the documented behavior?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The work item limit is only enforced when an Exact Match skill algorithm is selected."
+        },
+        {
+          "id": "b",
+          "text": "The representative must have lost their capacity-profile association."
+        },
+        {
+          "id": "c",
+          "text": "Manual assignment can override the configured capacity limit."
+        },
+        {
+          "id": "d",
+          "text": "Any extra conversation proves that the profile's automatic assignment limit is invalid."
+        }
+      ],
+      "answer": "Manual assignment can override the configured capacity limit.",
+      "explanation": "Microsoft documents supervisor manual assignment as an override of configured capacity. The scenario supplies no evidence of a missing profile or invalid automatic limit, and the capacity override is not defined by choosing Exact Match."
+    }
+  },
+  {
+    "id": "ab250-d3-q01",
+    "reason": "Replace unrelated routing settings with plausible Copilot setup, access, and data settings.",
+    "changes": {
+      "options": [
+        {
+          "id": "a",
+          "text": "Re-enable Copilot for the environment, without inspecting the custom role."
+        },
+        {
+          "id": "b",
+          "text": "Check the custom role's required Copilot privileges."
+        },
+        {
+          "id": "c",
+          "text": "Reassign the same experience profile that the scenario already confirms is correct."
+        },
+        {
+          "id": "d",
+          "text": "Enable recording of representative interactions with Copilot."
+        }
+      ],
+      "answer": "Check the custom role's required Copilot privileges.",
+      "optionExplanations": {
+        "a": "Standard-role users already succeed, so repeating environment enablement does not address the role-specific difference.",
+        "b": "Custom security roles must include the documented Copilot privileges.",
+        "c": "The intended profile is already assigned; repeating that assignment does not check the missing permission layer.",
+        "d": "Interaction recording captures usage and feedback rather than granting the custom role access."
+      },
+      "explanation": "The working standard-role group and confirmed profile isolate the next check to the failing custom role's Copilot privileges."
+    }
+  },
+  {
+    "id": "ab250-d3-q03",
+    "reason": "Replace unrelated session-template option with a plausible knowledge-source configuration.",
+    "changes": {
+      "options": [
+        {
+          "id": "a",
+          "text": "Preset filter"
+        },
+        {
+          "id": "b",
+          "text": "Representative filter"
+        },
+        {
+          "id": "c",
+          "text": "Automated filter driven by current-record values"
+        },
+        {
+          "id": "d",
+          "text": "Enable the organization's knowledge base without defining filter conditions"
+        }
+      ],
+      "optionExplanations": {
+        "a": "Preset conditions apply the fixed restriction in the background.",
+        "b": "These expose filtering choices to representatives, contrary to the requirement.",
+        "c": "This uses current-record context, which the requirement excludes.",
+        "d": "Choosing a knowledge source alone does not define the requested topic restriction."
+      }
+    }
+  },
+  {
+    "id": "ab250-d4-q01",
+    "reason": "Keep all alternatives in the routing rule lifecycle instead of unrelated notification or removed business requirements.",
+    "changes": {
+      "options": [
+        {
+          "id": "a",
+          "text": "Repeat the full VIP check in every prioritization rule during each assignment cycle."
+        },
+        {
+          "id": "b",
+          "text": "Evaluate VIP status only in route-to-queue rules and leave downstream prioritization to repeat the full check."
+        },
+        {
+          "id": "c",
+          "text": "Derive a reusable attribute during work classification."
+        },
+        {
+          "id": "d",
+          "text": "Add the full VIP check to a custom assignment rule and rely on it to populate the earlier queue-selection decision."
+        }
+      ],
+      "answer": "Derive a reusable attribute during work classification.",
+      "optionExplanations": {
+        "a": "This preserves the repeated processing that the design should reduce.",
+        "b": "Queue-only evaluation does not provide the shared classification value needed downstream.",
+        "c": "Microsoft recommends classifying static values once and reusing the attribute in route-to-queue and prioritization rules.",
+        "d": "Assignment occurs after queue routing; it cannot supply that earlier decision, and repeating complex assignment logic does not follow the guidance."
+      }
+    }
+  },
+  {
+    "id": "ab250-d4-q03",
+    "reason": "Replace priority and passive-wait distractors with plausible incorrect custom-versus-default skill configurations.",
+    "changes": {
+      "options": [
+        {
+          "id": "a",
+          "text": "Switch the workstream's default algorithm to Closest Match while leaving the custom rules unchanged."
+        },
+        {
+          "id": "b",
+          "text": "Attach required skills during classification but leave the custom assignment conditions unchanged."
+        },
+        {
+          "id": "c",
+          "text": "Order custom assignment candidates by available capacity without adding a skill condition."
+        },
+        {
+          "id": "d",
+          "text": "Add an explicit exact-skill condition to the custom assignment rules."
+        }
+      ],
+      "answer": "Add an explicit exact-skill condition to the custom assignment rules.",
+      "optionExplanations": {
+        "a": "Changing the workstream default does not add conditions to a custom assignment method.",
+        "b": "Attaching required skills describes the work, but custom assignment still needs a matching condition.",
+        "c": "Capacity ordering ranks candidates; it does not enforce the missing skill eligibility condition.",
+        "d": "Custom assignment needs its own skill conditions because it overrides the default skill algorithm."
+      }
+    }
+  }
+]

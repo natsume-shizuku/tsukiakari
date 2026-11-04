@@ -1,0 +1,2667 @@
+{
+  "sources": [
+    {
+      "id": "exam-d3-s01",
+      "title": "Configure Copilot features in the help pane",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/copilot-enable-help-pane"
+    },
+    {
+      "id": "exam-d3-s02",
+      "title": "Enable Copilot case and conversation summaries",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/copilot-enable-summary"
+    },
+    {
+      "id": "exam-d3-s03",
+      "title": "Extend Copilot with Copilot Studio (preview)",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/extend-copilot-with-copilot-studio"
+    },
+    {
+      "id": "exam-d3-s04",
+      "title": "View Copilot analytics report",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/copilot-analytics-report"
+    },
+    {
+      "id": "exam-d3-s05",
+      "title": "Manage smart assist",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/smart-assist"
+    },
+    {
+      "id": "exam-d3-s06",
+      "title": "Build a smart assist agent",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/smart-assist-bot"
+    },
+    {
+      "id": "exam-d3-s07",
+      "title": "Configure basic voice agents",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-configuration"
+    },
+    {
+      "id": "exam-d3-s08",
+      "title": "Turn on DTMF support for your voice-enabled agent",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-dtmf"
+    },
+    {
+      "id": "exam-d3-s09",
+      "title": "Remove sensitive data",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-sensitive-data"
+    },
+    {
+      "id": "exam-d3-s10",
+      "title": "Consent-based recording",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-consent-based-record"
+    },
+    {
+      "id": "exam-d3-s11",
+      "title": "Configure SIP X-headers for voice-enabled agents",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-sip-x-header"
+    },
+    {
+      "id": "exam-d3-s12",
+      "title": "Configure real-time agents",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-realtime-configure"
+    },
+    {
+      "id": "exam-d3-s13",
+      "title": "Transparency note: Real-time agents",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/implement/transparency-note-real-time-voice-agents"
+    },
+    {
+      "id": "exam-d3-s14",
+      "title": "Hand off to a live agent",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-hand-off"
+    },
+    {
+      "id": "exam-d3-s15",
+      "title": "Configure and create multilingual agents",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/multilingual"
+    },
+    {
+      "id": "exam-d3-s16",
+      "title": "Language support",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-language-support"
+    },
+    {
+      "id": "exam-d3-s17",
+      "title": "Set up IVR agents in the voice channel using Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-pva-bots"
+    },
+    {
+      "id": "exam-d3-s18",
+      "title": "Enable voice call experiences",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-voice-call-experiences"
+    },
+    {
+      "id": "exam-d3-s19",
+      "title": "Configure context variables for AI agents",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/context-variables-for-bot"
+    },
+    {
+      "id": "exam-d3-s20",
+      "title": "Use Copilot to summarize conversations",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/copilot-summarize-conversations"
+    }
+  ],
+  "questions": [
+    {
+      "id": "ab250-d3-q05",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.1.01"
+      ],
+      "conceptId": "case-summary-noise-exclusion",
+      "prompt": "In Dynamics 365 Customer Service, case summaries repeatedly emphasize automated delivery notifications instead of the customer issue. The notifications must remain on the case for auditing. Which change best addresses the summary input?",
+      "answer": "Add the notification sender under Specify information to exclude.",
+      "explanation": "Exclude the noisy sender from case-summary generation; preserve its activity records.",
+      "sourceIds": [
+        "exam-d3-s02"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:case-summary-noise-exclusion"
+      ],
+      "options": [
+        {
+          "id": "b",
+          "text": "Add the notification sender under Specify information to exclude."
+        },
+        {
+          "id": "a",
+          "text": "Remove the notifications from the case timeline."
+        },
+        {
+          "id": "c",
+          "text": "Add a preset product filter to Ask a question."
+        },
+        {
+          "id": "d",
+          "text": "Disable the end-of-conversation summary trigger."
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "optionExplanations": {
+        "a": "Deletion conflicts with the audit requirement.",
+        "b": "The exclusion targets summary generation while retaining the underlying activity.",
+        "c": "A knowledge filter does not exclude case email activities.",
+        "d": "That trigger controls timing, not case-summary email inputs."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n03"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q06",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.1.01"
+      ],
+      "conceptId": "summary-case-action-dependency",
+      "prompt": "Two standalone Contact Center environments show conversation summaries. The administrator enabled the Create case action in both, and summary settings and representative permissions match. Only one environment shows the button. Which capability dependency should be checked in the other environment before changing summary timing?",
+      "answer": "Verify that case management is configured for that environment.",
+      "explanation": "Feature enablement alone is insufficient for the case action; case management is a separate dependency.",
+      "sourceIds": [
+        "exam-d3-s20"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:summary-case-action-dependency"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Add the join trigger to the existing summary configuration."
+        },
+        {
+          "id": "b",
+          "text": "Enable more knowledge sources for Ask a question."
+        },
+        {
+          "id": "c",
+          "text": "Change both environments to the same summary format."
+        },
+        {
+          "id": "d",
+          "text": "Verify that case management is configured for that environment."
+        }
+      ],
+      "correctOptionIds": [
+        "d"
+      ],
+      "optionExplanations": {
+        "a": "Another summary trigger does not supply the case-management capability.",
+        "b": "Knowledge-source configuration does not supply the summary case-creation dependency.",
+        "c": "Matching paragraph/structured format does not establish case management.",
+        "d": "The documented action requires case management as well as administrator enablement."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n01"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q07",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.1.02"
+      ],
+      "conceptId": "record-dependent-knowledge-filter",
+      "prompt": "A Customer Service team wants Ask a question knowledge filtering to follow the product on the record being worked. Representatives should not set the filter themselves. The same employee works records for several products. Which configuration fits?",
+      "answer": "An automated filter with rules tied to the current record type and product field.",
+      "explanation": "Use record-dependent automated filtering rather than a fixed preset or a manual representative selection.",
+      "sourceIds": [
+        "exam-d3-s01"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:record-dependent-knowledge-filter"
+      ],
+      "options": [
+        {
+          "id": "b",
+          "text": "A preset filter permanently limited to one product."
+        },
+        {
+          "id": "a",
+          "text": "An automated filter with rules tied to the current record type and product field."
+        },
+        {
+          "id": "c",
+          "text": "A representative filter that the employee selects for each record."
+        },
+        {
+          "id": "d",
+          "text": "A suggested prompt containing the product name."
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "optionExplanations": {
+        "a": "Automated rules use the record type and field value.",
+        "b": "A fixed restriction cannot follow changing records.",
+        "c": "This requires the manual choice the scenario excludes.",
+        "d": "A prompt is not the requested automatic knowledge restriction."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n03"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q08",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.1.02",
+        "D3.1.03"
+      ],
+      "conceptId": "knowledge-readiness-differential",
+      "prompt": "The organizational knowledge source is enabled and filters are correct. A new policy exists only as a draft French article; the affected representatives use an English UI. Which TWO content changes should the team validate for English policy answers? Choose TWO.",
+      "answer": "Provide the policy article tagged for the representatives' UI language. Publish the latest policy article version.",
+      "explanation": "Correct access and filters do not replace suitable published content in the UI language.",
+      "sourceIds": [
+        "exam-d3-s01"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:knowledge-readiness-differential"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Enable external web resources for Ask a question."
+        },
+        {
+          "id": "b",
+          "text": "Add more representative filters."
+        },
+        {
+          "id": "c",
+          "text": "Provide the policy article tagged for the representatives' UI language."
+        },
+        {
+          "id": "d",
+          "text": "Publish the latest policy article version."
+        },
+        {
+          "id": "e",
+          "text": "Put the policy only in a custom column on the knowledge article."
+        }
+      ],
+      "correctOptionIds": [
+        "c",
+        "d"
+      ],
+      "optionExplanations": {
+        "a": "The documented matrix does not support that source for Ask a question.",
+        "b": "Filters cannot make the unsuitable article language and draft state ready.",
+        "c": "Copilot uses articles tagged with the UI language.",
+        "d": "The configured organizational knowledge must expose the latest Published version.",
+        "e": "Copilot uses the content attribute, not arbitrary custom article fields."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n03"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q09",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.1.04"
+      ],
+      "conceptId": "extensibility-confidence-fallback",
+      "prompt": "A Customer Service pilot uses the documented production-ready preview for Copilot Studio extensibility. A tool question reaches the linked managed agent, which returns no confident response. The organization still wants configured knowledge sources tried. Which behavior should the architect expect?",
+      "answer": "Copilot falls back to its enabled knowledge sources.",
+      "explanation": "Lack of a confident extensibility response can invoke enabled knowledge fallback; it does not establish a universal failure.",
+      "sourceIds": [
+        "exam-d3-s03"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:extensibility-confidence-fallback"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "The question must terminate without consulting any knowledge."
+        },
+        {
+          "id": "b",
+          "text": "The question is automatically converted into a smart-assist recommendation."
+        },
+        {
+          "id": "c",
+          "text": "Copilot falls back to its enabled knowledge sources."
+        },
+        {
+          "id": "d",
+          "text": "Every question bypasses Copilot Studio and uses knowledge first."
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "optionExplanations": {
+        "a": "The documented sequence includes fallback when knowledge sources are enabled.",
+        "b": "Smart assist is a separate integration.",
+        "c": "This follows the documented no-confident-response branch.",
+        "d": "The scenario already confirms the extensibility request was sent first."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n04"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q10",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.1.04"
+      ],
+      "conceptId": "managed-agent-change-boundaries",
+      "prompt": "A team extends the managed Customer Service Copilot Bot under the current production-ready preview. It needs structured account retrieval and a new guided business flow. Which TWO changes fit the documented managed-agent capabilities? Choose TWO.",
+      "answer": "Add a tool that retrieves the required structured account data. Add a topic for the new controlled interaction.",
+      "explanation": "Add supported tools and topics while respecting the managed components that cannot be edited.",
+      "sourceIds": [
+        "exam-d3-s03"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:managed-agent-change-boundaries"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Add a tool that retrieves the required structured account data."
+        },
+        {
+          "id": "b",
+          "text": "Replace the managed agent model directly."
+        },
+        {
+          "id": "c",
+          "text": "Rewrite a managed topic whose name starts with msdyn_."
+        },
+        {
+          "id": "d",
+          "text": "Replace the managed agent instructions directly."
+        },
+        {
+          "id": "e",
+          "text": "Add a topic for the new controlled interaction."
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "e"
+      ],
+      "optionExplanations": {
+        "a": "Tools can retrieve structured data or take actions.",
+        "b": "The managed agent model cannot be updated directly.",
+        "c": "These managed topics cannot be modified.",
+        "d": "The documented restrictions prevent updating those instructions.",
+        "e": "Topics can define business logic and guided workflows."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n04"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q11",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.1.04"
+      ],
+      "conceptId": "extensibility-context-description",
+      "prompt": "A tool in the linked Customer Service Copilot Studio agent can look up an entitlement when supplied a custom Dynamics field. The tool itself works, but representatives must type that value repeatedly. Under the current extensibility preview, what should the administrator add?",
+      "answer": "A custom context mapping with entity, field and meaningful description.",
+      "explanation": "Pass the field as custom context in the Extend agent settings instead of relying on repeated manual input.",
+      "sourceIds": [
+        "exam-d3-s03"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:extensibility-context-description"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Put the custom field name only in the tool description."
+        },
+        {
+          "id": "c",
+          "text": "Add general entitlement documentation as another knowledge source."
+        },
+        {
+          "id": "b",
+          "text": "A custom context mapping with entity, field and meaningful description."
+        },
+        {
+          "id": "d",
+          "text": "Have representatives copy the same field into each question."
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "optionExplanations": {
+        "a": "A description can explain a tool but does not supply the current record field value.",
+        "b": "The mapping supplies Dynamics information and describes its purpose to the orchestrator.",
+        "c": "General knowledge does not pass the missing per-record tool input.",
+        "d": "That may supply it manually but fails the requirement to avoid repeated entry."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n04"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q12",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.1.05"
+      ],
+      "conceptId": "analytics-conversation-channel-scope",
+      "prompt": "A standalone supervisor compares Copilot conversation throughput with a total of completed contact-center interactions that includes voice and email. Duration and timezone are aligned, but Copilot throughput is lower. What should be checked before diagnosing lost report data?",
+      "answer": "Whether conversation throughput excludes voice and email.",
+      "explanation": "Compare equivalent channel populations before treating the lower metric as missing data.",
+      "sourceIds": [
+        "exam-d3-s04"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:analytics-conversation-channel-scope"
+      ],
+      "options": [
+        {
+          "id": "d",
+          "text": "Whether ongoing conversations were accidentally compared with completed ones."
+        },
+        {
+          "id": "b",
+          "text": "Whether the comparison uses the same duration filter."
+        },
+        {
+          "id": "c",
+          "text": "Whether the comparison uses the same timezone filter."
+        },
+        {
+          "id": "a",
+          "text": "Whether conversation throughput excludes voice and email."
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "optionExplanations": {
+        "a": "The documented metric excludes both channels, so the populations differ.",
+        "b": "The scenario already confirms that duration is aligned; that does not reconcile channel populations.",
+        "c": "Timezone alignment is already confirmed; the metric channel scope still differs.",
+        "d": "Both comparison populations are defined as completed; this does not address excluded voice/email."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n04"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q13",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.1.05"
+      ],
+      "conceptId": "analytics-adoption-comparison-design",
+      "prompt": "Two standalone teams claim different Copilot adoption rates. One exported a local day and counted prompts; the other exported a UTC week and counted people. Which TWO choices make a daily user-adoption comparison defensible? Choose TWO.",
+      "answer": "Align the report duration and time zone. Use distinct representatives who used Copilot for daily active users.",
+      "explanation": "Align the time boundary and the unit of analysis; prompt counts and people counts answer different questions.",
+      "sourceIds": [
+        "exam-d3-s04"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:analytics-adoption-comparison-design"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Treat each generated response as a different active representative."
+        },
+        {
+          "id": "b",
+          "text": "Align the report duration and time zone."
+        },
+        {
+          "id": "c",
+          "text": "Count copied responses as confirmed issue resolutions."
+        },
+        {
+          "id": "d",
+          "text": "Use distinct representatives who used Copilot for daily active users."
+        },
+        {
+          "id": "e",
+          "text": "Include ongoing conversations in the ended-conversation usage metric."
+        }
+      ],
+      "correctOptionIds": [
+        "b",
+        "d"
+      ],
+      "optionExplanations": {
+        "a": "A representative may generate many responses.",
+        "b": "These filters define comparable reporting intervals.",
+        "c": "Copying is usage, not proof of resolution.",
+        "d": "That is the documented active-user unit.",
+        "e": "The usage metric lists ended conversations."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n04"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q14",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.1.06"
+      ],
+      "conceptId": "smart-assist-implementation-choice",
+      "prompt": "A standalone team needs custom recommendations in the representative productivity pane during messaging conversations. A maker proposes registering its customer-facing Copilot Studio agent as the smart-assist agent. Which implementation route is supported by the smart-assist guides?",
+      "answer": "Build and integrate the custom assistant through the Azure Bot Service route.",
+      "explanation": "Separate the representative custom assistant from the customer-facing Studio agent and current help-pane Copilot.",
+      "sourceIds": [
+        "exam-d3-s05",
+        "exam-d3-s06"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:smart-assist-implementation-choice"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Register the Studio agent as the voice IVR for the same channel."
+        },
+        {
+          "id": "b",
+          "text": "Enable only Ask a question in the Copilot help pane."
+        },
+        {
+          "id": "d",
+          "text": "Build and integrate the custom assistant through the Azure Bot Service route."
+        },
+        {
+          "id": "c",
+          "text": "Reuse the retired built-in case suggestions unchanged."
+        }
+      ],
+      "correctOptionIds": [
+        "d"
+      ],
+      "optionExplanations": {
+        "a": "A customer-facing IVR does not become a representative smart assistant.",
+        "b": "That does not build the requested custom smart-assist integration.",
+        "c": "The administration guide states those suggestions are no longer supported.",
+        "d": "That is the documented custom route; Copilot agents are not supported as smart-assist agents."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n05"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q15",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.1.06"
+      ],
+      "conceptId": "smart-assist-workstream-association",
+      "prompt": "A custom smart-assist application user has the Omnichannel agent role. Productivity and smart assist are enabled. Recommendations work on one messaging workstream but never on a newly created one. What is the most targeted next configuration check?",
+      "answer": "Add the existing application user in the new workstream's Smart assist bots area.",
+      "explanation": "The working workstream and completed prerequisites point to association of the assistant with the new workstream.",
+      "sourceIds": [
+        "exam-d3-s05"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:smart-assist-workstream-association"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Register the application user as the customer-facing agent in the new workstream's Bot area."
+        },
+        {
+          "id": "c",
+          "text": "Add the existing application user in the new workstream's Smart assist bots area."
+        },
+        {
+          "id": "b",
+          "text": "Add the application user only as an ordinary member of the destination queue."
+        },
+        {
+          "id": "d",
+          "text": "Reassign the same enabled productivity profile without checking the new workstream."
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "optionExplanations": {
+        "a": "That is a different association from the documented Smart assist bots area.",
+        "b": "Queue membership is not the documented workstream smart-assist association.",
+        "c": "Representatives using that workstream see the associated assistant's suggestions.",
+        "d": "The pane is already enabled; the difference is isolated to the new workstream association."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n05"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q16",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.1.06"
+      ],
+      "conceptId": "smart-assist-channel-scope",
+      "prompt": "A standalone team verifies that its custom smart-assist recommendations work on SMS. It then includes the Entity Records Channel in the same rollout and treats missing recommendations there as a broken application user. Which assessment should change the rollout plan?",
+      "answer": "The smart-assist channel scope excludes Entity Records Channel.",
+      "explanation": "A working SMS integration does not establish support for the separately excluded Entity Records Channel.",
+      "sourceIds": [
+        "exam-d3-s05"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:smart-assist-channel-scope"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "The smart-assist channel scope excludes Entity Records Channel."
+        },
+        {
+          "id": "b",
+          "text": "Switch only the Record workstream from Pick to Push."
+        },
+        {
+          "id": "c",
+          "text": "Give the application user additional record access and assume that enables smart assist on records."
+        },
+        {
+          "id": "d",
+          "text": "Enable the productivity pane on the record session and assume it enables the channel."
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "optionExplanations": {
+        "a": "The smart-assist overview explicitly excludes Entity Records Channel.",
+        "b": "That does not remove the documented Entity Records channel exclusion.",
+        "c": "Record permissions do not override the feature's stated channel scope.",
+        "d": "The pane is a prerequisite, not an override of the excluded channel."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n05"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q17",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.01"
+      ],
+      "conceptId": "voice-authoring-channel-separation",
+      "prompt": "A published Basic voice agent has working Speech & DTMF topics and the intended workstream association. The team has treated Enable voice as the complete phone-channel setup and has not validated channel connectivity. Which check addresses the distinction between voice authoring and a callable agent?",
+      "answer": "Configure the Telephony channel as well as voice authoring.",
+      "explanation": "Treat voice authoring and channel connectivity as separate setup layers.",
+      "sourceIds": [
+        "exam-d3-s07"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:voice-authoring-channel-separation"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Republish the unchanged voice topics and consider the channel connected."
+        },
+        {
+          "id": "b",
+          "text": "Only select Make voice the default modality for topic authoring."
+        },
+        {
+          "id": "c",
+          "text": "Only tune Increase accuracy with agent data for the trigger phrases."
+        },
+        {
+          "id": "d",
+          "text": "Configure the Telephony channel as well as voice authoring."
+        }
+      ],
+      "correctOptionIds": [
+        "d"
+      ],
+      "optionExplanations": {
+        "a": "Publishing authoring changes does not by itself configure the Telephony channel.",
+        "b": "That controls topic authoring modality rather than channel connectivity.",
+        "c": "Recognition tuning does not establish the Telephony connection.",
+        "d": "Enable voice changes authoring capabilities, not the channel setting."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n06"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q18",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.02"
+      ],
+      "conceptId": "context-record-identifier-parsing",
+      "prompt": "In the native standalone integration, a topic receives contact context containing RecordId and PrimaryDisplayValue. A downstream operation needs the contact GUID, but the flow supplies the visible customer name. What is the best correction?",
+      "answer": "Parse the documented context structure and use its RecordId.",
+      "explanation": "Use the identity field from the parsed contact context, rather than a label or conversation identity.",
+      "sourceIds": [
+        "exam-d3-s19"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:context-record-identifier-parsing"
+      ],
+      "options": [
+        {
+          "id": "b",
+          "text": "Parse the documented context structure and use its RecordId."
+        },
+        {
+          "id": "a",
+          "text": "Use the conversation ID as the contact ID."
+        },
+        {
+          "id": "c",
+          "text": "Rename PrimaryDisplayValue to RecordId without changing its value."
+        },
+        {
+          "id": "d",
+          "text": "Pass the whole context object to a scalar GUID input."
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "optionExplanations": {
+        "a": "These identify different records.",
+        "b": "RecordId is the record identity; PrimaryDisplayValue is the display text.",
+        "c": "Renaming a name does not turn it into the record GUID.",
+        "d": "The flow must extract the required identifier from the structured value."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n02"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q19",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.02"
+      ],
+      "conceptId": "hybrid-topic-output-contract",
+      "prompt": "A real-time voice agent invokes a deterministic eligibility topic. The topic calculates eligibility in an internal variable, but subsequent model responses do not reliably use that result. Which change explicitly returns the computed value as structured data?",
+      "answer": "Declare an eligibility output on the topic and map the computed value to it.",
+      "explanation": "Give the hybrid topic an explicit result contract; conversational context is not a substitute for a declared structured output.",
+      "sourceIds": [
+        "exam-d3-s12"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:hybrid-topic-output-contract"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Rename the internal variable to include the word eligibility."
+        },
+        {
+          "id": "c",
+          "text": "Declare an eligibility output on the topic and map the computed value to it."
+        },
+        {
+          "id": "b",
+          "text": "Declare eligibility only as another topic input."
+        },
+        {
+          "id": "d",
+          "text": "Keep the result internal and rely on conversational context to expose it as a structured return."
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "optionExplanations": {
+        "a": "A descriptive internal name alone does not declare a return value.",
+        "b": "An input accepts data when the topic is invoked; it does not declare the computed result to return.",
+        "c": "Only explicitly defined topic outputs return as structured key-value pairs.",
+        "d": "Conversational context does not replace the explicit output-variable contract for structured returns."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n06"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q20",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.03"
+      ],
+      "conceptId": "sensitive-runtime-persistence-boundary",
+      "prompt": "A voice identity-check flow marks its PIN variable sensitive. A custom tool intentionally writes the raw PIN to an external log. Security testing finds the PIN there. Which remediation addresses the actual boundary?",
+      "answer": "Remove or protect the PIN in that external logging path.",
+      "explanation": "Review custom instrumentation and destination handling separately from platform sensitive-variable protection.",
+      "sourceIds": [
+        "exam-d3-s09"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:sensitive-runtime-persistence-boundary"
+      ],
+      "options": [
+        {
+          "id": "b",
+          "text": "Rely on the sensitive flag to erase the external log later."
+        },
+        {
+          "id": "a",
+          "text": "Remove or protect the PIN in that external logging path."
+        },
+        {
+          "id": "c",
+          "text": "Make the variable global so every destination becomes redacted."
+        },
+        {
+          "id": "d",
+          "text": "Hide the workstream context variable from representatives only."
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "optionExplanations": {
+        "a": "Sensitive marking does not sanitize intentional external persistence.",
+        "b": "The flag does not overwrite custom or external stored values.",
+        "c": "Global scope changes access, not external persistence.",
+        "d": "UI visibility does not protect the custom tool log."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n07"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q21",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.03"
+      ],
+      "conceptId": "external-contact-capture-phase-split",
+      "prompt": "A tenant has the documented secure external-contact preview available. For a verification number, policy permits a text audit during consultation but forbids audio storage. After bridged transfer, neither recording nor transcription is allowed. Which TWO per-contact settings satisfy the two phases? Choose TWO.",
+      "answer": "For Consult, turn off recording while keeping active transcription. For Bridged transfer, turn off transcription and recording.",
+      "explanation": "Configure the two phases independently; a single audio-only restriction cannot satisfy the bridged-transfer requirement.",
+      "sourceIds": [
+        "exam-d3-s18"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:external-contact-capture-phase-split"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "For Consult, turn off recording while keeping active transcription."
+        },
+        {
+          "id": "b",
+          "text": "For Consult, follow a workstream that records and transcribes."
+        },
+        {
+          "id": "c",
+          "text": "For Bridged transfer, turn off transcription and recording."
+        },
+        {
+          "id": "d",
+          "text": "For Bridged transfer, turn off recording but keep transcription."
+        },
+        {
+          "id": "e",
+          "text": "For both phases, use caller consent as the only control."
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "c"
+      ],
+      "optionExplanations": {
+        "a": "This preserves the permitted consultation text audit.",
+        "b": "That retains prohibited consultation audio.",
+        "c": "Both capture modes must stop in that phase.",
+        "d": "That retains prohibited post-transfer text.",
+        "e": "Consent does not configure the required per-phase capture overrides."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n07"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q22",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.04"
+      ],
+      "conceptId": "consent-inbound-scope-assessment",
+      "prompt": "A project plans to reuse the documented Copilot Studio consent-based recording feature for outbound customer calls. It has already designed a consent topic. Which assessment must be resolved before treating the plan as supported?",
+      "answer": "The documented feature supports inbound workstreams with an associated voice-enabled agent, not outbound calls.",
+      "explanation": "Do not extrapolate inbound consent configuration into an outbound support claim.",
+      "sourceIds": [
+        "exam-d3-s10"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:consent-inbound-scope-assessment"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "A published topic makes the feature supported for all call directions."
+        },
+        {
+          "id": "b",
+          "text": "The feature requires only a generic inbound workstream, with no associated agent."
+        },
+        {
+          "id": "d",
+          "text": "The documented feature supports inbound workstreams with an associated voice-enabled agent, not outbound calls."
+        },
+        {
+          "id": "c",
+          "text": "Changing voice font makes outbound consent equivalent to inbound consent."
+        }
+      ],
+      "correctOptionIds": [
+        "d"
+      ],
+      "optionExplanations": {
+        "a": "Publishing does not widen the documented feature scope.",
+        "b": "The documented inbound scope also requires a voice-enabled agent.",
+        "c": "Voice selection does not change feature scope.",
+        "d": "The outbound proposal falls outside the stated support scope."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n07"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q23",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.04"
+      ],
+      "conceptId": "consent-silence-policy-validation",
+      "prompt": "An inbound voice team requires an affirmative caller response before capture. It imports the documentation's sample consent topic unchanged. In testing, silence after the prompt starts recording. What should the team do before approval?",
+      "answer": "Revise and test the sample's no-input path against the affirmative-consent requirement.",
+      "explanation": "The sample is a starting point. Validate silence and decline paths against the required policy rather than equating a visible prompt with affirmative consent.",
+      "sourceIds": [
+        "exam-d3-s10"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:consent-silence-policy-validation"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Document silence as an affirmative response without changing the flow."
+        },
+        {
+          "id": "b",
+          "text": "Revise and test the sample's no-input path against the affirmative-consent requirement."
+        },
+        {
+          "id": "c",
+          "text": "Assume the workstream consent toggle overrides every sample branch."
+        },
+        {
+          "id": "d",
+          "text": "Move the prompt to a later topic after sensitive data collection."
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "optionExplanations": {
+        "a": "That contradicts the stated business requirement.",
+        "b": "The sample can treat no input as implicit consent and must be adapted.",
+        "c": "The documented sample behavior still needs verification.",
+        "d": "The guide calls for consent immediately after connection; delaying does not fix the branch."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n07"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q24",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.05"
+      ],
+      "conceptId": "incoming-header-schema-evolution",
+      "prompt": "A Direct Routing upstream changes its header from X-OrderRef to X-BookingRef. Conversation.SipXHeader contains the new value, but the topic's parsed record still exposes only the old property. What is the most targeted fix?",
+      "answer": "Update the Parse Value schema to include x-BookingRef.",
+      "explanation": "A value present in channel data still needs a matching current parsing schema.",
+      "sourceIds": [
+        "exam-d3-s11"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:incoming-header-schema-evolution"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Switch the transfer node to a PSTN number."
+        },
+        {
+          "id": "b",
+          "text": "Add the value to the static SIP UUI transfer field."
+        },
+        {
+          "id": "c",
+          "text": "Update the Parse Value schema to include x-BookingRef."
+        },
+        {
+          "id": "d",
+          "text": "Make the old property global without updating its schema."
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "optionExplanations": {
+        "a": "That does not update incoming parsing and violates this metadata topology.",
+        "b": "An outgoing UUI field does not repair the incoming schema.",
+        "c": "The schema must track renamed headers with the normalized lowercase x- prefix.",
+        "d": "Scope does not map a new incoming name to the old property."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n08"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q25",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.05"
+      ],
+      "conceptId": "dynamic-transfer-metadata-design",
+      "prompt": "A supported external service expects a per-call claim reference in X-ClaimRef. The team will use the documented Copilot Studio external transfer mechanism. Which TWO design choices meet the metadata requirement? Choose TWO.",
+      "answer": "Use Direct Routing for the telephony configuration. Configure an outgoing X-ClaimRef with a variable-backed value.",
+      "explanation": "Use the outgoing X-header contract and its topology prerequisite; do not generalize the static UUI property.",
+      "sourceIds": [
+        "exam-d3-s11",
+        "exam-d3-s07"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:dynamic-transfer-metadata-design"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Place an expression in the SIP UUI text field."
+        },
+        {
+          "id": "b",
+          "text": "Use Direct Routing for the telephony configuration."
+        },
+        {
+          "id": "c",
+          "text": "Choose a native representative transfer and add external-number headers there."
+        },
+        {
+          "id": "d",
+          "text": "Send the same fixed UUI text for every claim."
+        },
+        {
+          "id": "e",
+          "text": "Configure an outgoing X-ClaimRef with a variable-backed value."
+        }
+      ],
+      "correctOptionIds": [
+        "b",
+        "e"
+      ],
+      "optionExplanations": {
+        "a": "That field does not support variables for external transfer.",
+        "b": "Direct Routing is a prerequisite for the documented X-header feature.",
+        "c": "Outgoing X-headers are documented for External phone number transfer.",
+        "d": "A constant does not carry the per-call claim reference.",
+        "e": "Outgoing X-header values can use variables on external-number transfer."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n08"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q26",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.05"
+      ],
+      "conceptId": "static-uui-topology-repair",
+      "prompt": "A Basic voice flow sends the fixed UUI text service=claims;region=north on external transfer. Its text passes the documented character restrictions, but the target uses PSTN egress. What change addresses the remaining documented incompatibility?",
+      "answer": "Use Direct Routing egress for the UUI-bearing target transfer.",
+      "explanation": "Valid fixed UUI text does not remove the documented egress prerequisite.",
+      "sourceIds": [
+        "exam-d3-s07"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:static-uui-topology-repair"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Use Direct Routing egress for the UUI-bearing target transfer."
+        },
+        {
+          "id": "b",
+          "text": "Replace the fixed text with a runtime formula."
+        },
+        {
+          "id": "c",
+          "text": "Add spaces around the equals signs."
+        },
+        {
+          "id": "d",
+          "text": "Copy the text into the caller-name variable."
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "optionExplanations": {
+        "a": "SIP UUI transfer egress requires Direct Routing.",
+        "b": "Variables/formulas are unsupported in this UUI property.",
+        "c": "Spaces are outside the documented supported character set.",
+        "d": "That does not satisfy the UUI transfer contract."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n08"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q27",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.06"
+      ],
+      "conceptId": "realtime-basic-rollback-design",
+      "prompt": "A team selected Real-time voice during a pilot and now needs a separate classic Basic menu for a low-variance process. Its change plan says to toggle the same agent back to Basic after testing. Which correction is needed?",
+      "answer": "Create a new Basic agent for the classic menu.",
+      "explanation": "Plan a separate Basic agent when that execution type is required after Real-time selection.",
+      "sourceIds": [
+        "exam-d3-s12"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:realtime-basic-rollback-design"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Turn off Enable voice, republish, and assume the same agent can then be reset to Basic."
+        },
+        {
+          "id": "b",
+          "text": "Switch the same agent to classic orchestration and assume its voice type becomes Basic."
+        },
+        {
+          "id": "d",
+          "text": "Create a new Basic agent for the classic menu."
+        },
+        {
+          "id": "c",
+          "text": "Copy the menu topics into the same Real-time agent and relabel it Basic."
+        }
+      ],
+      "correctOptionIds": [
+        "d"
+      ],
+      "optionExplanations": {
+        "a": "Disabling authoring does not reverse the one-time Real-time type selection.",
+        "b": "Changing orchestration assumptions does not remove the documented voice-type lifecycle restriction.",
+        "c": "Topic reuse does not change the selected agent type.",
+        "d": "Real-time selection cannot be changed back to Basic in place."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n09"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q28",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.06"
+      ],
+      "conceptId": "voice-model-branded-tts-tradeoff",
+      "prompt": "A real-time-voice evaluation prioritizes a branded custom voice over minimum latency. The team accepts evaluation of a preview model and will verify its region. Which documented model path best fits that tradeoff?",
+      "answer": "GPT-5-Chat (Preview) with Microsoft Neural TTS.",
+      "explanation": "Select on the documented model-specific capability, and keep preview and regional evaluation explicit.",
+      "sourceIds": [
+        "exam-d3-s12"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:voice-model-branded-tts-tradeoff"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "GPT-Realtime because every native real-time voice supports arbitrary custom voice models."
+        },
+        {
+          "id": "d",
+          "text": "Any model, because the Contact Center system voice overrides the agent model."
+        },
+        {
+          "id": "c",
+          "text": "Basic voice selected inside the existing Real-time agent."
+        },
+        {
+          "id": "b",
+          "text": "GPT-5-Chat (Preview) with Microsoft Neural TTS."
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "optionExplanations": {
+        "a": "The documented native real-time path has limited voice customization.",
+        "b": "The current configuration guidance recommends that path for custom/branded voices with a latency tradeoff.",
+        "c": "The current agent cannot revert to Basic in place.",
+        "d": "Connected agents use the voice selected in Copilot Studio; capabilities differ by model."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n09"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q29",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.09"
+      ],
+      "conceptId": "silence-detection-versus-turn-vad",
+      "prompt": "A real-time voice agent responds normally after callers speak. Callers who say nothing hear no follow-up prompt indefinitely. The team has tuned sentence-context VAD. Which setting directly addresses the no-input behavior?",
+      "answer": "Enable Silence detection and configure its reprompt.",
+      "explanation": "Separate deciding that speech has ended from deciding what to do when the caller never speaks.",
+      "sourceIds": [
+        "exam-d3-s12"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:silence-detection-versus-turn-vad"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Only lengthen the server-based VAD silence duration."
+        },
+        {
+          "id": "b",
+          "text": "Use only the user-inactive trigger documented for digital messaging."
+        },
+        {
+          "id": "d",
+          "text": "Only raise semantic VAD eagerness."
+        },
+        {
+          "id": "c",
+          "text": "Enable Silence detection and configure its reprompt."
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "optionExplanations": {
+        "a": "That tunes end-of-speech detection rather than explicitly enabling no-input reprompts.",
+        "b": "The current trigger table scopes that inactivity path to digital messaging, not this voice no-input case.",
+        "c": "Silence detection is separate and is not enabled by default.",
+        "d": "VAD turn completion does not replace the explicit no-input silence-detection setup."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n09"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q30",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.07"
+      ],
+      "conceptId": "dtmf-test-input-semantics",
+      "prompt": "A classic voice menu maps the first displayed option to keypad 7. In the test panel, typing 7 as plain numeric text appears to select by menu order instead of testing that mapping. What should the tester use to validate the actual assigned keypad signal?",
+      "answer": "Enter /DTMFKey 7 in the test panel.",
+      "explanation": "Simulate a DTMF signal rather than sending ordinary numeric text that can match option order.",
+      "sourceIds": [
+        "exam-d3-s08"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:dtmf-test-input-semantics"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Move the option to seventh place while retaining ordinary numeric test input."
+        },
+        {
+          "id": "b",
+          "text": "Type the option's text label instead of its assigned digit."
+        },
+        {
+          "id": "c",
+          "text": "Reassign the option's key while retaining the same plain-number test method."
+        },
+        {
+          "id": "d",
+          "text": "Enter /DTMFKey 7 in the test panel."
+        }
+      ],
+      "correctOptionIds": [
+        "d"
+      ],
+      "optionExplanations": {
+        "a": "That aligns option order but still does not exercise the explicit assigned-key signal.",
+        "b": "Text selection does not validate the keypad signal mapping.",
+        "c": "Changing configuration does not correct the difference between text and simulated DTMF input.",
+        "d": "The documented DTMF test syntax exercises the assigned key."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n06"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q31",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.07"
+      ],
+      "conceptId": "dtmf-length-termination-validation",
+      "prompt": "A classic voice account-entry question must accept exactly six digits followed by #. The stored account value must contain only the six digits. Which TWO configurations follow the documented multi-digit DTMF behavior? Choose TWO.",
+      "answer": "Set a fixed valid digit length of six. Configure # as the termination key.",
+      "explanation": "Set payload length and termination separately; the terminator does not become an account digit.",
+      "sourceIds": [
+        "exam-d3-s08"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:dtmf-length-termination-validation"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Set a fixed valid digit length of six."
+        },
+        {
+          "id": "b",
+          "text": "Set a fixed length of seven to count the # terminator."
+        },
+        {
+          "id": "c",
+          "text": "Use a global trigger for the entire six-digit account string."
+        },
+        {
+          "id": "d",
+          "text": "Configure # as the termination key."
+        },
+        {
+          "id": "e",
+          "text": "Leave digit length unspecified to reject all shorter responses."
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "d"
+      ],
+      "optionExplanations": {
+        "a": "Fixed length validates the account digits.",
+        "b": "The termination key is not counted in input length.",
+        "c": "Global DTMF triggers accept single keys, not a multi-digit response.",
+        "d": "The terminator signals completion without adding to the digit count.",
+        "e": "Unspecified length accepts any number of digits."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n06"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q32",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.08"
+      ],
+      "conceptId": "explicit-handoff-context-delivery",
+      "prompt": "A standard-harness voice agent is connected to the live engagement hub. Its dispute topic says that a specialist will take over, then ends the topic. No live representative receives the conversation. What should the maker add to make that explicit handoff occur?",
+      "answer": "A Transfer conversation node, with a private context message if needed.",
+      "explanation": "An announcement and topic ending do not execute handoff; the connected hub still needs the transfer node.",
+      "sourceIds": [
+        "exam-d3-s14"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:explicit-handoff-context-delivery"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "A second announcement with the specialist queue name."
+        },
+        {
+          "id": "b",
+          "text": "A Transfer conversation node, with a private context message if needed."
+        },
+        {
+          "id": "c",
+          "text": "An End conversation node before the announcement."
+        },
+        {
+          "id": "d",
+          "text": "A knowledge source containing the escalation policy."
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "optionExplanations": {
+        "a": "Another message does not initiate transfer.",
+        "b": "This performs the handoff and can pass a private message to the hub.",
+        "c": "That terminates the interaction instead of handing it off.",
+        "d": "Retrieving the policy does not perform the transfer."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n10"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q33",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.08"
+      ],
+      "conceptId": "realtime-trigger-portability",
+      "prompt": "A classic agent uses Unknown Topic fallback. During migration to a real-time voice agent, a maker proposes reusing that trigger unchanged and adding an AI response generated trigger as backup. Which assessment matches the current real-time trigger table?",
+      "answer": "Neither trigger is supported in this real-time trigger table; redesign using supported paths.",
+      "explanation": "Validate trigger support during migration rather than assuming classic orchestration events are interchangeable.",
+      "sourceIds": [
+        "exam-d3-s12"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:realtime-trigger-portability"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Neither trigger is supported in this real-time trigger table; redesign using supported paths."
+        },
+        {
+          "id": "b",
+          "text": "Both work because every classic trigger is portable to real-time."
+        },
+        {
+          "id": "c",
+          "text": "Unknown Topic is supported, but AI response generated is not."
+        },
+        {
+          "id": "d",
+          "text": "AI response generated is supported, but Unknown Topic is not."
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "optionExplanations": {
+        "a": "Unknown Topic and AI response generated are both listed as unsupported.",
+        "b": "The real-time table explicitly distinguishes support.",
+        "c": "Unknown Topic is also listed as unsupported.",
+        "d": "AI response generated is also unsupported in this table."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n06"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q34",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.10"
+      ],
+      "conceptId": "multilingual-hybrid-content-responsibility",
+      "prompt": "A real-time voice pilot adds a supported secondary language. Generated conversation works, but a deterministic eligibility topic still speaks its authored primary-language messages. Which TWO conclusions guide the fix? Choose TWO.",
+      "answer": "Provide translated messages for the deterministic topic. Test the secondary-language topic path after localization.",
+      "explanation": "Localize and test the authored path; generative language ability does not maintain deterministic strings.",
+      "sourceIds": [
+        "exam-d3-s12",
+        "exam-d3-s15"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:multilingual-hybrid-content-responsibility"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Every secondary-language string must be generated by changing the browser locale."
+        },
+        {
+          "id": "b",
+          "text": "Provide translated messages for the deterministic topic."
+        },
+        {
+          "id": "c",
+          "text": "Test the secondary-language topic path after localization."
+        },
+        {
+          "id": "d",
+          "text": "Treat successful generated conversation as proof that all authored strings are translated."
+        },
+        {
+          "id": "e",
+          "text": "Delete the secondary language because deterministic topics cannot be localized."
+        }
+      ],
+      "correctOptionIds": [
+        "b",
+        "c"
+      ],
+      "optionExplanations": {
+        "a": "Browser locale is not a translation-maintenance process for authored voice topics.",
+        "b": "Real-time multilingual guidance specifically requires translations for deterministic messages.",
+        "c": "The multilingual guide calls for testing the selected secondary language.",
+        "d": "Generated and authored topic content have different responsibilities.",
+        "e": "Authored topics can be localized."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n10"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q35",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.10"
+      ],
+      "conceptId": "voice-region-deployment-sequence",
+      "prompt": "After a voice-enabled agent's primary-language region is changed, phone testing still appears to use the earlier speech-recognition behavior. The engineer is about to rewrite recognition phrases. Which deployment validation should come first?",
+      "answer": "Republish, then review the applicable TTS/workstream configuration and retest.",
+      "explanation": "Complete the documented region deployment dependency before interpreting recognition results.",
+      "sourceIds": [
+        "exam-d3-s16"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:voice-region-deployment-sequence"
+      ],
+      "options": [
+        {
+          "id": "c",
+          "text": "Republish, then review the applicable TTS/workstream configuration and retest."
+        },
+        {
+          "id": "b",
+          "text": "Treat the saved language-region setting as proof that deployed recognition has changed."
+        },
+        {
+          "id": "a",
+          "text": "Rewrite all trigger phrases before checking the deployment status."
+        },
+        {
+          "id": "d",
+          "text": "Update only the secondary-language localization files."
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "optionExplanations": {
+        "a": "That changes recognition content before verifying whether the new region model has been deployed.",
+        "b": "The voice guide requires publishing again to update the model.",
+        "c": "Publishing updates the recognition model for the new region; voice settings may also need review.",
+        "d": "Those strings do not deploy a new primary-region speech-recognition model."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n10"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q36",
+      "revision": 2,
+      "kind": "multiple",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.10"
+      ],
+      "conceptId": "explicit-language-menu-switch",
+      "prompt": "A classic voice agent already has translated secondary-language content and confirmed voice support. A language-choice Question node must switch all following messages to the selected language during the same call. Which TWO design choices follow the multilingual authoring guidance? Choose TWO.",
+      "answer": "Set User.Language to the selected configured secondary language. Perform the switch immediately after the language-choice Question node.",
+      "explanation": "Set the system language at the authored boundary; keep language selection distinct from merely recording a preference.",
+      "sourceIds": [
+        "exam-d3-s15"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:explicit-language-menu-switch"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Record the menu answer in a global language-preference variable without updating User.Language."
+        },
+        {
+          "id": "b",
+          "text": "Translate only the language-choice prompt and leave the following topic language unchanged."
+        },
+        {
+          "id": "c",
+          "text": "Set User.Language to the selected configured secondary language."
+        },
+        {
+          "id": "d",
+          "text": "Change the maker's authoring UI language instead of the session language."
+        },
+        {
+          "id": "e",
+          "text": "Perform the switch immediately after the language-choice Question node."
+        }
+      ],
+      "correctOptionIds": [
+        "c",
+        "e"
+      ],
+      "optionExplanations": {
+        "a": "That records a preference but does not change the system's current conversation language.",
+        "b": "A translated menu prompt does not switch the language of subsequent messages.",
+        "c": "This changes the current language immediately.",
+        "d": "The authoring interface language is not the caller's current User.Language setting.",
+        "e": "The guide recommends this placement for consistent following messages."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n10"
+        }
+      ],
+      "status": "draft"
+    }
+  ],
+  "editorial": [
+    {
+      "id": "ab250-d3-q05",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "case-summary-noise-exclusion",
+      "objectiveIds": [
+        "D3.1.01"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s02",
+          "section": "Enable case summaries",
+          "claim": "Selected email addresses and boilerplate can be excluded from case summaries.",
+          "applicability": "Customer Service case summaries; no embedded availability claim."
+        }
+      ],
+      "duplicateCheck": "Compared q01–04: changes summary inputs rather than join timing; c07 is prerequisite recall, this applies retention constraints."
+    },
+    {
+      "id": "ab250-d3-q06",
+      "revision": 2,
+      "domainId": "agents-ai",
+      "conceptId": "summary-case-action-dependency",
+      "objectiveIds": [
+        "D3.1.01"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s20",
+          "section": "View a summary for an open conversation",
+          "claim": "Create case is visible only when case management is configured and the administrator enables the action.",
+          "applicability": "Standalone Contact Center with conversation summaries."
+        }
+      ],
+      "duplicateCheck": "Different from q02 timing and q01 custom-role access; tests an action dependency, not the summary-generation trigger.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent lead review: remove supplied diagnosis where relevant and strengthen adjacent configuration or telemetry alternatives."
+    },
+    {
+      "id": "ab250-d3-q07",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "record-dependent-knowledge-filter",
+      "objectiveIds": [
+        "D3.1.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s01",
+          "section": "Automated filters",
+          "claim": "Automated filters apply rules for the record type currently being worked.",
+          "applicability": "Ask a question with organizational knowledge."
+        }
+      ],
+      "duplicateCheck": "Pilot q03 explicitly excludes record dependency; this tests the opposite requirement and its record-type boundary."
+    },
+    {
+      "id": "ab250-d3-q08",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "knowledge-readiness-differential",
+      "objectiveIds": [
+        "D3.1.02",
+        "D3.1.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s01",
+          "section": "Knowledge sources; Features supported with different knowledge sources",
+          "claim": "Organizational knowledge uses latest published content in the UI language; Ask a question excludes external-web sources.",
+          "applicability": "Current help-pane organizational knowledge configuration."
+        }
+      ],
+      "duplicateCheck": "Goes beyond c08 article-state recall by diagnosing two simultaneous failures after access and filters are eliminated."
+    },
+    {
+      "id": "ab250-d3-q09",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "extensibility-confidence-fallback",
+      "objectiveIds": [
+        "D3.1.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s03",
+          "section": "Understand how Copilot extensibility works",
+          "claim": "Copilot sends enabled extensibility requests to Studio, shows confident responses, and otherwise falls back to enabled knowledge.",
+          "applicability": "Current Customer Service production-ready preview, not a GA or embedded promise."
+        }
+      ],
+      "duplicateCheck": "New precedence/fallback decision; pilot has only role/filter scenarios and c10 tests enablement."
+    },
+    {
+      "id": "ab250-d3-q10",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "managed-agent-change-boundaries",
+      "objectiveIds": [
+        "D3.1.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s03",
+          "section": "Type of Copilot Studio extensibility; Limitations and restrictions",
+          "claim": "Tools and topics support extensions; the managed model, instructions and msdyn_ topics cannot be updated.",
+          "applicability": "Current Customer Service managed-agent preview only."
+        }
+      ],
+      "duplicateCheck": "Distinct from q09 request routing and q11 context mapping; c10 does not test managed restrictions."
+    },
+    {
+      "id": "ab250-d3-q11",
+      "revision": 2,
+      "domainId": "agents-ai",
+      "conceptId": "extensibility-context-description",
+      "objectiveIds": [
+        "D3.1.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s03",
+          "section": "Custom context; How to add context",
+          "claim": "Additional Dynamics entity/field context can be configured with a description used by the orchestrator.",
+          "applicability": "Enabled Customer Service Copilot Studio extensibility preview."
+        }
+      ],
+      "duplicateCheck": "New automatic context-input decision; different from tool capability, fallback and pilot voice global-variable settings.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent lead review: remove supplied diagnosis where relevant and strengthen adjacent configuration or telemetry alternatives."
+    },
+    {
+      "id": "ab250-d3-q12",
+      "revision": 2,
+      "domainId": "agents-ai",
+      "conceptId": "analytics-conversation-channel-scope",
+      "objectiveIds": [
+        "D3.1.05"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s04",
+          "section": "Productivity: Conversations",
+          "claim": "Conversation throughput and total conversations exclude email and voice.",
+          "applicability": "Standalone Copilot analytics report; not embedded availability."
+        }
+      ],
+      "duplicateCheck": "Distinct from c11/c12 copied-response quality and q13 active-user aggregation.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent lead review: remove supplied diagnosis where relevant and strengthen adjacent configuration or telemetry alternatives."
+    },
+    {
+      "id": "ab250-d3-q13",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "analytics-adoption-comparison-design",
+      "objectiveIds": [
+        "D3.1.05"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s04",
+          "section": "Filter and interpret the report; Usage; Productivity: Conversations",
+          "claim": "Duration/time-zone filters exist; daily active users are unique representatives, and ended-conversation usage differs from response counts.",
+          "applicability": "Standalone report."
+        }
+      ],
+      "duplicateCheck": "Tests comparison design, not c12 inference from copy rate or q12 channel exclusions."
+    },
+    {
+      "id": "ab250-d3-q14",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "smart-assist-implementation-choice",
+      "objectiveIds": [
+        "D3.1.06"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s05",
+          "section": "Prerequisites; Important note",
+          "claim": "Copilot agents are unsupported as smart-assist agents; custom integration is documented.",
+          "applicability": "Customer Service/standalone custom smart assist; not retired built-ins."
+        },
+        {
+          "sourceId": "exam-d3-s06",
+          "section": "Prerequisites; Important",
+          "claim": "The custom build guide uses Azure Bot Service and points to administration integration.",
+          "applicability": "Customer Service/standalone custom smart assist; not retired built-ins."
+        }
+      ],
+      "duplicateCheck": "New architecture choice; c13 supplies prerequisite knowledge, but this rejects a plausible incompatible agent type."
+    },
+    {
+      "id": "ab250-d3-q15",
+      "revision": 2,
+      "domainId": "agents-ai",
+      "conceptId": "smart-assist-workstream-association",
+      "objectiveIds": [
+        "D3.1.06"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s05",
+          "section": "Create an agent user; Add a smart assist agent to a workstream",
+          "claim": "An application user with the required role must be added to the workstream Smart assist bots area.",
+          "applicability": "Standalone custom smart-assist messaging integration."
+        }
+      ],
+      "duplicateCheck": "Distinct from q14 agent-type selection and c14 user-type recall; applies working-versus-new workstream diagnosis.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent lead review: remove supplied diagnosis where relevant and strengthen adjacent configuration or telemetry alternatives."
+    },
+    {
+      "id": "ab250-d3-q16",
+      "revision": 2,
+      "domainId": "agents-ai",
+      "conceptId": "smart-assist-channel-scope",
+      "objectiveIds": [
+        "D3.1.06"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s05",
+          "section": "Smart assist overview; Important note",
+          "claim": "Smart assist applies across documented channels except Entity Records Channel; built-in case and knowledge suggestions are no longer supported.",
+          "applicability": "Configured custom smart assist, not retired built-in suggestions."
+        }
+      ],
+      "duplicateCheck": "Replaced initial timing candidate because it closely repeated cc-d3-c15. This instead tests channel-scope diagnosis; no pilot or D3 study card tests the Entity Records exclusion.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent lead review: remove supplied diagnosis where relevant and strengthen adjacent configuration or telemetry alternatives."
+    },
+    {
+      "id": "ab250-d3-q17",
+      "revision": 2,
+      "domainId": "agents-ai",
+      "conceptId": "voice-authoring-channel-separation",
+      "objectiveIds": [
+        "D3.2.01"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s07",
+          "section": "Turn on basic voice",
+          "claim": "Basic fits classic topics; Enable voice does not enable Telephony.",
+          "applicability": "Standard-harness Basic voice menu; no real-time model equivalence claim."
+        }
+      ],
+      "duplicateCheck": "Distinct from c16 Basic selection; diagnoses a missing channel after successful authoring.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent lead review: remove supplied diagnosis where relevant and strengthen adjacent configuration or telemetry alternatives."
+    },
+    {
+      "id": "ab250-d3-q18",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "context-record-identifier-parsing",
+      "objectiveIds": [
+        "D3.2.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s19",
+          "section": "Parse JSON object to extract record ID",
+          "claim": "The context structure distinguishes RecordId from PrimaryDisplayValue; contact display value is full name.",
+          "applicability": "Native Customer Service/standalone context structure, not SIP arbitrary headers."
+        }
+      ],
+      "duplicateCheck": "Pilot q04 tests external variable Usage; this tests structured context identity extraction, absent from pilot and study cards."
+    },
+    {
+      "id": "ab250-d3-q19",
+      "revision": 2,
+      "domainId": "agents-ai",
+      "conceptId": "hybrid-topic-output-contract",
+      "objectiveIds": [
+        "D3.2.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s12",
+          "section": "Pass variables between topics and the language model",
+          "claim": "Topic inputs enter at invocation and only explicitly defined outputs return as structured data.",
+          "applicability": "Standard-harness real-time hybrid flow."
+        }
+      ],
+      "duplicateCheck": "c17 is prerequisite recall; this diagnoses a missing return contract, distinct from external context q04/q18.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent lead review: remove supplied diagnosis where relevant and strengthen adjacent configuration or telemetry alternatives."
+    },
+    {
+      "id": "ab250-d3-q20",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "sensitive-runtime-persistence-boundary",
+      "objectiveIds": [
+        "D3.2.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s09",
+          "section": "Limitations and scope",
+          "claim": "Sensitive marking does not prevent Dataverse/external persistence or overwrite custom instrumentation.",
+          "applicability": "Standard-harness voice; no universal transcript or end-to-end erasure guarantee."
+        }
+      ],
+      "duplicateCheck": "Different from c19 yes/no recall: selects a remediation for a known external-write path while preserving runtime use."
+    },
+    {
+      "id": "ab250-d3-q21",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "external-contact-capture-phase-split",
+      "objectiveIds": [
+        "D3.2.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s18",
+          "section": "Set up secure consult with and transfer to external contacts (preview)",
+          "claim": "Per-contact Consult and Bridged transfer independently support audio-only or audio-and-transcription disablement.",
+          "applicability": "Available production-ready preview, with active workstream capture; not universal deployment availability."
+        }
+      ],
+      "duplicateCheck": "c21 stops both modes in both phases; this requires different phase policies and rejects the strongest audio-only alternative for transfer."
+    },
+    {
+      "id": "ab250-d3-q22",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "consent-inbound-scope-assessment",
+      "objectiveIds": [
+        "D3.2.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s10",
+          "section": "Prerequisites",
+          "claim": "Consent-based recording supports only inbound workstreams with an associated voice-enabled agent; outbound is excluded.",
+          "applicability": "Specific documented feature, not a claim that no other compliant outbound process can exist."
+        }
+      ],
+      "duplicateCheck": "Different from c20 and pilot timing: determines whether a proposed topology is in documented scope."
+    },
+    {
+      "id": "ab250-d3-q23",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "consent-silence-policy-validation",
+      "objectiveIds": [
+        "D3.2.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s10",
+          "section": "Configure user consent topic for existing agents; Workstream setting",
+          "claim": "The sample can treat no input as implicit consent; makers must adapt and verify configuration.",
+          "applicability": "Supported inbound associated-agent consent flow; implementation policy example, not legal advice."
+        }
+      ],
+      "duplicateCheck": "New no-input acceptance failure; not the missing-topic/toggle prerequisite in c20."
+    },
+    {
+      "id": "ab250-d3-q24",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "incoming-header-schema-evolution",
+      "objectiveIds": [
+        "D3.2.05"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s11",
+          "section": "Incoming X-header requirements; Define JSON schema; Runtime behavior",
+          "claim": "Incoming headers normalize x- prefixes and schema updates are required when names change.",
+          "applicability": "Standard-harness SIP X-header integration with Direct Routing."
+        }
+      ],
+      "duplicateCheck": "c23 is prefix recall; this diagnoses schema drift after the header was confirmed present. Distinct from native context q18."
+    },
+    {
+      "id": "ab250-d3-q25",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "dynamic-transfer-metadata-design",
+      "objectiveIds": [
+        "D3.2.05"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s11",
+          "section": "Prerequisites; Outgoing X-header requirements; Configure X-headers",
+          "claim": "Direct Routing is required; outgoing headers on external-number transfers support variable values.",
+          "applicability": "Direct Routing standard-harness external-number transfer."
+        },
+        {
+          "sourceId": "exam-d3-s07",
+          "section": "Transfer a call to a representative or external phone number",
+          "claim": "The separate SIP UUI external-transfer property does not support variables.",
+          "applicability": "Direct Routing standard-harness external-number transfer."
+        }
+      ],
+      "duplicateCheck": "c24 is a direct mechanism choice; this additionally tests exact topology and transfer-type prerequisites. q26 tests static UUI feasibility rather than dynamic data."
+    },
+    {
+      "id": "ab250-d3-q26",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "static-uui-topology-repair",
+      "objectiveIds": [
+        "D3.2.05"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s07",
+          "section": "Transfer a call to a representative or external phone number",
+          "claim": "Static restricted UUI text can accompany external transfer; UUI egress requires Direct Routing rather than PSTN.",
+          "applicability": "Basic voice SIP UUI field; ordinary PSTN transfer itself is not declared unsupported."
+        }
+      ],
+      "duplicateCheck": "Different from q25 dynamic X-headers and q24 incoming parsing: repairs topology after validating static payload."
+    },
+    {
+      "id": "ab250-d3-q27",
+      "revision": 2,
+      "domainId": "agents-ai",
+      "conceptId": "realtime-basic-rollback-design",
+      "objectiveIds": [
+        "D3.2.06"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s12",
+          "section": "Set up and enable real-time agents",
+          "claim": "Real-time selection is one-time; Basic requires a new agent.",
+          "applicability": "Current standard-harness voice-type lifecycle, not a claim about learner-data migration."
+        }
+      ],
+      "duplicateCheck": "c25 supplies the lifecycle fact; this applies it to rollback planning, distinct from model choice q28.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent lead review: remove supplied diagnosis where relevant and strengthen adjacent configuration or telemetry alternatives."
+    },
+    {
+      "id": "ab250-d3-q28",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "voice-model-branded-tts-tradeoff",
+      "objectiveIds": [
+        "D3.2.06"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s12",
+          "section": "Set up and enable real-time agents; GPT-5-Chat and text LLM agents",
+          "claim": "GPT-5-Chat preview uses Neural TTS and supports broader/custom voice choices; native real-time emphasizes low latency.",
+          "applicability": "Current model table, accepted preview evaluation with regional verification; no universal GA/language claim."
+        }
+      ],
+      "duplicateCheck": "No pilot or study card tests branded-voice model selection. Transparency note speech-to-speech description is not generalized to this text-LLM option."
+    },
+    {
+      "id": "ab250-d3-q29",
+      "revision": 2,
+      "domainId": "agents-ai",
+      "conceptId": "silence-detection-versus-turn-vad",
+      "objectiveIds": [
+        "D3.2.09"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s12",
+          "section": "Speech sensitivity; Silence detection; System trigger support",
+          "claim": "VAD tunes turn completion; voice silence detection requires enablement/reprompt; the user-inactive trigger is digital-only.",
+          "applicability": "Standard-harness real-time voice, not digital inactivity timeout."
+        }
+      ],
+      "duplicateCheck": "c27 selects semantic VAD for natural pauses; this tests no-input handling rather than end-of-speech detection.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent lead review: remove supplied diagnosis where relevant and strengthen adjacent configuration or telemetry alternatives."
+    },
+    {
+      "id": "ab250-d3-q30",
+      "revision": 2,
+      "domainId": "agents-ai",
+      "conceptId": "dtmf-test-input-semantics",
+      "objectiveIds": [
+        "D3.2.07"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s08",
+          "section": "Important note before Enable DTMF support",
+          "claim": "The test panel distinguishes plain numeric input from /DTMFKey input for assigned mappings.",
+          "applicability": "Standard-harness classic voice DTMF testing."
+        }
+      ],
+      "duplicateCheck": "No pilot or study card tests the test-panel distinction; different from global-versus-local key consumption.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent lead review: remove supplied diagnosis where relevant and strengthen adjacent configuration or telemetry alternatives."
+    },
+    {
+      "id": "ab250-d3-q31",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "dtmf-length-termination-validation",
+      "objectiveIds": [
+        "D3.2.07"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s08",
+          "section": "Multi-digit DTMF input; Agent-level DTMF recognition",
+          "claim": "Fixed lengths/ranges are supported; termination is optional and excluded from length, and globals accept single keys.",
+          "applicability": "Classic standard-harness question entity supporting multi-digit DTMF."
+        }
+      ],
+      "duplicateCheck": "Different from c18 global command precedence; tests validation and payload boundary."
+    },
+    {
+      "id": "ab250-d3-q32",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "explicit-handoff-context-delivery",
+      "objectiveIds": [
+        "D3.2.08"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s14",
+          "section": "Configure the Escalate system topic; Explicit triggers",
+          "claim": "Explicit handoff uses Transfer conversation and can send a private message to the connected engagement hub.",
+          "applicability": "Standard-harness voice with hub connection already verified."
+        }
+      ],
+      "duplicateCheck": "c28 gives the node name; this diagnoses an apparently complete flow with no transfer action. No duplicate bank item."
+    },
+    {
+      "id": "ab250-d3-q33",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "realtime-trigger-portability",
+      "objectiveIds": [
+        "D3.2.08"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s12",
+          "section": "System trigger support",
+          "claim": "Unknown Topic/On Unknown Intent and AI response generated are not supported in the current real-time table.",
+          "applicability": "Current standard-harness real-time voice; no assertion about all future versions or classic behavior."
+        }
+      ],
+      "duplicateCheck": "No pilot/study item covers this migration compatibility decision; different from q32 executing explicit transfer."
+    },
+    {
+      "id": "ab250-d3-q34",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "multilingual-hybrid-content-responsibility",
+      "objectiveIds": [
+        "D3.2.10"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s12",
+          "section": "Multilingual support",
+          "claim": "Real-time flows do not need localization strings, but deterministic messages need translations.",
+          "applicability": "Real-time standard-harness pilot with the language/model support already verified."
+        },
+        {
+          "sourceId": "exam-d3-s15",
+          "section": "Manage localization; Test a multilingual agent",
+          "claim": "Makers translate topic content and test secondary-language flows.",
+          "applicability": "Real-time standard-harness pilot with the language/model support already verified."
+        }
+      ],
+      "duplicateCheck": "c29 concerns later edits; this distinguishes generated and deterministic content during initial hybrid-language rollout."
+    },
+    {
+      "id": "ab250-d3-q35",
+      "revision": 2,
+      "domainId": "agents-ai",
+      "conceptId": "voice-region-deployment-sequence",
+      "objectiveIds": [
+        "D3.2.10"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s16",
+          "section": "Change the region for an agent's primary language",
+          "claim": "Voice-region changes require republishing to update recognition and may need TTS/workstream reconfiguration.",
+          "applicability": "Voice language-region guidance; model-specific real-time voice ownership is not overridden by this general page."
+        }
+      ],
+      "duplicateCheck": "c30 is prerequisite recall; this orders deployment and diagnosis rather than repeating translation maintenance q34.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent lead review: remove supplied diagnosis where relevant and strengthen adjacent configuration or telemetry alternatives."
+    },
+    {
+      "id": "ab250-d3-q36",
+      "revision": 2,
+      "domainId": "agents-ai",
+      "conceptId": "explicit-language-menu-switch",
+      "objectiveIds": [
+        "D3.2.10"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d3-s15",
+          "section": "Make an agent switch to another language; Test a multilingual agent",
+          "claim": "User.Language changes the current conversation language; the authoring canvas stays in the primary language during secondary-language testing.",
+          "applicability": "Standard-harness classic multilingual voice with supported languages and translations already established."
+        }
+      ],
+      "duplicateCheck": "No pilot question tests in-call language switching; q34 tests localization responsibility and q35 region deployment.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent lead review: remove supplied diagnosis where relevant and strengthen adjacent configuration or telemetry alternatives."
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+[
+  {
+    "objectiveId": "D1.1.06",
+    "status": "blocked-source",
+    "reviewedAt": "2026-11-02",
+    "reason": "Health Agent enablement remains named in the official guide but no sufficient current configuration procedure was found. A release-note mention is not enablement evidence.",
+    "researchUrls": [
+      "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ab-250",
+      "https://learn.microsoft.com/en-us/dynamics365/released-versions/dynamics365-omnichannel/26072"
+    ]
+  },
+  {
+    "objectiveId": "D1.1.04",
+    "status": "partial-depth",
+    "reviewedAt": "2026-11-02",
+    "reason": "Verified retained-provider architecture; current third-party CCaaS Copilot provisioning was not established from the modern redirect.",
+    "researchUrls": [
+      "https://learn.microsoft.com/en-us/dynamics365/guidance/reference-architectures/contact-center-existing-crm-ccaas-solution-copilot-service-copilot-studio"
+    ]
+  },
+  {
+    "objectiveId": "D1.1.07",
+    "status": "partial-depth",
+    "reviewedAt": "2026-11-02",
+    "reason": "Service Operations configuration is sourced; autonomous transformation/environment migration procedure was not established. Manual migration is not evidence of agent capability.",
+    "researchUrls": [
+      "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/use-service-operations-agent"
+    ]
+  },
+  {
+    "objectiveId": "D2.2.07",
+    "status": "partial-depth",
+    "reviewedAt": "2026-11-02",
+    "reason": "Related Azure Teams Phone extensibility SDK layers are sourced; an exact Dynamics-specific CCaaS SDK API contract was not located.",
+    "researchUrls": [
+      "https://learn.microsoft.com/en-us/azure/communication-services/concepts/interop/tpe/teams-phone-extensibility-overview"
+    ]
+  },
+  {
+    "objectiveId": "D6.1.05",
+    "status": "blocked-source",
+    "reviewedAt": "2026-11-02",
+    "reason": "Current workspace supervisor controls are sourced separately; a distinct new supervisor app configuration procedure was not located in current product documentation.",
+    "researchUrls": [
+      "https://learn.microsoft.com/en-us/training/modules/configure-supervisor-experience-contact-center/"
+    ]
+  }
+]

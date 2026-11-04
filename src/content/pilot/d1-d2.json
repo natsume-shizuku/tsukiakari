@@ -1,0 +1,1488 @@
+{
+  "sources": [
+    {
+      "id": "cc-d1-s01",
+      "title": "Dynamics 365 Contact Center overview",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/implement/overview-contact-center"
+    },
+    {
+      "id": "cc-d1-s02",
+      "title": "Use Copilot Service workspace",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/ccw-overview"
+    },
+    {
+      "id": "cc-d1-s03",
+      "title": "Set up the embedded experience in Salesforce",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/set-up-embedded-experience"
+    },
+    {
+      "id": "cc-d1-s04",
+      "title": "Best practices for application lifecycle management",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/alm-best-practices"
+    },
+    {
+      "id": "cc-d1-s05",
+      "title": "Migrate configurations for channels using solutions",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/migrate-channel-config-using-solutions"
+    },
+    {
+      "id": "cc-d1-s06",
+      "title": "Manage Dynamics 365 Contact Center environments",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/implement/restore-environment"
+    },
+    {
+      "id": "cc-d2-s01",
+      "title": "Configure authentication settings",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-chat-auth-settings"
+    },
+    {
+      "id": "cc-d2-s02",
+      "title": "Identify customers automatically",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/record-identification-rule"
+    },
+    {
+      "id": "cc-d2-s03",
+      "title": "Configure a preconversation survey",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-pre-chat-survey"
+    },
+    {
+      "id": "cc-d2-s04",
+      "title": "Manage context variables",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/manage-context-variables"
+    },
+    {
+      "id": "cc-d2-s05",
+      "title": "Embed chat widget in your website or portal",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/embed-chat-widget-portal"
+    },
+    {
+      "id": "cc-d1-s07",
+      "title": "Solution layers",
+      "url": "https://learn.microsoft.com/en-us/power-apps/maker/data-platform/solution-layers"
+    },
+    {
+      "id": "cc-d2-s06",
+      "title": "Send custom context during live chat",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/send-context-starting-chat"
+    }
+  ],
+  "notes": [
+    {
+      "id": "cc-d1-n01",
+      "title": "Choose where representatives handle conversations",
+      "body": "Start with the representative’s working environment. Copilot Service workspace brings customer sessions and CRM context into one representative-facing application. Its separate sessions preserve the context of concurrent interactions. A representative needs the Omnichannel Agent role to use it.\n\nWhen a team must remain in a non-Microsoft CRM, consider the embedded conversation widget. The Salesforce setup connects the widget through a call-center definition and softphone utility. Its adapter URL must point to the embedded widget, not to a customer-facing chat script.\n\nThese are workspace decisions within a broader contact-center implementation. Validate channel provisioning and the chosen integration’s prerequisites before rollout. A familiar CRM screen does not remove the need to configure the underlying contact-center service.",
+      "sourceIds": [
+        "cc-d1-s01",
+        "cc-d1-s02",
+        "cc-d1-s03"
+      ]
+    },
+    {
+      "id": "cc-d1-n02",
+      "title": "Move configuration without losing deployment control",
+      "body": "Keep the configuration’s source of truth in development. Microsoft recommends authoring in an unmanaged solution, then exporting it as managed for the destination. Check installed solution-version parity first. Direct changes to imported managed records create an active layer that can hide later managed updates.\n\nA channel migration also has dependencies. Prepare referenced custom schema and appropriate migration permissions. Inspect the documented migration scope instead of assuming that every connected service setting travels with the channel.\n\nEnvironment recovery is a separate operation. After a reset, restore, or tenant move, follow the documented channel provisioning or unified-routing enablement steps. Include a functional conversation check in the rollout plan; an environment being available is not the same as its contact-center configuration being ready.",
+      "sourceIds": [
+        "cc-d1-s04",
+        "cc-d1-s05",
+        "cc-d1-s06"
+      ]
+    },
+    {
+      "id": "cc-d2-n01",
+      "title": "Distinguish authenticated customers from matching records",
+      "body": "Customer identification and authentication solve different problems. Preconversation answers can locate a contact or account, but a supplied email address is not proof that the visitor owns that identity. If identification finds several matching records, the system does not automatically link one arbitrarily.\n\nAuthenticated chat instead uses a signed token from the website’s sign-in flow. Configure the authentication record and associate it with the chat channel instance. Creating the record alone does not wire it into that widget.\n\nFor a support portal, review both outcomes: is the visitor authenticated, and is the intended customer record linked? Treat them as separate acceptance checks. The source documents specific record-search conditions; do not infer that every custom field or status value participates in automatic matching.",
+      "sourceIds": [
+        "cc-d2-s01",
+        "cc-d2-s02"
+      ]
+    },
+    {
+      "id": "cc-d2-n02",
+      "title": "Collect chat context and deploy the correct widget",
+      "body": "A preconversation survey collects information before chat begins. Its internal question name and its customer-facing wording serve different purposes. Adding a question creates a corresponding workstream context variable; the displayed sentence is not a substitute for that variable’s identifier.\n\nUse stable context names consistently across integrations. Names are case-sensitive. Before changing or removing a variable, check whether routing rules depend on it. Context can also support representative tools such as scripts and macros.\n\nFinally, deploy the customer-facing widget from the intended chat instance. For a conventional website, copy its snippet into the page body; a Power Apps portal uses its Chat Widget Code content snippet. Test the actual customer page so that survey configuration, widget selection, and collected context are checked together.",
+      "sourceIds": [
+        "cc-d2-s03",
+        "cc-d2-s04",
+        "cc-d2-s05"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "cc-d1-c01",
+      "revision": 1,
+      "topicId": "architecture-deployment",
+      "kind": "recall",
+      "prompt": "Which Contact Center component brings representative conversations into a non-Microsoft CRM?",
+      "answer": "The embedded conversation widget.",
+      "explanation": "It supports hosting the representative experience in a suitable HTML/JavaScript application.",
+      "sourceIds": [
+        "cc-d1-s03"
+      ],
+      "noteIds": [
+        "cc-d1-n01"
+      ],
+      "tags": [
+        "topic:architecture-deployment",
+        "domain:deployment",
+        "feature:embedded-widget",
+        "task:configure"
+      ]
+    },
+    {
+      "id": "cc-d1-c02",
+      "revision": 1,
+      "topicId": "architecture-deployment",
+      "kind": "recall",
+      "prompt": "Which security role does the Contact Center workspace overview require for a representative?",
+      "answer": "Omnichannel Agent.",
+      "explanation": "This is the documented prerequisite for using Copilot Service workspace.",
+      "sourceIds": [
+        "cc-d1-s02"
+      ],
+      "noteIds": [
+        "cc-d1-n01"
+      ],
+      "tags": [
+        "topic:architecture-deployment",
+        "domain:deployment",
+        "feature:workspace-access",
+        "task:configure"
+      ]
+    },
+    {
+      "id": "cc-d1-c03",
+      "revision": 1,
+      "topicId": "lifecycle-management",
+      "kind": "recall",
+      "prompt": "How should a development solution be packaged when deploying Contact Center configuration to production?",
+      "answer": "Author it unmanaged in development, then export it as managed for production.",
+      "explanation": "This preserves a controlled deployment boundary.",
+      "sourceIds": [
+        "cc-d1-s04"
+      ],
+      "noteIds": [
+        "cc-d1-n02"
+      ],
+      "tags": [
+        "topic:lifecycle-management",
+        "domain:deployment",
+        "feature:managed-deployment",
+        "task:configure"
+      ]
+    },
+    {
+      "id": "cc-d1-c04",
+      "revision": 1,
+      "topicId": "lifecycle-management",
+      "kind": "recall",
+      "prompt": "Does restoring a Contact Center environment finish all omnichannel recovery work?",
+      "answer": "No. Follow up with channel provisioning or unified-routing enablement as applicable.",
+      "explanation": "The restored environment still needs the documented service setup steps.",
+      "sourceIds": [
+        "cc-d1-s06"
+      ],
+      "noteIds": [
+        "cc-d1-n02"
+      ],
+      "tags": [
+        "topic:lifecycle-management",
+        "domain:deployment",
+        "feature:environment-recovery",
+        "task:configure"
+      ]
+    },
+    {
+      "id": "cc-d1-c05",
+      "revision": 2,
+      "topicId": "lifecycle-management",
+      "kind": "mcq",
+      "prompt": "A managed configuration update imports successfully into a target with matching installed solution versions. The imported package contains the intended change, but a record previously edited directly in the target still shows its old customization. What should you investigate?",
+      "answer": "An active customization layer overriding the managed layer.",
+      "explanation": "Investigate the target-side active customization: it can take precedence over the incoming managed configuration. The scenario rules out a failed import, version mismatch, and an omitted source change.",
+      "sourceIds": [
+        "cc-d1-s04"
+      ],
+      "noteIds": [
+        "cc-d1-n02"
+      ],
+      "tags": [
+        "topic:lifecycle-management",
+        "domain:deployment",
+        "feature:active-layer-diagnosis",
+        "task:troubleshoot"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "The target record's active customization layer."
+        },
+        {
+          "id": "o2",
+          "text": "A failed solution import that prevented the package from arriving."
+        },
+        {
+          "id": "o3",
+          "text": "Different installed solution versions between source and target."
+        },
+        {
+          "id": "o4",
+          "text": "A source change omitted from the exported package."
+        }
+      ],
+      "correctOptionId": "o1"
+    },
+    {
+      "id": "cc-d1-c06",
+      "revision": 2,
+      "topicId": "lifecycle-management",
+      "kind": "mcq",
+      "prompt": "After migrating skill-based routing configuration, which target-side follow-up does Microsoft explicitly require where skills and ratings are used?",
+      "answer": "Link, associate, or create the relevant users, bookable resources, and characteristics.",
+      "explanation": "Ruleset rendering is one verification step, but skills and ratings also require user, bookable-resource, and characteristic associations. Capacity-profile associations address a separate configuration; reimporting definitions alone does not perform the required association check.",
+      "sourceIds": [
+        "cc-d1-s05"
+      ],
+      "noteIds": [
+        "cc-d1-n02"
+      ],
+      "tags": [
+        "topic:lifecycle-management",
+        "domain:deployment",
+        "feature:migration-resource-associations",
+        "task:troubleshoot"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Verify only that the imported routing rulesets render without errors."
+        },
+        {
+          "id": "o2",
+          "text": "Associate only resource capacity-profile records, leaving skill characteristics unlinked."
+        },
+        {
+          "id": "o3",
+          "text": "Link or create the users, resources, and characteristics."
+        },
+        {
+          "id": "o4",
+          "text": "Reimport the skill definitions without checking their target resource associations."
+        }
+      ],
+      "correctOptionId": "o3"
+    },
+    {
+      "id": "cc-d2-c01",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "Does linking a visitor to a contact through a preconversation email address authenticate the visitor?",
+      "answer": "No. Record identification is not authentication.",
+      "explanation": "Authenticated chat verifies a signed token from the website's sign-in flow.",
+      "sourceIds": [
+        "cc-d2-s01"
+      ],
+      "noteIds": [
+        "cc-d2-n01"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:authentication-vs-identification",
+        "task:configure"
+      ]
+    },
+    {
+      "id": "cc-d2-c02",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "What naming rule matters when an integration supplies a workstream context variable?",
+      "answer": "The supplied name must match exactly, including letter case.",
+      "explanation": "Keep the defined name consistent across the integration.",
+      "sourceIds": [
+        "cc-d2-s04"
+      ],
+      "noteIds": [
+        "cc-d2-n02"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:context-name-matching",
+        "task:configure"
+      ]
+    },
+    {
+      "id": "cc-d2-c03",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "What happens to workstream context when a preconversation survey question is added?",
+      "answer": "A corresponding context variable is created.",
+      "explanation": "Inspect it under the workstream's advanced context-variable settings.",
+      "sourceIds": [
+        "cc-d2-s03"
+      ],
+      "noteIds": [
+        "cc-d2-n02"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:survey-context",
+        "task:configure"
+      ]
+    },
+    {
+      "id": "cc-d2-c04",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "Where does the documented website integration place a chat instance's widget snippet?",
+      "answer": "Inside the website's HTML body.",
+      "explanation": "Copy the snippet from that chat instance's Chat widget tab.",
+      "sourceIds": [
+        "cc-d2-s05"
+      ],
+      "noteIds": [
+        "cc-d2-n02"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:widget-embedding",
+        "task:configure"
+      ]
+    },
+    {
+      "id": "cc-d2-c05",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "mcq",
+      "prompt": "A preconversation lookup finds two active contacts with the same supplied email. What automatic-linking outcome should you expect?",
+      "answer": "No automatic customer link is made from the ambiguous match.",
+      "explanation": "The lookup does not choose the oldest, newest, or first returned matching record.",
+      "sourceIds": [
+        "cc-d2-s02"
+      ],
+      "noteIds": [
+        "cc-d2-n01"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:ambiguous-identification",
+        "task:troubleshoot"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "The oldest contact is linked."
+        },
+        {
+          "id": "o2",
+          "text": "No record is automatically linked from that match."
+        },
+        {
+          "id": "o3",
+          "text": "The first returned contact is linked."
+        },
+        {
+          "id": "o4",
+          "text": "The newest contact is linked."
+        }
+      ],
+      "correctOptionId": "o2"
+    },
+    {
+      "id": "cc-d2-c06",
+      "revision": 2,
+      "topicId": "chat-digital",
+      "kind": "mcq",
+      "prompt": "A developer wants to delete a workstream context variable. What should be checked first?",
+      "answer": "Whether classification or assignment rules use it.",
+      "explanation": "Microsoft specifically requires checking unified-routing classification and assignment dependencies before a necessary update or deletion. Survey, website, or AI-agent checks can be useful, but none alone establishes that routing rules no longer depend on the variable.",
+      "sourceIds": [
+        "cc-d2-s04"
+      ],
+      "noteIds": [
+        "cc-d2-n02"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:context-dependencies",
+        "task:troubleshoot"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Inspect only whether a preconversation survey displays the variable."
+        },
+        {
+          "id": "o2",
+          "text": "Inspect only the website custom-context provider code."
+        },
+        {
+          "id": "o3",
+          "text": "Inspect only the variable names used by the AI agent."
+        },
+        {
+          "id": "o4",
+          "text": "Whether classification or assignment rules reference it."
+        }
+      ],
+      "correctOptionId": "o4"
+    }
+  ],
+  "questions": [
+    {
+      "id": "ab250-d1-q01",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.1.03"
+      ],
+      "conceptId": "salesforce-adapter-url",
+      "prompt": "A support team keeps Salesforce Service Console as its representative desktop. Omnichannel capabilities are provisioned, and the implementation administrator is importing the documented call-center definition. Which value belongs in its CTI Adapter URL?",
+      "answer": "The embedded conversation widget URL.",
+      "explanation": "The Salesforce call-center definition points to the representative widget.",
+      "sourceIds": [
+        "cc-d1-s03"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:salesforce-adapter-url",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "The customer-facing chat script."
+        },
+        {
+          "id": "o2",
+          "text": "The embedded conversation widget URL."
+        },
+        {
+          "id": "o3",
+          "text": "The public key endpoint for customer chat authentication."
+        },
+        {
+          "id": "o4",
+          "text": "The Dataverse Web API endpoint."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "That script serves the customer website.",
+        "o2": "This is the URL required by the Salesforce setup.",
+        "o3": "That endpoint verifies customer tokens, not the representative widget.",
+        "o4": "This is not the documented CTI adapter value."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n01"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q02",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.2.04"
+      ],
+      "conceptId": "post-restore-readiness",
+      "prompt": "A team restores a Contact Center environment from backup. The environment is available again, but the recovery checklist has not addressed omnichannel capabilities. Which follow-up belongs on that checklist?",
+      "answer": "Provision channels or enable unified routing again, as applicable.",
+      "explanation": "The environment recovery guidance explicitly calls for channel provisioning or unified-routing enablement after restoration. Solution imports and role assignments do not replace that service recovery step.",
+      "sourceIds": [
+        "cc-d1-s06"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:post-restore-readiness",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Reimport the channel configuration solution and treat that alone as recovery of the omnichannel service."
+        },
+        {
+          "id": "o2",
+          "text": "Reassign representative security roles and treat that alone as recovery of the omnichannel service."
+        },
+        {
+          "id": "o3",
+          "text": "Treat all omnichannel services as ready once the restore succeeds."
+        },
+        {
+          "id": "o4",
+          "text": "Provision channels or enable unified routing again, as applicable."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "Importing configuration does not satisfy the documented post-restore provisioning or enablement requirement.",
+        "o2": "Role assignment controls access; it does not perform the documented service recovery step.",
+        "o3": "A successful environment restore does not remove the stated follow-up requirement.",
+        "o4": "This is the required follow-up, with the applicable path determined by the environment."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n02"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q03",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.2.03"
+      ],
+      "conceptId": "solution-layer-inspection",
+      "prompt": "A release manager must explain why a Dataverse component behaves differently after several managed solutions and an unmanaged customization were installed. The manager needs to inspect which properties each solution changed before deciding on remediation. Which diagnostic view should be used?",
+      "answer": "See solution layers for the affected component.",
+      "explanation": "See solution layers shows the order of component changes and the properties changed by each layer. Import results, dependencies, and installed versions answer other deployment questions but do not provide that per-layer property comparison.",
+      "sourceIds": [
+        "cc-d1-s07"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:solution-layer-inspection",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "The component's See solution layers view."
+        },
+        {
+          "id": "o2",
+          "text": "The solution import job's success or failure log."
+        },
+        {
+          "id": "o3",
+          "text": "The component's solution dependency list."
+        },
+        {
+          "id": "o4",
+          "text": "The environment's list of installed solution versions."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "This view exposes component layers and their changed and unchanged properties.",
+        "o2": "Import success or failure does not show which properties each installed layer changed.",
+        "o3": "Dependencies describe component relationships, not per-layer property differences.",
+        "o4": "A version inventory does not show the properties each layer changed."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n02"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q04",
+      "revision": 2,
+      "kind": "multiple",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.2.02",
+        "D1.2.03"
+      ],
+      "conceptId": "channel-migration-prerequisites",
+      "prompt": "A channel configuration migration references custom tables and columns. An operator will use solutions and the Configuration Migration tool to move it between environments. Which TWO preparation checks are explicitly required by the documented procedure?",
+      "answer": "Prepare the referenced schema in the destination and verify the operator's migration permissions.",
+      "explanation": "The documented prerequisites require both destination schema dependencies and appropriate migration privileges before migration. Source-style read/export permissions are insufficient at the destination; do not assume the channel configuration import creates every referenced custom dependency.",
+      "sourceIds": [
+        "cc-d1-s05"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:channel-migration-prerequisites",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Create the referenced custom tables and columns in the destination first."
+        },
+        {
+          "id": "o2",
+          "text": "Give the operator export and read permissions in both environments, with no destination import or write privileges."
+        },
+        {
+          "id": "o3",
+          "text": "Verify source export/read and destination import/full table permissions."
+        },
+        {
+          "id": "o4",
+          "text": "Rely on the channel configuration import to prepare all referenced custom schema automatically."
+        }
+      ],
+      "correctOptionIds": [
+        "o1",
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "The referenced custom tables and columns must already exist in the target.",
+        "o2": "The destination requires import and full permissions for the migrated tables, not read/export alone.",
+        "o3": "This covers the documented source and destination privilege requirements.",
+        "o4": "The procedure requires referenced schema to be present before proceeding."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n02"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q01",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.08",
+        "D2.3.01"
+      ],
+      "conceptId": "anonymous-context-initialization",
+      "prompt": "An anonymous chat website must submit custom context when a new chat starts. Its developer currently invokes the Live Chat SDK as soon as the script tag is inserted, before the widget reports readiness. Which change follows the documented initialization sequence?",
+      "answer": "Wait for lcw:ready, register the context provider, then start the chat.",
+      "explanation": "The SDK readiness event must occur before its methods are invoked. Register the context provider after that event and before starting the chat.",
+      "sourceIds": [
+        "cc-d2-s06"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:anonymous-context-initialization",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Wait for lcw:ready, call startChat, and then register setContextProvider."
+        },
+        {
+          "id": "o2",
+          "text": "Register setContextProvider immediately after inserting the script, then wait for lcw:ready to startChat."
+        },
+        {
+          "id": "o3",
+          "text": "Handle lcw:ready, call setContextProvider, then startChat."
+        },
+        {
+          "id": "o4",
+          "text": "Wait only for DOMContentLoaded, register setContextProvider, and call startChat without waiting for lcw:ready."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "The documented sequence registers the provider before starting the new chat.",
+        "o2": "Registering the provider is itself an SDK call and must wait for SDK readiness.",
+        "o3": "This follows readiness, provider registration, and chat start in the documented order.",
+        "o4": "Page DOM readiness is not the documented signal that the live-chat SDK is ready."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n02"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q02",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.02"
+      ],
+      "conceptId": "contact-phone-identification",
+      "prompt": "A chat survey asks for a phone number. The implementation uses the documented standard automatic customer identification mapping for contacts. The customer’s number is stored only in the contact's Home Phone field. Which change aligns with that standard contact mapping?",
+      "answer": "Populate the contact's Mobile Number field with the appropriate customer number.",
+      "explanation": "The standard Contact Phone mapping in the preconversation question table uses Mobile Number. Business Phone is the standard account mapping; the other contact fields do not become the standard contact mapping merely by holding a number.",
+      "sourceIds": [
+        "cc-d2-s02"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:contact-phone-identification",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Store it only in the contact's Business Phone field."
+        },
+        {
+          "id": "o2",
+          "text": "Store it in the contact's Mobile Number field."
+        },
+        {
+          "id": "o3",
+          "text": "Store it only in the contact's Home Phone field."
+        },
+        {
+          "id": "o4",
+          "text": "Store it only in a new custom contact phone column."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "The documented preconversation contact mapping uses Mobile Number; the account mapping uses Business Phone.",
+        "o2": "This matches the specified standard contact mapping.",
+        "o3": "Home Phone is outside the stated standard contact mapping.",
+        "o4": "Adding a column alone does not make it the standard contact match field."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n01"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q03",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.04"
+      ],
+      "conceptId": "portal-widget-location",
+      "prompt": "An administrator has copied a chat instance's widget code and must install it on an existing Power Apps portal using the documented Portal Management approach. Where should the code go?",
+      "answer": "The Value (HTML) field of the Chat Widget Code content snippet.",
+      "explanation": "The documented Portal Management procedure uses the existing Chat Widget Code content snippet and stores the code in its Value (HTML) field. Authentication endpoints, snippet names, and unreferenced snippets do not implement that documented placement.",
+      "sourceIds": [
+        "cc-d2-s05"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:portal-widget-location",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "The Public key URL field of the chat authentication record."
+        },
+        {
+          "id": "o2",
+          "text": "The Name field of the Chat Widget Code content snippet."
+        },
+        {
+          "id": "o3",
+          "text": "A newly created content snippet with a different name, with no reference from the portal."
+        },
+        {
+          "id": "o4",
+          "text": "The Chat Widget Code content snippet's Value (HTML) field."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "This field expects a token-verification endpoint, not the widget script.",
+        "o2": "The Name identifies the snippet; the documented script content belongs in Value (HTML).",
+        "o3": "Creating an unreferenced snippet does not install the widget through the documented Chat Widget Code integration.",
+        "o4": "This is the documented location for the widget snippet."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n02"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q04",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.06"
+      ],
+      "conceptId": "survey-consent-configuration",
+      "prompt": "A chat preconversation survey must request explicit consent using the built-in consent question type and make the response mandatory. Which TWO settings implement that requirement?",
+      "answer": "Use the User consent answer type and set Required to Yes.",
+      "explanation": "The documented consent configuration requires both selections. Choose two answers.",
+      "sourceIds": [
+        "cc-d2-s03"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:survey-consent-configuration",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Select User consent as the answer type."
+        },
+        {
+          "id": "o2",
+          "text": "Select Multiple lines as the answer type."
+        },
+        {
+          "id": "o3",
+          "text": "Set Required to No."
+        },
+        {
+          "id": "o4",
+          "text": "Set Required to Yes."
+        }
+      ],
+      "correctOptionIds": [
+        "o1",
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "This provides the built-in consent control.",
+        "o2": "Free text does not select the built-in consent control.",
+        "o3": "This contradicts the mandatory-response requirement.",
+        "o4": "Consent questions require this setting."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n02"
+        }
+      ],
+      "status": "draft"
+    }
+  ],
+  "editorial": [
+    {
+      "id": "cc-d1-n01",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "representative-host-selection",
+      "objectiveIds": [
+        "D1.1.01",
+        "D1.1.03"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d1_d2",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-s01",
+          "section": "Overview",
+          "claim": "Product supports CRM-connected, multichannel service.",
+          "applicability": "Contact Center overview; no license or regional assertion."
+        },
+        {
+          "sourceId": "cc-d1-s02",
+          "section": "Overview; Prerequisites",
+          "claim": "Workspace supports concurrent sessions; Omnichannel Agent role required.",
+          "applicability": "Contact Center representative app."
+        },
+        {
+          "sourceId": "cc-d1-s03",
+          "section": "Set up the call center in Salesforce",
+          "claim": "Call-center definition uses the embedded widget URL.",
+          "applicability": "Salesforce integration with provisioned omnichannel capabilities."
+        }
+      ],
+      "duplicateCheck": "Supports host-selection cards; does not duplicate an existing canonical real note."
+    },
+    {
+      "id": "cc-d1-n02",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "configuration-lifecycle",
+      "objectiveIds": [
+        "D1.2.02",
+        "D1.2.03",
+        "D1.2.04"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d1_d2",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-s04",
+          "section": "Managed vs. unmanaged; Environment parity; Active layers",
+          "claim": "Managed destination imports and parity avoid uncontrolled active-layer changes.",
+          "applicability": "Managed Contact Center configuration records."
+        },
+        {
+          "sourceId": "cc-d1-s05",
+          "section": "Prerequisites; scope",
+          "claim": "Migration needs permissions/schema dependencies; scope has exclusions.",
+          "applicability": "Documented channel migration procedure."
+        },
+        {
+          "sourceId": "cc-d1-s06",
+          "section": "Overview",
+          "claim": "Reset/restore/tenant migration requires subsequent provisioning or routing enablement.",
+          "applicability": "Operation-specific Contact Center recovery guidance."
+        }
+      ],
+      "duplicateCheck": "Deployment note deliberately separates solution migration from environment recovery."
+    },
+    {
+      "id": "cc-d2-n01",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "chat-trust-and-identification",
+      "objectiveIds": [
+        "D2.1.09",
+        "D2.3.02"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d1_d2",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-s01",
+          "section": "Authentication compared to customer identification; Add authentication",
+          "claim": "Signed-token verification differs from matching; attach settings to channel.",
+          "applicability": "Chat in embedded/standalone Contact Center."
+        },
+        {
+          "sourceId": "cc-d2-s02",
+          "section": "Overview; record-search limitations",
+          "claim": "Several matches are not automatically linked; search has documented conditions.",
+          "applicability": "Contact/account identification, not case behavior."
+        }
+      ],
+      "duplicateCheck": "Authentication and identification are contrasted once; related cards test separate decisions."
+    },
+    {
+      "id": "cc-d2-n02",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "chat-context-deployment",
+      "objectiveIds": [
+        "D2.1.04",
+        "D2.1.06",
+        "D2.3.01"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d1_d2",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-s03",
+          "section": "Configure survey, steps 5 and note",
+          "claim": "Internal names differ from display text; questions create context variables.",
+          "applicability": "Chat preconversation survey."
+        },
+        {
+          "sourceId": "cc-d2-s04",
+          "section": "Considerations",
+          "claim": "Context names are case-sensitive; review routing dependencies before changes.",
+          "applicability": "Workstream context variables."
+        },
+        {
+          "sourceId": "cc-d2-s05",
+          "section": "Embed chat widget in a website or Power Apps portal",
+          "claim": "Website and portal have different documented snippet locations.",
+          "applicability": "Customer-facing chat widget."
+        }
+      ],
+      "duplicateCheck": "One workflow note connects collection, names, and deployment without repeating authentication."
+    },
+    {
+      "id": "cc-d1-c01",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "embedded-widget",
+      "objectiveIds": [
+        "D1.1.03"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d1_d2",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-s03",
+          "section": "Overview",
+          "claim": "Embedded widget hosts representative conversations.",
+          "applicability": "Contact Center; conditions are stated in the card."
+        }
+      ],
+      "duplicateCheck": "Recall or focused application of the linked note; separately worded from exam scenarios."
+    },
+    {
+      "id": "cc-d1-c02",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "workspace-access",
+      "objectiveIds": [
+        "D1.1.01",
+        "D1.3.03"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d1_d2",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-s02",
+          "section": "Prerequisites",
+          "claim": "Workspace requires the Omnichannel Agent role.",
+          "applicability": "Contact Center; conditions are stated in the card."
+        }
+      ],
+      "duplicateCheck": "Recall or focused application of the linked note; separately worded from exam scenarios."
+    },
+    {
+      "id": "cc-d1-c03",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "managed-deployment",
+      "objectiveIds": [
+        "D1.2.02",
+        "D1.2.03"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d1_d2",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-s04",
+          "section": "Managed vs. unmanaged solutions",
+          "claim": "Source unmanaged; target managed.",
+          "applicability": "Contact Center; conditions are stated in the card."
+        }
+      ],
+      "duplicateCheck": "Recall or focused application of the linked note; separately worded from exam scenarios."
+    },
+    {
+      "id": "cc-d1-c04",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "environment-recovery",
+      "objectiveIds": [
+        "D1.2.04"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d1_d2",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-s06",
+          "section": "Overview",
+          "claim": "Reset/restore/migration needs reprovisioning or routing enablement.",
+          "applicability": "Contact Center; conditions are stated in the card."
+        }
+      ],
+      "duplicateCheck": "Recall or focused application of the linked note; separately worded from exam scenarios."
+    },
+    {
+      "id": "cc-d1-c05",
+      "revision": 2,
+      "domainId": "deployment",
+      "conceptId": "active-layer-diagnosis",
+      "objectiveIds": [
+        "D1.2.03"
+      ],
+      "level": "advanced",
+      "author": "/root/pilot_d1_d2",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-s04",
+          "section": "Update of configuration and active layers",
+          "claim": "Active layer takes precedence over managed updates.",
+          "applicability": "Contact Center; conditions are stated in the card."
+        }
+      ],
+      "duplicateCheck": "Recall or focused application of the linked note; separately worded from exam scenarios.",
+      "revisedBy": "/root",
+      "revisionReason": "Replace unrelated alternatives with realistic ALM failure causes; constrain the scenario so only active layering remains supported."
+    },
+    {
+      "id": "cc-d1-c06",
+      "revision": 2,
+      "domainId": "deployment",
+      "conceptId": "migration-resource-associations",
+      "objectiveIds": [
+        "D1.2.03"
+      ],
+      "level": "advanced",
+      "author": "/root/pilot_d1_d2",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-s05",
+          "section": "Verify your migration",
+          "claim": "Skill-based configurations need target resource associations.",
+          "applicability": "Contact Center; conditions are stated in the card."
+        }
+      ],
+      "duplicateCheck": "Recall or focused application of the linked note; separately worded from exam scenarios.",
+      "revisedBy": "/root",
+      "revisionReason": "Use plausible but incomplete migration checks rather than unrelated or destructive actions."
+    },
+    {
+      "id": "cc-d2-c01",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "authentication-vs-identification",
+      "objectiveIds": [
+        "D2.1.09",
+        "D2.3.02"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d1_d2",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-s01",
+          "section": "Authentication compared to customer identification",
+          "claim": "Identification alone is not proof of identity.",
+          "applicability": "Chat channel; embedded/standalone Contact Center."
+        }
+      ],
+      "duplicateCheck": "Recall or focused application of the linked note; separately worded from exam scenarios."
+    },
+    {
+      "id": "cc-d2-c02",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "context-name-matching",
+      "objectiveIds": [
+        "D2.3.01"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d1_d2",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-s04",
+          "section": "Considerations",
+          "claim": "Exact case-sensitive matching.",
+          "applicability": "Chat channel; embedded/standalone Contact Center."
+        }
+      ],
+      "duplicateCheck": "Recall or focused application of the linked note; separately worded from exam scenarios."
+    },
+    {
+      "id": "cc-d2-c03",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "survey-context",
+      "objectiveIds": [
+        "D2.1.06",
+        "D2.3.01"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d1_d2",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-s03",
+          "section": "Note after step 5",
+          "claim": "Survey questions create context variables.",
+          "applicability": "Chat channel; embedded/standalone Contact Center."
+        }
+      ],
+      "duplicateCheck": "Recall or focused application of the linked note; separately worded from exam scenarios."
+    },
+    {
+      "id": "cc-d2-c04",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "widget-embedding",
+      "objectiveIds": [
+        "D2.1.04"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d1_d2",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-s05",
+          "section": "Embed chat widget in a website or Power Apps portal",
+          "claim": "Website uses body; portal uses content snippet.",
+          "applicability": "Chat channel; embedded/standalone Contact Center."
+        }
+      ],
+      "duplicateCheck": "Recall or focused application of the linked note; separately worded from exam scenarios."
+    },
+    {
+      "id": "cc-d2-c05",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "ambiguous-identification",
+      "objectiveIds": [
+        "D2.3.02"
+      ],
+      "level": "advanced",
+      "author": "/root/pilot_d1_d2",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-s02",
+          "section": "Overview",
+          "claim": "More than one matching record prevents automatic linking.",
+          "applicability": "Chat channel; embedded/standalone Contact Center."
+        }
+      ],
+      "duplicateCheck": "Recall or focused application of the linked note; separately worded from exam scenarios."
+    },
+    {
+      "id": "cc-d2-c06",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "context-dependencies",
+      "objectiveIds": [
+        "D2.3.01"
+      ],
+      "level": "advanced",
+      "author": "/root/pilot_d1_d2",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-s04",
+          "section": "Considerations",
+          "claim": "Check routing dependencies before editing/deleting.",
+          "applicability": "Chat channel; embedded/standalone Contact Center."
+        }
+      ],
+      "duplicateCheck": "Recall or focused application of the linked note; separately worded from exam scenarios.",
+      "revisedBy": "/root",
+      "revisionReason": "Use incomplete integration checks as distractors; each remains insufficient under the routing dependency requirement."
+    },
+    {
+      "id": "ab250-d1-q01",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "salesforce-adapter-url",
+      "objectiveIds": [
+        "D1.1.03"
+      ],
+      "level": "advanced",
+      "author": "/root/pilot_d1_d2",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-s03",
+          "section": "Set up the call center in Salesforce, step 2",
+          "claim": "CTI Adapter URL uses embedded widget URL.",
+          "applicability": "Salesforce; prerequisites already satisfied."
+        }
+      ],
+      "duplicateCheck": "Original requirement-driven scenario; linked card reinforces a concept but does not reuse this stem or choice set."
+    },
+    {
+      "id": "ab250-d1-q02",
+      "revision": 2,
+      "domainId": "deployment",
+      "conceptId": "post-restore-readiness",
+      "objectiveIds": [
+        "D1.2.04"
+      ],
+      "level": "advanced",
+      "author": "/root/pilot_d1_d2",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-s06",
+          "section": "Overview",
+          "claim": "Restore requires channels or routing to be enabled again.",
+          "applicability": "Restored Contact Center environment; no claim that both operations are always required."
+        }
+      ],
+      "duplicateCheck": "Original requirement-driven scenario; linked card reinforces a concept but does not reuse this stem or choice set.",
+      "revisedBy": "/root",
+      "revisionReason": "Replace dashboard/survey distractions with plausible but insufficient post-restore tasks."
+    },
+    {
+      "id": "ab250-d1-q03",
+      "revision": 2,
+      "domainId": "deployment",
+      "conceptId": "solution-layer-inspection",
+      "objectiveIds": [
+        "D1.2.03"
+      ],
+      "level": "advanced",
+      "author": "/root/pilot_d1_d2",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-s07",
+          "section": "View the solution layers for a component",
+          "claim": "Layer view exposes order and property-level changes.",
+          "applicability": "Dataverse solution component; inspect before remediation."
+        }
+      ],
+      "duplicateCheck": "Original requirement-driven scenario; linked card reinforces a concept but does not reuse this stem or choice set.",
+      "revisedBy": "/root",
+      "revisionReason": "Use alternative ALM diagnostic views that answer different questions."
+    },
+    {
+      "id": "ab250-d1-q04",
+      "revision": 2,
+      "domainId": "deployment",
+      "conceptId": "channel-migration-prerequisites",
+      "objectiveIds": [
+        "D1.2.02",
+        "D1.2.03"
+      ],
+      "level": "advanced",
+      "author": "/root/pilot_d1_d2",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-s05",
+          "section": "Prerequisites",
+          "claim": "Referenced schema and migration privileges are required.",
+          "applicability": "Documented channel configuration migration, not blanket tenant administration."
+        }
+      ],
+      "duplicateCheck": "Original requirement-driven scenario; linked card reinforces a concept but does not reuse this stem or choice set.",
+      "revisedBy": "/root",
+      "revisionReason": "Replace deleting lookup dependencies with a realistic automatic-dependency assumption."
+    },
+    {
+      "id": "ab250-d2-q01",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "anonymous-context-initialization",
+      "objectiveIds": [
+        "D2.1.08",
+        "D2.3.01"
+      ],
+      "level": "advanced",
+      "author": "/root/pilot_d1_d2",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-s06",
+          "section": "Steps to send custom context",
+          "claim": "Wait for readiness, register provider, then start.",
+          "applicability": "Explicitly anonymous chat; does not endorse setContextProvider for authenticated chat."
+        }
+      ],
+      "duplicateCheck": "Original requirement-driven scenario; linked card reinforces a concept but does not reuse this stem or choice set.",
+      "revisedBy": "/root",
+      "revisionReason": "Use actual initialization-order mistakes, not page-title or post-conversation nonsense."
+    },
+    {
+      "id": "ab250-d2-q02",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "contact-phone-identification",
+      "objectiveIds": [
+        "D2.3.02"
+      ],
+      "level": "advanced",
+      "author": "/root/pilot_d1_d2",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-s02",
+          "section": "Set up preconversation questions: Contact mapping",
+          "claim": "Contact Phone context maps to mobilephone.",
+          "applicability": "Standard contact mapping only; alternative field setup is outside this scenario."
+        }
+      ],
+      "duplicateCheck": "Original requirement-driven scenario; linked card reinforces a concept but does not reuse this stem or choice set.",
+      "revisedBy": "/root",
+      "revisionReason": "Test realistic confusion among contact/account phone fields; explicitly retain standard mapping scope."
+    },
+    {
+      "id": "ab250-d2-q03",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "portal-widget-location",
+      "objectiveIds": [
+        "D2.1.04"
+      ],
+      "level": "advanced",
+      "author": "/root/pilot_d1_d2",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-s05",
+          "section": "Embed chat widget in a website or Power Apps portal",
+          "claim": "Portal uses Chat Widget Code Value (HTML).",
+          "applicability": "Existing Power Apps portal and documented Portal Management workflow."
+        }
+      ],
+      "duplicateCheck": "Original requirement-driven scenario; linked card reinforces a concept but does not reuse this stem or choice set.",
+      "revisedBy": "/root",
+      "revisionReason": "Use portal configuration mistakes with an explicit integration distinction."
+    },
+    {
+      "id": "ab250-d2-q04",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "survey-consent-configuration",
+      "objectiveIds": [
+        "D2.1.06"
+      ],
+      "level": "advanced",
+      "author": "/root/pilot_d1_d2",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-s03",
+          "section": "Survey question, Answer type and Required",
+          "claim": "Consent question uses User consent and Required Yes.",
+          "applicability": "Chat survey configuration; no legal-compliance conclusion."
+        }
+      ],
+      "duplicateCheck": "Original requirement-driven scenario; linked card reinforces a concept but does not reuse this stem or choice set."
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+﻿[
+    {
+        "name":  "study-mobile",
+        "performance":  99,
+        "accessibility":  100,
+        "bestPractices":  100,
+        "seo":  91
+    },
+    {
+        "name":  "packs-mobile",
+        "performance":  99,
+        "accessibility":  100,
+        "bestPractices":  100,
+        "seo":  91
+    },
+    {
+        "name":  "cards-mobile",
+        "performance":  99,
+        "accessibility":  100,
+        "bestPractices":  100,
+        "seo":  91
+    },
+    {
+        "name":  "notes-mobile",
+        "performance":  99,
+        "accessibility":  100,
+        "bestPractices":  100,
+        "seo":  91
+    },
+    {
+        "name":  "mistakes-mobile",
+        "performance":  99,
+        "accessibility":  100,
+        "bestPractices":  100,
+        "seo":  91
+    },
+    {
+        "name":  "tests-mobile",
+        "performance":  99,
+        "accessibility":  100,
+        "bestPractices":  100,
+        "seo":  91
+    },
+    {
+        "name":  "statistics-mobile",
+        "performance":  99,
+        "accessibility":  100,
+        "bestPractices":  100,
+        "seo":  91
+    },
+    {
+        "name":  "settings-mobile",
+        "performance":  99,
+        "accessibility":  100,
+        "bestPractices":  100,
+        "seo":  91
+    },
+    {
+        "name":  "study-desktop",
+        "performance":  100,
+        "accessibility":  100,
+        "bestPractices":  100,
+        "seo":  91
+    },
+    {
+        "name":  "packs-desktop",
+        "performance":  100,
+        "accessibility":  100,
+        "bestPractices":  100,
+        "seo":  91
+    },
+    {
+        "name":  "cards-desktop",
+        "performance":  100,
+        "accessibility":  100,
+        "bestPractices":  100,
+        "seo":  91
+    },
+    {
+        "name":  "notes-desktop",
+        "performance":  100,
+        "accessibility":  100,
+        "bestPractices":  100,
+        "seo":  91
+    },
+    {
+        "name":  "mistakes-desktop",
+        "performance":  100,
+        "accessibility":  100,
+        "bestPractices":  100,
+        "seo":  91
+    },
+    {
+        "name":  "tests-desktop",
+        "performance":  100,
+        "accessibility":  100,
+        "bestPractices":  100,
+        "seo":  91
+    },
+    {
+        "name":  "statistics-desktop",
+        "performance":  100,
+        "accessibility":  100,
+        "bestPractices":  100,
+        "seo":  91
+    },
+    {
+        "name":  "settings-desktop",
+        "performance":  100,
+        "accessibility":  100,
+        "bestPractices":  100,
+        "seo":  91
+    }
+]

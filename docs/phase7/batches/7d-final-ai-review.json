@@ -1,0 +1,674 @@
+[
+  {
+    "id": "cc-d3-n03",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "f146e7a538db1c4a95c9f3ef252971602b3810131232794a94d6e7df67d76221",
+    "rationale": "Knowledge readiness and feature/source compatibility match the current matrix; case-summary exclusions are explicitly scoped to Customer Service.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s01",
+        "section": "Knowledge sources; Features supported with different knowledge sources",
+        "supported": true,
+        "notes": "Checked current source compatibility matrix and latest-published/UI-language knowledge requirements."
+      },
+      {
+        "sourceId": "cc-d3-final-s02",
+        "section": "Enable case summaries",
+        "supported": true,
+        "notes": "Checked Customer Service case-summary scope and Specify information to exclude fields."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-n04",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "5c06b7d9edd051ed47cf7964c29a1c5c545a70b878999f9756fcecb5d053fd33",
+    "rationale": "Current managed-agent extensibility is correctly labeled production-ready preview; analytics adoption is distinguished from response quality.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s03",
+        "section": "Enable Copilot Studio extensibility; Type of Copilot Studio extensibility; If you already use plugins or Copilot Studio knowledge",
+        "supported": true,
+        "notes": "Checked current Studio extension entry point, managed-agent restrictions, existing-plugin continuity and preview label."
+      },
+      {
+        "sourceId": "cc-d3-final-s04",
+        "section": "Usage; Filter and interpret the report; Prerequisites",
+        "supported": true,
+        "notes": "Checked standalone report availability, copied-response metric and adoption filters without inferring accuracy."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-n05",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "3cd1cde02efb795e7a9c576f53b6b988ca58a2c14db6b57d03132c0959d731c8",
+    "rationale": "Custom Azure Bot Service smart assist, application identity, workstream registration and response timing match the supported procedure; retired built-ins are excluded.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s05",
+        "section": "Prerequisites; Create an agent user; Add a smart assist agent to a workstream; Important note",
+        "supported": true,
+        "notes": "Checked custom assistant identity/workstream integration, post-representative-message timing and retired built-in warning."
+      },
+      {
+        "sourceId": "cc-d3-final-s06",
+        "section": "Prerequisites; Sample agent; Important",
+        "supported": true,
+        "notes": "Checked Azure Bot Service development route and limitations of legacy suggestion sample."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-n06",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "efc3cf90f93acb4807d98755fe7451fabe0ff10ca161d5e957987a5f8a7170cf",
+    "rationale": "Basic/classic and Real-time/generative configuration are distinguished; topic outputs and local/global DTMF input ownership match current standard-harness docs.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s07",
+        "section": "Turn on basic voice; Use voice variables",
+        "supported": true,
+        "notes": "Checked Basic/classic setup, separate Telephony activation and static restricted UUI Direct Routing transfer field."
+      },
+      {
+        "sourceId": "cc-d3-final-s08",
+        "section": "Agent-level DTMF recognition; Assign DTMF keys",
+        "supported": true,
+        "notes": "Checked local Question-node precedence, global single-key restrictions and multi-digit collection."
+      },
+      {
+        "sourceId": "cc-d3-final-s12",
+        "section": "Pass variables between topics and the language model",
+        "supported": true,
+        "notes": "Checked one-way selection, explicit topic outputs, voice ownership and audio-versus-meaning VAD controls."
+      },
+      {
+        "sourceId": "cc-d3-final-s17",
+        "section": "Voice capabilities; Prerequisites",
+        "supported": true,
+        "notes": "Checked voice-agent capability, orchestration and number/workstream/channel integration prerequisites."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-n07",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "6982f21eb25ac3dac710ace42abcdc9eeca3ca78556879d4d3dcf51e85380afc",
+    "rationale": "Sensitive-variable persistence, inbound consent setup and secure-contact capture are separate controls; the note does not promise end-to-end erasure or legal compliance.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s09",
+        "section": "Configure sensitive data masking; Limitations and scope; Mark context variables as sensitive",
+        "supported": true,
+        "notes": "Checked Question-node sensitivity, supported handling, Dataverse/external persistence and custom-logging limits."
+      },
+      {
+        "sourceId": "cc-d3-final-s10",
+        "section": "Prerequisites; Configure consent-based recording; Workstream setting; Transfers and consults",
+        "supported": true,
+        "notes": "Checked inbound-agent prerequisites, Conversation Start/topic publication, workstream dependency and silence/default capture caveat."
+      },
+      {
+        "sourceId": "cc-d3-final-s18",
+        "section": "Set up secure consult with and transfer to external contacts",
+        "supported": true,
+        "notes": "Checked secure-contact consult/bridge capture choices and prerequisites; availability label remains qualified."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-n08",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "d653213327c087e6f2403257897f0e04b86c22df4ce91faa25a68492a1641edd",
+    "rationale": "Static SIP UUI and variable-backed outgoing X-headers are correctly distinguished, with Direct Routing and incoming prefix normalization scoped.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s07",
+        "section": "Transfer a call to a representative or external phone number",
+        "supported": true,
+        "notes": "Checked Basic/classic setup, separate Telephony activation and static restricted UUI Direct Routing transfer field."
+      },
+      {
+        "sourceId": "cc-d3-final-s11",
+        "section": "Prerequisites; Configure incoming X-headers; Configure outgoing X-headers",
+        "supported": true,
+        "notes": "Checked Direct Routing, incoming schema normalization and outgoing variable-backed external transfer entries."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-n09",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "dab58abc94021d22fa96aa2d1fff032e22e82b4ad36e07bdd63c211061a41587",
+    "rationale": "One-way Real-time choice, Studio voice ownership and server/semantic VAD differences are supported; tenant/model/language limitations are retained.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s12",
+        "section": "Set up and enable real-time agents; Agent voice; Speech sensitivity",
+        "supported": true,
+        "notes": "Checked one-way selection, explicit topic outputs, voice ownership and audio-versus-meaning VAD controls."
+      },
+      {
+        "sourceId": "cc-d3-final-s13",
+        "section": "The basics; Technical limitations, operational factors and ranges",
+        "supported": true,
+        "notes": "Checked real-time architecture, operational/turn-taking limitations and deployment testing requirements."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-n10",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "960f1d973426ceb39db43eb3530d31691d1046c31fa64bf50869306a9d54554a",
+    "rationale": "Actual handoff requires the transfer node and connected hub; maintained translations and voice-region publication are separate deployment tasks.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s14",
+        "section": "Configure the Escalate system topic; Explicit triggers",
+        "supported": true,
+        "notes": "Checked connected engagement hub, explicit handoff and Transfer conversation action."
+      },
+      {
+        "sourceId": "cc-d3-final-s15",
+        "section": "Manage localization; Update localized content; Make an agent switch to another language",
+        "supported": true,
+        "notes": "Checked authored-string translation ownership and incremental localization maintenance."
+      },
+      {
+        "sourceId": "cc-d3-final-s16",
+        "section": "Change the region for an agent’s primary language; Voice support",
+        "supported": true,
+        "notes": "Checked voice region change requires republishing recognition and possible TTS/workstream adjustments."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-c07",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "a63b1ed112d77cf3e610f798899fdef4cffd2ae41bcd9a53ec73b5c28de39ca1",
+    "rationale": "The named exclusion setting is supported for Customer Service case summaries, without claiming standalone case support.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s02",
+        "section": "Enable case summaries",
+        "supported": true,
+        "notes": "Checked Customer Service case-summary scope and Specify information to exclude fields."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-c08",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "1fdc9eb8e998c35698daa2d8743e7759998b51e183a286b0c1a3183f2a910ae1",
+    "rationale": "Latest published article readiness and matching UI language are documented knowledge-base requirements.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s01",
+        "section": "Knowledge sources; Features supported with different knowledge sources",
+        "supported": true,
+        "notes": "Checked current source compatibility matrix and latest-published/UI-language knowledge requirements."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-c09",
+    "revision": 2,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "a91716cb413d2a67678afd27b13ac1bfc8e36f42e84a23a1cd4ff76d6c399bf4",
+    "rationale": "Revision 2 replaces unrelated choices with adjacent source and feature configurations; only supported Ask a question source paths satisfy the matrix.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s01",
+        "section": "Knowledge sources; Features supported with different knowledge sources",
+        "supported": true,
+        "notes": "Checked current source compatibility matrix and latest-published/UI-language knowledge requirements."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-c10",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "18169a8c5930edc86daad47246329d3bfcdf29759fb42ffb496ecadfb9be9942",
+    "rationale": "The current extension entry point and preview status match the linked managed-agent procedure, rather than obsolete plugin UI.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s03",
+        "section": "Enable Copilot Studio extensibility; Type of Copilot Studio extensibility; If you already use plugins or Copilot Studio knowledge",
+        "supported": true,
+        "notes": "Checked current Studio extension entry point, managed-agent restrictions, existing-plugin continuity and preview label."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-c11",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "b3b2412c9829ffc94f8984eec8577aa4daa11033d6ff4af7c5b04d40aa2affd2",
+    "rationale": "The copied-text metric definition is correct; it does not establish correctness or resolution.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s04",
+        "section": "Usage; Filter and interpret the report; Prerequisites",
+        "supported": true,
+        "notes": "Checked standalone report availability, copied-response metric and adoption filters without inferring accuracy."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-c12",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "5532a94ae7e1c378ddd874db941b0fc78d86c7f5ccc00d0feb5bdc2cc509cc4b",
+    "rationale": "The best answer makes only the measured adoption comparison; alternatives overclaim accuracy, resolution or user identity from counts.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s04",
+        "section": "Usage; Filter and interpret the report; Prerequisites",
+        "supported": true,
+        "notes": "Checked standalone report availability, copied-response metric and adoption filters without inferring accuracy."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-c13",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "1f38b3021641e4605e7f8f843d24bfd50b4004b025c7eff769a0a009ddc414a1",
+    "rationale": "Azure Bot Service is the documented custom smart-assist development dependency; Copilot Studio is not a supported substitute in that procedure.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s06",
+        "section": "Prerequisites; Sample agent; Important",
+        "supported": true,
+        "notes": "Checked Azure Bot Service development route and limitations of legacy suggestion sample."
+      },
+      {
+        "sourceId": "cc-d3-final-s05",
+        "section": "Prerequisites; Create an agent user; Add a smart assist agent to a workstream; Important note",
+        "supported": true,
+        "notes": "Checked custom assistant identity/workstream integration, post-representative-message timing and retired built-in warning."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-c14",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "34f687ce00202e9900cc2cde9f138bad9d48805ac0d8baf4bb30dd6fa7ccceec",
+    "rationale": "The assistant uses an application user with Omnichannel agent role, distinct from a human representative account.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s05",
+        "section": "Prerequisites; Create an agent user; Add a smart assist agent to a workstream; Important note",
+        "supported": true,
+        "notes": "Checked custom assistant identity/workstream integration, post-representative-message timing and retired built-in warning."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-c15",
+    "revision": 2,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "d05d088dcc281b4f6dfd5fb1a2e22ed98c59948251c709841764ed31e2af22bc",
+    "rationale": "Revision 2 compares runtime timing with premature re-registration and closure checks; a representative message is the documented display trigger.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s05",
+        "section": "Prerequisites; Create an agent user; Add a smart assist agent to a workstream; Important note",
+        "supported": true,
+        "notes": "Checked custom assistant identity/workstream integration, post-representative-message timing and retired built-in warning."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-c16",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "08284e3786f15288e893bee7a17572622ea22cf025ce082c5d045dd0613365f5",
+    "rationale": "Basic voice fits the stated predefined classic topic flow; authoring voice and provisioning Telephony remain distinct.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s07",
+        "section": "Turn on basic voice; Use voice variables",
+        "supported": true,
+        "notes": "Checked Basic/classic setup, separate Telephony activation and static restricted UUI Direct Routing transfer field."
+      },
+      {
+        "sourceId": "cc-d3-final-s17",
+        "section": "Voice capabilities; Prerequisites",
+        "supported": true,
+        "notes": "Checked voice-agent capability, orchestration and number/workstream/channel integration prerequisites."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-c17",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "eb49d48e891ef15ffa8f6d8e9bb0d792857782a4f075c48ad9a6064efdefa20a",
+    "rationale": "Only explicitly declared outputs return to the real-time model as structured topic output, rather than every internal variable.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s12",
+        "section": "Pass variables between topics and the language model",
+        "supported": true,
+        "notes": "Checked one-way selection, explicit topic outputs, voice ownership and audio-versus-meaning VAD controls."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-c18",
+    "revision": 2,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "79ff6acac594f0efc319155357fbd7238aeb14a7b414bc1536905a7b5552127e",
+    "rationale": "Revision 2 compares local collection versus global interruption/dual dispatch. Multi-digit Question input prevents the global trigger in the stated case.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s08",
+        "section": "Agent-level DTMF recognition; Assign DTMF keys",
+        "supported": true,
+        "notes": "Checked local Question-node precedence, global single-key restrictions and multi-digit collection."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-c19",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "4c853df63a1409a546e9cc81f7e91c9278d59240b28d1bea48c71f84d7917714",
+    "rationale": "Sensitive data does not prevent Dataverse or external persistence; the card avoids an unsupported guarantee of deletion.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s09",
+        "section": "Configure sensitive data masking; Limitations and scope; Mark context variables as sensitive",
+        "supported": true,
+        "notes": "Checked Question-node sensitivity, supported handling, Dataverse/external persistence and custom-logging limits."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-c20",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "eeb8c81e97dffd298c36769fdbbdcd4aa1b24a69a499df5b6e848800c3e6d47b",
+    "rationale": "The workstream toggle alone does not author a prompt; Conversation Start invocation and publication are required in the inbound-agent feature.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s10",
+        "section": "Prerequisites; Configure consent-based recording; Workstream setting; Transfers and consults",
+        "supported": true,
+        "notes": "Checked inbound-agent prerequisites, Conversation Start/topic publication, workstream dependency and silence/default capture caveat."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-c21",
+    "revision": 2,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "36df236e3bd968a70b39554e62901697b2dbff4f1ee5384c5c4ab158cb6fddc1",
+    "rationale": "Revision 2 distinguishes both capture channels and both contact phases; audio-only or consult-only overrides cannot satisfy the complete requirement.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s18",
+        "section": "Set up secure consult with and transfer to external contacts",
+        "supported": true,
+        "notes": "Checked secure-contact consult/bridge capture choices and prerequisites; availability label remains qualified."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-c22",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "1197120010f4a9e88302e6f31485cb826258a2789f6502b0448228d12be5617d",
+    "rationale": "The documented UUI transfer field is static; the separate outgoing X-header mechanism is not incorrectly restricted.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s07",
+        "section": "Transfer a call to a representative or external phone number",
+        "supported": true,
+        "notes": "Checked Basic/classic setup, separate Telephony activation and static restricted UUI Direct Routing transfer field."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-c23",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "99d0fade7d1b8f9450c76f5abc44e1f044a7a548b28f2d0cbcc3c0cf955ee0a8",
+    "rationale": "The lowercase x- normalization is supported without asserting lowercasing of the entire header name.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s11",
+        "section": "Prerequisites; Configure incoming X-headers; Configure outgoing X-headers",
+        "supported": true,
+        "notes": "Checked Direct Routing, incoming schema normalization and outgoing variable-backed external transfer entries."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-c24",
+    "revision": 2,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "8b21bfe458c1c2a04ea38e92f949d9647be5054dd984b8025e0bfe8e43d82acf",
+    "rationale": "Revision 2 distinguishes outgoing configuration from incoming parsing and static UUI. Only the outgoing X-header entry supports the stated runtime metadata.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s07",
+        "section": "Transfer a call to a representative or external phone number",
+        "supported": true,
+        "notes": "Checked Basic/classic setup, separate Telephony activation and static restricted UUI Direct Routing transfer field."
+      },
+      {
+        "sourceId": "cc-d3-final-s11",
+        "section": "Prerequisites; Configure incoming X-headers; Configure outgoing X-headers",
+        "supported": true,
+        "notes": "Checked Direct Routing, incoming schema normalization and outgoing variable-backed external transfer entries."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-c25",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "a1bf22bd2b3fd454f5dfbbc864e5fe9a18967f7a678a9d8400076d7dd94e97c7",
+    "rationale": "Real-time selection cannot revert to Basic in place; creating a new agent is the documented lifecycle requirement.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s12",
+        "section": "Set up and enable real-time agents; Agent voice; Speech sensitivity",
+        "supported": true,
+        "notes": "Checked one-way selection, explicit topic outputs, voice ownership and audio-versus-meaning VAD controls."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-c26",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "ade4e5d97f537c0b6b552b6caeedffe04570619f20a09304cbe80927068479ee",
+    "rationale": "The connected agent uses its Copilot Studio voice; the admin-center setting does not override it.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s12",
+        "section": "Set up and enable real-time agents; Agent voice; Speech sensitivity",
+        "supported": true,
+        "notes": "Checked one-way selection, explicit topic outputs, voice ownership and audio-versus-meaning VAD controls."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-c27",
+    "revision": 2,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "b2dfee74dfffafc710e8459719924c3477b698fd34b618be73c7f2925b66dacb",
+    "rationale": "Revision 2 compares actual turn-taking controls and output-only changes. Semantic VAD uniquely uses sentence meaning in the stated design.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s12",
+        "section": "Set up and enable real-time agents; Agent voice; Speech sensitivity",
+        "supported": true,
+        "notes": "Checked one-way selection, explicit topic outputs, voice ownership and audio-versus-meaning VAD controls."
+      },
+      {
+        "sourceId": "cc-d3-final-s13",
+        "section": "The basics; Technical limitations, operational factors and ranges",
+        "supported": true,
+        "notes": "Checked real-time architecture, operational/turn-taking limitations and deployment testing requirements."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-c28",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "61c42da524397b7e5efb1d9953de8858536f16234082574a478ef82e1af4e453",
+    "rationale": "Transfer conversation initiates actual handoff; an announcement alone does not invoke a connected engagement hub.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s14",
+        "section": "Configure the Escalate system topic; Explicit triggers",
+        "supported": true,
+        "notes": "Checked connected engagement hub, explicit handoff and Transfer conversation action."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-c29",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "cc1a11d90f3a7b4711091208031c31093b40ad1cc7093459ca7355d6ed35f512",
+    "rationale": "Authored secondary-language strings need maintenance after primary-string changes; generated multilingual capability does not maintain these files.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s15",
+        "section": "Manage localization; Update localized content; Make an agent switch to another language",
+        "supported": true,
+        "notes": "Checked authored-string translation ownership and incremental localization maintenance."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-c30",
+    "revision": 2,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "d1f47cb5e8654c7e70f35be0768b491273f9eb8a6f75def24bdcbf5be84d0c5e",
+    "rationale": "Revision 2 compares save, TTS and browser changes with publishing. Republishing deploys the new recognition model after the region change.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-final-s16",
+        "section": "Change the region for an agent’s primary language; Voice support",
+        "supported": true,
+        "notes": "Checked voice region change requires republishing recognition and possible TTS/workstream adjustments."
+      }
+    ]
+  }
+]

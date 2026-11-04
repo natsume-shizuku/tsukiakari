@@ -1,0 +1,63 @@
+[
+  {
+    "id": "cc-d1-n05",
+    "reason": "Preserve the current English-only Service Operations Agent scope from the supported-capabilities note.",
+    "changes": {
+      "body": "Service Operations Agent helps Contact Center administrators configure, inspect and validate the environment using natural language in English. It can manage common components such as queues and workstreams. The conversational interface assists an administrator; it does not remove the need to understand the change being made.\n\nFor access, Microsoft specifies the Omnichannel administrator role. Managing Power Apps and MCP connections requires System Administrator. The prerequisites also include consumption-based billing; troubleshooting during setup requires Application Insights configured and connected. Conversational setup needs a Dataverse connection through the MCP server. Check this connection when the agent cannot retrieve information or perform supported actions.\n\nTool support has boundaries. The documented tools can create route-to-queue rules without conditions, but adding or editing rule conditions is a manual Copilot Service admin center task. Custom assignment and several other ruleset types also fall outside these tools. Provide precise names and channel context, review proposed changes and verify the resulting configuration. If an operation is unsupported, use its manual administration path instead of repeatedly rephrasing a prompt or escalating permissions without evidence."
+    }
+  },
+  {
+    "id": "cc-d1-c09",
+    "reason": "Replace implausible scheduled-deactivation/global-plan distractors with plausible attempts to manage agent settings through plan operations.",
+    "changes": {
+      "prompt": "After a Customer Knowledge Management Agent pilot, an administrator deactivates its rollout plan. The corresponding agent setting remains enabled. Which next step addresses that setting through the documented configuration boundary?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Delete the rollout plan instead of deactivating it."
+        },
+        {
+          "id": "b",
+          "text": "Remove the agent from a multi-agent rollout plan."
+        },
+        {
+          "id": "c",
+          "text": "Manage the agent setting on its corresponding administration settings page."
+        },
+        {
+          "id": "d",
+          "text": "Create an inactive replacement rollout plan for the same agent."
+        }
+      ],
+      "answer": "Manage the agent setting on its corresponding administration settings page.",
+      "explanation": "Knowledge and Intent agent settings remain independent of rollout-plan deactivation or deletion. Use the corresponding agent administration page to manage the setting. Further plan changes do not substitute for that configuration; Case Management rules have a different documented lifecycle."
+    }
+  },
+  {
+    "id": "cc-d1-c12",
+    "reason": "Test the DTMF boundary against supported simulation activities instead of implausible false channel/concurrency claims.",
+    "changes": {
+      "prompt": "A team plans an agentic simulation preview for an English inbound voice journey. Which planned activity falls outside the documented simulation support?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Call the configured number of the receiving workstream."
+        },
+        {
+          "id": "b",
+          "text": "Enter keypad digits through DTMF."
+        },
+        {
+          "id": "c",
+          "text": "Run a single inbound conversation."
+        },
+        {
+          "id": "d",
+          "text": "Inspect the transcript in the closed conversation form."
+        }
+      ],
+      "answer": "Enter keypad digits through DTMF.",
+      "explanation": "The preview supports the other listed activities, but not DTMF. Testing a supported spoken conversation cannot validate a keypad-dependent branch."
+    }
+  }
+]

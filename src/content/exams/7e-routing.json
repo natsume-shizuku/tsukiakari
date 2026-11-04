@@ -1,0 +1,2696 @@
+{
+  "sources": [
+    {
+      "id": "exam-d4-s01",
+      "title": "Create and manage queues for unified routing",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/queues-omnichannel"
+    },
+    {
+      "id": "exam-d4-s02",
+      "title": "Manage overflow of work items in queues",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/manage-overflow"
+    },
+    {
+      "id": "exam-d4-s03",
+      "title": "Create and manage operating hours",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-operating-hours"
+    },
+    {
+      "id": "exam-d4-s04",
+      "title": "Create and manage workstreams",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-workstreams"
+    },
+    {
+      "id": "exam-d4-s05",
+      "title": "Configure work classification rulesets",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-work-classification"
+    },
+    {
+      "id": "exam-d4-s06",
+      "title": "Configure the engagement agent",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-routing-contact-center/3-configure-engagement-agent"
+    },
+    {
+      "id": "exam-d4-s07",
+      "title": "Understand how skill match algorithm works",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/set-up-skill-based-routing"
+    },
+    {
+      "id": "exam-d4-s08",
+      "title": "Set up intelligent skill finder model",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/set-up-isf-model"
+    },
+    {
+      "id": "exam-d4-s09",
+      "title": "Configure intent-driven routing (preview)",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-intent-driven-routing"
+    },
+    {
+      "id": "exam-d4-s10",
+      "title": "Configure routing to preferred or previously engaged representatives",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-preferred-agent"
+    },
+    {
+      "id": "exam-d4-s11",
+      "title": "Set up unified routing for records",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/set-up-record-routing"
+    },
+    {
+      "id": "exam-d4-s12",
+      "title": "Route cases using basic routing rulesets",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-rules-automatically-route-cases"
+    },
+    {
+      "id": "exam-d4-s13",
+      "title": "Configure conversation diagnostics",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-conversation-diagnostics"
+    },
+    {
+      "id": "exam-d4-s14",
+      "title": "Understand conversation diagnostics data",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/conversation-diagnostics-subscenarios"
+    },
+    {
+      "id": "exam-d4-s15",
+      "title": "FAQ about unified routing",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/unified-routing-faqs"
+    },
+    {
+      "id": "exam-d4-s16",
+      "title": "Assignment methods in unified routing",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/assignment-methods"
+    }
+  ],
+  "questions": [
+    {
+      "id": "ab250-d4-q05",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.1.01"
+      ],
+      "conceptId": "queue-channel-eligibility-diagnosis",
+      "prompt": "An administrator creates an advanced Record queue for a new service team. It is visible in the queue list but absent when configuring a live-chat workstream's route-to-queue destination. What change addresses the selection mismatch?",
+      "answer": "Use a Messaging queue for the live-chat destination.",
+      "explanation": "The destination picker reflects the workstream channel type, independently of assignment policy.",
+      "sourceIds": [
+        "exam-d4-s01"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:queue-channel-eligibility-diagnosis"
+      ],
+      "options": [
+        {
+          "id": "c",
+          "text": "Replace the queue's assignment method with round robin."
+        },
+        {
+          "id": "b",
+          "text": "Raise the Record queue's priority."
+        },
+        {
+          "id": "a",
+          "text": "Use a Messaging queue for the live-chat destination."
+        },
+        {
+          "id": "d",
+          "text": "Attach an operating-hours record to the Record queue."
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "optionExplanations": {
+        "a": "Only channel-compatible Messaging queues are selectable for live chat.",
+        "b": "Priority does not change the queue type.",
+        "c": "Assignment strategy does not change channel compatibility.",
+        "d": "Hours do not make a Record queue a live-chat destination."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n03"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q06",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.1.02"
+      ],
+      "conceptId": "cross-queue-business-priority",
+      "prompt": "The same eligible representatives serve urgent and routine queues. Routine work is being considered ahead of urgent work because its queue has priority 1 and the urgent queue has priority 4. The team wants urgent work considered first across the queues. What is the targeted change?",
+      "answer": "Assign the urgent queue a smaller priority number than the routine queue.",
+      "explanation": "Configure the queue-level competition policy separately from prioritizing items inside one queue.",
+      "sourceIds": [
+        "exam-d4-s01",
+        "exam-d4-s16"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:cross-queue-business-priority"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Only increase urgency within the routine queue's custom item rules."
+        },
+        {
+          "id": "d",
+          "text": "Change both queues to Pick while retaining the same priorities."
+        },
+        {
+          "id": "c",
+          "text": "Give the urgent queue a larger number than 4."
+        },
+        {
+          "id": "b",
+          "text": "Assign the urgent queue a smaller priority number than the routine queue."
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "optionExplanations": {
+        "a": "Within-queue ranking does not implement the requested cross-queue policy.",
+        "b": "Smaller numbers give the queue higher cross-queue priority.",
+        "c": "That moves the priority in the wrong direction.",
+        "d": "Distribution mode does not implement this automatic cross-queue priority correction."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n03"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q07",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.1.02"
+      ],
+      "conceptId": "equal-custom-queue-priority-tiebreak",
+      "prompt": "Two queues use custom prioritization rules and share the same queue priority. An administrator renames one queue and notices their cross-queue order changes. Business policy requires an explicit stable preference. What should be configured?",
+      "answer": "Give the custom-prioritization queues distinct queue priorities.",
+      "explanation": "Express the intended cross-queue preference directly rather than relying on alphabetical tie behavior.",
+      "sourceIds": [
+        "exam-d4-s16"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:equal-custom-queue-priority-tiebreak"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Rely on the oldest item across both custom queues."
+        },
+        {
+          "id": "b",
+          "text": "Make the queue names identical to force the desired order."
+        },
+        {
+          "id": "c",
+          "text": "Only reverse the item rule order inside the lower-priority queue."
+        },
+        {
+          "id": "d",
+          "text": "Give the custom-prioritization queues distinct queue priorities."
+        }
+      ],
+      "correctOptionIds": [
+        "d"
+      ],
+      "optionExplanations": {
+        "a": "That FIFO cross-queue rule applies to queues using default FIFO ordering.",
+        "b": "Names do not express the required stable business preference.",
+        "c": "That changes its internal ordering, not the equal-priority queue tie.",
+        "d": "Equal-priority custom queues can be ordered alphabetically; distinct priorities avoid that tie."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n03"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q08",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.1.04"
+      ],
+      "conceptId": "asynchronous-fifo-time-basis",
+      "prompt": "An unresolved WhatsApp conversation was created on Monday, entered Waiting after service, and received a new customer message Thursday afternoon. Other customers have waited since Thursday morning. With default FIFO, why does the returning conversation not take precedence solely because it was created Monday?",
+      "answer": "Asynchronous messaging priority uses the last interaction time.",
+      "explanation": "Use the appropriate channel time basis when interpreting default FIFO ordering.",
+      "sourceIds": [
+        "exam-d4-s16"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:asynchronous-fifo-time-basis"
+      ],
+      "options": [
+        {
+          "id": "c",
+          "text": "Asynchronous messaging priority uses the last interaction time."
+        },
+        {
+          "id": "b",
+          "text": "Every returning conversation is always placed after all new conversations regardless of interaction time."
+        },
+        {
+          "id": "a",
+          "text": "A Waiting conversation keeps its original front-of-queue position whenever the customer returns."
+        },
+        {
+          "id": "d",
+          "text": "WhatsApp uses the record-queue time at which a live work item was created."
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "optionExplanations": {
+        "a": "The documented default asynchronous FIFO considers the new last interaction instead.",
+        "b": "The rule compares relevant interaction timestamps, not a universal returning-versus-new category.",
+        "c": "The Thursday afternoon interaction follows the other customers' Thursday morning interactions.",
+        "d": "The guide distinguishes asynchronous last-interaction ordering from record routed-time ordering."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n03"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q09",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.1.04"
+      ],
+      "conceptId": "least-active-signin-misdiagnosis",
+      "prompt": "Two messaging representatives have matching skills, allowed presence and available capacity, with the same concurrent workload. One signed in earlier, but released conversation capacity more recently. Under least-active assignment, which timestamp should the administrator inspect rather than assuming the earlier sign-in wins?",
+      "answer": "The representative's last capacity-release time across voice and messaging.",
+      "explanation": "Diagnose the assignment method using its activity signal after controlling for workload and eligibility.",
+      "sourceIds": [
+        "exam-d4-s15",
+        "exam-d4-s16"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:least-active-signin-misdiagnosis"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "The representative's last sign-in time."
+        },
+        {
+          "id": "b",
+          "text": "The representative's last capacity-release time across voice and messaging."
+        },
+        {
+          "id": "c",
+          "text": "Only the representative's last assignment timestamp in this queue."
+        },
+        {
+          "id": "d",
+          "text": "The timestamp when the representative was first added to the queue."
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "optionExplanations": {
+        "a": "The FAQ says sign-in time does not determine the capacity-release timestamp used for this calculation.",
+        "b": "The documented least-active calculation uses capacity-release timing, not sign-in time.",
+        "c": "Queue-local assignment ordering is associated with round robin, not this least-active comparison.",
+        "d": "That can seed round-robin ordering but is not the least-active signal in this scenario."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n03"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q10",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.1.01"
+      ],
+      "conceptId": "empty-queue-channel-outcome",
+      "prompt": "Messaging conversations close automatically after reaching their intended queue, while cases remain unassigned in their intended Record queue. Queue types and route outputs are verified; the intended representatives have allowed presence and available capacity. Before changing working route rules, which staffing configuration should be checked?",
+      "answer": "Verify that the intended representatives are actually members of each target queue.",
+      "explanation": "Queue selection alone is insufficient; verify the eligible membership pool and interpret channel-specific empty-queue outcomes.",
+      "sourceIds": [
+        "exam-d4-s15",
+        "exam-d4-s01"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:empty-queue-channel-outcome"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Increase the already available representative capacity without checking queue membership."
+        },
+        {
+          "id": "b",
+          "text": "Reorder the intake rules even though their destination outputs are already correct."
+        },
+        {
+          "id": "c",
+          "text": "Lengthen assignment-notification timeouts before checking whether the queues contain the intended users."
+        },
+        {
+          "id": "d",
+          "text": "Verify that the intended representatives are actually members of each target queue."
+        }
+      ],
+      "correctOptionIds": [
+        "d"
+      ],
+      "optionExplanations": {
+        "a": "Available capacity alone does not place a representative in the target queue's pool.",
+        "b": "The observed destination is confirmed; intake ordering is not the first staffing check.",
+        "c": "The documented empty-queue outcome should be checked before assuming declined/timed-out offers.",
+        "d": "The FAQ describes different empty-queue outcomes for conversations and records; queue membership is a separate staffing requirement."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n03"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q11",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.1.03"
+      ],
+      "conceptId": "queued-overflow-versus-prequeue-average",
+      "prompt": "A voice queue accepts calls normally, but some callers then wait too long after declined offers. The requirement is to act on each caller's actual queued wait and keep the caller connected by moving them elsewhere. Which TWO settings form the supported queued-overflow configuration? Choose TWO.",
+      "answer": "Use Waiting time in queue exceeds under When work items are queued. Use Transfer to a different queue as the action.",
+      "explanation": "Choose the waiting-stage condition and a compatible rerouting action, not the earlier average-wait admission check.",
+      "sourceIds": [
+        "exam-d4-s02",
+        "exam-d4-s01"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:queued-overflow-versus-prequeue-average"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Use Waiting time in queue exceeds under When work items are queued."
+        },
+        {
+          "id": "b",
+          "text": "Use a prequeue Average wait time condition instead."
+        },
+        {
+          "id": "c",
+          "text": "Use Transfer to a different queue as the action."
+        },
+        {
+          "id": "d",
+          "text": "Use a workstream fallback queue as the wait threshold."
+        },
+        {
+          "id": "e",
+          "text": "Use a Record queue as the destination for the voice call."
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "c"
+      ],
+      "optionExplanations": {
+        "a": "That evaluates waiting after the item is queued.",
+        "b": "That evaluates an estimate before entry, not this caller's actual later wait.",
+        "c": "That is supported for voice queued overflow.",
+        "d": "Fallback handles routing errors/no match rather than a queued-wait threshold.",
+        "e": "Queue type must remain compatible with voice."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n04"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q12",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.1.03"
+      ],
+      "conceptId": "overflow-transfer-check-boundary",
+      "prompt": "A voice queue's prequeue overflow action transfers calls to a second queue. The design assumes that transfer automatically starts another full prequeue check on the destination, continuing through a chain. Which documented behavior must be considered?",
+      "answer": "Prequeue overflow checks run once before entry; an overflow transfer does not trigger another prequeue check.",
+      "explanation": "Do not design a chained admission policy around an automatic second prequeue evaluation.",
+      "sourceIds": [
+        "exam-d4-s02"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:overflow-transfer-check-boundary"
+      ],
+      "options": [
+        {
+          "id": "c",
+          "text": "The destination's queued-wait rule is the same check and must run before the item enters it."
+        },
+        {
+          "id": "b",
+          "text": "An overflow transfer always repeats prequeue checks until a non-overflowing destination is found."
+        },
+        {
+          "id": "a",
+          "text": "Prequeue overflow checks run once before entry; an overflow transfer does not trigger another prequeue check."
+        },
+        {
+          "id": "d",
+          "text": "Supervisor transfer repeats destination prequeue evaluation even though an overflow transfer does not."
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "optionExplanations": {
+        "a": "The documented transfer path bypasses further prequeue overflow evaluation.",
+        "b": "The guide states the prequeue check is not repeated on an overflow transfer.",
+        "c": "Queued-wait handling is separate from the one-time prequeue evaluation.",
+        "d": "The guide also excludes further prequeue checks on supervisor assignment/transfer."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n04"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q13",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.1.03"
+      ],
+      "conceptId": "fallback-path-overflow-expectation",
+      "prompt": "A work item reaches the fallback queue because no route-to-queue rule matches. That queue has an after-hours overflow action, but the work item is still assigned to it. The team proposes adding more overflow conditions there. What should be corrected first in the design assumption?",
+      "answer": "This fallback path ignores the fallback queue's overflow settings.",
+      "explanation": "Resolve the route-rule coverage or fallback design; extra overflow conditions will not change this documented path.",
+      "sourceIds": [
+        "exam-d4-s01",
+        "exam-d4-s02"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:fallback-path-overflow-expectation"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "The fallback must run its after-hours prequeue action first because hours conditions precede other overflow conditions."
+        },
+        {
+          "id": "b",
+          "text": "No-match fallback and an ordinary matched route evaluate the same overflow contract just because they name the same queue."
+        },
+        {
+          "id": "d",
+          "text": "The fallback's queued-wait threshold must be increased to make its initial after-hours action run."
+        },
+        {
+          "id": "c",
+          "text": "This fallback path ignores the fallback queue's overflow settings."
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "optionExplanations": {
+        "a": "The hours priority applies inside overflow handling, but this error/no-match fallback path ignores overflow settings.",
+        "b": "The guide explicitly scopes the ignored-overflow exception to routing errors or no matching route rule.",
+        "c": "The no-match/error fallback path overrides those settings.",
+        "d": "Queued waiting and initial fallback admission are different controls; changing a waiting threshold does not undo this fallback exception."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n04"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q14",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.1.05",
+        "D4.1.03"
+      ],
+      "conceptId": "afterhours-default-action-diagnosis",
+      "prompt": "An administrator associates a business-hours record with a queue and verifies its timezone. Calls outside those hours still join the queue. No custom overflow action was selected. What is the most targeted next check?",
+      "answer": "Inspect the default out-of-operating-hours action, which is Assign to queue anyway.",
+      "explanation": "A calendar supplies the condition; its selected action determines how an out-of-hours arrival is handled.",
+      "sourceIds": [
+        "exam-d4-s02",
+        "exam-d4-s04"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:afterhours-default-action-diagnosis"
+      ],
+      "options": [
+        {
+          "id": "b",
+          "text": "Inspect the default out-of-operating-hours action, which is Assign to queue anyway."
+        },
+        {
+          "id": "a",
+          "text": "Change only representative skill proficiency."
+        },
+        {
+          "id": "c",
+          "text": "Assume the operating-hours record automatically disables the queue."
+        },
+        {
+          "id": "d",
+          "text": "Replace the voice workstream with a Pick workstream."
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "optionExplanations": {
+        "a": "Proficiency does not determine the after-hours action.",
+        "b": "Adding hours creates that default action; select a different supported action when required.",
+        "c": "Hours do not by themselves choose rejection or transfer.",
+        "d": "Voice uses Push; distribution mode does not fix the default after-hours action."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n04"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q15",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.1.05"
+      ],
+      "conceptId": "holiday-timezone-calendar-test",
+      "prompt": "A support queue must follow local business time across daylight-saving changes and close for one public holiday while retaining its normal weekly recurrence. Which TWO calendar changes best satisfy that schedule? Choose TWO.",
+      "answer": "Choose the applicable timezone for the recurring work hours. Add a Holiday entry for the required date or date range.",
+      "explanation": "Model recurring local time and the exceptional closure separately, then test the queue's supported after-hours action.",
+      "sourceIds": [
+        "exam-d4-s03"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:holiday-timezone-calendar-test"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Change the queue priority on the holiday."
+        },
+        {
+          "id": "b",
+          "text": "Remove all recurring work hours permanently."
+        },
+        {
+          "id": "c",
+          "text": "Use a fixed UTC offset and manually assume it follows local daylight saving."
+        },
+        {
+          "id": "d",
+          "text": "Choose the applicable timezone for the recurring work hours."
+        },
+        {
+          "id": "e",
+          "text": "Add a Holiday entry for the required date or date range."
+        }
+      ],
+      "correctOptionIds": [
+        "d",
+        "e"
+      ],
+      "optionExplanations": {
+        "a": "Priority is not a holiday closure.",
+        "b": "That discards the normal weekly schedule.",
+        "c": "A fixed offset does not express the selected timezone's seasonal rules.",
+        "d": "The calendar accounts for daylight saving for that timezone.",
+        "e": "That records the exceptional nonavailability without deleting weekly hours."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n04"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q16",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.1.05"
+      ],
+      "conceptId": "calendar-migration-verification",
+      "prompt": "A team moves routing configuration to another environment and assumes the queue's calendar working hours will arrive through ordinary export/import. The target queue behaves as continuously available. Which deployment task should the checklist include?",
+      "answer": "Manually set up and verify the work hours in the target environment, then associate the intended schedule.",
+      "explanation": "Validate the actual target calendar and its queue association rather than equating configuration import with schedule deployment.",
+      "sourceIds": [
+        "exam-d4-s03",
+        "exam-d4-s01"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:calendar-migration-verification"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Manually set up and verify the work hours in the target environment, then associate the intended schedule."
+        },
+        {
+          "id": "b",
+          "text": "Associate only the source calendar identifier and assume its working hours are recreated by that reference."
+        },
+        {
+          "id": "c",
+          "text": "Copy the queue configuration and assume its calendar reference proves the target working-hour data exists."
+        },
+        {
+          "id": "d",
+          "text": "Create target working hours but leave them unassociated with the queue."
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "optionExplanations": {
+        "a": "The calendar guide says Calendar cannot be migrated by those export/import options.",
+        "b": "A reference alone does not satisfy the documented need to set up work hours manually.",
+        "c": "The target calendar and actual work hours need validation, not only the queue reference.",
+        "d": "The schedule must also be selected for the queue to govern availability."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n04"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q17",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.01"
+      ],
+      "conceptId": "shared-workstream-policy-boundary",
+      "prompt": "Two live-chat widgets share one workstream. A rollout now requires different allowed-presence and work-distribution policies for the two services. Each widget must retain its own policy even when representatives serve both. Which design change establishes an independent work-distribution boundary?",
+      "answer": "Use separate workstreams for the services requiring different work-distribution settings.",
+      "explanation": "Separate the workstreams when the services need independent work-distribution policies; channel/widget variations do not split that shared configuration.",
+      "sourceIds": [
+        "exam-d4-s04"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:shared-workstream-policy-boundary"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Use separate workstreams for the services requiring different work-distribution settings."
+        },
+        {
+          "id": "b",
+          "text": "Keep the shared workstream and use different queue names as the policy boundary."
+        },
+        {
+          "id": "c",
+          "text": "Change only each widget's operating-hours schedule while retaining the same shared work distribution."
+        },
+        {
+          "id": "d",
+          "text": "Associate another self-service agent and assume it creates a second work-distribution policy within the same workstream."
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "optionExplanations": {
+        "a": "Conversations in channels sharing one workstream inherit that workstream's routing/work-assignment settings; separate workstreams allow independent policies.",
+        "b": "Different destination queues do not create different allowed-presence/work-distribution settings on the same workstream.",
+        "c": "Widget hours control availability/display, not a second work-distribution policy.",
+        "d": "Agent association does not split the shared workstream's work-distribution configuration."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n05"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q18",
+      "revision": 2,
+      "kind": "multiple",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.03",
+        "D4.2.01"
+      ],
+      "conceptId": "engagement-agent-runtime-wiring",
+      "prompt": "A team has a functioning Copilot Studio self-service agent and a new workstream. It wants that agent to collect context before classification at handoff. Which TWO integration steps belong in the engagement-agent setup? Choose TWO.",
+      "answer": "Connect the configured Studio agent to omnichannel. Associate the connected agent in the workstream's Bot area.",
+      "explanation": "Connect the agent and associate it with the workstream; verify its separately authored escalation path supplies the intended context.",
+      "sourceIds": [
+        "exam-d4-s06"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:engagement-agent-runtime-wiring"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Add the agent only under a representative smart-assist association rather than the workstream Bot area."
+        },
+        {
+          "id": "b",
+          "text": "Connect the configured Studio agent to omnichannel."
+        },
+        {
+          "id": "c",
+          "text": "Configure only the workstream fallback queue and assume it invokes the self-service agent."
+        },
+        {
+          "id": "d",
+          "text": "Associate the connected agent in the workstream's Bot area."
+        },
+        {
+          "id": "e",
+          "text": "Make classification rules author the agent's escalation dialog."
+        }
+      ],
+      "correctOptionIds": [
+        "b",
+        "d"
+      ],
+      "optionExplanations": {
+        "a": "The engagement-agent setup selects the connected agent in the workstream Bot area; a separate assistance association does not replace it.",
+        "b": "The documented connection makes the agent available for selection.",
+        "c": "Fallback queue routing does not establish the required agent connection/association.",
+        "d": "The workstream must select the agent used for initial interaction.",
+        "e": "The agent's escalation behavior is authored in Studio, not by classification."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n05"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q19",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.02"
+      ],
+      "conceptId": "classification-first-match-exception-order",
+      "prompt": "One classification ruleset has a general rule for all warranty requests above a narrower safety-related warranty rule. Both conditions match a test item, but the safety output is never applied. What should be changed if the narrower exception must win?",
+      "answer": "Move the safety-specific rule above the general rule in that ruleset.",
+      "explanation": "Order the specific exception before the general catch-all inside the same classification ruleset.",
+      "sourceIds": [
+        "exam-d4-s05"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:classification-first-match-exception-order"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Move the safety-specific rule above the general rule in that ruleset."
+        },
+        {
+          "id": "b",
+          "text": "Only move the route-to-queue ruleset before classification."
+        },
+        {
+          "id": "c",
+          "text": "Expect both matching items in that classification ruleset to run automatically."
+        },
+        {
+          "id": "d",
+          "text": "Change only the destination queue's assignment method."
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "optionExplanations": {
+        "a": "Within a ruleset, the first match produces output and evaluation proceeds to the next ruleset.",
+        "b": "Classification runs before queue routing in the documented pipeline.",
+        "c": "The documented first-match boundary prevents that.",
+        "d": "Assignment occurs after classification and does not change which rule item matched."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n01"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q20",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.02"
+      ],
+      "conceptId": "classification-template-local-maintenance",
+      "prompt": "A central team maintains a shared classification template. One workstream needs an independently editable variation, while other workstreams must retain the centrally maintained definition. Which creation choice best supports that maintenance boundary?",
+      "answer": "Copy from template for the workstream needing a variation.",
+      "explanation": "Create an editable copy when the policy must diverge locally; retain linked templates for central maintenance.",
+      "sourceIds": [
+        "exam-d4-s05"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:classification-template-local-maintenance"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Edit the template through the workstream-linked ruleset."
+        },
+        {
+          "id": "d",
+          "text": "Replace the queue's assignment method instead of the classification definition."
+        },
+        {
+          "id": "c",
+          "text": "Change the shared template for all workstreams even though their policy must remain unchanged."
+        },
+        {
+          "id": "b",
+          "text": "Copy from template for the workstream needing a variation."
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "optionExplanations": {
+        "a": "Template rules cannot be edited within the workstream.",
+        "b": "That copies the current rule definition into an editable local ruleset.",
+        "c": "That violates the stated maintenance boundary.",
+        "d": "Representative assignment does not implement the requested classification variation."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n05"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q21",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.04"
+      ],
+      "conceptId": "rerouted-skill-accumulation",
+      "prompt": "A rerouted item already requires a product skill. A second classification pass attaches a language skill. A tester expects the second skill to replace the first and is surprised that assignment still considers both. Which behavior should guide the investigation?",
+      "answer": "The second pass has appended requirements, so inspect the combined skill set.",
+      "explanation": "Inspect accumulated requirements during rerouting rather than assuming classification replaces the previous skill set.",
+      "sourceIds": [
+        "exam-d4-s05"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:rerouted-skill-accumulation"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Rerouting removes every previously attached skill before classification."
+        },
+        {
+          "id": "b",
+          "text": "A language skill automatically cancels product skills."
+        },
+        {
+          "id": "c",
+          "text": "The second pass has appended requirements, so inspect the combined skill set."
+        },
+        {
+          "id": "d",
+          "text": "Queue priority disables the earlier skill requirement."
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "optionExplanations": {
+        "a": "The documented behavior appends new skills to existing ones.",
+        "b": "Skill type does not imply that replacement behavior.",
+        "c": "The classification guide explicitly documents appending on reroute.",
+        "d": "Queue priority does not remove attached skills."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n06"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q22",
+      "revision": 2,
+      "kind": "multiple",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.05"
+      ],
+      "conceptId": "skill-prediction-data-remediation",
+      "prompt": "An intelligent skill finder uses email text, but training examples contain HTML markup and outdated skill labels. The team wants to improve the predictions before changing routing policy. Which TWO remediation steps follow the guidance? Choose TWO.",
+      "answer": "Extract plain text from the email HTML into the field used by the model. Review corrected training records and retrain the model.",
+      "explanation": "Repair the input and label evidence before treating downstream assignment changes as a prediction fix.",
+      "sourceIds": [
+        "exam-d4-s15",
+        "exam-d4-s08"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:skill-prediction-data-remediation"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Train directly on raw email HTML and assume the markup cannot affect text classification."
+        },
+        {
+          "id": "b",
+          "text": "Publish the same model again without reviewing its loaded training labels."
+        },
+        {
+          "id": "c",
+          "text": "Correct individual live-work-item skills and assume the existing published model retrains itself immediately."
+        },
+        {
+          "id": "d",
+          "text": "Extract plain text from the email HTML into the field used by the model."
+        },
+        {
+          "id": "e",
+          "text": "Review corrected training records and retrain the model."
+        }
+      ],
+      "correctOptionIds": [
+        "d",
+        "e"
+      ],
+      "optionExplanations": {
+        "a": "The FAQ specifically warns that email HTML can affect the model and recommends extracting text.",
+        "b": "Republication alone does not correct the known outdated labels.",
+        "c": "The guide calls for reviewed training records and explicit iterative model retraining.",
+        "d": "The FAQ describes this preprocessing for email body skill finding.",
+        "e": "The guidance calls for reviewed training data and iterative retraining."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n06"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q23",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.04"
+      ],
+      "conceptId": "skill-rating-model-consistency",
+      "prompt": "A representative has a required product skill, but the classification rule uses a different rating model from the representative's skill record. The same displayed proficiency number is being treated as proof that the scales are compatible. Which change should be made first?",
+      "answer": "Use the same rating model for that skill in classification and representative configuration.",
+      "explanation": "Match skill metadata and its rating model before interpreting proficiency comparisons.",
+      "sourceIds": [
+        "exam-d4-s05"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:skill-rating-model-consistency"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Increase queue priority while keeping the different rating models."
+        },
+        {
+          "id": "b",
+          "text": "Change every item to Closest Match without inspecting the rating models."
+        },
+        {
+          "id": "c",
+          "text": "Delete the skill requirement solely because the displayed numbers match."
+        },
+        {
+          "id": "d",
+          "text": "Use the same rating model for that skill in classification and representative configuration."
+        }
+      ],
+      "correctOptionIds": [
+        "d"
+      ],
+      "optionExplanations": {
+        "a": "Priority does not make the skill scales compatible.",
+        "b": "That avoids diagnosing the documented inconsistent skill metadata.",
+        "c": "Matching labels do not establish the same rating model.",
+        "d": "The classification guide requires that alignment and warns against mixed models."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n06"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q24",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.05"
+      ],
+      "conceptId": "skill-model-environment-transfer-constraint",
+      "prompt": "A deployment plan assumes a skill finder model trained in a test environment can be exported and immediately used in production without checking the model transfer constraint. Which review finding should block that assumption?",
+      "answer": "The skill finder guidance requires import/export between environments of the same type.",
+      "explanation": "Validate the model lifecycle plan for the target type rather than equating model export with production readiness.",
+      "sourceIds": [
+        "exam-d4-s08"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:skill-model-environment-transfer-constraint"
+      ],
+      "options": [
+        {
+          "id": "b",
+          "text": "Import all skill and rating dependencies and assume that removes the model's environment-type restriction."
+        },
+        {
+          "id": "a",
+          "text": "The skill finder guidance requires import/export between environments of the same type."
+        },
+        {
+          "id": "c",
+          "text": "Republish in the test environment and assume publication alone makes the export production-compatible."
+        },
+        {
+          "id": "d",
+          "text": "Preserve the solution/model identity and treat identity matching as sufficient for any environment type."
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "optionExplanations": {
+        "a": "It explicitly says a test-trained model works in another test environment, not production.",
+        "b": "Dependencies do not negate the explicit same-type model-transfer constraint.",
+        "c": "The guidance still limits the trained model to the supported environment-type transfer.",
+        "d": "Stable identity does not establish compatibility across the explicitly excluded test-to-production boundary."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n06"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q25",
+      "revision": 2,
+      "kind": "multiple",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.06"
+      ],
+      "conceptId": "intent-preview-runtime-prerequisites",
+      "prompt": "A tenant is evaluating the current intent-driven routing production-ready preview for live chat. Its active routing rules find no intent values on escalated work items, although the customer interactions contain clear intents. Which TWO prerequisite areas should be verified to supply the intent library and runtime upstream detection? Choose TWO.",
+      "answer": "Set up intent discovery, with Customer Intent Agent enabled. Associate the appropriately configured Copilot agent with the workstream.",
+      "explanation": "Authoring rules does not populate their inputs; configure the discovery and upstream agent prerequisites.",
+      "sourceIds": [
+        "exam-d4-s09"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:intent-preview-runtime-prerequisites"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Add more route-to-queue conditions and assume unified routing will infer live-chat intent from raw messages."
+        },
+        {
+          "id": "b",
+          "text": "Attach skills only to representative profiles and assume that populates customer intent fields."
+        },
+        {
+          "id": "c",
+          "text": "Set up intent discovery, with Customer Intent Agent enabled."
+        },
+        {
+          "id": "d",
+          "text": "Associate the appropriately configured Copilot agent with the workstream."
+        },
+        {
+          "id": "e",
+          "text": "Recreate only legacy intent-group to user-group mappings."
+        }
+      ],
+      "correctOptionIds": [
+        "c",
+        "d"
+      ],
+      "optionExplanations": {
+        "a": "The current flow consumes intent determined upstream; extra queue conditions do not perform that determination.",
+        "b": "Representative skill metadata does not provide the detected intent fields on a live work item.",
+        "c": "These are documented prerequisites for the intent library.",
+        "d": "That association is critical for runtime invocation.",
+        "e": "Those mappings are no longer applicable in the current experience."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n07"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q26",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.06"
+      ],
+      "conceptId": "intent-skill-and-queue-composition",
+      "prompt": "In the current intent-driven routing preview, live-chat handoff already persists the correct intent and line of business. The destination queue is correct, but work has no required specialist skill. Which layer should add that requirement while retaining the current queue rules?",
+      "answer": "Add a classification rule that attaches the specialist skill for that intent.",
+      "explanation": "Use the populated intent as classification input; queue selection and skill attachment remain separate responsibilities.",
+      "sourceIds": [
+        "exam-d4-s09"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:intent-skill-and-queue-composition"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Rebuild legacy intent-to-user-group mappings."
+        },
+        {
+          "id": "c",
+          "text": "Retain only the route-to-queue destination action and assume selecting the specialist queue attaches its skill requirement."
+        },
+        {
+          "id": "b",
+          "text": "Add a classification rule that attaches the specialist skill for that intent."
+        },
+        {
+          "id": "d",
+          "text": "Ask the assignment engine to infer live-chat intent again from raw messages."
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "optionExplanations": {
+        "a": "The current experience does not require those obsolete mappings.",
+        "b": "Classification can enrich the item with skills based on the persisted intent fields.",
+        "c": "Queue selection and classification skill attachment are separate actions; the stated queue result is already correct.",
+        "d": "The documented flow consumes intent determined upstream, rather than doing that determination in unified routing."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n07"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q27",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.07"
+      ],
+      "conceptId": "unmapped-contact-preferred-fallback",
+      "prompt": "Preferred representative routing is enabled on a Push messaging workstream. The unavailable-preferred fallback is No one. A new contact has no preferred representative mapping, yet an eligible queue member receives the conversation automatically. Which explanation fits?",
+      "answer": "An unmapped contact follows the best eligible representative under the queue assignment method.",
+      "explanation": "Apply the fallback setting only to its intended mapped-contact situation, not all incoming contacts.",
+      "sourceIds": [
+        "exam-d4-s10"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:unmapped-contact-preferred-fallback"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "No one must block every contact even without a preferred mapping."
+        },
+        {
+          "id": "c",
+          "text": "An unmapped contact follows the best eligible representative under the queue assignment method."
+        },
+        {
+          "id": "b",
+          "text": "Every new contact is implicitly mapped to the first queue member."
+        },
+        {
+          "id": "d",
+          "text": "Preferred routing permanently disables ordinary queue assignment."
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "optionExplanations": {
+        "a": "The guide distinguishes unmapped contacts from mapped-but-unavailable ones.",
+        "b": "The guide does not establish an automatic preferred mapping.",
+        "c": "That applies irrespective of the selected unavailable-preferred fallback.",
+        "d": "Ordinary assignment still handles unmapped contacts."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n07"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q28",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.07"
+      ],
+      "conceptId": "preferred-route-eligibility-boundaries",
+      "prompt": "A known contact has a preferred representative mapping. The team is testing the standard preferred-person path and wants to verify its actual prerequisites rather than assume normal skill/capacity enforcement. Which TWO checks belong to this path? Choose TWO.",
+      "answer": "The preferred representative belongs to the target queue. The representative's presence matches an allowed workstream presence.",
+      "explanation": "Separate the standard preferred path's actual checks from the ordinary eligibility checks it bypasses.",
+      "sourceIds": [
+        "exam-d4-s10"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:preferred-route-eligibility-boundaries"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "The preferred representative belongs to the target queue."
+        },
+        {
+          "id": "b",
+          "text": "The preferred representative has every attached skill at the required proficiency."
+        },
+        {
+          "id": "c",
+          "text": "The preferred representative has enough remaining capacity under every profile."
+        },
+        {
+          "id": "d",
+          "text": "The preferred representative satisfies every ordinary assignment rule."
+        },
+        {
+          "id": "e",
+          "text": "The representative's presence matches an allowed workstream presence."
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "e"
+      ],
+      "optionExplanations": {
+        "a": "Queue membership is a documented prerequisite.",
+        "b": "The preferred-person path skips the ordinary skill check.",
+        "c": "The preferred-person path skips the ordinary capacity check.",
+        "d": "Those assignment-rule checks are skipped on this path.",
+        "e": "Allowed presence is still checked."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n07"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q29",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.07"
+      ],
+      "conceptId": "unavailable-preferred-channel-policy",
+      "prompt": "A live-chat service values a known customer's preferred representative, but must continue with another eligible person when all mapped preferred representatives are unavailable. Which fallback choice meets that requirement?",
+      "answer": "Next best representative based on assignment logic.",
+      "explanation": "Retain the relationship preference while configuring a supported continuity path for unavailable preferred representatives.",
+      "sourceIds": [
+        "exam-d4-s10"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:unavailable-preferred-channel-policy"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "No one; leave the item unassigned in the queue."
+        },
+        {
+          "id": "d",
+          "text": "Next best representative based on assignment logic."
+        },
+        {
+          "id": "c",
+          "text": "Keep No one and rely on the ordinary Highest capacity method to override it for mapped unavailable contacts."
+        },
+        {
+          "id": "b",
+          "text": "Reorder the same unavailable preferred representatives and leave the fallback unchanged."
+        }
+      ],
+      "correctOptionIds": [
+        "d"
+      ],
+      "optionExplanations": {
+        "a": "That intentionally leaves work waiting, which conflicts with the live-chat continuity requirement.",
+        "b": "Reordering does not provide a next-best path when every mapped preferred person is unavailable.",
+        "c": "The chosen fallback must invoke next-best assignment; No one intentionally leaves that mapped-contact work unassigned.",
+        "d": "The guide recommends that fallback for live chat and voice, using ordinary assignment when preferred people are unavailable."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n07"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q30",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.08"
+      ],
+      "conceptId": "record-access-after-routing",
+      "prompt": "A case reaches the intended queue and representative, but the representative cannot access that case. The assignment is stopped and the conversation closes. Queue membership is correct. Which layer should be corrected before changing intake or queue rules?",
+      "answer": "Grant the appropriate underlying record access to the intended representative.",
+      "explanation": "Routing eligibility and queue membership do not themselves confer permission to the underlying record.",
+      "sourceIds": [
+        "exam-d4-s11"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:record-access-after-routing"
+      ],
+      "options": [
+        {
+          "id": "b",
+          "text": "Grant the appropriate underlying record access to the intended representative."
+        },
+        {
+          "id": "a",
+          "text": "Add more queue members without fixing this representative's access."
+        },
+        {
+          "id": "c",
+          "text": "Reorder the already-correct intake rules only."
+        },
+        {
+          "id": "d",
+          "text": "Enable a different skill prediction label for the same case."
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "optionExplanations": {
+        "a": "That does not give the assigned representative access to the case.",
+        "b": "The record-routing guide explicitly requires permissions and describes this closure behavior.",
+        "c": "The intake destination is already confirmed; it does not grant record permissions.",
+        "d": "Prediction does not grant Dataverse record access."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n08"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q31",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.09"
+      ],
+      "conceptId": "basic-routing-related-criteria-limit",
+      "prompt": "A basic case-routing rule in Unified Interface uses a nested related-entity condition that traverses two relationship levels. The designer lets the maker select it, so the team treats it as supported. Which redesign follows the documented criteria limit?",
+      "answer": "Use supported case fields and related-entity conditions no deeper than one hierarchy level.",
+      "explanation": "Validate the documented runtime criteria contract rather than inferring support from every condition the designer allows.",
+      "sourceIds": [
+        "exam-d4-s12"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:basic-routing-related-criteria-limit"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Keep the nested two-level condition because selection in the designer guarantees runtime support."
+        },
+        {
+          "id": "c",
+          "text": "Use supported case fields and related-entity conditions no deeper than one hierarchy level."
+        },
+        {
+          "id": "b",
+          "text": "Only change the surrounding AND/OR grouping while retaining the same nested hierarchy."
+        },
+        {
+          "id": "d",
+          "text": "Change the lookup comparison to an IN operator while retaining the nested two-level path."
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "optionExplanations": {
+        "a": "The guide explicitly says only one related-entity hierarchy level is supported even though nested selection is exposed.",
+        "b": "Changing Boolean grouping does not reduce the relationship depth, and related entities within groups have their own stated limits.",
+        "c": "This respects the supported one-level related-entity boundary.",
+        "d": "That does not fix hierarchy depth; lookup criteria are limited to equal, not equal, null and not null in the documented guide."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n08"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q32",
+      "revision": 2,
+      "kind": "multiple",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.08",
+        "D4.2.09"
+      ],
+      "conceptId": "record-intake-path-integration",
+      "prompt": "After enabling unified routing, a Customer Service team wants one class of cases to retain an existing active basic ruleset, while specialist cases use a unified skill-based path. Which TWO wiring decisions support those distinct paths? Choose TWO.",
+      "answer": "Map intake rules for the legacy case class to the active basic routing rule. Map the specialist intake path to a Record workstream configured for that record type.",
+      "explanation": "Wire the record into an explicit intake path; retaining an active rule alone does not establish that connection.",
+      "sourceIds": [
+        "exam-d4-s11"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:record-intake-path-integration"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Assume the active basic ruleset automatically receives its cases without an intake mapping."
+        },
+        {
+          "id": "b",
+          "text": "Map intake rules for the legacy case class to the active basic routing rule."
+        },
+        {
+          "id": "c",
+          "text": "Use a Messaging workstream for specialist case records."
+        },
+        {
+          "id": "d",
+          "text": "Map the specialist intake path to a Record workstream configured for that record type."
+        },
+        {
+          "id": "e",
+          "text": "Use route-to-queue rules alone to choose between the basic ruleset and the unified workstream."
+        }
+      ],
+      "correctOptionIds": [
+        "b",
+        "d"
+      ],
+      "optionExplanations": {
+        "a": "The setup guide says active basic rules do not route after unified enablement until intake rules are configured.",
+        "b": "Intake can select the active basic ruleset for that class.",
+        "c": "Unified cases use an appropriate Record workstream, not Messaging.",
+        "d": "This chooses the unified workstream where classification and assignment can apply.",
+        "e": "Those rules select destinations within a path, while intake selects the routing path."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n08"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q33",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.09"
+      ],
+      "conceptId": "basic-ruleset-update-lifecycle",
+      "prompt": "A solution update contains an active basic routing ruleset with the same ID as a ruleset already present in the target organization. The release plan will import it over the active target rule. Which preparation is documented for a successful update?",
+      "answer": "Deactivate the target ruleset before the same-ID solution import.",
+      "explanation": "Include the documented ruleset lifecycle step when moving a same-ID active rule.",
+      "sourceIds": [
+        "exam-d4-s12"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:basic-ruleset-update-lifecycle"
+      ],
+      "options": [
+        {
+          "id": "c",
+          "text": "Only rename the active target ruleset while preserving its ID and active status."
+        },
+        {
+          "id": "b",
+          "text": "Deactivate only the source after the already-built active package is exported, leaving the same-ID target active."
+        },
+        {
+          "id": "a",
+          "text": "Deactivate the target ruleset before the same-ID solution import."
+        },
+        {
+          "id": "d",
+          "text": "Change only the target ruleset owner before the same-ID import."
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "optionExplanations": {
+        "a": "The guide requires deactivation for this import/update situation.",
+        "b": "That does not perform the documented target deactivation before importing that package.",
+        "c": "The documented conflict is the active same-ID rule, not just its name.",
+        "d": "Ownership is not the documented lifecycle correction for importing over the active rule."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n08"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q34",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.10"
+      ],
+      "conceptId": "case-routing-attempt-correlation",
+      "prompt": "A case was routed once before an intake-rule fix and again afterward. A troubleshooter opens the first conversation's events and concludes the fix had no effect. What should be corrected in the diagnostic method?",
+      "answer": "Select the intended routing attempt and its corresponding conversation before reviewing intake events.",
+      "explanation": "Correlate evidence to the attempt that actually ran after the fix.",
+      "sourceIds": [
+        "exam-d4-s13"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:case-routing-attempt-correlation"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Combine all rule outputs from both attempts into a single chronological result."
+        },
+        {
+          "id": "d",
+          "text": "Select the intended routing attempt and its corresponding conversation before reviewing intake events."
+        },
+        {
+          "id": "c",
+          "text": "Inspect only the current configuration, without any attempt events."
+        },
+        {
+          "id": "b",
+          "text": "Choose the latest queue name and ignore the conversation identifier."
+        }
+      ],
+      "correctOptionIds": [
+        "d"
+      ],
+      "optionExplanations": {
+        "a": "That can mix different runtime configurations and obscure which attempt used the fix.",
+        "b": "A name alone does not identify the intended attempt.",
+        "c": "Current settings do not establish what happened during a particular route.",
+        "d": "Each case routing attempt creates its own corresponding conversation."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n09"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q35",
+      "revision": 2,
+      "kind": "multiple",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.10"
+      ],
+      "conceptId": "assignment-snapshot-rule-and-state-evidence",
+      "prompt": "Conversation diagnostics is configured. An engineer is reviewing a past custom assignment attempt after the rules and representative presence have since changed. The investigation needs the custom rule definition and the historical representative availability state. Which TWO evidence categories should be correlated with the attempt? Choose TWO.",
+      "answer": "AssignmentRuleset records containing the custom ruleset and rule details. CSRStatusandCapacityDetails history containing representative presence and capacity changes.",
+      "explanation": "Use recorded rule and dynamic representative-state evidence for the intended attempt; current settings can differ from what the engine used then.",
+      "sourceIds": [
+        "exam-d4-s14"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:assignment-snapshot-rule-and-state-evidence"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "AssignmentRuleset records containing the custom ruleset and rule details."
+        },
+        {
+          "id": "b",
+          "text": "Only the current representative presence shown in the workspace."
+        },
+        {
+          "id": "c",
+          "text": "Only QueueConfiguration records containing the queue name and strategy."
+        },
+        {
+          "id": "d",
+          "text": "CSRStatusandCapacityDetails history containing representative presence and capacity changes."
+        },
+        {
+          "id": "e",
+          "text": "Only ManualAssignment events for supervisor actions."
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "d"
+      ],
+      "optionExplanations": {
+        "a": "These records capture custom assignment/prioritization/selection ruleset definitions and changes.",
+        "b": "The current presence does not establish availability at the historical attempt.",
+        "c": "Queue configuration identifies strategy but does not supply both the custom rule definition and dynamic candidate state.",
+        "d": "The history records changing presence/capacity needed to reconstruct historical availability.",
+        "e": "Manual supervisor assignments do not establish the custom automatic-assignment rule and representative state."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n09"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q36",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.10"
+      ],
+      "conceptId": "assignment-attempt-versus-acceptance",
+      "prompt": "A report marks every CSRAssignment event as proof that a representative accepted the work. For one conversation, the next event is CSRNotificationTimeout and there is no CSRAccepted event. Which conclusion should replace that report logic?",
+      "answer": "The assignment event records an attempt; correlate acceptance or timeout events before counting accepted work.",
+      "explanation": "Do not convert assignment-attempt telemetry into accepted-work counts without the corresponding outcome evidence.",
+      "sourceIds": [
+        "exam-d4-s14"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:assignment-attempt-versus-acceptance"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "CSRAssignment means the customer ended the call."
+        },
+        {
+          "id": "c",
+          "text": "Queue selection must have failed because the offer timed out."
+        },
+        {
+          "id": "b",
+          "text": "The assignment event records an attempt; correlate acceptance or timeout events before counting accepted work."
+        },
+        {
+          "id": "d",
+          "text": "Every attempted offer is an accepted interaction even when the notification times out."
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "optionExplanations": {
+        "a": "That is a separate lifecycle event.",
+        "b": "The event definitions distinguish attempted assignment, acceptance and notification timeout.",
+        "c": "A later response timeout does not establish route-to-queue failure.",
+        "d": "That conflates distinct lifecycle outcomes."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n09"
+        }
+      ],
+      "status": "draft"
+    }
+  ],
+  "editorial": [
+    {
+      "id": "ab250-d4-q05",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "queue-channel-eligibility-diagnosis",
+      "objectiveIds": [
+        "D4.1.01"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s01",
+          "section": "How work items are routed to queues",
+          "claim": "Available queues follow workstream channel type; live chat targets Messaging queues.",
+          "applicability": "Advanced unified-routing live-chat queues."
+        }
+      ],
+      "duplicateCheck": "c07 asks queue type directly; this diagnoses a missing destination after confirming queue creation, unlike pilot assignment scenarios."
+    },
+    {
+      "id": "ab250-d4-q06",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "cross-queue-business-priority",
+      "objectiveIds": [
+        "D4.1.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s01",
+          "section": "Configure queue prioritization",
+          "claim": "Smaller queue priority numbers are considered higher.",
+          "applicability": "A shared eligible representative pool; no claim that queue priority bypasses eligibility."
+        },
+        {
+          "sourceId": "exam-d4-s16",
+          "section": "How unified routing prioritizes work items",
+          "claim": "Queue priority controls work across queues; item prioritization controls work within a queue.",
+          "applicability": "A shared eligible representative pool; no claim that queue priority bypasses eligibility."
+        }
+      ],
+      "duplicateCheck": "Applies c08 numeric knowledge to cross-queue versus within-queue controls; pilot q01 concerns static classification reuse."
+    },
+    {
+      "id": "ab250-d4-q07",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "equal-custom-queue-priority-tiebreak",
+      "objectiveIds": [
+        "D4.1.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s16",
+          "section": "How unified routing prioritizes work items",
+          "claim": "Equal-priority custom queues are ordered alphabetically; distinct queue priorities are recommended.",
+          "applicability": "Both queues use custom prioritization; not default FIFO queues."
+        }
+      ],
+      "duplicateCheck": "New tie-policy decision absent from pilot and published recall cards; distinct from q06 numeric direction."
+    },
+    {
+      "id": "ab250-d4-q08",
+      "revision": 2,
+      "domainId": "work-distribution",
+      "conceptId": "asynchronous-fifo-time-basis",
+      "objectiveIds": [
+        "D4.1.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s16",
+          "section": "How unified routing prioritizes work items",
+          "claim": "Asynchronous messaging FIFO uses last interaction time rather than original creation time.",
+          "applicability": "Default FIFO WhatsApp/asynchronous messaging, not custom prioritization."
+        }
+      ],
+      "duplicateCheck": "New item-age interpretation; pilot q02 ranks representatives by capacity and c03 concerns round-robin queue scope.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent root source/quality review: remove diagnosis leakage and replace weak distractors with adjacent configuration or evaluation-boundary alternatives."
+    },
+    {
+      "id": "ab250-d4-q09",
+      "revision": 2,
+      "domainId": "work-distribution",
+      "conceptId": "least-active-signin-misdiagnosis",
+      "objectiveIds": [
+        "D4.1.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s15",
+          "section": "Route to least-active representative",
+          "claim": "Sign-in time does not determine last capacity release time.",
+          "applicability": "Voice/messaging least-active assignment with comparable concurrent workload."
+        },
+        {
+          "sourceId": "exam-d4-s16",
+          "section": "Least active",
+          "claim": "With equal concurrent assignments, last capacity release across voice and messaging determines least activity.",
+          "applicability": "Voice/messaging least-active assignment with comparable concurrent workload."
+        }
+      ],
+      "duplicateCheck": "Not the capacity-profile reset/override decisions reserved to D1; tests representative ordering signal, absent from pilot.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent root source/quality review: remove diagnosis leakage and replace weak distractors with adjacent configuration or evaluation-boundary alternatives."
+    },
+    {
+      "id": "ab250-d4-q10",
+      "revision": 2,
+      "domainId": "work-distribution",
+      "conceptId": "empty-queue-channel-outcome",
+      "objectiveIds": [
+        "D4.1.01"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s15",
+          "section": "General: queue with no representatives",
+          "claim": "Conversations close when assigned to queues with no representatives, while records remain unassigned.",
+          "applicability": "Unified-routing conversation versus record queues; no missing-skill/capacity claim."
+        },
+        {
+          "sourceId": "exam-d4-s01",
+          "section": "Create a queue for unified routing",
+          "claim": "Representatives must be added to queues.",
+          "applicability": "Unified-routing conversation versus record queues; no missing-skill/capacity claim."
+        }
+      ],
+      "duplicateCheck": "New comparison of empty-queue outcomes; distinct from q05 destination type and pilot capacity settings.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent root source/quality review: remove diagnosis leakage and replace weak distractors with adjacent configuration or evaluation-boundary alternatives."
+    },
+    {
+      "id": "ab250-d4-q11",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "queued-overflow-versus-prequeue-average",
+      "objectiveIds": [
+        "D4.1.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s02",
+          "section": "Handle overflow when a work item is queued; Overflow condition and actions when queued",
+          "claim": "Queued voice overflow supports waiting-time thresholds and transfer to another queue.",
+          "applicability": "Voice queued overflow; channel-specific action support."
+        },
+        {
+          "sourceId": "exam-d4-s01",
+          "section": "How work items are routed to queues",
+          "claim": "Voice and record destinations are different queue types.",
+          "applicability": "Voice queued overflow; channel-specific action support."
+        }
+      ],
+      "duplicateCheck": "Different from c12 prequeue afterhours and pilot capacity logic; uses actual later waiting rather than prequeue prediction."
+    },
+    {
+      "id": "ab250-d4-q12",
+      "revision": 2,
+      "domainId": "work-distribution",
+      "conceptId": "overflow-transfer-check-boundary",
+      "objectiveIds": [
+        "D4.1.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s02",
+          "section": "Handle overflow before a work item is queued",
+          "claim": "Prequeue checks occur once; overflow transfers and supervisor assignments/transfers do not repeat them.",
+          "applicability": "Documented prequeue overflow-transfer path, not a universal claim about all future routing events."
+        }
+      ],
+      "duplicateCheck": "New evaluation-boundary design, distinct from q11 waiting-stage handling and c10 fallback behavior.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent root source/quality review: remove diagnosis leakage and replace weak distractors with adjacent configuration or evaluation-boundary alternatives."
+    },
+    {
+      "id": "ab250-d4-q13",
+      "revision": 2,
+      "domainId": "work-distribution",
+      "conceptId": "fallback-path-overflow-expectation",
+      "objectiveIds": [
+        "D4.1.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s01",
+          "section": "How fallback queues work",
+          "claim": "Fallback handles no match/classification/route errors.",
+          "applicability": "No-match fallback path, not an ordinary route-rule match to the same queue."
+        },
+        {
+          "sourceId": "exam-d4-s02",
+          "section": "How overflow works when work item is routed to a fallback queue",
+          "claim": "Fallback overflow is ignored for those fallback causes.",
+          "applicability": "No-match fallback path, not an ordinary route-rule match to the same queue."
+        }
+      ],
+      "duplicateCheck": "c10 supplies the exception; scenario requires diagnosing why additional conditions would not fix an error-path design.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent root source/quality review: remove diagnosis leakage and replace weak distractors with adjacent configuration or evaluation-boundary alternatives."
+    },
+    {
+      "id": "ab250-d4-q14",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "afterhours-default-action-diagnosis",
+      "objectiveIds": [
+        "D4.1.05",
+        "D4.1.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s02",
+          "section": "Handle overflow before a work item is queued",
+          "claim": "Adding queue operating hours creates out-of-hours overflow with Assign to queue anyway.",
+          "applicability": "Queue-level voice operating hours; channel/widget schedules are not treated as the same control."
+        },
+        {
+          "sourceId": "exam-d4-s04",
+          "section": "Create a workstream",
+          "claim": "Voice supports Push only.",
+          "applicability": "Queue-level voice operating hours; channel/widget schedules are not treated as the same control."
+        }
+      ],
+      "duplicateCheck": "c12 chooses prequeue handling; this diagnoses a valid calendar with an unchanged permissive action."
+    },
+    {
+      "id": "ab250-d4-q15",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "holiday-timezone-calendar-test",
+      "objectiveIds": [
+        "D4.1.05"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s03",
+          "section": "Create a record to define operating hours; Define a holiday on the calendar",
+          "claim": "Timezone handles applicable daylight saving; a Holiday entry defines exceptional nonavailability.",
+          "applicability": "Associated queue operating-hours record, not representative shift scheduling."
+        }
+      ],
+      "duplicateCheck": "Goes beyond c11 timezone recall by combining recurring and exception calendars; different from q14 action selection."
+    },
+    {
+      "id": "ab250-d4-q16",
+      "revision": 2,
+      "domainId": "work-distribution",
+      "conceptId": "calendar-migration-verification",
+      "objectiveIds": [
+        "D4.1.05"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s03",
+          "section": "Limitation; Add operating hours to a queue",
+          "claim": "Calendar entity work hours require manual setup under the documented export/import limitation.",
+          "applicability": "Documented operating-hours export/import limitation; no blanket claim about all custom migration tooling."
+        },
+        {
+          "sourceId": "exam-d4-s01",
+          "section": "Create a queue for unified routing",
+          "claim": "A queue without configured hours is available round the clock.",
+          "applicability": "Documented operating-hours export/import limitation; no blanket claim about all custom migration tooling."
+        }
+      ],
+      "duplicateCheck": "New deployment-verification decision, not c11 daylight saving or q15 holiday authoring.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent root source/quality review: remove diagnosis leakage and replace weak distractors with adjacent configuration or evaluation-boundary alternatives."
+    },
+    {
+      "id": "ab250-d4-q17",
+      "revision": 2,
+      "domainId": "work-distribution",
+      "conceptId": "shared-workstream-policy-boundary",
+      "objectiveIds": [
+        "D4.2.01"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s04",
+          "section": "Overview; Configure work distribution",
+          "claim": "Multiple channels of the same type can share a workstream and inherit its routing/work assignment settings; allowed presences and work distribution are configured on that workstream.",
+          "applicability": "Two live-chat channels/services needing independent work-distribution policies."
+        }
+      ],
+      "duplicateCheck": "Replaces Pick-to-Push immutability duplicate of D2 q32. No other allocated item tests shared-workstream policy inheritance.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent cross-domain review found the original Pick-to-Push decision duplicated D2 q32; replace with shared-workstream policy inheritance."
+    },
+    {
+      "id": "ab250-d4-q18",
+      "revision": 2,
+      "domainId": "work-distribution",
+      "conceptId": "engagement-agent-runtime-wiring",
+      "objectiveIds": [
+        "D4.2.03",
+        "D4.2.01"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s06",
+          "section": "Connect a Copilot Studio agent to omnichannel; Add the engagement agent; Context variables and classification",
+          "claim": "The agent connects to omnichannel and is selected in the workstream Bot area; its captured context is available for classification at handoff.",
+          "applicability": "The Learn engagement-agent pattern, not a separately invented service."
+        }
+      ],
+      "duplicateCheck": "c14 asks where escalation logic lives; this tests the two distinct runtime wiring layers, without duplicating D3 explicit transfer-node diagnosis.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent root source/quality review: remove diagnosis leakage and replace weak distractors with adjacent configuration or evaluation-boundary alternatives."
+    },
+    {
+      "id": "ab250-d4-q19",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "classification-first-match-exception-order",
+      "objectiveIds": [
+        "D4.2.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s05",
+          "section": "How classification rulesets work",
+          "claim": "Within a classification ruleset, the matching item runs output and control passes to the next ruleset; classification precedes queue rules.",
+          "applicability": "Logical classification with both items in one ruleset."
+        }
+      ],
+      "duplicateCheck": "c05 supplies first-match knowledge; scenario tests exception ordering. Pilot q01 tests attribute reuse, not same-ruleset shadowing."
+    },
+    {
+      "id": "ab250-d4-q20",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "classification-template-local-maintenance",
+      "objectiveIds": [
+        "D4.2.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s05",
+          "section": "Create work classification rulesets",
+          "claim": "Template-linked rules cannot be edited within the workstream; Copy from template creates an editable definition.",
+          "applicability": "Logical classification template choices."
+        }
+      ],
+      "duplicateCheck": "The nearby c15 is prerequisite application; here the decision includes preserving centralized policy for other consumers, not mere editing syntax."
+    },
+    {
+      "id": "ab250-d4-q21",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "rerouted-skill-accumulation",
+      "objectiveIds": [
+        "D4.2.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s05",
+          "section": "Create logical skill classification rulesets: note",
+          "claim": "When a work item is rerouted, new skills are appended to existing skills.",
+          "applicability": "Unified-routing skill attachment on reroute; not a claim about arbitrary custom cleanup."
+        }
+      ],
+      "duplicateCheck": "New reroute-state decision; pilot q02/q03 focus matching/assignment conditions and published cards do not test skill accumulation."
+    },
+    {
+      "id": "ab250-d4-q22",
+      "revision": 2,
+      "domainId": "work-distribution",
+      "conceptId": "skill-prediction-data-remediation",
+      "objectiveIds": [
+        "D4.2.05"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s15",
+          "section": "Intelligent skill finder: email activities; right skills",
+          "claim": "Email HTML should be extracted to a text field for the model; labels/training data need review.",
+          "applicability": "Intelligent skill finder with AI Builder prerequisites and regional availability already satisfied."
+        },
+        {
+          "sourceId": "exam-d4-s08",
+          "section": "Retrain the model iteratively",
+          "claim": "Published models should be retrained using reviewed records, including representative corrections.",
+          "applicability": "Intelligent skill finder with AI Builder prerequisites and regional availability already satisfied."
+        }
+      ],
+      "duplicateCheck": "New data-quality application; c17 is model-type recall and c18 is missing tag-to-skill linkage, neither is this HTML/label repair.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent root source/quality review: remove diagnosis leakage and replace weak distractors with adjacent configuration or evaluation-boundary alternatives."
+    },
+    {
+      "id": "ab250-d4-q23",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "skill-rating-model-consistency",
+      "objectiveIds": [
+        "D4.2.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s05",
+          "section": "Create logical skill classification rulesets: note",
+          "claim": "The skill rating model must match across work item and representative; mixed models can break assignment.",
+          "applicability": "Unified-routing skill classification; no numeric universal proficiency scale."
+        }
+      ],
+      "duplicateCheck": "c16 supplies alignment recall; this challenges the plausible but incorrect same-number comparison. Different from pilot exact/custom algorithms."
+    },
+    {
+      "id": "ab250-d4-q24",
+      "revision": 2,
+      "domainId": "work-distribution",
+      "conceptId": "skill-model-environment-transfer-constraint",
+      "objectiveIds": [
+        "D4.2.05"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s08",
+          "section": "Important: import skill finder models between environments",
+          "claim": "Import/export must be between environments of the same type; a test-trained model is not established to work in production.",
+          "applicability": "The specific intelligent skill finder guidance, not a blanket rule for every Power Platform model or solution."
+        }
+      ],
+      "duplicateCheck": "New model-deployment decision absent from pilot/study cards; distinct from q22 input quality and q23 skill rating metadata.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent root source/quality review: remove diagnosis leakage and replace weak distractors with adjacent configuration or evaluation-boundary alternatives."
+    },
+    {
+      "id": "ab250-d4-q25",
+      "revision": 2,
+      "domainId": "work-distribution",
+      "conceptId": "intent-preview-runtime-prerequisites",
+      "objectiveIds": [
+        "D4.2.06"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s09",
+          "section": "Prerequisites; How intent-driven routing works",
+          "claim": "Customer Intent Agent, intent discovery and workstream-associated Copilot agent are prerequisites; current routing consumes persisted fields.",
+          "applicability": "Current live-chat production-ready preview, not universal GA."
+        }
+      ],
+      "duplicateCheck": "c19 asks who determines intent; this diagnoses two missing runtime/library configuration layers, distinct from q26 consuming populated fields.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent root source/quality review: remove diagnosis leakage and replace weak distractors with adjacent configuration or evaluation-boundary alternatives."
+    },
+    {
+      "id": "ab250-d4-q26",
+      "revision": 2,
+      "domainId": "work-distribution",
+      "conceptId": "intent-skill-and-queue-composition",
+      "objectiveIds": [
+        "D4.2.06"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s09",
+          "section": "Configure classification rules using intent; Use skill-based routing with intent; Considerations",
+          "claim": "Classification attaches skills based on intent; queue routing uses intent attributes; live chat intent is determined upstream.",
+          "applicability": "Current production-ready preview with correct upstream intent already verified."
+        }
+      ],
+      "duplicateCheck": "Different from pilot static-value reuse: applies the new live intent field and diagnoses missing attached requirements rather than missing detection.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent root source/quality review: remove diagnosis leakage and replace weak distractors with adjacent configuration or evaluation-boundary alternatives."
+    },
+    {
+      "id": "ab250-d4-q27",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "unmapped-contact-preferred-fallback",
+      "objectiveIds": [
+        "D4.2.07"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s10",
+          "section": "How routing to preferred representative works",
+          "claim": "Contacts with no preferred mapping are assigned to the best eligible representative regardless of fallback selection.",
+          "applicability": "Standard preferred representative routing on Push; not orchestration playbooks."
+        }
+      ],
+      "duplicateCheck": "New unmapped-contact exception; published c20/c21 cover skipped eligibility checks, not this fallback scope."
+    },
+    {
+      "id": "ab250-d4-q28",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "preferred-route-eligibility-boundaries",
+      "objectiveIds": [
+        "D4.2.07"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s10",
+          "section": "Prerequisites; How routing to preferred representative works",
+          "claim": "Preferred representatives must be queue members; allowed presence is checked, while skill/capacity/assignment rules are skipped.",
+          "applicability": "Standard preferred representative routing through a Push workstream."
+        }
+      ],
+      "duplicateCheck": "c20/c21 describe the bypass; this tests the positive membership/presence prerequisites and strongest tempting skill-check alternative."
+    },
+    {
+      "id": "ab250-d4-q29",
+      "revision": 2,
+      "domainId": "work-distribution",
+      "conceptId": "unavailable-preferred-channel-policy",
+      "objectiveIds": [
+        "D4.2.07"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s10",
+          "section": "Configure preferred representative for contacts; How routing works",
+          "claim": "Fallback can use next-best assignment or leave work unassigned; next best is the live-chat/voice option described.",
+          "applicability": "Mapped contact on standard Push live chat; not a promise that an eligible person is always instantly available."
+        }
+      ],
+      "duplicateCheck": "Distinct from q27 unmapped exception and q28 preferred-path checks; applies the unavailable-contact policy itself.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent root source/quality review: remove diagnosis leakage and replace weak distractors with adjacent configuration or evaluation-boundary alternatives."
+    },
+    {
+      "id": "ab250-d4-q30",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "record-access-after-routing",
+      "objectiveIds": [
+        "D4.2.08"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s11",
+          "section": "Configure work distribution and advanced settings: note",
+          "claim": "Representatives need permission to access assigned records; assignment stops and conversation closes otherwise.",
+          "applicability": "Unified record routing for Customer Service cases."
+        }
+      ],
+      "duplicateCheck": "New permission-path diagnosis; c24 and pilot focus intake/routing, not underlying data access."
+    },
+    {
+      "id": "ab250-d4-q31",
+      "revision": 2,
+      "domainId": "work-distribution",
+      "conceptId": "basic-routing-related-criteria-limit",
+      "objectiveIds": [
+        "D4.2.09"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s12",
+          "section": "Create routing rulesets to route cases: Unified Interface criteria limitations",
+          "claim": "Only one related-entity hierarchy level is supported despite nested designer selections; related entities inside AND/OR groups are unsupported and lookup operators are restricted.",
+          "applicability": "Basic case-routing criteria authored in Unified Interface."
+        }
+      ],
+      "duplicateCheck": "Replaces safety-before-general duplicate of q19. New supported-criteria boundary is absent from pilot and published D4 study-card questions.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent distinctness review: replace same specific-before-general decision as q19 with a distinct basic-rule criteria support boundary."
+    },
+    {
+      "id": "ab250-d4-q32",
+      "revision": 2,
+      "domainId": "work-distribution",
+      "conceptId": "record-intake-path-integration",
+      "objectiveIds": [
+        "D4.2.08",
+        "D4.2.09"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s11",
+          "section": "Configure unified routing for records; Create workstreams; Configure intake rules",
+          "claim": "After enabling unified routing, active basic rules need intake; intake maps to workstream or active basic rule, and unified record workstreams are Record type.",
+          "applicability": "Customer Service record routing; prerequisites/resource configuration otherwise satisfied."
+        }
+      ],
+      "duplicateCheck": "c24 diagnoses missing intake; this tests the supported transition choices without duplicating pilot skill/capacity decisions.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent root source/quality review: remove diagnosis leakage and replace weak distractors with adjacent configuration or evaluation-boundary alternatives."
+    },
+    {
+      "id": "ab250-d4-q33",
+      "revision": 2,
+      "domainId": "work-distribution",
+      "conceptId": "basic-ruleset-update-lifecycle",
+      "objectiveIds": [
+        "D4.2.09"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s12",
+          "section": "Create routing rulesets to route cases: note",
+          "claim": "Deactivate an active ruleset to edit it and before importing a solution with that same active ruleset ID.",
+          "applicability": "Basic routing solution update; no blanket deletion or new-ID recommendation."
+        }
+      ],
+      "duplicateCheck": "New ALM application; q31 is runtime first-match ordering, not import lifecycle.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent root source/quality review: remove diagnosis leakage and replace weak distractors with adjacent configuration or evaluation-boundary alternatives."
+    },
+    {
+      "id": "ab250-d4-q34",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "case-routing-attempt-correlation",
+      "objectiveIds": [
+        "D4.2.10"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s13",
+          "section": "View case diagnostics",
+          "claim": "Each case routing attempt creates a corresponding conversation; select the attempt to review its intake and routing.",
+          "applicability": "Configured conversation diagnostics with multiple case attempts."
+        }
+      ],
+      "duplicateCheck": "c25 gives the correlation fact; scenario diagnoses a false regression caused by reviewing the earlier attempt."
+    },
+    {
+      "id": "ab250-d4-q35",
+      "revision": 2,
+      "domainId": "work-distribution",
+      "conceptId": "assignment-snapshot-rule-and-state-evidence",
+      "objectiveIds": [
+        "D4.2.10"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s14",
+          "section": "Assignment snapshot; AssignmentRuleset; CSRStatusandCapacityDetails",
+          "claim": "Snapshots include custom ruleset definitions and representative presence/capacity history synced on changes.",
+          "applicability": "Configured conversation diagnostics for a past custom automatic-assignment attempt."
+        }
+      ],
+      "duplicateCheck": "Replaced the initial diagnostics setup candidate after comparison with D6 pilot q04. This tests historical rule/state reconstruction, not Managed-environment or administrator prerequisites.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Author cross-domain duplicate audit against D6 pilot: replace overlapping setup prerequisites with a distinct assignment-snapshot question."
+    },
+    {
+      "id": "ab250-d4-q36",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "assignment-attempt-versus-acceptance",
+      "objectiveIds": [
+        "D4.2.10"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d4-s14",
+          "section": "Assignment and routing; Other non-channel specific events",
+          "claim": "CSRAssignment is an assignment attempt; CSRAccepted and CSRNotificationTimeout record distinct response outcomes.",
+          "applicability": "Configured conversation diagnostics, scoped to the same conversation/attempt."
+        }
+      ],
+      "duplicateCheck": "Different from c27 choosing assignment snapshots: this tests event-to-metric interpretation and distinguishes offers from acceptance."
+    }
+  ]
+}

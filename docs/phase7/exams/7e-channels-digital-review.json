@@ -1,0 +1,588 @@
+[
+  {
+    "id": "ab250-d2-q05",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "29c46ef58ace00955be4f8a086a65e96a7540b5d1dd8ccd5c96556ca67d9f799",
+    "rationale": "General script follows active version; version-specific diagnostic scripts remain pinned.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-digital-s01",
+        "section": "Manage modern and classic versions of the widget",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. Setting the active version changes the version loaded by the general script; version-specific testing scripts remain pinned."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q06",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "b983e234926afcaf9ff849e31630332e8d8c3ca4da948598b309c44422108473",
+    "rationale": "Queue enablement is irreversible; deleting records or rules does not restore the checkbox.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-digital-s02",
+        "section": "Enable a table for queues",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. Can be added to a queue cannot be disabled after it is enabled."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q07",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "76e5da6c4a741a91414505fe9da77ab0258d33b3a41595658b575acbd11338fe",
+    "rationale": "Numeric phone formatting and provider consent are separate requirements; credentials do not configure opt-out.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-digital-s03",
+        "section": "Get Twilio account details; Configure the SMS number",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. The phone field uses country code plus number without special characters; third-party provider consent must be configured with that provider."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q08",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "e1aa5a2ecb799e1ff3301b7b2fc52708549ecee11ae3094a4a2e13146de3df46",
+    "rationale": "Domain display restriction meets the stated requirement; authentication and time restrictions do not.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-digital-s01",
+        "section": "Set up the modern widget: Chat Widget",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. Only show widget on the provided domains restricts the widget to supplied domains."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q09",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "87d487707874ee112e6b1620f361219bef8cbdd956c05f4d4cbcfdd9536eaa6d",
+    "rationale": "Proactive invitation expiry is fixed; conversation timers and survey requirements cannot extend it.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-digital-s05",
+        "section": "Customer experience of proactive chat",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. An unaccepted invitation closes after one minute and that timer cannot be configured."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q10",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "f3efde580ef8055541f81a9c00563280ed94f3b74fc7a7a14305dae8acecfe4a",
+    "rationale": "Built-in survey validation is limited to mandatory fields; labels and question order do not change support.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-digital-s06",
+        "section": "Configure a preconversation survey: Note",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. Preconversation survey validation is supported for mandatory fields only."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q11",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "ebd32c9ed041069b6590c9eb3f476654c9e54045d9aabb4afe649b0d05bad765",
+    "rationale": "Quick reply context syntax and workstream audience association are both needed; tags are insufficient.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-digital-s07",
+        "section": "Create quick replies; Associate quick replies with a workstream",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. Custom context uses {OCContext.contextKey}; mapping the quick reply to a workstream limits its audience."
+      },
+      {
+        "sourceId": "exam-d2-digital-s21",
+        "section": "Use placeholders in messages",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. Digital automated messages use {$VariableName$}, unlike quick reply {OCContext.contextKey}."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q12",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "12a7761c6ea8989ab832b0f3583daa89816e91dc94dbe056d46bb7516a47a677",
+    "rationale": "Only the keyed call has a Boolean second argument and window-options third argument.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-digital-s08",
+        "section": "Syntax; Parameters",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. showPrechat is the second Boolean parameter and inNewWindow belongs in the third options object."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q13",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "cbd3e23568d95c9635eba97acb50991653fe12fe4bbd8d5b9343b5f7c023ea8f",
+    "rationale": "Public verification keys and signed-token issuance have distinct endpoints; the linked record is already verified.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-digital-s09",
+        "section": "Create an authentication setting record; Add authentication to chat widget",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. The client function retrieves/passes the JWT; the public-key endpoint validates its signature."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q14",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "beb46dde48e6835f6840400f08d51ef452293b737db3382e5973fd688d6c1e24",
+    "rationale": "Native UI styling belongs to application code and push uses Notification Hub; backend APIs are another surface.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-digital-s10",
+        "section": "Integrate with the Dynamics 365 Contact Center mobile SDKs",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. Native SDKs offer Azure Notification Hub push support; their out-of-box UI is styled in app code rather than admin center."
+      },
+      {
+        "sourceId": "exam-d2-digital-s11",
+        "section": "Overview: Note",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. Messaging APIs are backend service integrations, not recommended as direct client-device calls."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q15",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "966a28a3114137576d6627de45d3a4992e61afc3ae37766e5d909a58ec6e104c",
+    "rationale": "Organization, channel and application identifiers do not replace an Entra bearer token.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-digital-s11",
+        "section": "Authentication headers",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. API requests require an Entra access token in Authorization plus channel-id and organization-id; omitted authentication causes 401."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q16",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "8b3a19ba460b76d90268278cbbdfd3b6ab92a93f29cca22b6ea9b40ffb06fc76",
+    "rationale": "Default input language controls the representative translation target, independently of customer detection.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-digital-s13",
+        "section": "Enable real-time translation for representative and customer conversations",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. Default input language is the language into which customer messages are translated for representatives."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q17",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "80b70ecaf0fdf3780c5c03224d3a2f4eda4302b35f29e3e62da74486e9b42176",
+    "rationale": "Existing eligible Bing provider, enabled widget association and browser permission are separate dependencies.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-digital-s14",
+        "section": "Set up visitor location detection; Enable visitor location detection",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. Existing Bing Maps for Enterprise customers remain eligible until June 30 2028; select the provider on the widget and obtain browser location permission."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q18",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "56aabc6c24462a769f9b29e2cc598bcf40a963b53f0339c3c654e0fca18ab875",
+    "rationale": "Number is explicitly declared in the workstream editor; runtime SDK data and multiline survey text do not declare that schema.",
+    "findings": [
+      "Resolved: Replaced implausible widget-header declaration with SDK context versus explicit workstream schema."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-digital-s15",
+        "section": "Add context variables",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. Context variables are created on the workstream with a Name and Type of Text or Number."
+      },
+      {
+        "sourceId": "exam-d2-digital-s06",
+        "section": "Survey answer types",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. Multiple lines is a text answer control; adding a survey question creates corresponding context."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q19",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "90d8a288d6f4ac51eabe4a507e59fa9e4e5ba06592acb8248e28e7cb3227e9fe",
+    "rationale": "Custom account/contact status codes fall outside documented built-in identification despite a correct unique email match.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-digital-s16",
+        "section": "Identify customers automatically: Note",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. Record identification searches the active status code for contacts/accounts; custom status codes do not work for this identification."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q20",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "e83b5f7249fa5a19849b9e07c8c835c209cfb9ccc99c5aeb379ee5578c014e78",
+    "rationale": "Modifiedon and scheduler eligibility account for later actions; initial stage entry cannot guarantee exact closure time.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-digital-s17",
+        "section": "Close conversations automatically: Important; Default time",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. Scheduler uses modifiedon and recalculates closure time after actions such as consult or transfer; threshold means eligible at a subsequent run."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q21",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "0339c9a668a230deee3fa7f012f881fae1695e09ebd74a00605d79d91b13e354",
+    "rationale": "Consult acceptance supplies read-only customer dialogue; primary-controlled add-to-chat is a separate participation step.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-digital-s18",
+        "section": "Consult with representative or supervisor: Common consult events",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. Accepted consultees have read-only view of primary/customer messages; primary must explicitly add secondary to customer conversation."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q22",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "99eaff3cc8a6d04f6ccca3c1db66c432e79f32c222adb52f5b55c2fac98dbd25",
+    "rationale": "Encrypted retention is manual masking only; automatically masked originals are not ingested and cannot be recovered later.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-digital-s19",
+        "section": "Automated data masking; Encrypt manually masked messages: Note",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. Automatically masked data is masked before ingestion and not stored; encryption is only available for manually masked messages."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q23",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "b32df8e8123476c9fdf1a4c111b8626f1431dd347a2e0f399e036002006d3de1",
+    "rationale": "Inactive is system-set under missed-notification handling and cannot be manually selected.",
+    "findings": [
+      "Resolved: Replaced representative rename with the adjacent default-presence/manual-selection misconception."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-digital-s20",
+        "section": "Out-of-the-box presence statuses",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. Inactive is not manually selectable; it is set when missed notifications are enabled and incoming requests go unanswered."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q24",
+    "revision": 2,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "0589ca4dac93a0e06e3dfeda02d5b33c49ab3ff3163f81175e02881276685088",
+    "rationale": "Disabled configured overflow messages fall back to their default; deactivation does not make the action silent.",
+    "findings": [
+      "Resolved: Revision2 replaces duplicated placeholder inversion with overflow-default fallback; final alternatives now concern automated-message lifecycle."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-digital-s21",
+        "section": "How channel-level and channel instance-level messages work together; Customize automated messages: Important",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. When an overflow-condition message is deactivated, the default automated message plays for the overflow action."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q25",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "9bc520f88d7b2b70db9fde5b3919e6bc532854adb036a25c7e2b064c44dee5af",
+    "rationale": "Distribute infrequent data-driven controls to secondary tabs and limit Onload; selector hiding does not solve default-tab load.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-digital-s22",
+        "section": "Manage Active Conversation form settings",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. Reduce custom controls on default tab, move remaining data-driven controls to secondary tabs and limit Onload customizations."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q26",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "c3ae442c77ea5df5f5d000a09d769f105c6bd7312b110074a3fdee6a685b024a",
+    "rationale": "The designer lacks related record data; save/publish and inspect a related-data-bearing runtime record.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-digital-s23",
+        "section": "Add the timeline component to a form; Advanced",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. Designer is blank because it has no underlying related data; changes require save, publish and runtime refresh."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q27",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "4dc4fc04197f048b0a4d7a9c5e9602f449319b21d81e0050f03b6702a8757631",
+    "rationale": "The init context supplies UserSettings Timezone; host or fixed offsets do not match that contract.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-digital-s24",
+        "section": "Filter support",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. Timeline custom connectors must use UserSettings Timezone from the context passed to init()."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q28",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "00b7d6fb8dc84361ff50357eacf23f384caae7af26479c1d07b5921950d087d6",
+    "rationale": "CIF2 supports Docked/Minimized/Hidden, distinct from CIF1 Expanded terminology.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-digital-s25",
+        "section": "Versions 1.0 and 2.0: Communication panel modes",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. CIF 2.0 panel modes are Docked, Minimized, Hidden; 1.0 lists Minimized and Expanded."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q29",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "6f369e329ff94e01c5f19cc2e18e7551f63f612ac06eda21eeb00d5b9a6169d3",
+    "rationale": "An empty operational destination closes a transferred digital conversation; this is not initial fallback or consult.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-digital-s18",
+        "section": "Transfer conversations",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. Queue transfer invokes assignment; if the destination queue has no representatives, the application closes the conversation."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q30",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "518ef38c114e8ab276783c3ff671bbe857c9e92f737356ced3d2d188ab5a7ce0",
+    "rationale": "Both the MCS Survey connection binding and agent publication are required; preview or Customer Voice does not replace them.",
+    "findings": [
+      "Resolved: Replaced survey-name workaround with created-agent versus published-agent lifecycle confusion."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-digital-s26",
+        "section": "Verify the Dataverse connection; Complete the configuration in Copilot Studio",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. Microsoft Dataverse connection reference for MCS Survey needs a connection; publishing moves survey from In Progress to Ready."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q31",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "8cbfce94e158ecf8e293bf87fb547e95b949bda7c4e855f2d1f95df72d197164",
+    "rationale": "Blocking txt disables closed transcripts independently of attachment enablement and size limits.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-digital-s27",
+        "section": "Configure file extensions: Note",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. Blocking .txt files makes transcripts unavailable for closed conversations."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q32",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "ea4232e8420287d3dad7973e54f56001724ba9481060e4616e4083273189a7fa",
+    "rationale": "Pick/Push is immutable after creation; assignment-strategy changes and emptying work do not create an exception.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-digital-s29",
+        "section": "Create a workstream: Work distribution mode",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. Push or Pick is selected at creation and cannot be edited later."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q33",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "eeb8a5c8b9f6adad8f07629bd2f81a1028e7a4f3d509d07ea86a5df5ea0ac4de",
+    "rationale": "Returning-template autoassign addresses offline affinity beyond the existing toggle, with the documented waiting caveat.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-digital-s30",
+        "section": "Assign work items automatically for returning conversations",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. Keep same representative can reassign when unavailable; a returning notification template with Auto-assign work items can retain assignment, with offline-duration caution."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q34",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "7a552baa24127da54b41df549a468fed2344b788de74a593eb20213cfeb0bd23",
+    "rationale": "Customer-message permission and workstream-language replacement text are separate requirements after global enablement.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-digital-s19",
+        "section": "Allow manual masking globally; Configure masked message text; Mask messages as a representative",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. Manual masking requires global enablement, appropriate masking roles mapped to personas and masked-message text for each workstream language."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q35",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "6ff4be0fef49b5b3b163a1ee38ab61db5f334005d55400aaf6a6c08a2e828356",
+    "rationale": "Visitorjourney stores per-action/type history; summary, transcript and variable definitions are different data models.",
+    "findings": [
+      "Resolved: Replaced quickreply/contact-name storage with adjacent summary/transcript/context-definition models."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-digital-s28",
+        "section": "Enable self-service settings: Introduction",
+        "supported": true,
+        "notes": "Primary page and exact section independently opened 2026-11-03. Recent self-service actions are stored for the closed conversation with a record for each action and action type; table is msdyn_visitorjourney."
+      }
+    ]
+  }
+]

@@ -1,0 +1,53 @@
+.deck-manage-dialog { height: calc(100dvh - 48px); }
+.deck-manage-dialog .deck-modal-heading { flex-shrink: 0; padding: 14px 24px; }
+.deck-manage-dialog .deck-modal-heading .eyebrow { margin-bottom: 4px; }
+.deck-heading-count { margin: 5px 0 0; color: var(--muted); font-size: .8rem; }
+.deck-manage-dialog .deck-modal-body { display: flex; flex-direction: column; flex: 1; min-height: 0; overflow: hidden; padding: 0 24px 20px; }
+.deck-modal-body > .notice { margin: 10px 0 0; flex-shrink: 0; }
+.deck-manage-dialog .deck-manage-tabs { flex-shrink: 0; margin: 0 0 16px; padding-top: 2px; }
+.deck-manage-dialog .manage-settings-scroll { min-height: 0; flex: 1; overflow-y: auto; overscroll-behavior: contain; scrollbar-gutter: stable; padding: 0 4px 8px; }
+.deck-manage-dialog .manage-cards-panel { min-height: 0; flex: 1; display: flex; flex-direction: column; }
+.deck-manage-dialog [hidden] { display: none !important; }
+.deck-manage-dialog .membership-panel { min-height: 0; display: flex; flex-direction: column; flex: 1; margin: 0; border: 0; background: transparent; padding: 0; }
+.deck-manage-dialog .membership-controls { flex-shrink: 0; }
+.deck-manage-dialog .membership-controls .section-heading { margin: 0 0 10px; }
+.deck-manage-dialog .membership-controls h2 { margin: 0; font-size: 1rem; }
+.deck-manage-dialog .membership-help { margin: 8px 0; }
+.deck-manage-dialog .membership-toolbar { gap: 8px; margin: 10px 0; }
+.deck-manage-dialog .membership-count { margin: 0 0 10px; }
+.deck-manage-dialog .deck-cards-workspace { flex: 1; min-height: 0; display: flex; overflow: hidden; }
+.deck-manage-dialog .deck-cards-workspace.has-detail { display: grid; grid-template-columns: clamp(260px, 22vw, 360px) minmax(0, 1fr); gap: 16px; align-items: stretch; }
+.deck-manage-dialog .membership-scroll,
+.deck-manage-dialog .deck-cards-workspace.has-detail .membership-scroll { height: 100%; max-height: none; min-height: 0; min-width: 0; width: 100%; padding-block: 2px; }
+.deck-manage-dialog .deck-selected-detail,
+.deck-manage-dialog .deck-cards-workspace.has-detail .deck-selected-detail { height: 100%; max-height: none; min-height: 0; overflow: hidden; padding: 0; display: flex; flex-direction: column; }
+.deck-manage-dialog .deck-selected-detail > .card-details-content { flex: 1; min-height: 0; }
+.deck-manage-dialog .membership-removed { flex-shrink: 0; margin: 10px 0 0; }
+.deck-manage-dialog .membership-empty { align-self: start; }
+.deck-manage-dialog .manage-back { display: none; }
+@media (max-width: 899px) {
+  .deck-manage-dialog .deck-cards-workspace.has-detail { display: flex; }
+  .deck-manage-dialog .deck-selected-detail { display: none !important; }
+  .deck-manage-dialog .manage-reading .deck-selected-detail { display: flex !important; flex: 1; }
+  .deck-manage-dialog .manage-reading .membership-controls,
+  .deck-manage-dialog .manage-reading .membership-scroll,
+  .deck-manage-dialog .manage-reading .membership-empty,
+  .deck-manage-dialog .manage-reading .membership-removed { display: none; }
+  .deck-manage-dialog .manage-back { display: block; flex-shrink: 0; align-self: flex-start; margin: 8px 12px; }
+  .deck-manage-dialog .membership-toolbar .button { padding-inline: 10px; font-size: .75rem; }
+}
+@media (max-width: 600px) {
+  .deck-manage-dialog { height: 100dvh; }
+  .deck-manage-dialog .deck-modal-heading { padding: 10px 12px; gap: 10px; }
+  .deck-manage-dialog .deck-modal-heading > button { padding-inline: 10px; font-size: .72rem; max-width: 108px; }
+  .deck-manage-dialog .deck-modal-heading h1 { font-size: 1.15rem; }
+  .deck-manage-dialog .deck-modal-heading .eyebrow { font-size: .6rem; }
+  .deck-manage-dialog .deck-modal-body { padding: 0 12px 12px; }
+  .deck-manage-dialog .deck-manage-tabs { margin-bottom: 10px; }
+  .deck-manage-dialog .membership-help { display: none; }
+  .deck-manage-dialog .membership-toolbar { gap: 6px; }
+  .deck-manage-dialog .membership-toolbar .quiet-label { font-size: .7rem; }
+}
+
+.deck-manage-dialog .manage-open-detail { display: none; }
+@media (max-width: 899px) { .deck-manage-dialog .manage-open-detail { display: inline-flex; } }

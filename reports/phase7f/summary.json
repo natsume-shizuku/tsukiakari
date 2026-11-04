@@ -1,0 +1,128 @@
+[
+  {
+    "name": "study-mobile",
+    "performance": 98.0,
+    "accessibility": 100.0,
+    "bestPractices": 100.0,
+    "seo": 91.0
+  },
+  {
+    "name": "packs-mobile",
+    "performance": 98.0,
+    "accessibility": 100.0,
+    "bestPractices": 100.0,
+    "seo": 91.0
+  },
+  {
+    "name": "cards-mobile",
+    "performance": 94.0,
+    "accessibility": 100.0,
+    "bestPractices": 100.0,
+    "seo": 91.0
+  },
+  {
+    "name": "notes-mobile",
+    "performance": 98.0,
+    "accessibility": 100.0,
+    "bestPractices": 100.0,
+    "seo": 91.0
+  },
+  {
+    "name": "mistakes-mobile",
+    "performance": 98.0,
+    "accessibility": 100.0,
+    "bestPractices": 100.0,
+    "seo": 91.0
+  },
+  {
+    "name": "tests-mobile",
+    "performance": 98.0,
+    "accessibility": 100.0,
+    "bestPractices": 100.0,
+    "seo": 91.0
+  },
+  {
+    "name": "ab250-mobile",
+    "performance": 96.0,
+    "accessibility": 100.0,
+    "bestPractices": 100.0,
+    "seo": 91.0
+  },
+  {
+    "name": "statistics-mobile",
+    "performance": 97.0,
+    "accessibility": 100.0,
+    "bestPractices": 100.0,
+    "seo": 91.0
+  },
+  {
+    "name": "settings-mobile",
+    "performance": 98.0,
+    "accessibility": 100.0,
+    "bestPractices": 100.0,
+    "seo": 91.0
+  },
+  {
+    "name": "study-desktop",
+    "performance": 100.0,
+    "accessibility": 100.0,
+    "bestPractices": 100.0,
+    "seo": 91.0
+  },
+  {
+    "name": "packs-desktop",
+    "performance": 100.0,
+    "accessibility": 100.0,
+    "bestPractices": 100.0,
+    "seo": 91.0
+  },
+  {
+    "name": "cards-desktop",
+    "performance": 100.0,
+    "accessibility": 100.0,
+    "bestPractices": 100.0,
+    "seo": 91.0
+  },
+  {
+    "name": "notes-desktop",
+    "performance": 100.0,
+    "accessibility": 100.0,
+    "bestPractices": 100.0,
+    "seo": 91.0
+  },
+  {
+    "name": "mistakes-desktop",
+    "performance": 100.0,
+    "accessibility": 100.0,
+    "bestPractices": 100.0,
+    "seo": 91.0
+  },
+  {
+    "name": "tests-desktop",
+    "performance": 100.0,
+    "accessibility": 100.0,
+    "bestPractices": 100.0,
+    "seo": 91.0
+  },
+  {
+    "name": "ab250-desktop",
+    "performance": 100.0,
+    "accessibility": 100.0,
+    "bestPractices": 100.0,
+    "seo": 91.0
+  },
+  {
+    "name": "statistics-desktop",
+    "performance": 100.0,
+    "accessibility": 100.0,
+    "bestPractices": 100.0,
+    "seo": 91.0
+  },
+  {
+    "name": "settings-desktop",
+    "performance": 100.0,
+    "accessibility": 100.0,
+    "bestPractices": 100.0,
+    "seo": 91.0
+  }
+]

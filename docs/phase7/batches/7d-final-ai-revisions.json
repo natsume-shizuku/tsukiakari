@@ -1,0 +1,23 @@
+[
+  {
+    "date": "2026-11-03",
+    "reviewer": "/root/finish_digital",
+    "items": [
+      "cc-d3-c09",
+      "cc-d3-c15",
+      "cc-d3-c18",
+      "cc-d3-c21",
+      "cc-d3-c24",
+      "cc-d3-c27",
+      "cc-d3-c30"
+    ],
+    "revisions": 2,
+    "findings": [
+      "Replace implausible or unrelated MCQ alternatives with credible adjacent configuration errors."
+    ],
+    "resolution": [
+      "Reworked knowledge-source paths, recommendation timing, DTMF precedence, phase capture overrides, transfer metadata, VAD and recognition deployment alternatives. Explanations address each alternative; correct answer identity and positions unchanged."
+    ],
+    "status": "awaiting-independent-recheck"
+  }
+]

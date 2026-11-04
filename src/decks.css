@@ -1,0 +1,93 @@
+.deck-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.deck-tile .deck-actions { margin-bottom: 20px; }
+.deck-tile .deck-actions > .button:first-child { flex: 1; }
+.continue-study { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
+.continue-study > div { min-width: 0; }
+.continue-study .button { flex-shrink: 0; }
+.continue-study p:last-child { margin-bottom: 0; }
+.continue-study .eyebrow { margin-bottom: 10px; }
+.deck-fixture-note { margin-top: 24px; }
+.archived-decks summary { min-height: 44px; cursor: pointer; display: flex; align-items: center; }
+.archived-decks ul { list-style: none; padding: 0; margin-bottom: 0; }
+.archived-decks li { display: flex; align-items: center; justify-content: space-between; gap: 16px; border-top: 1px solid var(--line); padding-block: 14px; }
+.archived-decks li > a { min-height: 44px; display: inline-flex; align-items: center; overflow-wrap: anywhere; }
+.deck-dialog { width: min(520px, calc(100% - 32px)); max-height: calc(100dvh - 32px); overflow: auto; border: 1px solid var(--line); border-radius: 12px; padding: 28px; background: var(--panel); color: var(--text); }
+.deck-dialog::backdrop { background: var(--shadow); backdrop-filter: blur(4px); }
+.deck-dialog p { font-size: .87rem; }
+.deck-dialog .notice { margin-top: 18px; }
+.dialog-actions { justify-content: flex-end; margin-top: 24px; }
+.manage-start-actions { margin-bottom: 26px; }
+.deck-name-panel, .membership-panel { margin-bottom: 24px; }
+.membership-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-block: 20px; }
+.membership-check { display: flex; align-items: center; gap: 10px; min-height: 44px; margin: 0; cursor: pointer; }
+.membership-check input { width: 20px; height: 20px; min-height: 20px; flex-shrink: 0; accent-color: var(--accent); }
+.membership-list { list-style: none; padding: 0; margin: 20px 0 0; }
+.membership-list li { display: flex; align-items: center; gap: 14px; border-top: 1px solid var(--line); padding: 16px 0; min-width: 0; }
+.card-select { min-width: 44px; justify-content: center; }
+.membership-description { min-width: 0; flex: 1; }
+.membership-description p { margin: 0; overflow-wrap: anywhere; }
+.membership-title { min-height: 44px; display: inline-flex; align-items: center; line-height: 1.65; font-size: .9rem; overflow-wrap: anywhere; }
+.membership-empty { margin-block: 22px 0; }
+.archive-panel { margin-top: 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.archive-panel p { margin-bottom: 0; font-size: .85rem; }
+.archive-panel .button { flex-shrink: 0; }
+@media (max-width: 600px) {
+  .continue-study, .archive-panel { align-items: stretch; flex-direction: column; gap: 16px; }
+  .membership-list li { display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 8px; align-items: start; }
+  .card-select { min-width: 36px; }
+  .membership-list li > button { grid-column: 2; justify-self: start; }
+  .deck-name-panel .input-action { flex-direction: column; }
+  .deck-dialog { padding: 22px; }
+  .deck-dialog .dialog-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.deck-management-header h1 { overflow-wrap: anywhere; }
+.deck-actions .button { min-width: 0; max-width: 100%; overflow-wrap: anywhere; }
+
+.delete-deck-name { overflow-wrap: anywhere; font-weight: 600; }
+
+
+
+.membership-scroll { max-height: min(560px, 65dvh); overflow-y: auto; overscroll-behavior-y: contain; scrollbar-gutter: stable; padding-inline: 4px; }
+.membership-scroll:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.membership-scroll .membership-list { margin-top: 0; }
+
+.deck-draft-actions, .membership-row-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.deck-draft-actions { margin-top: 14px; }
+.deck-draft-actions [role="status"] { color: var(--muted); font-size: .85rem; }
+.membership-row-actions { flex-shrink: 0; }
+@media (max-width: 600px) { .membership-row-actions { grid-column: 2; } }
+
+.deck-manage-dialog { width: min(1440px, calc(100vw - 48px)); max-width: none; height: min(920px, calc(100dvh - 48px)); max-height: none; padding: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 14px; color: var(--text); background: var(--bg); }
+.deck-manage-dialog::backdrop { background: var(--shadow); backdrop-filter: blur(4px); }
+.deck-manage-dialog[open] { display: flex; flex-direction: column; }
+.deck-modal-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 22px 28px; border-bottom: 1px solid var(--line); background: var(--panel); }
+.deck-modal-heading > div { min-width: 0; }
+.deck-modal-heading h1 { font-size: 1.6rem; margin: 0; overflow-wrap: anywhere; }
+.deck-modal-heading .eyebrow { margin: 0 0 8px; }
+.deck-modal-heading > button { flex-shrink: 0; }
+.deck-modal-body { padding: 24px 28px; overflow-y: auto; min-height: 0; overscroll-behavior: contain; }
+.deck-manage-tabs { display: flex; gap: 18px; margin-bottom: 22px; border-bottom: 1px solid var(--line); }
+.deck-manage-tabs .button.secondary { position: relative; min-width: 0; min-height: 44px; padding: 12px 8px; border: 0; border-radius: 0; background: transparent; color: var(--muted); box-shadow: none; }
+.deck-manage-tabs .button.secondary[aria-selected="true"] { background: transparent; color: var(--accent); }
+.deck-manage-tabs .button.secondary[aria-selected="true"]::after { content: ""; position: absolute; bottom: -1px; left: 0; right: 0; height: 3px; background: var(--accent); }
+.deck-manage-tabs .button.secondary:hover { background: var(--panel-soft); color: var(--text); filter: none; }
+.deck-manage-tabs .button.secondary[aria-selected="true"]:hover { color: var(--accent); }
+.deck-manage-tabs .button.secondary:focus-visible { outline: 2px solid var(--accent); outline-offset: -3px; }
+.deck-cards-workspace.has-detail { display: grid; grid-template-columns: minmax(240px, .8fr) minmax(0, 1.2fr); gap: 20px; align-items: start; }
+.deck-selected-detail { max-height: min(650px, 65dvh); min-width: 0; overflow: auto; padding: 18px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); overscroll-behavior: contain; }
+.deck-manage-dialog .membership-list li { display: block; border: 0; padding: 0 0 8px; }
+.membership-select-row { display: flex; flex-direction: column; align-items: stretch; width: 100%; min-width: 0; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; text-align: left; color: var(--text); background: var(--panel); cursor: pointer; }
+.membership-select-row[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); box-shadow: inset 4px 0 0 var(--accent); }
+.membership-select-row[aria-pressed="true"] .membership-title { font-weight: 600; }
+.membership-select-row[aria-pressed="false"]:not(:disabled):hover { background: var(--panel-soft); border-color: var(--accent); }
+.membership-select-row:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.membership-select-row .membership-title { min-height: 0; margin-bottom: 6px; }
+.membership-select-row .quiet-label { overflow-wrap: anywhere; }
+@media (max-width: 900px) { .deck-cards-workspace.has-detail { grid-template-columns: minmax(0, 1fr); } .deck-cards-workspace.has-detail .membership-scroll { max-height: 32dvh; } .deck-selected-detail { max-height: none; } }
+@media (max-width: 600px) { .deck-manage-dialog { width: 100vw; height: 100dvh; margin: 0; border-radius: 0; } .deck-modal-heading { padding: 16px; gap: 10px; } .deck-modal-heading h1 { font-size: 1.3rem; } .deck-modal-body { padding: 16px; } .deck-selected-detail { padding: 12px; } }
+
+@media (min-width: 901px) {
+  .deck-cards-workspace.has-detail .membership-scroll,
+  .deck-cards-workspace.has-detail .deck-selected-detail { height: min(560px, 65dvh); max-height: min(560px, 65dvh); }
+}

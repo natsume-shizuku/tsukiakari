@@ -1,0 +1,887 @@
+[
+  {
+    "id": "ab250-d1-q05",
+    "revision": 2,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "b400d6837137a1f53ae8a51c64b30ee91d484c6cf9a667d9a9c0755a17c10400",
+    "rationale": "Initial-load paging and later incremental triggers are distinct. Pagination is the documented response to truncated batch retrieval.",
+    "findings": [
+      "Resolved: Replace contact-sync and cross-environment alternatives with adjacent paging/filter/trigger alternatives. Final revised question, every option/explanation and current applicability were independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s01",
+        "section": "Copy data",
+        "supported": true,
+        "notes": "Initial-load paging and later incremental triggers are distinct. Pagination is the documented response to truncated batch retrieval. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q06",
+    "revision": 2,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "833db6fb41b6e916b15a190e4a3047b6a6d8311bdacfa1b18c85613811fb600f",
+    "rationale": "Webhooks notify flows for source creates, updates and deletions; initial paging alone does not deliver later changes.",
+    "findings": [
+      "Resolved: Replace per-sign-in/full-recreation alternatives with credible trigger/load lifecycle alternatives. Final revised question, every option/explanation and current applicability were independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s01",
+        "section": "Copy data; Add a connector using webhooks",
+        "supported": true,
+        "notes": "Webhooks notify flows for source creates, updates and deletions; initial paging alone does not deliver later changes. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q07",
+    "revision": 2,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "0db481d55788e09d4e996f330a2af12b33ec1c9cf130f6f25142cda6a046e555",
+    "rationale": "Source CRM plus source ID/URL preserves origin and record navigation; a display name is not equivalent provenance.",
+    "findings": [
+      "Resolved: Replace widget-only provenance alternative with per-record source-key/provenance misconception. Final revised question, every option/explanation and current applicability were independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s01",
+        "section": "Prerequisites",
+        "supported": true,
+        "notes": "Source CRM plus source ID/URL preserves origin and record navigation; a display name is not equivalent provenance. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q08",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "0af5815b37a7d82b042cf1d73b35e0fe49e26fcb41a9383b4875c5865456c0dc",
+    "rationale": "The connector prerequisites explicitly require the same Power Apps and Power Automate environment; permissions alone do not repair a mismatch.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s01",
+        "section": "Prerequisites",
+        "supported": true,
+        "notes": "The connector prerequisites explicitly require the same Power Apps and Power Automate environment; permissions alone do not repair a mismatch. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q09",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "2d5be9696c64d2c74968b41148d5ff0e60b0f7adea32ee8be11a34574289304e",
+    "rationale": "The Salesforce procedure separately adds call-center users; verified shared adapter/layout settings do not establish an individual association.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s02",
+        "section": "Set up the call center in Salesforce",
+        "supported": true,
+        "notes": "The Salesforce procedure separately adds call-center users; verified shared adapter/layout settings do not establish an individual association. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q10",
+    "revision": 2,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "7b34a0f47bbd9d101eb08ea157cb197cebabbd1b5d098b20e9e52ab0497f1efc",
+    "rationale": "The Salesforce Service Console utility setup requires Open CTI Softphone; call-center membership and layout are separate steps.",
+    "findings": [
+      "Resolved: Remove explicit absent-utility diagnosis from the stem and use observed app symptoms. Final revised question, every option/explanation and current applicability were independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s02",
+        "section": "Set up a softphone in Salesforce",
+        "supported": true,
+        "notes": "The Salesforce Service Console utility setup requires Open CTI Softphone; call-center membership and layout are separate steps. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q11",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "0d5bf2bebc6ddf941ca3a92d955d13c64f119d846bb46facac48429bfb95ae6b",
+    "rationale": "The retained-CRM/CCaaS architecture leaves routing, follow-up and operational supervision with retained providers; assistance is not a provider replacement.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s03",
+        "section": "Overview; Dataflow",
+        "supported": true,
+        "notes": "The retained-CRM/CCaaS architecture leaves routing, follow-up and operational supervision with retained providers; assistance is not a provider replacement. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q12",
+    "revision": 2,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "e7fd705a57bee8fff14b342a9fded050c433be2916bd67ae54691e7664dae21b",
+    "rationale": "Embedded prerequisites include enabled omnichannel capabilities and the selected default softphone layout; provisioning-user administrator rights are not imposed on every consumer.",
+    "findings": [
+      "Resolved: Replace private-adapter/customer-chat alternatives with adjacent embedding setup alternatives. Final revised question, every option/explanation and current applicability were independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s02",
+        "section": "Prerequisites; Set up a softphone in Salesforce",
+        "supported": true,
+        "notes": "Embedded prerequisites include enabled omnichannel capabilities and the selected default softphone layout; provisioning-user administrator rights are not imposed on every consumer. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q13",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "5c5b1aae7ce66ef7f9d44406f0ae8f899ffdba034ee7db6bf741ff953a31248b",
+    "rationale": "Opening the customer record from a conversation session opens a tab in that same session; Home/global-search navigation has different behavior.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s04",
+        "section": "Copilot Service workspace sessions and tabs",
+        "supported": true,
+        "notes": "Opening the customer record from a conversation session opens a tab in that same session; Home/global-search navigation has different behavior. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q14",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "373bb1a552c49bd24a5b01eb48cb26721f689990d2a0760724cca134b3ab2572",
+    "rationale": "Simulation is preview, English inbound voice only, and excludes DTMF; prompt detail does not supply unsupported keypad execution.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s05",
+        "section": "Things to consider",
+        "supported": true,
+        "notes": "Simulation is preview, English inbound voice only, and excludes DTMF; prompt detail does not supply unsupported keypad execution. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q15",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "ca05efbfceeec40e4c5dc7c76999218c665e8d497f8375f33d5989f0176cace5",
+    "rationale": "Run History supplies prompt/status; the closed conversation supplies transcript/recording. These are complementary evidence artifacts.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s05",
+        "section": "Run a simulation",
+        "supported": true,
+        "notes": "Run History supplies prompt/status; the closed conversation supplies transcript/recording. These are complementary evidence artifacts. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q16",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "77827d31ff24fb14837167e3ddc4ebb8580bb1e0c4745b284097346b375adb71",
+    "rationale": "The prompt specifies the receiving workstream phone number; the simulated caller number is supplied separately by the service.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s05",
+        "section": "Things to consider",
+        "supported": true,
+        "notes": "The prompt specifies the receiving workstream phone number; the simulated caller number is supplied separately by the service. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q17",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "d7a196143e2d59b5512c87efb44b1045ebba3e71141573781c9407bfcd5e0d79",
+    "rationale": "Only the English inbound voice candidate fits the documented simulation-preview scope; outbound, French and digital-chat alternatives do not.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s05",
+        "section": "Overview; Things to consider",
+        "supported": true,
+        "notes": "Only the English inbound voice candidate fits the documented simulation-preview scope; outbound, French and digital-chat alternatives do not. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q18",
+    "revision": 2,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "7ddaf9dd0ad273d353eee53d40a5f6ed5a08ac50d5d5e344ed0abc8839812340",
+    "rationale": "Service Operations uses a Dataverse MCP connection for environment retrieval/actions; simultaneous failures warrant checking that connection.",
+    "findings": [
+      "Resolved: Replace queue/rollout/ranking distractors with adjacent connection/environment/permissions/observability checks. Final revised question, every option/explanation and current applicability were independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s06",
+        "section": "Steps to access",
+        "supported": true,
+        "notes": "Service Operations uses a Dataverse MCP connection for environment retrieval/actions; simultaneous failures warrant checking that connection. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q19",
+    "revision": 2,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "89ef5bfda62efd15b6a15b66734449a5646c19df2b8e59b42a71a02412a8d2c2",
+    "rationale": "Service Operations setup troubleshooting requires both Application Insights configuration and its Contact Center connection, beyond the existing MCP/billing readiness.",
+    "findings": [
+      "Resolved: Replace queue-strategy/rollout/full-admin alternatives with adjacent monitoring and connection prerequisites. Final revised question, every option/explanation and current applicability were independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s06",
+        "section": "Prerequisites",
+        "supported": true,
+        "notes": "Service Operations setup troubleshooting requires both Application Insights configuration and its Contact Center connection, beyond the existing MCP/billing readiness. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q20",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "c8d4d4862c9ac291e4f0a076ab65305665608b0f7539fdb13af2f5e2cccc0f9b",
+    "rationale": "The current Service Operations tools can create route rules but cannot add/edit conditions; those conditions use manual admin-center authoring.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s06",
+        "section": "Create and manage routing rules",
+        "supported": true,
+        "notes": "The current Service Operations tools can create route rules but cannot add/edit conditions; those conditions use manual admin-center authoring. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q21",
+    "revision": 3,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "b1b587032a853339238f304e49945004acd69e79923b7dee68224fb15d73e215",
+    "rationale": "Autonomous agents must be enabled before rollout-plan creation; plan scheduling does not itself satisfy that prerequisite.",
+    "findings": [
+      "Resolved: Remove explicitly supplied enablement diagnosis; strengthen lifecycle alternatives. Final revised question, every option/explanation and current applicability were independently reread.",
+      "Resolved at revision3: activation status removed; learner chooses setup/plan sequence without the diagnosis supplied."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s07",
+        "section": "Prerequisite; Create rollout plans",
+        "supported": true,
+        "notes": "Autonomous agents must be enabled before rollout-plan creation; plan scheduling does not itself satisfy that prerequisite. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q22",
+    "revision": 2,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "454e9820f55d9bbc879c38ec5e761c84b035eb1e53aae3f72e85b33020be47a7",
+    "rationale": "Schedule explicitly enables the plan automatically at a future date/time; immediate activation and descriptive metadata are different.",
+    "findings": [
+      "Resolved: Replace names/descriptions/sign-in alternatives with credible rollout lifecycle distinctions. Final revised question, every option/explanation and current applicability were independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s07",
+        "section": "Manage rollout plans",
+        "supported": true,
+        "notes": "Schedule explicitly enables the plan automatically at a future date/time; immediate activation and descriptive metadata are different. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q23",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "75e81996554a45b538abd6f0e04af6dd52c827fb99a2af7c77fe74d8e6631c2c",
+    "rationale": "Knowledge-agent settings persist on plan deactivation, while Case Management Agent corresponding rules deactivate; the lifecycle effect is agent-specific.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s07",
+        "section": "Considerations for rollout plans",
+        "supported": true,
+        "notes": "Knowledge-agent settings persist on plan deactivation, while Case Management Agent corresponding rules deactivate; the lifecycle effect is agent-specific. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q24",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "1c46b46e79af0c2d26fd5a07fdab1b2c1c5a2c672cee6942092d79e273c87ea0",
+    "rationale": "A single plan can span multiple enabled agents while detailed settings remain on their corresponding administrator pages.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s07",
+        "section": "Create rollout plans; Considerations",
+        "supported": true,
+        "notes": "A single plan can span multiple enabled agents while detailed settings remain on their corresponding administrator pages. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q25",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "8c82bff277b8ba023aa8832c90de58ebbf4582219f44add5e55bd87b611a40ab",
+    "rationale": "The Contact Center ALM recommendation is editable unmanaged source authoring exported as managed for the target.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s08",
+        "section": "Managed vs. unmanaged solutions",
+        "supported": true,
+        "notes": "The Contact Center ALM recommendation is editable unmanaged source authoring exported as managed for the target. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q26",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "b60f14b52613a5f2a2a27dc5320cf522837589012fcd4fe2e0946617ee04488a",
+    "rationale": "Installed solution-version parity and managed-import ownership are both explicit release practices; names do not establish parity.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s08",
+        "section": "Environment parity; Update of configuration and active layers",
+        "supported": true,
+        "notes": "Installed solution-version parity and managed-import ownership are both explicit release practices; names do not establish parity. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q27",
+    "revision": 2,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "7897b953cebff9559b52b78b50997234eb565a10b02a0d0e2531a3df09f2a4ef",
+    "rationale": "A target active customization takes precedence over a managed layer and can mask an otherwise successful later managed import.",
+    "findings": [
+      "Resolved: Replace unrelated capacity/source-conversion distractors with adjacent managed import/layer alternatives. Final revised question, every option/explanation and current applicability were independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s08",
+        "section": "Update of configuration and active layers",
+        "supported": true,
+        "notes": "A target active customization takes precedence over a managed layer and can mask an otherwise successful later managed import. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q28",
+    "revision": 2,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "2108f200d2fcc698f643bdfafb788d2c835227d4024e755f8c5114dcfa6e84eb",
+    "rationale": "For the documented managed configuration removal, remove the supplying managed solution after dependency/impact assessment; direct record deletion is not the path.",
+    "findings": [
+      "Resolved: Replace rename/export deletion distractors with credible managed-component/solution cleanup misconceptions. Final revised question, every option/explanation and current applicability were independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s08",
+        "section": "Deletion of managed configuration records",
+        "supported": true,
+        "notes": "For the documented managed configuration removal, remove the supplying managed solution after dependency/impact assessment; direct record deletion is not the path. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q29",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "ac1031bc174864602f74bbc7efc91d05988280769d6e4228c83f154c1ce4577e",
+    "rationale": "The channel migration procedure excludes accounts/provider configuration and agent/AI/analytics settings; its listed routing dependencies remain in scope.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s09",
+        "section": "Prerequisites: Important; Channel configuration migration steps",
+        "supported": true,
+        "notes": "The channel migration procedure excludes accounts/provider configuration and agent/AI/analytics settings; its listed routing dependencies remain in scope. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q30",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "d3aa398c333ffdac590e8dd8415aa611d9a93e1390f00c083df17e5afb137a5a",
+    "rationale": "Templates, skills, capacity profiles and queues precede channel workstreams/settings in the prescribed migration order.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s09",
+        "section": "Channel configuration migration steps",
+        "supported": true,
+        "notes": "Templates, skills, capacity profiles and queues precede channel workstreams/settings in the prescribed migration order. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q31",
+    "revision": 2,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "7c5bb5d5f75697da93f4fcff348a4ff1826bb1a51cb748055d4ff131a0de898c",
+    "rationale": "Post-import rendering is only one verification step; target users/resources/skill and capacity associations need separate linkage.",
+    "findings": [
+      "Resolved: Remove explicitly supplied absent-association diagnosis and use post-import symptoms. Final revised question, every option/explanation and current applicability were independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s09",
+        "section": "Verify your migration",
+        "supported": true,
+        "notes": "Post-import rendering is only one verification step; target users/resources/skill and capacity associations need separate linkage. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q32",
+    "revision": 2,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "07a5b7f2dbb77da05e6036c9330525bcd5a5de83c970b0846ae196e0939592ed",
+    "rationale": "Minimal copy carries schema/customizations without source business data, followed by the documented channel turn-off/on and target setup.",
+    "findings": [
+      "Resolved: Make the two Full copy alternatives substantively different and strengthen copy-scope/preparation choices. Final revised question, every option/explanation and current applicability were independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s10",
+        "section": "Copy the environment from the source",
+        "supported": true,
+        "notes": "Minimal copy carries schema/customizations without source business data, followed by the documented channel turn-off/on and target setup. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q33",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "88574d57d9b323e5eecbb1084d87f884d5a61b43498746566dd9294fc197aacb",
+    "rationale": "Full copy does not establish target website integration or supported record routing; use the target snippet and configure/validate records separately.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s10",
+        "section": "Configure the target environment; Chat channel",
+        "supported": true,
+        "notes": "Full copy does not establish target website integration or supported record routing; use the target snippet and configure/validate records separately. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q34",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "66c0bf4b5f4963f38e06bd61fc8ad98113fd93d569de5bf35a393e42d25c5a28",
+    "rationale": "An existing copied ACS integration must use target-specific resources/numbers; the source must remain isolated. No new-provisioning availability claim is made.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s10",
+        "section": "Voice channel with Azure Communication Services",
+        "supported": true,
+        "notes": "An existing copied ACS integration must use target-specific resources/numbers; the source must remain isolated. No new-provisioning availability claim is made. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q35",
+    "revision": 2,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "66f471bcf54e1d30069d2069b10461426dfd528a2cd02ba350b964798bcea005",
+    "rationale": "Copied Teams messaging accounts can retain source agent/application references; target recreation and associations remove the cross-environment dependency.",
+    "findings": [
+      "Resolved: Replace name/queue/name alternatives with copied messaging account/channel/agent associations. Final revised question, every option/explanation and current applicability were independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s10",
+        "section": "Microsoft Teams channel",
+        "supported": true,
+        "notes": "Copied Teams messaging accounts can retain source agent/application references; target recreation and associations remove the cross-environment dependency. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q36",
+    "revision": 2,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "09d45e11f6d93d1bc7ff5a9ae49fd866d52534398a7c873f5b13a3262443ba15",
+    "rationale": "Target agent acceptance requires reviewing connections/authentication/associations, publishing and exercising escalation/routing, beyond copied capability records.",
+    "findings": [
+      "Resolved: Replace names/delete-workstreams alternatives with target connection/authentication/publication validation misconceptions. Final revised question, every option/explanation and current applicability were independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s10",
+        "section": "Configure Copilot agents in the target environment",
+        "supported": true,
+        "notes": "Target agent acceptance requires reviewing connections/authentication/associations, publishing and exercising escalation/routing, beyond copied capability records. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q37",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "1fc252f053d2235627c8c552d4a429dcd61773287739a2eb2b1cc3a8e3ef2d19",
+    "rationale": "For a regular licensed employee, the environment security-group boundary precedes role/routing-resource readiness; administrator/application-user exceptions are not generalized.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s14",
+        "section": "Control user access; security groups",
+        "supported": true,
+        "notes": "For a regular licensed employee, the environment security-group boundary precedes role/routing-resource readiness; administrator/application-user exceptions are not generalized. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q38",
+    "revision": 2,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "e3a52d1a4ddaff3ef5102dc660d2900fdfb5aa887d0e82797ee1953e73784936",
+    "rationale": "Nested group members are not automatically pre-provisioned. A Dataverse group team with an assigned role is the documented group-managed access path.",
+    "findings": [
+      "Resolved: Replace matching display-name distractor with plausible nested-group/team/role provisioning alternative. Final revised question, every option/explanation and current applicability were independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s14",
+        "section": "Nested security groups",
+        "supported": true,
+        "notes": "Nested group members are not automatically pre-provisioned. A Dataverse group team with an assigned role is the documented group-managed access path. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q39",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "2ba8b09f68aa3d2c80febd37f04c976606a70ae0c62005f6915e0fb17dcb3009",
+    "rationale": "Basic User, Omnichannel agent and Customer Service Representative cover the stated human conversation/case tasks; App Profile access is separately established.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s16",
+        "section": "Roles in Dynamics 365 Contact Center",
+        "supported": true,
+        "notes": "Basic User, Omnichannel agent and Customer Service Representative cover the stated human conversation/case tasks; App Profile access is separately established. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q40",
+    "revision": 2,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "7d7e3022f2829fbc36eda2a393498f201b51142dbce28e7f7fa08c8c7480361b",
+    "rationale": "A bookable resource and its routing associations are separate from successful sign-in/application access; the user-management procedure configures them explicitly.",
+    "findings": [
+      "Resolved: Remove explicit missing-bookable-resource diagnosis; use application-success/routing-readiness symptoms. Final revised question, every option/explanation and current applicability were independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s11",
+        "section": "Manage users using the classic experience",
+        "supported": true,
+        "notes": "A bookable resource and its routing associations are separate from successful sign-in/application access; the user-management procedure configures them explicitly. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q41",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "bfb9967ee466f8ddd834c759e17a36dee8278bc86f33b32af6b3ef0aeb0a5dbc",
+    "rationale": "Default Presence sets initial workspace sign-in status; queue selection, skills and reset frequency perform other functions.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s11",
+        "section": "Manage users using the classic experience: Default Presence",
+        "supported": true,
+        "notes": "Default Presence sets initial workspace sign-in status; queue selection, skills and reset frequency perform other functions. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q42",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "125177b918f2340a8072f991b7cc7f386fdb46bbc9fc2c8e238327a448a2d017",
+    "rationale": "Deactivated skills do not qualify users for matching required work even when their skill/rating records still exist.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s11",
+        "section": "Manage contact center users: Update skills",
+        "supported": true,
+        "notes": "Deactivated skills do not qualify users for matching required work even when their skill/rating records still exist. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q43",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "a7ccb38c09db30f563446696094df2c1b48960c7268eecf44026a267470c9d3c",
+    "rationale": "Security-role permissions are cumulative; adding a narrower role does not subtract an existing broader grant or create deny precedence.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s15",
+        "section": "Security role considerations",
+        "supported": true,
+        "notes": "Security-role permissions are cumulative; adding a narrower role does not subtract an existing broader grant or create deny precedence. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q44",
+    "revision": 2,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "7e1b5aee003f2399b970310840f867a228d3ebe841c5842a4af120eadbdc161a",
+    "rationale": "Persona mapping does not automatically grant application/form/dashboard access; the custom-role procedure configures those surfaces separately.",
+    "findings": [
+      "Resolved: Replace role-name/duplicate-role alternatives with adjacent persona/record/surface access alternatives. Final revised question, every option/explanation and current applicability were independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s12",
+        "section": "For custom security roles to be functional",
+        "supported": true,
+        "notes": "Persona mapping does not automatically grant application/form/dashboard access; the custom-role procedure configures those surfaces separately. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q45",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "f61a0f498347f4ba81d92a94ae5d7bd744e74c5f5a2597776b0da764a50def9c",
+    "rationale": "A task-appropriate copied representative role with reviewed minimum privileges is the recommended custom baseline, not an empty or unrelated role.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s12",
+        "section": "Create custom security roles",
+        "supported": true,
+        "notes": "A task-appropriate copied representative role with reviewed minimum privileges is the recommended custom baseline, not an empty or unrelated role. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q46",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "bd654801a484fa53984a2831fa88ed293dc6fd9e0fad4c404b37dd5af3d22cee",
+    "rationale": "Profile-default changes affect default users while explicit representative custom limits remain applicable until manually reset.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s13",
+        "section": "How representative-specific limits work",
+        "supported": true,
+        "notes": "Profile-default changes affect default users while explicit representative custom limits remain applicable until manually reset. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q47",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "4d3961c7f7dde16970eb499230d0e8f6b5265ed9e9e5e6c45d748a2b837d11c3",
+    "rationale": "Lower custom limits apply to new assignments only and do not redistribute existing work; they do not temporarily revert to defaults.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s13",
+        "section": "How representative-specific limits work",
+        "supported": true,
+        "notes": "Lower custom limits apply to new assignments only and do not redistribute existing work; they do not temporarily revert to defaults. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q48",
+    "revision": 2,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "1781a65b09326ab7ffade093c2882e1e9f6bdb4144a87c928dc7156acfad66fa",
+    "rationale": "Reset frequency cannot be edited after profile creation; a different frequency requires recreating the profile, unlike limit or wrap-up edits.",
+    "findings": [
+      "Resolved: Replace rename-profile alternative with credible reset lifecycle versus association/wrap-up/limit misconception. Final revised question, every option/explanation and current applicability were independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s13",
+        "section": "Create a capacity profile and assign to users",
+        "supported": true,
+        "notes": "Reset frequency cannot be edited after profile creation; a different frequency requires recreating the profile, unlike limit or wrap-up edits. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q49",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "d44d65e84d9a083c725e1c69cb8835f3e5b8ef7e853e6247f6c558f0eacfe654",
+    "rationale": "End-of-day resets consumption after the shift even with open conversations, which do not count against the next shift limit; it does not close those conversations.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s13",
+        "section": "Create a capacity profile: Reset frequency",
+        "supported": true,
+        "notes": "End-of-day resets consumption after the shift even with open conversations, which do not count against the next shift limit; it does not close those conversations. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q50",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "8de408041dabd42000402241800619c6c5456b3731487ff63090aa28a89d3926",
+    "rationale": "Clear Custom limit to restore inheritance and have affected representatives refresh for updated presence; copying/resaving a number remains an override.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s13",
+        "section": "Configure representative-specific work limits",
+        "supported": true,
+        "notes": "Clear Custom limit to restore inheritance and have affected representatives refresh for updated presence; copying/resaving a number remains an override. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q51",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "7fa2e7e5f9fdfcad14efe090a3141843cb46964f008d83d1362eb47ced921b8f",
+    "rationale": "Manual/forced assignment can exceed configured capacity and display a negative value; that alone does not establish a global automatic-routing defect.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d1-s13",
+        "section": "Overview: manual and forced assignment",
+        "supported": true,
+        "notes": "Manual/forced assignment can exceed configured capacity and display a negative value; that alone does not establish a global automatic-routing defect. Exact primary section checked2026-11-03; final options independently challenged."
+      }
+    ]
+  }
+]

@@ -1,0 +1,40 @@
+{
+  "id": "ab250-original",
+  "version": "0.1.0",
+  "title": "AB-250 original questions — pilot",
+  "description": "24 independently reviewed original questions. Read-only pilot preview; full practice and exams unlock at 300 approved questions. Not Microsoft exam content.",
+  "fixture": false,
+  "questionCount": 24,
+  "domains": [
+    {
+      "id": "deployment",
+      "title": "Deploy Contact Center",
+      "weight": 17
+    },
+    {
+      "id": "channels",
+      "title": "Implement channels",
+      "weight": 32
+    },
+    {
+      "id": "agents-ai",
+      "title": "Configure agents and AI",
+      "weight": 12
+    },
+    {
+      "id": "work-distribution",
+      "title": "Configure work distribution",
+      "weight": 12
+    },
+    {
+      "id": "representative-experience",
+      "title": "Configure the representative experience",
+      "weight": 17
+    },
+    {
+      "id": "analytics",
+      "title": "Manage analytics",
+      "weight": 10
+    }
+  ]
+}

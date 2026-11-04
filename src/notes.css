@@ -1,0 +1,57 @@
+/* Notes are a reading workspace: a compact index beside a full document. */
+.notes-workspace { min-width: 0; }
+.notes-intro { margin: -6px 0 20px; font-size: .86rem; line-height: 1.7; }
+.notes-filters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-bottom: 22px; padding: 20px; }
+.notes-filters > div { min-width: 0; }
+.notes-search { grid-column: 1 / -1; }
+.notes-filters input, .notes-filters select { width: 100%; max-width: 100%; }
+.notes-split { display: grid; grid-template-columns: minmax(230px, .7fr) minmax(0, 1.8fr); gap: 22px; align-items: start; }
+.notes-index { display: grid; align-content: start; gap: 6px; max-height: min(560px, 70dvh); overflow-y: auto; overflow-x: hidden; scrollbar-gutter: stable; overscroll-behavior-y: contain; padding: 3px; scroll-padding-block: 6px; min-width: 0; }
+.notes-index:focus-visible, .note-reader:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 10px; }
+.notes-index-item { min-width: 0; margin: 0; }
+.notes-index-button { display: grid; gap: 8px; width: 100%; min-height: 44px; padding: 16px; border: 1px solid var(--line); border-radius: 9px; color: var(--text); background: var(--panel); text-align: left; }
+.notes-index-button:hover { border-color: var(--accent); }
+.notes-index-button[aria-current] { border-color: var(--accent); background: var(--accent-soft); box-shadow: inset 3px 0 var(--accent); }
+.notes-index-button strong { font-size: .88rem; line-height: 1.55; font-weight: 550; }
+.notes-index-preview { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: .77rem; line-height: 1.7; color: var(--muted); }
+.notes-kind-label { font-size: .63rem; color: var(--accent); }
+.note-reader { min-width: 0; height: min(760px, 78dvh); min-height: 480px; overflow-y: auto; overflow-x: hidden; scrollbar-gutter: stable; overscroll-behavior-y: contain; padding: clamp(22px, 3vw, 42px); }
+.note-reader-navigation { display: flex; align-items: center; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+.note-reader-navigation > div { display: flex; gap: 8px; flex-wrap: wrap; }
+.note-reader-navigation .button { font-size: .74rem; padding-inline: 12px; }
+.note-reader-heading { margin: 28px 0; }
+.note-reader-heading .eyebrow { font-size: .67rem; line-height: 1.8; margin: 0 0 12px; }
+.note-reader-heading h3 { font-size: clamp(1.35rem, 2vw, 1.8rem); line-height: 1.45; margin: 0 0 14px; scroll-margin-top: 20px; }
+.note-reader-heading > .muted { font-size: .8rem; margin: 0; }
+.note-reader-annotation { font-size: .8rem; color: var(--muted); border-left: 2px solid var(--accent); padding-left: 14px; margin: 20px 0 0; line-height: 1.8; }
+.note-reader-body { font-size: 1rem; line-height: 1.95; color: var(--text); overflow-wrap: anywhere; }
+.note-reader-body p { white-space: pre-wrap; margin: 0 0 1.35em; }
+.note-reader-edit { margin: 28px 0; }
+.note-reader-edit .fine-print { margin-top: 8px; }
+.note-reader-sources, .note-reader-related { margin-top: 30px; padding-top: 22px; border-top: 1px solid var(--line); }
+.note-reader h4 { font-size: .9rem; margin: 0 0 14px; }
+.note-reader-related ul { display: grid; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.note-reader-related .button { text-align: left; justify-content: space-between; width: 100%; font-weight: 400; line-height: 1.7; }
+.note-reader-related .button > span { flex-shrink: 0; color: var(--accent); }
+.notes-workspace .notes-mobile-back { display: none; }
+.notes-empty h3 { font-size: 1.05rem; margin: 0 0 8px; }
+@media (max-width: 1100px) {
+  .notes-split { grid-template-columns: minmax(200px, .8fr) minmax(0, 1.4fr); gap: 16px; }
+}
+@media (max-width: 760px) {
+  .notes-split { display: block; }
+  .notes-index { max-height: min(560px, 65dvh); }
+  .note-reader { display: none; height: auto; min-height: 0; max-height: none; overflow: visible; padding: 22px; }
+  .notes-reading .notes-controls, .notes-reading .notes-index { display: none; }
+  .notes-reading .note-reader { display: block; }
+  .notes-workspace .notes-mobile-back { display: inline-flex; margin-bottom: 20px; }
+  .note-reader-navigation { padding-bottom: 20px; }
+  .note-reader-heading { margin-block: 24px; }
+  .note-reader-body { font-size: 1rem; line-height: 1.9; }
+}
+@media (max-width: 520px) {
+  .notes-filters { grid-template-columns: 1fr; padding: 18px; }
+  .note-reader { padding: 20px 16px; }
+  .note-reader-navigation > div { width: 100%; }
+  .note-reader-navigation .button { flex: 1; min-width: 0; font-size: .72rem; padding-inline: 8px; }
+}

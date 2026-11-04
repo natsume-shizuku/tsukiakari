@@ -1,0 +1,607 @@
+{
+  "sources": [
+    {
+      "id": "cc-d2-digital-s01",
+      "title": "Configure an SMS channel for Twilio",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-sms-channel-twilio"
+    },
+    {
+      "id": "cc-d2-digital-s02",
+      "title": "Enable real-time translation of conversations",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/enable-real-time-translation"
+    },
+    {
+      "id": "cc-d2-digital-s03",
+      "title": "Add a web resource for real-time translation",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/add-web-resource-real-time-translation"
+    },
+    {
+      "id": "cc-d2-digital-s04",
+      "title": "Set up visitor location detection",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/geo-location-provider"
+    },
+    {
+      "id": "cc-d2-digital-s05",
+      "title": "Enable self-service settings for customer actions",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/enable-self-service-settings"
+    }
+  ],
+  "notes": [
+    {
+      "id": "cc-d2-n06",
+      "title": "Connect the SMS account, workstream and provider callback",
+      "body": "For the documented US-number Twilio setup, provision the channel and prepare the provider subscription and secure-column permissions. Register its credentials and number, then configure an SMS workstream.\n\nComplete the provider connection by placing the workstream inbound URL in that number's Twilio Messaging settings. Credential validation alone does not demonstrate incoming delivery. For rollout, test an actual customer message through to the representative; configure opt-out handling with the provider.",
+      "sourceIds": [
+        "cc-d2-digital-s01"
+      ]
+    },
+    {
+      "id": "cc-d2-n07",
+      "title": "Prepare translation logic before enabling the conversation setting",
+      "body": "In the documented web-resource configuration, prepare the translation service and customize its JavaScript integration before enabling translation. Upload and publish the script as a web resource, then register its URL in the translation settings and choose the representative input language. The script and service provide the translation logic; the toggle is only part of setup.\n\nFor Azure Translation Services, the administration guide specifies the global endpoint. If isolated messages keep switching the detected customer language, the documented history-based detection option stabilizes that choice. This note describes the published web-resource workflow, rather than inferring delivery from a release-plan date.",
+      "sourceIds": [
+        "cc-d2-digital-s02",
+        "cc-d2-digital-s03"
+      ]
+    },
+    {
+      "id": "cc-d2-n08",
+      "title": "Check the dependencies behind customer location and self-service history",
+      "body": "Customer context has separate dependencies. The documented visitor-location integration is restricted to existing Bing Maps for Enterprise customers through June 30, 2028; new customers and Azure Maps customers cannot use that feature. For an eligible deployment, create a provider with its Bing key and associate it with the widget. The visitor must also allow the browser location request.\n\nFor standalone Contact Center, self-service history needs portal code that supplies the customer's earlier actions as context. Enable Self service under Customer Settings after that integration exists. A visible tab alone is not evidence that the portal is capturing useful history.",
+      "sourceIds": [
+        "cc-d2-digital-s04",
+        "cc-d2-digital-s05"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "cc-d2-c16",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "Where is the SMS workstream inbound URL configured on the Twilio side?",
+      "answer": "In the support number's Messaging settings.",
+      "explanation": "This connects inbound provider delivery to the application.",
+      "sourceIds": [
+        "cc-d2-digital-s01"
+      ],
+      "noteIds": [
+        "cc-d2-n06"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:twilio-inbound-connection",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c17",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "Does successful Twilio SMS credential validation prove end-to-end incoming delivery?",
+      "answer": "No. It validates the account credentials.",
+      "explanation": "Test message delivery separately.",
+      "sourceIds": [
+        "cc-d2-digital-s01"
+      ],
+      "noteIds": [
+        "cc-d2-n06"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:twilio-validation-boundary",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c18",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "In the documented translation workflow, what must be prepared before the administrator enables translation?",
+      "answer": "A published translation web resource and its configured translation service.",
+      "explanation": "The JavaScript integration supplies the translation behavior.",
+      "sourceIds": [
+        "cc-d2-digital-s02",
+        "cc-d2-digital-s03"
+      ],
+      "noteIds": [
+        "cc-d2-n07"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:translation-resource-prerequisite",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c19",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "Which endpoint does the translation administration guide specify when Azure Translation Services is the provider?",
+      "answer": "The global endpoint.",
+      "explanation": "Apply this to the documented translation integration configuration.",
+      "sourceIds": [
+        "cc-d2-digital-s02"
+      ],
+      "noteIds": [
+        "cc-d2-n07"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:translation-provider-endpoint",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c20",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "Can an eligible widget detect the visitor's location when browser location sharing is disabled?",
+      "answer": "No. Browser permission is still required.",
+      "explanation": "The widget setting does not override the visitor's browser choice.",
+      "sourceIds": [
+        "cc-d2-digital-s04"
+      ],
+      "noteIds": [
+        "cc-d2-n08"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:visitor-location-permission",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c21",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "In standalone Contact Center, what portal prerequisite supplies self-service history?",
+      "answer": "Developer code that retrieves earlier actions and passes that history as context.",
+      "explanation": "The administrator also enables Self service.",
+      "sourceIds": [
+        "cc-d2-digital-s05"
+      ],
+      "noteIds": [
+        "cc-d2-n08"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:self-service-instrumentation",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c22",
+      "revision": 2,
+      "topicId": "chat-digital",
+      "kind": "mcq",
+      "prompt": "A Twilio SMS account validates, but customer texts never reach the application. The team is checking the provider-to-application connection before investigating work assignment. Which setting should it verify?",
+      "answer": "The number's Messaging callback to the workstream inbound URL.",
+      "explanation": "Credential validation does not verify the inbound callback. Check the number's Messaging endpoint against the SMS workstream inbound URL. Queue association concerns subsequent work assignment; the session template and default language do not establish this provider connection.",
+      "sourceIds": [
+        "cc-d2-digital-s01"
+      ],
+      "noteIds": [
+        "cc-d2-n06"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:twilio-delivery-diagnosis",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "The representative session template."
+        },
+        {
+          "id": "b",
+          "text": "The number's Messaging callback to the workstream inbound URL."
+        },
+        {
+          "id": "c",
+          "text": "The default conversation language."
+        },
+        {
+          "id": "d",
+          "text": "The workstream's queue association."
+        }
+      ],
+      "correctOptionId": "b"
+    },
+    {
+      "id": "cc-d2-c23",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "mcq",
+      "prompt": "A team uses the documented translation web resource. Brief English messages repeatedly interrupt translation during otherwise non-English customer conversations. Which setting addresses that detection behavior?",
+      "answer": "Enable history-based language detection in the web resource.",
+      "explanation": "History-based detection reduces one-off language changes. Changing UI language or resource URL does not select that detection strategy.",
+      "sourceIds": [
+        "cc-d2-digital-s02",
+        "cc-d2-digital-s03"
+      ],
+      "noteIds": [
+        "cc-d2-n07"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:translation-language-stability",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Change the representative application display language."
+        },
+        {
+          "id": "b",
+          "text": "Replace the resource URL with the customer portal URL."
+        },
+        {
+          "id": "c",
+          "text": "Enable history-based language detection in the web resource."
+        },
+        {
+          "id": "d",
+          "text": "Set the widget display locale to English."
+        }
+      ],
+      "correctOptionId": "c"
+    },
+    {
+      "id": "cc-d2-c24",
+      "revision": 2,
+      "topicId": "chat-digital",
+      "kind": "mcq",
+      "prompt": "A standalone Contact Center deployment has Self service enabled, and its tab is visible. Live chat messages arrive normally, but the tab contains no preceding portal actions. Which integration dependency should the team verify?",
+      "answer": "Whether the portal retrieves earlier actions and passes their history as context.",
+      "explanation": "The self-service feature needs developer-supplied action history as well as the enabled setting. Required survey answers, location configuration and language selection do not supply that earlier activity history. A working live conversation proves message delivery, not the separate history integration.",
+      "sourceIds": [
+        "cc-d2-digital-s05"
+      ],
+      "noteIds": [
+        "cc-d2-n08"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:self-service-empty-history",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Whether the widget's prechat survey questions are marked as required."
+        },
+        {
+          "id": "b",
+          "text": "Whether the visitor location provider has a valid Bing Maps key."
+        },
+        {
+          "id": "c",
+          "text": "Whether the representative input language matches the portal locale."
+        },
+        {
+          "id": "d",
+          "text": "Whether the portal retrieves earlier actions and passes their history as context."
+        }
+      ],
+      "correctOptionId": "d"
+    }
+  ],
+  "questions": [],
+  "editorial": [
+    {
+      "id": "cc-d2-n06",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "twilio-integration-checklist",
+      "objectiveIds": [
+        "D2.1.03"
+      ],
+      "level": "core",
+      "author": "/root/digital_finish",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-digital-s01",
+          "section": "Configure the SMS number; Configure the workstream; Establish a connection; validation",
+          "claim": "Connect the provisioned Twilio SMS account, workstream and inbound callback; credential validation is separate from message delivery.",
+          "applicability": "Twilio SMS, supported US-number setup; Contact Center embedded or standalone."
+        }
+      ],
+      "duplicateCheck": "Compared pilot and 7d2-chat: distinct twilio-integration-checklist; no repeated authentication, prechat, routing/widget-rollout or quick-reply claim."
+    },
+    {
+      "id": "cc-d2-n07",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "translation-setup-dependencies",
+      "objectiveIds": [
+        "D2.1.12"
+      ],
+      "level": "core",
+      "author": "/root/digital_finish",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-digital-s02",
+          "section": "Prerequisites; Enable real-time translation; Enable score-based language detection",
+          "claim": "Documented web-resource workflow uses a configured translation service; history-based detection resists one-off language changes.",
+          "applicability": "Documented translation web-resource configuration; message conversations, not a claim about roadmap delivery."
+        },
+        {
+          "sourceId": "cc-d2-digital-s03",
+          "section": "Add a web resource; Upload the web resource file",
+          "claim": "Customize, upload and publish translation JavaScript, then register its URL.",
+          "applicability": "Documented translation web-resource configuration; message conversations, not a claim about roadmap delivery."
+        }
+      ],
+      "duplicateCheck": "Compared pilot and 7d2-chat: distinct translation-setup-dependencies; no repeated authentication, prechat, routing/widget-rollout or quick-reply claim."
+    },
+    {
+      "id": "cc-d2-n08",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "customer-context-dependencies",
+      "objectiveIds": [
+        "D2.1.13"
+      ],
+      "level": "core",
+      "author": "/root/digital_finish",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-digital-s04",
+          "section": "Availability note; Create a provider; Enable visitor location detection",
+          "claim": "Legacy visitor location requires eligible existing Bing Maps Enterprise service and browser approval.",
+          "applicability": "Existing eligible Bing Maps Enterprise visitor-location feature, as documented on 2026-11-02."
+        },
+        {
+          "sourceId": "cc-d2-digital-s05",
+          "section": "Prerequisites; Enable self-service settings",
+          "claim": "Standalone self-service needs portal history instrumentation as well as the admin toggle.",
+          "applicability": "Contact Center standalone self-service portal integration."
+        }
+      ],
+      "duplicateCheck": "Compared pilot and 7d2-chat: distinct customer-context-dependencies; no repeated authentication, prechat, routing/widget-rollout or quick-reply claim."
+    },
+    {
+      "id": "cc-d2-c16",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "twilio-inbound-connection",
+      "objectiveIds": [
+        "D2.1.03"
+      ],
+      "level": "core",
+      "author": "/root/digital_finish",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-digital-s01",
+          "section": "Configure the SMS number; Configure the workstream; Establish a connection; validation",
+          "claim": "Connect the provisioned Twilio SMS account, workstream and inbound callback; credential validation is separate from message delivery.",
+          "applicability": "Twilio SMS, supported US-number setup; Contact Center embedded or standalone."
+        }
+      ],
+      "duplicateCheck": "Compared pilot and 7d2-chat: distinct twilio-inbound-connection; no repeated authentication, prechat, routing/widget-rollout or quick-reply claim."
+    },
+    {
+      "id": "cc-d2-c17",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "twilio-validation-boundary",
+      "objectiveIds": [
+        "D2.1.03"
+      ],
+      "level": "core",
+      "author": "/root/digital_finish",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-digital-s01",
+          "section": "Configure the SMS number; Configure the workstream; Establish a connection; validation",
+          "claim": "Connect the provisioned Twilio SMS account, workstream and inbound callback; credential validation is separate from message delivery.",
+          "applicability": "Twilio SMS, supported US-number setup; Contact Center embedded or standalone."
+        }
+      ],
+      "duplicateCheck": "Compared pilot and 7d2-chat: distinct twilio-validation-boundary; no repeated authentication, prechat, routing/widget-rollout or quick-reply claim."
+    },
+    {
+      "id": "cc-d2-c18",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "translation-resource-prerequisite",
+      "objectiveIds": [
+        "D2.1.12"
+      ],
+      "level": "core",
+      "author": "/root/digital_finish",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-digital-s02",
+          "section": "Prerequisites; Enable real-time translation; Enable score-based language detection",
+          "claim": "Documented web-resource workflow uses a configured translation service; history-based detection resists one-off language changes.",
+          "applicability": "Documented translation web-resource configuration; message conversations, not a claim about roadmap delivery."
+        },
+        {
+          "sourceId": "cc-d2-digital-s03",
+          "section": "Add a web resource; Upload the web resource file",
+          "claim": "Customize, upload and publish translation JavaScript, then register its URL.",
+          "applicability": "Documented translation web-resource configuration; message conversations, not a claim about roadmap delivery."
+        }
+      ],
+      "duplicateCheck": "Compared pilot and 7d2-chat: distinct translation-resource-prerequisite; no repeated authentication, prechat, routing/widget-rollout or quick-reply claim."
+    },
+    {
+      "id": "cc-d2-c19",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "translation-provider-endpoint",
+      "objectiveIds": [
+        "D2.1.12"
+      ],
+      "level": "core",
+      "author": "/root/digital_finish",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-digital-s02",
+          "section": "Prerequisites; Enable real-time translation; Enable score-based language detection",
+          "claim": "Documented web-resource workflow uses a configured translation service; history-based detection resists one-off language changes.",
+          "applicability": "Documented translation web-resource configuration; message conversations, not a claim about roadmap delivery."
+        }
+      ],
+      "duplicateCheck": "Compared pilot and 7d2-chat: distinct translation-provider-endpoint; no repeated authentication, prechat, routing/widget-rollout or quick-reply claim."
+    },
+    {
+      "id": "cc-d2-c20",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "visitor-location-permission",
+      "objectiveIds": [
+        "D2.1.13"
+      ],
+      "level": "core",
+      "author": "/root/digital_finish",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-digital-s04",
+          "section": "Availability note; Create a provider; Enable visitor location detection",
+          "claim": "Legacy visitor location requires eligible existing Bing Maps Enterprise service and browser approval.",
+          "applicability": "Existing eligible Bing Maps Enterprise visitor-location feature, as documented on 2026-11-02."
+        }
+      ],
+      "duplicateCheck": "Compared pilot and 7d2-chat: distinct visitor-location-permission; no repeated authentication, prechat, routing/widget-rollout or quick-reply claim."
+    },
+    {
+      "id": "cc-d2-c21",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "self-service-instrumentation",
+      "objectiveIds": [
+        "D2.1.13"
+      ],
+      "level": "core",
+      "author": "/root/digital_finish",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-digital-s05",
+          "section": "Prerequisites; Enable self-service settings",
+          "claim": "Standalone self-service needs portal history instrumentation as well as the admin toggle.",
+          "applicability": "Contact Center standalone self-service portal integration."
+        }
+      ],
+      "duplicateCheck": "Compared pilot and 7d2-chat: distinct self-service-instrumentation; no repeated authentication, prechat, routing/widget-rollout or quick-reply claim."
+    },
+    {
+      "id": "cc-d2-c22",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "twilio-delivery-diagnosis",
+      "objectiveIds": [
+        "D2.1.03"
+      ],
+      "level": "advanced",
+      "author": "/root/digital_finish",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-digital-s01",
+          "section": "Configure the SMS number; Configure the workstream; Establish a connection; validation",
+          "claim": "Connect the provisioned Twilio SMS account, workstream and inbound callback; credential validation is separate from message delivery.",
+          "applicability": "Twilio SMS, supported US-number setup; Contact Center embedded or standalone."
+        }
+      ],
+      "duplicateCheck": "Compared pilot and 7d2-chat: distinct twilio-delivery-diagnosis; no repeated authentication, prechat, routing/widget-rollout or quick-reply claim."
+    },
+    {
+      "id": "cc-d2-c23",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "translation-language-stability",
+      "objectiveIds": [
+        "D2.1.12"
+      ],
+      "level": "advanced",
+      "author": "/root/digital_finish",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-digital-s02",
+          "section": "Prerequisites; Enable real-time translation; Enable score-based language detection",
+          "claim": "Documented web-resource workflow uses a configured translation service; history-based detection resists one-off language changes.",
+          "applicability": "Documented translation web-resource configuration; message conversations, not a claim about roadmap delivery."
+        },
+        {
+          "sourceId": "cc-d2-digital-s03",
+          "section": "Add a web resource; Upload the web resource file",
+          "claim": "Customize, upload and publish translation JavaScript, then register its URL.",
+          "applicability": "Documented translation web-resource configuration; message conversations, not a claim about roadmap delivery."
+        }
+      ],
+      "duplicateCheck": "Compared pilot and 7d2-chat: distinct translation-language-stability; no repeated authentication, prechat, routing/widget-rollout or quick-reply claim."
+    },
+    {
+      "id": "cc-d2-c24",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "self-service-empty-history",
+      "objectiveIds": [
+        "D2.1.13"
+      ],
+      "level": "advanced",
+      "author": "/root/digital_finish",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-digital-s05",
+          "section": "Prerequisites; Enable self-service settings",
+          "claim": "Standalone self-service needs portal history instrumentation as well as the admin toggle.",
+          "applicability": "Contact Center standalone self-service portal integration."
+        }
+      ],
+      "duplicateCheck": "Compared pilot and 7d2-chat: distinct self-service-empty-history; no repeated authentication, prechat, routing/widget-rollout or quick-reply claim."
+    }
+  ]
+}

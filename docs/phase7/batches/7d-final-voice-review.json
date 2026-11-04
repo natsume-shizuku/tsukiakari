@@ -1,0 +1,572 @@
+[
+  {
+    "id": "cc-d2-n16",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "07a4ee11e120a308fb27a2848d0c063dd6311f4f535d2980fe0ccad9d12387ec",
+    "rationale": "Telephony models and transition dates are scoped to affected standalone ACS services; resource accounts are specific to Teams provisioning.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finalvoice-s01",
+        "section": "Prerequisites; Create a Teams resource account; Configure Teams Phone in the voice channel",
+        "supported": true,
+        "notes": "Checked per-number resource accounts, permissions/consent and Sync from Teams procedure."
+      },
+      {
+        "sourceId": "cc-d2-finalvoice-s02",
+        "section": "Understand the impact; Review the retirement schedule; Choose a voice migration path; Prepare your migration",
+        "supported": true,
+        "notes": "Checked affected-service retirement schedule and the full migration matrix, including existing carrier/SBC path."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-n17",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "850de41d2631a4bf2ee828f2168a7582a65de9bc21eab361bc16b4de1a2af061",
+    "rationale": "Inbound number capability, one-workstream association and destructive release dependencies match the management procedure.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finalvoice-s02",
+        "section": "Understand the impact; Review the retirement schedule; Choose a voice migration path; Prepare your migration",
+        "supported": true,
+        "notes": "Checked affected-service retirement schedule and the full migration matrix, including existing carrier/SBC path."
+      },
+      {
+        "sourceId": "cc-d2-finalvoice-s03",
+        "section": "Prerequisites; Add a phone number to a voice workstream; Release phone numbers",
+        "supported": true,
+        "notes": "Checked capabilities, workstream associations and release prerequisite removal."
+      },
+      {
+        "sourceId": "cc-d2-finalvoice-s04",
+        "section": "Prerequisites; Configure a voice channel; Set up a voice workstream; Configure routing rules",
+        "supported": true,
+        "notes": "Checked provisioning, number-picker eligibility and Push-only voice distribution."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-n18",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "006b95c863e59c52b1eabe4ac126e91f202d989bd8a73dd6a16858ed64196f68",
+    "rationale": "SBC/SIP context transfer is scoped to ACS Direct Routing, with exact parameter matching and no prior-IVR media promise.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finalvoice-s05",
+        "section": "Set up contextual call transfer using Azure direct routing",
+        "supported": true,
+        "notes": "Checked SBC/context configuration, exact parameter mapping and unavailable external-IVR recording/transcript."
+      },
+      {
+        "sourceId": "cc-d2-finalvoice-s06",
+        "section": "Prerequisites; SBC best practices",
+        "supported": true,
+        "notes": "Checked existing ACS bring-your-own-number/SBC path without treating it as a new acquisition recommendation."
+      },
+      {
+        "sourceId": "cc-d2-finalvoice-s14",
+        "section": "Inbound calling deployment approaches; Outbound contact center deployment",
+        "supported": true,
+        "notes": "Checked SBC/carrier integration boundaries and contextual metadata considerations."
+      },
+      {
+        "sourceId": "cc-d2-finalvoice-s02",
+        "section": "Understand the impact; Review the retirement schedule; Choose a voice migration path; Prepare your migration",
+        "supported": true,
+        "notes": "Checked affected-service retirement schedule and the full migration matrix, including existing carrier/SBC path."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-n19",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "5b276f3f56a3608a5c6056d5d2fbed54c8cc6c26701fc593e58c0b50ccac8a06",
+    "rationale": "Direct dial is distinguished from unified routing; outbound capacity membership and caller-label scope are supported.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finalvoice-s07",
+        "section": "Configure outbound and inbound profiles; Create inbound profiles; Create outbound profiles",
+        "supported": true,
+        "notes": "Checked direct inward profiles, unified-routing exclusion and outbound caller-name/capacity configuration."
+      },
+      {
+        "sourceId": "cc-d2-finalvoice-s08",
+        "section": "Prerequisites; Configure capacity profiles and assign users",
+        "supported": true,
+        "notes": "Checked user membership in outbound-associated capacity profile as outbound calling prerequisite."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-n20",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "c2a90e8f58131f65303a0c7485b019cece1562ce472c79f0968aa31b1cc7c362",
+    "rationale": "Tenant overrides, Event Grid/MIME prerequisites and translated-transcript dependencies are supported without universal recording claims.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finalvoice-s09",
+        "section": "Prerequisites; Enable call recording and transcription for voice; Enable real-time translation of calls",
+        "supported": true,
+        "notes": "Checked tenant/workstream capture controls, system topics, MIME, DTMF-only and translation dependencies."
+      },
+      {
+        "sourceId": "cc-d2-finalvoice-s10",
+        "section": "Configure representative call quality feedback survey; Store and view survey data; Set up secure consult with and transfer to external contacts",
+        "supported": true,
+        "notes": "Checked CallSurveyLogs retention destination, broadcast control and secure-contact consult/bridge prerequisites and capture choices."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-n21",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "1efeea63981c6b11ca765fff505be4856d0750bf5da1652b5ad13e05edde1653",
+    "rationale": "Survey visibility versus retention is separated correctly, as are standard bridging and secure-contact capture overrides.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finalvoice-s10",
+        "section": "Configure representative call quality feedback survey; Store and view survey data; Set up secure consult with and transfer to external contacts",
+        "supported": true,
+        "notes": "Checked CallSurveyLogs retention destination, broadcast control and secure-contact consult/bridge prerequisites and capture choices."
+      },
+      {
+        "sourceId": "cc-d2-finalvoice-s11",
+        "section": "Transfer calls; Consult with external contacts and transfer a call securely (preview)",
+        "supported": true,
+        "notes": "Checked transfer permissions and ordinary bridged/unbridged recording, transcription and DTMF behavior."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-n22",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "8c7cc3544db3cfdce61df5a6ea809dd92db69294dc47d9d2c91de01a835bf88a",
+    "rationale": "The item accurately teaches Azure TPE architecture and cost dimensions; it does not establish a Dynamics CCaaS SDK method contract.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finalvoice-s12",
+        "section": "Inbound PSTN call to the resource account; Mid call Controls for Call Automation SDK",
+        "supported": true,
+        "notes": "Checked server/client SDK separation and AddParticipant versus Redirect/Transfer in the Azure TPE architecture."
+      },
+      {
+        "sourceId": "cc-d2-finalvoice-s13",
+        "section": "Evaluating total cost of ownership; Copilot Credits: AI consumption currency; Teams Phone licensing",
+        "supported": true,
+        "notes": "Checked complete TCO learning unit; retained scoped consumption/infrastructure/maintenance factors without price guarantees."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c46",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "25d07655c38b77f935c3bb82eabfa912ffca0bf827e24a1e813bfd7efd4615d1",
+    "rationale": "Teams resource-account identity is supported for each Dynamics phone number; no ACS identity requirement is inferred.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finalvoice-s01",
+        "section": "Prerequisites; Create a Teams resource account; Configure Teams Phone in the voice channel",
+        "supported": true,
+        "notes": "Checked per-number resource accounts, permissions/consent and Sync from Teams procedure."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c47",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "5511be0f2918a849b09ef2ae8b2497ba73be4ec0e7e94d4919bbd67c5570709e",
+    "rationale": "The migration target is Teams Phone extensibility for the affected configuration, not retirement of all ACS services.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finalvoice-s02",
+        "section": "Understand the impact; Review the retirement schedule; Choose a voice migration path; Prepare your migration",
+        "supported": true,
+        "notes": "Checked affected-service retirement schedule and the full migration matrix, including existing carrier/SBC path."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c48",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "6435956386f7e60603a8e418d70a5b20c6438b5fd0007ea1d55d6e19c413463e",
+    "rationale": "The carrier/SBC constraint selects Teams Direct Routing; Calling Plan and Operator Connect alternatives represent distinct carrier models.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finalvoice-s02",
+        "section": "Understand the impact; Review the retirement schedule; Choose a voice migration path; Prepare your migration",
+        "supported": true,
+        "notes": "Checked affected-service retirement schedule and the full migration matrix, including existing carrier/SBC path."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c49",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "2f2c46df1b8cf41d53bbdb705d35f160ec245cfd6625b0f09bd9fa23bcc98f1d",
+    "rationale": "Number capability and existing workstream binding explain picker eligibility independently of routing policy.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finalvoice-s04",
+        "section": "Prerequisites; Configure a voice channel; Set up a voice workstream; Configure routing rules",
+        "supported": true,
+        "notes": "Checked provisioning, number-picker eligibility and Push-only voice distribution."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c50",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "31e773dcc094ce385f090ca7b83ec36eef934b52fb0c6217870606c54bed60ae",
+    "rationale": "Voice Push-only distribution is documented and distinct from a messaging distribution choice.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finalvoice-s04",
+        "section": "Prerequisites; Configure a voice channel; Set up a voice workstream; Configure routing rules",
+        "supported": true,
+        "notes": "Checked provisioning, number-picker eligibility and Push-only voice distribution."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c51",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "d31f2416e5d26b2108185d984145acffa8aa76c2514302d83f23e22dcedb5ebb",
+    "rationale": "Removing dependent associations and disabling personal use precede number release; the destructive consequence is disclosed.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finalvoice-s03",
+        "section": "Prerequisites; Add a phone number to a voice workstream; Release phone numbers",
+        "supported": true,
+        "notes": "Checked capabilities, workstream associations and release prerequisite removal."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c52",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "92f5036782942b1453e22dd372e210abaa7f2d1862c95674c03157e989bdfd91",
+    "rationale": "SIP-UUI keys must match workstream context parameters in the documented ACS Direct Routing flow.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finalvoice-s05",
+        "section": "Set up contextual call transfer using Azure direct routing",
+        "supported": true,
+        "notes": "Checked SBC/context configuration, exact parameter mapping and unavailable external-IVR recording/transcript."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c53",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "72a354ec4ca38cbaf101c0620b48a27e26614882de983f211ce4abb7bede102e",
+    "rationale": "Transferred context does not provide the external IVR recording/transcript; the card does not overstate media continuity.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finalvoice-s05",
+        "section": "Set up contextual call transfer using Azure direct routing",
+        "supported": true,
+        "notes": "Checked SBC/context configuration, exact parameter mapping and unavailable external-IVR recording/transcript."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c54",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "358cc5fe78f9b10b08ba5e2bf513d945f8d7560f3cd06e430c00175e28a1cd99",
+    "rationale": "The accountKey/AccountKey mismatch is supported by exact-name matching and tests a real integration failure.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finalvoice-s05",
+        "section": "Set up contextual call transfer using Azure direct routing",
+        "supported": true,
+        "notes": "Checked SBC/context configuration, exact parameter mapping and unavailable external-IVR recording/transcript."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c55",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "0c11d2aa28310fdac7429bf9c423db8fddf17ea2853b1dcfe7d93e22ec6763ca",
+    "rationale": "Direct inward dial profile association does not convert the call into unified-routing historical analytics.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finalvoice-s07",
+        "section": "Configure outbound and inbound profiles; Create inbound profiles; Create outbound profiles",
+        "supported": true,
+        "notes": "Checked direct inward profiles, unified-routing exclusion and outbound caller-name/capacity configuration."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c56",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "250306aca9c75f14e7e85a94580106a74e7e9feb24f1093ccec572574eee425b",
+    "rationale": "Outbound calling requires the user in the associated capacity profile; this is a specific eligibility mapping.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finalvoice-s08",
+        "section": "Prerequisites; Configure capacity profiles and assign users",
+        "supported": true,
+        "notes": "Checked user membership in outbound-associated capacity profile as outbound calling prerequisite."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c57",
+    "revision": 2,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "1c17d2e35fc81fc5021c9de8249922c40b53f81718d49215f43f0b93d9c2b927",
+    "rationale": "Revision 2 repairs implausible alternatives. Adjacent inbound, work-hours and unrelated capacity mappings do not establish outbound-profile eligibility.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finalvoice-s08",
+        "section": "Prerequisites; Configure capacity profiles and assign users",
+        "supported": true,
+        "notes": "Checked user membership in outbound-associated capacity profile as outbound calling prerequisite."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c58",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "c21facde2f7d055491355de4fe41c91c39e24e957550716ff674ea8363fa99a6",
+    "rationale": "Tenant recording disablement overrides workstream configuration; enabling a lower-level switch is insufficient.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finalvoice-s09",
+        "section": "Prerequisites; Enable call recording and transcription for voice; Enable real-time translation of calls",
+        "supported": true,
+        "notes": "Checked tenant/workstream capture controls, system topics, MIME, DTMF-only and translation dependencies."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c59",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "4e856ac9de8a1c268c2c7caa8270c371580362e2193404f74d503987ceb179e0",
+    "rationale": "Translated transcripts require the documented recording, transcription and translation combination.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finalvoice-s09",
+        "section": "Prerequisites; Enable call recording and transcription for voice; Enable real-time translation of calls",
+        "supported": true,
+        "notes": "Checked tenant/workstream capture controls, system topics, MIME, DTMF-only and translation dependencies."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c60",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "41bd1509ebeea93fc05d041b6bdef2f7ccead8613f2b777b87476a112d923e51",
+    "rationale": "The policy explicitly allows transcription, making audio-only stop the unique matching option rather than stopping both.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finalvoice-s10",
+        "section": "Configure representative call quality feedback survey; Store and view survey data; Set up secure consult with and transfer to external contacts",
+        "supported": true,
+        "notes": "Checked CallSurveyLogs retention destination, broadcast control and secure-contact consult/bridge prerequisites and capture choices."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c61",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "9392998e5d5919b6e9f3d746f9fdbe4f94bd61a68af78f9f9ab48c4d9f4fecce",
+    "rationale": "CallSurveyLogs and a diagnostic destination distinguish persistence from survey presentation.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finalvoice-s10",
+        "section": "Configure representative call quality feedback survey; Store and view survey data; Set up secure consult with and transfer to external contacts",
+        "supported": true,
+        "notes": "Checked CallSurveyLogs retention destination, broadcast control and secure-contact consult/bridge prerequisites and capture choices."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c62",
+    "revision": 2,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "650ea9218ad53b9ed47c8b0f58f3e67b46b02b89704c795f27c831845130669d",
+    "rationale": "Revision 2 adds the secure-contact administration source. Bridging plus external transfer/consult permission supports the stated applicability.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finalvoice-s11",
+        "section": "Transfer calls; Consult with external contacts and transfer a call securely (preview)",
+        "supported": true,
+        "notes": "Checked transfer permissions and ordinary bridged/unbridged recording, transcription and DTMF behavior."
+      },
+      {
+        "sourceId": "cc-d2-finalvoice-s10",
+        "section": "Set up secure consult with and transfer to external contacts (preview)",
+        "supported": true,
+        "notes": "Checked CallSurveyLogs retention destination, broadcast control and secure-contact consult/bridge prerequisites and capture choices."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c63",
+    "revision": 2,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "1a07574bb4c1fc8d3bb660fa40f18c0ce60bff02be5a5d35c881ab7d250d04db",
+    "rationale": "Revision 2 alternatives distinguish survey frequency and visibility from retained diagnostic responses.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finalvoice-s10",
+        "section": "Configure representative call quality feedback survey; Store and view survey data; Set up secure consult with and transfer to external contacts",
+        "supported": true,
+        "notes": "Checked CallSurveyLogs retention destination, broadcast control and secure-contact consult/bridge prerequisites and capture choices."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c64",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "3f2daa3075af8fa16bcb52e12264807ac50476e9d288fb1c0898c1daf7609a5b",
+    "rationale": "Call Automation is the server-side Azure TPE SDK role; the card is not presented as a Dynamics CCaaS API signature.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finalvoice-s12",
+        "section": "Inbound PSTN call to the resource account; Mid call Controls for Call Automation SDK",
+        "supported": true,
+        "notes": "Checked server/client SDK separation and AddParticipant versus Redirect/Transfer in the Azure TPE architecture."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c65",
+    "revision": 1,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "96cbb128588a7ed2a9a004f060cf82cf8dd4f184b60aadbe0898351d84686e82",
+    "rationale": "TCO includes consumption, infrastructure and continuing maintenance; no fixed price or guaranteed savings are claimed.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finalvoice-s13",
+        "section": "Evaluating total cost of ownership; Copilot Credits: AI consumption currency; Teams Phone licensing",
+        "supported": true,
+        "notes": "Checked complete TCO learning unit; retained scoped consumption/infrastructure/maintenance factors without price guarantees."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c66",
+    "revision": 2,
+    "reviewer": "/root/finish_digital",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "e2e4ba7c47362af4730364a5cf60421991fcc9a4a9b4468ccd1c3b9e2b240b04",
+    "rationale": "Revision 2 compares adjacent call-control operations. AddParticipant preserves the documented CCaaS connection context better than Redirect.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finalvoice-s12",
+        "section": "Inbound PSTN call to the resource account; Mid call Controls for Call Automation SDK",
+        "supported": true,
+        "notes": "Checked server/client SDK separation and AddParticipant versus Redirect/Transfer in the Azure TPE architecture."
+      }
+    ]
+  }
+]

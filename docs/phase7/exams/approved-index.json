@@ -1,0 +1,4222 @@
+[
+  {
+    "id": "ab250-d1-q01",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "salesforce-adapter-url",
+    "objectiveIds": [
+      "D1.1.03"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "0161cbfc777a697fc6d77434644cc7f23c9a3a844cee4836af653b647d40a92d"
+  },
+  {
+    "id": "ab250-d1-q02",
+    "revision": 2,
+    "domainId": "deployment",
+    "conceptId": "post-restore-readiness",
+    "objectiveIds": [
+      "D1.2.04"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "c5ed17957a719a61a7fcc06f84dd696f8b71c2be183427f1e6a5e1dc366b5192"
+  },
+  {
+    "id": "ab250-d1-q03",
+    "revision": 2,
+    "domainId": "deployment",
+    "conceptId": "solution-layer-inspection",
+    "objectiveIds": [
+      "D1.2.03"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "d75035b5a1efb675c466b761193efaa686bbe0bf276813900580f9b453f19bb8"
+  },
+  {
+    "id": "ab250-d1-q04",
+    "revision": 2,
+    "domainId": "deployment",
+    "conceptId": "channel-migration-prerequisites",
+    "objectiveIds": [
+      "D1.2.02",
+      "D1.2.03"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "e5d0040d626388e5f51c6a94224a57a8603c46762bfa4eea11157c8e4fe3aabe"
+  },
+  {
+    "id": "ab250-d2-q01",
+    "revision": 2,
+    "domainId": "channels",
+    "conceptId": "anonymous-context-initialization",
+    "objectiveIds": [
+      "D2.1.08",
+      "D2.3.01"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "f3e6294dd8fab23fcdca1313e5b675a7e7379319f2bbe6ff0e21a928e82973ba"
+  },
+  {
+    "id": "ab250-d2-q02",
+    "revision": 2,
+    "domainId": "channels",
+    "conceptId": "contact-phone-identification",
+    "objectiveIds": [
+      "D2.3.02"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "ece30e42d836411a67da4485892dd8f3bbecb8754ea0c77309267bfaa91eca13"
+  },
+  {
+    "id": "ab250-d2-q03",
+    "revision": 2,
+    "domainId": "channels",
+    "conceptId": "portal-widget-location",
+    "objectiveIds": [
+      "D2.1.04"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "0d2b16137d36e0e04a162162ff8e98e9a19d278a4d7d7b649915bb6533f9f741"
+  },
+  {
+    "id": "ab250-d2-q04",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "survey-consent-configuration",
+    "objectiveIds": [
+      "D2.1.06"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "1cca3c1025e27b60897772f86a87934ab6092b87f4f5d2e26f04105920a89acd"
+  },
+  {
+    "id": "ab250-d3-q01",
+    "revision": 2,
+    "domainId": "agents-ai",
+    "conceptId": "copilot-custom-role-diagnosis",
+    "objectiveIds": [
+      "D3.1.02"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "39128fddf0f2253e825ee69478b5dec9c12578cf43e2f63b81cf587043097370"
+  },
+  {
+    "id": "ab250-d3-q02",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "conversation-summary-join-trigger",
+    "objectiveIds": [
+      "D3.1.01"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "3bd57708521a2818093b2682d2eb0f06ef8d53ab299219df6d71106a3c4044fe"
+  },
+  {
+    "id": "ab250-d3-q03",
+    "revision": 2,
+    "domainId": "agents-ai",
+    "conceptId": "copilot-preset-knowledge-filter",
+    "objectiveIds": [
+      "D3.1.02",
+      "D3.1.03"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "3c4a580e7cd9af6b203ab762d86cbcaf130d6d8da8c82eb966a7c2b987c717dc"
+  },
+  {
+    "id": "ab250-d3-q04",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "voice-external-variable-usage",
+    "objectiveIds": [
+      "D3.2.02"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "14c1829e9e6ea079c195da6020e64c5f0d00dfee8755ef1672c5726cf6c91ff9"
+  },
+  {
+    "id": "ab250-d4-q01",
+    "revision": 2,
+    "domainId": "work-distribution",
+    "conceptId": "routing-static-attribute-reuse",
+    "objectiveIds": [
+      "D4.2.02"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "a4c71b96fbe0716fe82ab374221ee14b3a61bf8f678e09c14605b2f10a36c905"
+  },
+  {
+    "id": "ab250-d4-q02",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "highest-capacity-exact-ordering",
+    "objectiveIds": [
+      "D4.1.04",
+      "D4.2.04"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "cd03fa125ad05d4db89bf0c43e5b1ac38e10c50088d9d99ea632842d93daedfb"
+  },
+  {
+    "id": "ab250-d4-q03",
+    "revision": 2,
+    "domainId": "work-distribution",
+    "conceptId": "custom-assignment-skill-condition",
+    "objectiveIds": [
+      "D4.2.04"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "e62fa7744c6fc50382fcc0469d6df092813a61201be8231df60c770ae9197760"
+  },
+  {
+    "id": "ab250-d4-q04",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "capacity-custom-limit-and-blocking",
+    "objectiveIds": [
+      "D4.1.04",
+      "D1.3.04"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "3c5e623f60669e1a574655ba56665cf198c335d0225c9db0dec84af4ffbecfe7"
+  },
+  {
+    "id": "ab250-d5-q01",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "website-tab-embedding",
+    "objectiveIds": [
+      "D5.1.02"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "ce83d2037c6661c026f9806b3f21cbecffa3f70f06693bb41f1de9a748597b0d"
+  },
+  {
+    "id": "ab250-d5-q02",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "autofill-target-focus",
+    "objectiveIds": [
+      "D5.2.03"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "682ca0e69ff6df48cdedf520036b88c1ae4822a3eb1792ab882da2d6f09d174c"
+  },
+  {
+    "id": "ab250-d5-q03",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "script-author-permission",
+    "objectiveIds": [
+      "D5.2.02"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "69d42c77e245914b53f2c6f4ae1dd7ba5be4ce477613344608c49631ef696f11"
+  },
+  {
+    "id": "ab250-d5-q04",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "session-workstream-composition",
+    "objectiveIds": [
+      "D5.1.02",
+      "D5.1.04"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "220cad75f96a83e6b3bbde49669dcffbe360fc48fa7b2199e3bc20fe27b8a038"
+  },
+  {
+    "id": "ab250-d6-q01",
+    "revision": 2,
+    "domainId": "analytics",
+    "conceptId": "supervisor-public-intervention",
+    "objectiveIds": [
+      "D6.1.04"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "4ef23ce9287b53c20714d4fc49f989cce502b2b9f30ccd6ba73803152cdfccff"
+  },
+  {
+    "id": "ab250-d6-q02",
+    "revision": 3,
+    "domainId": "analytics",
+    "conceptId": "custom-analytics-reader-data",
+    "objectiveIds": [
+      "D6.1.03"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "b6e5b5ca6d99070cfcb6d0e9d88c05af781df364ca96b4f13c74fdf39a7708f1"
+  },
+  {
+    "id": "ab250-d6-q03",
+    "revision": 1,
+    "domainId": "analytics",
+    "conceptId": "queue-selection-event",
+    "objectiveIds": [
+      "D6.2.05"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "6ab87ee3381edf999d83ac15ffe84c9af7b5da535e5ff21355720a5abd97b2dc"
+  },
+  {
+    "id": "ab250-d6-q04",
+    "revision": 2,
+    "domainId": "analytics",
+    "conceptId": "diagnostics-setup-prerequisites",
+    "objectiveIds": [
+      "D6.2.05"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "564c402988defa520631581c55b5cfb38bb070d44463e779cb1c5765ebaac7b5"
+  },
+  {
+    "id": "ab250-d1-q05",
+    "revision": 2,
+    "domainId": "deployment",
+    "conceptId": "connector-initial-load-completeness",
+    "objectiveIds": [
+      "D1.1.02"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "b400d6837137a1f53ae8a51c64b30ee91d484c6cf9a667d9a9c0755a17c10400"
+  },
+  {
+    "id": "ab250-d1-q06",
+    "revision": 2,
+    "domainId": "deployment",
+    "conceptId": "connector-change-delivery",
+    "objectiveIds": [
+      "D1.1.02"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "833db6fb41b6e916b15a190e4a3047b6a6d8311bdacfa1b18c85613811fb600f"
+  },
+  {
+    "id": "ab250-d1-q07",
+    "revision": 2,
+    "domainId": "deployment",
+    "conceptId": "connector-record-provenance",
+    "objectiveIds": [
+      "D1.1.02"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "0db481d55788e09d4e996f330a2af12b33ec1c9cf130f6f25142cda6a046e555"
+  },
+  {
+    "id": "ab250-d1-q08",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "connector-environment-alignment",
+    "objectiveIds": [
+      "D1.1.02"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "0af5815b37a7d82b042cf1d73b35e0fe49e26fcb41a9383b4875c5865456c0dc"
+  },
+  {
+    "id": "ab250-d1-q09",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "salesforce-call-center-membership",
+    "objectiveIds": [
+      "D1.1.03"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "2d5be9696c64d2c74968b41148d5ff0e60b0f7adea32ee8be11a34574289304e"
+  },
+  {
+    "id": "ab250-d1-q10",
+    "revision": 2,
+    "domainId": "deployment",
+    "conceptId": "salesforce-console-utility",
+    "objectiveIds": [
+      "D1.1.03"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "7b34a0f47bbd9d101eb08ea157cb197cebabbd1b5d098b20e9e52ab0497f1efc"
+  },
+  {
+    "id": "ab250-d1-q11",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "retained-provider-operational-ownership",
+    "objectiveIds": [
+      "D1.1.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "0d5bf2bebc6ddf941ca3a92d955d13c64f119d846bb46facac48429bfb95ae6b"
+  },
+  {
+    "id": "ab250-d1-q12",
+    "revision": 2,
+    "domainId": "deployment",
+    "conceptId": "embedded-salesforce-readiness",
+    "objectiveIds": [
+      "D1.1.03"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "e7fd705a57bee8fff14b342a9fded050c433be2916bd67ae54691e7664dae21b"
+  },
+  {
+    "id": "ab250-d1-q13",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "workspace-session-context-navigation",
+    "objectiveIds": [
+      "D1.1.01"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "5c5b1aae7ce66ef7f9d44406f0ae8f899ffdba034ee7db6bf741ff953a31248b"
+  },
+  {
+    "id": "ab250-d1-q14",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "simulation-keypad-acceptance-boundary",
+    "objectiveIds": [
+      "D1.1.05"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "373bb1a552c49bd24a5b01eb48cb26721f689990d2a0760724cca134b3ab2572"
+  },
+  {
+    "id": "ab250-d1-q15",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "simulation-evidence-location",
+    "objectiveIds": [
+      "D1.1.05"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "ca05efbfceeec40e4c5dc7c76999218c665e8d497f8375f33d5989f0176cace5"
+  },
+  {
+    "id": "ab250-d1-q16",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "simulation-destination-number",
+    "objectiveIds": [
+      "D1.1.05"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "77827d31ff24fb14837167e3ddc4ebb8580bb1e0c4745b284097346b375adb71"
+  },
+  {
+    "id": "ab250-d1-q17",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "simulation-supported-journey-selection",
+    "objectiveIds": [
+      "D1.1.05"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "d7a196143e2d59b5512c87efb44b1045ebba3e71141573781c9407bfcd5e0d79"
+  },
+  {
+    "id": "ab250-d1-q18",
+    "revision": 2,
+    "domainId": "deployment",
+    "conceptId": "service-operations-mcp-diagnosis",
+    "objectiveIds": [
+      "D1.1.07"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "7ddaf9dd0ad273d353eee53d40a5f6ed5a08ac50d5d5e344ed0abc8839812340"
+  },
+  {
+    "id": "ab250-d1-q19",
+    "revision": 2,
+    "domainId": "deployment",
+    "conceptId": "service-operations-troubleshooting-observability",
+    "objectiveIds": [
+      "D1.1.07"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "89ef5bfda62efd15b6a15b66734449a5646c19df2b8e59b42a71a02412a8d2c2"
+  },
+  {
+    "id": "ab250-d1-q20",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "service-operations-condition-authoring-boundary",
+    "objectiveIds": [
+      "D1.1.07"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "c8d4d4862c9ac291e4f0a076ab65305665608b0f7539fdb13af2f5e2cccc0f9b"
+  },
+  {
+    "id": "ab250-d1-q21",
+    "revision": 3,
+    "domainId": "deployment",
+    "conceptId": "rollout-enabled-agent-prerequisite",
+    "objectiveIds": [
+      "D1.2.01"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "b1b587032a853339238f304e49945004acd69e79923b7dee68224fb15d73e215"
+  },
+  {
+    "id": "ab250-d1-q22",
+    "revision": 2,
+    "domainId": "deployment",
+    "conceptId": "rollout-scheduled-activation",
+    "objectiveIds": [
+      "D1.2.01"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "454e9820f55d9bbc879c38ec5e761c84b035eb1e53aae3f72e85b33020be47a7"
+  },
+  {
+    "id": "ab250-d1-q23",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "rollout-stop-effects-by-agent",
+    "objectiveIds": [
+      "D1.2.01"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "75e81996554a45b538abd6f0e04af6dd52c827fb99a2af7c77fe74d8e6631c2c"
+  },
+  {
+    "id": "ab250-d1-q24",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "rollout-combined-scope",
+    "objectiveIds": [
+      "D1.2.01"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "1c46b46e79af0c2d26fd5a07fdab1b2c1c5a2c672cee6942092d79e273c87ea0"
+  },
+  {
+    "id": "ab250-d1-q25",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "alm-development-release-artifact",
+    "objectiveIds": [
+      "D1.2.02"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "8c82bff277b8ba023aa8832c90de58ebbf4582219f44add5e55bd87b611a40ab"
+  },
+  {
+    "id": "ab250-d1-q26",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "alm-release-preflight",
+    "objectiveIds": [
+      "D1.2.03"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "b60f14b52613a5f2a2a27dc5320cf522837589012fcd4fe2e0946617ee04488a"
+  },
+  {
+    "id": "ab250-d1-q27",
+    "revision": 2,
+    "domainId": "deployment",
+    "conceptId": "alm-active-layer-precedence",
+    "objectiveIds": [
+      "D1.2.03"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "7897b953cebff9559b52b78b50997234eb565a10b02a0d0e2531a3df09f2a4ef"
+  },
+  {
+    "id": "ab250-d1-q28",
+    "revision": 2,
+    "domainId": "deployment",
+    "conceptId": "alm-managed-configuration-removal",
+    "objectiveIds": [
+      "D1.2.03"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "2108f200d2fcc698f643bdfafb788d2c835227d4024e755f8c5114dcfa6e84eb"
+  },
+  {
+    "id": "ab250-d1-q29",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "channel-migration-excluded-dependencies",
+    "objectiveIds": [
+      "D1.2.02"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "ac1031bc174864602f74bbc7efc91d05988280769d6e4228c83f154c1ce4577e"
+  },
+  {
+    "id": "ab250-d1-q30",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "channel-migration-dependency-order",
+    "objectiveIds": [
+      "D1.2.02"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "d3aa398c333ffdac590e8dd8415aa611d9a93e1390f00c083df17e5afb137a5a"
+  },
+  {
+    "id": "ab250-d1-q31",
+    "revision": 2,
+    "domainId": "deployment",
+    "conceptId": "channel-migration-user-associations",
+    "objectiveIds": [
+      "D1.2.02"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "7c5bb5d5f75697da93f4fcff348a4ff1826bb1a51cb748055d4ff131a0de898c"
+  },
+  {
+    "id": "ab250-d1-q32",
+    "revision": 2,
+    "domainId": "deployment",
+    "conceptId": "environment-minimal-copy-scope",
+    "objectiveIds": [
+      "D1.2.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "07a5b7f2dbb77da05e6036c9330525bcd5a5de83c970b0846ae196e0939592ed"
+  },
+  {
+    "id": "ab250-d1-q33",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "copy-chat-and-record-routing",
+    "objectiveIds": [
+      "D1.2.04"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "88574d57d9b323e5eecbb1084d87f884d5a61b43498746566dd9294fc197aacb"
+  },
+  {
+    "id": "ab250-d1-q34",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "copy-acs-resource-isolation",
+    "objectiveIds": [
+      "D1.2.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "66c0bf4b5f4963f38e06bd61fc8ad98113fd93d569de5bf35a393e42d25c5a28"
+  },
+  {
+    "id": "ab250-d1-q35",
+    "revision": 2,
+    "domainId": "deployment",
+    "conceptId": "copy-teams-channel-cross-environment-link",
+    "objectiveIds": [
+      "D1.2.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "66f471bcf54e1d30069d2069b10461426dfd528a2cd02ba350b964798bcea005"
+  },
+  {
+    "id": "ab250-d1-q36",
+    "revision": 2,
+    "domainId": "deployment",
+    "conceptId": "copy-agent-validation-and-publication",
+    "objectiveIds": [
+      "D1.2.04"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "09d45e11f6d93d1bc7ff5a9ae49fd866d52534398a7c873f5b13a3262443ba15"
+  },
+  {
+    "id": "ab250-d1-q37",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "environment-security-group-onboarding",
+    "objectiveIds": [
+      "D1.3.02"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "1fc252f053d2235627c8c552d4a429dcd61773287739a2eb2b1cc3a8e3ef2d19"
+  },
+  {
+    "id": "ab250-d1-q38",
+    "revision": 2,
+    "domainId": "deployment",
+    "conceptId": "nested-group-team-provisioning",
+    "objectiveIds": [
+      "D1.3.02"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "e3a52d1a4ddaff3ef5102dc660d2900fdfb5aa887d0e82797ee1953e73784936"
+  },
+  {
+    "id": "ab250-d1-q39",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "representative-case-role-set",
+    "objectiveIds": [
+      "D1.3.03"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "2ba8b09f68aa3d2c80febd37f04c976606a70ae0c62005f6915e0fb17dcb3009"
+  },
+  {
+    "id": "ab250-d1-q40",
+    "revision": 2,
+    "domainId": "deployment",
+    "conceptId": "representative-bookable-resource-readiness",
+    "objectiveIds": [
+      "D1.3.01"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "7d7e3022f2829fbc36eda2a393498f201b51142dbce28e7f7fa08c8c7480361b"
+  },
+  {
+    "id": "ab250-d1-q41",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "representative-sign-in-presence",
+    "objectiveIds": [
+      "D1.3.01"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "bfb9967ee466f8ddd834c759e17a36dee8278bc86f33b32af6b3ef0aeb0a5dbc"
+  },
+  {
+    "id": "ab250-d1-q42",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "representative-deactivated-skill-eligibility",
+    "objectiveIds": [
+      "D1.3.01"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "125177b918f2340a8072f991b7cc7f386fdb46bbc9fc2c8e238327a448a2d017"
+  },
+  {
+    "id": "ab250-d1-q43",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "security-cumulative-role-audit",
+    "objectiveIds": [
+      "D1.3.03"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "a7ccb38c09db30f563446696094df2c1b48960c7268eecf44026a267470c9d3c"
+  },
+  {
+    "id": "ab250-d1-q44",
+    "revision": 2,
+    "domainId": "deployment",
+    "conceptId": "custom-role-surface-access",
+    "objectiveIds": [
+      "D1.3.03"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "7e1b5aee003f2399b970310840f867a228d3ebe841c5842a4af120eadbdc161a"
+  },
+  {
+    "id": "ab250-d1-q45",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "custom-role-appropriate-baseline",
+    "objectiveIds": [
+      "D1.3.03"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "f61a0f498347f4ba81d92a94ae5d7bd744e74c5f5a2597776b0da764a50def9c"
+  },
+  {
+    "id": "ab250-d1-q46",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "capacity-default-change-preserves-overrides",
+    "objectiveIds": [
+      "D1.3.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "bd654801a484fa53984a2831fa88ed293dc6fd9e0fad4c404b37dd5af3d22cee"
+  },
+  {
+    "id": "ab250-d1-q47",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "capacity-lower-limit-existing-work",
+    "objectiveIds": [
+      "D1.3.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "4d3961c7f7dde16970eb499230d0e8f6b5265ed9e9e5e6c45d748a2b837d11c3"
+  },
+  {
+    "id": "ab250-d1-q48",
+    "revision": 2,
+    "domainId": "deployment",
+    "conceptId": "capacity-reset-frequency-recreation",
+    "objectiveIds": [
+      "D1.3.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "1781a65b09326ab7ffade093c2882e1e9f6bdb4144a87c928dc7156acfad66fa"
+  },
+  {
+    "id": "ab250-d1-q49",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "capacity-end-of-day-open-work",
+    "objectiveIds": [
+      "D1.3.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "d44d65e84d9a083c725e1c69cb8835f3e5b8ef7e853e6247f6c558f0eacfe654"
+  },
+  {
+    "id": "ab250-d1-q50",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "capacity-override-return-to-default",
+    "objectiveIds": [
+      "D1.3.04"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "8de408041dabd42000402241800619c6c5456b3731487ff63090aa28a89d3926"
+  },
+  {
+    "id": "ab250-d1-q51",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "capacity-negative-manual-assignment-diagnosis",
+    "objectiveIds": [
+      "D1.3.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "7fa2e7e5f9fdfcad14efe090a3141843cb46964f008d83d1362eb47ced921b8f"
+  },
+  {
+    "id": "ab250-d2-q05",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "widget-active-version-release",
+    "objectiveIds": [
+      "D2.1.01",
+      "D2.1.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "29c46ef58ace00955be4f8a086a65e96a7540b5d1dd8ccd5c96556ca67d9f799"
+  },
+  {
+    "id": "ab250-d2-q06",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "record-queue-capability-irreversibility",
+    "objectiveIds": [
+      "D2.1.02"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "b983e234926afcaf9ff849e31630332e8d8c3ca4da948598b309c44422108473"
+  },
+  {
+    "id": "ab250-d2-q07",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "twilio-number-and-optout-boundaries",
+    "objectiveIds": [
+      "D2.1.03"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "76e5da6c4a741a91414505fe9da77ab0258d33b3a41595658b575acbd11338fe"
+  },
+  {
+    "id": "ab250-d2-q08",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "chat-domain-display-restriction",
+    "objectiveIds": [
+      "D2.1.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "e1aa5a2ecb799e1ff3301b7b2fc52708549ecee11ae3094a4a2e13146de3df46"
+  },
+  {
+    "id": "ab250-d2-q09",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "proactive-invitation-expiry",
+    "objectiveIds": [
+      "D2.1.05"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "87d487707874ee112e6b1620f361219bef8cbdd956c05f4d4cbcfdd9536eaa6d"
+  },
+  {
+    "id": "ab250-d2-q10",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "survey-optional-validation",
+    "objectiveIds": [
+      "D2.1.06"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "f3efde580ef8055541f81a9c00563280ed94f3b74fc7a7a14305dae8acecfe4a"
+  },
+  {
+    "id": "ab250-d2-q11",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "quick-reply-context-and-audience",
+    "objectiveIds": [
+      "D2.1.07"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "ebd32c9ed041069b6590c9eb3f476654c9e54045d9aabb4afe649b0d05bad765"
+  },
+  {
+    "id": "ab250-d2-q12",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "sdk-proactive-window-parameters",
+    "objectiveIds": [
+      "D2.1.08"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "12a7761c6ea8989ab832b0f3583daa89816e91dc94dbe056d46bb7516a47a677"
+  },
+  {
+    "id": "ab250-d2-q13",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "authenticated-chat-key-endpoint",
+    "objectiveIds": [
+      "D2.1.09"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "cbd3e23568d95c9635eba97acb50991653fe12fe4bbd8d5b9343b5f7c023ea8f"
+  },
+  {
+    "id": "ab250-d2-q14",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "native-mobile-sdk-ui-and-push",
+    "objectiveIds": [
+      "D2.1.10"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "beb46dde48e6835f6840400f08d51ef452293b737db3382e5973fd688d6c1e24"
+  },
+  {
+    "id": "ab250-d2-q15",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "messaging-api-auth-header-failure",
+    "objectiveIds": [
+      "D2.1.11"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "966a28a3114137576d6627de45d3a4992e61afc3ae37766e5d909a58ec6e104c"
+  },
+  {
+    "id": "ab250-d2-q16",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "translation-target-language-setting",
+    "objectiveIds": [
+      "D2.1.12"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "8b3a19ba460b76d90268278cbbdfd3b6ab92a93f29cca22b6ea9b40ffb06fc76"
+  },
+  {
+    "id": "ab250-d2-q17",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "eligible-location-enable-and-consent",
+    "objectiveIds": [
+      "D2.1.13"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "80b70ecaf0fdf3780c5c03224d3a2f4eda4302b35f29e3e62da74486e9b42176"
+  },
+  {
+    "id": "ab250-d2-q18",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "context-numeric-definition",
+    "objectiveIds": [
+      "D2.3.01"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "56aabc6c24462a769f9b29e2cc598bcf40a963b53f0339c3c654e0fca18ab875"
+  },
+  {
+    "id": "ab250-d2-q19",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "identification-standard-active-status",
+    "objectiveIds": [
+      "D2.3.02"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "90d8a288d6f4ac51eabe4a507e59fa9e4e5ba06592acb8248e28e7cb3227e9fe"
+  },
+  {
+    "id": "ab250-d2-q20",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "autoclose-scheduler-recalculation",
+    "objectiveIds": [
+      "D2.3.03"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "e83b5f7249fa5a19849b9e07c8c835c209cfb9ccc99c5aeb379ee5578c014e78"
+  },
+  {
+    "id": "ab250-d2-q21",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "consult-secondary-customer-join",
+    "objectiveIds": [
+      "D2.3.04"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "0339c9a668a230deee3fa7f012f881fae1695e09ebd74a00605d79d91b13e354"
+  },
+  {
+    "id": "ab250-d2-q22",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "automated-masking-irrecoverable-original",
+    "objectiveIds": [
+      "D2.3.05"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "99eaff3cc8a6d04f6ccca3c1db66c432e79f32c222adb52f5b55c2fac98dbd25"
+  },
+  {
+    "id": "ab250-d2-q23",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "inactive-presence-system-transition",
+    "objectiveIds": [
+      "D2.3.06"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "b32df8e8123476c9fdf1a4c111b8626f1431dd347a2e0f399e036002006d3de1"
+  },
+  {
+    "id": "ab250-d2-q24",
+    "revision": 2,
+    "domainId": "channels",
+    "conceptId": "automated-overflow-message-fallback",
+    "objectiveIds": [
+      "D2.3.07"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "0589ca4dac93a0e06e3dfeda02d5b33c49ab3ff3163f81175e02881276685088"
+  },
+  {
+    "id": "ab250-d2-q25",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "enhanced-form-default-tab-performance",
+    "objectiveIds": [
+      "D2.3.08"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "9bc520f88d7b2b70db9fde5b3919e6bc532854adb036a25c7e2b064c44dee5af"
+  },
+  {
+    "id": "ab250-d2-q26",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "timeline-runtime-validation-publication",
+    "objectiveIds": [
+      "D2.3.09"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "c3ae442c77ea5df5f5d000a09d769f105c6bd7312b110074a3fdee6a685b024a"
+  },
+  {
+    "id": "ab250-d2-q27",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "timeline-connector-timezone-context",
+    "objectiveIds": [
+      "D2.3.10"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "4dc4fc04197f048b0a4d7a9c5e9602f449319b21d81e0050f03b6702a8757631"
+  },
+  {
+    "id": "ab250-d2-q28",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "cif2-panel-mode-contract",
+    "objectiveIds": [
+      "D2.3.11"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "00b7d6fb8dc84361ff50357eacf23f384caae7af26479c1d07b5921950d087d6"
+  },
+  {
+    "id": "ab250-d2-q29",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "transfer-empty-queue-result",
+    "objectiveIds": [
+      "D2.3.12"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "6f369e329ff94e01c5f19cc2e18e7551f63f612ac06eda21eeb00d5b9a6169d3"
+  },
+  {
+    "id": "ab250-d2-q30",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "survey-dataverse-publish-dependencies",
+    "objectiveIds": [
+      "D2.3.13"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "518ef38c114e8ab276783c3ff671bbe857c9e92f737356ced3d2d188ab5a7ce0"
+  },
+  {
+    "id": "ab250-d2-q31",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "attachment-txt-transcript-dependency",
+    "objectiveIds": [
+      "D2.3.14"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "8cbfce94e158ecf8e293bf87fb547e95b949bda7c4e855f2d1f95df72d197164"
+  },
+  {
+    "id": "ab250-d2-q32",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "workstream-distribution-mode-immutable",
+    "objectiveIds": [
+      "D2.1.01",
+      "D2.1.03"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "ea4232e8420287d3dad7973e54f56001724ba9481060e4616e4083273189a7fa"
+  },
+  {
+    "id": "ab250-d2-q33",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "persistent-returning-autoassign-affinity",
+    "objectiveIds": [
+      "D2.1.01",
+      "D2.1.09"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "eeb8a5c8b9f6adad8f07629bd2f81a1028e7a4f3d509d07ea86a5df5ea0ac4de"
+  },
+  {
+    "id": "ab250-d2-q34",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "manual-mask-language-and-permission",
+    "objectiveIds": [
+      "D2.3.05"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "7a552baa24127da54b41df549a468fed2344b788de74a593eb20213cfeb0bd23"
+  },
+  {
+    "id": "ab250-d2-q35",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "selfservice-per-action-records",
+    "objectiveIds": [
+      "D2.1.13"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "6ff4be0fef49b5b3b163a1ee38ab61db5f334005d55400aaf6a6c08a2e828356"
+  },
+  {
+    "id": "ab250-d2-q36",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "teams-sync-delegated-permission",
+    "objectiveIds": [
+      "D2.2.01"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "d0293ed361d215a6f16f1b18fd6d6a09af8ad81914af18ce26126b663a09d13f"
+  },
+  {
+    "id": "ab250-d2-q37",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "teams-dr-external-call-policy",
+    "objectiveIds": [
+      "D2.2.01"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "5d3274932c33081f5ec08b62f9042fc18ceca18c601d8c1b2472e3b880dcd440"
+  },
+  {
+    "id": "ab250-d2-q38",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "teams-calling-plan-service-number",
+    "objectiveIds": [
+      "D2.2.01"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "1e860121dd7b2ba0016dfce58f22e89ca9c009b17a811b2718c858d01bf0fc03"
+  },
+  {
+    "id": "ab250-d2-q39",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "acs-retirement-impact-discrimination",
+    "objectiveIds": [
+      "D2.3.23"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "32243e5f38dcbc55dd9b7cbdbb57a1d56c5571f06709d7b8aacb26ce59e1d7a5"
+  },
+  {
+    "id": "ab250-d2-q40",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "new-acs-number-acquisition-date",
+    "objectiveIds": [
+      "D2.2.03",
+      "D2.3.23"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "ee84122ab74bc6fe5708a12798eae2ea35bf25296f18a278672c4071d079b204"
+  },
+  {
+    "id": "ab250-d2-q41",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "operator-connect-portability-review",
+    "objectiveIds": [
+      "D2.3.23"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "18867a999c4883c6eacd98d4e5562de37d79db8d85a323cf4201b530b83dba54"
+  },
+  {
+    "id": "ab250-d2-q42",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "single-number-multilanguage-design",
+    "objectiveIds": [
+      "D2.2.01",
+      "D2.2.03"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "f523315a8e382bc875b11ae2407718b51487219bf6bfe3c992e13c2891daa236"
+  },
+  {
+    "id": "ab250-d2-q43",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "direct-routing-csv-number-preservation",
+    "objectiveIds": [
+      "D2.2.03"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "12cf3f8e9149a1fe2c99ae12c100b31b947cedb00ec03ea532e04a68e3ef7e98"
+  },
+  {
+    "id": "ab250-d2-q44",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "inactive-direct-routing-number-repair",
+    "objectiveIds": [
+      "D2.2.03"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "3e33c396b75b01417121eef504b3506648a971d760725c6e458b90826587fcfc"
+  },
+  {
+    "id": "ab250-d2-q45",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "external-ivr-uui-supported-formats",
+    "objectiveIds": [
+      "D2.2.02"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "e6da9d23cfcd590283b9d2be6b688fa4a6debf7d2b5c43f50c3fa1a67a4a9700"
+  },
+  {
+    "id": "ab250-d2-q46",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "external-ivr-sbc-number-topology",
+    "objectiveIds": [
+      "D2.2.02"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "80ddedc494337ffe29492427b5757f25f728d4b7b4d94c9cb368aa9be14984bb"
+  },
+  {
+    "id": "ab250-d2-q47",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "sbc-dns-region-latency",
+    "objectiveIds": [
+      "D2.3.24"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "f2f7ee0fb730f404d3be3ce63bff8252dea5cca813d4d8ebad3a8d3140b097b8"
+  },
+  {
+    "id": "ab250-d2-q48",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "inbound-profile-personal-number-prerequisites",
+    "objectiveIds": [
+      "D2.2.04"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "4ae1e1c3084545403306a514765f844356db47d8d9e85b0013aded52a48f1123"
+  },
+  {
+    "id": "ab250-d2-q49",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "inbound-forwarding-external-transfer-toggle",
+    "objectiveIds": [
+      "D2.2.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "378323fe99da1774f8d9d4fded1f0c788c61aea7a8df168d5ddb176bf77ace33"
+  },
+  {
+    "id": "ab250-d2-q50",
+    "revision": 2,
+    "domainId": "channels",
+    "conceptId": "alternative-caller-id-provisioning",
+    "objectiveIds": [
+      "D2.2.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "a9ed55d880bfcbb0101b4bce88411edd53a05249d6bbdf9034b8e27b4db73763"
+  },
+  {
+    "id": "ab250-d2-q51",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "outbound-number-label-not-cnam",
+    "objectiveIds": [
+      "D2.2.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "b86105c1854d880bbe074b8b8908d6bb63921a9446b808dfdef13d2a84e34534"
+  },
+  {
+    "id": "ab250-d2-q52",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "outbound-concurrency-and-incoming-block",
+    "objectiveIds": [
+      "D2.2.04"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "313abaf5eaef3edbfa3df41938c38bb35bf22aa1f1d24dc5b635f821412c1053"
+  },
+  {
+    "id": "ab250-d2-q53",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "outbound-queue-monitoring-separation",
+    "objectiveIds": [
+      "D2.2.04",
+      "D2.3.24"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "7908d194112cad06fbdfa7250fe245e2b82441cfd9393bae99a6fbcb23edd45d"
+  },
+  {
+    "id": "ab250-d2-q54",
+    "revision": 2,
+    "domainId": "channels",
+    "conceptId": "voice-capture-mime-event-prerequisites",
+    "objectiveIds": [
+      "D2.2.05"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "7a241e0f9980eee17cdcf20bd2e55a1b7a0e92a88b435d4cc2140244bd11ec8a"
+  },
+  {
+    "id": "ab250-d2-q55",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "manual-capture-resume-label",
+    "objectiveIds": [
+      "D2.2.05"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "00bc8e5e10bbadd464e1ab31bc9c5d60450d7cba04e3d41436f66c01808b257e"
+  },
+  {
+    "id": "ab250-d2-q56",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "recording-hold-auto-pause",
+    "objectiveIds": [
+      "D2.2.05"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "f50cbbf675dad1fa8ce3983e0454bd5d98c3cd9f86aa54d13f66be19a22b72f0"
+  },
+  {
+    "id": "ab250-d2-q57",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "dtmf-only-ai-transcript-boundary",
+    "objectiveIds": [
+      "D2.2.05"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "951510fffa209c859b2e454e43468cca8bf607ef6076ee3e628431f0bfc2b5bd"
+  },
+  {
+    "id": "ab250-d2-q58",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "voice-transcript-grouped-timestamps",
+    "objectiveIds": [
+      "D2.2.05"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "8e5422311f935a404d5f84e4104c694952237a7545a12afe561590a8299de6ad"
+  },
+  {
+    "id": "ab250-d2-q59",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "representative-quality-survey-sampling",
+    "objectiveIds": [
+      "D2.2.06"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "bb150b27514a21b71eeade4ed60b4627588d997c95cbd1829bd4a3ad64442a67"
+  },
+  {
+    "id": "ab250-d2-q60",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "secure-consult-agent-hold-constraints",
+    "objectiveIds": [
+      "D2.3.24"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "880cf3355911a26600bd3e3e0dae870de56f90c48714eeafdb1d14dee5fb5b7e"
+  },
+  {
+    "id": "ab250-d2-q61",
+    "revision": 2,
+    "domainId": "channels",
+    "conceptId": "secure-bridged-transfer-origin-scope",
+    "objectiveIds": [
+      "D2.3.24"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "2e11f2ac1dde7e2f4c4fa221f2b5889291030a35fe3e9b90fdce8c7f7bab93db"
+  },
+  {
+    "id": "ab250-d2-q62",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "secure-consult-exit-restoration",
+    "objectiveIds": [
+      "D2.3.24"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "10a9e3e47448d59e23172d4d41f3cb3964eb4edce00726b563e7db14546c7102"
+  },
+  {
+    "id": "ab250-d2-q63",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "tpe-agent-client-m365-identity",
+    "objectiveIds": [
+      "D2.2.07"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "855d3e34b2197fe3ed7b2aa3b46b3d98f4024469fb46a9cc18ce779a3d1504db"
+  },
+  {
+    "id": "ab250-d2-q64",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "tpe-multipersona-ringing-policy",
+    "objectiveIds": [
+      "D2.2.07"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "4640844d15b92cf0fee4d222bc71555cc5c9ba0535f52be55f7b5cfbbfb8dd3c"
+  },
+  {
+    "id": "ab250-d2-q65",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "credit-purchase-model-demand",
+    "objectiveIds": [
+      "D2.3.26"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "fb3914afbdb7b86e426f34bbb4a5627c5f4c8a558d8ca8d06302719fa8d52054"
+  },
+  {
+    "id": "ab250-d2-q66",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "credit-forecast-generative-share",
+    "objectiveIds": [
+      "D2.3.26"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "8a6f536f2ffbd38d344b7b8c87ba3f302343dec5e0bcd47bbf359f945d057092"
+  },
+  {
+    "id": "ab250-d2-q67",
+    "revision": 2,
+    "domainId": "channels",
+    "conceptId": "proactive-file-versus-journey-intake",
+    "objectiveIds": [
+      "D2.3.16"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "7c84467ecf4b5f65982adeb78583acc1111f586ee5b4dcbdaa6960fad4dc1091"
+  },
+  {
+    "id": "ab250-d2-q68",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "engagement-priority-competing-queues",
+    "objectiveIds": [
+      "D2.3.16"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "9e48c8a0360d4eb53bae6c5449d1135d0dbbf68ed9f682bf08eaddafee0a5d02"
+  },
+  {
+    "id": "ab250-d2-q69",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "display-number-contact-rules",
+    "objectiveIds": [
+      "D2.3.15"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "d6608956be349b7e60a61e087c67e6fc3f918aadb2923645a7752fad9cf068da"
+  },
+  {
+    "id": "ab250-d2-q70",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "retry-business-disposition-category",
+    "objectiveIds": [
+      "D2.3.15"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "c8273db12856196dec2ff4cd5799002a765f60f09f80f43e530b44bdf70c4e27"
+  },
+  {
+    "id": "ab250-d2-q71",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "quiet-hours-each-phone-type",
+    "objectiveIds": [
+      "D2.3.15"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "be595adfe609507b118588420229d81305aee28079eb994475ecf38ec655445c"
+  },
+  {
+    "id": "ab250-d2-q72",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "default-proactive-delivery-window",
+    "objectiveIds": [
+      "D2.3.16"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "8e646a3bc9fc243a1a2051c107c76cd83b7c9a2e83defd40eb94a99988e8b892"
+  },
+  {
+    "id": "ab250-d2-q73",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "proactive-consent-channel-and-evidence",
+    "objectiveIds": [
+      "D2.3.15"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "1f08b4c2bfa31769b26bdfb5ce9d1bf6fd7977407d4b56f7380530a00b93124c"
+  },
+  {
+    "id": "ab250-d2-q74",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "predictive-low-availability-fallback",
+    "objectiveIds": [
+      "D2.3.17"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "07d2ad40eb4029ddcc8ae5fa4d107652b97e8be187caf3f9307752c71ee80cb5"
+  },
+  {
+    "id": "ab250-d2-q75",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "progressive-engagement-type-sequencing",
+    "objectiveIds": [
+      "D2.3.17"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "95daf86e387770686b997c73c63fac00c506eda4d66f80fbc33775a6228c3f33"
+  },
+  {
+    "id": "ab250-d2-q76",
+    "revision": 2,
+    "domainId": "channels",
+    "conceptId": "outbound-threshold-pause-manual-restart",
+    "objectiveIds": [
+      "D2.3.17"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "92736c93babb6ee3311c860360c696ed94b313051b685c32d1ce45d2e17aa8e6"
+  },
+  {
+    "id": "ab250-d2-q77",
+    "revision": 2,
+    "domainId": "channels",
+    "conceptId": "proactive-dashboard-filter-scope",
+    "objectiveIds": [
+      "D2.3.18"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "a497ce9cda55f6e11161b884aa1383a7358d89a793ca8d64a504705b44a67e42"
+  },
+  {
+    "id": "ab250-d2-q78",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "proactive-abandonment-denominator",
+    "objectiveIds": [
+      "D2.3.18"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "252924b21abe5691b8e279d15c3ea23f707b579119cb43eae4078273e6555a48"
+  },
+  {
+    "id": "ab250-d2-q79",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "wem-combined-functional-roles",
+    "objectiveIds": [
+      "D2.3.19"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "4de8ffec09cc64d49e193457e2bf74a4b1508f75cb6f636d37a8bc6551a62ce7"
+  },
+  {
+    "id": "ab250-d2-q80",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "planning-shrinkage-occupancy",
+    "objectiveIds": [
+      "D2.3.21"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "a89d386d531487cd520730039eb13314de97faaadfa8e0320caf9e42ed5935f9"
+  },
+  {
+    "id": "ab250-d2-q81",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "planning-channel-service-objectives",
+    "objectiveIds": [
+      "D2.3.19",
+      "D2.3.21"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "98fd91e40fab245e945ba382200c076d3f5008e98356efd49fda8a5951300c7c"
+  },
+  {
+    "id": "ab250-d2-q82",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "forecast-defining-source-immutable",
+    "objectiveIds": [
+      "D2.3.21"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "91c0388259badf32d2136720295fed62b3c22103fed49bf704dbcea9253d82e3"
+  },
+  {
+    "id": "ab250-d2-q83",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "forecast-snapshot-output-versioning",
+    "objectiveIds": [
+      "D2.3.21"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "3167a7d0ff560bc5f872ca666670c591349e7a940d03ab4663476381cf971b9b"
+  },
+  {
+    "id": "ab250-d2-q84",
+    "revision": 2,
+    "domainId": "channels",
+    "conceptId": "forecast-first-scheduled-run",
+    "objectiveIds": [
+      "D2.3.21"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "152c25de9cfe7296d2d2a976151eb62ebd261d7accda41c173d62b3c5e6950ac"
+  },
+  {
+    "id": "ab250-d2-q85",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "shift-plan-capacity-itinerary",
+    "objectiveIds": [
+      "D2.3.20"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "3a6c788dc0775dd66a66fa6d06c9d8ede3b621fbea0ec0c519f5f26e43d374ed"
+  },
+  {
+    "id": "ab250-d2-q86",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "schedule-filter-intersection",
+    "objectiveIds": [
+      "D2.3.20"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "ac1c9e347ee4afd6f039a973c1667f16d7bc74c716089e55ebefb1e708340b4d"
+  },
+  {
+    "id": "ab250-d2-q87",
+    "revision": 2,
+    "domainId": "channels",
+    "conceptId": "schedule-paid-hour-input",
+    "objectiveIds": [
+      "D2.3.20"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "2425c542500c8e5209e1dfae2082d41436938f3c05a2e86d5f7ff0bb8613684c"
+  },
+  {
+    "id": "ab250-d2-q88",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "recurring-adhoc-activity",
+    "objectiveIds": [
+      "D2.3.20"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "9afc111dbbbe749b01d8eca832751b61699791262a1894f1c2df16e8c7abe4b9"
+  },
+  {
+    "id": "ab250-d2-q89",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "external-wfm-flow-direction",
+    "objectiveIds": [
+      "D2.3.22"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "b94070214d3f0821f91f0ac681ebb6e48920cf9242fdc7a52f2812bdefd1b83c"
+  },
+  {
+    "id": "ab250-d2-q90",
+    "revision": 2,
+    "domainId": "channels",
+    "conceptId": "external-wfm-service-authentication",
+    "objectiveIds": [
+      "D2.3.22"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "429aca1d999cef58e1ed23d4371401e7622517ab2da900bc241362b73557a933"
+  },
+  {
+    "id": "ab250-d2-q91",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "greeting-agent-workstream-location",
+    "objectiveIds": [
+      "D2.3.25"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "9e3d2d8ef990d8a7699b6cae3d43d860e44f25a9c04a50bffbb7a7592844f448"
+  },
+  {
+    "id": "ab250-d2-q92",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "ai-data-source-performance-choice",
+    "objectiveIds": [
+      "D2.3.25"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "cb587bf9c5af4a0d2dfe2d3387ff527c0d0176d91e59398c56ed5ecbcdb58b31"
+  },
+  {
+    "id": "ab250-d2-q93",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "ai-payload-metadata-size",
+    "objectiveIds": [
+      "D2.3.25"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "514d5ca2343c577042bb74249799022fc41a5b35dcd45b1c63bb87eb891151ef"
+  },
+  {
+    "id": "ab250-d2-q94",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "realtime-long-context-boundary",
+    "objectiveIds": [
+      "D2.3.25"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "045aeb4218f8edf1e3e50ad1b62590223bcca0f9a53a16834605823632023b43"
+  },
+  {
+    "id": "ab250-d2-q95",
+    "revision": 2,
+    "domainId": "channels",
+    "conceptId": "realtime-first-turn-static-content",
+    "objectiveIds": [
+      "D2.3.25"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "36135402d7a6943e1977c561ab25451712b25cac996d9a7c962cd43a9ded8f3b"
+  },
+  {
+    "id": "ab250-d2-q96",
+    "revision": 2,
+    "domainId": "channels",
+    "conceptId": "realtime-speed-quality-tradeoff",
+    "objectiveIds": [
+      "D2.3.25"
+    ],
+    "kind": "single",
+    "author": "/root/exam_channels",
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "9df989f04a96d390867f18946f2e085077328bf34bb965b8cf1b275069355988"
+  },
+  {
+    "id": "ab250-d3-q05",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "case-summary-noise-exclusion",
+    "objectiveIds": [
+      "D3.1.01"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "9240f007915f68991aa79482882493f2a2c7d85a900d62d5780418dbf835aacb"
+  },
+  {
+    "id": "ab250-d3-q06",
+    "revision": 2,
+    "domainId": "agents-ai",
+    "conceptId": "summary-case-action-dependency",
+    "objectiveIds": [
+      "D3.1.01"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "fcc38674d9f617192d40b91a142c8b6b7cee35eb5e56efb5f26ad74b7c773be0"
+  },
+  {
+    "id": "ab250-d3-q07",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "record-dependent-knowledge-filter",
+    "objectiveIds": [
+      "D3.1.02"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "e01c4c164fb90e919ff843eecde0372463b72a1d2d1c1299dd2d18c27c208efa"
+  },
+  {
+    "id": "ab250-d3-q08",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "knowledge-readiness-differential",
+    "objectiveIds": [
+      "D3.1.02",
+      "D3.1.03"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "b022da6f75445ad0edfeff82cdf4514ffc00a3463fc85853216f6ae43b79688e"
+  },
+  {
+    "id": "ab250-d3-q09",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "extensibility-confidence-fallback",
+    "objectiveIds": [
+      "D3.1.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "3db3dafb738f709cadb55efbb985d8bf183b367c0ff245839e21e1252802eba9"
+  },
+  {
+    "id": "ab250-d3-q10",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "managed-agent-change-boundaries",
+    "objectiveIds": [
+      "D3.1.04"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "ea5e296f3b7e6200da34eab4c66e485f89f32985601cf02e9b37869760836635"
+  },
+  {
+    "id": "ab250-d3-q11",
+    "revision": 2,
+    "domainId": "agents-ai",
+    "conceptId": "extensibility-context-description",
+    "objectiveIds": [
+      "D3.1.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "a2c357f888b521c2394095f7577ee4595a38afa78b3f3566bba17e276f2c816d"
+  },
+  {
+    "id": "ab250-d3-q12",
+    "revision": 2,
+    "domainId": "agents-ai",
+    "conceptId": "analytics-conversation-channel-scope",
+    "objectiveIds": [
+      "D3.1.05"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "8f1fecfe2497feb5deeaf3cf3f3ebee90e9a2cb97faef2157a6273381fc37054"
+  },
+  {
+    "id": "ab250-d3-q13",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "analytics-adoption-comparison-design",
+    "objectiveIds": [
+      "D3.1.05"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "c6776a8db012cc8a1d39c14c1d795d214a8cadf4600b3b8d9d47d60417718929"
+  },
+  {
+    "id": "ab250-d3-q14",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "smart-assist-implementation-choice",
+    "objectiveIds": [
+      "D3.1.06"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "e73c781d9bebce4578d6aab95119b5ca46d3a5d4bb16a980ec81928ad3284fd8"
+  },
+  {
+    "id": "ab250-d3-q15",
+    "revision": 2,
+    "domainId": "agents-ai",
+    "conceptId": "smart-assist-workstream-association",
+    "objectiveIds": [
+      "D3.1.06"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "e1231a26d7babbdf0311f6eb72862fc0e8d4e69f9f90753a08e52653058b8dc1"
+  },
+  {
+    "id": "ab250-d3-q16",
+    "revision": 2,
+    "domainId": "agents-ai",
+    "conceptId": "smart-assist-channel-scope",
+    "objectiveIds": [
+      "D3.1.06"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "699d6bd074b0147121bffe178e78fbd9aa4ac86b98433f9a67a1b122491e5a9c"
+  },
+  {
+    "id": "ab250-d3-q17",
+    "revision": 2,
+    "domainId": "agents-ai",
+    "conceptId": "voice-authoring-channel-separation",
+    "objectiveIds": [
+      "D3.2.01"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "5dc85f51a807a7432b0d1f6d5fb0a4b3bd619487e36c93271390259beca26b21"
+  },
+  {
+    "id": "ab250-d3-q18",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "context-record-identifier-parsing",
+    "objectiveIds": [
+      "D3.2.02"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "5de08d9e47f6ec1fc9651f5f6d80503bba01d80fa6b2d9d75d576f1a940f7f13"
+  },
+  {
+    "id": "ab250-d3-q19",
+    "revision": 2,
+    "domainId": "agents-ai",
+    "conceptId": "hybrid-topic-output-contract",
+    "objectiveIds": [
+      "D3.2.02"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "ccf957583eb702ea9b846535b5bad151612688a28df51883c260cf25c55cc2f3"
+  },
+  {
+    "id": "ab250-d3-q20",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "sensitive-runtime-persistence-boundary",
+    "objectiveIds": [
+      "D3.2.03"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "355f48c612e836fe3886d757ab837edc5f564ed3309272fbb4ec7baeebce2b2a"
+  },
+  {
+    "id": "ab250-d3-q21",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "external-contact-capture-phase-split",
+    "objectiveIds": [
+      "D3.2.03"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "209ba1903fd46e02c9ebc3dbc2bf8310abad7bb1dae3fab86e3abf26db1e7e26"
+  },
+  {
+    "id": "ab250-d3-q22",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "consent-inbound-scope-assessment",
+    "objectiveIds": [
+      "D3.2.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "bbf5b7081bd8d1a57b138752e1451c8319a8e5740ad8939f738e40769995bead"
+  },
+  {
+    "id": "ab250-d3-q23",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "consent-silence-policy-validation",
+    "objectiveIds": [
+      "D3.2.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "d3417baab5b19a5a08bc291401179bd35d823fc96dca5d4bd077036fd89dd35c"
+  },
+  {
+    "id": "ab250-d3-q24",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "incoming-header-schema-evolution",
+    "objectiveIds": [
+      "D3.2.05"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "09d444061a5671fc439073fdc4671e1b8173b3af31f861365121853ac4b626f7"
+  },
+  {
+    "id": "ab250-d3-q25",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "dynamic-transfer-metadata-design",
+    "objectiveIds": [
+      "D3.2.05"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "106bf1fcdbfd97bea86d322172704614edda3c2dbeb02d3e6f3c49ecfe9230b9"
+  },
+  {
+    "id": "ab250-d3-q26",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "static-uui-topology-repair",
+    "objectiveIds": [
+      "D3.2.05"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "89df4fb07d69dd80b3d32f551104dfd43617080d951318fb7333794843e34d74"
+  },
+  {
+    "id": "ab250-d3-q27",
+    "revision": 2,
+    "domainId": "agents-ai",
+    "conceptId": "realtime-basic-rollback-design",
+    "objectiveIds": [
+      "D3.2.06"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "adc22660cce277b929afb5d36b2f679a28033667345fee32347fe2acb0d898e7"
+  },
+  {
+    "id": "ab250-d3-q28",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "voice-model-branded-tts-tradeoff",
+    "objectiveIds": [
+      "D3.2.06"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "1454be46a6ecba61332003641f1de8fac757c5963c16b96bd38a8138ae2dff96"
+  },
+  {
+    "id": "ab250-d3-q29",
+    "revision": 2,
+    "domainId": "agents-ai",
+    "conceptId": "silence-detection-versus-turn-vad",
+    "objectiveIds": [
+      "D3.2.09"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "2aa62c7da0341bf2efea165f5ce1d5afa70077937ab7fe8487db9edfcb7d4b0b"
+  },
+  {
+    "id": "ab250-d3-q30",
+    "revision": 2,
+    "domainId": "agents-ai",
+    "conceptId": "dtmf-test-input-semantics",
+    "objectiveIds": [
+      "D3.2.07"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "95dfde6382025443d9f6b3afdcaf5e8cb715346d2d12e1a4972d40be44fd85bc"
+  },
+  {
+    "id": "ab250-d3-q31",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "dtmf-length-termination-validation",
+    "objectiveIds": [
+      "D3.2.07"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "7ddc018804da9955337edcb6c49d72ea7a3e5c899d99f4dcc1712843200053e3"
+  },
+  {
+    "id": "ab250-d3-q32",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "explicit-handoff-context-delivery",
+    "objectiveIds": [
+      "D3.2.08"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "73b746c43fee05f1465d1932434d8b19ec6871de5c1bc882c53bfeeffeadc8d8"
+  },
+  {
+    "id": "ab250-d3-q33",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "realtime-trigger-portability",
+    "objectiveIds": [
+      "D3.2.08"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "702b250b54830315c3e852004d84136b00f38b38bfb7fa26d38165ddf6ce0007"
+  },
+  {
+    "id": "ab250-d3-q34",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "multilingual-hybrid-content-responsibility",
+    "objectiveIds": [
+      "D3.2.10"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "6ba018c1024976c2dd6185dfa84293a76e34fab5a2fed23a4f23a94d833b7d79"
+  },
+  {
+    "id": "ab250-d3-q35",
+    "revision": 2,
+    "domainId": "agents-ai",
+    "conceptId": "voice-region-deployment-sequence",
+    "objectiveIds": [
+      "D3.2.10"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "ba6927d1bc0ae8e1d3d32cf7525dbb5d976a369f3d1f56579237387b6eaa1766"
+  },
+  {
+    "id": "ab250-d3-q36",
+    "revision": 2,
+    "domainId": "agents-ai",
+    "conceptId": "explicit-language-menu-switch",
+    "objectiveIds": [
+      "D3.2.10"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "b620cb61b5af3e5b3e7780d27cf233cc9c19171b53ebfd951de327fd458090a5"
+  },
+  {
+    "id": "ab250-d4-q05",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "queue-channel-eligibility-diagnosis",
+    "objectiveIds": [
+      "D4.1.01"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "4ef32f7317793bbd99453bf7527379b2bbda2a36decdb3a0ed2455ae1cf2b6b3"
+  },
+  {
+    "id": "ab250-d4-q06",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "cross-queue-business-priority",
+    "objectiveIds": [
+      "D4.1.02"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "9ebed69b8ee3f738bee69c1c46cfa60d43318a1edb7521f21d4f176cc9aa6edb"
+  },
+  {
+    "id": "ab250-d4-q07",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "equal-custom-queue-priority-tiebreak",
+    "objectiveIds": [
+      "D4.1.02"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "547cb38f1a2fbff58461810137ca5932fd000c5d924cbcfe54a834b7992ee838"
+  },
+  {
+    "id": "ab250-d4-q08",
+    "revision": 2,
+    "domainId": "work-distribution",
+    "conceptId": "asynchronous-fifo-time-basis",
+    "objectiveIds": [
+      "D4.1.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "1570846ce4dcf3f525cedf7759a0bc5f999423b4fc181a7caa4f8b5effffb98c"
+  },
+  {
+    "id": "ab250-d4-q09",
+    "revision": 2,
+    "domainId": "work-distribution",
+    "conceptId": "least-active-signin-misdiagnosis",
+    "objectiveIds": [
+      "D4.1.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "f98a6190c4bc9df339d3e727b89355833ca739ca26c87d10bd8d4a454db78999"
+  },
+  {
+    "id": "ab250-d4-q10",
+    "revision": 2,
+    "domainId": "work-distribution",
+    "conceptId": "empty-queue-channel-outcome",
+    "objectiveIds": [
+      "D4.1.01"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "d505c3d1077c2a2ca38fe89afc33ea74dbea19e7586a0478aeb2b5d3c564a68f"
+  },
+  {
+    "id": "ab250-d4-q11",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "queued-overflow-versus-prequeue-average",
+    "objectiveIds": [
+      "D4.1.03"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "dffc2b781d11cf7c7eeebb7093d6f0880a99c7f43e95f2663d7f5d8f04e68ff3"
+  },
+  {
+    "id": "ab250-d4-q12",
+    "revision": 2,
+    "domainId": "work-distribution",
+    "conceptId": "overflow-transfer-check-boundary",
+    "objectiveIds": [
+      "D4.1.03"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "a39c8c316cdb5e8c4689e0fa7f01e61bb7ba68156a3513a3349e8c6b5b40dd7b"
+  },
+  {
+    "id": "ab250-d4-q13",
+    "revision": 2,
+    "domainId": "work-distribution",
+    "conceptId": "fallback-path-overflow-expectation",
+    "objectiveIds": [
+      "D4.1.03"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "78da69488ae4d4b495b7db055d5ffcbbbf577e0a088c4f4a10d25414b7bb36f8"
+  },
+  {
+    "id": "ab250-d4-q14",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "afterhours-default-action-diagnosis",
+    "objectiveIds": [
+      "D4.1.05",
+      "D4.1.03"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "a59921d26e4c29521e4090df18505e5f73ae0bb6d0b091c3c5f5880e20c1798d"
+  },
+  {
+    "id": "ab250-d4-q15",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "holiday-timezone-calendar-test",
+    "objectiveIds": [
+      "D4.1.05"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "1b1bb6ba165db5e93c6038d2ca697f2894929e2ade2c2568eaee885010a9e55f"
+  },
+  {
+    "id": "ab250-d4-q16",
+    "revision": 2,
+    "domainId": "work-distribution",
+    "conceptId": "calendar-migration-verification",
+    "objectiveIds": [
+      "D4.1.05"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "90f03d2bbedf3a506b4b6e64a89ce3beacf9ab704f70ad469dc34a6139982950"
+  },
+  {
+    "id": "ab250-d4-q17",
+    "revision": 2,
+    "domainId": "work-distribution",
+    "conceptId": "shared-workstream-policy-boundary",
+    "objectiveIds": [
+      "D4.2.01"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "3be8ea8288e52826d018e213abf2fcb24e88a7e7f457015cff7a7ae5f692e800"
+  },
+  {
+    "id": "ab250-d4-q18",
+    "revision": 2,
+    "domainId": "work-distribution",
+    "conceptId": "engagement-agent-runtime-wiring",
+    "objectiveIds": [
+      "D4.2.03",
+      "D4.2.01"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "420f6b4577cd19099680ed8b6e5e36c01604c8d2fb7e1640f57d68e1abe08140"
+  },
+  {
+    "id": "ab250-d4-q19",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "classification-first-match-exception-order",
+    "objectiveIds": [
+      "D4.2.02"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "867391bd954942e88d0747c27fd37cfcc4bf22b3425ef3745d1bc53326439638"
+  },
+  {
+    "id": "ab250-d4-q20",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "classification-template-local-maintenance",
+    "objectiveIds": [
+      "D4.2.02"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "62593677c2cfe70ea60ac5a4337bf161c0133d7de2481956552dcb69a46e2dd2"
+  },
+  {
+    "id": "ab250-d4-q21",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "rerouted-skill-accumulation",
+    "objectiveIds": [
+      "D4.2.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "b2d8de0d4a35bb8a54ff6b1f4a8b03f0a97aac6f99e358cb8e7dcd1e9d91e71d"
+  },
+  {
+    "id": "ab250-d4-q22",
+    "revision": 2,
+    "domainId": "work-distribution",
+    "conceptId": "skill-prediction-data-remediation",
+    "objectiveIds": [
+      "D4.2.05"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "9a7c0a08aeebb9854ba8e9de4b3754eb5a52df9c63f54ac478a2272ec2debbf7"
+  },
+  {
+    "id": "ab250-d4-q23",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "skill-rating-model-consistency",
+    "objectiveIds": [
+      "D4.2.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "6ea5954aea6f144446841cea75af871a8c8cf2cadb4c3d103b4d2d628f3b02cb"
+  },
+  {
+    "id": "ab250-d4-q24",
+    "revision": 2,
+    "domainId": "work-distribution",
+    "conceptId": "skill-model-environment-transfer-constraint",
+    "objectiveIds": [
+      "D4.2.05"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "58ab5ffe38b2bd10918d5494ba8f7632825e2fb57ac394829e37598e8013c11e"
+  },
+  {
+    "id": "ab250-d4-q25",
+    "revision": 2,
+    "domainId": "work-distribution",
+    "conceptId": "intent-preview-runtime-prerequisites",
+    "objectiveIds": [
+      "D4.2.06"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "eecbd2706c3aa4f8e75981a79c84ecedc38781eacdbb266f4cb3076010a89af7"
+  },
+  {
+    "id": "ab250-d4-q26",
+    "revision": 2,
+    "domainId": "work-distribution",
+    "conceptId": "intent-skill-and-queue-composition",
+    "objectiveIds": [
+      "D4.2.06"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "a4fcee3bec248ec5947b13aec9c8fb965981d3b78bdd227bc4c9856f84b23102"
+  },
+  {
+    "id": "ab250-d4-q27",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "unmapped-contact-preferred-fallback",
+    "objectiveIds": [
+      "D4.2.07"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "848508e0392ad0c8653a7eec1abae99105c1e4ccb4ed1db1ce870cd431b6d801"
+  },
+  {
+    "id": "ab250-d4-q28",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "preferred-route-eligibility-boundaries",
+    "objectiveIds": [
+      "D4.2.07"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "6895c6dd949f4fb8a61fa79cc8e3727864d4f1a0edb0c40fcd0991dd1e213806"
+  },
+  {
+    "id": "ab250-d4-q29",
+    "revision": 2,
+    "domainId": "work-distribution",
+    "conceptId": "unavailable-preferred-channel-policy",
+    "objectiveIds": [
+      "D4.2.07"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "4b964e823b7a9b74cc3c5e26d516f061cebdd9b87100c96ad94920a61da012f9"
+  },
+  {
+    "id": "ab250-d4-q30",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "record-access-after-routing",
+    "objectiveIds": [
+      "D4.2.08"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "d6e752ab6fbda23864559ab50d3141d0dbffd844bd8f62e6fb168e386af43c37"
+  },
+  {
+    "id": "ab250-d4-q31",
+    "revision": 2,
+    "domainId": "work-distribution",
+    "conceptId": "basic-routing-related-criteria-limit",
+    "objectiveIds": [
+      "D4.2.09"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "bdbcbd4688f76cdb396e65c447ba7724d81a2b75a77e08c40897e2d678327109"
+  },
+  {
+    "id": "ab250-d4-q32",
+    "revision": 2,
+    "domainId": "work-distribution",
+    "conceptId": "record-intake-path-integration",
+    "objectiveIds": [
+      "D4.2.08",
+      "D4.2.09"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "796ad762b341154503a30d169ba1853c9d5ca480efa9c39193dffb56a528b12d"
+  },
+  {
+    "id": "ab250-d4-q33",
+    "revision": 2,
+    "domainId": "work-distribution",
+    "conceptId": "basic-ruleset-update-lifecycle",
+    "objectiveIds": [
+      "D4.2.09"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "4e64096745e5202168866c20244e400d4c523513e9b6c03802a325b31c9e1232"
+  },
+  {
+    "id": "ab250-d4-q34",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "case-routing-attempt-correlation",
+    "objectiveIds": [
+      "D4.2.10"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "21874998136486d0d9b0172dd250898eb06ea27b214f57501c3da92bed0f15d0"
+  },
+  {
+    "id": "ab250-d4-q35",
+    "revision": 2,
+    "domainId": "work-distribution",
+    "conceptId": "assignment-snapshot-rule-and-state-evidence",
+    "objectiveIds": [
+      "D4.2.10"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "b51563fd533ece01ddd20be17fee15cdc2e3a21c14f7d4d4b1951f337a7ac1f8"
+  },
+  {
+    "id": "ab250-d4-q36",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "assignment-attempt-versus-acceptance",
+    "objectiveIds": [
+      "D4.2.10"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "fd56ccb7c45e5bcac2a1c784b74e44fc5baded775f252d8cde4ec8a66ac08ebc"
+  },
+  {
+    "id": "ab250-d5-q05",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "profile-team-targeting",
+    "objectiveIds": [
+      "D5.1.01"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "fe2c7c111227a15263ceb57fcafc02b36e717da44a7e8ff6fe6067c5fae14c7e"
+  },
+  {
+    "id": "ab250-d5-q06",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "profile-assignment-verification",
+    "objectiveIds": [
+      "D5.1.01"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "d1c4ba4291a85c5cb2da4bdfdd84cbd3d63684c63c397fe766fcda2a49ca6295"
+  },
+  {
+    "id": "ab250-d5-q07",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "inbox-view-record-and-visibility",
+    "objectiveIds": [
+      "D5.1.03"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "951dde712c166535a7053c94fa173201ab00d8f7baf8fafa33fff7a8a1a82c04"
+  },
+  {
+    "id": "ab250-d5-q08",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "inbox-custom-sort-configuration",
+    "objectiveIds": [
+      "D5.1.03"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "e7439b9bb16adae451e8fffe78b6ba8a406d9f77dcb63bf9cc3976eae2af4097"
+  },
+  {
+    "id": "ab250-d5-q09",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "inbox-live-voice-session-behavior",
+    "objectiveIds": [
+      "D5.1.03"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "9f66f10d9291db690f11b134b2d0c7f7e909b7d997cd253e9228cd5310045b00"
+  },
+  {
+    "id": "ab250-d5-q10",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "dashboard-tab-app-module-membership",
+    "objectiveIds": [
+      "D5.1.02"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "ef2bba73657c8f8cd97ded07929885526b3b98ecebb16f1efbe6aa43e4b2cd01"
+  },
+  {
+    "id": "ab250-d5-q11",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "entity-tab-create-versus-lookup-intent",
+    "objectiveIds": [
+      "D5.1.02"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "9e704da288df17feb37521b0014980a5f85fa441fc329bebf2a2af2070482aa9"
+  },
+  {
+    "id": "ab250-d5-q12",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "website-tab-runtime-parameterization",
+    "objectiveIds": [
+      "D5.1.02"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "5162a4815bb10d61d769d1cf1febee22cd132c58ec713d6c520dba1889395d44"
+  },
+  {
+    "id": "ab250-d5-q13",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "entity-session-table-ownership-boundary",
+    "objectiveIds": [
+      "D5.1.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "b702e4dd0696e8823d631eed3feea03a7fcd64146f3d2101c0298109caf23ec1"
+  },
+  {
+    "id": "ab250-d5-q14",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "session-initial-panel-mode",
+    "objectiveIds": [
+      "D5.1.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "0d9266096fa714daf1b621213575e47ad2195095a231348bb2aa0c051cf06b40"
+  },
+  {
+    "id": "ab250-d5-q15",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "desktop-notification-body-versus-accept",
+    "objectiveIds": [
+      "D5.1.05"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "8789f18f960d43d3ab236aff9b19bb2bc517d9eea86789bea8c17bf7152bc887"
+  },
+  {
+    "id": "ab250-d5-q16",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "record-notification-reject-semantics",
+    "objectiveIds": [
+      "D5.1.05"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "fbc89ebece0867b064af4aff6d36340026e66b3c020ea06e35fe55e3439ad089"
+  },
+  {
+    "id": "ab250-d5-q17",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "desktop-notification-browser-permission",
+    "objectiveIds": [
+      "D5.1.05"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "982b1bb4ada3b270706664d91a0f08027f7fbec5da71d3a38b8396abea0ab7a9"
+  },
+  {
+    "id": "ab250-d5-q18",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "script-reusable-subprocedure",
+    "objectiveIds": [
+      "D5.2.02"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "8692d47ccc0b0e6cda1b3ee4410671fc95956023edd4273c03856af9fb7d49a5"
+  },
+  {
+    "id": "ab250-d5-q19",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "script-executable-step-wiring",
+    "objectiveIds": [
+      "D5.2.02"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "c7d72b717fe6d33b396948b4d7e77faba56d0b29919b3f8ae7ea5ae829a17b33"
+  },
+  {
+    "id": "ab250-d5-q20",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "script-manual-context-exception",
+    "objectiveIds": [
+      "D5.2.02"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "0892e2b852bf02216dd1a85d632f300ae838dedec4ea676b42c4e900e0998d35"
+  },
+  {
+    "id": "ab250-d5-q21",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "script-language-enablement",
+    "objectiveIds": [
+      "D5.2.02"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "54778cda3ad8c41fd987e95c331b79ea8045a87f952db5530ca165db76fc539e"
+  },
+  {
+    "id": "ab250-d5-q22",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "macro-related-customer-query-scope",
+    "objectiveIds": [
+      "D5.2.03"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "b5cd74be26d049da70651b43868b2e3b9c572122850b1c79712f53fab5769cd4"
+  },
+  {
+    "id": "ab250-d5-q23",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "macro-current-tab-record-query",
+    "objectiveIds": [
+      "D5.2.03"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "b234111d6ccc6d346500228989ff6496d7335bef78fda4ebb1e9d3610d77c798"
+  },
+  {
+    "id": "ab250-d5-q24",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "macro-lookup-attribute-triplet",
+    "objectiveIds": [
+      "D5.2.03"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "0ad95c5becb3aa9c154c0bf5bd0cea37d8337c1105cf30e2e4c492a2dccb1511"
+  },
+  {
+    "id": "ab250-d5-q25",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "macro-save-required-field-failure",
+    "objectiveIds": [
+      "D5.2.03"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "86c490addd44cb29cd931f466c7177989a7f5a514fcd80bf9b48e4fa6be917af"
+  },
+  {
+    "id": "ab250-d5-q26",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "macro-action-output-scope",
+    "objectiveIds": [
+      "D5.2.03"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "b92a1c0e9e22f7f808fcbeeddc30574c8ecc9d2b88740399720591e005be30f0"
+  },
+  {
+    "id": "ab250-d5-q27",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "macro-connector-responsibility",
+    "objectiveIds": [
+      "D5.2.03"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "40be698970c24b2ee60595bc6a49612f68dd45bc7b532c64cc0a25838b2f6b82"
+  },
+  {
+    "id": "ab250-d5-q28",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "custom-pane-component-deployment-order",
+    "objectiveIds": [
+      "D5.2.01"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "0c5724c4c743789a64050e9270d99d053392118bc1148bb628fc6c60bd9baf48"
+  },
+  {
+    "id": "ab250-d5-q29",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "custom-pane-explicit-session-context",
+    "objectiveIds": [
+      "D5.2.01"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "183f28a79e2b9c6511c265b46df022df19c61d7d4ab2a1b3a1575390ff51f03b"
+  },
+  {
+    "id": "ab250-d5-q30",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "teams-multisession-profile-permissions",
+    "objectiveIds": [
+      "D5.2.04"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "cff6a648e9796d818daa189c7d2ee09aa7578750bf60fe531a76be6d3c98db84"
+  },
+  {
+    "id": "ab250-d5-q31",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "teams-introduction-note-field-exposure",
+    "objectiveIds": [
+      "D5.2.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "17ed181952f3c2a5a2feac721f75c661d98a3b12fab9ce427e240d3bd5a60638"
+  },
+  {
+    "id": "ab250-d5-q32",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "teams-custom-record-type-connection",
+    "objectiveIds": [
+      "D5.2.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "0e37c75f08eb4383377a34b708436e1b539f27721f7d30a7c5b2a2a36f2df716"
+  },
+  {
+    "id": "ab250-d5-q33",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "apm-background-session-attention",
+    "objectiveIds": [
+      "D5.2.05"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "1640f72edad7dce347cf29eed1bb669710b6c9bb47ae95276c8e21954fd737ef"
+  },
+  {
+    "id": "ab250-d5-q34",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "apm-update-context-future-macros",
+    "objectiveIds": [
+      "D5.2.05"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "5f5279be921603dfb611592c2684cbe8090858e883388d0e3f15ef6defdc35e5"
+  },
+  {
+    "id": "ab250-d5-q35",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "omnichannel-focused-conversation-link",
+    "objectiveIds": [
+      "D5.2.06"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "521ec105ca1a94f308d5519225ef40184b533573f975ecdf2719b437b883c52f"
+  },
+  {
+    "id": "ab250-d5-q36",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "embedded-conversation-link-applicability",
+    "objectiveIds": [
+      "D5.2.06"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "aec191df15b0c9fe915120a1215aac692bdd4d6a4eab6413a252257a105b1da8"
+  },
+  {
+    "id": "ab250-d5-q37",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "omnichannel-agent-conversation-collection",
+    "objectiveIds": [
+      "D5.2.06"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "e42a3dcc931816c4d4f3e6ed90c179f710a080e09e7d982acb0457c13c39e324"
+  },
+  {
+    "id": "ab250-d5-q38",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "knowledge-custom-table-enablement",
+    "objectiveIds": [
+      "D5.3.03"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "e87ba21e55acbb017ff9bb15d260b866072a062b5a5af29aa667d84765d77fbb"
+  },
+  {
+    "id": "ab250-d5-q39",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "knowledge-search-index-and-pane",
+    "objectiveIds": [
+      "D5.3.01"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "4e2d6e7a7b25dad8d7e1991d7c99afbd566eeea2a4037cb9937f8c505bafd0a6"
+  },
+  {
+    "id": "ab250-d5-q40",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "knowledge-nonanchor-autosearch-exception",
+    "objectiveIds": [
+      "D5.3.01"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "ba2c8354710a3f3d04f4750e5a7ce928da0beafb232411d7b4b66ea423842fb1"
+  },
+  {
+    "id": "ab250-d5-q41",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "knowledge-all-term-search",
+    "objectiveIds": [
+      "D5.3.01"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "7e247387b99ec321c6b9cf76ad1dd21a63d866417c7924b6ce16315fa6a38240"
+  },
+  {
+    "id": "ab250-d5-q42",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "external-search-custom-role-federated-privileges",
+    "objectiveIds": [
+      "D5.3.02"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "2a6f2992d89f7f7249b311c0b896420d659c22c1fe396a1427ff63df25895ed2"
+  },
+  {
+    "id": "ab250-d5-q43",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "external-search-graph-index-selection",
+    "objectiveIds": [
+      "D5.3.02"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "e9774bed5368028dd0a55f66598e1b54901fcdf9ff4f8b39ff45795b14886e4b"
+  },
+  {
+    "id": "ab250-d5-q44",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "portal-links-and-attachments",
+    "objectiveIds": [
+      "D5.3.05"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "bd790f648a04ef366502301d852032fd11906233f1ec92ff63eddb75c61949ea"
+  },
+  {
+    "id": "ab250-d5-q45",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "knowledge-harvest-runtime-readiness",
+    "objectiveIds": [
+      "D5.3.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "a78125876253ebae810857f23f5538a2d4c6e4d3434ea22c4827e21238bc8e27"
+  },
+  {
+    "id": "ab250-d5-q46",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "knowledge-realtime-existing-content-check",
+    "objectiveIds": [
+      "D5.3.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "7068a1ef1f394f1577d6800a864b30478b11ba07fb9420cb52975ece99a6f78a"
+  },
+  {
+    "id": "ab250-d5-q47",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "knowledge-historical-harvest-batching",
+    "objectiveIds": [
+      "D5.3.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "860e81ab4abab283a4bb137b42a89924e2a3ca32ca79cf7c855bf28d6d5542ed"
+  },
+  {
+    "id": "ab250-d5-q48",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "knowledge-compliant-internal-autopublish",
+    "objectiveIds": [
+      "D5.3.04"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "781e4d930d23992e7799e59330c028739fa5fb228ef1a74290f97c503610df5b"
+  },
+  {
+    "id": "ab250-d5-q49",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "knowledge-sensitive-data-review",
+    "objectiveIds": [
+      "D5.3.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "1b768947beceb8d136ff7dbef53fd5bfb9738685d48f4873cd7718ad196f8bf5"
+  },
+  {
+    "id": "ab250-d5-q50",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "knowledge-manual-review-experience",
+    "objectiveIds": [
+      "D5.3.04"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "06ec54d928e2d2895c0398b7ea07ff0c711ab53face70211e780f6070908bce0"
+  },
+  {
+    "id": "ab250-d5-q51",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "knowledge-global-search-preview-mode",
+    "objectiveIds": [
+      "D5.3.01"
+    ],
+    "kind": "single",
+    "author": "/root/exam_deployment",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "6c1582527d617e08fc5e1e8e231d0d87f1bd4b09a0d87c357a4e1b474a0c1561"
+  },
+  {
+    "id": "ab250-d6-q05",
+    "revision": 1,
+    "domainId": "analytics",
+    "conceptId": "supervisor-action-permission-layer",
+    "objectiveIds": [
+      "D6.1.01",
+      "D6.1.03"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "9200ced9ed481689423a5b47f65477b71417214adf61577988bbe76d5e95ebef"
+  },
+  {
+    "id": "ab250-d6-q06",
+    "revision": 2,
+    "domainId": "analytics",
+    "conceptId": "supervisor-transfer-consultant-lifecycle",
+    "objectiveIds": [
+      "D6.1.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "abb411111d0534bac60cb3db53962264060738d46e9803fe9978ce757b1a3219"
+  },
+  {
+    "id": "ab250-d6-q07",
+    "revision": 1,
+    "domainId": "analytics",
+    "conceptId": "monitor-state-channel-scope",
+    "objectiveIds": [
+      "D6.1.04"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "a5f439540a319393c6111ddf66645594e6ff0d452f00a571ada4b1a39a2b7697"
+  },
+  {
+    "id": "ab250-d6-q08",
+    "revision": 1,
+    "domainId": "analytics",
+    "conceptId": "supervisor-transfer-elevated-media",
+    "objectiveIds": [
+      "D6.1.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "9342b3a683f53725e1926d4b9952a801921fd5ea5057dd5faed0ae466221512e"
+  },
+  {
+    "id": "ab250-d6-q09",
+    "revision": 1,
+    "domainId": "analytics",
+    "conceptId": "report-bookmark-least-privilege",
+    "objectiveIds": [
+      "D6.1.03"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "b06c3556c90fb2b16faf1c831d02a70bbd5e21389b59fea9eb6c420e37703dbe"
+  },
+  {
+    "id": "ab250-d6-q10",
+    "revision": 1,
+    "domainId": "analytics",
+    "conceptId": "quality-evaluator-role-boundary",
+    "objectiveIds": [
+      "D6.1.02"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "4e9d15c70ff079e163d1319eacb91215c3bd287231500727cb1620679abeacf6"
+  },
+  {
+    "id": "ab250-d6-q11",
+    "revision": 2,
+    "domainId": "analytics",
+    "conceptId": "quality-evaluation-connection-readiness",
+    "objectiveIds": [
+      "D6.1.02"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "762987f35583b91624c9d76aed3106ec3e7d303f564cfc44cc5018e5154b6359"
+  },
+  {
+    "id": "ab250-d6-q12",
+    "revision": 1,
+    "domainId": "analytics",
+    "conceptId": "quality-ai-assisted-method-contract",
+    "objectiveIds": [
+      "D6.1.02"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "38f29edcac8d16e1f6f4bcb345efdb64d5ca218ba15bdf3830754b84613b35e3"
+  },
+  {
+    "id": "ab250-d6-q13",
+    "revision": 1,
+    "domainId": "analytics",
+    "conceptId": "trigger-plan-history-interpretation",
+    "objectiveIds": [
+      "D6.1.02"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "60346d6ed36915513e1138d0bee45795e93b7d8cb5fc3d4c0761837a0f130472"
+  },
+  {
+    "id": "ab250-d6-q14",
+    "revision": 1,
+    "domainId": "analytics",
+    "conceptId": "ivr-only-quality-evaluation-scope",
+    "objectiveIds": [
+      "D6.1.02"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "9679c6b3750dac906f80ae43ce701890a958e8410efe0c340e107c7b226c6a95"
+  },
+  {
+    "id": "ab250-d6-q15",
+    "revision": 1,
+    "domainId": "analytics",
+    "conceptId": "existing-metric-visual-customization",
+    "objectiveIds": [
+      "D6.2.01"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "4bae4415cabfae577bd077ff532d3c4f1f177802d0140ea68b8405313cfac81b"
+  },
+  {
+    "id": "ab250-d6-q16",
+    "revision": 2,
+    "domainId": "analytics",
+    "conceptId": "embedded-report-metric-density-performance",
+    "objectiveIds": [
+      "D6.2.01"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "ecf5d49713f9ceb3147ac13f885267bae5baf61f1aa698aa2545aca0763375d1"
+  },
+  {
+    "id": "ab250-d6-q17",
+    "revision": 1,
+    "domainId": "analytics",
+    "conceptId": "published-visual-editing-lifecycle",
+    "objectiveIds": [
+      "D6.2.01"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "3f551c25345b5f3b52a72c124d2a16eba5c8421a28089d3cf28cee42b761e067"
+  },
+  {
+    "id": "ab250-d6-q18",
+    "revision": 1,
+    "domainId": "analytics",
+    "conceptId": "customized-app-report-state-retention",
+    "objectiveIds": [
+      "D6.2.02"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "c85095a94b16368a8258a8ed217da2ab5bdb006859272e78d46aa8a3bb366568"
+  },
+  {
+    "id": "ab250-d6-q19",
+    "revision": 1,
+    "domainId": "analytics",
+    "conceptId": "custom-report-embedding-consumer-access",
+    "objectiveIds": [
+      "D6.2.02",
+      "D6.2.03"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "94daad6484ef0d58a85b6d2e07257bb471cfeae2115422a0223e0df4f2dc317b"
+  },
+  {
+    "id": "ab250-d6-q20",
+    "revision": 2,
+    "domainId": "analytics",
+    "conceptId": "custom-report-navigation-origin",
+    "objectiveIds": [
+      "D6.2.03"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "328ca23f307f41aaef6e245589c20185a10464d227c17c16bf02b645023d2005"
+  },
+  {
+    "id": "ab250-d6-q21",
+    "revision": 1,
+    "domainId": "analytics",
+    "conceptId": "business-metric-logic-extension",
+    "objectiveIds": [
+      "D6.2.03",
+      "D6.2.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "6953df00bdb5d698b221f7bf8ce069c072be2dc6d30a147e7d4f66e0b5c04193"
+  },
+  {
+    "id": "ab250-d6-q22",
+    "revision": 1,
+    "domainId": "analytics",
+    "conceptId": "managed-versus-customer-update-lifecycle",
+    "objectiveIds": [
+      "D6.2.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "ef68346fe1d32cdad4ab1951234a5e9d62d560d6a19fe9aaca808bac6d6f3e49"
+  },
+  {
+    "id": "ab250-d6-q23",
+    "revision": 2,
+    "domainId": "analytics",
+    "conceptId": "composite-model-relationship-design",
+    "objectiveIds": [
+      "D6.2.04"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "61f13dfbe1b96978f82aef6b24bb8b87348ce830e852562a971f8328e5aaa9e3"
+  },
+  {
+    "id": "ab250-d6-q24",
+    "revision": 2,
+    "domainId": "analytics",
+    "conceptId": "hidden-model-field-maintenance-risk",
+    "objectiveIds": [
+      "D6.2.04"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "644e65c65b7f55cdb7bf0045d093d0eb09a581bc0d9c87137a92d2f4d7d50598"
+  },
+  {
+    "id": "ab250-d6-q25",
+    "revision": 1,
+    "domainId": "analytics",
+    "conceptId": "diagnostic-insights-versus-raw-custom-events",
+    "objectiveIds": [
+      "D6.2.05"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "ba1ceb781d798c5827e0570137e05bc0011177fc3655ed7123ad6f5e92a1dcc9"
+  },
+  {
+    "id": "ab250-d6-q26",
+    "revision": 2,
+    "domainId": "analytics",
+    "conceptId": "single-export-environment-target",
+    "objectiveIds": [
+      "D6.2.05"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "1bcfb99aea9b9f6c0b8703b24f211f9919a870263893ee30da620045faa2436d"
+  },
+  {
+    "id": "ab250-d6-q27",
+    "revision": 1,
+    "domainId": "analytics",
+    "conceptId": "diagnostic-dashboard-latency-interpretation",
+    "objectiveIds": [
+      "D6.2.05"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "e1f05643c4cd5fbb0d1f22c820900601a2bfca145e3eb409db6f08ef4d7c5fbb"
+  },
+  {
+    "id": "ab250-d6-q28",
+    "revision": 1,
+    "domainId": "analytics",
+    "conceptId": "diagnose-federated-subject-debugging",
+    "objectiveIds": [
+      "D6.2.06"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "51a37328f4f2926f633922cce519c8317a1774dfa14fbf9efbc7c4039eaec888"
+  },
+  {
+    "id": "ab250-d6-q29",
+    "revision": 1,
+    "domainId": "analytics",
+    "conceptId": "diagnose-app-identity-and-query-role",
+    "objectiveIds": [
+      "D6.2.06"
+    ],
+    "kind": "multiple",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "3ed2a981fe4dd048fd5b15476b769f7c235dbb3cb677b779b8141013178b6489"
+  },
+  {
+    "id": "ab250-d6-q30",
+    "revision": 2,
+    "domainId": "analytics",
+    "conceptId": "diagnose-telemetry-resource-read-selection",
+    "objectiveIds": [
+      "D6.2.06"
+    ],
+    "kind": "single",
+    "author": "/root/exam_ai_routing",
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "fingerprint": "23b8b000ee58e9d332963c37c623240a0575d7a90a7955af0a9bc22a7782af31"
+  }
+]

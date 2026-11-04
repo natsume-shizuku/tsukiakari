@@ -1,0 +1,1420 @@
+{
+  "sources": [
+    {
+      "id": "cc-d2-finaloutbound-s01",
+      "title": "How to set up proactive engagement",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-proactive-engagement"
+    },
+    {
+      "id": "cc-d2-finaloutbound-s02",
+      "title": "Configure proactive engagement for voice",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-proactive-engagement-voice"
+    },
+    {
+      "id": "cc-d2-finaloutbound-s03",
+      "title": "Dial modes for proactive engagement",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/proactive-engagement-dial-modes"
+    },
+    {
+      "id": "cc-d2-finaloutbound-s04",
+      "title": "Proactive Engagement dashboard",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/proactive-engagement-dashboard"
+    },
+    {
+      "id": "cc-d2-finaloutbound-s05",
+      "title": "Manage consent for proactive engagement",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/proactive-engagement-manage-consent"
+    },
+    {
+      "id": "cc-d2-finaloutbound-s06",
+      "title": "Workforce Engagement Management app (preview)",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/workforce-management-wem-app-overview"
+    },
+    {
+      "id": "cc-d2-finaloutbound-s07",
+      "title": "Set up and manage planning groups",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/workforce-management-use-planning-groups"
+    },
+    {
+      "id": "cc-d2-finaloutbound-s08",
+      "title": "Create and manage forecast scenarios",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/workforce-management-forecast-scenarios"
+    },
+    {
+      "id": "cc-d2-finaloutbound-s09",
+      "title": "Create and schedule a shift plan",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/workforce-management-shift-plan"
+    },
+    {
+      "id": "cc-d2-finaloutbound-s10",
+      "title": "Manage schedules in Workforce Management",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/workforce-management-schedule-workforce"
+    },
+    {
+      "id": "cc-d2-finaloutbound-s11",
+      "title": "Integrate third-party workforce management solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/optimize-staffing-workforce-management-contact-center/5-integrate-third-party"
+    },
+    {
+      "id": "cc-d2-finaloutbound-s12",
+      "title": "Workforce management security roles in the Workforce Engagement Management app (preview)",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/workforce-management-security-roles"
+    },
+    {
+      "id": "cc-d2-finaloutbound-s13",
+      "title": "Best practices for configuring AI agents",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-bot-best-practices"
+    },
+    {
+      "id": "cc-d2-finaloutbound-s14",
+      "title": "Transparency note: Real-time agents",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/implement/transparency-note-real-time-voice-agents"
+    }
+  ],
+  "notes": [
+    {
+      "id": "cc-d2-n23",
+      "title": "Build outbound engagement around identity and contact preferences",
+      "body": "Start with provisioned channels and choose how customer records enter the engagement: file, API or an enabled Customer Insights journey. Configure the outbound workstream and engagement's queue, skills and identity key. A stable external contact identifier should map to the selected eligible Contact attribute so repeated imports update the same person. Review generated routing rather than maintaining unrelated parallel rules.\n\nBefore delivery, configure quiet hours, frequency and opt-outs. Customer-local evaluation needs the timezone supplied in the input; the system does not infer it from a phone number. Technical implicit opt-in is not evidence of legally required consent. Test suppressed contacts alongside ordinary deliveries, and use the channel-specific consent records when honoring a do-not-contact request.",
+      "sourceIds": [
+        "cc-d2-finaloutbound-s01",
+        "cc-d2-finaloutbound-s02",
+        "cc-d2-finaloutbound-s05"
+      ]
+    },
+    {
+      "id": "cc-d2-n24",
+      "title": "Choose dial behavior for the intended service experience",
+      "body": "Preview, progressive, predictive and Copilot modes make different tradeoffs. Preview notifies a representative first and supports reviewing the customer before the call; manual or delayed start is specific to the documented Teams Phone extensibility setup. In the documented ACS preview path, the call starts after acceptance.\n\nProgressive uses available representatives to pace calls; predictive adjusts dialing against capacity and performance; Copilot starts with an AI agent and escalates when needed. Treat these as operational choices, not blanket permission to automate any campaign. The dial-mode article restricts specified automated modes for commercial marketing/sales and flags telecommunications compliance concerns. Review purpose, consent and applicable requirements before use, then validate the representative and customer experience with a small service-outreach pilot.",
+      "sourceIds": [
+        "cc-d2-finaloutbound-s02",
+        "cc-d2-finaloutbound-s03"
+      ]
+    },
+    {
+      "id": "cc-d2-n25",
+      "title": "Enable outbound monitoring before interpreting campaign results",
+      "body": "A configured engagement does not automatically establish dashboard access. Enable real-time analytics for proactive engagement and give the operator the documented Omnichannel Supervisor role. Open the Proactive Engagement dashboard and use its engagement, queue, timezone and business-unit filters to establish the scope of the view.\n\nRead metrics by their definitions. Pending work has not yet been attempted; in-progress deliveries are active; throughput measures deliveries processed over the last hour. A completed delivery has reached a final intended outcome, which can include the end of attempts, so it is not interchangeable with a live-person connection. Use connect rate and live-person measures when the operational question is whether outreach actually reaches people.",
+      "sourceIds": [
+        "cc-d2-finaloutbound-s04"
+      ]
+    },
+    {
+      "id": "cc-d2-n26",
+      "title": "Establish workforce scope and access before planning",
+      "body": "Install the Workforce Management for Customer Service package, then prepare the relevant users and planning scope. Copilot Service workspace continues to use its Omnichannel roles. The separate Workforce Engagement Management app is preview and introduces dedicated roles; a WFM Forecaster can manage forecasts without permission to publish schedules. Assign roles for the surface and duties actually used.\n\nDefine planning groups around queue/channel demand, timezone and service objectives. The group links forecast, capacity and shift plans so staffing assumptions stay aligned. A queue/channel combination belongs to only one planning group at a time, preventing duplicated demand. This staffing scope differs from a representative's per-conversation capacity profile: one plans required coverage, while the other constrains assignment workload.",
+      "sourceIds": [
+        "cc-d2-finaloutbound-s06",
+        "cc-d2-finaloutbound-s07",
+        "cc-d2-finaloutbound-s12"
+      ]
+    },
+    {
+      "id": "cc-d2-n27",
+      "title": "Turn historical demand into a reproducible staffing input",
+      "body": "A forecast scenario defines entity, channels, queues, timezone and history, then predicts interaction volume and average handle time. A capacity plan uses forecast demand and service objectives to estimate staffing. When a planning group is selected, its timezone and demand fields populate the scenario and become read-only, keeping plans aligned.\n\nFor an external data source, upload history before scenario creation and plan a deliberate refresh process: automatic refresh is unavailable for that source. Saving a scenario does not prove a successful run. Check job history, inspect output, and use a new snapshot where supported to reflect updated history. Validate the input scope and run status before interpreting an unexpected staffing result; this is demand planning, not a decision about an individual employee.",
+      "sourceIds": [
+        "cc-d2-finaloutbound-s07",
+        "cc-d2-finaloutbound-s08"
+      ]
+    },
+    {
+      "id": "cc-d2-n28",
+      "title": "Publish schedules and synchronize external workforce data deliberately",
+      "body": "Build a shift plan from the required skills, queues, calendar and activity itinerary, using a capacity plan when forecast-based coverage is required. Schedule representatives, inspect the resulting board, then publish the selected schedule. Editing a committed booking returns it to Unpublished, so republish the change rather than assuming the representative already sees the update.\n\nIf another workforce tool remains authoritative, use a defined Dataverse API integration for schedules and assignments, and provide operational data back to that tool where needed. Establish service-to-service authentication, data ownership, synchronization frequency and error handling. Schedule imports and real-time adherence have different freshness needs. Handle rate limits and transient failures with backoff; increasing request rate during throttling risks making the integration less reliable.",
+      "sourceIds": [
+        "cc-d2-finaloutbound-s09",
+        "cc-d2-finaloutbound-s10",
+        "cc-d2-finaloutbound-s11"
+      ]
+    },
+    {
+      "id": "cc-d2-n29",
+      "title": "Test AI delays and failures as part of the customer journey",
+      "body": "Give the customer an initial greeting before beginning a potentially slow data lookup. Configure an appropriate latency message and examine connector or flow performance rather than leaving silence unexplained. Design retries, alternative paths and representative escalation for failed or incomplete tool responses.\n\nFor commitments or sensitive actions, prompts alone are insufficient enforcement. Use deterministic controls and the required human approval path. Test the full workflow under realistic telephony, background-noise, language and tool-failure conditions, then monitor latency, task completion and escalation after rollout. A successful demonstration of the happy path does not establish reliability across all callers or operating conditions.",
+      "sourceIds": [
+        "cc-d2-finaloutbound-s13",
+        "cc-d2-finaloutbound-s14"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "cc-d2-c67",
+      "revision": 1,
+      "topicId": "proactive-engagement",
+      "kind": "recall",
+      "prompt": "For repeated outbound uploads from an external CRM, what should the selected Contact unique identifier represent?",
+      "answer": "The external system’s stable identifier stored in an eligible Contact attribute.",
+      "explanation": "Matching the intended key allows update-or-insert behavior without creating a new contact for every delivery.",
+      "sourceIds": [
+        "cc-d2-finaloutbound-s02"
+      ],
+      "noteIds": [
+        "cc-d2-n23"
+      ],
+      "tags": [
+        "topic:proactive-engagement",
+        "domain:channels",
+        "feature:outbound-identity-key",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c68",
+      "revision": 1,
+      "topicId": "proactive-engagement",
+      "kind": "recall",
+      "prompt": "Does proactive engagement infer the customer’s local timezone from the telephone number for quiet-hour evaluation?",
+      "answer": "No. Supply the supported timezone value in the uploaded data or API payload.",
+      "explanation": "If the local-timezone option is selected and the value is absent, the documented fallback is UTC.",
+      "sourceIds": [
+        "cc-d2-finaloutbound-s02"
+      ],
+      "noteIds": [
+        "cc-d2-n23"
+      ],
+      "tags": [
+        "topic:proactive-engagement",
+        "domain:channels",
+        "feature:outbound-quiet-hours-timezone",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c69",
+      "revision": 2,
+      "topicId": "proactive-engagement",
+      "kind": "mcq",
+      "prompt": "A new system receives a migrated voice outreach list that includes customers who previously opted out. Which setup preserves those existing preferences before delivery?",
+      "answer": "Import the existing do-not-call records into Voice consent for the corresponding contact points.",
+      "explanation": "Bulk upload the migrated do-not-call records into the correct voice consent scope. Text consent governs another consent channel; contact identity alone does not recreate opt-outs, and an opt-out for a different contact point does not suppress the intended number.",
+      "sourceIds": [
+        "cc-d2-finaloutbound-s05"
+      ],
+      "noteIds": [
+        "cc-d2-n23"
+      ],
+      "tags": [
+        "topic:proactive-engagement",
+        "domain:channels",
+        "feature:outbound-consent-migration",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Import the opt-outs as Text consent records for the same telephone contact points."
+        },
+        {
+          "id": "b",
+          "text": "Import the existing do-not-call records into Voice consent for the corresponding contact points."
+        },
+        {
+          "id": "c",
+          "text": "Import the customers as contacts and rely on their identity mapping to recreate previous opt-outs."
+        },
+        {
+          "id": "d",
+          "text": "Import the opt-outs as Voice consent for a different telephone contact point on each customer."
+        }
+      ],
+      "correctOptionId": "b"
+    },
+    {
+      "id": "cc-d2-c70",
+      "revision": 1,
+      "topicId": "proactive-engagement",
+      "kind": "recall",
+      "prompt": "Which dial mode starts the interaction with the workstream’s AI agent when the customer answers?",
+      "answer": "Copilot dial mode.",
+      "explanation": "The AI agent can escalate if necessary; this describes the technical flow rather than approval for every outreach purpose.",
+      "sourceIds": [
+        "cc-d2-finaloutbound-s03"
+      ],
+      "noteIds": [
+        "cc-d2-n24"
+      ],
+      "tags": [
+        "topic:proactive-engagement",
+        "domain:channels",
+        "feature:copilot-dial-flow",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c71",
+      "revision": 1,
+      "topicId": "proactive-engagement",
+      "kind": "recall",
+      "prompt": "Which documented telephony setup supports manual or delayed start for preview calls after representative acceptance?",
+      "answer": "Teams Phone extensibility.",
+      "explanation": "The documented ACS preview behavior starts automatically after acceptance; do not generalize the manual-start choice across both paths.",
+      "sourceIds": [
+        "cc-d2-finaloutbound-s02"
+      ],
+      "noteIds": [
+        "cc-d2-n24"
+      ],
+      "tags": [
+        "topic:proactive-engagement",
+        "domain:channels",
+        "feature:preview-start-platform-scope",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c72",
+      "revision": 1,
+      "topicId": "proactive-engagement",
+      "kind": "mcq",
+      "prompt": "A service team using Teams Phone extensibility requires a representative to inspect each customer’s case and decide when to place the call. Which configuration most directly fits?",
+      "answer": "Representative-led Preview with Manual start.",
+      "explanation": "Preview and manual start support deliberate review. Progressive/predictive automate pacing, while Copilot begins with AI.",
+      "sourceIds": [
+        "cc-d2-finaloutbound-s02",
+        "cc-d2-finaloutbound-s03"
+      ],
+      "noteIds": [
+        "cc-d2-n24"
+      ],
+      "tags": [
+        "topic:proactive-engagement",
+        "domain:channels",
+        "feature:preview-human-review",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Representative-led Predictive with automatic pacing."
+        },
+        {
+          "id": "b",
+          "text": "AI-led Copilot mode."
+        },
+        {
+          "id": "c",
+          "text": "Representative-led Progressive mode."
+        },
+        {
+          "id": "d",
+          "text": "Representative-led Preview with Manual start."
+        }
+      ],
+      "correctOptionId": "d"
+    },
+    {
+      "id": "cc-d2-c73",
+      "revision": 1,
+      "topicId": "proactive-engagement",
+      "kind": "recall",
+      "prompt": "What role does the Proactive Engagement dashboard document for its operator?",
+      "answer": "Omnichannel Supervisor.",
+      "explanation": "Configured proactive engagement and enabled real-time analytics are also prerequisites.",
+      "sourceIds": [
+        "cc-d2-finaloutbound-s04"
+      ],
+      "noteIds": [
+        "cc-d2-n25"
+      ],
+      "tags": [
+        "topic:proactive-engagement",
+        "domain:channels",
+        "feature:proactive-dashboard-role",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c74",
+      "revision": 1,
+      "topicId": "proactive-engagement",
+      "kind": "recall",
+      "prompt": "What time period does the proactive dashboard’s Throughput measure describe?",
+      "answer": "Deliveries processed over the last hour.",
+      "explanation": "Throughput measures processing pace, not the number of live people reached.",
+      "sourceIds": [
+        "cc-d2-finaloutbound-s04"
+      ],
+      "noteIds": [
+        "cc-d2-n25"
+      ],
+      "tags": [
+        "topic:proactive-engagement",
+        "domain:channels",
+        "feature:proactive-throughput-meaning",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c75",
+      "revision": 1,
+      "topicId": "proactive-engagement",
+      "kind": "mcq",
+      "prompt": "A supervisor wants to assess whether outbound attempts successfully reach customers. Which dashboard measure best matches that question?",
+      "answer": "Connect rate.",
+      "explanation": "Connect rate compares connected deliveries with attempted deliveries. Pending and in-progress counts show workload, while throughput measures processing pace.",
+      "sourceIds": [
+        "cc-d2-finaloutbound-s04"
+      ],
+      "noteIds": [
+        "cc-d2-n25"
+      ],
+      "tags": [
+        "topic:proactive-engagement",
+        "domain:channels",
+        "feature:outbound-reachability-metric",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Connect rate."
+        },
+        {
+          "id": "b",
+          "text": "Total unique engagements pending."
+        },
+        {
+          "id": "c",
+          "text": "Throughput."
+        },
+        {
+          "id": "d",
+          "text": "Deliveries in progress."
+        }
+      ],
+      "correctOptionId": "a"
+    },
+    {
+      "id": "cc-d2-c76",
+      "revision": 1,
+      "topicId": "workforce-management",
+      "kind": "recall",
+      "prompt": "Which package must an administrator install before using the documented workforce-management capabilities?",
+      "answer": "Workforce Management for Customer Service.",
+      "explanation": "Install it through Power Platform admin center; individual feature and user-access configuration still follows.",
+      "sourceIds": [
+        "cc-d2-finaloutbound-s06"
+      ],
+      "noteIds": [
+        "cc-d2-n26"
+      ],
+      "tags": [
+        "topic:workforce-management",
+        "domain:channels",
+        "feature:wfm-package-readiness",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c77",
+      "revision": 1,
+      "topicId": "workforce-management",
+      "kind": "recall",
+      "prompt": "Do the preview Workforce Engagement Management app’s dedicated WFM roles replace Omnichannel roles in Copilot Service workspace?",
+      "answer": "No. They apply within the separate preview app.",
+      "explanation": "Existing workspace role behavior continues; configure access according to the actual app surface.",
+      "sourceIds": [
+        "cc-d2-finaloutbound-s12"
+      ],
+      "noteIds": [
+        "cc-d2-n26"
+      ],
+      "tags": [
+        "topic:workforce-management",
+        "domain:channels",
+        "feature:wfm-app-role-scope",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c78",
+      "revision": 2,
+      "topicId": "workforce-management",
+      "kind": "mcq",
+      "prompt": "A team tries to add a queue/channel combination to a second planning group and receives a validation error. Which design change follows the documented planning boundary?",
+      "answer": "Keep that queue/channel combination in one planning group and associate its planning artifacts there.",
+      "explanation": "A queue/channel combination belongs to only one planning group at a time. Different timezones, separate capacity plans or additional forecast scenarios do not remove that demand-scope uniqueness rule.",
+      "sourceIds": [
+        "cc-d2-finaloutbound-s07"
+      ],
+      "noteIds": [
+        "cc-d2-n26"
+      ],
+      "tags": [
+        "topic:workforce-management",
+        "domain:channels",
+        "feature:planning-demand-scope",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Give the second planning group a different timezone while retaining the same queue/channel combination."
+        },
+        {
+          "id": "b",
+          "text": "Associate a separate capacity plan with each overlapping planning group."
+        },
+        {
+          "id": "c",
+          "text": "Keep that queue/channel combination in one planning group and associate its planning artifacts there."
+        },
+        {
+          "id": "d",
+          "text": "Create separate forecast scenarios so each overlapping group counts the same queue/channel combination."
+        }
+      ],
+      "correctOptionId": "c"
+    },
+    {
+      "id": "cc-d2-c79",
+      "revision": 1,
+      "topicId": "workforce-management",
+      "kind": "recall",
+      "prompt": "What is the difference between a forecast scenario and a workforce capacity plan?",
+      "answer": "The forecast predicts demand; the capacity plan converts demand and service objectives into staffing requirements.",
+      "explanation": "Keep demand estimation separate from the settings that constrain an individual representative’s routing workload.",
+      "sourceIds": [
+        "cc-d2-finaloutbound-s07"
+      ],
+      "noteIds": [
+        "cc-d2-n27"
+      ],
+      "tags": [
+        "topic:workforce-management",
+        "domain:channels",
+        "feature:forecast-versus-staffing",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c80",
+      "revision": 1,
+      "topicId": "workforce-management",
+      "kind": "recall",
+      "prompt": "Is forecast Auto refresh available when the scenario uses an external data source?",
+      "answer": "No. The documented external-source scenario does not offer Auto refresh.",
+      "explanation": "Prepare the uploaded history and manage subsequent refresh/output versions deliberately.",
+      "sourceIds": [
+        "cc-d2-finaloutbound-s08"
+      ],
+      "noteIds": [
+        "cc-d2-n27"
+      ],
+      "tags": [
+        "topic:workforce-management",
+        "domain:channels",
+        "feature:external-forecast-refresh",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c81",
+      "revision": 2,
+      "topicId": "workforce-management",
+      "kind": "mcq",
+      "prompt": "A forecast scenario’s timezone, channels and queues are read-only after the planner selects a planning group. Where should the planner investigate the governing demand configuration?",
+      "answer": "The associated planning group.",
+      "explanation": "When a planning group is selected, timezone, channels and queues inherit its configuration and become read-only. Refresh timing, history source and forecast type govern other aspects of prediction rather than the inherited demand scope.",
+      "sourceIds": [
+        "cc-d2-finaloutbound-s08"
+      ],
+      "noteIds": [
+        "cc-d2-n27"
+      ],
+      "tags": [
+        "topic:workforce-management",
+        "domain:channels",
+        "feature:forecast-inherited-scope",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "The forecast refresh schedule and its selected run-time slot."
+        },
+        {
+          "id": "b",
+          "text": "The associated planning group."
+        },
+        {
+          "id": "c",
+          "text": "The scenario's internal or external historical-data source selection."
+        },
+        {
+          "id": "d",
+          "text": "The short-term or long-term forecast type selected at creation."
+        }
+      ],
+      "correctOptionId": "b"
+    },
+    {
+      "id": "cc-d2-c82",
+      "revision": 1,
+      "topicId": "workforce-management",
+      "kind": "recall",
+      "prompt": "What happens after a Committed workforce booking is edited?",
+      "answer": "It becomes Unpublished and must be republished for the update to be available.",
+      "explanation": "An edit is not automatically a new published schedule.",
+      "sourceIds": [
+        "cc-d2-finaloutbound-s10"
+      ],
+      "noteIds": [
+        "cc-d2-n28"
+      ],
+      "tags": [
+        "topic:workforce-management",
+        "domain:channels",
+        "feature:booking-republication",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c83",
+      "revision": 1,
+      "topicId": "workforce-management",
+      "kind": "recall",
+      "prompt": "Which API platform does the Learn integration unit describe for sharing workforce data with an external WFM system?",
+      "answer": "Dataverse API.",
+      "explanation": "It supports scenarios such as importing schedules and exporting interaction or adherence data; the integration still needs authentication and data mapping.",
+      "sourceIds": [
+        "cc-d2-finaloutbound-s11"
+      ],
+      "noteIds": [
+        "cc-d2-n28"
+      ],
+      "tags": [
+        "topic:workforce-management",
+        "domain:channels",
+        "feature:external-wfm-api",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c84",
+      "revision": 2,
+      "topicId": "workforce-management",
+      "kind": "mcq",
+      "prompt": "A third-party workforce synchronization job encounters Dataverse throttling during peak load. Which response matches the documented integration guidance?",
+      "answer": "Retry transient failures using exponential backoff.",
+      "explanation": "The integration guidance explicitly recommends retries with exponential backoff for rate limits and transient failures. Immediate retries or synchronized short-delay retries continue pressure; handling authentication errors alone omits the throttling recovery path.",
+      "sourceIds": [
+        "cc-d2-finaloutbound-s11"
+      ],
+      "noteIds": [
+        "cc-d2-n28"
+      ],
+      "tags": [
+        "topic:workforce-management",
+        "domain:channels",
+        "feature:wfm-integration-throttling",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Retry each throttled request immediately until one attempt succeeds."
+        },
+        {
+          "id": "b",
+          "text": "Retry all affected workers together after the same fixed short delay."
+        },
+        {
+          "id": "c",
+          "text": "Retry authentication failures only and leave throttled requests for the next full synchronization."
+        },
+        {
+          "id": "d",
+          "text": "Retry transient failures using exponential backoff."
+        }
+      ],
+      "correctOptionId": "d"
+    },
+    {
+      "id": "cc-d2-c85",
+      "revision": 1,
+      "topicId": "copilot-ai",
+      "kind": "recall",
+      "prompt": "What should a voice agent do before starting a potentially slow customer-data lookup?",
+      "answer": "Play an initial greeting and use appropriate latency messaging.",
+      "explanation": "Acknowledge the caller while lookup work proceeds instead of creating unexplained silence.",
+      "sourceIds": [
+        "cc-d2-finaloutbound-s13"
+      ],
+      "noteIds": [
+        "cc-d2-n29"
+      ],
+      "tags": [
+        "topic:copilot-ai",
+        "domain:channels",
+        "feature:ai-greeting-before-lookup",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c86",
+      "revision": 1,
+      "topicId": "copilot-ai",
+      "kind": "recall",
+      "prompt": "Are system prompts alone sufficient to enforce sensitive financial commitments by a real-time agent?",
+      "answer": "No. Use deterministic controls and appropriate human review or approval.",
+      "explanation": "The transparency note describes confident incorrect commitments and limitations of prompt-only constraints.",
+      "sourceIds": [
+        "cc-d2-finaloutbound-s14"
+      ],
+      "noteIds": [
+        "cc-d2-n29"
+      ],
+      "tags": [
+        "topic:copilot-ai",
+        "domain:channels",
+        "feature:deterministic-commitment-control",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c87",
+      "revision": 1,
+      "topicId": "copilot-ai",
+      "kind": "mcq",
+      "prompt": "A voice agent works in normal tests but stalls when a lookup tool times out. Which change addresses the documented reliability concern?",
+      "answer": "Add and test a recovery path that can retry, offer alternatives or escalate to a representative.",
+      "explanation": "Tool failures are expected design cases. Removing delays from testing or assuming successful responses leaves the failure path unhandled.",
+      "sourceIds": [
+        "cc-d2-finaloutbound-s14"
+      ],
+      "noteIds": [
+        "cc-d2-n29"
+      ],
+      "tags": [
+        "topic:copilot-ai",
+        "domain:channels",
+        "feature:ai-tool-failure-recovery",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Add and test a recovery path that can retry, offer alternatives or escalate to a representative."
+        },
+        {
+          "id": "b",
+          "text": "Test only the successful lookup path to keep evaluation consistent."
+        },
+        {
+          "id": "c",
+          "text": "Increase confidence in the system prompt without changing recovery logic."
+        },
+        {
+          "id": "d",
+          "text": "Remove representative escalation so the agent must complete every lookup."
+        }
+      ],
+      "correctOptionId": "a"
+    }
+  ],
+  "questions": [],
+  "editorial": [
+    {
+      "id": "cc-d2-n23",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "outbound-intake-identity-and-preferences",
+      "objectiveIds": [
+        "D2.3.15",
+        "D2.3.16"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaloutbound-s01",
+          "section": "Prerequisites; Set up proactive engagement",
+          "claim": "Provision channels, choose audience/intake and configure outbound workstreams; Customer Insights journeys require Customer Insights and MCP intake is preview.",
+          "applicability": "Dynamics 365 Contact Center; preview or deployment conditions are stated in the learning item."
+        },
+        {
+          "sourceId": "cc-d2-finaloutbound-s02",
+          "section": "Set up an outbound workstream; Details; Dialing modes; Frequency limits",
+          "claim": "Configure workstream, identity key, queue and skills; generated routing rules follow engagement configuration. TPE preview mode supports manual/delayed calling; ACS preview starts after acceptance. Quiet-hour evaluation needs explicit customer timezone.",
+          "applicability": "Dynamics 365 Contact Center; preview or deployment conditions are stated in the learning item."
+        },
+        {
+          "sourceId": "cc-d2-finaloutbound-s05",
+          "section": "Automatic opt-out; Manually manage opt-outs; How consent is enforced",
+          "claim": "Do not contact dispositions and supported opt-out workflows create channel/contact-point records; organization retains consent responsibilities and technical implicit opt-in is not legal consent evidence.",
+          "applicability": "Dynamics 365 Contact Center; preview or deployment conditions are stated in the learning item."
+        }
+      ],
+      "duplicateCheck": "Compared existing pilot/7D1/7D2 and final voice material. Adds proactive delivery or workforce-planning decisions, not proactive website chat, per-user routing capacity or voice telephony provisioning. Recall and scenario reinforce distinct decisions from the linked explanation."
+    },
+    {
+      "id": "cc-d2-c67",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "outbound-identity-key-67",
+      "objectiveIds": [
+        "D2.3.16"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaloutbound-s02",
+          "section": "Set up an outbound workstream; Details; Dialing modes; Frequency limits",
+          "claim": "The external system’s stable identifier stored in an eligible Contact attribute. Matching the intended key allows update-or-insert behavior without creating a new contact for every delivery.",
+          "applicability": "Dynamics 365 Contact Center; configuration decision subject to current feature scope."
+        }
+      ],
+      "duplicateCheck": "Compared existing pilot/7D1/7D2 and final voice material. Adds proactive delivery or workforce-planning decisions, not proactive website chat, per-user routing capacity or voice telephony provisioning. Recall and scenario reinforce distinct decisions from the linked explanation."
+    },
+    {
+      "id": "cc-d2-c68",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "outbound-quiet-hours-timezone-68",
+      "objectiveIds": [
+        "D2.3.15"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaloutbound-s02",
+          "section": "Set up an outbound workstream; Details; Dialing modes; Frequency limits",
+          "claim": "No. Supply the supported timezone value in the uploaded data or API payload. If the local-timezone option is selected and the value is absent, the documented fallback is UTC.",
+          "applicability": "Dynamics 365 Contact Center; configuration decision subject to current feature scope."
+        }
+      ],
+      "duplicateCheck": "Compared existing pilot/7D1/7D2 and final voice material. Adds proactive delivery or workforce-planning decisions, not proactive website chat, per-user routing capacity or voice telephony provisioning. Recall and scenario reinforce distinct decisions from the linked explanation."
+    },
+    {
+      "id": "cc-d2-c69",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "outbound-consent-migration-69",
+      "objectiveIds": [
+        "D2.3.15"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaloutbound-s05",
+          "section": "Automatic opt-out; Manually manage opt-outs; How consent is enforced",
+          "claim": "Import the existing do-not-call records into Voice consent for the corresponding contact points. Bulk upload the migrated do-not-call records into the correct voice consent scope. Text consent governs another consent channel; contact identity alone does not recreate opt-outs, and an opt-out for a different contact point does not suppress the intended number.",
+          "applicability": "Dynamics 365 Contact Center; configuration decision subject to current feature scope."
+        }
+      ],
+      "duplicateCheck": "Compared existing pilot/7D1/7D2 and final voice material. Adds proactive delivery or workforce-planning decisions, not proactive website chat, per-user routing capacity or voice telephony provisioning. Recall and scenario reinforce distinct decisions from the linked explanation."
+    },
+    {
+      "id": "cc-d2-n24",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "outbound-dial-experience-selection",
+      "objectiveIds": [
+        "D2.3.17"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaloutbound-s02",
+          "section": "Set up an outbound workstream; Details; Dialing modes; Frequency limits",
+          "claim": "Configure workstream, identity key, queue and skills; generated routing rules follow engagement configuration. TPE preview mode supports manual/delayed calling; ACS preview starts after acceptance. Quiet-hour evaluation needs explicit customer timezone.",
+          "applicability": "Dynamics 365 Contact Center; preview or deployment conditions are stated in the learning item."
+        },
+        {
+          "sourceId": "cc-d2-finaloutbound-s03",
+          "section": "Important; Copilot; Progressive; Predictive; Preview",
+          "claim": "Dial modes differ by representative reservation and AI involvement. Preview supports personalized review; automated modes carry documented marketing/sales restrictions and telecommunications caveats.",
+          "applicability": "Dynamics 365 Contact Center; preview or deployment conditions are stated in the learning item."
+        }
+      ],
+      "duplicateCheck": "Compared existing pilot/7D1/7D2 and final voice material. Adds proactive delivery or workforce-planning decisions, not proactive website chat, per-user routing capacity or voice telephony provisioning. Recall and scenario reinforce distinct decisions from the linked explanation."
+    },
+    {
+      "id": "cc-d2-c70",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "copilot-dial-flow-70",
+      "objectiveIds": [
+        "D2.3.17"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaloutbound-s03",
+          "section": "Important; Copilot; Progressive; Predictive; Preview",
+          "claim": "Copilot dial mode. The AI agent can escalate if necessary; this describes the technical flow rather than approval for every outreach purpose.",
+          "applicability": "Dynamics 365 Contact Center; configuration decision subject to current feature scope."
+        }
+      ],
+      "duplicateCheck": "Compared existing pilot/7D1/7D2 and final voice material. Adds proactive delivery or workforce-planning decisions, not proactive website chat, per-user routing capacity or voice telephony provisioning. Recall and scenario reinforce distinct decisions from the linked explanation."
+    },
+    {
+      "id": "cc-d2-c71",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "preview-start-platform-scope-71",
+      "objectiveIds": [
+        "D2.3.17"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaloutbound-s02",
+          "section": "Set up an outbound workstream; Details; Dialing modes; Frequency limits",
+          "claim": "Teams Phone extensibility. The documented ACS preview behavior starts automatically after acceptance; do not generalize the manual-start choice across both paths.",
+          "applicability": "Dynamics 365 Contact Center; configuration decision subject to current feature scope."
+        }
+      ],
+      "duplicateCheck": "Compared existing pilot/7D1/7D2 and final voice material. Adds proactive delivery or workforce-planning decisions, not proactive website chat, per-user routing capacity or voice telephony provisioning. Recall and scenario reinforce distinct decisions from the linked explanation."
+    },
+    {
+      "id": "cc-d2-c72",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "preview-human-review-72",
+      "objectiveIds": [
+        "D2.3.17"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaloutbound-s02",
+          "section": "Set up an outbound workstream; Details; Dialing modes; Frequency limits",
+          "claim": "Configure workstream, identity key, queue and skills; generated routing rules follow engagement configuration. TPE preview mode supports manual/delayed calling; ACS preview starts after acceptance. Quiet-hour evaluation needs explicit customer timezone.",
+          "applicability": "Dynamics 365 Contact Center; configuration decision subject to current feature scope."
+        },
+        {
+          "sourceId": "cc-d2-finaloutbound-s03",
+          "section": "Important; Copilot; Progressive; Predictive; Preview",
+          "claim": "Dial modes differ by representative reservation and AI involvement. Preview supports personalized review; automated modes carry documented marketing/sales restrictions and telecommunications caveats.",
+          "applicability": "Dynamics 365 Contact Center; configuration decision subject to current feature scope."
+        }
+      ],
+      "duplicateCheck": "Compared existing pilot/7D1/7D2 and final voice material. Adds proactive delivery or workforce-planning decisions, not proactive website chat, per-user routing capacity or voice telephony provisioning. Recall and scenario reinforce distinct decisions from the linked explanation."
+    },
+    {
+      "id": "cc-d2-n25",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "proactive-dashboard-enablement-and-meaning",
+      "objectiveIds": [
+        "D2.3.18"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaloutbound-s04",
+          "section": "Prerequisites; Key performance indicators; Use proactive engagement metrics",
+          "claim": "Dashboard requires configured engagement, real-time analytics enablement and Omnichannel Supervisor; throughput, connected, pending and completed are distinct measures.",
+          "applicability": "Dynamics 365 Contact Center; preview or deployment conditions are stated in the learning item."
+        }
+      ],
+      "duplicateCheck": "Compared existing pilot/7D1/7D2 and final voice material. Adds proactive delivery or workforce-planning decisions, not proactive website chat, per-user routing capacity or voice telephony provisioning. Recall and scenario reinforce distinct decisions from the linked explanation."
+    },
+    {
+      "id": "cc-d2-c73",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "proactive-dashboard-role-73",
+      "objectiveIds": [
+        "D2.3.18"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaloutbound-s04",
+          "section": "Prerequisites; Key performance indicators; Use proactive engagement metrics",
+          "claim": "Omnichannel Supervisor. Configured proactive engagement and enabled real-time analytics are also prerequisites.",
+          "applicability": "Dynamics 365 Contact Center; configuration decision subject to current feature scope."
+        }
+      ],
+      "duplicateCheck": "Compared existing pilot/7D1/7D2 and final voice material. Adds proactive delivery or workforce-planning decisions, not proactive website chat, per-user routing capacity or voice telephony provisioning. Recall and scenario reinforce distinct decisions from the linked explanation."
+    },
+    {
+      "id": "cc-d2-c74",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "proactive-throughput-meaning-74",
+      "objectiveIds": [
+        "D2.3.18"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaloutbound-s04",
+          "section": "Prerequisites; Key performance indicators; Use proactive engagement metrics",
+          "claim": "Deliveries processed over the last hour. Throughput measures processing pace, not the number of live people reached.",
+          "applicability": "Dynamics 365 Contact Center; configuration decision subject to current feature scope."
+        }
+      ],
+      "duplicateCheck": "Compared existing pilot/7D1/7D2 and final voice material. Adds proactive delivery or workforce-planning decisions, not proactive website chat, per-user routing capacity or voice telephony provisioning. Recall and scenario reinforce distinct decisions from the linked explanation."
+    },
+    {
+      "id": "cc-d2-c75",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "outbound-reachability-metric-75",
+      "objectiveIds": [
+        "D2.3.18"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaloutbound-s04",
+          "section": "Prerequisites; Key performance indicators; Use proactive engagement metrics",
+          "claim": "Connect rate. Connect rate compares connected deliveries with attempted deliveries. Pending and in-progress counts show workload, while throughput measures processing pace.",
+          "applicability": "Dynamics 365 Contact Center; configuration decision subject to current feature scope."
+        }
+      ],
+      "duplicateCheck": "Compared existing pilot/7D1/7D2 and final voice material. Adds proactive delivery or workforce-planning decisions, not proactive website chat, per-user routing capacity or voice telephony provisioning. Recall and scenario reinforce distinct decisions from the linked explanation."
+    },
+    {
+      "id": "cc-d2-n26",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "wfm-scope-and-role-boundaries",
+      "objectiveIds": [
+        "D2.3.19"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaloutbound-s06",
+          "section": "Relationship to Copilot Service workspace; Prerequisites; Security roles and app visibility",
+          "claim": "Install WFM package; dedicated preview app roles do not replace workspace Omnichannel roles. Preview app provides another surface over existing capabilities.",
+          "applicability": "Dynamics 365 Contact Center; preview or deployment conditions are stated in the learning item."
+        },
+        {
+          "sourceId": "cc-d2-finaloutbound-s07",
+          "section": "How planning groups work; Configure service objectives; Associate workforce management artifacts",
+          "claim": "Planning groups share demand scope,time zone and objectives across forecasts/capacity/shift plans; queue-channel combination belongs to one group at a time.",
+          "applicability": "Dynamics 365 Contact Center; preview or deployment conditions are stated in the learning item."
+        },
+        {
+          "sourceId": "cc-d2-finaloutbound-s12",
+          "section": "Important; Available roles; Choose a role",
+          "claim": "Preview WEM roles are task-specific; WFM Forecaster can edit forecasts, Scheduler handles shifts; they do not replace workspace Omnichannel roles.",
+          "applicability": "Dynamics 365 Contact Center; preview or deployment conditions are stated in the learning item."
+        }
+      ],
+      "duplicateCheck": "Compared existing pilot/7D1/7D2 and final voice material. Adds proactive delivery or workforce-planning decisions, not proactive website chat, per-user routing capacity or voice telephony provisioning. Recall and scenario reinforce distinct decisions from the linked explanation."
+    },
+    {
+      "id": "cc-d2-c76",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "wfm-package-readiness-76",
+      "objectiveIds": [
+        "D2.3.19"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaloutbound-s06",
+          "section": "Relationship to Copilot Service workspace; Prerequisites; Security roles and app visibility",
+          "claim": "Workforce Management for Customer Service. Install it through Power Platform admin center; individual feature and user-access configuration still follows.",
+          "applicability": "Dynamics 365 Contact Center; configuration decision subject to current feature scope."
+        }
+      ],
+      "duplicateCheck": "Compared existing pilot/7D1/7D2 and final voice material. Adds proactive delivery or workforce-planning decisions, not proactive website chat, per-user routing capacity or voice telephony provisioning. Recall and scenario reinforce distinct decisions from the linked explanation."
+    },
+    {
+      "id": "cc-d2-c77",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "wfm-app-role-scope-77",
+      "objectiveIds": [
+        "D2.3.19"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaloutbound-s12",
+          "section": "Important; Available roles; Choose a role",
+          "claim": "No. They apply within the separate preview app. Existing workspace role behavior continues; configure access according to the actual app surface.",
+          "applicability": "Dynamics 365 Contact Center; configuration decision subject to current feature scope."
+        }
+      ],
+      "duplicateCheck": "Compared existing pilot/7D1/7D2 and final voice material. Adds proactive delivery or workforce-planning decisions, not proactive website chat, per-user routing capacity or voice telephony provisioning. Recall and scenario reinforce distinct decisions from the linked explanation."
+    },
+    {
+      "id": "cc-d2-c78",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "planning-demand-scope-78",
+      "objectiveIds": [
+        "D2.3.19"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaloutbound-s07",
+          "section": "How planning groups work; Configure service objectives; Associate workforce management artifacts",
+          "claim": "Keep that queue/channel combination in one planning group and associate its planning artifacts there. A queue/channel combination belongs to only one planning group at a time. Different timezones, separate capacity plans or additional forecast scenarios do not remove that demand-scope uniqueness rule.",
+          "applicability": "Dynamics 365 Contact Center; configuration decision subject to current feature scope."
+        }
+      ],
+      "duplicateCheck": "Compared existing pilot/7D1/7D2 and final voice material. Adds proactive delivery or workforce-planning decisions, not proactive website chat, per-user routing capacity or voice telephony provisioning. Recall and scenario reinforce distinct decisions from the linked explanation."
+    },
+    {
+      "id": "cc-d2-n27",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "forecast-history-and-capacity-flow",
+      "objectiveIds": [
+        "D2.3.21"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaloutbound-s07",
+          "section": "How planning groups work; Configure service objectives; Associate workforce management artifacts",
+          "claim": "Planning groups share demand scope,time zone and objectives across forecasts/capacity/shift plans; queue-channel combination belongs to one group at a time.",
+          "applicability": "Dynamics 365 Contact Center; preview or deployment conditions are stated in the learning item."
+        },
+        {
+          "sourceId": "cc-d2-finaloutbound-s08",
+          "section": "Prerequisites; Create a forecast scenario; Associate a forecast scenario with a planning group; Manage an existing scenario",
+          "claim": "Forecasts predict volume/AHT using history. External data requires prior upload and lacks auto-refresh. Associated planning group fixes time zone/channel/queue. Job history and snapshots support management.",
+          "applicability": "Dynamics 365 Contact Center; preview or deployment conditions are stated in the learning item."
+        }
+      ],
+      "duplicateCheck": "Compared existing pilot/7D1/7D2 and final voice material. Adds proactive delivery or workforce-planning decisions, not proactive website chat, per-user routing capacity or voice telephony provisioning. Recall and scenario reinforce distinct decisions from the linked explanation."
+    },
+    {
+      "id": "cc-d2-c79",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "forecast-versus-staffing-79",
+      "objectiveIds": [
+        "D2.3.21"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaloutbound-s07",
+          "section": "How planning groups work; Configure service objectives; Associate workforce management artifacts",
+          "claim": "The forecast predicts demand; the capacity plan converts demand and service objectives into staffing requirements. Keep demand estimation separate from the settings that constrain an individual representative’s routing workload.",
+          "applicability": "Dynamics 365 Contact Center; configuration decision subject to current feature scope."
+        }
+      ],
+      "duplicateCheck": "Compared existing pilot/7D1/7D2 and final voice material. Adds proactive delivery or workforce-planning decisions, not proactive website chat, per-user routing capacity or voice telephony provisioning. Recall and scenario reinforce distinct decisions from the linked explanation."
+    },
+    {
+      "id": "cc-d2-c80",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "external-forecast-refresh-80",
+      "objectiveIds": [
+        "D2.3.21"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaloutbound-s08",
+          "section": "Prerequisites; Create a forecast scenario; Associate a forecast scenario with a planning group; Manage an existing scenario",
+          "claim": "No. The documented external-source scenario does not offer Auto refresh. Prepare the uploaded history and manage subsequent refresh/output versions deliberately.",
+          "applicability": "Dynamics 365 Contact Center; configuration decision subject to current feature scope."
+        }
+      ],
+      "duplicateCheck": "Compared existing pilot/7D1/7D2 and final voice material. Adds proactive delivery or workforce-planning decisions, not proactive website chat, per-user routing capacity or voice telephony provisioning. Recall and scenario reinforce distinct decisions from the linked explanation."
+    },
+    {
+      "id": "cc-d2-c81",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "forecast-inherited-scope-81",
+      "objectiveIds": [
+        "D2.3.21"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaloutbound-s08",
+          "section": "Prerequisites; Create a forecast scenario; Associate a forecast scenario with a planning group; Manage an existing scenario",
+          "claim": "The associated planning group. When a planning group is selected, timezone, channels and queues inherit its configuration and become read-only. Refresh timing, history source and forecast type govern other aspects of prediction rather than the inherited demand scope.",
+          "applicability": "Dynamics 365 Contact Center; configuration decision subject to current feature scope."
+        }
+      ],
+      "duplicateCheck": "Compared existing pilot/7D1/7D2 and final voice material. Adds proactive delivery or workforce-planning decisions, not proactive website chat, per-user routing capacity or voice telephony provisioning. Recall and scenario reinforce distinct decisions from the linked explanation."
+    },
+    {
+      "id": "cc-d2-n28",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "shift-publication-and-wfm-integration",
+      "objectiveIds": [
+        "D2.3.20",
+        "D2.3.22"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaloutbound-s09",
+          "section": "Prerequisites; Create a shift plan; Schedule shift plan resources",
+          "claim": "Enabled scheduling uses skills, queues, calendars, activities and optional capacity plan; planning group supplies time zone.",
+          "applicability": "Dynamics 365 Contact Center; preview or deployment conditions are stated in the learning item."
+        },
+        {
+          "sourceId": "cc-d2-finaloutbound-s10",
+          "section": "Add representatives to a shift plan and publish the schedule; Edit bookings",
+          "claim": "Publish selected schedules; editing a committed booking changes it to Unpublished and requires republishing.",
+          "applicability": "Dynamics 365 Contact Center; preview or deployment conditions are stated in the learning item."
+        },
+        {
+          "sourceId": "cc-d2-finaloutbound-s11",
+          "section": "Integration architecture; Schedule synchronization; Design considerations",
+          "claim": "Dataverse API supports schedule/adherence/history integration; use Entra service-to-service authentication, deliberate synchronization cadence and exponential-backoff handling for transient failures/rate limits.",
+          "applicability": "Dynamics 365 Contact Center; preview or deployment conditions are stated in the learning item."
+        }
+      ],
+      "duplicateCheck": "Compared existing pilot/7D1/7D2 and final voice material. Adds proactive delivery or workforce-planning decisions, not proactive website chat, per-user routing capacity or voice telephony provisioning. Recall and scenario reinforce distinct decisions from the linked explanation."
+    },
+    {
+      "id": "cc-d2-c82",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "booking-republication-82",
+      "objectiveIds": [
+        "D2.3.20"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaloutbound-s10",
+          "section": "Add representatives to a shift plan and publish the schedule; Edit bookings",
+          "claim": "It becomes Unpublished and must be republished for the update to be available. An edit is not automatically a new published schedule.",
+          "applicability": "Dynamics 365 Contact Center; configuration decision subject to current feature scope."
+        }
+      ],
+      "duplicateCheck": "Compared existing pilot/7D1/7D2 and final voice material. Adds proactive delivery or workforce-planning decisions, not proactive website chat, per-user routing capacity or voice telephony provisioning. Recall and scenario reinforce distinct decisions from the linked explanation."
+    },
+    {
+      "id": "cc-d2-c83",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "external-wfm-api-83",
+      "objectiveIds": [
+        "D2.3.22"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaloutbound-s11",
+          "section": "Integration architecture; Schedule synchronization; Design considerations",
+          "claim": "Dataverse API. It supports scenarios such as importing schedules and exporting interaction or adherence data; the integration still needs authentication and data mapping.",
+          "applicability": "Dynamics 365 Contact Center; configuration decision subject to current feature scope."
+        }
+      ],
+      "duplicateCheck": "Compared existing pilot/7D1/7D2 and final voice material. Adds proactive delivery or workforce-planning decisions, not proactive website chat, per-user routing capacity or voice telephony provisioning. Recall and scenario reinforce distinct decisions from the linked explanation."
+    },
+    {
+      "id": "cc-d2-c84",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "wfm-integration-throttling-84",
+      "objectiveIds": [
+        "D2.3.22"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaloutbound-s11",
+          "section": "Integration architecture; Schedule synchronization; Design considerations",
+          "claim": "Retry transient failures using exponential backoff. The integration guidance explicitly recommends retries with exponential backoff for rate limits and transient failures. Immediate retries or synchronized short-delay retries continue pressure; handling authentication errors alone omits the throttling recovery path.",
+          "applicability": "Dynamics 365 Contact Center; configuration decision subject to current feature scope."
+        }
+      ],
+      "duplicateCheck": "Compared existing pilot/7D1/7D2 and final voice material. Adds proactive delivery or workforce-planning decisions, not proactive website chat, per-user routing capacity or voice telephony provisioning. Recall and scenario reinforce distinct decisions from the linked explanation."
+    },
+    {
+      "id": "cc-d2-n29",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "ai-journey-latency-and-recovery",
+      "objectiveIds": [
+        "D2.3.25"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaloutbound-s13",
+          "section": "Best practices for AI agent configuration; Best practices to handle silence before a customer engages",
+          "claim": "Play initial greeting before lookup, configure latency messages and consider connector/flow performance; verify runtime context and routing on escalation.",
+          "applicability": "Dynamics 365 Contact Center; preview or deployment conditions are stated in the learning item."
+        },
+        {
+          "sourceId": "cc-d2-finaloutbound-s14",
+          "section": "Tool invocation reliability; Safety-relevant behavioral limitations; Best practices for improving system performance",
+          "claim": "Tools can fail/time out; test recovery and escalation under real conditions. Sensitive commitments need deterministic controls and human review, not sole reliance on prompts.",
+          "applicability": "Dynamics 365 Contact Center; preview or deployment conditions are stated in the learning item."
+        }
+      ],
+      "duplicateCheck": "Compared existing pilot/7D1/7D2 and final voice material. Adds proactive delivery or workforce-planning decisions, not proactive website chat, per-user routing capacity or voice telephony provisioning. Recall and scenario reinforce distinct decisions from the linked explanation."
+    },
+    {
+      "id": "cc-d2-c85",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "ai-greeting-before-lookup-85",
+      "objectiveIds": [
+        "D2.3.25"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaloutbound-s13",
+          "section": "Best practices for AI agent configuration; Best practices to handle silence before a customer engages",
+          "claim": "Play an initial greeting and use appropriate latency messaging. Acknowledge the caller while lookup work proceeds instead of creating unexplained silence.",
+          "applicability": "Dynamics 365 Contact Center; configuration decision subject to current feature scope."
+        }
+      ],
+      "duplicateCheck": "Compared existing pilot/7D1/7D2 and final voice material. Adds proactive delivery or workforce-planning decisions, not proactive website chat, per-user routing capacity or voice telephony provisioning. Recall and scenario reinforce distinct decisions from the linked explanation."
+    },
+    {
+      "id": "cc-d2-c86",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "deterministic-commitment-control-86",
+      "objectiveIds": [
+        "D2.3.25"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaloutbound-s14",
+          "section": "Tool invocation reliability; Safety-relevant behavioral limitations; Best practices for improving system performance",
+          "claim": "No. Use deterministic controls and appropriate human review or approval. The transparency note describes confident incorrect commitments and limitations of prompt-only constraints.",
+          "applicability": "Dynamics 365 Contact Center; configuration decision subject to current feature scope."
+        }
+      ],
+      "duplicateCheck": "Compared existing pilot/7D1/7D2 and final voice material. Adds proactive delivery or workforce-planning decisions, not proactive website chat, per-user routing capacity or voice telephony provisioning. Recall and scenario reinforce distinct decisions from the linked explanation."
+    },
+    {
+      "id": "cc-d2-c87",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "ai-tool-failure-recovery-87",
+      "objectiveIds": [
+        "D2.3.25"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaloutbound-s14",
+          "section": "Tool invocation reliability; Safety-relevant behavioral limitations; Best practices for improving system performance",
+          "claim": "Add and test a recovery path that can retry, offer alternatives or escalate to a representative. Tool failures are expected design cases. Removing delays from testing or assuming successful responses leaves the failure path unhandled.",
+          "applicability": "Dynamics 365 Contact Center; configuration decision subject to current feature scope."
+        }
+      ],
+      "duplicateCheck": "Compared existing pilot/7D1/7D2 and final voice material. Adds proactive delivery or workforce-planning decisions, not proactive website chat, per-user routing capacity or voice telephony provisioning. Recall and scenario reinforce distinct decisions from the linked explanation."
+    }
+  ]
+}

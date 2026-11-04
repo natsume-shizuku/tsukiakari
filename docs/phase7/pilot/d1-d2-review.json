@@ -1,0 +1,500 @@
+[
+  {
+    "id": "cc-d1-n01",
+    "revision": 1,
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "dc25af21304c5ba1b6e1ce29a7d3f49605f686f63f03cbbeac24d9a9721b7c42",
+    "rationale": "The three sources support the distinction between a session-based workspace and a representative widget hosted in another CRM. Provisioning prerequisites remain explicit; mapping to workspace and embedded configuration is appropriate.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-s01",
+        "section": "Overview",
+        "supported": true,
+        "notes": "CRM-connected multichannel product scope supports the implementation context."
+      },
+      {
+        "sourceId": "cc-d1-s02",
+        "section": "Overview; Prerequisites",
+        "supported": true,
+        "notes": "Concurrent session context and the required representative role are explicit."
+      },
+      {
+        "sourceId": "cc-d1-s03",
+        "section": "Overview; Prerequisites; Salesforce call center step 2",
+        "supported": true,
+        "notes": "Representative widget hosting, channel prerequisite, and adapter URL are documented."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-n02",
+    "revision": 1,
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "5ebf2bffc67c7ffba372c1a2111c074f598c09662f1670e8da192d5f1514ee75",
+    "rationale": "Managed deployment, migration dependencies, and environment recovery are accurately separated. The recommended functional check is author guidance, not a fabricated product guarantee.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-s04",
+        "section": "Managed vs. unmanaged; Environment parity; Active layers",
+        "supported": true,
+        "notes": "Source/target packaging, parity, and active-layer precedence support the claims."
+      },
+      {
+        "sourceId": "cc-d1-s05",
+        "section": "Prerequisites; Scope; Verify your migration",
+        "supported": true,
+        "notes": "Schema/permissions precede migration; skills associations require target verification."
+      },
+      {
+        "sourceId": "cc-d1-s06",
+        "section": "Overview; Restore organization",
+        "supported": true,
+        "notes": "Restore/reset/tenant migration require the stated subsequent service setup."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-n01",
+    "revision": 1,
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "9d4af844a4dc46ce760c5650330ad4a393422de1c81d3ed2759bd21dd4626e61",
+    "rationale": "Accurately separates verified sign-in from matching a customer record; ambiguous matches and channel association are supported. It avoids claiming arbitrary custom fields participate.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-s01",
+        "section": "Authentication compared to customer identification; Add authentication to chat widget",
+        "supported": true,
+        "notes": "Signed-token identity verification differs from matching; settings must be attached to the channel."
+      },
+      {
+        "sourceId": "cc-d2-s02",
+        "section": "Overview; Set up preconversation questions",
+        "supported": true,
+        "notes": "Ambiguity prevents linking; the standard survey Contact Phone mapping is mobilephone."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-n02",
+    "revision": 1,
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "7109630ca651d0cec6f56bf8ee466ccb0a2b919fa867edc6b1a88541c7129f4a",
+    "rationale": "The survey, workstream context, and website/portal deployment sequence is supported. No claim that display text replaces internal names or that every integration behaves identically.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-s03",
+        "section": "Survey question fields; Note after step 5",
+        "supported": true,
+        "notes": "Question creation produces context variables; consent and Required settings are explicit."
+      },
+      {
+        "sourceId": "cc-d2-s04",
+        "section": "Introduction; Considerations",
+        "supported": true,
+        "notes": "Context names stay consistent, matching is exact, and routing dependencies must be checked."
+      },
+      {
+        "sourceId": "cc-d2-s05",
+        "section": "Embed chat widget in a website or Power Apps portal",
+        "supported": true,
+        "notes": "Website body placement and the specific portal snippet field are documented separately."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c01",
+    "revision": 1,
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "8aa48ed034096c3b37c595ac4b109cd7e789769ebbb3cdc88a4a9eda2345a2f7",
+    "rationale": "Correctly identifies the representative-side embedded widget, without confusing it with customer chat. The hosting constraint is retained in the explanation.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-s03",
+        "section": "Overview; Prerequisites; Salesforce call center step 2",
+        "supported": true,
+        "notes": "Representative widget hosting, channel prerequisite, and adapter URL are documented."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c02",
+    "revision": 1,
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "0c8e72816fa0b7fce7d2ba0fa9e611bd787524bd9e4c4128743cd0d33810b8e0",
+    "rationale": "The workspace overview explicitly lists this role. Objective links cover workspace setup and security-role management.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-s02",
+        "section": "Overview; Prerequisites",
+        "supported": true,
+        "notes": "Concurrent session context and the required representative role are explicit."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c03",
+    "revision": 1,
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "a119308ad56d3f288fe38d54d6284e3bb9123a56bfc863602c6332d01e1270c7",
+    "rationale": "The recommended unmanaged-source/managed-target deployment pattern is directly supported and maps to solutions/ALM.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-s04",
+        "section": "Managed vs. unmanaged; Environment parity; Active layers",
+        "supported": true,
+        "notes": "Source/target packaging, parity, and active-layer precedence support the claims."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c04",
+    "revision": 1,
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "3f13e112e55448db8680cfad63dc255b4c59d709de2ca84791bb66bb94346aa9",
+    "rationale": "The restore follow-up is supported; the wording does not require both provisioning and routing in every environment.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-s06",
+        "section": "Overview; Restore organization",
+        "supported": true,
+        "notes": "Restore/reset/tenant migration require the stated subsequent service setup."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c05",
+    "revision": 2,
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "4514fc7822691c2d2698883cb2ec0864b509c67378bff3466011ea376087c0e3",
+    "rationale": "Revision 2 gives realistic ALM causes and explicitly eliminates parity, failed import, and omitted package changes. Active-layer diagnosis remains the sole answer.",
+    "findings": [
+      "Resolved at revision 2: Correct key and mapping, but irrelevant distractors allow guessing without understanding ALM. Proposed alternatives test realistic causes with discriminating stem constraints. Revision 2 gives realistic ALM causes and explicitly eliminates parity, failed import, and omitted package changes. Active-layer diagnosis remains the sole answer."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-s04",
+        "section": "Managed vs. unmanaged; Environment parity; Active layers",
+        "supported": true,
+        "notes": "Source/target packaging, parity, and active-layer precedence support the claims."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c06",
+    "revision": 2,
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "8c5e68fc230f302a125f2838221a9bcf3ad58ad56d36de4b2649ff908c0998bb",
+    "rationale": "Revision 2 distinguishes rendering, capacity-profile associations, and definition reimport from required skill-characteristic associations. The documented verification list supports the distinction.",
+    "findings": [
+      "Resolved at revision 2: Correct skills/rating association step; alternatives need realistic incomplete migration checks rather than renaming skills or using a voice snippet. Revision 2 distinguishes rendering, capacity-profile associations, and definition reimport from required skill-characteristic associations. The documented verification list supports the distinction."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-s05",
+        "section": "Prerequisites; Scope; Verify your migration",
+        "supported": true,
+        "notes": "Schema/permissions precede migration; skills associations require target verification."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c01",
+    "revision": 1,
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "9bc903a82b5203b7bd504d81577e323c03b6f030ce58738f248bf5bbcc3c08cc",
+    "rationale": "Matching an entered address is not authenticated identity. Signed-token verification is directly supported.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-s01",
+        "section": "Authentication compared to customer identification; Add authentication to chat widget",
+        "supported": true,
+        "notes": "Signed-token identity verification differs from matching; settings must be attached to the channel."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c02",
+    "revision": 1,
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "35d06d58cc6f4417d4815840e7d22b588782eee8e86944ec2af8aaf3ea44a6d1",
+    "rationale": "Exact case-sensitive context matching and preserving defined names are supported. Scoped to supplied workstream context.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-s04",
+        "section": "Introduction; Considerations",
+        "supported": true,
+        "notes": "Context names stay consistent, matching is exact, and routing dependencies must be checked."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c03",
+    "revision": 1,
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "e42dc6f1ee4ff2224b274567d1c281f7f37b9ccd4288ac687236ffce26b97747",
+    "rationale": "The documented survey note explicitly creates corresponding context variables. Both survey and context objectives apply.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-s03",
+        "section": "Survey question fields; Note after step 5",
+        "supported": true,
+        "notes": "Question creation produces context variables; consent and Required settings are explicit."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c04",
+    "revision": 1,
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "9aef558cf7b2298c5cbb29838ea6b0768e2f16dd8ca987b85d3ee6716c4edfd7",
+    "rationale": "Correct for the explicitly stated conventional website workflow; portal placement is tested separately.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-s05",
+        "section": "Embed chat widget in a website or Power Apps portal",
+        "supported": true,
+        "notes": "Website body placement and the specific portal snippet field are documented separately."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c05",
+    "revision": 1,
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "2ef72fadddf97f981cbea77c3b8853ba06c5889e3f2525bcae5357a8cbb5d93b",
+    "rationale": "The multiple-match rule supports the sole correct answer. Oldest, newest, and first-record assumptions are realistic competing errors.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-s02",
+        "section": "Overview; Set up preconversation questions",
+        "supported": true,
+        "notes": "Ambiguity prevents linking; the standard survey Contact Phone mapping is mobilephone."
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c06",
+    "revision": 2,
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "d8d3b60909b188a69ed6bf445ba48adffdda6bcad76942e782c6401932604359",
+    "rationale": "Revision 2 contrasts useful integration checks with the specifically required routing-rule dependency check. The limited alternatives do not satisfy that requirement.",
+    "findings": [
+      "Resolved at revision 2: Correct dependency check but current unrelated alternatives undermine advanced application quality. Revision 2 contrasts useful integration checks with the specifically required routing-rule dependency check. The limited alternatives do not satisfy that requirement."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-s04",
+        "section": "Introduction; Considerations",
+        "supported": true,
+        "notes": "Context names stay consistent, matching is exact, and routing dependencies must be checked."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q01",
+    "revision": 1,
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "0161cbfc777a697fc6d77434644cc7f23c9a3a844cee4836af653b647d40a92d",
+    "rationale": "The Salesforce call-center procedure explicitly uses the widget URL. Other offered endpoint types have distinct purposes; prerequisites are given.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-s03",
+        "section": "Overview; Prerequisites; Salesforce call center step 2",
+        "supported": true,
+        "notes": "Representative widget hosting, channel prerequisite, and adapter URL are documented."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q02",
+    "revision": 2,
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "c5ed17957a719a61a7fcc06f84dd696f8b71c2be183427f1e6a5e1dc366b5192",
+    "rationale": "Revision 2 uses plausible but insufficient recovery tasks. The service-recovery requirement remains explicit and is not replaced by configuration import or role assignment.",
+    "findings": [
+      "Resolved at revision 2: Recovery answer is supported; dashboard and survey distractors are unrelated. Replace with plausible deployment/access tasks that fail to complete service recovery. Revision 2 uses plausible but insufficient recovery tasks. The service-recovery requirement remains explicit and is not replaced by configuration import or role assignment."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-s06",
+        "section": "Overview; Restore organization",
+        "supported": true,
+        "notes": "Restore/reset/tenant migration require the stated subsequent service setup."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q03",
+    "revision": 2,
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "d75035b5a1efb675c466b761193efaa686bbe0bf276813900580f9b453f19bb8",
+    "rationale": "Revision 2 compares deployment diagnostics by the information requested. Only layer inspection supplies per-layer changed properties.",
+    "findings": [
+      "Resolved at revision 2: Inspection answer is supported, but transcript/queue/survey choices are unrelated. Use other ALM diagnostics that do not show per-layer properties. Revision 2 compares deployment diagnostics by the information requested. Only layer inspection supplies per-layer changed properties."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-s07",
+        "section": "View the solution layers for a component",
+        "supported": true,
+        "notes": "The view exposes change order and per-layer property details."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d1-q04",
+    "revision": 2,
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "e5d0040d626388e5f51c6a94224a57a8603c46762bfa4eea11157c8e4fe3aabe",
+    "rationale": "Revision 2 challenges the common automatic-dependency assumption. Source permissions and destination schema still form the exact pair.",
+    "findings": [
+      "Resolved at revision 2: The exact two prerequisites are correct; deleting dependencies is an implausible distractor. Replace with a realistic automatic-schema assumption. Revision 2 challenges the common automatic-dependency assumption. Source permissions and destination schema still form the exact pair."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-s05",
+        "section": "Prerequisites; Scope; Verify your migration",
+        "supported": true,
+        "notes": "Schema/permissions precede migration; skills associations require target verification."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q01",
+    "revision": 2,
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "f3e6294dd8fab23fcdca1313e5b675a7e7379319f2bbe6ff0e21a928e82973ba",
+    "rationale": "Revision 2 tests SDK readiness and call order. DOM readiness or delayed provider registration does not satisfy the documented sequence.",
+    "findings": [
+      "Resolved at revision 2: The readiness/provider/start sequence is correct. Replace page-title and end-of-conversation choices with plausible ordering/readiness errors. Revision 2 tests SDK readiness and call order. DOM readiness or delayed provider registration does not satisfy the documented sequence."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-s06",
+        "section": "Steps to send custom context",
+        "supported": true,
+        "notes": "The SDK-ready event precedes provider registration and chat start."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q02",
+    "revision": 2,
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "ece30e42d836411a67da4485892dd8f3bbecb8754ea0c77309267bfaa91eca13",
+    "rationale": "Revision 2 compares realistic phone fields under the explicitly standard survey mapping. The separate bot handoff table does not change this bounded question.",
+    "findings": [
+      "Resolved at revision 2: The standard preconversation Contact mapping supports the answer, despite a separate bot-handoff table on the same page. Use competing phone fields rather than display-wording distractions. Revision 2 compares realistic phone fields under the explicitly standard survey mapping. The separate bot handoff table does not change this bounded question."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-s02",
+        "section": "Overview; Set up preconversation questions",
+        "supported": true,
+        "notes": "Ambiguity prevents linking; the standard survey Contact Phone mapping is mobilephone."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q03",
+    "revision": 2,
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "0d2b16137d36e0e04a162162ff8e98e9a19d278a4d7d7b649915bb6533f9f741",
+    "rationale": "Revision 2 distinguishes authentication, snippet identity, and referenced script content. The existing portal integration field remains unambiguous.",
+    "findings": [
+      "Resolved at revision 2: Correct portal-specific field; context-name and survey-answer alternatives do not test meaningful portal configuration choices. Revision 2 distinguishes authentication, snippet identity, and referenced script content. The existing portal integration field remains unambiguous."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-s05",
+        "section": "Embed chat widget in a website or Power Apps portal",
+        "supported": true,
+        "notes": "Website body placement and the specific portal snippet field are documented separately."
+      },
+      {
+        "sourceId": "cc-d2-s01",
+        "section": "Create an authentication setting record for chat",
+        "supported": true,
+        "notes": "Additional distractor check: the Public key URL is a verification endpoint, not script storage."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q04",
+    "revision": 1,
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "1cca3c1025e27b60897772f86a87934ab6092b87f4f5d2e26f04105920a89acd",
+    "rationale": "User consent plus mandatory response is the unambiguous pair. Alternatives are competing values of the same settings, and no legal compliance guarantee is asserted.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-s03",
+        "section": "Survey question fields; Note after step 5",
+        "supported": true,
+        "notes": "Question creation produces context variables; consent and Required settings are explicit."
+      }
+    ]
+  }
+]

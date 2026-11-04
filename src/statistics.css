@@ -1,0 +1,53 @@
+.statistics-page { min-width: 0; }
+.statistics-scope { display: flex; align-items: end; gap: 24px; margin-bottom: 24px; }
+.statistics-scope > div { width: min(100%, 320px); flex-shrink: 0; }
+.statistics-scope p { margin: 0 0 8px; overflow-wrap: anywhere; }
+.statistics-metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-bottom: 24px; }
+.statistics-metrics h2 { color: var(--muted); font-size: .85rem; }
+.statistics-metrics strong { font-size: clamp(1.5rem, 2.2vw, 2rem); font-weight: 550; color: var(--accent); }
+.statistics-metrics p { margin: 9px 0 0; color: var(--muted); font-size: .8rem; }
+.statistics-calendar-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; }
+.statistics-calendar-heading p { margin: 0; }
+.statistics-year-controls { display: flex; gap: 8px; }
+.statistics-year-controls button { min-width: 44px; }
+.statistics-heatmap { margin: 0; min-width: 0; }
+.statistics-heatmap-scroll { overflow-x: auto; padding: 5px 2px; }
+.statistics-heatmap svg { display: block; width: 100%; min-width: 800px; }
+.statistics-chart-label { fill: var(--muted); font-size: 10px; }
+.statistics-cell { fill: var(--panel-soft); background: var(--panel-soft); stroke: var(--line); stroke-width: .5; }
+.statistics-cell.level-1 { fill: color-mix(in srgb, var(--accent) 25%, var(--panel)); background: color-mix(in srgb, var(--accent) 25%, var(--panel)); }
+.statistics-cell.level-2 { fill: color-mix(in srgb, var(--accent) 50%, var(--panel)); background: color-mix(in srgb, var(--accent) 50%, var(--panel)); }
+.statistics-cell.level-3 { fill: color-mix(in srgb, var(--accent) 75%, var(--panel)); background: color-mix(in srgb, var(--accent) 75%, var(--panel)); }
+.statistics-cell.level-4 { fill: var(--accent); background: var(--accent); }
+.statistics-cell.is-future { opacity: .35; }
+.statistics-cell.is-selected { stroke: var(--text); stroke-width: 1.5; }
+.statistics-heatmap figcaption { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; color: var(--muted); font-size: .75rem; margin: 12px 0 24px; }
+.statistics-legend { display: inline-flex; align-items: center; gap: 5px; }
+.statistics-legend .statistics-cell { display: inline-block; width: 13px; height: 13px; border-radius: 2px; border: 1px solid var(--line); }
+.statistics-day-reader { display: flex; gap: 28px; align-items: center; justify-content: center; border-block: 1px solid var(--line); padding: 20px 0; }
+.statistics-date-controls { display: flex; align-items: end; gap: 8px; }
+.statistics-date-controls > div { min-width: 0; }
+.statistics-date-controls button { min-width: 44px; flex-shrink: 0; }
+.statistics-date-controls input { max-width: 200px; }
+.statistics-day-reader h3 { font-size: 1rem; }
+.statistics-day-reader p { margin: 4px 0 0; }
+.statistics-year-summary { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin: 24px 0 20px; }
+.statistics-year-summary dt { color: var(--muted); font-size: .78rem; margin-bottom: 8px; }
+.statistics-year-summary dd { margin: 0; font-size: 1.1rem; color: var(--accent); }
+.statistics-year-summary dd span { color: var(--muted); font-size: .8rem; }
+.statistics-calendar > .fine-print { margin-bottom: 0; }
+.statistics-empty { color: var(--muted); margin: 24px 0 0; }
+.statistics-method { margin: 24px 0 0; }
+@media (max-width: 1100px) { .statistics-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) {
+  .statistics-scope, .statistics-day-reader { flex-direction: column; align-items: stretch; gap: 16px; }
+  .statistics-scope > div { width: 100%; }
+  .statistics-metrics, .statistics-year-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .statistics-metrics .panel { padding: 16px 12px; }
+  .statistics-calendar { padding: 20px 12px; }
+  .statistics-date-controls { justify-content: center; }
+  .statistics-date-controls input { width: 100%; }
+  .statistics-heatmap figcaption { margin-bottom: 18px; }
+}
+
+.statistics-day-reader > [aria-live] { text-align: center; }

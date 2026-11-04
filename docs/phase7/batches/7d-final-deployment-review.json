@@ -1,0 +1,308 @@
+[
+  {
+    "id": "cc-d1-n09",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "d46834dc7b216bf2abf4e5743ef9456452186f2358c0ce843e8124f8551f47f6",
+    "rationale": "Verified same-environment prerequisite, all three provenance columns and initial/incremental flow distinction; rollout test is author guidance.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-final-s01",
+        "section": "Prerequisites; Copy data; Add a connector using webhooks",
+        "supported": true,
+        "notes": "Opened prerequisites, copy-data and webhook sections; confirmed environment alignment, provenance and incremental notifications."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-n10",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "3165b338b25ebc61de718a0d69c31111f59420465834b831a52c8ddb97f8f40d",
+    "rationale": "Verified Salesforce user/default-layout/utility steps and retained-provider architecture boundaries. No unsupported current Copilot provisioning is promised.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-final-s02",
+        "section": "Set up the call center in Salesforce; Set up a softphone in Salesforce",
+        "supported": true,
+        "notes": "Opened call-center and softphone setup; checked user membership, default layout and utility."
+      },
+      {
+        "sourceId": "cc-d1-final-s03",
+        "section": "Architecture; Dataflow",
+        "supported": true,
+        "notes": "Opened architecture/dataflow; routing, follow-up and supervisor/reporting remain with retained CRM/CCaaS. This2024 architecture is not a current provisioning recipe."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-n11",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "8ff91afc1600e01bb34fec86167519e45d02fe5a78ff743e697a151e2697b62a",
+    "rationale": "Verified explicit migration exclusions and ordered dependencies; managed-solution cleanup includes impact assessment.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-final-s04",
+        "section": "Important; Channel configuration migration steps",
+        "supported": true,
+        "notes": "Opened migration prerequisites, important exclusions and ordered steps through verification."
+      },
+      {
+        "sourceId": "cc-d1-final-s05",
+        "section": "Deletion of managed configuration records",
+        "supported": true,
+        "notes": "Opened managed versus unmanaged, parity, active-layer and managed-record deletion guidance."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-n12",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "1b4a035df81a436a5a66ce7729fa1070fca14571f234b8105f010b2f9c110e92",
+    "rationale": "Verified full-copy target integration review, routing limitation, target snippet, ACS-specific ownership and agent publishing.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-final-s06",
+        "section": "Configure the target environment after the copy; Chat channel; Configure Copilot agents in the target environment",
+        "supported": true,
+        "notes": "Opened full versus minimal copy, target routing/resource constraints, Teams Phone and chat identity, agent validation/publication sections."
+      },
+      {
+        "sourceId": "cc-d1-final-s07",
+        "section": "Important; Disconnect from an Azure Communication Services resource",
+        "supported": true,
+        "notes": "Opened important disconnection effects and procedure including Event Grid cleanup; permanent number release remains distinct."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c25",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "38cd65a93b8830165f5d51827e74440c9727fb2c3208f27dc21231e0d58f5f90",
+    "rationale": "All three columns are expressly listed in prerequisites.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-final-s01",
+        "section": "Prerequisites",
+        "supported": true,
+        "notes": "Opened prerequisites, copy-data and webhook sections; confirmed environment alignment, provenance and incremental notifications."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c26",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "2259d2edf2a48e0009cda81f8879f07ed65edcabaae3ce185450adb6fbe44d14",
+    "rationale": "The source requires Power Apps and Power Automate environments to match.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-final-s01",
+        "section": "Prerequisites",
+        "supported": true,
+        "notes": "Opened prerequisites, copy-data and webhook sections; confirmed environment alignment, provenance and incremental notifications."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c27",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "c86e2d8ae6c9d4ddbf58fd51909b1331ca46a5e036f3c45ee2b2a6e8c5702006",
+    "rationale": "Incremental synchronization requires change capture; repeating a manual initial load is the strongest rejected alternative and does not supply automatic updates.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-final-s01",
+        "section": "Copy data; Add a connector using webhooks",
+        "supported": true,
+        "notes": "Opened prerequisites, copy-data and webhook sections; confirmed environment alignment, provenance and incremental notifications."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c28",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "49c5e613c92ddec689a299f744c16ffcf97f8f290d4434aff538e8279f7c0741",
+    "rationale": "The Salesforce procedure expressly adds the current user through Manage Call Center Users after import.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-final-s02",
+        "section": "Set up the call center in Salesforce",
+        "supported": true,
+        "notes": "Opened call-center and softphone setup; checked user membership, default layout and utility."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c29",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "0425ad095db698d0d848aeeb8b4aa2662edf46610549522fddc19a9b477f1e4a",
+    "rationale": "Open CTI Softphone is the specified Service Console utility.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-final-s02",
+        "section": "Set up a softphone in Salesforce",
+        "supported": true,
+        "notes": "Opened call-center and softphone setup; checked user membership, default layout and utility."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c30",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "d1d6bfec48340af4d90c2836ef48837f451d9028c102343e44d8ff4f389a339d",
+    "rationale": "The expressly retained architecture keeps routing and supervision with existing services; assistance does not replace them automatically. Historical architecture scope is explicit.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-final-s03",
+        "section": "Architecture; Dataflow",
+        "supported": true,
+        "notes": "Opened architecture/dataflow; routing, follow-up and supervisor/reporting remain with retained CRM/CCaaS. This2024 architecture is not a current provisioning recipe."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c31",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "738defffc93f5cbeb58ae65e0094302cf8146692e4c4a82ee4a6b684de30cc7c",
+    "rationale": "Account/provider/agent/AI and analytics configuration is explicitly excluded from the channel migration procedure.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-final-s04",
+        "section": "Important",
+        "supported": true,
+        "notes": "Opened migration prerequisites, important exclusions and ordered steps through verification."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c32",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "ba34db6958b219a01809348cb1eb9f4a2d73dd292a68543a926b5a95cf194ca4",
+    "rationale": "The ALM article expressly requires deleting the supplying managed solution; impact assessment avoids presenting this as a harmless record delete.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-final-s05",
+        "section": "Deletion of managed configuration records",
+        "supported": true,
+        "notes": "Opened managed versus unmanaged, parity, active-layer and managed-record deletion guidance."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c33",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "ccc7f864b0149043790319e83f637bb99bedfaafc1cd69bf6488458322de55a0",
+    "rationale": "Queue migration precedes channel workstreams; reverse order is the strongest alternative and violates the documented sequence.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-final-s04",
+        "section": "Channel configuration migration steps",
+        "supported": true,
+        "notes": "Opened migration prerequisites, important exclusions and ordered steps through verification."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c34",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "c31e6322e7744c0d8339eb1794f175b3add5861632be67af27ea0250422627f0",
+    "rationale": "Disconnection releases numbers from Dynamics, distinguished from permanently releasing purchased numbers.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-final-s07",
+        "section": "Important; Disconnect from an Azure Communication Services resource",
+        "supported": true,
+        "notes": "Opened important disconnection effects and procedure including Event Grid cleanup; permanent number release remains distinct."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c35",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "48ad3e192cbe810aecfda56484aa23785e704bfda353e1e4b2c6b98ac16f4274",
+    "rationale": "The copy article explicitly excludes supported copying of record-routing configuration and requires separate target validation.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-final-s06",
+        "section": "Configure the target environment after the copy",
+        "supported": true,
+        "notes": "Opened full versus minimal copy, target routing/resource constraints, Teams Phone and chat identity, agent validation/publication sections."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c36",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "bbfb1f4dac306aefbdb8cd94bd42d6235b4cdd01a03fe484655f5a60e2b38138",
+    "rationale": "The copied target generates a new widget snippet; source renaming cannot change integration ownership. Distinct from pilot HTML placement.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-final-s06",
+        "section": "Chat channel",
+        "supported": true,
+        "notes": "Opened full versus minimal copy, target routing/resource constraints, Teams Phone and chat identity, agent validation/publication sections."
+      }
+    ]
+  }
+]

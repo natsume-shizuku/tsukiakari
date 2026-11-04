@@ -1,0 +1,1686 @@
+{
+  "version": 1,
+  "collectionVersion": "0.4.0",
+  "reviewedAt": "2026-11-03",
+  "meaning": "Sourced notes and cards support the listed claims. This does not establish complete objective mastery or exam readiness.",
+  "objectives": [
+    {
+      "id": "D1.1.01",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d1-n01"
+      ],
+      "cardIds": [
+        "cc-d1-c02"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D1.1.02",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d1-n09"
+      ],
+      "cardIds": [
+        "cc-d1-c25",
+        "cc-d1-c26",
+        "cc-d1-c27"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D1.1.03",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d1-n01",
+        "cc-d1-n10"
+      ],
+      "cardIds": [
+        "cc-d1-c01",
+        "cc-d1-c28",
+        "cc-d1-c29"
+      ],
+      "questionIds": [
+        "ab250-d1-q01"
+      ],
+      "gap": null
+    },
+    {
+      "id": "D1.1.04",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d1-n10"
+      ],
+      "cardIds": [
+        "cc-d1-c30"
+      ],
+      "questionIds": [],
+      "gap": {
+        "objectiveId": "D1.1.04",
+        "status": "partial-depth",
+        "reviewedAt": "2026-11-02",
+        "reason": "Verified retained-provider architecture; current third-party CCaaS Copilot provisioning was not established from the modern redirect.",
+        "researchUrls": [
+          "https://learn.microsoft.com/en-us/dynamics365/guidance/reference-architectures/contact-center-existing-crm-ccaas-solution-copilot-service-copilot-studio"
+        ]
+      }
+    },
+    {
+      "id": "D1.1.05",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d1-n04"
+      ],
+      "cardIds": [
+        "cc-d1-c10",
+        "cc-d1-c11",
+        "cc-d1-c12"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D1.1.06",
+      "state": "blocked-source",
+      "noteIds": [],
+      "cardIds": [],
+      "questionIds": [],
+      "gap": {
+        "objectiveId": "D1.1.06",
+        "status": "blocked-source",
+        "reviewedAt": "2026-11-02",
+        "reason": "Health Agent enablement remains named in the official guide but no sufficient current configuration procedure was found. A release-note mention is not enablement evidence.",
+        "researchUrls": [
+          "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ab-250",
+          "https://learn.microsoft.com/en-us/dynamics365/released-versions/dynamics365-omnichannel/26072"
+        ]
+      }
+    },
+    {
+      "id": "D1.1.07",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d1-n05"
+      ],
+      "cardIds": [
+        "cc-d1-c13",
+        "cc-d1-c14",
+        "cc-d1-c15"
+      ],
+      "questionIds": [],
+      "gap": {
+        "objectiveId": "D1.1.07",
+        "status": "partial-depth",
+        "reviewedAt": "2026-11-02",
+        "reason": "Service Operations configuration is sourced; autonomous transformation/environment migration procedure was not established. Manual migration is not evidence of agent capability.",
+        "researchUrls": [
+          "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/use-service-operations-agent"
+        ]
+      }
+    },
+    {
+      "id": "D1.2.01",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d1-n03"
+      ],
+      "cardIds": [
+        "cc-d1-c07",
+        "cc-d1-c08",
+        "cc-d1-c09"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D1.2.02",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d1-n02",
+        "cc-d1-n11"
+      ],
+      "cardIds": [
+        "cc-d1-c03",
+        "cc-d1-c31",
+        "cc-d1-c33"
+      ],
+      "questionIds": [
+        "ab250-d1-q04"
+      ],
+      "gap": null
+    },
+    {
+      "id": "D1.2.03",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d1-n02",
+        "cc-d1-n11"
+      ],
+      "cardIds": [
+        "cc-d1-c03",
+        "cc-d1-c05",
+        "cc-d1-c06",
+        "cc-d1-c32",
+        "cc-d1-c33"
+      ],
+      "questionIds": [
+        "ab250-d1-q03",
+        "ab250-d1-q04"
+      ],
+      "gap": null
+    },
+    {
+      "id": "D1.2.04",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d1-n02",
+        "cc-d1-n12"
+      ],
+      "cardIds": [
+        "cc-d1-c04",
+        "cc-d1-c34",
+        "cc-d1-c35",
+        "cc-d1-c36"
+      ],
+      "questionIds": [
+        "ab250-d1-q02"
+      ],
+      "gap": null
+    },
+    {
+      "id": "D1.3.01",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d1-n06"
+      ],
+      "cardIds": [
+        "cc-d1-c17",
+        "cc-d1-c21"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D1.3.02",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d1-n06"
+      ],
+      "cardIds": [
+        "cc-d1-c16",
+        "cc-d1-c22"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D1.3.03",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d1-n06",
+        "cc-d1-n07"
+      ],
+      "cardIds": [
+        "cc-d1-c02",
+        "cc-d1-c18",
+        "cc-d1-c19",
+        "cc-d1-c22",
+        "cc-d1-c23"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D1.3.04",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d4-n02",
+        "cc-d1-n08"
+      ],
+      "cardIds": [
+        "cc-d4-c06",
+        "cc-d1-c20",
+        "cc-d1-c24"
+      ],
+      "questionIds": [
+        "ab250-d4-q04"
+      ],
+      "gap": null
+    },
+    {
+      "id": "D2.1.01",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n03"
+      ],
+      "cardIds": [
+        "cc-d2-c07",
+        "cc-d2-c09"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.1.02",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n09"
+      ],
+      "cardIds": [
+        "cc-d2-c25",
+        "cc-d2-c26",
+        "cc-d2-c27"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.1.03",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n06",
+        "cc-d2-n10"
+      ],
+      "cardIds": [
+        "cc-d2-c16",
+        "cc-d2-c17",
+        "cc-d2-c22"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.1.04",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n02",
+        "cc-d2-n03"
+      ],
+      "cardIds": [
+        "cc-d2-c04",
+        "cc-d2-c08",
+        "cc-d2-c09"
+      ],
+      "questionIds": [
+        "ab250-d2-q03"
+      ],
+      "gap": null
+    },
+    {
+      "id": "D2.1.05",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n04"
+      ],
+      "cardIds": [
+        "cc-d2-c10",
+        "cc-d2-c11",
+        "cc-d2-c12"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.1.06",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n02"
+      ],
+      "cardIds": [
+        "cc-d2-c03"
+      ],
+      "questionIds": [
+        "ab250-d2-q04"
+      ],
+      "gap": null
+    },
+    {
+      "id": "D2.1.07",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n05"
+      ],
+      "cardIds": [
+        "cc-d2-c13",
+        "cc-d2-c14",
+        "cc-d2-c15"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.1.08",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n10"
+      ],
+      "cardIds": [
+        "cc-d2-c30"
+      ],
+      "questionIds": [
+        "ab250-d2-q01"
+      ],
+      "gap": null
+    },
+    {
+      "id": "D2.1.09",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n01"
+      ],
+      "cardIds": [
+        "cc-d2-c01"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.1.10",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n10"
+      ],
+      "cardIds": [
+        "cc-d2-c28"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.1.11",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n10"
+      ],
+      "cardIds": [
+        "cc-d2-c29"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.1.12",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n07"
+      ],
+      "cardIds": [
+        "cc-d2-c18",
+        "cc-d2-c19",
+        "cc-d2-c23"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.1.13",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n08"
+      ],
+      "cardIds": [
+        "cc-d2-c20",
+        "cc-d2-c21",
+        "cc-d2-c24"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.2.01",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n16",
+        "cc-d2-n17"
+      ],
+      "cardIds": [
+        "cc-d2-c46",
+        "cc-d2-c50"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.2.02",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n18"
+      ],
+      "cardIds": [
+        "cc-d2-c52",
+        "cc-d2-c53",
+        "cc-d2-c54"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.2.03",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n17"
+      ],
+      "cardIds": [
+        "cc-d2-c49",
+        "cc-d2-c51"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.2.04",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n19"
+      ],
+      "cardIds": [
+        "cc-d2-c55",
+        "cc-d2-c56",
+        "cc-d2-c57"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.2.05",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n20"
+      ],
+      "cardIds": [
+        "cc-d2-c58",
+        "cc-d2-c59",
+        "cc-d2-c60"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.2.06",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n21"
+      ],
+      "cardIds": [
+        "cc-d2-c61",
+        "cc-d2-c63"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.2.07",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n22"
+      ],
+      "cardIds": [
+        "cc-d2-c64",
+        "cc-d2-c66"
+      ],
+      "questionIds": [],
+      "gap": {
+        "objectiveId": "D2.2.07",
+        "status": "partial-depth",
+        "reviewedAt": "2026-11-02",
+        "reason": "Related Azure Teams Phone extensibility SDK layers are sourced; an exact Dynamics-specific CCaaS SDK API contract was not located.",
+        "researchUrls": [
+          "https://learn.microsoft.com/en-us/azure/communication-services/concepts/interop/tpe/teams-phone-extensibility-overview"
+        ]
+      }
+    },
+    {
+      "id": "D2.3.01",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n02",
+        "cc-d2-n13"
+      ],
+      "cardIds": [
+        "cc-d2-c02",
+        "cc-d2-c03",
+        "cc-d2-c06"
+      ],
+      "questionIds": [
+        "ab250-d2-q01"
+      ],
+      "gap": null
+    },
+    {
+      "id": "D2.3.02",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n01"
+      ],
+      "cardIds": [
+        "cc-d2-c01",
+        "cc-d2-c05"
+      ],
+      "questionIds": [
+        "ab250-d2-q02"
+      ],
+      "gap": null
+    },
+    {
+      "id": "D2.3.03",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n11"
+      ],
+      "cardIds": [
+        "cc-d2-c31"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.3.04",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n11"
+      ],
+      "cardIds": [
+        "cc-d2-c33"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.3.05",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n12"
+      ],
+      "cardIds": [
+        "cc-d2-c34",
+        "cc-d2-c36"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.3.06",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n11"
+      ],
+      "cardIds": [
+        "cc-d2-c32"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.3.07",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n13"
+      ],
+      "cardIds": [
+        "cc-d2-c37",
+        "cc-d2-c39"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.3.08",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n13"
+      ],
+      "cardIds": [
+        "cc-d2-c38"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.3.09",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n14"
+      ],
+      "cardIds": [
+        "cc-d2-c88"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.3.10",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n14"
+      ],
+      "cardIds": [
+        "cc-d2-c40",
+        "cc-d2-c42"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.3.11",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n14"
+      ],
+      "cardIds": [
+        "cc-d2-c41"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.3.12",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n11"
+      ],
+      "cardIds": [
+        "cc-d2-c33"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.3.13",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n15"
+      ],
+      "cardIds": [
+        "cc-d2-c43",
+        "cc-d2-c44",
+        "cc-d2-c45"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.3.14",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n12"
+      ],
+      "cardIds": [
+        "cc-d2-c35"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.3.15",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n23"
+      ],
+      "cardIds": [
+        "cc-d2-c68",
+        "cc-d2-c69"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.3.16",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n23"
+      ],
+      "cardIds": [
+        "cc-d2-c67"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.3.17",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n24"
+      ],
+      "cardIds": [
+        "cc-d2-c70",
+        "cc-d2-c71",
+        "cc-d2-c72"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.3.18",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n25"
+      ],
+      "cardIds": [
+        "cc-d2-c73",
+        "cc-d2-c74",
+        "cc-d2-c75"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.3.19",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n26"
+      ],
+      "cardIds": [
+        "cc-d2-c76",
+        "cc-d2-c77",
+        "cc-d2-c78"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.3.20",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n28"
+      ],
+      "cardIds": [
+        "cc-d2-c82"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.3.21",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n27"
+      ],
+      "cardIds": [
+        "cc-d2-c79",
+        "cc-d2-c80",
+        "cc-d2-c81"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.3.22",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n28"
+      ],
+      "cardIds": [
+        "cc-d2-c83",
+        "cc-d2-c84"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.3.23",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n16"
+      ],
+      "cardIds": [
+        "cc-d2-c47",
+        "cc-d2-c48"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.3.24",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n18",
+        "cc-d2-n21"
+      ],
+      "cardIds": [
+        "cc-d2-c62"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.3.25",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n29"
+      ],
+      "cardIds": [
+        "cc-d2-c85",
+        "cc-d2-c86",
+        "cc-d2-c87"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D2.3.26",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d2-n22"
+      ],
+      "cardIds": [
+        "cc-d2-c65"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D3.1.01",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d3-n01",
+        "cc-d3-n03"
+      ],
+      "cardIds": [
+        "cc-d3-c01",
+        "cc-d3-c02",
+        "cc-d3-c07"
+      ],
+      "questionIds": [
+        "ab250-d3-q02"
+      ],
+      "gap": null
+    },
+    {
+      "id": "D3.1.02",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d3-n01",
+        "cc-d3-n03"
+      ],
+      "cardIds": [
+        "cc-d3-c03",
+        "cc-d3-c05",
+        "cc-d3-c09"
+      ],
+      "questionIds": [
+        "ab250-d3-q01",
+        "ab250-d3-q03"
+      ],
+      "gap": null
+    },
+    {
+      "id": "D3.1.03",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d3-n01",
+        "cc-d3-n03"
+      ],
+      "cardIds": [
+        "cc-d3-c03",
+        "cc-d3-c08",
+        "cc-d3-c09"
+      ],
+      "questionIds": [
+        "ab250-d3-q03"
+      ],
+      "gap": null
+    },
+    {
+      "id": "D3.1.04",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d3-n04"
+      ],
+      "cardIds": [
+        "cc-d3-c10"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D3.1.05",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d3-n04"
+      ],
+      "cardIds": [
+        "cc-d3-c11",
+        "cc-d3-c12"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D3.1.06",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d3-n05"
+      ],
+      "cardIds": [
+        "cc-d3-c13",
+        "cc-d3-c14",
+        "cc-d3-c15"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D3.2.01",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d3-n06"
+      ],
+      "cardIds": [
+        "cc-d3-c16"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D3.2.02",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d3-n02",
+        "cc-d3-n06"
+      ],
+      "cardIds": [
+        "cc-d3-c04",
+        "cc-d3-c06",
+        "cc-d3-c17"
+      ],
+      "questionIds": [
+        "ab250-d3-q04"
+      ],
+      "gap": null
+    },
+    {
+      "id": "D3.2.03",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d3-n07"
+      ],
+      "cardIds": [
+        "cc-d3-c19",
+        "cc-d3-c21"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D3.2.04",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d3-n07"
+      ],
+      "cardIds": [
+        "cc-d3-c20"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D3.2.05",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d3-n08"
+      ],
+      "cardIds": [
+        "cc-d3-c22",
+        "cc-d3-c23",
+        "cc-d3-c24"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D3.2.06",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d3-n09"
+      ],
+      "cardIds": [
+        "cc-d3-c25",
+        "cc-d3-c26"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D3.2.07",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d3-n06"
+      ],
+      "cardIds": [
+        "cc-d3-c18"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D3.2.08",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d3-n10"
+      ],
+      "cardIds": [
+        "cc-d3-c28"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D3.2.09",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d3-n09"
+      ],
+      "cardIds": [
+        "cc-d3-c27"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D3.2.10",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d3-n10"
+      ],
+      "cardIds": [
+        "cc-d3-c29",
+        "cc-d3-c30"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D4.1.01",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d4-n03"
+      ],
+      "cardIds": [
+        "cc-d4-c07"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D4.1.02",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d4-n03"
+      ],
+      "cardIds": [
+        "cc-d4-c08"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D4.1.03",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d4-n04"
+      ],
+      "cardIds": [
+        "cc-d4-c10",
+        "cc-d4-c12"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D4.1.04",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d4-n01",
+        "cc-d4-n03"
+      ],
+      "cardIds": [
+        "cc-d4-c01",
+        "cc-d4-c03",
+        "cc-d4-c06",
+        "cc-d4-c09"
+      ],
+      "questionIds": [
+        "ab250-d4-q02",
+        "ab250-d4-q04"
+      ],
+      "gap": null
+    },
+    {
+      "id": "D4.1.05",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d4-n04"
+      ],
+      "cardIds": [
+        "cc-d4-c11",
+        "cc-d4-c12"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D4.2.01",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d4-n05"
+      ],
+      "cardIds": [
+        "cc-d4-c13"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D4.2.02",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d4-n01",
+        "cc-d4-n05"
+      ],
+      "cardIds": [
+        "cc-d4-c01",
+        "cc-d4-c02",
+        "cc-d4-c05",
+        "cc-d4-c15"
+      ],
+      "questionIds": [
+        "ab250-d4-q01"
+      ],
+      "gap": null
+    },
+    {
+      "id": "D4.2.03",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d4-n05"
+      ],
+      "cardIds": [
+        "cc-d4-c14"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D4.2.04",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d4-n02",
+        "cc-d4-n06"
+      ],
+      "cardIds": [
+        "cc-d4-c04",
+        "cc-d4-c16"
+      ],
+      "questionIds": [
+        "ab250-d4-q02",
+        "ab250-d4-q03"
+      ],
+      "gap": null
+    },
+    {
+      "id": "D4.2.05",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d4-n06"
+      ],
+      "cardIds": [
+        "cc-d4-c17",
+        "cc-d4-c18"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D4.2.06",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d4-n07"
+      ],
+      "cardIds": [
+        "cc-d4-c19"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D4.2.07",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d4-n07"
+      ],
+      "cardIds": [
+        "cc-d4-c20",
+        "cc-d4-c21"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D4.2.08",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d4-n08"
+      ],
+      "cardIds": [
+        "cc-d4-c22",
+        "cc-d4-c24"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D4.2.09",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d4-n08"
+      ],
+      "cardIds": [
+        "cc-d4-c23",
+        "cc-d4-c24"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D4.2.10",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d4-n09"
+      ],
+      "cardIds": [
+        "cc-d4-c25",
+        "cc-d4-c26",
+        "cc-d4-c27"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D5.1.01",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d5-n03"
+      ],
+      "cardIds": [
+        "cc-d5-c07"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D5.1.02",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d5-n01",
+        "cc-d5-n04"
+      ],
+      "cardIds": [
+        "cc-d5-c10"
+      ],
+      "questionIds": [
+        "ab250-d5-q01",
+        "ab250-d5-q04"
+      ],
+      "gap": null
+    },
+    {
+      "id": "D5.1.03",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d5-n03"
+      ],
+      "cardIds": [
+        "cc-d5-c08",
+        "cc-d5-c09"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D5.1.04",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d5-n01",
+        "cc-d5-n04"
+      ],
+      "cardIds": [
+        "cc-d5-c01",
+        "cc-d5-c02",
+        "cc-d5-c11"
+      ],
+      "questionIds": [
+        "ab250-d5-q04"
+      ],
+      "gap": null
+    },
+    {
+      "id": "D5.1.05",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d5-n04"
+      ],
+      "cardIds": [
+        "cc-d5-c12"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D5.2.01",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d5-n06"
+      ],
+      "cardIds": [
+        "cc-d5-c16"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D5.2.02",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d5-n02",
+        "cc-d5-n05"
+      ],
+      "cardIds": [
+        "cc-d5-c04",
+        "cc-d5-c06",
+        "cc-d5-c13"
+      ],
+      "questionIds": [
+        "ab250-d5-q03"
+      ],
+      "gap": null
+    },
+    {
+      "id": "D5.2.03",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d5-n02",
+        "cc-d5-n05"
+      ],
+      "cardIds": [
+        "cc-d5-c03",
+        "cc-d5-c04",
+        "cc-d5-c05",
+        "cc-d5-c14",
+        "cc-d5-c15"
+      ],
+      "questionIds": [
+        "ab250-d5-q02"
+      ],
+      "gap": null
+    },
+    {
+      "id": "D5.2.04",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d5-n06"
+      ],
+      "cardIds": [
+        "cc-d5-c17",
+        "cc-d5-c18"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D5.2.05",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d5-n07"
+      ],
+      "cardIds": [
+        "cc-d5-c19"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D5.2.06",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d5-n07"
+      ],
+      "cardIds": [
+        "cc-d5-c20",
+        "cc-d5-c21"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D5.3.01",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d5-n08"
+      ],
+      "cardIds": [
+        "cc-d5-c23",
+        "cc-d5-c24"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D5.3.02",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d5-n09"
+      ],
+      "cardIds": [
+        "cc-d5-c25"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D5.3.03",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d5-n08"
+      ],
+      "cardIds": [
+        "cc-d5-c22"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D5.3.04",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d5-n10"
+      ],
+      "cardIds": [
+        "cc-d5-c28",
+        "cc-d5-c29",
+        "cc-d5-c30"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D5.3.05",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d5-n09"
+      ],
+      "cardIds": [
+        "cc-d5-c26",
+        "cc-d5-c27"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D6.1.01",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d6-n02",
+        "cc-d6-n03"
+      ],
+      "cardIds": [
+        "cc-d6-c06",
+        "cc-d6-c07"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D6.1.02",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d6-n04"
+      ],
+      "cardIds": [
+        "cc-d6-c10",
+        "cc-d6-c11",
+        "cc-d6-c12"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D6.1.03",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d6-n01",
+        "cc-d6-n03"
+      ],
+      "cardIds": [
+        "cc-d6-c03"
+      ],
+      "questionIds": [
+        "ab250-d6-q02"
+      ],
+      "gap": null
+    },
+    {
+      "id": "D6.1.04",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d6-n01",
+        "cc-d6-n03"
+      ],
+      "cardIds": [
+        "cc-d6-c01",
+        "cc-d6-c02",
+        "cc-d6-c08",
+        "cc-d6-c09"
+      ],
+      "questionIds": [
+        "ab250-d6-q01"
+      ],
+      "gap": null
+    },
+    {
+      "id": "D6.1.05",
+      "state": "blocked-source",
+      "noteIds": [],
+      "cardIds": [],
+      "questionIds": [],
+      "gap": {
+        "objectiveId": "D6.1.05",
+        "status": "blocked-source",
+        "reviewedAt": "2026-11-02",
+        "reason": "Current workspace supervisor controls are sourced separately; a distinct new supervisor app configuration procedure was not located in current product documentation.",
+        "researchUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-supervisor-experience-contact-center/"
+        ]
+      }
+    },
+    {
+      "id": "D6.2.01",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d6-n05"
+      ],
+      "cardIds": [
+        "cc-d6-c13",
+        "cc-d6-c14"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D6.2.02",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d6-n07"
+      ],
+      "cardIds": [
+        "cc-d6-c19"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D6.2.03",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d6-n05",
+        "cc-d6-n06",
+        "cc-d6-n07"
+      ],
+      "cardIds": [
+        "cc-d6-c15",
+        "cc-d6-c17",
+        "cc-d6-c20",
+        "cc-d6-c21"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D6.2.04",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d6-n06"
+      ],
+      "cardIds": [
+        "cc-d6-c16",
+        "cc-d6-c18"
+      ],
+      "questionIds": [],
+      "gap": null
+    },
+    {
+      "id": "D6.2.05",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d6-n02",
+        "cc-d6-n08"
+      ],
+      "cardIds": [
+        "cc-d6-c04",
+        "cc-d6-c24"
+      ],
+      "questionIds": [
+        "ab250-d6-q03",
+        "ab250-d6-q04"
+      ],
+      "gap": null
+    },
+    {
+      "id": "D6.2.06",
+      "state": "sourced-study",
+      "noteIds": [
+        "cc-d6-n02",
+        "cc-d6-n08"
+      ],
+      "cardIds": [
+        "cc-d6-c05",
+        "cc-d6-c22",
+        "cc-d6-c23",
+        "cc-d6-c24"
+      ],
+      "questionIds": [],
+      "gap": null
+    }
+  ]
+}

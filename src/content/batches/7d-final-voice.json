@@ -1,0 +1,1430 @@
+{
+  "sources": [
+    {
+      "id": "cc-d2-finalvoice-s01",
+      "title": "Configure Teams Phone in voice channel",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-teams-phone-in-voice-channel"
+    },
+    {
+      "id": "cc-d2-finalvoice-s02",
+      "title": "Plan migration from Azure Communication Services",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/migrate-from-azure-communication-services"
+    },
+    {
+      "id": "cc-d2-finalvoice-s03",
+      "title": "Manage phone numbers",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-manage-phone-numbers"
+    },
+    {
+      "id": "cc-d2-finalvoice-s04",
+      "title": "Set up inbound calling",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-inbound-calling"
+    },
+    {
+      "id": "cc-d2-finalvoice-s05",
+      "title": "Integrate a non-Microsoft IVR system with voice channel",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-contextual-transfer-external-ivr"
+    },
+    {
+      "id": "cc-d2-finalvoice-s06",
+      "title": "Bring your own carrier",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-bring-your-own-number"
+    },
+    {
+      "id": "cc-d2-finalvoice-s07",
+      "title": "Configure outbound and inbound profiles",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-outbound-inbound-profiles"
+    },
+    {
+      "id": "cc-d2-finalvoice-s08",
+      "title": "Set up outbound calling",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-outbound-calling"
+    },
+    {
+      "id": "cc-d2-finalvoice-s09",
+      "title": "Configure call recording, transcription, and real-time translation",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-configure-transcripts"
+    },
+    {
+      "id": "cc-d2-finalvoice-s10",
+      "title": "Enable voice call experiences",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-voice-call-experiences"
+    },
+    {
+      "id": "cc-d2-finalvoice-s11",
+      "title": "Transfer calls and consult with users in the voice channel",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/voice-channel-transfer-consult"
+    },
+    {
+      "id": "cc-d2-finalvoice-s12",
+      "title": "Teams Phone extensibility overview",
+      "url": "https://learn.microsoft.com/en-us/azure/communication-services/concepts/interop/tpe/teams-phone-extensibility-overview"
+    },
+    {
+      "id": "cc-d2-finalvoice-s13",
+      "title": "Cost and licensing",
+      "url": "https://learn.microsoft.com/en-us/training/modules/intro-implement-dynamics-365-contact-center/6-cost-and-licensing"
+    },
+    {
+      "id": "cc-d2-finalvoice-s14",
+      "title": "Deployment approaches for voice channel in Dynamics 365 Contact Center",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/guidance/resources/contact-center-deploy-voice-channel-best-practices"
+    }
+  ],
+  "notes": [
+    {
+      "id": "cc-d2-n16",
+      "title": "Choose the telephony model before configuring numbers",
+      "body": "Begin with the telephony architecture, carrier requirements and existing investments. Teams Phone extensibility uses Teams resource accounts and synchronized service numbers; create and associate the account, satisfy its licensing and consent prerequisites, then sync the number into a voice workstream. It is a different setup from separately provisioning standalone ACS telephony.\n\nCurrent migration guidance identifies Teams Phone extensibility as the destination for affected standalone ACS voice deployments before September 30, 2028. Existing affected services remain supported during the transition. Retaining a carrier and SBC can favor Teams Direct Routing; other requirements may favor Operator Connect or Calling Plans. Inventory dependencies and pilot the target before scheduling a production cutover.",
+      "sourceIds": [
+        "cc-d2-finalvoice-s01",
+        "cc-d2-finalvoice-s02"
+      ]
+    },
+    {
+      "id": "cc-d2-n17",
+      "title": "Connect a usable number to the inbound workstream",
+      "body": "For the documented ACS number-management path, check resource eligibility, regional availability and number capabilities before acquisition or import. New-ACS-customer acquisition restrictions in the transition guidance mean the older acquisition wizard is not a universal new-deployment recommendation.\n\nInbound setup needs a provisioned voice channel, unified routing and an inbound-capable number. Create a Voice workstream, associate the number, and configure language, behaviors and routing. The picker excludes numbers already bound elsewhere. Releasing a number is a separate destructive administration action: first remove workstream/outbound-profile associations and disable personal assignment where applicable. Test the intended incoming call path before considering the configuration ready.",
+      "sourceIds": [
+        "cc-d2-finalvoice-s02",
+        "cc-d2-finalvoice-s03",
+        "cc-d2-finalvoice-s04"
+      ]
+    },
+    {
+      "id": "cc-d2-n18",
+      "title": "Preserve external IVR context through a scoped integration",
+      "body": "The documented non-Microsoft IVR integration uses ACS Direct Routing: connect the IVR's SBC to the ACS resource, register its number and send a SIP INVITE for the transfer. SIP UUI carries key/value context. Define matching workstream context variables with exactly the parameter names used in that payload.\n\nCall arrival and useful context are separate validation checks. The external IVR's own recording and transcript are not made available to the representative by this integration. Review SBC connectivity and the boundary where SIP information leaves the Microsoft network; do not assume a PSTN handoff preserves every header. Apply this ACS-specific procedure within the published transition plan rather than treating it as the Teams Phone provisioning workflow.",
+      "sourceIds": [
+        "cc-d2-finalvoice-s05",
+        "cc-d2-finalvoice-s06",
+        "cc-d2-finalvoice-s14",
+        "cc-d2-finalvoice-s02"
+      ]
+    },
+    {
+      "id": "cc-d2-n19",
+      "title": "Separate direct inward dialing from queue-based voice routing",
+      "body": "Inbound profiles serve personal direct inward dialing, whereas workstreams route inbound conversations through queues. Direct inward calls do not use unified routing and are not tracked in its historical routing analytics. Choose the path that matches the operating model before interpreting missing routing metrics.\n\nFor outbound calling, prepare a number that supports Make calls, a voice queue, capacity and the outbound profile. Add representatives to the capacity profile used by that outbound profile. Configure caller ID and call behaviors there; the dialer number label is not customer-facing CNAM. A representative's general inbound readiness does not establish outbound-profile membership.",
+      "sourceIds": [
+        "cc-d2-finalvoice-s07",
+        "cc-d2-finalvoice-s08"
+      ]
+    },
+    {
+      "id": "cc-d2-n20",
+      "title": "Treat voice capture as a chain of prerequisites",
+      "body": "In the documented ACS recording flow, tenant-level audio controls can prevent workstream recording. Check the allowed audio/MPEG MIME types and Event Grid system-topic registration as well as the workstream Behaviors setting. Choose transcription alone or transcription with recording and select automatic or manual start. Consent and applicable organizational requirements still need their own review.\n\nTranslated voice transcripts require the recording, transcription and real-time translation features described by the administration guide. Copilot Studio's agent transcript is a separate artifact; a DTMF-only agent ignores spoken input and captures keypad entries instead. For sensitive external interactions, inspect the contact-specific secure settings as well: preview overrides can stop audio only or both audio and transcript capture even where the workstream normally records.",
+      "sourceIds": [
+        "cc-d2-finalvoice-s09",
+        "cc-d2-finalvoice-s10"
+      ]
+    },
+    {
+      "id": "cc-d2-n21",
+      "title": "Collect representative feedback and verify secure transfer behavior",
+      "body": "The representative call-quality survey measures the representative's experience after a call, rather than customer satisfaction. Enable it in Voice call experiences and choose its frequency. Configure the Azure Monitor Call Survey Logs diagnostic setting to a supported destination so responses are retained; displaying a survey alone does not ensure storage.\n\nTransfer behavior also needs explicit testing. In enhanced voice, bridging normally continues the original call and its capture, while unbridged transfer starts a new call with different capture and DTMF behavior. The DTMF-broadcast setting and secure external-contact preview settings add further conditions. Where secure settings apply, test the chosen contact's audio/transcription and hold policy rather than inferring it only from the workstream defaults.",
+      "sourceIds": [
+        "cc-d2-finalvoice-s10",
+        "cc-d2-finalvoice-s11"
+      ]
+    },
+    {
+      "id": "cc-d2-n22",
+      "title": "Separate SDK responsibilities from the business cost model",
+      "body": "In Microsoft's CCaaS Teams Phone extensibility architecture, the server handles incoming-call notifications and answers through Call Automation. The representative client uses the Calling SDK. Adding a participant and transferring are server-side control decisions; the overview recommends AddParticipant rather than Redirect when adding CCaaS agents. This is verified architectural guidance, not a complete Dynamics-specific SDK reference.\n\nCost planning should then reflect the proposed design. Include named-user licensing, AI/telephony consumption, retained infrastructure and integration maintenance. Measure expected changes in interaction volume, handling time, employee experience and quality instead of assuming that license consolidation proves savings. Compare those assumptions with a pilot and current commercial terms; a single per-user price cannot establish the total cost.",
+      "sourceIds": [
+        "cc-d2-finalvoice-s12",
+        "cc-d2-finalvoice-s13"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "cc-d2-c46",
+      "revision": 1,
+      "topicId": "voice-telephony",
+      "kind": "recall",
+      "prompt": "In the documented Teams Phone integration, what must exist for each service number before it is synchronized into Contact Center?",
+      "answer": "A Teams resource account associated with the Dynamics application.",
+      "explanation": "Complete licensing, permissions and consent checks as well; synchronizing is not a substitute for provisioning the account.",
+      "sourceIds": [
+        "cc-d2-finalvoice-s01"
+      ],
+      "noteIds": [
+        "cc-d2-n16"
+      ],
+      "tags": [
+        "topic:voice-telephony",
+        "domain:channels",
+        "feature:teams-resource-account",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c47",
+      "revision": 1,
+      "topicId": "voice-telephony",
+      "kind": "recall",
+      "prompt": "Which migration target does Microsoft identify for affected standalone ACS voice configurations?",
+      "answer": "Microsoft Teams Phone extensibility.",
+      "explanation": "Plan a phased transition before the documented September 30, 2028 end of service; this is not a statement that Teams Phone extensibility itself retires.",
+      "sourceIds": [
+        "cc-d2-finalvoice-s02"
+      ],
+      "noteIds": [
+        "cc-d2-n16"
+      ],
+      "tags": [
+        "topic:voice-telephony",
+        "domain:channels",
+        "feature:voice-transition-target",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c48",
+      "revision": 1,
+      "topicId": "voice-telephony",
+      "kind": "mcq",
+      "prompt": "An existing ACS Direct Routing deployment must retain its carrier relationship and SBC investment while moving to the recommended voice platform. Which target path matches that requirement?",
+      "answer": "Teams Phone extensibility with Teams Direct Routing.",
+      "explanation": "The migration matrix maps retained carrier/SBC investments to Teams Direct Routing. Calling Plans favor Microsoft-managed PSTN, while Operator Connect favors certified carrier-managed connectivity.",
+      "sourceIds": [
+        "cc-d2-finalvoice-s02"
+      ],
+      "noteIds": [
+        "cc-d2-n16"
+      ],
+      "tags": [
+        "topic:voice-telephony",
+        "domain:channels",
+        "feature:voice-migration-choice",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Teams Phone extensibility with Teams Direct Routing."
+        },
+        {
+          "id": "b",
+          "text": "Teams Phone extensibility with Microsoft Calling Plans."
+        },
+        {
+          "id": "c",
+          "text": "Teams Phone extensibility with Operator Connect."
+        },
+        {
+          "id": "d",
+          "text": "Keep ACS Direct Routing indefinitely because existing numbers are exempt."
+        }
+      ],
+      "correctOptionId": "a"
+    },
+    {
+      "id": "cc-d2-c49",
+      "revision": 1,
+      "topicId": "voice-telephony",
+      "kind": "recall",
+      "prompt": "Why might an acquired number be absent from the inbound workstream number picker?",
+      "answer": "It lacks inbound calling capability or is already associated with another workstream.",
+      "explanation": "Acquisition alone does not make a number eligible for every inbound configuration.",
+      "sourceIds": [
+        "cc-d2-finalvoice-s04"
+      ],
+      "noteIds": [
+        "cc-d2-n17"
+      ],
+      "tags": [
+        "topic:voice-telephony",
+        "domain:channels",
+        "feature:inbound-number-picker",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c50",
+      "revision": 1,
+      "topicId": "voice-telephony",
+      "kind": "recall",
+      "prompt": "Which distribution mode is available when creating a Voice workstream?",
+      "answer": "Push.",
+      "explanation": "Voice workstreams do not offer a pick-mode configuration in the documented setup.",
+      "sourceIds": [
+        "cc-d2-finalvoice-s04"
+      ],
+      "noteIds": [
+        "cc-d2-n17"
+      ],
+      "tags": [
+        "topic:voice-telephony",
+        "domain:channels",
+        "feature:voice-distribution-mode",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c51",
+      "revision": 1,
+      "topicId": "voice-telephony",
+      "kind": "mcq",
+      "prompt": "An administrator wants to release a number that is still used by an outbound profile and assigned personally to a representative. What should happen before release?",
+      "answer": "Remove its profile associations and disable its personal assignment.",
+      "explanation": "Number release has dependency checks. Changing routing rules or deleting call recordings does not remove those associations.",
+      "sourceIds": [
+        "cc-d2-finalvoice-s03"
+      ],
+      "noteIds": [
+        "cc-d2-n17"
+      ],
+      "tags": [
+        "topic:voice-telephony",
+        "domain:channels",
+        "feature:number-release-dependencies",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Change the queue assignment method to round robin."
+        },
+        {
+          "id": "b",
+          "text": "Delete the number immediately and let active associations repair themselves."
+        },
+        {
+          "id": "c",
+          "text": "Remove its profile associations and disable its personal assignment."
+        },
+        {
+          "id": "d",
+          "text": "Delete historical recordings associated with the number."
+        }
+      ],
+      "correctOptionId": "c"
+    },
+    {
+      "id": "cc-d2-c52",
+      "revision": 1,
+      "topicId": "voice-telephony",
+      "kind": "recall",
+      "prompt": "For the documented ACS Direct Routing external-IVR transfer, how must workstream context-variable names relate to SIP UUI parameter names?",
+      "answer": "They must match exactly.",
+      "explanation": "The UUI payload is converted into context used for routing and representative information.",
+      "sourceIds": [
+        "cc-d2-finalvoice-s05"
+      ],
+      "noteIds": [
+        "cc-d2-n18"
+      ],
+      "tags": [
+        "topic:voice-telephony",
+        "domain:channels",
+        "feature:sip-uui-name-matching",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c53",
+      "revision": 1,
+      "topicId": "voice-telephony",
+      "kind": "recall",
+      "prompt": "Does the documented non-Microsoft IVR integration provide that IVR’s earlier recording and transcript to representatives?",
+      "answer": "No. The external IVR recording and transcript are not available through that integration.",
+      "explanation": "Passing context values does not import the external system’s media history.",
+      "sourceIds": [
+        "cc-d2-finalvoice-s05"
+      ],
+      "noteIds": [
+        "cc-d2-n18"
+      ],
+      "tags": [
+        "topic:voice-telephony",
+        "domain:channels",
+        "feature:external-ivr-media-boundary",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c54",
+      "revision": 1,
+      "topicId": "voice-telephony",
+      "kind": "mcq",
+      "prompt": "An ACS Direct Routing IVR transfer reaches Contact Center, but its supplied account key is unavailable for routing. The payload uses accountKey and the workstream defines AccountKey. Which correction addresses the documented context mapping?",
+      "answer": "Make the workstream variable name match the SIP UUI parameter exactly.",
+      "explanation": "Successful signaling does not prove correct payload mapping. Media recording and queue priority do not repair mismatched parameter names.",
+      "sourceIds": [
+        "cc-d2-finalvoice-s05"
+      ],
+      "noteIds": [
+        "cc-d2-n18"
+      ],
+      "tags": [
+        "topic:voice-telephony",
+        "domain:channels",
+        "feature:ivr-context-diagnosis",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Enable call recording on the destination workstream."
+        },
+        {
+          "id": "b",
+          "text": "Make the workstream variable name match the SIP UUI parameter exactly."
+        },
+        {
+          "id": "c",
+          "text": "Raise the destination queue priority."
+        },
+        {
+          "id": "d",
+          "text": "Replace the representative notification template."
+        }
+      ],
+      "correctOptionId": "b"
+    },
+    {
+      "id": "cc-d2-c55",
+      "revision": 1,
+      "topicId": "voice-telephony",
+      "kind": "recall",
+      "prompt": "Do direct inward calls using inbound profiles participate in unified routing historical analytics?",
+      "answer": "No. Direct inward dialing does not use unified routing.",
+      "explanation": "Distinguish a personal inbound profile from a queue-routed voice workstream.",
+      "sourceIds": [
+        "cc-d2-finalvoice-s07"
+      ],
+      "noteIds": [
+        "cc-d2-n19"
+      ],
+      "tags": [
+        "topic:voice-telephony",
+        "domain:channels",
+        "feature:inbound-profile-analytics-boundary",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c56",
+      "revision": 1,
+      "topicId": "voice-telephony",
+      "kind": "recall",
+      "prompt": "Which representative association is required for the outbound profile’s calling features?",
+      "answer": "Membership in a capacity profile associated with that outbound profile.",
+      "explanation": "A number enabled for Make calls is necessary but does not independently authorize the representative’s outbound experience.",
+      "sourceIds": [
+        "cc-d2-finalvoice-s08"
+      ],
+      "noteIds": [
+        "cc-d2-n19"
+      ],
+      "tags": [
+        "topic:voice-telephony",
+        "domain:channels",
+        "feature:outbound-profile-membership",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c57",
+      "revision": 2,
+      "topicId": "voice-telephony",
+      "kind": "mcq",
+      "prompt": "A representative can receive queue-routed calls but cannot use the configured outbound calling profile. Which user association specifically establishes eligibility for that outbound profile?",
+      "answer": "The representative’s membership in the outbound profile’s associated capacity profile.",
+      "explanation": "Outbound calling eligibility requires membership in a capacity profile associated with that outbound profile. Other inbound queue or capacity associations and resource work hours do not establish that mapping.",
+      "sourceIds": [
+        "cc-d2-finalvoice-s08"
+      ],
+      "noteIds": [
+        "cc-d2-n19"
+      ],
+      "tags": [
+        "topic:voice-telephony",
+        "domain:channels",
+        "feature:outbound-feature-diagnosis",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "The representative’s membership in a different inbound voice queue."
+        },
+        {
+          "id": "b",
+          "text": "The bookable resource’s association with a work-hours calendar."
+        },
+        {
+          "id": "c",
+          "text": "The representative’s membership in an inbound-only capacity profile."
+        },
+        {
+          "id": "d",
+          "text": "The representative’s membership in the outbound profile’s associated capacity profile."
+        }
+      ],
+      "correctOptionId": "d"
+    },
+    {
+      "id": "cc-d2-c58",
+      "revision": 1,
+      "topicId": "voice-telephony",
+      "kind": "recall",
+      "prompt": "Can a workstream recording setting override a tenant-level prohibition on audio recording?",
+      "answer": "No. Tenant-level disabling prevents audio recording.",
+      "explanation": "Investigate the tenant control before repeatedly changing the workstream start setting.",
+      "sourceIds": [
+        "cc-d2-finalvoice-s09"
+      ],
+      "noteIds": [
+        "cc-d2-n20"
+      ],
+      "tags": [
+        "topic:voice-telephony",
+        "domain:channels",
+        "feature:tenant-recording-precedence",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c59",
+      "revision": 1,
+      "topicId": "voice-telephony",
+      "kind": "recall",
+      "prompt": "Which features does the voice administration guide require for translated voice call transcripts?",
+      "answer": "Call recording, transcription and real-time translation.",
+      "explanation": "Configuring translation alone does not complete the documented voice-transcript prerequisites.",
+      "sourceIds": [
+        "cc-d2-finalvoice-s09"
+      ],
+      "noteIds": [
+        "cc-d2-n20"
+      ],
+      "tags": [
+        "topic:voice-telephony",
+        "domain:channels",
+        "feature:translated-voice-transcript-dependencies",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c60",
+      "revision": 1,
+      "topicId": "voice-telephony",
+      "kind": "mcq",
+      "prompt": "A supported secure external-contact preview configuration must prevent audio storage while retaining transcription that is already active. Which contact-specific privacy setting fits?",
+      "answer": "Turn off recording while keeping transcription if active.",
+      "explanation": "The preview offers separate audio-only and audio-plus-transcription stop choices. Following the workstream would retain its recording behavior.",
+      "sourceIds": [
+        "cc-d2-finalvoice-s10"
+      ],
+      "noteIds": [
+        "cc-d2-n20"
+      ],
+      "tags": [
+        "topic:voice-telephony",
+        "domain:channels",
+        "feature:secure-capture-selection",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Turn off recording while keeping transcription if active."
+        },
+        {
+          "id": "b",
+          "text": "Follow workstream settings."
+        },
+        {
+          "id": "c",
+          "text": "Turn off transcription and recording."
+        },
+        {
+          "id": "d",
+          "text": "Change only the customer hold setting."
+        }
+      ],
+      "correctOptionId": "a"
+    },
+    {
+      "id": "cc-d2-c61",
+      "revision": 1,
+      "topicId": "voice-telephony",
+      "kind": "recall",
+      "prompt": "Which diagnostic setting must be enabled to retain representative call-quality survey responses in a supported Azure destination?",
+      "answer": "Call Survey Logs.",
+      "explanation": "Choose a Log Analytics workspace, Event Hubs or Azure storage account; otherwise survey data can be lost.",
+      "sourceIds": [
+        "cc-d2-finalvoice-s10"
+      ],
+      "noteIds": [
+        "cc-d2-n21"
+      ],
+      "tags": [
+        "topic:voice-telephony",
+        "domain:channels",
+        "feature:call-survey-log-retention",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c62",
+      "revision": 2,
+      "topicId": "voice-telephony",
+      "kind": "recall",
+      "prompt": "For secure external-contact preview settings to govern a bridged transfer, what workstream transfer condition must be enabled?",
+      "answer": "Use bridged transfer, along with the required external consult/transfer permission.",
+      "explanation": "Without bridging, those bridged-transfer privacy settings do not apply; the standard unbridged behavior stops recording and transcription.",
+      "sourceIds": [
+        "cc-d2-finalvoice-s11",
+        "cc-d2-finalvoice-s10"
+      ],
+      "noteIds": [
+        "cc-d2-n21"
+      ],
+      "tags": [
+        "topic:voice-telephony",
+        "domain:channels",
+        "feature:secure-transfer-prerequisite",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c63",
+      "revision": 2,
+      "topicId": "voice-telephony",
+      "kind": "mcq",
+      "prompt": "Representatives see the call-quality survey after calls, but the operations team cannot find retained responses. Which configuration should be verified first?",
+      "answer": "The Call Survey Logs diagnostic setting and its destination.",
+      "explanation": "Survey frequency controls presentation, not persistence. Recording/transcription capture different artifacts and do not configure Call Survey Logs export.",
+      "sourceIds": [
+        "cc-d2-finalvoice-s10"
+      ],
+      "noteIds": [
+        "cc-d2-n21"
+      ],
+      "tags": [
+        "topic:voice-telephony",
+        "domain:channels",
+        "feature:feedback-retention-diagnosis",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "The survey presentation frequency."
+        },
+        {
+          "id": "b",
+          "text": "The call recording start setting."
+        },
+        {
+          "id": "c",
+          "text": "The Call Survey Logs diagnostic setting and its destination."
+        },
+        {
+          "id": "d",
+          "text": "The workstream transcription setting."
+        }
+      ],
+      "correctOptionId": "c"
+    },
+    {
+      "id": "cc-d2-c64",
+      "revision": 1,
+      "topicId": "voice-telephony",
+      "kind": "recall",
+      "prompt": "In the documented CCaaS Teams Phone extensibility architecture, which SDK handles server-side answering and mid-call control?",
+      "answer": "Azure Communication Services Call Automation SDK.",
+      "explanation": "The Calling SDK serves the representative client; these are separate integration responsibilities.",
+      "sourceIds": [
+        "cc-d2-finalvoice-s12"
+      ],
+      "noteIds": [
+        "cc-d2-n22"
+      ],
+      "tags": [
+        "topic:voice-telephony",
+        "domain:channels",
+        "feature:server-call-control-layer",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c65",
+      "revision": 1,
+      "topicId": "voice-telephony",
+      "kind": "recall",
+      "prompt": "Why is a named-user license quote insufficient for a Contact Center total-cost-of-ownership estimate?",
+      "answer": "Usage, infrastructure and integration-maintenance costs also matter.",
+      "explanation": "Include AI and telephony consumption and test expected operational benefits instead of assuming savings from the quote.",
+      "sourceIds": [
+        "cc-d2-finalvoice-s13"
+      ],
+      "noteIds": [
+        "cc-d2-n22"
+      ],
+      "tags": [
+        "topic:voice-telephony",
+        "domain:channels",
+        "feature:contact-center-tco-boundary",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c66",
+      "revision": 2,
+      "topicId": "voice-telephony",
+      "kind": "mcq",
+      "prompt": "A CCaaS Teams Phone extensibility developer is choosing the documented approach for adding a representative to an ongoing call. Which operation does the architecture overview recommend over Redirect?",
+      "answer": "AddParticipant.",
+      "explanation": "AddParticipant keeps the participant-add flow. Transfer removes the bot; CreateCall starts a different call. The overview recommends AddParticipant over Redirect for this CCaaS use case.",
+      "sourceIds": [
+        "cc-d2-finalvoice-s12"
+      ],
+      "noteIds": [
+        "cc-d2-n22"
+      ],
+      "tags": [
+        "topic:voice-telephony",
+        "domain:channels",
+        "feature:ccaas-participant-operation",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Transfer the call and remove the bot from it."
+        },
+        {
+          "id": "b",
+          "text": "AddParticipant."
+        },
+        {
+          "id": "c",
+          "text": "Redirect."
+        },
+        {
+          "id": "d",
+          "text": "Create a separate outbound call."
+        }
+      ],
+      "correctOptionId": "b"
+    }
+  ],
+  "questions": [],
+  "editorial": [
+    {
+      "id": "cc-d2-n16",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "telephony-architecture-and-transition",
+      "objectiveIds": [
+        "D2.2.01",
+        "D2.3.23"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finalvoice-s01",
+          "section": "Prerequisites; Create a Teams resource account; Configure Teams Phone in the voice channel",
+          "claim": "Teams telephony uses per-number resource accounts, licensing and consent prerequisites, then Sync from Teams and a voice workstream.",
+          "applicability": "Dynamics 365 Contact Center voice; use the deployment model stated in the item."
+        },
+        {
+          "sourceId": "cc-d2-finalvoice-s02",
+          "section": "Understand the impact; Review the retirement schedule; Choose a voice migration path; Prepare your migration",
+          "claim": "Affected standalone ACS configurations remain supported through September 30, 2028; Teams Phone extensibility is the voice target and carrier/SBC investments inform the migration choice.",
+          "applicability": "Dynamics 365 Contact Center voice; use the deployment model stated in the item."
+        }
+      ],
+      "duplicateCheck": "New voice architecture/configuration decision; compared pilot D2 authentication/context and D3 variable-scope material, plus 7D2 chat/digital bundles. Related recall and application cards reinforce the note without duplicating its tested decision."
+    },
+    {
+      "id": "cc-d2-c46",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "teams-resource-account-46",
+      "objectiveIds": [
+        "D2.2.01"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finalvoice-s01",
+          "section": "Prerequisites; Create a Teams resource account; Configure Teams Phone in the voice channel",
+          "claim": "A Teams resource account associated with the Dynamics application. Complete licensing, permissions and consent checks as well; synchronizing is not a substitute for provisioning the account.",
+          "applicability": "Dynamics 365 Contact Center voice; scenario-scoped configuration, not a licensing entitlement guarantee."
+        }
+      ],
+      "duplicateCheck": "New voice architecture/configuration decision; compared pilot D2 authentication/context and D3 variable-scope material, plus 7D2 chat/digital bundles. Related recall and application cards reinforce the note without duplicating its tested decision."
+    },
+    {
+      "id": "cc-d2-c47",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "voice-transition-target-47",
+      "objectiveIds": [
+        "D2.3.23"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finalvoice-s02",
+          "section": "Understand the impact; Review the retirement schedule; Choose a voice migration path; Prepare your migration",
+          "claim": "Microsoft Teams Phone extensibility. Plan a phased transition before the documented September 30, 2028 end of service; this is not a statement that Teams Phone extensibility itself retires.",
+          "applicability": "Dynamics 365 Contact Center voice; scenario-scoped configuration, not a licensing entitlement guarantee."
+        }
+      ],
+      "duplicateCheck": "New voice architecture/configuration decision; compared pilot D2 authentication/context and D3 variable-scope material, plus 7D2 chat/digital bundles. Related recall and application cards reinforce the note without duplicating its tested decision."
+    },
+    {
+      "id": "cc-d2-c48",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "voice-migration-choice-48",
+      "objectiveIds": [
+        "D2.3.23"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finalvoice-s02",
+          "section": "Understand the impact; Review the retirement schedule; Choose a voice migration path; Prepare your migration",
+          "claim": "Teams Phone extensibility with Teams Direct Routing. The migration matrix maps retained carrier/SBC investments to Teams Direct Routing. Calling Plans favor Microsoft-managed PSTN, while Operator Connect favors certified carrier-managed connectivity.",
+          "applicability": "Dynamics 365 Contact Center voice; scenario-scoped configuration, not a licensing entitlement guarantee."
+        }
+      ],
+      "duplicateCheck": "New voice architecture/configuration decision; compared pilot D2 authentication/context and D3 variable-scope material, plus 7D2 chat/digital bundles. Related recall and application cards reinforce the note without duplicating its tested decision."
+    },
+    {
+      "id": "cc-d2-n17",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "inbound-number-readiness",
+      "objectiveIds": [
+        "D2.2.01",
+        "D2.2.03"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finalvoice-s02",
+          "section": "Understand the impact; Review the retirement schedule; Choose a voice migration path; Prepare your migration",
+          "claim": "Affected standalone ACS configurations remain supported through September 30, 2028; Teams Phone extensibility is the voice target and carrier/SBC investments inform the migration choice.",
+          "applicability": "Dynamics 365 Contact Center voice; use the deployment model stated in the item."
+        },
+        {
+          "sourceId": "cc-d2-finalvoice-s03",
+          "section": "Prerequisites; Add a phone number to a voice workstream; Release phone numbers",
+          "claim": "The ACS flow has eligibility and regional prerequisites; a number associates with one voice workstream and must be detached from dependencies before release.",
+          "applicability": "Dynamics 365 Contact Center voice; use the deployment model stated in the item."
+        },
+        {
+          "sourceId": "cc-d2-finalvoice-s04",
+          "section": "Prerequisites; Configure a voice channel; Set up a voice workstream; Configure routing rules",
+          "claim": "Inbound setup requires voice provisioning, unified routing and a number; only inbound-enabled unassociated numbers are offered; voice uses push distribution.",
+          "applicability": "Dynamics 365 Contact Center voice; use the deployment model stated in the item."
+        }
+      ],
+      "duplicateCheck": "New voice architecture/configuration decision; compared pilot D2 authentication/context and D3 variable-scope material, plus 7D2 chat/digital bundles. Related recall and application cards reinforce the note without duplicating its tested decision."
+    },
+    {
+      "id": "cc-d2-c49",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "inbound-number-picker-49",
+      "objectiveIds": [
+        "D2.2.03"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finalvoice-s04",
+          "section": "Prerequisites; Configure a voice channel; Set up a voice workstream; Configure routing rules",
+          "claim": "It lacks inbound calling capability or is already associated with another workstream. Acquisition alone does not make a number eligible for every inbound configuration.",
+          "applicability": "Dynamics 365 Contact Center voice; scenario-scoped configuration, not a licensing entitlement guarantee."
+        }
+      ],
+      "duplicateCheck": "New voice architecture/configuration decision; compared pilot D2 authentication/context and D3 variable-scope material, plus 7D2 chat/digital bundles. Related recall and application cards reinforce the note without duplicating its tested decision."
+    },
+    {
+      "id": "cc-d2-c50",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "voice-distribution-mode-50",
+      "objectiveIds": [
+        "D2.2.01"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finalvoice-s04",
+          "section": "Prerequisites; Configure a voice channel; Set up a voice workstream; Configure routing rules",
+          "claim": "Push. Voice workstreams do not offer a pick-mode configuration in the documented setup.",
+          "applicability": "Dynamics 365 Contact Center voice; scenario-scoped configuration, not a licensing entitlement guarantee."
+        }
+      ],
+      "duplicateCheck": "New voice architecture/configuration decision; compared pilot D2 authentication/context and D3 variable-scope material, plus 7D2 chat/digital bundles. Related recall and application cards reinforce the note without duplicating its tested decision."
+    },
+    {
+      "id": "cc-d2-c51",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "number-release-dependencies-51",
+      "objectiveIds": [
+        "D2.2.03"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finalvoice-s03",
+          "section": "Prerequisites; Add a phone number to a voice workstream; Release phone numbers",
+          "claim": "Remove its profile associations and disable its personal assignment. Number release has dependency checks. Changing routing rules or deleting call recordings does not remove those associations.",
+          "applicability": "Dynamics 365 Contact Center voice; scenario-scoped configuration, not a licensing entitlement guarantee."
+        }
+      ],
+      "duplicateCheck": "New voice architecture/configuration decision; compared pilot D2 authentication/context and D3 variable-scope material, plus 7D2 chat/digital bundles. Related recall and application cards reinforce the note without duplicating its tested decision."
+    },
+    {
+      "id": "cc-d2-n18",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "external-ivr-context-path",
+      "objectiveIds": [
+        "D2.2.02",
+        "D2.3.24"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finalvoice-s05",
+          "section": "Set up contextual call transfer using Azure direct routing",
+          "claim": "In the ACS direct-routing integration an SBC connects the external IVR; SIP UUI parameters must match workstream variables, and the external IVR recording/transcript is not supplied.",
+          "applicability": "Dynamics 365 Contact Center voice; use the deployment model stated in the item."
+        },
+        {
+          "sourceId": "cc-d2-finalvoice-s06",
+          "section": "Prerequisites; SBC best practices",
+          "claim": "ACS direct routing requires a certified connected SBC, E.164 organization number and tested infrastructure; Teams and ACS direct routing require different FQDNs even when sharing a port.",
+          "applicability": "Dynamics 365 Contact Center voice; use the deployment model stated in the item."
+        },
+        {
+          "sourceId": "cc-d2-finalvoice-s14",
+          "section": "Inbound calling deployment approaches; Outbound contact center deployment",
+          "claim": "Carrier and SBC choices affect control and support boundaries; SIP context can be lost beyond Microsoft networks and must be considered in deployment design.",
+          "applicability": "Dynamics 365 Contact Center voice; use the deployment model stated in the item."
+        },
+        {
+          "sourceId": "cc-d2-finalvoice-s02",
+          "section": "Understand the impact; Review the retirement schedule; Choose a voice migration path; Prepare your migration",
+          "claim": "Affected standalone ACS configurations remain supported through September 30, 2028; Teams Phone extensibility is the voice target and carrier/SBC investments inform the migration choice.",
+          "applicability": "Dynamics 365 Contact Center voice; use the deployment model stated in the item."
+        }
+      ],
+      "duplicateCheck": "New voice architecture/configuration decision; compared pilot D2 authentication/context and D3 variable-scope material, plus 7D2 chat/digital bundles. Related recall and application cards reinforce the note without duplicating its tested decision."
+    },
+    {
+      "id": "cc-d2-c52",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "sip-uui-name-matching-52",
+      "objectiveIds": [
+        "D2.2.02"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finalvoice-s05",
+          "section": "Set up contextual call transfer using Azure direct routing",
+          "claim": "They must match exactly. The UUI payload is converted into context used for routing and representative information.",
+          "applicability": "Dynamics 365 Contact Center voice; scenario-scoped configuration, not a licensing entitlement guarantee."
+        }
+      ],
+      "duplicateCheck": "New voice architecture/configuration decision; compared pilot D2 authentication/context and D3 variable-scope material, plus 7D2 chat/digital bundles. Related recall and application cards reinforce the note without duplicating its tested decision."
+    },
+    {
+      "id": "cc-d2-c53",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "external-ivr-media-boundary-53",
+      "objectiveIds": [
+        "D2.2.02"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finalvoice-s05",
+          "section": "Set up contextual call transfer using Azure direct routing",
+          "claim": "No. The external IVR recording and transcript are not available through that integration. Passing context values does not import the external system’s media history.",
+          "applicability": "Dynamics 365 Contact Center voice; scenario-scoped configuration, not a licensing entitlement guarantee."
+        }
+      ],
+      "duplicateCheck": "New voice architecture/configuration decision; compared pilot D2 authentication/context and D3 variable-scope material, plus 7D2 chat/digital bundles. Related recall and application cards reinforce the note without duplicating its tested decision."
+    },
+    {
+      "id": "cc-d2-c54",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "ivr-context-diagnosis-54",
+      "objectiveIds": [
+        "D2.2.02"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finalvoice-s05",
+          "section": "Set up contextual call transfer using Azure direct routing",
+          "claim": "Make the workstream variable name match the SIP UUI parameter exactly. Successful signaling does not prove correct payload mapping. Media recording and queue priority do not repair mismatched parameter names.",
+          "applicability": "Dynamics 365 Contact Center voice; scenario-scoped configuration, not a licensing entitlement guarantee."
+        }
+      ],
+      "duplicateCheck": "New voice architecture/configuration decision; compared pilot D2 authentication/context and D3 variable-scope material, plus 7D2 chat/digital bundles. Related recall and application cards reinforce the note without duplicating its tested decision."
+    },
+    {
+      "id": "cc-d2-n19",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "voice-profiles-versus-workstreams",
+      "objectiveIds": [
+        "D2.2.04"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finalvoice-s07",
+          "section": "Configure outbound and inbound profiles; Create inbound profiles; Create outbound profiles",
+          "claim": "Inbound profiles implement direct inward dialing rather than queue-based unified routing; outbound profiles configure caller ID, queues, capacity and behaviors.",
+          "applicability": "Dynamics 365 Contact Center voice; use the deployment model stated in the item."
+        },
+        {
+          "sourceId": "cc-d2-finalvoice-s08",
+          "section": "Prerequisites; Configure capacity profiles and assign users",
+          "claim": "Outbound readiness needs a Make calls number, voice queue, outbound profile and representative membership in its capacity profile; immediate reset releases capacity after a call.",
+          "applicability": "Dynamics 365 Contact Center voice; use the deployment model stated in the item."
+        }
+      ],
+      "duplicateCheck": "New voice architecture/configuration decision; compared pilot D2 authentication/context and D3 variable-scope material, plus 7D2 chat/digital bundles. Related recall and application cards reinforce the note without duplicating its tested decision."
+    },
+    {
+      "id": "cc-d2-c55",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "inbound-profile-analytics-boundary-55",
+      "objectiveIds": [
+        "D2.2.04"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finalvoice-s07",
+          "section": "Configure outbound and inbound profiles; Create inbound profiles; Create outbound profiles",
+          "claim": "No. Direct inward dialing does not use unified routing. Distinguish a personal inbound profile from a queue-routed voice workstream.",
+          "applicability": "Dynamics 365 Contact Center voice; scenario-scoped configuration, not a licensing entitlement guarantee."
+        }
+      ],
+      "duplicateCheck": "New voice architecture/configuration decision; compared pilot D2 authentication/context and D3 variable-scope material, plus 7D2 chat/digital bundles. Related recall and application cards reinforce the note without duplicating its tested decision."
+    },
+    {
+      "id": "cc-d2-c56",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "outbound-profile-membership-56",
+      "objectiveIds": [
+        "D2.2.04"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finalvoice-s08",
+          "section": "Prerequisites; Configure capacity profiles and assign users",
+          "claim": "Membership in a capacity profile associated with that outbound profile. A number enabled for Make calls is necessary but does not independently authorize the representative’s outbound experience.",
+          "applicability": "Dynamics 365 Contact Center voice; scenario-scoped configuration, not a licensing entitlement guarantee."
+        }
+      ],
+      "duplicateCheck": "New voice architecture/configuration decision; compared pilot D2 authentication/context and D3 variable-scope material, plus 7D2 chat/digital bundles. Related recall and application cards reinforce the note without duplicating its tested decision."
+    },
+    {
+      "id": "cc-d2-c57",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "outbound-feature-diagnosis-57",
+      "objectiveIds": [
+        "D2.2.04"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finalvoice-s08",
+          "section": "Prerequisites; Configure capacity profiles and assign users",
+          "claim": "The representative’s membership in the outbound profile’s associated capacity profile. Outbound calling eligibility requires membership in a capacity profile associated with that outbound profile. Other inbound queue or capacity associations and resource work hours do not establish that mapping.",
+          "applicability": "Dynamics 365 Contact Center voice; scenario-scoped configuration, not a licensing entitlement guarantee."
+        }
+      ],
+      "duplicateCheck": "New voice architecture/configuration decision; compared pilot D2 authentication/context and D3 variable-scope material, plus 7D2 chat/digital bundles. Related recall and application cards reinforce the note without duplicating its tested decision."
+    },
+    {
+      "id": "cc-d2-n20",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "voice-capture-dependencies",
+      "objectiveIds": [
+        "D2.2.05"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finalvoice-s09",
+          "section": "Prerequisites; Enable call recording and transcription for voice; Enable real-time translation of calls",
+          "claim": "Recording needs tenant allowance, permitted audio/MPEG MIME types and ACS Event Grid registration in the documented flow; translated voice transcripts need recording, transcription and translation.",
+          "applicability": "Dynamics 365 Contact Center voice; use the deployment model stated in the item."
+        },
+        {
+          "sourceId": "cc-d2-finalvoice-s10",
+          "section": "Configure representative call quality feedback survey; Store and view survey data; Set up secure consult with and transfer to external contacts",
+          "claim": "Call-quality feedback needs Call Survey Logs diagnostics to persist externally; preview external-contact privacy settings can override workstream recording or transcription for consult and bridged transfer.",
+          "applicability": "Dynamics 365 Contact Center voice; use the deployment model stated in the item."
+        }
+      ],
+      "duplicateCheck": "New voice architecture/configuration decision; compared pilot D2 authentication/context and D3 variable-scope material, plus 7D2 chat/digital bundles. Related recall and application cards reinforce the note without duplicating its tested decision."
+    },
+    {
+      "id": "cc-d2-c58",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "tenant-recording-precedence-58",
+      "objectiveIds": [
+        "D2.2.05"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finalvoice-s09",
+          "section": "Prerequisites; Enable call recording and transcription for voice; Enable real-time translation of calls",
+          "claim": "No. Tenant-level disabling prevents audio recording. Investigate the tenant control before repeatedly changing the workstream start setting.",
+          "applicability": "Dynamics 365 Contact Center voice; scenario-scoped configuration, not a licensing entitlement guarantee."
+        }
+      ],
+      "duplicateCheck": "New voice architecture/configuration decision; compared pilot D2 authentication/context and D3 variable-scope material, plus 7D2 chat/digital bundles. Related recall and application cards reinforce the note without duplicating its tested decision."
+    },
+    {
+      "id": "cc-d2-c59",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "translated-voice-transcript-dependencies-59",
+      "objectiveIds": [
+        "D2.2.05"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finalvoice-s09",
+          "section": "Prerequisites; Enable call recording and transcription for voice; Enable real-time translation of calls",
+          "claim": "Call recording, transcription and real-time translation. Configuring translation alone does not complete the documented voice-transcript prerequisites.",
+          "applicability": "Dynamics 365 Contact Center voice; scenario-scoped configuration, not a licensing entitlement guarantee."
+        }
+      ],
+      "duplicateCheck": "New voice architecture/configuration decision; compared pilot D2 authentication/context and D3 variable-scope material, plus 7D2 chat/digital bundles. Related recall and application cards reinforce the note without duplicating its tested decision."
+    },
+    {
+      "id": "cc-d2-c60",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "secure-capture-selection-60",
+      "objectiveIds": [
+        "D2.2.05"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finalvoice-s10",
+          "section": "Configure representative call quality feedback survey; Store and view survey data; Set up secure consult with and transfer to external contacts",
+          "claim": "Turn off recording while keeping transcription if active. The preview offers separate audio-only and audio-plus-transcription stop choices. Following the workstream would retain its recording behavior.",
+          "applicability": "Production-ready preview secure external-contact consult/bridged-transfer settings; not an assertion of general availability."
+        }
+      ],
+      "duplicateCheck": "New voice architecture/configuration decision; compared pilot D2 authentication/context and D3 variable-scope material, plus 7D2 chat/digital bundles. Related recall and application cards reinforce the note without duplicating its tested decision."
+    },
+    {
+      "id": "cc-d2-n21",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "voice-feedback-and-transfer-validation",
+      "objectiveIds": [
+        "D2.2.06",
+        "D2.3.24"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finalvoice-s10",
+          "section": "Configure representative call quality feedback survey; Store and view survey data; Set up secure consult with and transfer to external contacts",
+          "claim": "Call-quality feedback needs Call Survey Logs diagnostics to persist externally; preview external-contact privacy settings can override workstream recording or transcription for consult and bridged transfer.",
+          "applicability": "Dynamics 365 Contact Center voice; use the deployment model stated in the item."
+        },
+        {
+          "sourceId": "cc-d2-finalvoice-s11",
+          "section": "Transfer calls; Consult with external contacts and transfer a call securely (preview)",
+          "claim": "Enhanced voice transfer behavior differs with bridging; secure settings require external transfer/consult permission and bridging, override capture behavior and resume according to workstream settings afterward.",
+          "applicability": "Dynamics 365 Contact Center voice; use the deployment model stated in the item."
+        }
+      ],
+      "duplicateCheck": "New voice architecture/configuration decision; compared pilot D2 authentication/context and D3 variable-scope material, plus 7D2 chat/digital bundles. Related recall and application cards reinforce the note without duplicating its tested decision."
+    },
+    {
+      "id": "cc-d2-c61",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "call-survey-log-retention-61",
+      "objectiveIds": [
+        "D2.2.06"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finalvoice-s10",
+          "section": "Configure representative call quality feedback survey; Store and view survey data; Set up secure consult with and transfer to external contacts",
+          "claim": "Call Survey Logs. Choose a Log Analytics workspace, Event Hubs or Azure storage account; otherwise survey data can be lost.",
+          "applicability": "Dynamics 365 Contact Center voice; scenario-scoped configuration, not a licensing entitlement guarantee."
+        }
+      ],
+      "duplicateCheck": "New voice architecture/configuration decision; compared pilot D2 authentication/context and D3 variable-scope material, plus 7D2 chat/digital bundles. Related recall and application cards reinforce the note without duplicating its tested decision."
+    },
+    {
+      "id": "cc-d2-c62",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "secure-transfer-prerequisite-62",
+      "objectiveIds": [
+        "D2.3.24"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finalvoice-s11",
+          "section": "Transfer calls; Consult with external contacts and transfer a call securely (preview)",
+          "claim": "Use bridged transfer, along with the required external consult/transfer permission. Without bridging, those bridged-transfer privacy settings do not apply; the standard unbridged behavior stops recording and transcription.",
+          "applicability": "Dynamics 365 Contact Center voice; scenario-scoped configuration, not a licensing entitlement guarantee."
+        },
+        {
+          "sourceId": "cc-d2-finalvoice-s10",
+          "section": "Set up secure consult with and transfer to external contacts (preview)",
+          "claim": "External-contact privacy and security settings configure distinct Consult and Bridged transfer recording/transcription behavior; these settings apply to bridged transfers.",
+          "applicability": "Production-ready preview secure external-contact configuration, with bridging and external consult/transfer permissions as described in the transfer procedure."
+        }
+      ],
+      "duplicateCheck": "New voice architecture/configuration decision; compared pilot D2 authentication/context and D3 variable-scope material, plus 7D2 chat/digital bundles. Related recall and application cards reinforce the note without duplicating its tested decision."
+    },
+    {
+      "id": "cc-d2-c63",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "feedback-retention-diagnosis-63",
+      "objectiveIds": [
+        "D2.2.06"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finalvoice-s10",
+          "section": "Configure representative call quality feedback survey; Store and view survey data; Set up secure consult with and transfer to external contacts",
+          "claim": "The Call Survey Logs diagnostic setting and its destination. Survey frequency controls presentation, not persistence. Recording/transcription capture different artifacts and do not configure Call Survey Logs export.",
+          "applicability": "Dynamics 365 Contact Center voice; scenario-scoped configuration, not a licensing entitlement guarantee."
+        }
+      ],
+      "duplicateCheck": "New voice architecture/configuration decision; compared pilot D2 authentication/context and D3 variable-scope material, plus 7D2 chat/digital bundles. Related recall and application cards reinforce the note without duplicating its tested decision."
+    },
+    {
+      "id": "cc-d2-n22",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "voice-sdk-responsibility-and-cost",
+      "objectiveIds": [
+        "D2.2.07",
+        "D2.3.26"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finalvoice-s12",
+          "section": "Inbound PSTN call to the resource account; Mid call Controls for Call Automation SDK",
+          "claim": "In the CCaaS TPE architecture Call Automation supplies server controls while Calling SDK handles the representative client; AddParticipant is recommended over Redirect for adding CCaaS agents.",
+          "applicability": "Dynamics 365 Contact Center voice; use the deployment model stated in the item."
+        },
+        {
+          "sourceId": "cc-d2-finalvoice-s13",
+          "section": "Evaluating total cost of ownership; Copilot Credits: AI consumption currency; Teams Phone licensing",
+          "claim": "TCO includes usage and infrastructure/integration maintenance, with AI benefits measured through volume, handling time, employee experience and quality; license price alone is insufficient.",
+          "applicability": "Dynamics 365 Contact Center voice; use the deployment model stated in the item."
+        }
+      ],
+      "duplicateCheck": "New voice architecture/configuration decision; compared pilot D2 authentication/context and D3 variable-scope material, plus 7D2 chat/digital bundles. Related recall and application cards reinforce the note without duplicating its tested decision."
+    },
+    {
+      "id": "cc-d2-c64",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "server-call-control-layer-64",
+      "objectiveIds": [
+        "D2.2.07"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finalvoice-s12",
+          "section": "Inbound PSTN call to the resource account; Mid call Controls for Call Automation SDK",
+          "claim": "Azure Communication Services Call Automation SDK. The Calling SDK serves the representative client; these are separate integration responsibilities.",
+          "applicability": "Azure Teams Phone extensibility CCaaS architecture; related partial evidence, not a complete Dynamics-specific CCaaS SDK API contract."
+        }
+      ],
+      "duplicateCheck": "New voice architecture/configuration decision; compared pilot D2 authentication/context and D3 variable-scope material, plus 7D2 chat/digital bundles. Related recall and application cards reinforce the note without duplicating its tested decision."
+    },
+    {
+      "id": "cc-d2-c65",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "contact-center-tco-boundary-65",
+      "objectiveIds": [
+        "D2.3.26"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finalvoice-s13",
+          "section": "Evaluating total cost of ownership; Copilot Credits: AI consumption currency; Teams Phone licensing",
+          "claim": "Usage, infrastructure and integration-maintenance costs also matter. Include AI and telephony consumption and test expected operational benefits instead of assuming savings from the quote.",
+          "applicability": "Dynamics 365 Contact Center voice; scenario-scoped configuration, not a licensing entitlement guarantee."
+        }
+      ],
+      "duplicateCheck": "New voice architecture/configuration decision; compared pilot D2 authentication/context and D3 variable-scope material, plus 7D2 chat/digital bundles. Related recall and application cards reinforce the note without duplicating its tested decision."
+    },
+    {
+      "id": "cc-d2-c66",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "ccaas-participant-operation-66",
+      "objectiveIds": [
+        "D2.2.07"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finalvoice-s12",
+          "section": "Inbound PSTN call to the resource account; Mid call Controls for Call Automation SDK",
+          "claim": "AddParticipant. AddParticipant keeps the participant-add flow. Transfer removes the bot; CreateCall starts a different call. The overview recommends AddParticipant over Redirect for this CCaaS use case.",
+          "applicability": "Azure Teams Phone extensibility CCaaS architecture; not a Dynamics application API signature."
+        }
+      ],
+      "duplicateCheck": "New voice architecture/configuration decision; compared pilot D2 authentication/context and D3 variable-scope material, plus 7D2 chat/digital bundles. Related recall and application cards reinforce the note without duplicating its tested decision."
+    }
+  ]
+}

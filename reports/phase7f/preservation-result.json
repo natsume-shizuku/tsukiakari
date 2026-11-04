@@ -1,0 +1,71 @@
+{
+  "allUnchanged": true,
+  "files": [
+    {
+      "path": "src/content/published/study-pack.json",
+      "before": "40548d1c0c24298f9f6da369ae20ef9f5f00af26c4ddedddc5a2b206fdb1cb83",
+      "after": "40548d1c0c24298f9f6da369ae20ef9f5f00af26c4ddedddc5a2b206fdb1cb83",
+      "unchanged": true
+    },
+    {
+      "path": "src/content/published/curations.json",
+      "before": "80a2466950c645faeaf4e8828acbf455463154f5aabcc0ece8e18d5e444c70a8",
+      "after": "80a2466950c645faeaf4e8828acbf455463154f5aabcc0ece8e18d5e444c70a8",
+      "unchanged": true
+    },
+    {
+      "path": "src/content/pilot/ab250-pilot-bank.json",
+      "before": "81ef47142ecdb6196e4841b71ff6d722bb9b27cbed73254819da8f035a95e48e",
+      "after": "81ef47142ecdb6196e4841b71ff6d722bb9b27cbed73254819da8f035a95e48e",
+      "unchanged": true
+    },
+    {
+      "path": "src/content/pilot/bank-manifest.json",
+      "before": "11b9555c499b916d3e4cb17af22e73e2c4d67075524de88e9869267b235b9a36",
+      "after": "11b9555c499b916d3e4cb17af22e73e2c4d67075524de88e9869267b235b9a36",
+      "unchanged": true
+    },
+    {
+      "path": "src/content/pilot/study-pack.json",
+      "before": "f383712fb6137e4b47d73487f91e1fae66886de8530acac4553362e687bb167a",
+      "after": "f383712fb6137e4b47d73487f91e1fae66886de8530acac4553362e687bb167a",
+      "unchanged": true
+    },
+    {
+      "path": "src/content/pilot/curations.json",
+      "before": "fe741ca58fd5614a3826f398e2b7d9127b5ba03e3d97ba5bf68d6b427e288c8f",
+      "after": "fe741ca58fd5614a3826f398e2b7d9127b5ba03e3d97ba5bf68d6b427e288c8f",
+      "unchanged": true
+    },
+    {
+      "path": "docs/phase7/approved-content-index.json",
+      "before": "5c589c92ac7277e9ea9a93e87c85a5ecce3b56097a9a077414ca7ef7f3ada6ed",
+      "after": "5c589c92ac7277e9ea9a93e87c85a5ecce3b56097a9a077414ca7ef7f3ada6ed",
+      "unchanged": true
+    },
+    {
+      "path": "docs/phase7/study-coverage.json",
+      "before": "6f3753746cb33591b993a0d97610d8986f37fda951f6363bd18572148e70ba33",
+      "after": "6f3753746cb33591b993a0d97610d8986f37fda951f6363bd18572148e70ba33",
+      "unchanged": true
+    },
+    {
+      "path": "docs/phase7/source-gaps.json",
+      "before": "0236fc82cd79482ebe7f04f5785830456e16f09dc1c2162a47b1035e44633c52",
+      "after": "0236fc82cd79482ebe7f04f5785830456e16f09dc1c2162a47b1035e44633c52",
+      "unchanged": true
+    },
+    {
+      "path": "docs/phase7/objective-coverage.csv",
+      "before": "a8af10011155a7632bff087cef3b3ea9690a7eaa4d02d3c2f4e576b2631797bb",
+      "after": "a8af10011155a7632bff087cef3b3ea9690a7eaa4d02d3c2f4e576b2631797bb",
+      "unchanged": true
+    }
+  ],
+  "currentPublishedBank": {
+    "src/content/published/ab250-bank.json": "b2c2ba607ed99af071aba32f3f862061de163827fa59284a1cd3a6b06cb008b4",
+    "src/content/published/bank-manifest.json": "76e3ae92830f9e218545759e8041336daf68b33d61716c09893a961c9c520f33",
+    "docs/phase7/exams/approved-index.json": "56d1eaaf94a8b4ad27249312529d4db02b8758c1c427fe24b8581e4c29af40c1"
+  },
+  "bankVerification": "compile-exam-bank.mjs --check verifies generated bank against approved question/source fingerprints; build asset remains ab250-bank-B6W69moI.json"
+}

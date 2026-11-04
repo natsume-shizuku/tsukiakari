@@ -1,0 +1,574 @@
+[
+  {
+    "id": "cc-d2-n23",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "5358e296495414a27c70905a189cb73f19c1d1bc989419e2d96d58719e8897cc",
+    "rationale": "Identity, generated routing and channel/contact-point consent are separate supported setup decisions; test advice does not promise regulatory compliance.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaloutbound-s01",
+        "section": "Prerequisites; Set up proactive engagement",
+        "notes": "Opened setup prerequisites and intake/workstream sequence: file/API and enabled Customer Insights journey are distinct paths; provisioning and consent responsibilities precede rollout.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-finaloutbound-s02",
+        "section": "Set up an outbound workstream; Details; Dialing modes; Frequency limits",
+        "notes": "Opened voice setup, identity/routing, preview settings and frequency limits: external key upsert, generated rules, Teams-specific manual/delayed preview, ACS acceptance flow and explicit timezone with UTC fallback all match.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-finaloutbound-s05",
+        "section": "Automatic opt-out; Manually manage opt-outs; How consent is enforced",
+        "notes": "Opened channel support, bulk opt-out import and enforcement: Voice versus Text consent and contact-point scope are explicit; technical implicit opt-in does not prove legal consent.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-n24",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "6c6c1472c632209619d847cb30ced4db1392eaacac5c13bac188b02dee1a80b8",
+    "rationale": "Mode and preview platform boundaries match both voice configuration and dial-mode definitions. Restrictions are preserved without inventing legal clearance.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaloutbound-s02",
+        "section": "Set up an outbound workstream; Details; Dialing modes; Frequency limits",
+        "notes": "Opened voice setup, identity/routing, preview settings and frequency limits: external key upsert, generated rules, Teams-specific manual/delayed preview, ACS acceptance flow and explicit timezone with UTC fallback all match.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-finaloutbound-s03",
+        "section": "Important; Copilot; Progressive; Predictive; Preview",
+        "notes": "Opened full dial-mode definitions and restrictions: Copilot AI entry, progressive representative availability and predictive pacing are distinct; commercial-purpose restrictions are retained as caveats.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-n25",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "65dab826bc94ddb9fbc095620c660315c46a671f4eb318be3a495f3867bc096d",
+    "rationale": "Dashboard prerequisites and metric interpretation are precise: completion may include end of attempts and is not proof of live contact.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaloutbound-s04",
+        "section": "Prerequisites; Key performance indicators; Use proactive engagement metrics",
+        "notes": "Opened prerequisites, KPI definitions and completed-delivery descriptions: supervisor role plus enabled analytics; hourly throughput is distinct from reachability and end-of-attempt completion.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-n26",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "bbab103a0f531eabe9626ac7dd01e51fd02ef3bdb6e93da41c04feeae47a84df",
+    "rationale": "Package readiness, dedicated preview app roles and planning-group demand scope are supported and kept separate from per-conversation routing capacity.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaloutbound-s06",
+        "section": "Relationship to Copilot Service workspace; Prerequisites; Security roles and app visibility",
+        "notes": "Opened WEM preview overview, relationship to workspace and prerequisites: package installation and separate role/app surface do not migrate or replace workspace configuration.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-finaloutbound-s07",
+        "section": "How planning groups work; Configure service objectives; Associate workforce management artifacts",
+        "notes": "Opened planning-group purpose, demand scope and uniqueness requirement: one queue/channel combination belongs to one group; shared forecast/capacity/shift artifacts inherit planning configuration.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-finaloutbound-s12",
+        "section": "Important; Available roles; Choose a role",
+        "notes": "Opened preview role tables and scope notice: Forecaster lacks schedule publication while Scheduler supplies it; dedicated app roles do not replace workspace Omnichannel roles.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-n27",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "235758163181b57b562fcc4e77f1925ed8f6331135a3019a1e0c2aea947f4cc1",
+    "rationale": "History, forecast/AHT, staffing conversion and inherited group scope are coherent. External upload/refresh and successful-job checks match the primary procedure.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaloutbound-s07",
+        "section": "How planning groups work; Configure service objectives; Associate workforce management artifacts",
+        "notes": "Opened planning-group purpose, demand scope and uniqueness requirement: one queue/channel combination belongs to one group; shared forecast/capacity/shift artifacts inherit planning configuration.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-finaloutbound-s08",
+        "section": "Prerequisites; Create a forecast scenario; Associate a forecast scenario with a planning group; Manage an existing scenario",
+        "notes": "Opened forecast creation and management: historical volume/AHT, prior external upload, unavailable external auto-refresh, read-only inherited scope, job history and snapshot constraints match.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-n28",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "d036d342e8b977d8381395fa382897dc92298c1a6cacb2eeddc9ef0bc0641ba6",
+    "rationale": "Shift inputs, publication state and external API integration are supported, including scope, ownership and transient-failure handling.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaloutbound-s09",
+        "section": "Prerequisites; Create a shift plan; Schedule shift plan resources",
+        "notes": "Opened shift-plan creation: calendar, skills, queues and itinerary plus optional forecast capacity and planning-group timezone are supported; no questionable numeric duration is taught.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-finaloutbound-s10",
+        "section": "Add representatives to a shift plan and publish the schedule; Edit bookings",
+        "notes": "Opened schedule publication and Edit bookings: Committed edits become Unpublished and require republication; article gives schedule-board and publication sequence.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-finaloutbound-s11",
+        "section": "Integration architecture; Schedule synchronization; Design considerations",
+        "notes": "Opened full Learn integration unit: Dataverse REST, Entra service credentials, schedules/adherence/history directions, cadence and exponential-backoff guidance are explicit.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-n29",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "7064642e0b9fbd10032a54299982a06f4568fa081bc7a821332e0424bad70d6b",
+    "rationale": "Greeting, tool latency and failure, deterministic sensitive actions and representative handoff follow the scoped product guidance; sibling AI cards test different configuration decisions.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaloutbound-s13",
+        "section": "Best practices for AI agent configuration; Best practices to handle silence before a customer engages",
+        "notes": "Opened configuration and silence best practices: initial greeting before lookup, latency messages and flow/connector performance support the note and recall.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-finaloutbound-s14",
+        "section": "Tool invocation reliability; Safety-relevant behavioral limitations; Best practices for improving system performance",
+        "notes": "Opened real-time transparency limitations and performance practices: tools fail/time out; deterministic controls, human approval, fallback/escalation and realistic environment testing are explicit.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c67",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "c98b721df20f5b0b8c74289399a02c1ff27a7ab92a6a12719ecc1fa6a40cf458",
+    "rationale": "Stable external key selection and eligible Contact attribute are explicit; repeated inputs use documented update-or-insert rather than new identities.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaloutbound-s02",
+        "section": "Set up an outbound workstream; Details; Dialing modes; Frequency limits",
+        "notes": "Opened voice setup, identity/routing, preview settings and frequency limits: external key upsert, generated rules, Teams-specific manual/delayed preview, ACS acceptance flow and explicit timezone with UTC fallback all match.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c68",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "4e1a4d805c98eacb0d41eda96101027f5461b824e8721166bd28af6e3911e22d",
+    "rationale": "Explicit customer timezone and UTC fallback are documented, with no phone-number geo inference. The card does not substitute IANA names for accepted timezone inputs.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaloutbound-s02",
+        "section": "Set up an outbound workstream; Details; Dialing modes; Frequency limits",
+        "notes": "Opened voice setup, identity/routing, preview settings and frequency limits: external key upsert, generated rules, Teams-specific manual/delayed preview, ACS acceptance flow and explicit timezone with UTC fallback all match.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c69",
+    "revision": 2,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "b30fab6c04d50a10aaabda73e6fcbbde4ab49961de6a6a49ca3155dab74481fe",
+    "rationale": "Voice consent import is uniquely correct. Text consent is another channel; contact import alone does not restore opt-outs; a different contact point does not suppress the target number. Revision 2 alternatives independently rechecked.",
+    "findings": [
+      "Initial unrelated distractors replaced by adjacent configuration alternatives; current revision independently rechecked."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaloutbound-s05",
+        "section": "Automatic opt-out; Manually manage opt-outs; How consent is enforced",
+        "notes": "Opened channel support, bulk opt-out import and enforcement: Voice versus Text consent and contact-point scope are explicit; technical implicit opt-in does not prove legal consent.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c70",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "4267bae0ab880ac02ca61375bc9512bc937ff7d398931c23bcf85288aa8f3f7c",
+    "rationale": "Copilot mode explicitly begins with the workstream AI agent on customer answer, with escalation separate from purpose/consent approval.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaloutbound-s03",
+        "section": "Important; Copilot; Progressive; Predictive; Preview",
+        "notes": "Opened full dial-mode definitions and restrictions: Copilot AI entry, progressive representative availability and predictive pacing are distinct; commercial-purpose restrictions are retained as caveats.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c71",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "62f7116b43a22713d95c14bf901ea3b713de06b5a60aabbf086d1a02494ef716",
+    "rationale": "Teams Phone extensibility is the documented manual/delayed-preview scope; ACS preview automatically starts after invite acceptance.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaloutbound-s02",
+        "section": "Set up an outbound workstream; Details; Dialing modes; Frequency limits",
+        "notes": "Opened voice setup, identity/routing, preview settings and frequency limits: external key upsert, generated rules, Teams-specific manual/delayed preview, ACS acceptance flow and explicit timezone with UTC fallback all match.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c72",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "c11fe1c7419b553f8c28812367badd6820859be0a647a09d7f8df5e36b2dc9f9",
+    "rationale": "Manual Preview uniquely preserves representative-controlled start after reviewing a case. Predictive/progressive automate pacing; Copilot begins with AI. All four modes are plausible but only one satisfies the stated requirement.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaloutbound-s02",
+        "section": "Set up an outbound workstream; Details; Dialing modes; Frequency limits",
+        "notes": "Opened voice setup, identity/routing, preview settings and frequency limits: external key upsert, generated rules, Teams-specific manual/delayed preview, ACS acceptance flow and explicit timezone with UTC fallback all match.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-finaloutbound-s03",
+        "section": "Important; Copilot; Progressive; Predictive; Preview",
+        "notes": "Opened full dial-mode definitions and restrictions: Copilot AI entry, progressive representative availability and predictive pacing are distinct; commercial-purpose restrictions are retained as caveats.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c73",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "b50df0544168afa761c3621c77d3dca9b2b1f0c04acea0fe3bfaf32c4ce4ad5a",
+    "rationale": "Omnichannel Supervisor is the documented dashboard role; enablement and configured engagement remain necessary.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaloutbound-s04",
+        "section": "Prerequisites; Key performance indicators; Use proactive engagement metrics",
+        "notes": "Opened prerequisites, KPI definitions and completed-delivery descriptions: supervisor role plus enabled analytics; hourly throughput is distinct from reachability and end-of-attempt completion.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c74",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "ff31b7a9618bd6a154a3094d34ac9537e1dcc27a50f109e786bdc060391dc5f1",
+    "rationale": "Throughput is deliveries processed over the last hour, not connected customers; the time period is directly supported.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaloutbound-s04",
+        "section": "Prerequisites; Key performance indicators; Use proactive engagement metrics",
+        "notes": "Opened prerequisites, KPI definitions and completed-delivery descriptions: supervisor role plus enabled analytics; hourly throughput is distinct from reachability and end-of-attempt completion.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c75",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "ffe40382ea316d7e210ef66fe2873882f42ed77d744fbaab64f8e987d3a1976d",
+    "rationale": "Connect rate is the successful-connected fraction of attempted deliveries. Pending and active counts are workload; throughput is processing pace. One metric fits reachability.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaloutbound-s04",
+        "section": "Prerequisites; Key performance indicators; Use proactive engagement metrics",
+        "notes": "Opened prerequisites, KPI definitions and completed-delivery descriptions: supervisor role plus enabled analytics; hourly throughput is distinct from reachability and end-of-attempt completion.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c76",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "7c1060268ec4c643ad92970c29abfb0aade22b7755c58cfc190c733e762697be",
+    "rationale": "The exact WFM package and Power Platform admin center prerequisite are documented; installation is not represented as all subsequent access setup.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaloutbound-s06",
+        "section": "Relationship to Copilot Service workspace; Prerequisites; Security roles and app visibility",
+        "notes": "Opened WEM preview overview, relationship to workspace and prerequisites: package installation and separate role/app surface do not migrate or replace workspace configuration.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c77",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "1fcb3f022f31e3aaef02c641565d9be190674a8d1f9034615eb8ced754de883e",
+    "rationale": "Dedicated WEM roles are explicitly limited to that preview app; workspace Omnichannel role behavior remains unchanged.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaloutbound-s12",
+        "section": "Important; Available roles; Choose a role",
+        "notes": "Opened preview role tables and scope notice: Forecaster lacks schedule publication while Scheduler supplies it; dedicated app roles do not replace workspace Omnichannel roles.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c78",
+    "revision": 2,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "db6ac2636cae34011634c77c70c9b1a6b1291c087b80012c7b8722796a8a3f32",
+    "rationale": "One queue/channel combination per group is explicit. Different timezones, separate capacity plans and extra forecasts cannot bypass that uniqueness rule. Revision 2 alternatives are adjacent planning artifacts.",
+    "findings": [
+      "Initial unrelated distractors replaced by adjacent configuration alternatives; current revision independently rechecked."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaloutbound-s07",
+        "section": "How planning groups work; Configure service objectives; Associate workforce management artifacts",
+        "notes": "Opened planning-group purpose, demand scope and uniqueness requirement: one queue/channel combination belongs to one group; shared forecast/capacity/shift artifacts inherit planning configuration.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c79",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "c26a3f7b27ea370b055d3edfbcef0dd4f149590e5e7d68d15c037c73dbbf1304",
+    "rationale": "The source distinguishes demand scope/forecasts from service-objective-based staffing capacity plans; routing workload capacity is a separate layer.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaloutbound-s07",
+        "section": "How planning groups work; Configure service objectives; Associate workforce management artifacts",
+        "notes": "Opened planning-group purpose, demand scope and uniqueness requirement: one queue/channel combination belongs to one group; shared forecast/capacity/shift artifacts inherit planning configuration.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c80",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "f2b15d1d7c818883316c2d36efcc127b8ee64f1b7419b6de5b2ea6461222c531",
+    "rationale": "External scenarios lack Auto refresh in the forecast procedure. This does not deny deliberate new snapshots or manual management.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaloutbound-s08",
+        "section": "Prerequisites; Create a forecast scenario; Associate a forecast scenario with a planning group; Manage an existing scenario",
+        "notes": "Opened forecast creation and management: historical volume/AHT, prior external upload, unavailable external auto-refresh, read-only inherited scope, job history and snapshot constraints match.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c81",
+    "revision": 2,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "ad1d43b42826d463b505922c3ee46113daf70d29251322b6715f6daa52ead2fb",
+    "rationale": "Planning group is the inherited source of timezone/channel/queue. Run slots, historical source and forecast type govern different dimensions. Revision 2 choices and explanation agree.",
+    "findings": [
+      "Initial unrelated distractors replaced by adjacent configuration alternatives; current revision independently rechecked."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaloutbound-s08",
+        "section": "Prerequisites; Create a forecast scenario; Associate a forecast scenario with a planning group; Manage an existing scenario",
+        "notes": "Opened forecast creation and management: historical volume/AHT, prior external upload, unavailable external auto-refresh, read-only inherited scope, job history and snapshot constraints match.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c82",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "e37d8854fb6b3bf49a21b388d56efb81a6b22b523d0e02f62c0e5f28459ebafb",
+    "rationale": "Edited Committed bookings become Unpublished and require republishing; this exact lifecycle is explicit.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaloutbound-s10",
+        "section": "Add representatives to a shift plan and publish the schedule; Edit bookings",
+        "notes": "Opened schedule publication and Edit bookings: Committed edits become Unpublished and require republication; article gives schedule-board and publication sequence.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c83",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "d8c841d16d3199b441a6193706c9ee7f071aa31083049ca25ccced44389b93b0",
+    "rationale": "Dataverse API is named for external WFM schedules and operational data; authentication and mappings remain the integrator’s responsibility.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaloutbound-s11",
+        "section": "Integration architecture; Schedule synchronization; Design considerations",
+        "notes": "Opened full Learn integration unit: Dataverse REST, Entra service credentials, schedules/adherence/history directions, cadence and exponential-backoff guidance are explicit.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c84",
+    "revision": 2,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "830e7fdde4bc5f99392dc8c07dbf0a9d5280305bc8774c7a2e670f3fc6885ef1",
+    "rationale": "Exponential backoff is explicit primary guidance. Immediate retries and synchronized short delays maintain load; authentication-only handling omits throttled requests. Revision 2 fits the required transient-rate-limit recovery.",
+    "findings": [
+      "Initial unrelated distractors replaced by adjacent configuration alternatives; current revision independently rechecked."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaloutbound-s11",
+        "section": "Integration architecture; Schedule synchronization; Design considerations",
+        "notes": "Opened full Learn integration unit: Dataverse REST, Entra service credentials, schedules/adherence/history directions, cadence and exponential-backoff guidance are explicit.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c85",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "30eff98825a0966a20045b110bef8c032ecb0a09214f5328b906396c1cd666a3",
+    "rationale": "Greeting before potentially slow lookup and latency acknowledgment match the AI configuration article; not a claim that greeting completes data lookup.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaloutbound-s13",
+        "section": "Best practices for AI agent configuration; Best practices to handle silence before a customer engages",
+        "notes": "Opened configuration and silence best practices: initial greeting before lookup, latency messages and flow/connector performance support the note and recall.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c86",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "4f313adb0dd2f762cdd224d9cec940c261374f667f42c74a38cf6f507a115b37",
+    "rationale": "Transparency guidance rejects sole reliance on prompts for sensitive commitments and calls for deterministic controls plus human review/approval.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaloutbound-s14",
+        "section": "Tool invocation reliability; Safety-relevant behavioral limitations; Best practices for improving system performance",
+        "notes": "Opened real-time transparency limitations and performance practices: tools fail/time out; deterministic controls, human approval, fallback/escalation and realistic environment testing are explicit.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c87",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "1e38179be6e47f79cd80b5da5b8a00600b0ebd2fb2cb7ffe06c241408de5713e",
+    "rationale": "Tested recovery/retry/alternatives/escalation is the uniquely supported timeout response. Happy-path-only testing, prompt confidence alone and removing escalation fail to handle tool failures.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaloutbound-s14",
+        "section": "Tool invocation reliability; Safety-relevant behavioral limitations; Best practices for improving system performance",
+        "notes": "Opened real-time transparency limitations and performance practices: tools fail/time out; deterministic controls, human approval, fallback/escalation and realistic environment testing are explicit.",
+        "supported": true
+      }
+    ]
+  }
+]

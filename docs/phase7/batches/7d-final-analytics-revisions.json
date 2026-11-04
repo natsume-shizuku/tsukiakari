@@ -1,0 +1,106 @@
+[
+  {
+    "id": "cc-d6-n06",
+    "revision": 2,
+    "reason": "Make the product-documented standalone reporting scope explicit in the reader.",
+    "changedBy": "/root",
+    "date": "2026-11-03",
+    "finalDisposition": {
+      "status": "independently-approved",
+      "revision": 2,
+      "reviewer": "/root",
+      "reviewedAt": "2026-11-03"
+    }
+  },
+  {
+    "id": "cc-d6-n07",
+    "revision": 2,
+    "reason": "Make the product-documented standalone reporting scope explicit in the reader.",
+    "changedBy": "/root",
+    "date": "2026-11-03",
+    "finalDisposition": {
+      "status": "independently-approved",
+      "revision": 2,
+      "reviewer": "/root",
+      "reviewedAt": "2026-11-03"
+    }
+  },
+  {
+    "id": "cc-d6-c13",
+    "revision": 2,
+    "reason": "State the deployment scope required by cited reporting documentation.",
+    "changedBy": "/root",
+    "date": "2026-11-03",
+    "finalDisposition": {
+      "status": "independently-approved",
+      "revision": 2,
+      "reviewer": "/root",
+      "reviewedAt": "2026-11-03"
+    }
+  },
+  {
+    "id": "cc-d6-c14",
+    "revision": 2,
+    "reason": "State the deployment scope required by cited reporting documentation.",
+    "changedBy": "/root",
+    "date": "2026-11-03",
+    "finalDisposition": {
+      "status": "independently-approved",
+      "revision": 2,
+      "reviewer": "/root",
+      "reviewedAt": "2026-11-03"
+    }
+  },
+  {
+    "id": "cc-d6-c16",
+    "revision": 2,
+    "reason": "State the deployment scope required by cited reporting documentation.",
+    "changedBy": "/root",
+    "date": "2026-11-03",
+    "finalDisposition": {
+      "status": "independently-approved",
+      "revision": 2,
+      "reviewer": "/root",
+      "reviewedAt": "2026-11-03"
+    }
+  },
+  {
+    "id": "cc-d6-c20",
+    "revision": 2,
+    "reason": "State the deployment scope required by cited reporting documentation.",
+    "changedBy": "/root",
+    "date": "2026-11-03",
+    "finalDisposition": {
+      "status": "independently-approved",
+      "revision": 2,
+      "reviewer": "/root",
+      "reviewedAt": "2026-11-03"
+    }
+  },
+  {
+    "id": "cc-d6-c21",
+    "revision": 3,
+    "reason": "State the deployment scope required by cited reporting documentation.",
+    "changedBy": "/root",
+    "date": "2026-11-03",
+    "finalDisposition": {
+      "status": "independently-approved",
+      "revision": 3,
+      "reviewer": "/root",
+      "reviewedAt": "2026-11-03"
+    }
+  },
+  {
+    "id": "cc-d6-c18",
+    "revision": 2,
+    "reason": "Replace unrelated visual/bookmark choices with plausible but incomplete data-model designs.",
+    "changedBy": "/root",
+    "date": "2026-11-03",
+    "finalDisposition": {
+      "status": "independently-approved",
+      "revision": 2,
+      "reviewer": "/root",
+      "reviewedAt": "2026-11-03"
+    }
+  }
+]

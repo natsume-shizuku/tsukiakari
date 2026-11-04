@@ -1,0 +1,30 @@
+.topic-statistics { margin-top: 24px; min-width: 0; }
+.topic-statistics-heading { display: flex; align-items: start; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+.topic-statistics-heading > div:first-child { flex: 1 1 250px; }
+.topic-statistics-heading p { margin-bottom: 0; }
+.topic-statistics-controls { min-width: 0; display: grid; grid-template-columns: minmax(150px, 1fr) minmax(190px, 1.5fr) minmax(160px, 1fr); gap: 12px; flex: 2 1 600px; max-width: 100%; }
+.topic-statistics-controls > div { min-width: 0; }
+.topic-statistics-method { margin: 18px 0; }
+.topic-statistics-list { border-top: 1px solid var(--line); }
+.topic-statistics-row { display: flex; align-items: center; gap: 24px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.topic-statistics-name { min-width: 0; flex: 1 1 260px; }
+.topic-statistics-name h3 { font-size: .95rem; margin: 0 0 6px; }
+.topic-statistics-name h3 a { display: inline-flex; align-items: center; min-height: 44px; max-width: 100%; overflow-wrap: anywhere; }
+.topic-statistics-name p { margin: 0; overflow-wrap: anywhere; }
+.topic-statistics-unreviewed { display: inline-block; color: var(--muted); font-size: .75rem; margin-top: 6px; }
+.topic-statistics-values { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); flex: 2 1 540px; gap: 12px; margin: 0; min-width: 0; }
+.topic-statistics-values dt { color: var(--muted); font-size: .75rem; overflow-wrap: anywhere; }
+.topic-statistics-values dd { font-size: 1.05rem; font-variant-numeric: tabular-nums; margin: 7px 0 0; overflow-wrap: anywhere; }
+.topic-statistics-values div:nth-child(4) dd { color: var(--accent); }
+.topic-statistics-footer { margin: 18px 0 0; }
+.topic-statistics-empty { margin: 20px 0 0; color: var(--muted); }
+@media (max-width: 1000px) {
+  .topic-statistics-controls { flex-basis: 100%; grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr)); }
+  .topic-statistics-row { flex-direction: column; align-items: stretch; gap: 14px; }
+  .topic-statistics-name, .topic-statistics-values { flex-basis: auto; }
+}
+@media (max-width: 600px) {
+  .topic-statistics-controls { grid-template-columns: minmax(0, 1fr); }
+  .topic-statistics-values { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .topic-statistics-heading > div:first-child { flex-basis: 100%; }
+}

@@ -1,0 +1,282 @@
+[
+  {
+    "id": "cc-d5-c05",
+    "changes": {
+      "options": [
+        {
+          "id": "o1",
+          "text": "Refresh the form immediately after Autofill"
+        },
+        {
+          "id": "o2",
+          "text": "Run Autofill again with the same values"
+        },
+        {
+          "id": "o3",
+          "text": "Run Save the record before continuing"
+        },
+        {
+          "id": "o4",
+          "text": "Move focus to another open record without a save action"
+        }
+      ],
+      "explanation": "Autofill changes the focused form and can wait for autosave. Save the record explicitly persists those changes before the next step. Refreshing, repeating Autofill, or changing focus does not provide that explicit save guarantee."
+    },
+    "reason": "Replace unrelated settings with plausible form-workflow mistakes."
+  },
+  {
+    "id": "cc-d5-c06",
+    "changes": {
+      "options": [
+        {
+          "id": "o1",
+          "text": "Associate both scripts but leave the default expression disabled"
+        },
+        {
+          "id": "o2",
+          "text": "Change the scripts' display names to match the products"
+        },
+        {
+          "id": "o3",
+          "text": "Reorder the steps inside one script"
+        },
+        {
+          "id": "o4",
+          "text": "Configure the session template's script expression"
+        }
+      ],
+      "explanation": "The expression evaluates the conversation context and chooses a default from the associated scripts. Association makes scripts available; changing names or internal step order does not define a product-based choice. Representatives can still switch scripts."
+    },
+    "reason": "Test the distinction between making scripts available and choosing a contextual default."
+  },
+  {
+    "id": "cc-d6-c05",
+    "changes": {
+      "options": [
+        {
+          "id": "o1",
+          "text": "Only the representative's current presence and capacity"
+        },
+        {
+          "id": "o2",
+          "text": "Conversation requirements and the representative's eligibility at the assignment event"
+        },
+        {
+          "id": "o3",
+          "text": "Only the queue's total number of assignments for the day"
+        },
+        {
+          "id": "o4",
+          "text": "Only the configured required skills, without the representative snapshot"
+        }
+      ],
+      "explanation": "Compare the conversation requirements with presence, capacity and skills at the attempted assignment. Current state may have changed; daily totals and requirements alone do not show whether that representative was eligible then."
+    },
+    "reason": "Use realistic but insufficient diagnostic evidence rather than unrelated UI labels."
+  },
+  {
+    "id": "cc-d6-c06",
+    "changes": {
+      "options": [
+        {
+          "id": "o1",
+          "text": "Enabling the general real-time analytics toggle also provisions voice automatically"
+        },
+        {
+          "id": "o2",
+          "text": "Enabling historical analytics satisfies the voice prerequisite"
+        },
+        {
+          "id": "o3",
+          "text": "The organization must have the voice feature configured"
+        },
+        {
+          "id": "o4",
+          "text": "Assigning Analytics Report Author alone makes the voice option available"
+        }
+      ],
+      "explanation": "The voice option has its own channel prerequisite. Enabling general or historical reports does not configure the voice feature, and a report-author role does not replace that requirement."
+    },
+    "reason": "Use adjacent analytics setup misconceptions."
+  },
+  {
+    "id": "ab250-d5-q01",
+    "changes": {
+      "options": [
+        {
+          "id": "o1",
+          "text": "Whether making the website the anchor tab would bypass its embedding restrictions"
+        },
+        {
+          "id": "o2",
+          "text": "Whether the portal permits iframe hosting"
+        },
+        {
+          "id": "o3",
+          "text": "Whether the optional data parameter must be populated even for a complete fixed URL"
+        },
+        {
+          "id": "o4",
+          "text": "Whether the template title must exactly match the portal page title"
+        }
+      ],
+      "optionExplanations": {
+        "o1": "Anchor placement does not change the iframe compatibility requirement.",
+        "o2": "The Third-party website page type can host only iframe-compatible sites.",
+        "o3": "The data parameter is optional; a complete URL does not inherently require it.",
+        "o4": "The display title does not establish the target site's embedding policy."
+      }
+    },
+    "reason": "Keep every alternative within application-tab setup and distinguish actual hosting requirements from display/parameter misconceptions."
+  },
+  {
+    "id": "ab250-d5-q02",
+    "changes": {
+      "options": [
+        {
+          "id": "o1",
+          "text": "Whether renaming the intended tab changes which account form Autofill targets"
+        },
+        {
+          "id": "o2",
+          "text": "Whether the account entity logical name alone identifies one of the two forms"
+        },
+        {
+          "id": "o3",
+          "text": "Whether the anchor record always overrides the focused form for Autofill"
+        },
+        {
+          "id": "o4",
+          "text": "Which account form is focused when Autofill runs"
+        }
+      ],
+      "optionExplanations": {
+        "o1": "Renaming the tab does not change the focused-form targeting rule.",
+        "o2": "Both forms have the same entity type, so that setting alone does not distinguish them.",
+        "o3": "Anchor context can supply values, but this action applies to the focused form of the specified type.",
+        "o4": "Focus selects the intended form when more than one form has the same entity type."
+      }
+    },
+    "reason": "Replace unrelated features with target-selection misconceptions grounded in the Autofill rule."
+  },
+  {
+    "id": "ab250-d5-q04",
+    "changes": {
+      "options": [
+        {
+          "id": "o1",
+          "text": "Create a second unassociated copy of the application tab template"
+        },
+        {
+          "id": "o2",
+          "text": "Associate the application tab template with the session template"
+        },
+        {
+          "id": "o3",
+          "text": "Select only a representative notification template for the workstream"
+        },
+        {
+          "id": "o4",
+          "text": "Associate the session template with the chat workstream"
+        }
+      ],
+      "optionExplanations": {
+        "o1": "Another record without an association still does not add the application to the session.",
+        "o2": "This association makes the additional tab part of the selected session.",
+        "o3": "Notification selection does not select the session template or its additional tabs.",
+        "o4": "This selects the intended session experience for conversations in that workstream."
+      }
+    },
+    "reason": "Use plausible component-wiring mistakes while preserving the exact two correct relationships."
+  },
+  {
+    "id": "ab250-d6-q01",
+    "changes": {
+      "options": [
+        {
+          "id": "o1",
+          "text": "Continue sending private coaching messages"
+        },
+        {
+          "id": "o2",
+          "text": "Have the representative leave, then speak with the customer alone"
+        },
+        {
+          "id": "o3",
+          "text": "Join the call"
+        },
+        {
+          "id": "o4",
+          "text": "Continue monitoring without joining"
+        }
+      ],
+      "optionExplanations": {
+        "o1": "Private coaching does not let the customer hear the supervisor.",
+        "o2": "Removing the representative fails the requirement that the representative remain involved.",
+        "o3": "Joining lets the supervisor speak in the existing call and notifies the representative.",
+        "o4": "Monitoring alone observes the call without making the supervisor a speaking participant."
+      }
+    },
+    "reason": "Replace report editing with a call-handling alternative ruled out by the explicit requirement."
+  },
+  {
+    "id": "ab250-d6-q02",
+    "changes": {
+      "options": [
+        {
+          "id": "o1",
+          "text": "Grant Report Bookmark create and update privileges instead of reviewing data access"
+        },
+        {
+          "id": "o2",
+          "text": "Review Read privileges on the underlying entities used by the analytics"
+        },
+        {
+          "id": "o3",
+          "text": "Grant Analytics Report Author solely to address this read-only data-access gap"
+        },
+        {
+          "id": "o4",
+          "text": "Treat Read on the report table as sufficient and leave data privileges unchanged"
+        }
+      ],
+      "optionExplanations": {
+        "o1": "Bookmark privileges manage saved report views; they do not replace the documented underlying-data checks.",
+        "o2": "Custom roles need applicable Read access for the report and the underlying analytics entities.",
+        "o3": "The author role concerns editing reports; the stated problem is the custom role's missing data access.",
+        "o4": "The documentation separately requires applicable underlying-entity Read privileges for custom roles."
+      }
+    },
+    "reason": "Distinguish report access, report editing, bookmarking and data access without requiring blanket administrator privileges."
+  },
+  {
+    "id": "ab250-d6-q04",
+    "changes": {
+      "options": [
+        {
+          "id": "o1",
+          "text": "Use a sandbox environment instead, while leaving it unmanaged"
+        },
+        {
+          "id": "o2",
+          "text": "Use a Managed environment"
+        },
+        {
+          "id": "o3",
+          "text": "Grant additional Azure permissions while leaving Power Platform administration access unchanged"
+        },
+        {
+          "id": "o4",
+          "text": "Arrange Power Platform administrator or System Administrator access for the export tasks"
+        }
+      ],
+      "optionExplanations": {
+        "o1": "Changing the environment type alone does not satisfy the explicitly stated Managed environment prerequisite.",
+        "o2": "The configuration prerequisites require a Managed environment.",
+        "o3": "More Azure permissions do not replace the separately required administration access in the scenario.",
+        "o4": "The documented export tasks require one of these administration roles."
+      }
+    },
+    "reason": "Use environment and permission-boundary misconceptions rather than queue configuration or removing a prerequisite."
+  }
+]

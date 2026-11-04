@@ -1,0 +1,242 @@
+[
+  {
+    "id": "cc-d1-n03",
+    "revision": 1,
+    "reviewer": "/root/d1_users",
+    "reviewedAt": "2026-10-31",
+    "decision": "approved",
+    "fingerprint": "69c795a7ab109c332643b01964741544556181e5d0f9a10d443920246f5cd502",
+    "rationale": "Configuration versus rollout, prerequisite, scheduling and agent-specific lifecycle behavior are supported. Does not generalize Case Management effects.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-ops-s01",
+        "section": "Unified view: Learn, Rollout manager, Agent insights, Security, Architecture, Privacy and compliance",
+        "supported": true,
+        "notes": "Opened body: hub combines Learn, Rollout manager, Agent insights and governance information."
+      },
+      {
+        "sourceId": "cc-d1-ops-s02",
+        "section": "Prerequisite; Create rollout plans; Manage rollout plans; Considerations for rollout plans",
+        "supported": true,
+        "notes": "Opened prerequisite, management and considerations: existing enablement, future Schedule, and separate Knowledge/Intent settings versus Case Management rules are explicit."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-n04",
+    "revision": 1,
+    "reviewer": "/root/d1_users",
+    "reviewedAt": "2026-10-31",
+    "decision": "approved",
+    "fingerprint": "4fdc717c40463ba25f3d8a18b21b502c50feb208c688e7601b61702c6309a9d7",
+    "rationale": "Preview, language, channel and keypad restrictions remain explicit. Number selection and three evidence views match the source.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-ops-s03",
+        "section": "Prerelease notice; Prerequisites; Run a simulation; Things to consider",
+        "supported": true,
+        "notes": "Opened preview notice, prerequisites, run steps and considerations: inbound voice/English, destination number, history versus closed-conversation evidence, and no DTMF are explicit."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-n05",
+    "revision": 2,
+    "reviewer": "/root/d1_users",
+    "reviewedAt": "2026-10-31",
+    "decision": "approved",
+    "fingerprint": "e3192cf9a4553ae9a4efa9aefd9e16fe9172752dbc34582a7d63b703d67be32e",
+    "rationale": "Revision 2 explicitly scopes conversational setup to English. Reopened Supported capabilities confirms it; roles, conditional diagnostics prerequisites and MCP tool boundaries remain accurate.",
+    "findings": [
+      "Resolved at revision 2: Preserve the current English-only Service Operations Agent scope from the supported-capabilities note."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-ops-s05",
+        "section": "Key capabilities",
+        "supported": true,
+        "notes": "Opened Key capabilities: configuration, validation and troubleshooting scope supports the overview; detailed tool limits take precedence over broad examples."
+      },
+      {
+        "sourceId": "cc-d1-ops-s04",
+        "section": "Supported capabilities; Prerequisites; Steps to access; Create and manage routing rules",
+        "supported": true,
+        "notes": "Opened prerequisites, Steps to access and routing tools: access and connection roles differ; Dataverse/MCP required; conditions are a manual task. Supported-capabilities note additionally limits language to English."
+      },
+      {
+        "sourceId": "cc-d1-ops-s06",
+        "section": "Intended uses; Limitations; Operational factors",
+        "supported": true,
+        "notes": "Opened intended uses, limitations and operational factors: administrator judgment, specific context, review, verification and manual paths remain necessary."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c07",
+    "revision": 1,
+    "reviewer": "/root/d1_users",
+    "reviewedAt": "2026-10-31",
+    "decision": "approved",
+    "fingerprint": "85dccda4e9a810ac2ae5bace7c27b25dfc7af296ba329e1d6f1eeabf969df9ec",
+    "rationale": "Tests enabled-agent prerequisite, distinct from plan activation and other pilot ALM cards.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-ops-s02",
+        "section": "Prerequisite; Considerations for rollout plans",
+        "supported": true,
+        "notes": "Opened prerequisite, management and considerations: existing enablement, future Schedule, and separate Knowledge/Intent settings versus Case Management rules are explicit."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c08",
+    "revision": 1,
+    "reviewer": "/root/d1_users",
+    "reviewedAt": "2026-10-31",
+    "decision": "approved",
+    "fingerprint": "5b31d0c8cac293dc2ca09d17e5e6df5048f05aa929490bef822775684b36f830",
+    "rationale": "Schedule is the documented future enablement action; unique, concise recall.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-ops-s02",
+        "section": "Manage rollout plans",
+        "supported": true,
+        "notes": "Opened prerequisite, management and considerations: existing enablement, future Schedule, and separate Knowledge/Intent settings versus Case Management rules are explicit."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c09",
+    "revision": 2,
+    "reviewer": "/root/d1_users",
+    "reviewedAt": "2026-10-31",
+    "decision": "approved",
+    "fingerprint": "cb2ee7dd9debdc706c9fa29d95f02b52ef4413c338a0a37ba47168d4f1fa9726",
+    "rationale": "Revision 2 replaces weak alternatives with plan-management actions. The corresponding agent settings page is the unique supported configuration path; deleting, restructuring or replacing a rollout plan does not substitute for managing the Knowledge agent setting.",
+    "findings": [
+      "Resolved at revision 2: Replace implausible scheduled-deactivation/global-plan distractors with plausible attempts to manage agent settings through plan operations."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-ops-s02",
+        "section": "Considerations for rollout plans",
+        "supported": true,
+        "notes": "Opened prerequisite, management and considerations: existing enablement, future Schedule, and separate Knowledge/Intent settings versus Case Management rules are explicit."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c10",
+    "revision": 1,
+    "reviewer": "/root/d1_users",
+    "reviewedAt": "2026-10-31",
+    "decision": "approved",
+    "fingerprint": "f3c0fdce591125a1c6921374d9ab6b9adc307ddcee8a81720ade8a31248adda4",
+    "rationale": "Distinguishes destination workstream number from the generated regional caller number without teaching a numeric limit.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-ops-s03",
+        "section": "Run a simulation; Things to consider",
+        "supported": true,
+        "notes": "Opened preview notice, prerequisites, run steps and considerations: inbound voice/English, destination number, history versus closed-conversation evidence, and no DTMF are explicit."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c11",
+    "revision": 1,
+    "reviewer": "/root/d1_users",
+    "reviewedAt": "2026-10-31",
+    "decision": "approved",
+    "fingerprint": "86ed8a76714eabada0fec7be21ce3652e5799a07c6e10dd55bda2ddef48550ea",
+    "rationale": "Closed conversation form supplies detailed recordings/transcripts, unlike run-level history.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-ops-s03",
+        "section": "Run a simulation",
+        "supported": true,
+        "notes": "Opened preview notice, prerequisites, run steps and considerations: inbound voice/English, destination number, history versus closed-conversation evidence, and no DTMF are explicit."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c12",
+    "revision": 2,
+    "reviewer": "/root/d1_users",
+    "reviewedAt": "2026-10-31",
+    "decision": "approved",
+    "fingerprint": "c5404aa4e72889a0449df19f69d536703911baa2f7abce6776eb63fb4215a43b",
+    "rationale": "Revision 2 tests the unsupported DTMF activity against supported inbound calls, single-conversation runs and closed-conversation transcript inspection. Reopened Run a simulation and Things to consider support every option; key b is unchanged.",
+    "findings": [
+      "Resolved at revision 2: Test the DTMF boundary against supported simulation activities instead of implausible false channel/concurrency claims."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-ops-s03",
+        "section": "Introduction; Run a simulation; Things to consider",
+        "supported": true,
+        "notes": "Opened preview notice, prerequisites, run steps and considerations: inbound voice/English, destination number, history versus closed-conversation evidence, and no DTMF are explicit."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c13",
+    "revision": 1,
+    "reviewer": "/root/d1_users",
+    "reviewedAt": "2026-10-31",
+    "decision": "approved",
+    "fingerprint": "bbf9cb7d23ef595b9997b7c6b9978dd8e9b626955d0648886f2ef3598b93309a",
+    "rationale": "Dataverse through MCP is explicitly required for conversational setup.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-ops-s04",
+        "section": "Steps to access",
+        "supported": true,
+        "notes": "Opened prerequisites, Steps to access and routing tools: access and connection roles differ; Dataverse/MCP required; conditions are a manual task. Supported-capabilities note additionally limits language to English."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c14",
+    "revision": 1,
+    "reviewer": "/root/d1_users",
+    "reviewedAt": "2026-10-31",
+    "decision": "approved",
+    "fingerprint": "b42b344a62e04b1596244995709147dbfdd4d2ba17c451db36af08caf8b515a1",
+    "rationale": "Correctly separates Omnichannel administrator access and System Administrator connection management.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-ops-s04",
+        "section": "Prerequisites",
+        "supported": true,
+        "notes": "Opened prerequisites, Steps to access and routing tools: access and connection roles differ; Dataverse/MCP required; conditions are a manual task. Supported-capabilities note additionally limits language to English."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c15",
+    "revision": 1,
+    "reviewer": "/root/d1_users",
+    "reviewedAt": "2026-10-31",
+    "decision": "approved",
+    "fingerprint": "fceddaec0979a10bac27b80ed4ca0ea407b64d29fec64d4edfaa55f7b8423f97",
+    "rationale": "Successful unconditional creation rules out the stated connection explanation; condition editing is explicitly excluded regardless of role or assignment method.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-ops-s04",
+        "section": "Create and manage routing rules",
+        "supported": true,
+        "notes": "Opened prerequisites, Steps to access and routing tools: access and connection roles differ; Dataverse/MCP required; conditions are a manual task. Supported-capabilities note additionally limits language to English."
+      }
+    ]
+  }
+]

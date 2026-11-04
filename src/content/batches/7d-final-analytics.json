@@ -1,0 +1,1232 @@
+{
+  "sources": [
+    {
+      "id": "cc-d6-final-s01",
+      "title": "Enable supervisor access to manage conversations",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/enable-monitor-assign-transfer-conv"
+    },
+    {
+      "id": "cc-d6-final-s02",
+      "title": "Monitor, assign, transfer, and forcibly end conversations",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/monitor-conversations"
+    },
+    {
+      "id": "cc-d6-final-s03",
+      "title": "Configure analytics and insights dashboards",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-customer-service-analytics-insights-csh"
+    },
+    {
+      "id": "cc-d6-final-s04",
+      "title": "Manage quality evaluation",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/manage-quality-evaluation-agent"
+    },
+    {
+      "id": "cc-d6-final-s05",
+      "title": "Use evaluation plan",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/evaluation-plan"
+    },
+    {
+      "id": "cc-d6-final-s06",
+      "title": "Customize visual display",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/customize-reports"
+    },
+    {
+      "id": "cc-d6-final-s07",
+      "title": "Overview of data model customization",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/datamodel-overview"
+    },
+    {
+      "id": "cc-d6-final-s08",
+      "title": "Customize data models of historical and real-time analytics reports",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/model-customize-reports"
+    },
+    {
+      "id": "cc-d6-final-s09",
+      "title": "Use the out-of-the-box data model in your custom reports",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/use-datamodel"
+    },
+    {
+      "id": "cc-d6-final-s10",
+      "title": "Explore built-in analytics and reporting capabilities",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analytics-reporting-contact-center/2-out-of-box-analytics"
+    },
+    {
+      "id": "cc-d6-final-s11",
+      "title": "Configure conversation diagnostics",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-conversation-diagnostics"
+    },
+    {
+      "id": "cc-d6-final-s12",
+      "title": "Conversation diagnostics in Azure Application Insights",
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/conversation-diagnostics-application-insights"
+    },
+    {
+      "id": "cc-d6-final-s13",
+      "title": "Enable Diagnose dashboard",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/enable-diagnose-dashboard"
+    }
+  ],
+  "notes": [
+    {
+      "id": "cc-d6-n03",
+      "title": "Enable the specific supervisor intervention before testing it",
+      "body": "In Contact Center standalone, access to a dashboard and permission to act are different checks. Configure the Monitor, Assign, Transfer and Force Close switches in Ongoing conversation insights for the interventions the supervisor is authorized to use. Keep analytics report/data access separate from these action switches.\n\nThen test with a conversation in the appropriate state. Assignment targets an Open, unassigned conversation; transfer addresses supported Active or Waiting messaging conversations between representatives. Elevated voice/video and AI-agent endpoints have their own restrictions. Force Close immediately ends the interaction, so it is not a substitute for resolving a routine assignment problem. These settings establish the documented workspace supervisor experience; they do not establish a separate new app's rollout or availability.",
+      "sourceIds": [
+        "cc-d6-final-s01",
+        "cc-d6-final-s02",
+        "cc-d6-final-s03"
+      ]
+    },
+    {
+      "id": "cc-d6-n04",
+      "title": "Prepare quality evaluation dependencies and choose the right plan",
+      "body": "Use the conversation-evaluation framework deliberately. Criteria contain questions, scoring and guidance; a plan selects interactions, timing and criteria; evaluations are the resulting assessments. Set up the documented quality roles, Copilot credits, AI enablement and regional-data consent before testing the framework. Check that connection references, flows and the published Copilot Studio agent show ready.\n\nFor future qualifying conversations, configure a Conversations plan with a closed-conversation trigger. Recurring and once-only plans address other review schedules. Add conditions and evaluation criteria, then save and activate the plan. Check results against the intended population instead of assuming that creating criteria starts evaluation. This note teaches conversation evaluation; it does not imply that every record type or preview option is universally available.",
+      "sourceIds": [
+        "cc-d6-final-s04",
+        "cc-d6-final-s05"
+      ]
+    },
+    {
+      "id": "cc-d6-n05",
+      "title": "Choose visual editing only when the existing metrics answer the question",
+      "body": "For a standalone analytics report, begin by deciding whether the data already contains the required metric. The embedded editor can change charts, layouts, filters and available measures. Save and publish intentionally: the published customization is visible to the organization, not merely a private bookmark. Reset removes those customizations permanently.\n\nA new business calculation is a different requirement. Use data-model customization when the existing model lacks the needed logic or data, rather than trying to change a KPI's meaning by renaming its visual. Reuse supported out-of-the-box metrics where they already fit, and define only the organization-specific additions. Keep a reviewable distinction between a new presentation and a new calculation.",
+      "sourceIds": [
+        "cc-d6-final-s06",
+        "cc-d6-final-s07"
+      ]
+    },
+    {
+      "id": "cc-d6-n06",
+      "title": "Extend the managed model without treating custom reports as an operations console",
+      "body": "Scope: Contact Center standalone reporting.\n\nEnable historical or real-time model customization, provision the models and report copies, and connect Power BI Desktop to the appropriate model in the managed workspace. Use supported fields and measures. For additional attributes or external data, build a local composite model and relationships instead of directly changing the managed dataset. Treat that managed dataset as read-only because service updates maintain it.\n\nPublish the report to the customer workspace and arrange the required model/report permissions. Report copies and your custom extensions need their own maintenance as the source model evolves. Model-customized reports are analytical surfaces: supervisor assign, transfer, monitor and force-close actions are not available there. Retain the operational conversation report for those interventions.",
+      "sourceIds": [
+        "cc-d6-final-s07",
+        "cc-d6-final-s08",
+        "cc-d6-final-s09"
+      ]
+    },
+    {
+      "id": "cc-d6-n07",
+      "title": "Embed the correct reporting surface and verify its access path",
+      "body": "Scope: Contact Center standalone reporting.\n\nBuilt-in analytics reports are embedded in Copilot Service workspace navigation. Enable the required analytics feature and user access rather than assuming a separate Power BI browser session is the only way to read them. In a customized workspace app, the documented report-table content configuration can preserve report state across session tabs.\n\nCustom model reports follow another publication path. After publishing to the configured customer workspace, add the report in the historical or real-time model customization page and save it into the shared Customized Reports navigation. The report picker uses that configured workspace. Check model permissions, report/workspace access and embedding settings together; a valid report in a different workspace does not automatically appear in that picker. Current commercial licensing requirements should be checked separately.",
+      "sourceIds": [
+        "cc-d6-final-s08",
+        "cc-d6-final-s10"
+      ]
+    },
+    {
+      "id": "cc-d6-n08",
+      "title": "Distinguish collecting diagnostic events from displaying them in Dynamics",
+      "body": "Configure the Managed environment's conversation diagnostics and Application Insights export with the documented Azure and Power Platform permissions. Ingestion and query access are separate responsibilities. Verify that lifecycle events reach the intended instance before diagnosing a workspace display problem; event telemetry complements conversation recordings and transcripts rather than replacing them.\n\nThe Diagnose Debug experience needs additional setup. Supply the Application Insights ID in its Dataverse environment variable, register the application and federated credentials, update the managed identity information, and grant the app Monitoring Reader access. Enable the Application Insights Dashboard app setting at both default and environment-value levels. Then validate the embedded Debug tab. Successful export alone does not establish Dataverse's authorization to read and display that telemetry.",
+      "sourceIds": [
+        "cc-d6-final-s11",
+        "cc-d6-final-s12",
+        "cc-d6-final-s13"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "cc-d6-c07",
+      "revision": 1,
+      "topicId": "supervision-analytics",
+      "kind": "recall",
+      "prompt": "Does analytics dashboard access by itself enable all supervisor intervention actions?",
+      "answer": "No. Configure the relevant supervisor action toggles as well.",
+      "explanation": "Viewing analytics and permission to monitor, assign, transfer or force-close are separate configuration checks.",
+      "sourceIds": [
+        "cc-d6-final-s01"
+      ],
+      "noteIds": [
+        "cc-d6-n03"
+      ],
+      "tags": [
+        "topic:supervision-analytics",
+        "domain:analytics",
+        "feature:supervisor-action-gates",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d6-c08",
+      "revision": 1,
+      "topicId": "supervision-analytics",
+      "kind": "recall",
+      "prompt": "Which conversation state and assignment condition does the manual supervisor Assign action require?",
+      "answer": "Open and not assigned to a representative.",
+      "explanation": "Manual assignment is not the same operation as transferring an existing active messaging conversation.",
+      "sourceIds": [
+        "cc-d6-final-s02"
+      ],
+      "noteIds": [
+        "cc-d6-n03"
+      ],
+      "tags": [
+        "topic:supervision-analytics",
+        "domain:analytics",
+        "feature:supervisor-assign-state",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d6-c09",
+      "revision": 1,
+      "topicId": "supervision-analytics",
+      "kind": "mcq",
+      "prompt": "A standalone supervisor wants to move an active Live Chat conversation from one representative to another. The required supervisor permissions are enabled. Which action matches that situation?",
+      "answer": "Transfer the conversation to the other representative.",
+      "explanation": "The manual Assign action targets Open, unassigned conversations. Force Close ends the interaction; merely viewing report filters does not change ownership.",
+      "sourceIds": [
+        "cc-d6-final-s02"
+      ],
+      "noteIds": [
+        "cc-d6-n03"
+      ],
+      "tags": [
+        "topic:supervision-analytics",
+        "domain:analytics",
+        "feature:supervisor-transfer-choice",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Use Assign as if the conversation were Open and unassigned."
+        },
+        {
+          "id": "b",
+          "text": "Force Close the conversation to preserve the active interaction."
+        },
+        {
+          "id": "c",
+          "text": "Transfer the conversation to the other representative."
+        },
+        {
+          "id": "d",
+          "text": "Change the real-time report filter to the other representative."
+        }
+      ],
+      "correctOptionId": "c"
+    },
+    {
+      "id": "cc-d6-c10",
+      "revision": 1,
+      "topicId": "supervision-analytics",
+      "kind": "recall",
+      "prompt": "Which quality-evaluation component defines when and which conversations are assessed and which criteria are applied?",
+      "answer": "The evaluation plan.",
+      "explanation": "Criteria define the scoring questions; evaluation records contain the resulting assessment.",
+      "sourceIds": [
+        "cc-d6-final-s04"
+      ],
+      "noteIds": [
+        "cc-d6-n04"
+      ],
+      "tags": [
+        "topic:supervision-analytics",
+        "domain:analytics",
+        "feature:quality-plan-responsibility",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d6-c11",
+      "revision": 1,
+      "topicId": "supervision-analytics",
+      "kind": "recall",
+      "prompt": "Which readiness components should be checked on the Quality evaluation prerequisites page before publishing its agent?",
+      "answer": "Connection references and Power Automate flows, followed by the Copilot Studio agent publication step.",
+      "explanation": "The visible feature setting alone does not establish working connections and enabled flows.",
+      "sourceIds": [
+        "cc-d6-final-s04"
+      ],
+      "noteIds": [
+        "cc-d6-n04"
+      ],
+      "tags": [
+        "topic:supervision-analytics",
+        "domain:analytics",
+        "feature:quality-agent-prerequisite-readiness",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d6-c12",
+      "revision": 1,
+      "topicId": "supervision-analytics",
+      "kind": "mcq",
+      "prompt": "A quality team wants evaluations to run whenever future conversations close and meet defined conditions. Which conversation-plan frequency fits?",
+      "answer": "Trigger with Closed conversations as the event.",
+      "explanation": "Recurring evaluates on a schedule; Once performs one run. Criteria alone define scoring rather than the triggering schedule.",
+      "sourceIds": [
+        "cc-d6-final-s05"
+      ],
+      "noteIds": [
+        "cc-d6-n04"
+      ],
+      "tags": [
+        "topic:supervision-analytics",
+        "domain:analytics",
+        "feature:quality-trigger-plan",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Trigger with Closed conversations as the event."
+        },
+        {
+          "id": "b",
+          "text": "Once, using only a past conversation start date."
+        },
+        {
+          "id": "c",
+          "text": "Recurring, relying on a daily batch as the close event."
+        },
+        {
+          "id": "d",
+          "text": "Create criteria without a plan or on-demand request."
+        }
+      ],
+      "correctOptionId": "a"
+    },
+    {
+      "id": "cc-d6-c13",
+      "revision": 2,
+      "topicId": "supervision-analytics",
+      "kind": "recall",
+      "prompt": "In Contact Center standalone, who sees a report customization after it is published through the embedded analytics editor?",
+      "answer": "All users in the organization who access that report.",
+      "explanation": "Publication is not a personal bookmark operation.",
+      "sourceIds": [
+        "cc-d6-final-s06"
+      ],
+      "noteIds": [
+        "cc-d6-n05"
+      ],
+      "tags": [
+        "topic:supervision-analytics",
+        "domain:analytics",
+        "feature:embedded-report-publication-scope",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d6-c14",
+      "revision": 2,
+      "topicId": "supervision-analytics",
+      "kind": "recall",
+      "prompt": "In Contact Center standalone, what does Reset do in the documented embedded report customization flow?",
+      "answer": "Permanently removes the report customizations.",
+      "explanation": "Use it deliberately when returning to the default report, rather than treating it as a temporary preview switch.",
+      "sourceIds": [
+        "cc-d6-final-s06"
+      ],
+      "noteIds": [
+        "cc-d6-n05"
+      ],
+      "tags": [
+        "topic:supervision-analytics",
+        "domain:analytics",
+        "feature:report-reset-consequence",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d6-c15",
+      "revision": 1,
+      "topicId": "supervision-analytics",
+      "kind": "mcq",
+      "prompt": "A team needs a KPI calculated with business logic not present in the existing analytics model. Which approach addresses the requirement?",
+      "answer": "Extend the model with an appropriate custom measure.",
+      "explanation": "Changing a chart type, title or slicer only changes presentation or filtering; it does not implement the missing calculation.",
+      "sourceIds": [
+        "cc-d6-final-s07"
+      ],
+      "noteIds": [
+        "cc-d6-n05"
+      ],
+      "tags": [
+        "topic:supervision-analytics",
+        "domain:analytics",
+        "feature:new-kpi-layer",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Rename the existing KPI visual to the desired metric."
+        },
+        {
+          "id": "b",
+          "text": "Switch the existing KPI from a card to a table."
+        },
+        {
+          "id": "c",
+          "text": "Save a bookmark with the desired KPI name."
+        },
+        {
+          "id": "d",
+          "text": "Extend the model with an appropriate custom measure."
+        }
+      ],
+      "correctOptionId": "d"
+    },
+    {
+      "id": "cc-d6-c16",
+      "revision": 2,
+      "topicId": "supervision-analytics",
+      "kind": "recall",
+      "prompt": "In Contact Center standalone, which workspace model should be treated as read-only when building a custom analytics extension?",
+      "answer": "The Dynamics-managed semantic model in the managed workspace.",
+      "explanation": "Build local/composite extensions in the customer context instead; updates can overwrite direct managed-model changes.",
+      "sourceIds": [
+        "cc-d6-final-s07"
+      ],
+      "noteIds": [
+        "cc-d6-n06"
+      ],
+      "tags": [
+        "topic:supervision-analytics",
+        "domain:analytics",
+        "feature:managed-model-update-boundary",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d6-c17",
+      "revision": 1,
+      "topicId": "supervision-analytics",
+      "kind": "recall",
+      "prompt": "Can a model-customized analytics report perform supervisor assign, transfer, monitor and force-close actions?",
+      "answer": "No. Those operational supervisor actions are unavailable in model-customized reports.",
+      "explanation": "Use the supported operational conversation experience for intervention.",
+      "sourceIds": [
+        "cc-d6-final-s07"
+      ],
+      "noteIds": [
+        "cc-d6-n06"
+      ],
+      "tags": [
+        "topic:supervision-analytics",
+        "domain:analytics",
+        "feature:custom-model-operation-boundary",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d6-c18",
+      "revision": 2,
+      "topicId": "supervision-analytics",
+      "kind": "mcq",
+      "prompt": "A standalone reporting team wants conversation metrics broken down by a custom business attribute not in the model. Which Desktop approach follows the documented extension pattern?",
+      "answer": "Add a local composite model, bring in the attribute and relate it to the existing model.",
+      "explanation": "The documented extension loads the additional data into a local composite model and creates relationships to the existing entities. Direct edits to managed data are not the extension contract; a measure without the attribute or an unrelated table does not provide that connected breakdown.",
+      "sourceIds": [
+        "cc-d6-final-s09"
+      ],
+      "noteIds": [
+        "cc-d6-n06"
+      ],
+      "tags": [
+        "topic:supervision-analytics",
+        "domain:analytics",
+        "feature:custom-attribute-model-extension",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Modify the managed dataset directly and rely on service updates to preserve the change."
+        },
+        {
+          "id": "b",
+          "text": "Add a local composite model, bring in the attribute and relate it to the existing model."
+        },
+        {
+          "id": "c",
+          "text": "Add only a new local measure without loading the missing business attribute."
+        },
+        {
+          "id": "d",
+          "text": "Load the attribute as a disconnected table without relating it to the conversation model."
+        }
+      ],
+      "correctOptionId": "b"
+    },
+    {
+      "id": "cc-d6-c19",
+      "revision": 1,
+      "topicId": "supervision-analytics",
+      "kind": "recall",
+      "prompt": "Where are standard out-of-the-box analytics dashboards presented to supervisors in the documented workspace experience?",
+      "answer": "Embedded in Copilot Service workspace navigation.",
+      "explanation": "Enable the feature and permissions; routine reading does not require authoring a new Power BI report.",
+      "sourceIds": [
+        "cc-d6-final-s10"
+      ],
+      "noteIds": [
+        "cc-d6-n07"
+      ],
+      "tags": [
+        "topic:supervision-analytics",
+        "domain:analytics",
+        "feature:ootb-report-embedding",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d6-c20",
+      "revision": 2,
+      "topicId": "supervision-analytics",
+      "kind": "recall",
+      "prompt": "In Contact Center standalone, which workspace supplies the Add report picker for model-customized reports embedded back into Dynamics?",
+      "answer": "The customer workspace selected in the model-customization configuration.",
+      "explanation": "Publishing a report elsewhere does not automatically add it to this configured report list.",
+      "sourceIds": [
+        "cc-d6-final-s08"
+      ],
+      "noteIds": [
+        "cc-d6-n07"
+      ],
+      "tags": [
+        "topic:supervision-analytics",
+        "domain:analytics",
+        "feature:custom-report-picker-workspace",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d6-c21",
+      "revision": 3,
+      "topicId": "supervision-analytics",
+      "kind": "mcq",
+      "prompt": "In Contact Center standalone, a published custom report is absent from the Add report list used to embed model-customized reports. What should the administrator compare first?",
+      "answer": "The report’s workspace with the customer workspace selected for model customization.",
+      "explanation": "The picker is populated from the customer workspace configured in model customization. The report-author role and operational transfer permission do not change that configured source; resetting an out-of-the-box visual does not publish a model-customized report into it.",
+      "sourceIds": [
+        "cc-d6-final-s08"
+      ],
+      "noteIds": [
+        "cc-d6-n07"
+      ],
+      "tags": [
+        "topic:supervision-analytics",
+        "domain:analytics",
+        "feature:missing-custom-report-picker",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "The report’s workspace with the customer workspace selected for model customization."
+        },
+        {
+          "id": "b",
+          "text": "The user’s Analytics Report Author role, without checking report location."
+        },
+        {
+          "id": "c",
+          "text": "The Supervisor Transfer permission toggle."
+        },
+        {
+          "id": "d",
+          "text": "The default out-of-the-box report’s visual-customization Reset state."
+        }
+      ],
+      "correctOptionId": "a"
+    },
+    {
+      "id": "cc-d6-c22",
+      "revision": 1,
+      "topicId": "supervision-analytics",
+      "kind": "recall",
+      "prompt": "Which Azure role does the Diagnose embedding guide assign to the application reading Application Insights data?",
+      "answer": "Monitoring Reader.",
+      "explanation": "The application’s read authorization is distinct from creating the export connection.",
+      "sourceIds": [
+        "cc-d6-final-s13"
+      ],
+      "noteIds": [
+        "cc-d6-n08"
+      ],
+      "tags": [
+        "topic:supervision-analytics",
+        "domain:analytics",
+        "feature:diagnose-app-read-authorization",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d6-c23",
+      "revision": 1,
+      "topicId": "supervision-analytics",
+      "kind": "recall",
+      "prompt": "Which two app-setting values does the Diagnose guide set to Yes when enabling the Debug tab?",
+      "answer": "Default value and Setting environment value for Enable Application Insights Dashboard app setting.",
+      "explanation": "Configure the telemetry instance and authorization prerequisites as well; showing a tab is not proof that it can read data.",
+      "sourceIds": [
+        "cc-d6-final-s13"
+      ],
+      "noteIds": [
+        "cc-d6-n08"
+      ],
+      "tags": [
+        "topic:supervision-analytics",
+        "domain:analytics",
+        "feature:diagnose-debug-enable-values",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d6-c24",
+      "revision": 1,
+      "topicId": "supervision-analytics",
+      "kind": "mcq",
+      "prompt": "Conversation diagnostics events are visible in Application Insights, but the team has not configured telemetry access from Dataverse. Which additional setup belongs to embedding the Diagnose Debug experience?",
+      "answer": "Configure the instance ID, federated application access and identity, Monitoring Reader permission and Debug app setting.",
+      "explanation": "Export establishes ingestion. The embedded experience additionally needs application authorization and display configuration; Power BI visual editing and supervisor conversation actions serve different purposes.",
+      "sourceIds": [
+        "cc-d6-final-s13"
+      ],
+      "noteIds": [
+        "cc-d6-n08"
+      ],
+      "tags": [
+        "topic:supervision-analytics",
+        "domain:analytics",
+        "feature:diagnose-embedding-setup",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Assign only Analytics Report Author and republish an embedded Power BI visual."
+        },
+        {
+          "id": "b",
+          "text": "Enable Supervisor Assign and Force Close toggles only."
+        },
+        {
+          "id": "c",
+          "text": "Configure the instance ID, federated application access and identity, Monitoring Reader permission and Debug app setting."
+        },
+        {
+          "id": "d",
+          "text": "Create a new historical data model without configuring telemetry authorization."
+        }
+      ],
+      "correctOptionId": "c"
+    }
+  ],
+  "questions": [],
+  "editorial": [
+    {
+      "id": "cc-d6-n03",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "supervisor-action-gates-and-state",
+      "objectiveIds": [
+        "D6.1.01",
+        "D6.1.03",
+        "D6.1.04"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-final-s01",
+          "section": "Configure supervisor settings",
+          "claim": "For Contact Center standalone, separate toggles grant Monitor, Assign, Transfer and Force Close actions.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        },
+        {
+          "sourceId": "cc-d6-final-s02",
+          "section": "Assign conversations; Transfer conversations; End conversations forcibly",
+          "claim": "Manual assignment requires Open unassigned conversations; messaging transfer uses Active/Waiting conversations and excludes AI-agent endpoints and elevated voice/video transfers.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        },
+        {
+          "sourceId": "cc-d6-final-s03",
+          "section": "Configure user access to analytics and dashboards",
+          "claim": "Report visibility requires appropriate report-table and underlying-data read privileges; authoring and report bookmarks are separate permissions.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        }
+      ],
+      "duplicateCheck": "Extends pilot D6 supervisor-role/private-coaching and basic log-destination material with configuration, lifecycle or reporting-layer decisions. No copied pilot prompt or exam item; compare related foundation/application siblings for distinctness."
+    },
+    {
+      "id": "cc-d6-c07",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "supervisor-action-gates-7",
+      "objectiveIds": [
+        "D6.1.01"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-final-s01",
+          "section": "Configure supervisor settings",
+          "claim": "No. Configure the relevant supervisor action toggles as well. Viewing analytics and permission to monitor, assign, transfer or force-close are separate configuration checks.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        }
+      ],
+      "duplicateCheck": "Extends pilot D6 supervisor-role/private-coaching and basic log-destination material with configuration, lifecycle or reporting-layer decisions. No copied pilot prompt or exam item; compare related foundation/application siblings for distinctness."
+    },
+    {
+      "id": "cc-d6-c08",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "supervisor-assign-state-8",
+      "objectiveIds": [
+        "D6.1.04"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-final-s02",
+          "section": "Assign conversations; Transfer conversations; End conversations forcibly",
+          "claim": "Open and not assigned to a representative. Manual assignment is not the same operation as transferring an existing active messaging conversation.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        }
+      ],
+      "duplicateCheck": "Extends pilot D6 supervisor-role/private-coaching and basic log-destination material with configuration, lifecycle or reporting-layer decisions. No copied pilot prompt or exam item; compare related foundation/application siblings for distinctness."
+    },
+    {
+      "id": "cc-d6-c09",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "supervisor-transfer-choice-9",
+      "objectiveIds": [
+        "D6.1.04"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-final-s02",
+          "section": "Assign conversations; Transfer conversations; End conversations forcibly",
+          "claim": "Transfer the conversation to the other representative. The manual Assign action targets Open, unassigned conversations. Force Close ends the interaction; merely viewing report filters does not change ownership.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        }
+      ],
+      "duplicateCheck": "Extends pilot D6 supervisor-role/private-coaching and basic log-destination material with configuration, lifecycle or reporting-layer decisions. No copied pilot prompt or exam item; compare related foundation/application siblings for distinctness."
+    },
+    {
+      "id": "cc-d6-n04",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "quality-evaluation-setup-and-trigger",
+      "objectiveIds": [
+        "D6.1.02"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-final-s04",
+          "section": "How quality evaluation works; Prerequisites; Roles and privileges; Configure connection references",
+          "claim": "Criteria define scoring questions, plans choose when/which records, evaluations are results. Quality roles/credits/AI enablement/consent and ready connections/flows/published agent are prerequisites.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        },
+        {
+          "sourceId": "cc-d6-final-s05",
+          "section": "Create and activate evaluation plan for cases and closed conversations",
+          "claim": "Conversation Trigger evaluates future matching close events; Recurring evaluates on schedule; Once targets one run. Save and activate the configured plan.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        }
+      ],
+      "duplicateCheck": "Extends pilot D6 supervisor-role/private-coaching and basic log-destination material with configuration, lifecycle or reporting-layer decisions. No copied pilot prompt or exam item; compare related foundation/application siblings for distinctness."
+    },
+    {
+      "id": "cc-d6-c10",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "quality-plan-responsibility-10",
+      "objectiveIds": [
+        "D6.1.02"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-final-s04",
+          "section": "How quality evaluation works; Prerequisites; Roles and privileges; Configure connection references",
+          "claim": "The evaluation plan. Criteria define the scoring questions; evaluation records contain the resulting assessment.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        }
+      ],
+      "duplicateCheck": "Extends pilot D6 supervisor-role/private-coaching and basic log-destination material with configuration, lifecycle or reporting-layer decisions. No copied pilot prompt or exam item; compare related foundation/application siblings for distinctness."
+    },
+    {
+      "id": "cc-d6-c11",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "quality-agent-prerequisite-readiness-11",
+      "objectiveIds": [
+        "D6.1.02"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-final-s04",
+          "section": "How quality evaluation works; Prerequisites; Roles and privileges; Configure connection references",
+          "claim": "Connection references and Power Automate flows, followed by the Copilot Studio agent publication step. The visible feature setting alone does not establish working connections and enabled flows.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        }
+      ],
+      "duplicateCheck": "Extends pilot D6 supervisor-role/private-coaching and basic log-destination material with configuration, lifecycle or reporting-layer decisions. No copied pilot prompt or exam item; compare related foundation/application siblings for distinctness."
+    },
+    {
+      "id": "cc-d6-c12",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "quality-trigger-plan-12",
+      "objectiveIds": [
+        "D6.1.02"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-final-s05",
+          "section": "Create and activate evaluation plan for cases and closed conversations",
+          "claim": "Trigger with Closed conversations as the event. Recurring evaluates on a schedule; Once performs one run. Criteria alone define scoring rather than the triggering schedule.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        }
+      ],
+      "duplicateCheck": "Extends pilot D6 supervisor-role/private-coaching and basic log-destination material with configuration, lifecycle or reporting-layer decisions. No copied pilot prompt or exam item; compare related foundation/application siblings for distinctness."
+    },
+    {
+      "id": "cc-d6-n05",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "visual-versus-semantic-customization",
+      "objectiveIds": [
+        "D6.2.01",
+        "D6.2.03"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-final-s06",
+          "section": "Customize the display of analytics reports; Understand the out-of-the-box data model",
+          "claim": "Embedded editor changes charts/available metrics/layout; publication applies organization-wide and Reset permanently removes customizations.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        },
+        {
+          "sourceId": "cc-d6-final-s07",
+          "section": "Scenario-based use cases; How data model customization works",
+          "claim": "Managed model should be read-only; local/composite models extend it, customer report copies remain separate; operational supervisor actions are unavailable in model-customized reports.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        }
+      ],
+      "duplicateCheck": "Extends pilot D6 supervisor-role/private-coaching and basic log-destination material with configuration, lifecycle or reporting-layer decisions. No copied pilot prompt or exam item; compare related foundation/application siblings for distinctness."
+    },
+    {
+      "id": "cc-d6-c13",
+      "revision": 2,
+      "domainId": "analytics",
+      "conceptId": "embedded-report-publication-scope-13",
+      "objectiveIds": [
+        "D6.2.01"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-final-s06",
+          "section": "Customize the display of analytics reports; Understand the out-of-the-box data model",
+          "claim": "All users in the organization who access that report. Publication is not a personal bookmark operation.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        }
+      ],
+      "duplicateCheck": "Extends pilot D6 supervisor-role/private-coaching and basic log-destination material with configuration, lifecycle or reporting-layer decisions. No copied pilot prompt or exam item; compare related foundation/application siblings for distinctness."
+    },
+    {
+      "id": "cc-d6-c14",
+      "revision": 2,
+      "domainId": "analytics",
+      "conceptId": "report-reset-consequence-14",
+      "objectiveIds": [
+        "D6.2.01"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-final-s06",
+          "section": "Customize the display of analytics reports; Understand the out-of-the-box data model",
+          "claim": "Permanently removes the report customizations. Use it deliberately when returning to the default report, rather than treating it as a temporary preview switch.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        }
+      ],
+      "duplicateCheck": "Extends pilot D6 supervisor-role/private-coaching and basic log-destination material with configuration, lifecycle or reporting-layer decisions. No copied pilot prompt or exam item; compare related foundation/application siblings for distinctness."
+    },
+    {
+      "id": "cc-d6-c15",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "new-kpi-layer-15",
+      "objectiveIds": [
+        "D6.2.03"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-final-s07",
+          "section": "Scenario-based use cases; How data model customization works",
+          "claim": "Extend the model with an appropriate custom measure. Changing a chart type, title or slicer only changes presentation or filtering; it does not implement the missing calculation.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        }
+      ],
+      "duplicateCheck": "Extends pilot D6 supervisor-role/private-coaching and basic log-destination material with configuration, lifecycle or reporting-layer decisions. No copied pilot prompt or exam item; compare related foundation/application siblings for distinctness."
+    },
+    {
+      "id": "cc-d6-n06",
+      "revision": 2,
+      "domainId": "analytics",
+      "conceptId": "managed-model-extension-boundary",
+      "objectiveIds": [
+        "D6.2.03",
+        "D6.2.04"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-final-s07",
+          "section": "Scenario-based use cases; How data model customization works",
+          "claim": "Managed model should be read-only; local/composite models extend it, customer report copies remain separate; operational supervisor actions are unavailable in model-customized reports.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        },
+        {
+          "sourceId": "cc-d6-final-s08",
+          "section": "Prerequisites; Step 1; Step 3; Step 4; Enable automatic page refresh",
+          "claim": "Historical/real-time models have separate configuration, Fabric workspace/provisioning/permissions/embedding steps. Add-report options come from selected customer workspace; embedded consumers need documented access.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        },
+        {
+          "sourceId": "cc-d6-final-s09",
+          "section": "Create a new report; Extend the out-of-the-box data model; Publish reports back to Dynamics 365",
+          "claim": "Power BI Desktop connects to historical/real-time managed models, adds DAX metrics or local composite extensions and publishes; avoid hidden fields that can change.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        }
+      ],
+      "duplicateCheck": "Extends pilot D6 supervisor-role/private-coaching and basic log-destination material with configuration, lifecycle or reporting-layer decisions. No copied pilot prompt or exam item; compare related foundation/application siblings for distinctness."
+    },
+    {
+      "id": "cc-d6-c16",
+      "revision": 2,
+      "domainId": "analytics",
+      "conceptId": "managed-model-update-boundary-16",
+      "objectiveIds": [
+        "D6.2.04"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-final-s07",
+          "section": "Scenario-based use cases; How data model customization works",
+          "claim": "The Dynamics-managed semantic model in the managed workspace. Build local/composite extensions in the customer context instead; updates can overwrite direct managed-model changes.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        }
+      ],
+      "duplicateCheck": "Extends pilot D6 supervisor-role/private-coaching and basic log-destination material with configuration, lifecycle or reporting-layer decisions. No copied pilot prompt or exam item; compare related foundation/application siblings for distinctness."
+    },
+    {
+      "id": "cc-d6-c17",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "custom-model-operation-boundary-17",
+      "objectiveIds": [
+        "D6.2.03"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-final-s07",
+          "section": "Scenario-based use cases; How data model customization works",
+          "claim": "No. Those operational supervisor actions are unavailable in model-customized reports. Use the supported operational conversation experience for intervention.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        }
+      ],
+      "duplicateCheck": "Extends pilot D6 supervisor-role/private-coaching and basic log-destination material with configuration, lifecycle or reporting-layer decisions. No copied pilot prompt or exam item; compare related foundation/application siblings for distinctness."
+    },
+    {
+      "id": "cc-d6-c18",
+      "revision": 2,
+      "domainId": "analytics",
+      "conceptId": "custom-attribute-model-extension-18",
+      "objectiveIds": [
+        "D6.2.04"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-final-s09",
+          "section": "Create a new report; Extend the out-of-the-box data model; Publish reports back to Dynamics 365",
+          "claim": "Add a local composite model, bring in the attribute and relate it to the existing model. This preserves the managed model while adding the required data relationship. Renaming visuals or directly editing managed datasets does not follow that pattern.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        }
+      ],
+      "duplicateCheck": "Extends pilot D6 supervisor-role/private-coaching and basic log-destination material with configuration, lifecycle or reporting-layer decisions. No copied pilot prompt or exam item; compare related foundation/application siblings for distinctness."
+    },
+    {
+      "id": "cc-d6-n07",
+      "revision": 2,
+      "domainId": "analytics",
+      "conceptId": "report-embedding-and-workspace-scope",
+      "objectiveIds": [
+        "D6.2.02",
+        "D6.2.03"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-final-s08",
+          "section": "Prerequisites; Step 1; Step 3; Step 4; Enable automatic page refresh",
+          "claim": "Historical/real-time models have separate configuration, Fabric workspace/provisioning/permissions/embedding steps. Add-report options come from selected customer workspace; embedded consumers need documented access.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        },
+        {
+          "sourceId": "cc-d6-final-s10",
+          "section": "Embed reports in Copilot Service workspace; Retain the report state across session tabs",
+          "claim": "OOTB reports are embedded in workspace navigation; customized apps may need report-table content-type configuration to preserve report state.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        }
+      ],
+      "duplicateCheck": "Extends pilot D6 supervisor-role/private-coaching and basic log-destination material with configuration, lifecycle or reporting-layer decisions. No copied pilot prompt or exam item; compare related foundation/application siblings for distinctness."
+    },
+    {
+      "id": "cc-d6-c19",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "ootb-report-embedding-19",
+      "objectiveIds": [
+        "D6.2.02"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-final-s10",
+          "section": "Embed reports in Copilot Service workspace; Retain the report state across session tabs",
+          "claim": "Embedded in Copilot Service workspace navigation. Enable the feature and permissions; routine reading does not require authoring a new Power BI report.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        }
+      ],
+      "duplicateCheck": "Extends pilot D6 supervisor-role/private-coaching and basic log-destination material with configuration, lifecycle or reporting-layer decisions. No copied pilot prompt or exam item; compare related foundation/application siblings for distinctness."
+    },
+    {
+      "id": "cc-d6-c20",
+      "revision": 2,
+      "domainId": "analytics",
+      "conceptId": "custom-report-picker-workspace-20",
+      "objectiveIds": [
+        "D6.2.03"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-final-s08",
+          "section": "Prerequisites; Step 1; Step 3; Step 4; Enable automatic page refresh",
+          "claim": "The customer workspace selected in the model-customization configuration. Publishing a report elsewhere does not automatically add it to this configured report list.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        }
+      ],
+      "duplicateCheck": "Extends pilot D6 supervisor-role/private-coaching and basic log-destination material with configuration, lifecycle or reporting-layer decisions. No copied pilot prompt or exam item; compare related foundation/application siblings for distinctness."
+    },
+    {
+      "id": "cc-d6-c21",
+      "revision": 3,
+      "domainId": "analytics",
+      "conceptId": "missing-custom-report-picker-21",
+      "objectiveIds": [
+        "D6.2.03"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-final-s08",
+          "section": "Prerequisites; Step 1; Step 3; Step 4; Enable automatic page refresh",
+          "claim": "The report’s workspace with the customer workspace selected for model customization. The picker is populated from that configured workspace. Supervisor action toggles, voice number sync and the visual title do not change the picker’s source.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        }
+      ],
+      "duplicateCheck": "Extends pilot D6 supervisor-role/private-coaching and basic log-destination material with configuration, lifecycle or reporting-layer decisions. No copied pilot prompt or exam item; compare related foundation/application siblings for distinctness."
+    },
+    {
+      "id": "cc-d6-n08",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "diagnostic-export-versus-embedding",
+      "objectiveIds": [
+        "D6.2.05",
+        "D6.2.06"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-final-s11",
+          "section": "Prerequisites; Pricing",
+          "claim": "Managed-environment diagnostics requires setup/export/query permissions and incurs ingestion charges; lifecycle events can be combined into custom dashboards.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        },
+        {
+          "sourceId": "cc-d6-final-s12",
+          "section": "Prerequisites; Create a connection with Azure Application Insights",
+          "claim": "Power Platform data export creates the diagnostics connection for the chosen Managed environment and Azure resource; it is distinct from embedding Debug.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        },
+        {
+          "sourceId": "cc-d6-final-s13",
+          "section": "Update Application Insights ID in environment variable; Create and register an app; Assign Monitoring Reader role; Enable Debug tab",
+          "claim": "Embedding telemetry requires environment App Insights ID, registered/federated app, managed identity update and Monitoring Reader permission; enable Application Insights Dashboard app setting at default/environment levels.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        }
+      ],
+      "duplicateCheck": "Extends pilot D6 supervisor-role/private-coaching and basic log-destination material with configuration, lifecycle or reporting-layer decisions. No copied pilot prompt or exam item; compare related foundation/application siblings for distinctness."
+    },
+    {
+      "id": "cc-d6-c22",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "diagnose-app-read-authorization-22",
+      "objectiveIds": [
+        "D6.2.06"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-final-s13",
+          "section": "Update Application Insights ID in environment variable; Create and register an app; Assign Monitoring Reader role; Enable Debug tab",
+          "claim": "Monitoring Reader. The application’s read authorization is distinct from creating the export connection.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        }
+      ],
+      "duplicateCheck": "Extends pilot D6 supervisor-role/private-coaching and basic log-destination material with configuration, lifecycle or reporting-layer decisions. No copied pilot prompt or exam item; compare related foundation/application siblings for distinctness."
+    },
+    {
+      "id": "cc-d6-c23",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "diagnose-debug-enable-values-23",
+      "objectiveIds": [
+        "D6.2.06"
+      ],
+      "level": "core",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-final-s13",
+          "section": "Update Application Insights ID in environment variable; Create and register an app; Assign Monitoring Reader role; Enable Debug tab",
+          "claim": "Default value and Setting environment value for Enable Application Insights Dashboard app setting. Configure the telemetry instance and authorization prerequisites as well; showing a tab is not proof that it can read data.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        }
+      ],
+      "duplicateCheck": "Extends pilot D6 supervisor-role/private-coaching and basic log-destination material with configuration, lifecycle or reporting-layer decisions. No copied pilot prompt or exam item; compare related foundation/application siblings for distinctness."
+    },
+    {
+      "id": "cc-d6-c24",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "diagnose-embedding-setup-24",
+      "objectiveIds": [
+        "D6.2.05",
+        "D6.2.06"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_voice",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-final-s13",
+          "section": "Update Application Insights ID in environment variable; Create and register an app; Assign Monitoring Reader role; Enable Debug tab",
+          "claim": "Configure the instance ID, federated application access and identity, Monitoring Reader permission and Debug app setting. Export establishes ingestion. The embedded experience additionally needs application authorization and display configuration; Power BI visual editing and supervisor conversation actions serve different purposes.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+        }
+      ],
+      "duplicateCheck": "Extends pilot D6 supervisor-role/private-coaching and basic log-destination material with configuration, lifecycle or reporting-layer decisions. No copied pilot prompt or exam item; compare related foundation/application siblings for distinctness."
+    }
+  ]
+}

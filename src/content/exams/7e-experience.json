@@ -1,0 +1,3871 @@
+{
+  "sources": [
+    {
+      "id": "exam-d5-s01",
+      "title": "Create and use experience profiles",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-agent-experience-profile"
+    },
+    {
+      "id": "exam-d5-s02",
+      "title": "Configure the inbox",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-inbox"
+    },
+    {
+      "id": "exam-d5-s03",
+      "title": "Manage application tab templates",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/application-tab-templates"
+    },
+    {
+      "id": "exam-d5-s04",
+      "title": "Manage session templates",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/session-templates"
+    },
+    {
+      "id": "exam-d5-s05",
+      "title": "Manage notification settings and templates",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/app-profile-manager/notification-templates"
+    },
+    {
+      "id": "exam-d5-s06",
+      "title": "Guide representatives with scripts",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/agent-scripts"
+    },
+    {
+      "id": "exam-d5-s07",
+      "title": "Configure macros to improve representative productivity",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/macros"
+    },
+    {
+      "id": "exam-d5-s08",
+      "title": "Enable custom productivity panels",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-productivity-tools-contact-center/3-enable-custom-productivity-panels"
+    },
+    {
+      "id": "exam-d5-s09",
+      "title": "Configure Microsoft Teams chat in Customer Service",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-teams-chat"
+    },
+    {
+      "id": "exam-d5-s10",
+      "title": "App profile manager JavaScript API Reference",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/microsoft-apm"
+    },
+    {
+      "id": "exam-d5-s11",
+      "title": "Omnichannel JavaScript API Reference",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/omnichannel-api-reference"
+    },
+    {
+      "id": "exam-d5-s12",
+      "title": "Configure knowledge management",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/set-up-knowledge-management-embedded-knowledge-search"
+    },
+    {
+      "id": "exam-d5-s13",
+      "title": "Search knowledge articles",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/search-knowledge-articles-csh"
+    },
+    {
+      "id": "exam-d5-s14",
+      "title": "Add the Knowledge Base Search control to forms",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/add-knowledge-base-search-control-forms"
+    },
+    {
+      "id": "exam-d5-s15",
+      "title": "Set up external search providers",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/set-up-search-providers"
+    },
+    {
+      "id": "exam-d5-s16",
+      "title": "Manage Customer Knowledge Management Agent",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/admin-km-agent"
+    },
+    {
+      "id": "exam-d5-s17",
+      "title": "Configure connection references",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/admin-km-agent-connections"
+    },
+    {
+      "id": "exam-d5-s18",
+      "title": "View the communication panel for conversations",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/oc-conversation-control"
+    },
+    {
+      "id": "exam-d5-s19",
+      "title": "Microsoft Learn: Automation dictionary",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/automation-dictionary-keys"
+    },
+    {
+      "id": "exam-d5-s20",
+      "title": "Create productivity automation macros",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/macros-productivity-automation"
+    }
+  ],
+  "questions": [
+    {
+      "id": "ab250-d5-q05",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.1.01"
+      ],
+      "conceptId": "profile-team-targeting",
+      "prompt": "A standalone workspace team needs different pane tools from other representatives. The administrator intends to edit the supplied default profile for just that team. Which approach meets the requirement?",
+      "answer": "Create a custom profile, configure its tools, and assign the intended team members.",
+      "explanation": "Use a custom experience profile for a team-specific configuration rather than modifying an immutable supplied default.",
+      "sourceIds": [
+        "exam-d5-s01"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:profile-team-targeting",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Edit the default profile and expect its changes to apply only to the selected queue."
+        },
+        {
+          "id": "o2",
+          "text": "Create a second queue and leave all experience-profile associations unchanged."
+        },
+        {
+          "id": "o3",
+          "text": "Create a custom profile, configure its tools, and assign the intended team members."
+        },
+        {
+          "id": "o4",
+          "text": "Set the new profile as the global default and expect the changed tools to apply only to one queue team."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "Supplied profiles cannot be modified for this targeted customization.",
+        "o2": "Queue membership is not experience-profile selection.",
+        "o3": "Custom profiles provide targeted experiences and user assignment.",
+        "o4": "A global default associates available users broadly; it does not implement the requested team-specific assignment."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n03"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q06",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.1.01"
+      ],
+      "conceptId": "profile-assignment-verification",
+      "prompt": "A new custom profile has the requested pane features, and an assigned test user sees them. Another intended representative still receives the supplied default experience. Permissions are verified. Which check most directly addresses this difference?",
+      "answer": "Search by user and verify that representatives custom-profile association.",
+      "explanation": "Verify effective user association when a correct custom profile works for one user but another receives a default.",
+      "sourceIds": [
+        "exam-d5-s01"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:profile-assignment-verification",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Search by user and verify that representatives custom-profile association."
+        },
+        {
+          "id": "o2",
+          "text": "Change session-template panel settings before checking which profile the affected user receives."
+        },
+        {
+          "id": "o3",
+          "text": "Change queue membership and assume that automatically selects this custom experience profile."
+        },
+        {
+          "id": "o4",
+          "text": "Assign additional table privileges despite the verified feature permissions."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "Unassigned users receive a supplied default; user search helps verify association.",
+        "o2": "Those session settings do not verify the effective user-to-profile association.",
+        "o3": "Queue membership is not a substitute for verifying the profile association.",
+        "o4": "More privileges do not select the intended profile."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n03"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q07",
+      "revision": 2,
+      "kind": "multiple",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.1.03"
+      ],
+      "conceptId": "inbox-view-record-and-visibility",
+      "prompt": "An enabled standalone custom-profile inbox should give representatives a new view containing conversations and email. In testing, the configured view contains only conversations and does not appear to the intended users, although their profile association and existing inbox views work. Which TWO view settings should the administrator inspect? Choose TWO.",
+      "answer": "Include email among the view record types. Set Representative visibility to Show.",
+      "explanation": "Inbox content selection and representative visibility are separate configuration decisions.",
+      "sourceIds": [
+        "exam-d5-s02"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:inbox-view-record-and-visibility",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Select only email as the record type and omit conversations from the view."
+        },
+        {
+          "id": "o2",
+          "text": "Include email among the view record types."
+        },
+        {
+          "id": "o3",
+          "text": "Change only the existing conversations filter and leave record types unchanged."
+        },
+        {
+          "id": "o4",
+          "text": "Set Representative visibility to Show."
+        },
+        {
+          "id": "o5",
+          "text": "Add an email condition while retaining only the conversation record type in the view."
+        }
+      ],
+      "correctOptionIds": [
+        "o2",
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "The requirement needs both record types, not replacement of conversations.",
+        "o2": "The view must include the requested record types.",
+        "o3": "Conversation filtering does not add the missing email record type or make a hidden view visible.",
+        "o4": "Show makes the configured view visible to representatives.",
+        "o5": "A filter condition does not replace including the email record type."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n03"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q08",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.1.03"
+      ],
+      "conceptId": "inbox-custom-sort-configuration",
+      "prompt": "A standalone inbox conversation view has correct membership and visibility. Representatives need a supported business-priority attribute to determine display order without changing which conversations appear. Which configuration meets this requirement?",
+      "answer": "Configure the inbox view Sort entity, attribute and sort order.",
+      "explanation": "Keep inclusion logic separate from ordering; configure the view custom sort for the supported business attribute.",
+      "sourceIds": [
+        "exam-d5-s02"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:inbox-custom-sort-configuration",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Exclude lower-priority conversations through a Simple filter."
+        },
+        {
+          "id": "o2",
+          "text": "Change voice queue priority while retaining the inbox view sort."
+        },
+        {
+          "id": "o3",
+          "text": "Display the priority field but retain the existing date-only sort."
+        },
+        {
+          "id": "o4",
+          "text": "Configure the inbox view Sort entity, attribute and sort order."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "This changes the matching set rather than its order.",
+        "o2": "Queue routing priority does not configure the inbox view display order.",
+        "o3": "Displaying a field does not select it as the sort.",
+        "o4": "The inbox supports custom attribute-based sorting."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n03"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q09",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.1.03"
+      ],
+      "conceptId": "inbox-live-voice-session-behavior",
+      "prompt": "A team enables the inbox and expects accepted voice calls to remain only as inbox cards, without opening sessions. Which behavior should its acceptance test actually expect?",
+      "answer": "A voice call opens a new session and also adds an inbox card for awareness.",
+      "explanation": "Inbox awareness and a live voice session coexist; enabling the inbox does not convert voice into an inbox-only interaction.",
+      "sourceIds": [
+        "exam-d5-s02"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:inbox-live-voice-session-behavior",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "A voice call waits as an unaccepted inbox-only record until promoted manually."
+        },
+        {
+          "id": "o2",
+          "text": "A voice call opens a new session and also adds an inbox card for awareness."
+        },
+        {
+          "id": "o3",
+          "text": "A voice call reuses the currently focused chat session instead of creating its own session."
+        },
+        {
+          "id": "o4",
+          "text": "A voice call opens a new session only when the representative is outside the inbox."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "The documented voice behavior creates a new session.",
+        "o2": "Voice calls always open a session with an awareness card.",
+        "o3": "The documented voice behavior always opens a new session.",
+        "o4": "Voice session creation is not conditional on whether the representative is currently using the inbox."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n03"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q10",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.1.02"
+      ],
+      "conceptId": "dashboard-tab-app-module-membership",
+      "prompt": "A standalone Dashboard application tab resolves to the default dashboard even though the requested system dashboard exists, its GUID is correct, and the user has access. Which application-packaging check directly matches the documented fallback behavior?",
+      "answer": "Include the intended dashboard in the app module definition.",
+      "explanation": "A valid GUID is insufficient if the dashboard is absent from the application module.",
+      "sourceIds": [
+        "exam-d5-s03"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:dashboard-tab-app-module-membership",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Include the intended dashboard in the app module definition."
+        },
+        {
+          "id": "o2",
+          "text": "Make the intended dashboard the users personal default and rely on personal-default support in this page type."
+        },
+        {
+          "id": "o3",
+          "text": "Use the entity-list viewId parameter in place of dashboardId while retaining Dashboard as page type."
+        },
+        {
+          "id": "o4",
+          "text": "Clear dashboardId so the default dashboard can infer the intended dashboard."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "A dashboard excluded from the module falls back to the default.",
+        "o2": "Personal default dashboards are not supported for this application-tab page type.",
+        "o3": "Dashboard and entity-list page types have different parameter contracts.",
+        "o4": "A blank ID also falls back to the default."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n04"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q11",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.1.02"
+      ],
+      "conceptId": "entity-tab-create-versus-lookup-intent",
+      "prompt": "A standalone app has one workflow that intentionally opens a new customer form and another that must open an existing customer by supplied ID. A stale ID in the lookup workflow must never silently become a new customer. Which design preserves these business intents?",
+      "answer": "Keep explicit create configuration for the new-record flow and validateRecord=true for the existing-ID lookup.",
+      "explanation": "Separate intentional creation from existing-record lookup, and validate existence where stale identity must not open create mode.",
+      "sourceIds": [
+        "exam-d5-s03"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:entity-tab-create-versus-lookup-intent",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Treat a failed lookup as an intentional create in both workflows."
+        },
+        {
+          "id": "o2",
+          "text": "Use a different formId for lookup and assume it validates the supplied identity."
+        },
+        {
+          "id": "o3",
+          "text": "Remove entityId from both workflows so each follows create-form behavior."
+        },
+        {
+          "id": "o4",
+          "text": "Keep explicit create configuration for the new-record flow and validateRecord=true for the existing-ID lookup."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "The existing-record flow expressly forbids silent creation.",
+        "o2": "Form choice does not enforce record existence.",
+        "o3": "This converts lookup intent into creation.",
+        "o4": "Entity-record configuration distinguishes intentional creation from existing-record lookup and existence validation."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n04"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q12",
+      "revision": 2,
+      "kind": "multiple",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.1.02"
+      ],
+      "conceptId": "website-tab-runtime-parameterization",
+      "prompt": "An iframe-compatible supplier site accepts a case number in its query string. A standalone tab must reuse one template across case sessions rather than hard-code a test case. Which TWO parameter choices implement the documented composition? Choose TWO.",
+      "answer": "Set the URL parameter to the HTTPS supplier URL and fixed query prefix. Use the data parameter with the current anchor case ticket-number slug.",
+      "explanation": "Combine a valid HTTPS address with supported runtime data rather than cloning a fixed customer URL.",
+      "sourceIds": [
+        "exam-d5-s03"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:website-tab-runtime-parameterization",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Set the URL parameter to the HTTPS supplier URL and fixed query prefix."
+        },
+        {
+          "id": "o2",
+          "text": "Hard-code the current test case number in each URL and clone the template for every case."
+        },
+        {
+          "id": "o3",
+          "text": "Use the data parameter with the current anchor case ticket-number slug."
+        },
+        {
+          "id": "o4",
+          "text": "Use an OData query without filtering it to the anchor case and assume it selects the current case."
+        },
+        {
+          "id": "o5",
+          "text": "Use a constant test-case value as data and expect the fixed URL prefix alone to supply runtime identity."
+        }
+      ],
+      "correctOptionIds": [
+        "o1",
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "The URL supplies the required address and fixed query structure.",
+        "o2": "Per-case copies violate the reusable runtime composition requirement.",
+        "o3": "The optional data parameter can resolve a runtime anchor value.",
+        "o4": "An unscoped query does not establish the intended anchor-record value.",
+        "o5": "The URL prefix does not replace the required contextual data parameter."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n01"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q13",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.1.04"
+      ],
+      "conceptId": "entity-session-table-ownership-boundary",
+      "prompt": "A standalone team proposes an Entity session template for an organization-owned custom table. The table is available elsewhere in the app and the administrator has required access, but it is absent from the template Entity list. Which documented restriction explains the design boundary?",
+      "answer": "The Entity list displays user-owned tables only; review the proposed design against that ownership scope.",
+      "explanation": "Table ownership constrains the Entity session selector; app visibility and broad permissions do not remove that scope.",
+      "sourceIds": [
+        "exam-d5-s04"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:entity-session-table-ownership-boundary",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Entity templates support every table after a notification template is associated."
+        },
+        {
+          "id": "o2",
+          "text": "The Entity list displays user-owned tables only; review the proposed design against that ownership scope."
+        },
+        {
+          "id": "o3",
+          "text": "Configuring an entity-record anchor tab is sufficient to make any table appear in the Entity session selector."
+        },
+        {
+          "id": "o4",
+          "text": "Broader administrator privileges make all organization-owned tables appear in this selector."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "Notification selection does not remove the ownership scope.",
+        "o2": "The procedure explicitly limits this list to user-owned tables.",
+        "o3": "An application-tab configuration does not remove the selector ownership restriction.",
+        "o4": "The access is verified; ownership is the documented list restriction."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n04"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q14",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.1.04"
+      ],
+      "conceptId": "session-initial-panel-mode",
+      "prompt": "A standalone chat session must start with its communication panel minimized while keeping the same anchor and additional tabs. Which change belongs in the session template?",
+      "answer": "Set Communication panel mode to Minimized.",
+      "explanation": "Initial communication-panel presentation is a session-template setting, separate from notification display and tab composition.",
+      "sourceIds": [
+        "exam-d5-s04"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:session-initial-panel-mode",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Change the notification template Show timeout value."
+        },
+        {
+          "id": "o2",
+          "text": "Set desktop-notification delivery to show alerts only when the app is out of focus."
+        },
+        {
+          "id": "o3",
+          "text": "Set Communication panel mode to Minimized."
+        },
+        {
+          "id": "o4",
+          "text": "Minimize the panel manually in each test without changing its initial template mode."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "Notification timer display does not set panel mode.",
+        "o2": "Desktop delivery conditions do not set the initial session communication-panel mode.",
+        "o3": "This setting controls the initial panel state.",
+        "o4": "Manual interaction does not configure the required starting mode."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n04"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q15",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.1.05"
+      ],
+      "conceptId": "desktop-notification-body-versus-accept",
+      "prompt": "A standalone representative clicks the body of a desktop conversation alert rather than its Accept button. Which outcome should an acceptance test expect before the representative makes any further choice?",
+      "answer": "The app becomes active and shows the in-app request for an accept or reject decision.",
+      "explanation": "Desktop alert activation and conversation acceptance are separate actions; test the button and body paths separately.",
+      "sourceIds": [
+        "exam-d5-s05"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:desktop-notification-body-versus-accept",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "The app becomes active and shows the in-app request for an accept or reject decision."
+        },
+        {
+          "id": "o2",
+          "text": "Any body click is equivalent to accepting the incoming conversation."
+        },
+        {
+          "id": "o3",
+          "text": "The body click rejects the request and prevents its later acceptance."
+        },
+        {
+          "id": "o4",
+          "text": "The body click starts the customer session without an acceptance decision."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "The documentation distinguishes body activation from the accept/reject buttons.",
+        "o2": "A body click activates the app without accepting the request.",
+        "o3": "The request remains available for a decision.",
+        "o4": "Session start follows acceptance rather than app activation alone."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n04"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q16",
+      "revision": 2,
+      "kind": "multiple",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.1.05"
+      ],
+      "conceptId": "record-notification-reject-semantics",
+      "prompt": "A Customer Service record-routing team adds a Reject button to its custom notification and expects this to stop the routed record being assigned. Which TWO statements should guide the design review? Choose TWO.",
+      "answer": "The routed record is assigned even if a reject option is present. Microsoft recommends omitting Reject for custom record-routing notifications.",
+      "explanation": "Do not use a Reject affordance as a record-assignment control when the documented routing semantics still assign the record.",
+      "sourceIds": [
+        "exam-d5-s05"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:record-notification-reject-semantics",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "The record remains unassigned until the representative explicitly accepts its notification."
+        },
+        {
+          "id": "o2",
+          "text": "The routed record is assigned even if a reject option is present."
+        },
+        {
+          "id": "o3",
+          "text": "Selecting Reject automatically routes the record back to a queue instead of preserving its assignment."
+        },
+        {
+          "id": "o4",
+          "text": "Microsoft recommends omitting Reject for custom record-routing notifications."
+        },
+        {
+          "id": "o5",
+          "text": "Reducing the notification countdown guarantees that the routed record stays unassigned on expiry."
+        }
+      ],
+      "correctOptionIds": [
+        "o2",
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "The documented warning states the routed record is assigned even if a reject option is provided.",
+        "o2": "The documentation explicitly warns of this behavior.",
+        "o3": "The guide does not make this affordance a record rejection/rerouting control.",
+        "o4": "This is the documented recommendation for these notifications.",
+        "o5": "Countdown duration does not remove the documented routed-record assignment behavior."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n04"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q17",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.1.05"
+      ],
+      "conceptId": "desktop-notification-browser-permission",
+      "prompt": "A standalone representative receives in-app requests but no native desktop alerts. Desktop notifications are enabled in the application and work for a peer. The browser is supported and not incognito, and OS focus restrictions are excluded. Which remaining delivery prerequisite should be checked on the affected site/browser?",
+      "answer": "Allow browser notifications for the application site.",
+      "explanation": "Verify the browser delivery permission separately from the application notification configuration.",
+      "sourceIds": [
+        "exam-d5-s05"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:desktop-notification-browser-permission",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Raise Countdown."
+        },
+        {
+          "id": "o2",
+          "text": "Reenable desktop alerts in the template but keep the browser site permission denied."
+        },
+        {
+          "id": "o3",
+          "text": "Switch from out-of-focus alerts to always-on alerts while retaining browser denial."
+        },
+        {
+          "id": "o4",
+          "text": "Allow browser notifications for the application site."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "Increasing lifetime does not authorize native browser notifications.",
+        "o2": "The app setting is already enabled and does not override site permission denial.",
+        "o3": "Delivery policy does not remove the browser permission requirement.",
+        "o4": "The browser must be allowed to show notifications."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n04"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q18",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.2.02"
+      ],
+      "conceptId": "script-reusable-subprocedure",
+      "prompt": "Several standalone product scripts must reuse the same reviewed escalation guidance. That guidance exists as a separate script. The team wants to maintain it once and open it from a step without duplicating its text or treating it as a data-action macro. Which design fits?",
+      "answer": "Use Action Type Script and select the escalation guide as Target script.",
+      "explanation": "Use a script-to-script target for reusable guidance; text instructions and data-action macros do not provide that same composition.",
+      "sourceIds": [
+        "exam-d5-s06"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:script-reusable-subprocedure",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Copy the guidance text into every product script and maintain every copy."
+        },
+        {
+          "id": "o2",
+          "text": "Use Action Type Script and select the escalation guide as Target script."
+        },
+        {
+          "id": "o3",
+          "text": "Use Text instruction and assume mentioning the guide name opens it automatically."
+        },
+        {
+          "id": "o4",
+          "text": "Use Action Type Macro and select the guidance script as an executable macro."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "Copies fail the single-maintenance requirement.",
+        "o2": "A script step can select another configured script through its target lookup.",
+        "o3": "Instruction text is not an executable script target.",
+        "o4": "A script and an automation macro have distinct action contracts."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n05"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q19",
+      "revision": 2,
+      "kind": "multiple",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.2.02"
+      ],
+      "conceptId": "script-executable-step-wiring",
+      "prompt": "A standalone script currently tells representatives to prepare an acknowledgment email. An existing tested macro performs that operation. The team wants the step to invoke that macro instead of merely displaying the instruction. Which TWO step settings provide that wiring? Choose TWO.",
+      "answer": "Set Action Type to Macro. Select the existing macro in Target macro.",
+      "explanation": "Guidance and execution are different step contracts; an executable macro step needs its action type and target.",
+      "sourceIds": [
+        "exam-d5-s06"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:script-executable-step-wiring",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Set Action Type to Macro."
+        },
+        {
+          "id": "o2",
+          "text": "Grant the representatives the authoring role while leaving this step as a nonexecuting text instruction."
+        },
+        {
+          "id": "o3",
+          "text": "Set Action Type to Text instruction and assume the text runs the macro."
+        },
+        {
+          "id": "o4",
+          "text": "Select the existing macro in Target macro."
+        },
+        {
+          "id": "o5",
+          "text": "Select a Target script with the same display name instead."
+        }
+      ],
+      "correctOptionIds": [
+        "o1",
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "The action type must be executable macro.",
+        "o2": "Additional authoring access does not wire an instruction step to invoke the macro.",
+        "o3": "Text instruction remains guidance.",
+        "o4": "The target lookup selects the configured macro to execute.",
+        "o5": "A script target is a different action type."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n05"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q20",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.2.02"
+      ],
+      "conceptId": "script-manual-context-exception",
+      "prompt": "A standalone session correctly selects its normal warranty guide by default. Both warranty and exception scripts are already associated with the session type. During one unusual conversation the representative needs the exception guide, while all other sessions must keep their current default. What should the implementation support?",
+      "answer": "Let the representative manually select the available exception script for this session.",
+      "explanation": "A correct context-sensitive default does not prevent manual selection of another associated guide for an individual exception.",
+      "sourceIds": [
+        "exam-d5-s06"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:script-manual-context-exception",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Change the shared default expression for all conversations."
+        },
+        {
+          "id": "o2",
+          "text": "Remove the warranty guide from the session template for every representative."
+        },
+        {
+          "id": "o3",
+          "text": "Create a new customer-specific template and replace the shared association."
+        },
+        {
+          "id": "o4",
+          "text": "Let the representative manually select the available exception script for this session."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "A shared change exceeds the one-conversation exception.",
+        "o2": "Removal unnecessarily affects other sessions.",
+        "o3": "A customer-specific template is unnecessary for an available associated guide.",
+        "o4": "Representatives can switch among scripts available for their session."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n02"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q21",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.2.02"
+      ],
+      "conceptId": "script-language-enablement",
+      "prompt": "A standalone script author can create scripts but cannot select a required language from the Language list. Translating a step name has not added it. Which environment setting should be checked?",
+      "answer": "Whether that language is enabled in Microsoft Dataverse.",
+      "explanation": "The authoring language list follows Dataverse-enabled languages rather than text in step or template names.",
+      "sourceIds": [
+        "exam-d5-s06"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:script-language-enablement",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Whether that language is enabled in Microsoft Dataverse."
+        },
+        {
+          "id": "o2",
+          "text": "Whether translating a script step automatically enables that language in the environment."
+        },
+        {
+          "id": "o3",
+          "text": "Create another translated script and assume the new record itself enables its language in Dataverse."
+        },
+        {
+          "id": "o4",
+          "text": "Whether the representative browser language alone controls the available script authoring languages."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "The list contains languages enabled in Dataverse.",
+        "o2": "Translated text does not enable a Dataverse language.",
+        "o3": "Script content does not enable an environment language for the authoring list.",
+        "o4": "The documented list follows enabled Dataverse languages, not only browser preferences."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n05"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q22",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.2.03"
+      ],
+      "conceptId": "macro-related-customer-query-scope",
+      "prompt": "A standalone case identifies its customer as a contact. A task macro needs that contacts email, which is stored on the related contact rather than as a case attribute. An unrelated account is open in an additional tab and must not change which customer is used. Which input design matches the documented pattern?",
+      "answer": "Query contact email using the anchor cases customer lookup ID as the filter.",
+      "explanation": "Scope the related-record query with the anchor customer relationship; the anchor does not automatically contain every field of that related contact.",
+      "sourceIds": [
+        "exam-d5-s07"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:macro-related-customer-query-scope",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Query the unrelated focused account and use its values as the case customer."
+        },
+        {
+          "id": "o2",
+          "text": "Query contact email with contactid filtered by the anchor case ID rather than its customer lookup ID."
+        },
+        {
+          "id": "o3",
+          "text": "Query contact email using the anchor cases customer lookup ID as the filter."
+        },
+        {
+          "id": "o4",
+          "text": "Read an anchor case email attribute and assume every related contact field is already part of the case context."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "The additional account is explicitly not the related customer.",
+        "o2": "The query must identify the related contact, not use the case record identity as contactid.",
+        "o3": "The documented OData pattern uses anchor customer identity to retrieve related contact values.",
+        "o4": "Related contact attributes require retrieval; they are not automatically promoted into anchor case attributes."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n05"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q23",
+      "revision": 2,
+      "kind": "multiple",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.2.03"
+      ],
+      "conceptId": "macro-current-tab-record-query",
+      "prompt": "A standalone macro must retrieve the name of an account deliberately selected in an additional tab, not the anchor case customer. Which TWO documented techniques supply the intended additional-record data? Choose TWO.",
+      "answer": "Use Session.CurrentTab entity identity for the focused record. Use the current-tab record ID in a supported OData query for its other values.",
+      "explanation": "Select the correct record identity first, then query the needed values rather than treating the entire additional record as anchor data.",
+      "sourceIds": [
+        "exam-d5-s07"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:macro-current-tab-record-query",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Read anchor case customer attributes and assume they represent the focused account."
+        },
+        {
+          "id": "o2",
+          "text": "Use Session.CurrentTab entity identity for the focused record."
+        },
+        {
+          "id": "o3",
+          "text": "Filter an account query by the anchor cases customer identity even though the requirement targets a different focused account."
+        },
+        {
+          "id": "o4",
+          "text": "Assume every field of every additional tab is copied into anchor context."
+        },
+        {
+          "id": "o5",
+          "text": "Use the current-tab record ID in a supported OData query for its other values."
+        }
+      ],
+      "correctOptionIds": [
+        "o2",
+        "o5"
+      ],
+      "optionExplanations": {
+        "o1": "The requirement explicitly targets the additional record instead of the anchor customer.",
+        "o2": "CurrentTab exposes entity name and ID.",
+        "o3": "The required account is the additional-tab record, not the explicitly excluded anchor customer.",
+        "o4": "The documentation does not populate anchor context with all additional record attributes.",
+        "o5": "The documented query pattern retrieves related values from that record identity."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n05"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q24",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.2.03"
+      ],
+      "conceptId": "macro-lookup-attribute-triplet",
+      "prompt": "A standalone macro opens a new task with Regarding pointing to the current case. The designer passes only the case display title as the lookup attribute. Which input design matches the documented lookup pattern?",
+      "answer": "Supply the related record ID, record type, and record name as separate attributes.",
+      "explanation": "A lookup is structured identity, not a plain label. Use the documented related-record attributes together.",
+      "sourceIds": [
+        "exam-d5-s20"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:macro-lookup-attribute-triplet",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Pass only the case title, because lookup display text uniquely identifies the record."
+        },
+        {
+          "id": "o2",
+          "text": "Pass only the record GUID and omit lookup record type and name."
+        },
+        {
+          "id": "o3",
+          "text": "Supply the record ID and type but omit the related record name."
+        },
+        {
+          "id": "o4",
+          "text": "Supply the related record ID, record type, and record name as separate attributes."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "A label alone does not provide the documented lookup structure.",
+        "o2": "The action requires the documented triplet.",
+        "o3": "The documented lookup pattern includes the related record name as a separate attribute.",
+        "o4": "The pattern supplies ID, type and name separately."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n02"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q25",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.2.03"
+      ],
+      "conceptId": "macro-save-required-field-failure",
+      "prompt": "A standalone macro opens a task form, populates details and already includes Save the record. Save fails, and the form validation highlights mandatory task inputs before the next action can proceed. Which correction follows the documented Save action contract?",
+      "answer": "Populate all mandatory task fields before Save runs.",
+      "explanation": "The Save action must satisfy required-field validation; repeating a failed save does not repair missing mandatory data.",
+      "sourceIds": [
+        "exam-d5-s20"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:macro-save-required-field-failure",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Add a second Save action with the same incomplete values."
+        },
+        {
+          "id": "o2",
+          "text": "Populate all mandatory task fields before Save runs."
+        },
+        {
+          "id": "o3",
+          "text": "Open another task form while leaving the original required values blank."
+        },
+        {
+          "id": "o4",
+          "text": "Retry Save after changing only optional task details while leaving the highlighted input mappings unchanged."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "A repeated Save does not satisfy required fields.",
+        "o2": "The documented action requires mandatory fields to be entered.",
+        "o3": "A second form does not complete the original records mandatory values.",
+        "o4": "Optional data changes do not repair missing mandatory field values."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n02"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q26",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.2.03"
+      ],
+      "conceptId": "macro-action-output-scope",
+      "prompt": "A standalone macro opens a new form, then a later action needs the tab identifier produced by that first action. The author also wants to paste that action-output reference into a reusable notification template. Which assessment follows the automation dictionary documentation?",
+      "answer": "Use the first actions output for later macro actions, but do not treat macro-action outputs as template parameters.",
+      "explanation": "Respect the scope of action-generated context: macro chaining supports it, reusable templates do not inherit that action execution.",
+      "sourceIds": [
+        "exam-d5-s19"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:macro-action-output-scope",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Use the first actions output for later macro actions, but do not treat macro-action outputs as template parameters."
+        },
+        {
+          "id": "o2",
+          "text": "Use the output only in the notification template, never in later macro actions."
+        },
+        {
+          "id": "o3",
+          "text": "Expect every template to execute the macro automatically to obtain its output."
+        },
+        {
+          "id": "o4",
+          "text": "Replace the output with a fixed tab ID taken from an unrelated session."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "Macro action context can feed later actions and is not applicable to templates.",
+        "o2": "This reverses the documented scope.",
+        "o3": "Templates do not automatically execute the macro to generate an action output.",
+        "o4": "A hard-coded unrelated runtime identifier fails the contextual requirement."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n02"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q27",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.2.03"
+      ],
+      "conceptId": "macro-connector-responsibility",
+      "prompt": "A standalone automation must focus a known session tab and separately invoke a Power Automate flow. Which TWO connector selections align with these operations? Choose TWO.",
+      "answer": "Session connector for the tab operation. Flow connector for invoking the Power Automate flow.",
+      "explanation": "Choose the connector that owns each operation instead of using one vaguely related automation surface for both.",
+      "sourceIds": [
+        "exam-d5-s07"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:macro-connector-responsibility",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Omnichannel connector solely for focusing any workspace tab."
+        },
+        {
+          "id": "o2",
+          "text": "Session connector for the tab operation."
+        },
+        {
+          "id": "o3",
+          "text": "Flow connector solely for setting focus to a known workspace tab."
+        },
+        {
+          "id": "o4",
+          "text": "Flow connector for invoking the Power Automate flow."
+        },
+        {
+          "id": "o5",
+          "text": "Omnichannel connector as the documented direct Power Automate flow trigger."
+        }
+      ],
+      "correctOptionIds": [
+        "o2",
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "The documented session connector owns tab operations.",
+        "o2": "It supports tab identifiers, refresh and focus.",
+        "o3": "Tab focus is a session connector operation, not flow invocation.",
+        "o4": "The flow connector triggers a Power Automate flow.",
+        "o5": "The documented flow invocation connector is Flow connector."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n02"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q28",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.2.01"
+      ],
+      "conceptId": "custom-pane-component-deployment-order",
+      "prompt": "A custom productivity tool works in the source standalone environment. After its configuration is imported into a target, the target setup cannot resolve the referenced custom page or PCF component. User roles and intended profile assignments are verified. Which deployment dependency should the engineer check?",
+      "answer": "Deploy and publish the referenced custom page or PCF control in the target.",
+      "explanation": "Component availability is a prerequisite to tool registration and profile rollout; configuration records do not build the referenced component.",
+      "sourceIds": [
+        "exam-d5-s08"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:custom-pane-component-deployment-order",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Add another pane-tool configuration pointing to the same absent component."
+        },
+        {
+          "id": "o2",
+          "text": "Grant a broader user role and leave the target component undeployed."
+        },
+        {
+          "id": "o3",
+          "text": "Deploy and publish the referenced custom page or PCF control in the target."
+        },
+        {
+          "id": "o4",
+          "text": "Enable only the tool toggle and assume registration creates its referenced component."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "A duplicate reference does not deploy the component.",
+        "o2": "Permissions do not create the missing artifact.",
+        "o3": "The component must already exist and be published before it can be referenced.",
+        "o4": "Tool enablement does not build its referenced page/control."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n06"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q29",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.2.01"
+      ],
+      "conceptId": "custom-pane-explicit-session-context",
+      "prompt": "A standalone custom productivity page is visible, but its designer assumed it would automatically know the current case and conversation as the representative switches sessions. Which design correction follows the documented custom-tool limitation?",
+      "answer": "Implement explicit programmatic passing of the required session context.",
+      "explanation": "Visible custom tools are standalone experiences; current-session data is not automatically provided by registration or global availability.",
+      "sourceIds": [
+        "exam-d5-s08"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:custom-pane-explicit-session-context",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Register a custom tool and assume registration injects all active-record values."
+        },
+        {
+          "id": "o2",
+          "text": "Make the tool global and assume that automatically binds current case data."
+        },
+        {
+          "id": "o3",
+          "text": "Reuse a built-in tools automatic context behavior and assume the custom page receives it without integration."
+        },
+        {
+          "id": "o4",
+          "text": "Implement explicit programmatic passing of the required session context."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "Registration does not establish automatic session context binding.",
+        "o2": "Global availability does not provide automatic contextual binding.",
+        "o3": "Custom tools do not automatically inherit the contextual binding of built-in tools.",
+        "o4": "Custom tools need an explicit context integration design."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n06"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q30",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.2.04"
+      ],
+      "conceptId": "teams-multisession-profile-permissions",
+      "prompt": "Teams chat is enabled for the standalone workspace app. A targeted team uses a custom multisession profile and custom security roles. Which TWO checks address the documented profile and permission layers before user acceptance? Choose TWO.",
+      "answer": "Enable the feature for the intended custom profile. Verify user permissions equivalent to the Productivity tools user role.",
+      "explanation": "Validate both the targeted custom profile and user permission prerequisites; app-wide enablement alone is incomplete.",
+      "sourceIds": [
+        "exam-d5-s09"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:teams-multisession-profile-permissions",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Enable the feature for the intended custom profile."
+        },
+        {
+          "id": "o2",
+          "text": "Treat existing app-wide enablement as sufficient even with the custom profile unconfigured."
+        },
+        {
+          "id": "o3",
+          "text": "Assign equivalent pane privileges but leave the intended custom profile disabled for the feature."
+        },
+        {
+          "id": "o4",
+          "text": "Skip pane permissions because the app-wide toggle supplies every user privilege."
+        },
+        {
+          "id": "o5",
+          "text": "Verify user permissions equivalent to the Productivity tools user role."
+        }
+      ],
+      "correctOptionIds": [
+        "o1",
+        "o5"
+      ],
+      "optionExplanations": {
+        "o1": "Specific multisession users require their custom profile feature configuration.",
+        "o2": "The documentation requires enabling the feature for the intended custom multisession profile.",
+        "o3": "Permissions alone do not complete the feature configuration layer.",
+        "o4": "App configuration does not replace required user permissions.",
+        "o5": "The documentation specifies this permission equivalence for multisession."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n06"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q31",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.2.04"
+      ],
+      "conceptId": "teams-introduction-note-field-exposure",
+      "prompt": "A standalone representative connects a Teams chat to a case and includes an introduction note from a configured view. A colleague cannot open the case but can read fields included in that note. The team must avoid exposing restricted context through shared text. Which review is appropriate?",
+      "answer": "Limit the introduction-note fields because its static fields do not check each collaborators field-level permissions.",
+      "explanation": "Review the static Teams introduction note separately from linked-record access; included context fields can expose information the initiating representative could view.",
+      "sourceIds": [
+        "exam-d5-s09"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:teams-introduction-note-field-exposure",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Assume denied case access automatically redacts every included note field."
+        },
+        {
+          "id": "o2",
+          "text": "Limit the introduction-note fields because its static fields do not check each collaborators field-level permissions."
+        },
+        {
+          "id": "o3",
+          "text": "Grant every chat participant full case access instead of reviewing the shared note fields."
+        },
+        {
+          "id": "o4",
+          "text": "Remove unsupported field types only and assume every remaining supported field is filtered by each collaborators field-level permissions."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "Record permissions do not automatically filter these static note contents per collaborator.",
+        "o2": "The documentation explicitly warns that static context fields do not check collaborator field-level permissions.",
+        "o3": "Broadening access fails the restricted-context requirement.",
+        "o4": "The supported-field-type behavior does not remove the separate warning that static fields do not check collaborator field-level permissions."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n06"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q32",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.2.04"
+      ],
+      "conceptId": "teams-custom-record-type-connection",
+      "prompt": "In a standalone custom app with Teams chat enabled, representatives can connect chats to accounts but need the same capability for a custom service record type. The custom table and user permissions are ready. Which configuration extends the supported connection list?",
+      "answer": "Add the custom record type under Connect chats to Dynamics 365 records.",
+      "explanation": "Configure the collaboration record-type integration rather than treating general app enablement as coverage for every custom record.",
+      "sourceIds": [
+        "exam-d5-s09"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:teams-custom-record-type-connection",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Add the custom record type under Connect chats to Dynamics 365 records."
+        },
+        {
+          "id": "o2",
+          "text": "Enable the custom table in the inbox and assume that also adds it to Teams record connections."
+        },
+        {
+          "id": "o3",
+          "text": "Publish another app profile without configuring record-type connections."
+        },
+        {
+          "id": "o4",
+          "text": "Enable knowledge management for the custom record type without configuring Teams connections."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "The documented connection configuration includes custom record types.",
+        "o2": "Inbox record-type configuration does not add a Teams connected-chat record type.",
+        "o3": "A profile alone does not add the connection record type.",
+        "o4": "Knowledge enablement is different from configuring which types support connected Teams chats."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n06"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q33",
+      "revision": 2,
+      "kind": "multiple",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.2.05"
+      ],
+      "conceptId": "apm-background-session-attention",
+      "prompt": "A standalone extension completes a background lookup for an existing nonfocused session while the representative handles another customer. It knows the target session ID and must signal attention without immediately changing the active customer session. Which TWO API operations fit? Choose TWO.",
+      "answer": "Retrieve the existing target session through getSession using its ID. Use requestFocus to show the target sessions notification indicator.",
+      "explanation": "Retrieve the intended existing session and request attention through its indicator instead of stealing focus from the current conversation.",
+      "sourceIds": [
+        "exam-d5-s10"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:apm-background-session-attention",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Use getFocusedSession and assume it returns the nonfocused target."
+        },
+        {
+          "id": "o2",
+          "text": "Call focus on the target to change the active customer session immediately."
+        },
+        {
+          "id": "o3",
+          "text": "Retrieve the existing target session through getSession using its ID."
+        },
+        {
+          "id": "o4",
+          "text": "Create a duplicate session instead of signaling the existing one."
+        },
+        {
+          "id": "o5",
+          "text": "Use requestFocus to show the target sessions notification indicator."
+        }
+      ],
+      "correctOptionIds": [
+        "o3",
+        "o5"
+      ],
+      "optionExplanations": {
+        "o1": "The focused session is the other customer, not the target.",
+        "o2": "Immediate focus violates the requested no-switch behavior.",
+        "o3": "getSession retrieves the existing object by its known identity.",
+        "o4": "Duplicate creation is not attention to the existing session.",
+        "o5": "requestFocus signals attention when the session is not focused."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n07"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q34",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.2.05"
+      ],
+      "conceptId": "apm-update-context-future-macros",
+      "prompt": "A standalone provider has retrieved a corrected context value and needs future macros in that session to resolve the new slug value. It does not need to reopen a record. Which app profile manager operation owns this update?",
+      "answer": "updateContext, to add or modify automation-dictionary values for later macros.",
+      "explanation": "Update session context explicitly when subsequent macros must consume a changed value.",
+      "sourceIds": [
+        "exam-d5-s10"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:apm-update-context-future-macros",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Pass the corrected value only as new-tab parameters and leave the existing automation dictionary unchanged."
+        },
+        {
+          "id": "o2",
+          "text": "refreshTab, because UI refresh is the documented slug mutation API."
+        },
+        {
+          "id": "o3",
+          "text": "updateContext, to add or modify automation-dictionary values for later macros."
+        },
+        {
+          "id": "o4",
+          "text": "Update the underlying record field and assume the cached session slug changes without a context update."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "New-tab parameters are not the documented operation for updating existing automation-dictionary slugs.",
+        "o2": "Tab refresh is different from dictionary mutation.",
+        "o3": "updateContext updates slugs used by future macro invocation.",
+        "o4": "A data-field edit is distinct from explicitly updating the existing session dictionary for future macro values."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n07"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q35",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.2.06"
+      ],
+      "conceptId": "omnichannel-focused-conversation-link",
+      "prompt": "A standalone extension finds the correct case record, but the representative switches customer sessions before the extension calls linkToConversation. Which safeguard addresses the documented target of that method?",
+      "answer": "Verify the intended session is focused before linking its conversation.",
+      "explanation": "Validate session focus at the action boundary; a valid case record alone does not select the intended ongoing conversation.",
+      "sourceIds": [
+        "exam-d5-s11"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:omnichannel-focused-conversation-link",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Assume the case GUID also selects the original conversation automatically."
+        },
+        {
+          "id": "o2",
+          "text": "Use the most recently opened application tab regardless of its session."
+        },
+        {
+          "id": "o3",
+          "text": "Read the newly focused conversation GUID and proceed without checking whether it is the intended customer conversation."
+        },
+        {
+          "id": "o4",
+          "text": "Verify the intended session is focused before linking its conversation."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "The method links to the conversation in the focused session.",
+        "o2": "A tab choice alone does not identify the intended conversation target.",
+        "o3": "Reading the current identity without validating it against the intended target does not protect against the session switch.",
+        "o4": "Focus determines the documented conversation target."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n07"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q36",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.2.06"
+      ],
+      "conceptId": "embedded-conversation-link-applicability",
+      "prompt": "A design requires the documented Link to conversation control to associate a case from the representative communication panel. The team selects embedded Contact Center and assumes the same control is available as in standalone. Which review finding is supported?",
+      "answer": "The documented Link to conversation control is not applicable to the embedded experience.",
+      "explanation": "Review deployment applicability before promising the documented representative linking control; this question does not infer an alternative embedded API contract.",
+      "sourceIds": [
+        "exam-d5-s18"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:embedded-conversation-link-applicability",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "A standalone session template guarantees embedded control availability."
+        },
+        {
+          "id": "o2",
+          "text": "Grant the representative a broader custom role and assume it changes embedded applicability."
+        },
+        {
+          "id": "o3",
+          "text": "The documented Link to conversation control is not applicable to the embedded experience."
+        },
+        {
+          "id": "o4",
+          "text": "Enable the standalone experience profile and assume that alone adds the control to the embedded UI."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "Template reuse does not override the deployment exclusion.",
+        "o2": "A broader role does not override an explicit deployment limitation.",
+        "o3": "The documentation explicitly excludes this control for embedded experience.",
+        "o4": "Profile configuration does not establish availability of a deployment-excluded control."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n07"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q37",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.2.06"
+      ],
+      "conceptId": "omnichannel-agent-conversation-collection",
+      "prompt": "A standalone extension builds a representatives work list from conversation records. It needs the representatives conversation collection, rather than only the GUID of the single ongoing conversation in the focused session. Which representative-side API matches that scope?",
+      "answer": "Omnichannel getConversations.",
+      "explanation": "Choose conversation collection retrieval for a work list spanning conversations; a focused GUID and UI container enumeration have different scopes.",
+      "sourceIds": [
+        "exam-d5-s11"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:omnichannel-agent-conversation-collection",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "App profile manager getAllTabs, treating UI tabs as conversation rows."
+        },
+        {
+          "id": "o2",
+          "text": "Omnichannel getConversations."
+        },
+        {
+          "id": "o3",
+          "text": "Omnichannel getConversationId alone, treating one focused GUID as the entire collection."
+        },
+        {
+          "id": "o4",
+          "text": "App profile manager getAllSessions, treating UI session IDs as conversation rows."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "Tabs are UI containers rather than the conversation record collection.",
+        "o2": "This returns conversation records for a representative.",
+        "o3": "One ongoing identity does not enumerate the collection.",
+        "o4": "Session IDs are not interchangeable with conversation record rows."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n07"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q38",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.3.03"
+      ],
+      "conceptId": "knowledge-custom-table-enablement",
+      "prompt": "A standalone team adds a custom service table and wants record-context knowledge search for it. Case and Conversation work already. The team has only added the new table to the application navigation. Which knowledge configuration is still needed?",
+      "answer": "Add and configure the custom record type for knowledge management.",
+      "explanation": "Adding a table to application navigation does not enable its knowledge-management record context.",
+      "sourceIds": [
+        "exam-d5-s12"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:knowledge-custom-table-enablement",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Keep only the default Case and Conversation knowledge record types and assume app navigation enables the custom type."
+        },
+        {
+          "id": "o2",
+          "text": "Enable an external search provider instead of enabling the table."
+        },
+        {
+          "id": "o3",
+          "text": "Add and configure the custom record type for knowledge management."
+        },
+        {
+          "id": "o4",
+          "text": "Add an application tab for the table without enabling its knowledge record type."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "Adding navigation does not configure the custom record type for knowledge management.",
+        "o2": "External federation is separate from enabling record-context knowledge.",
+        "o3": "The record types configuration enables knowledge for the intended table.",
+        "o4": "Tab navigation does not turn on knowledge-management record context."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n08"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q39",
+      "revision": 2,
+      "kind": "multiple",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.3.01"
+      ],
+      "conceptId": "knowledge-search-index-and-pane",
+      "prompt": "A standalone workspace has knowledge record types, article permissions and Dataverse search enabled. A custom-profile user lacks the knowledge pane that a peer can use. A known article is found by title but not by a term in its body. Which TWO documented configuration areas should be checked? Choose TWO.",
+      "answer": "Enable app side pane and knowledge search in the assigned experience profile. Configure the Knowledge Article Quick Find columns, including Content.",
+      "explanation": "Search readiness has both an assigned-profile surface and documented article-field configuration.",
+      "sourceIds": [
+        "exam-d5-s13"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:knowledge-search-index-and-pane",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Increase only the global knowledge search result count."
+        },
+        {
+          "id": "o2",
+          "text": "Enable app side pane and knowledge search in the assigned experience profile."
+        },
+        {
+          "id": "o3",
+          "text": "Assume all article fields are searchable even if the Quick Find view is unconfigured."
+        },
+        {
+          "id": "o4",
+          "text": "Configure the Knowledge Article Quick Find columns, including Content."
+        },
+        {
+          "id": "o5",
+          "text": "Enable only article preview from global search and assume it supplies the assigned profiles knowledge pane."
+        }
+      ],
+      "correctOptionIds": [
+        "o2",
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "Result volume does not enable the assigned-profile pane or establish article-field search configuration.",
+        "o2": "The assigned profile must expose the workspace search surface.",
+        "o3": "The documentation lists the required Quick Find setup.",
+        "o4": "Quick Find configuration includes Content for search discovery.",
+        "o5": "Preview rendering is separate from enabling the workspace search surface."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n08"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q40",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.3.01"
+      ],
+      "conceptId": "knowledge-nonanchor-autosearch-exception",
+      "prompt": "A standalone multisession app already uses the app side pane for primary knowledge search. A custom additional non-anchor record tab needs automatic knowledge search tied to its form. The team believes the form-control procedure is forbidden in every multisession scenario. Which reading of the documented scope is correct?",
+      "answer": "The procedure also covers non-anchor-tab auto-search; evaluate it for this form requirement while retaining the primary side pane.",
+      "explanation": "Apply the non-anchor auto-search exception narrowly; it does not require replacing the primary multisession side-pane experience.",
+      "sourceIds": [
+        "exam-d5-s14"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:knowledge-nonanchor-autosearch-exception",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "The procedure also covers non-anchor-tab auto-search; evaluate it for this form requirement while retaining the primary side pane."
+        },
+        {
+          "id": "o2",
+          "text": "Move all knowledge search from the primary side pane to every anchor form."
+        },
+        {
+          "id": "o3",
+          "text": "The procedure can never apply to a non-anchor auto-search scenario in multisession."
+        },
+        {
+          "id": "o4",
+          "text": "Disable the side pane and assume that automatically configures form auto-search."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "The applicability note explicitly includes non-anchor auto-search.",
+        "o2": "The primary multisession guidance still uses the app side pane.",
+        "o3": "This ignores the documented non-anchor exception.",
+        "o4": "Disabling a separate surface does not configure form auto-search."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n08"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q41",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.3.01"
+      ],
+      "conceptId": "knowledge-all-term-search",
+      "prompt": "A standalone knowledge search for two product terms returns articles matching either term. The business wants results requiring both terms, while retaining Dataverse search. Which search-logic change matches this requirement?",
+      "answer": "Set knowledge search mode to all.",
+      "explanation": "Use all-term search logic when matching either keyword produces an overly broad result set.",
+      "sourceIds": [
+        "exam-d5-s12"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:knowledge-all-term-search",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Increase the number of displayed results."
+        },
+        {
+          "id": "o2",
+          "text": "Turn on suggest-as-you-type without changing search logic."
+        },
+        {
+          "id": "o3",
+          "text": "Change the default article authoring language."
+        },
+        {
+          "id": "o4",
+          "text": "Set knowledge search mode to all."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "Display count does not require all keywords.",
+        "o2": "Suggestions are not the requested all-term matching rule.",
+        "o3": "Authoring language does not change Boolean keyword matching.",
+        "o4": "The all mode requires all search keywords."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n08"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q42",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.3.02"
+      ],
+      "conceptId": "external-search-custom-role-federated-privileges",
+      "prompt": "A standalone external provider works for a standard-role representative. A custom-role group has verified access to the same external repository and can search internal knowledge but cannot see external-provider results. Which additional Dataverse permission area does the provider guide identify?",
+      "answer": "Review required access to Knowledge Federated Article and Knowledge Federated Article Incident for the custom roles.",
+      "explanation": "Check custom-role federated-result table privileges after source authorization and provider operation have been independently verified.",
+      "sourceIds": [
+        "exam-d5-s15"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:external-search-custom-role-federated-privileges",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Review required access to Knowledge Federated Article and Knowledge Federated Article Incident for the custom roles."
+        },
+        {
+          "id": "o2",
+          "text": "Create a second identical provider and retain all custom-role grants."
+        },
+        {
+          "id": "o3",
+          "text": "Grant only broader Knowledge Article access and assume it covers every federated-result table."
+        },
+        {
+          "id": "o4",
+          "text": "Change the verified repository URL despite the successful standard-role result test."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "The guide lists Read/Create/Append/AppendTo rights on these federated tables.",
+        "o2": "A duplicate provider does not supply missing privileges.",
+        "o3": "Internal article access does not replace the explicitly listed federated-table grants.",
+        "o4": "Verified provider/source access points to the custom-role layer."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n09"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q43",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.3.02"
+      ],
+      "conceptId": "external-search-graph-index-selection",
+      "prompt": "An organization already indexes its external knowledge through Microsoft Search. The standalone requirement is to federate representative search over that indexed source, rather than configure a generative agents grounding. Which external provider configuration matches the indexed source?",
+      "answer": "A Microsoft Graph connector provider with its unique connection ID.",
+      "explanation": "Select the Microsoft Search connector identity for federated discovery; this configuration does not establish a generative-agent knowledge-source configuration.",
+      "sourceIds": [
+        "exam-d5-s15"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:external-search-graph-index-selection",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "A SharePoint provider using the URL of a directly configured SharePoint source."
+        },
+        {
+          "id": "o2",
+          "text": "A Microsoft Graph connector provider with its unique connection ID."
+        },
+        {
+          "id": "o3",
+          "text": "A Cross-Organizational Search provider for a different Dynamics knowledge organization."
+        },
+        {
+          "id": "o4",
+          "text": "A Microsoft Graph connector provider using a repository URL in place of its connection ID."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "The requirement is a Microsoft Search-indexed connector source, whose documented option uses its connection ID.",
+        "o2": "The Graph option uses the connector unique connection ID for Microsoft Search-indexed external data.",
+        "o3": "That provider targets another organization rather than the specified indexed connector.",
+        "o4": "The Graph provider requires its unique connection ID, not a repository URL substituted for that ID."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n09"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q44",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.3.05"
+      ],
+      "conceptId": "portal-links-and-attachments",
+      "prompt": "A customer portal exists and articles are approved for the intended readers. Representatives must share article-specific public URLs and the portal must receive knowledge article attachments. Which TWO configurations meet these integration requirements? Choose TWO.",
+      "answer": "Enable Use an external portal and configure its URL format with the kbnum placeholder. Enable Sync attachments to portal separately.",
+      "explanation": "Public article links and article attachment synchronization require separate portal settings.",
+      "sourceIds": [
+        "exam-d5-s12"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:portal-links-and-attachments",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Use the internal authoring-form URL as the only public link design."
+        },
+        {
+          "id": "o2",
+          "text": "Enable an external search provider instead of configuring portal integration."
+        },
+        {
+          "id": "o3",
+          "text": "Enable Use an external portal and configure its URL format with the kbnum placeholder."
+        },
+        {
+          "id": "o4",
+          "text": "Assume enabling article links automatically enables attachment synchronization."
+        },
+        {
+          "id": "o5",
+          "text": "Enable Sync attachments to portal separately."
+        }
+      ],
+      "correctOptionIds": [
+        "o3",
+        "o5"
+      ],
+      "optionExplanations": {
+        "o1": "An internal authoring URL is not the documented portal-link pattern.",
+        "o2": "External discovery is separate from portal integration.",
+        "o3": "The placeholder resolves the article number into the public URL.",
+        "o4": "Attachment synchronization has its own setting.",
+        "o5": "The documented portal attachment switch must be enabled."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n09"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q45",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.3.04"
+      ],
+      "conceptId": "knowledge-harvest-runtime-readiness",
+      "prompt": "An administrator has completed both knowledge-harvest connection references in the correct environment, and that prerequisite is Ready. Before the first end-to-end harvesting test, which remaining runtime deployment checks does the documented manual setup require beyond successful connection binding?",
+      "answer": "Turn on the required harvesting flows and publish CustomerServiceKnowledgeHarvest in that environment.",
+      "explanation": "Connection binding, active harvesting flows and the published agent are distinct runtime readiness checks.",
+      "sourceIds": [
+        "exam-d5-s17"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:knowledge-harvest-runtime-readiness",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Turn on the required harvesting flows and publish CustomerServiceKnowledgeHarvest in that environment."
+        },
+        {
+          "id": "o2",
+          "text": "Leave flows off because connection references execute harvesting by themselves."
+        },
+        {
+          "id": "o3",
+          "text": "Publish a similarly named agent from a different environment without enabling the required flows."
+        },
+        {
+          "id": "o4",
+          "text": "Enable only one harvesting flow, leave the other required flows off, and skip agent publishing."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "The manual setup requires the flows enabled and the agent published.",
+        "o2": "Connection references alone do not start the required flows.",
+        "o3": "Environment scope and flow enablement are still missing.",
+        "o4": "The documented setup requires the required harvesting flows and published agent, not a partial flow-only setup."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n10"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q46",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.3.04"
+      ],
+      "conceptId": "knowledge-realtime-existing-content-check",
+      "prompt": "A real-time knowledge-creation rule matches a resolved case. The team expects every matching resolution to create a new article, even when its content is already covered. What should the design review account for?",
+      "answer": "The agent checks existing knowledge and determines whether a new article is needed.",
+      "explanation": "Real-time eligibility triggers evaluation; it is not a guarantee of a newly created article.",
+      "sourceIds": [
+        "exam-d5-s16"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:knowledge-realtime-existing-content-check",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "The rule creates a new article for every case regardless of existing knowledge."
+        },
+        {
+          "id": "o2",
+          "text": "The agent checks existing knowledge and determines whether a new article is needed."
+        },
+        {
+          "id": "o3",
+          "text": "Changing the article template forces a new article for every matching case without comparison."
+        },
+        {
+          "id": "o4",
+          "text": "Treat a high-priority rule match as a bypass of the existing-knowledge comparison."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "The documented workflow includes a comparison and need decision.",
+        "o2": "Rule match does not bypass the existing-knowledge comparison.",
+        "o3": "Template choice is not a documented way to bypass the existing-knowledge need decision.",
+        "o4": "Rules select eligible cases or conversations; the described agent workflow still compares existing knowledge before deciding to create an article."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n10"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q47",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.3.04"
+      ],
+      "conceptId": "knowledge-historical-harvest-batching",
+      "prompt": "A Customer Service team wants to launch historical knowledge creation across a broad case set and stop it mid-run if the selected scope proves unsuitable. Which planning adjustment follows the documented process limitation?",
+      "answer": "Run a deliberately bounded batch because historical creation cannot be stopped once started.",
+      "explanation": "Bound the source selection before starting historical harvesting; the documented process cannot be stopped once launched.",
+      "sourceIds": [
+        "exam-d5-s16"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:knowledge-historical-harvest-batching",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Assume closing the settings page cancels the long-running process."
+        },
+        {
+          "id": "o2",
+          "text": "Edit the historical selection rules after launch and assume that cancels the active process."
+        },
+        {
+          "id": "o3",
+          "text": "Run a deliberately bounded batch because historical creation cannot be stopped once started."
+        },
+        {
+          "id": "o4",
+          "text": "Rely on an article search filter to change the scope of an already running process."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "Closing UI is not a documented cancellation operation.",
+        "o2": "The documented cannot-stop limitation makes prelaunch source scoping necessary.",
+        "o3": "The documentation warns the process cannot be stopped and recommends batches.",
+        "o4": "Search-result filtering does not redefine an active harvesting scope."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n10"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q48",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.3.04"
+      ],
+      "conceptId": "knowledge-compliant-internal-autopublish",
+      "prompt": "A governed standalone knowledge process should automatically publish compliant generated articles for representatives and Copilot internally, while keeping them off external portals. Which TWO publication settings match this requirement? Choose TWO.",
+      "answer": "Automatically publish compliant articles as soon as they are created. Select Internal target audiences.",
+      "explanation": "Control compliance eligibility and publication audience independently; internal automatic publication does not require external audience selection.",
+      "sourceIds": [
+        "exam-d5-s16"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:knowledge-compliant-internal-autopublish",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Automatically publish compliant articles as soon as they are created."
+        },
+        {
+          "id": "o2",
+          "text": "Select Internal and external target audiences."
+        },
+        {
+          "id": "o3",
+          "text": "Set every generated article Noncompliant and expect it to publish."
+        },
+        {
+          "id": "o4",
+          "text": "Select Internal target audiences."
+        },
+        {
+          "id": "o5",
+          "text": "Disable all automatic publishing while promising automatic availability."
+        }
+      ],
+      "correctOptionIds": [
+        "o1",
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "This enables the required compliant-article automatic publication.",
+        "o2": "This includes the external audience the requirement excludes.",
+        "o3": "Noncompliant articles cannot be published.",
+        "o4": "This confines automatic publication to the internal audience.",
+        "o5": "This does not meet the automatic publishing requirement."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n10"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q49",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.3.04"
+      ],
+      "conceptId": "knowledge-sensitive-data-review",
+      "prompt": "A knowledge lead proposes bypassing content inspection because Customer Knowledge Management Agent removes personal data before drafting. The source cases may contain sensitive details. Which response follows the documented limitation?",
+      "answer": "Inspect generated content because the agent might miss sensitive information.",
+      "explanation": "Automated personal-data removal does not guarantee complete detection; review generated material before its intended publication.",
+      "sourceIds": [
+        "exam-d5-s16"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:knowledge-sensitive-data-review",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Treat generated internal status as proof that every sensitive detail has been removed."
+        },
+        {
+          "id": "o2",
+          "text": "Publish externally whenever a draft was successfully generated."
+        },
+        {
+          "id": "o3",
+          "text": "Assume a compliant flag proves the draft contains no sensitive details even without inspection."
+        },
+        {
+          "id": "o4",
+          "text": "Inspect generated content because the agent might miss sensitive information."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "Internal status is not a completeness guarantee.",
+        "o2": "Generation success is not publication approval.",
+        "o3": "The documentation does not make automated removal a complete sensitive-information guarantee.",
+        "o4": "The documentation warns that some sensitive information may not be detected."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n10"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q50",
+      "revision": 2,
+      "kind": "multiple",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.3.04"
+      ],
+      "conceptId": "knowledge-manual-review-experience",
+      "prompt": "A Customer Service team will use representative review instead of automatic knowledge publication. In-app notifications are already enabled. Which TWO remaining documented prerequisites support the review experience from resolved cases? Choose TWO.",
+      "answer": "Give representatives permission to edit articles. Enable Timeline and Timeline highlights for their cases.",
+      "explanation": "Manual draft review needs both appropriate article permissions and the supported case timeline experience after notifications are configured.",
+      "sourceIds": [
+        "exam-d5-s16"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:knowledge-manual-review-experience",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Rely on in-app notifications alone while leaving representatives with read-only article access."
+        },
+        {
+          "id": "o2",
+          "text": "Give representatives permission to edit articles."
+        },
+        {
+          "id": "o3",
+          "text": "Enable Timeline and Timeline highlights for their cases."
+        },
+        {
+          "id": "o4",
+          "text": "Give representatives read-only article access and expect the review editor to publish their changes."
+        },
+        {
+          "id": "o5",
+          "text": "Enable the case Timeline but omit Timeline highlights from the review setup."
+        }
+      ],
+      "correctOptionIds": [
+        "o2",
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "Notifications do not provide the required edit permission.",
+        "o2": "Representatives need edit access to articles.",
+        "o3": "The case review experience requires these timeline capabilities.",
+        "o4": "The documented review experience needs permission to edit articles.",
+        "o5": "The documented case review experience requires both Timeline and Timeline highlights."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n10"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q51",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.3.01"
+      ],
+      "conceptId": "knowledge-global-search-preview-mode",
+      "prompt": "A standalone team wants knowledge articles selected from global search to open in article preview rather than the authoring form. Access and indexing work, and the OpenRecordItem command has not been customized. Which configuration should be reviewed?",
+      "answer": "Enable Kb preview mode from global search.",
+      "explanation": "Search discovery and article rendering are distinct settings; enable the knowledge preview option for this global-search experience.",
+      "sourceIds": [
+        "exam-d5-s13"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "feature:knowledge-global-search-preview-mode",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Change knowledge search mode from any to all."
+        },
+        {
+          "id": "o2",
+          "text": "Increase the configured number of knowledge search results."
+        },
+        {
+          "id": "o3",
+          "text": "Enable Kb preview mode from global search."
+        },
+        {
+          "id": "o4",
+          "text": "Enable only suggest-as-you-type while leaving global-search preview disabled."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "Keyword matching logic does not select the article preview renderer.",
+        "o2": "Display count affects result volume, not article opening mode.",
+        "o3": "The knowledge global-search preview option controls the described behavior.",
+        "o4": "Suggestions do not replace the dedicated global-search preview setting."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n08"
+        }
+      ],
+      "status": "draft"
+    }
+  ],
+  "editorial": [
+    {
+      "id": "ab250-d5-q05",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "profile-team-targeting",
+      "objectiveIds": [
+        "D5.1.01"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s01",
+          "section": "Create experience profiles; Assign users and templates",
+          "claim": "Use a custom experience profile for a team-specific configuration rather than modifying an immutable supplied default.",
+          "applicability": "Product/deployment scope and verified prerequisites specified in the original scenario; source opened and exact section examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Team-specific profile design; q06 diagnoses an unassigned user, while pilot q04 connects session components. Strongest alternative: queue membership does not select a custom profile.",
+      "revisionReason": "Independent review requested adjacent alternatives and/or observed-condition stems instead of explicit diagnosis; source-supported answer set retained."
+    },
+    {
+      "id": "ab250-d5-q06",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "profile-assignment-verification",
+      "objectiveIds": [
+        "D5.1.01"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s01",
+          "section": "Default profiles; Assign users and templates",
+          "claim": "Verify effective user association when a correct custom profile works for one user but another receives a default.",
+          "applicability": "Product/deployment scope and verified prerequisites specified in the original scenario; source opened and exact section examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Effective assignment diagnosis, unlike q05 choosing a profile design. Strongest alternative: extra permissions cannot substitute for selecting the profile.",
+      "revisionReason": "Independent review requested adjacent alternatives and/or observed-condition stems instead of explicit diagnosis; source-supported answer set retained."
+    },
+    {
+      "id": "ab250-d5-q07",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "inbox-view-record-and-visibility",
+      "objectiveIds": [
+        "D5.1.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s02",
+          "section": "Configure custom views",
+          "claim": "Inbox content selection and representative visibility are separate configuration decisions.",
+          "applicability": "Product/deployment scope and verified prerequisites specified in the original scenario; source opened and exact section examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Multi-entity visibility configuration, not q08 condition logic or q09 live voice behavior. Strongest alternative: a descriptive name alone does not add record types.",
+      "revisionReason": "Independent review requested adjacent alternatives and/or observed-condition stems instead of explicit diagnosis; source-supported answer set retained."
+    },
+    {
+      "id": "ab250-d5-q08",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "inbox-custom-sort-configuration",
+      "objectiveIds": [
+        "D5.1.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s02",
+          "section": "Configure custom sort in the inbox",
+          "claim": "Keep inclusion logic separate from ordering; configure the view custom sort for the supported business attribute.",
+          "applicability": "Product/deployment scope and verified prerequisites specified in the original scenario; source opened and exact section examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Study c08 asks Advanced filter selection. This operational requirement preserves membership and configures a business sort, rather than choosing a filter builder.",
+      "revisionReason": "Independent reviewer requested a distinct operational decision; exact primary section reopened and examined2026-11-03."
+    },
+    {
+      "id": "ab250-d5-q09",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "inbox-live-voice-session-behavior",
+      "objectiveIds": [
+        "D5.1.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s02",
+          "section": "Live chat and voice channel in inbox",
+          "claim": "Inbox awareness and a live voice session coexist; enabling the inbox does not convert voice into an inbox-only interaction.",
+          "applicability": "Product/deployment scope and verified prerequisites specified in the original scenario; source opened and exact section examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Live channel navigation expectation, not view filtering. Strongest alternative: asynchronous inbox promotion behavior cannot be assumed for voice.",
+      "revisionReason": "Independent review requested adjacent alternatives and/or observed-condition stems instead of explicit diagnosis; source-supported answer set retained."
+    },
+    {
+      "id": "ab250-d5-q10",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "dashboard-tab-app-module-membership",
+      "objectiveIds": [
+        "D5.1.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s03",
+          "section": "Page types: Dashboard",
+          "claim": "A valid GUID is insufficient if the dashboard is absent from the application module.",
+          "applicability": "Product/deployment scope and verified prerequisites specified in the original scenario; source opened and exact section examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Application-module inclusion, distinct from pilot iframe hosting or q11 record existence. Strongest alternative: a runtime title does not select a missing dashboard.",
+      "revisionReason": "Independent review requested adjacent alternatives and/or observed-condition stems instead of explicit diagnosis; source-supported answer set retained."
+    },
+    {
+      "id": "ab250-d5-q11",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "entity-tab-create-versus-lookup-intent",
+      "objectiveIds": [
+        "D5.1.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s03",
+          "section": "Page types: Entity record, existing-record and create-form parameters",
+          "claim": "Separate intentional creation from existing-record lookup, and validate existence where stale identity must not open create mode.",
+          "applicability": "Product/deployment scope and verified prerequisites specified in the original scenario; source opened and exact section examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Study c10 recalls a guard. This design must preserve intentional creation in one flow while preventing stale-ID accidental creation in another; formId is not an identity validator.",
+      "revisionReason": "Independent reviewer requested a distinct operational decision; exact primary section reopened and examined2026-11-03."
+    },
+    {
+      "id": "ab250-d5-q12",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "website-tab-runtime-parameterization",
+      "objectiveIds": [
+        "D5.1.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s03",
+          "section": "Third-party website: How parsing works",
+          "claim": "Combine a valid HTTPS address with supported runtime data rather than cloning a fixed customer URL.",
+          "applicability": "Product/deployment scope and verified prerequisites specified in the original scenario; source opened and exact section examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Runtime URL composition with iframe compatibility already verified; avoids pilot q01 embedding diagnosis. Strongest alternative: changing titles does not supply URL parameters.",
+      "revisionReason": "Independent review requested adjacent alternatives and/or observed-condition stems instead of explicit diagnosis; source-supported answer set retained."
+    },
+    {
+      "id": "ab250-d5-q13",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "entity-session-table-ownership-boundary",
+      "objectiveIds": [
+        "D5.1.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s04",
+          "section": "Create a session template: Entity field note",
+          "claim": "Table ownership constrains the Entity session selector; app visibility and broad permissions do not remove that scope.",
+          "applicability": "Product/deployment scope and verified prerequisites specified in the original scenario; source opened and exact section examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Study c11 asks Generic for channels. This diagnoses the separate user-owned-table restriction in an Entity selector with access already verified.",
+      "revisionReason": "Independent reviewer requested a distinct operational decision; exact primary section reopened and examined2026-11-03."
+    },
+    {
+      "id": "ab250-d5-q14",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "session-initial-panel-mode",
+      "objectiveIds": [
+        "D5.1.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s04",
+          "section": "Create a session template: Communication panel mode",
+          "claim": "Initial communication-panel presentation is a session-template setting, separate from notification display and tab composition.",
+          "applicability": "Product/deployment scope and verified prerequisites specified in the original scenario; source opened and exact section examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Initial panel behavior; not pilot association composition or q15 countdown. Strongest alternative: notification display controls do not set the panel state.",
+      "revisionReason": "Independent review requested adjacent alternatives and/or observed-condition stems instead of explicit diagnosis; source-supported answer set retained."
+    },
+    {
+      "id": "ab250-d5-q15",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "desktop-notification-body-versus-accept",
+      "objectiveIds": [
+        "D5.1.05"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s05",
+          "section": "Desktop notifications: body selection versus Accept/Reject",
+          "claim": "Desktop alert activation and conversation acceptance are separate actions; test the button and body paths separately.",
+          "applicability": "Product/deployment scope and verified prerequisites specified in the original scenario; source opened and exact section examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Study c12 concerns hidden countdown expiry. This tests the different runtime body-click and explicit acceptance paths.",
+      "revisionReason": "Independent reviewer requested a distinct operational decision; exact primary section reopened and examined2026-11-03."
+    },
+    {
+      "id": "ab250-d5-q16",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "record-notification-reject-semantics",
+      "objectiveIds": [
+        "D5.1.05"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s05",
+          "section": "Manage templates: record routing note",
+          "claim": "Do not use a Reject affordance as a record-assignment control when the documented routing semantics still assign the record.",
+          "applicability": "Product/deployment scope and verified prerequisites specified in the original scenario; source opened and exact section examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Record-routing notification affordance, distinct from chat notification expiry. Strongest alternative: a visible button does not establish record rejection behavior.",
+      "revisionReason": "Independent review requested adjacent alternatives and/or observed-condition stems instead of explicit diagnosis; source-supported answer set retained."
+    },
+    {
+      "id": "ab250-d5-q17",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "desktop-notification-browser-permission",
+      "objectiveIds": [
+        "D5.1.05"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s05",
+          "section": "Allow a browser to show notifications",
+          "claim": "Verify the browser delivery permission separately from the application notification configuration.",
+          "applicability": "Product/deployment scope and verified prerequisites specified in the original scenario; source opened and exact section examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Native browser permission boundary rather than q15 timer semantics or q16 record-routing behavior. Strongest alternative: reimporting app configuration does not change denied browser permission.",
+      "revisionReason": "Independent review requested adjacent alternatives and/or observed-condition stems instead of explicit diagnosis; source-supported answer set retained."
+    },
+    {
+      "id": "ab250-d5-q18",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "script-reusable-subprocedure",
+      "objectiveIds": [
+        "D5.2.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s06",
+          "section": "Create scripts: Action Type and Target script",
+          "claim": "Use a script-to-script target for reusable guidance; text instructions and data-action macros do not provide that same composition.",
+          "applicability": "Standalone Copilot Service workspace unless the stem explicitly compares deployment modes; no unsupported embedded API inference. Primary section opened and examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Study c13 asks the Order field. This composes a maintained shared guidance procedure, distinct from q19 invoking an automation macro.",
+      "revisionReason": "Independent reviewer requested a distinct operational decision; exact primary section reopened and examined2026-11-03."
+    },
+    {
+      "id": "ab250-d5-q19",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "script-executable-step-wiring",
+      "objectiveIds": [
+        "D5.2.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s06",
+          "section": "Create scripts: Action Type; Target macro",
+          "claim": "Guidance and execution are different step contracts; an executable macro step needs its action type and target.",
+          "applicability": "Standalone Copilot Service workspace unless the stem explicitly compares deployment modes; no unsupported embedded API inference. Primary section opened and examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Instruction-to-automation wiring, unlike q18 sequence or pilot permission. Strongest alternative: writing a macro name in prose does not invoke it.",
+      "revisionReason": "Independent review requested adjacent alternatives and/or observed-condition stems; the documented answer contract and scope remain intact."
+    },
+    {
+      "id": "ab250-d5-q20",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "script-manual-context-exception",
+      "objectiveIds": [
+        "D5.2.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s06",
+          "section": "Set the default script for representatives: manual selection",
+          "claim": "A correct context-sensitive default does not prevent manual selection of another associated guide for an individual exception.",
+          "applicability": "Standalone Copilot Service workspace unless the stem explicitly compares deployment modes; no unsupported embedded API inference. Primary section opened and examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Study c06 configures conditional defaults. This preserves the correct shared default and handles a per-conversation manual exception without changing other users.",
+      "revisionReason": "Independent reviewer requested a distinct operational decision; exact primary section reopened and examined2026-11-03."
+    },
+    {
+      "id": "ab250-d5-q21",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "script-language-enablement",
+      "objectiveIds": [
+        "D5.2.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s06",
+          "section": "Create scripts: Language",
+          "claim": "The authoring language list follows Dataverse-enabled languages rather than text in step or template names.",
+          "applicability": "Standalone Copilot Service workspace unless the stem explicitly compares deployment modes; no unsupported embedded API inference. Primary section opened and examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Authoring-language prerequisite, not q18 order/q20 default selection or author permission. Strongest alternative: a translated title does not enable an environment language.",
+      "revisionReason": "Independent review requested adjacent alternatives and/or observed-condition stems; the documented answer contract and scope remain intact."
+    },
+    {
+      "id": "ab250-d5-q22",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "macro-related-customer-query-scope",
+      "objectiveIds": [
+        "D5.2.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s07",
+          "section": "Pass session context variables to macros: related-record OData query",
+          "claim": "Scope the related-record query with the anchor customer relationship; the anchor does not automatically contain every field of that related contact.",
+          "applicability": "Standalone Copilot Service workspace unless the stem explicitly compares deployment modes; no unsupported embedded API inference. Primary section opened and examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Study c14 asks whether anchor context changes. This retrieves an attribute from its related contact despite an unrelated focused tab; q23 intentionally retrieves additional-tab attributes instead.",
+      "revisionReason": "Independent reviewer requested a distinct operational decision; exact primary section reopened and examined2026-11-03."
+    },
+    {
+      "id": "ab250-d5-q23",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "macro-current-tab-record-query",
+      "objectiveIds": [
+        "D5.2.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s07",
+          "section": "Additional tabs",
+          "claim": "Select the correct record identity first, then query the needed values rather than treating the entire additional record as anchor data.",
+          "applicability": "Standalone Copilot Service workspace unless the stem explicitly compares deployment modes; no unsupported embedded API inference. Primary section opened and examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Intentional additional-record retrieval, unlike q22 preserving anchor provenance and pilot Autofill focus. Strongest alternative: all additional fields are not automatically anchor attributes.",
+      "revisionReason": "Independent review requested adjacent alternatives and/or observed-condition stems; the documented answer contract and scope remain intact."
+    },
+    {
+      "id": "ab250-d5-q24",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "macro-lookup-attribute-triplet",
+      "objectiveIds": [
+        "D5.2.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s20",
+          "section": "Open a new form to create a record",
+          "claim": "A lookup is structured identity, not a plain label. Use the documented related-record attributes together.",
+          "applicability": "Standalone Copilot Service workspace unless the stem explicitly compares deployment modes; no unsupported embedded API inference. Primary section opened and examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Lookup payload completeness, not macro context source or focused form target. Strongest alternative: a GUID alone omits the explicitly required lookup companions."
+    },
+    {
+      "id": "ab250-d5-q25",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "macro-save-required-field-failure",
+      "objectiveIds": [
+        "D5.2.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s20",
+          "section": "Save the record",
+          "claim": "The Save action must satisfy required-field validation; repeating a failed save does not repair missing mandatory data.",
+          "applicability": "Standalone Copilot Service workspace unless the stem explicitly compares deployment modes; no unsupported embedded API inference. Primary section opened and examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Study c05 asks to add Save after Autofill. This already has Save and diagnoses required-field failure, rather than repeating persistence-action selection.",
+      "revisionReason": "Independent reviewer requested a distinct operational decision; exact primary section reopened and examined2026-11-03."
+    },
+    {
+      "id": "ab250-d5-q26",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "macro-action-output-scope",
+      "objectiveIds": [
+        "D5.2.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s19",
+          "section": "Context data from other macro actions",
+          "claim": "Respect the scope of action-generated context: macro chaining supports it, reusable templates do not inherit that action execution.",
+          "applicability": "Standalone Copilot Service workspace unless the stem explicitly compares deployment modes; no unsupported embedded API inference. Primary section opened and examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Action-output lifecycle, not anchor/current-tab record provenance. Strongest alternative: an output existing in a macro does not make it a general template slug."
+    },
+    {
+      "id": "ab250-d5-q27",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "macro-connector-responsibility",
+      "objectiveIds": [
+        "D5.2.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s07",
+          "section": "Predefined automation actions",
+          "claim": "Choose the connector that owns each operation instead of using one vaguely related automation surface for both.",
+          "applicability": "Standalone Copilot Service workspace unless the stem explicitly compares deployment modes; no unsupported embedded API inference. Primary section opened and examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Connector capability selection; no duplicate of context record or form save questions. Strongest alternative: Omnichannel conversation association is not tab focus."
+    },
+    {
+      "id": "ab250-d5-q28",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "custom-pane-component-deployment-order",
+      "objectiveIds": [
+        "D5.2.01"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s08",
+          "section": "Prerequisites; Configure a custom productivity tool",
+          "claim": "Component availability is a prerequisite to tool registration and profile rollout; configuration records do not build the referenced component.",
+          "applicability": "Standalone Copilot Service workspace unless the stem explicitly compares deployment modes; no unsupported embedded API inference. Primary section opened and examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Study c16 begins with a published registered component and asks profile enablement. This tests an earlier target deployment dependency before usable registration.",
+      "revisionReason": "Independent reviewer requested a distinct operational decision; exact primary section reopened and examined2026-11-03."
+    },
+    {
+      "id": "ab250-d5-q29",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "custom-pane-explicit-session-context",
+      "objectiveIds": [
+        "D5.2.01"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s08",
+          "section": "Understand the limitations of custom tools",
+          "claim": "Visible custom tools are standalone experiences; current-session data is not automatically provided by registration or global availability.",
+          "applicability": "Standalone Copilot Service workspace unless the stem explicitly compares deployment modes; no unsupported embedded API inference. Primary section opened and examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Custom component context contract, unlike q28 visibility and macro anchor provenance. Strongest alternative: Global concerns availability, not automatic record context.",
+      "revisionReason": "Independent review requested adjacent alternatives and/or observed-condition stems; the documented answer contract and scope remain intact."
+    },
+    {
+      "id": "ab250-d5-q30",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "teams-multisession-profile-permissions",
+      "objectiveIds": [
+        "D5.2.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s09",
+          "section": "Permissions required; Specific multisession users",
+          "claim": "Validate both the targeted custom profile and user permission prerequisites; app-wide enablement alone is incomplete.",
+          "applicability": "Standalone Copilot Service workspace unless the stem explicitly compares deployment modes; no unsupported embedded API inference. Primary section opened and examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Collaboration readiness layers, distinct from q31 record authorization and q32 record-type eligibility. Strongest alternative: the app toggle does not supply user permissions."
+    },
+    {
+      "id": "ab250-d5-q31",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "teams-introduction-note-field-exposure",
+      "objectiveIds": [
+        "D5.2.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s09",
+          "section": "Add record types: static context-card fields and field-level permissions note",
+          "claim": "Review the static Teams introduction note separately from linked-record access; included context fields can expose information the initiating representative could view.",
+          "applicability": "Standalone Copilot Service workspace unless the stem explicitly compares deployment modes; no unsupported embedded API inference. Primary section opened and examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Study c17 asks whether chat grants record access. This keeps record denial intact but diagnoses a distinct static introduction-note field exposure path.",
+      "revisionReason": "Independent reviewer requested a distinct operational decision; exact primary section reopened and examined2026-11-03."
+    },
+    {
+      "id": "ab250-d5-q32",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "teams-custom-record-type-connection",
+      "objectiveIds": [
+        "D5.2.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s09",
+          "section": "Add record types",
+          "claim": "Configure the collaboration record-type integration rather than treating general app enablement as coverage for every custom record.",
+          "applicability": "Standalone Copilot Service workspace unless the stem explicitly compares deployment modes; no unsupported embedded API inference. Primary section opened and examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Eligible record-type configuration, unlike q30 user setup and q31 authorization. Strongest alternative: a profile cannot replace the explicit Teams connection list.",
+      "revisionReason": "Independent review requested adjacent alternatives and/or observed-condition stems; the documented answer contract and scope remain intact."
+    },
+    {
+      "id": "ab250-d5-q33",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "apm-background-session-attention",
+      "objectiveIds": [
+        "D5.2.05"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s10",
+          "section": "Session management: getSession; requestFocus versus focus",
+          "claim": "Retrieve the intended existing session and request attention through its indicator instead of stealing focus from the current conversation.",
+          "applicability": "Standalone Copilot Service workspace unless the stem explicitly compares deployment modes; no unsupported embedded API inference. Primary section opened and examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Study c19 recalls creation guards. This already has the existing target session and chooses nonintrusive attention over immediate focus or duplicate creation.",
+      "revisionReason": "Independent reviewer requested a distinct operational decision; exact primary section reopened and examined2026-11-03."
+    },
+    {
+      "id": "ab250-d5-q34",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "apm-update-context-future-macros",
+      "objectiveIds": [
+        "D5.2.05"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s10",
+          "section": "Context management",
+          "claim": "Update session context explicitly when subsequent macros must consume a changed value.",
+          "applicability": "Standalone Copilot Service workspace unless the stem explicitly compares deployment modes; no unsupported embedded API inference. Primary section opened and examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Future context mutation, distinct from q33 container guards or q22 provenance. Strongest alternative: refreshing a UI tab is not the documented dictionary update operation.",
+      "revisionReason": "Final independent-review quality pass replaces implausible mutation claims with adjacent tab-parameter and record-field versus cached-context alternatives; source-supported updateContext key retained."
+    },
+    {
+      "id": "ab250-d5-q35",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "omnichannel-focused-conversation-link",
+      "objectiveIds": [
+        "D5.2.06"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s11",
+          "section": "Methods: linkToConversation",
+          "claim": "Validate session focus at the action boundary; a valid case record alone does not select the intended ongoing conversation.",
+          "applicability": "Standalone Copilot Service workspace unless the stem explicitly compares deployment modes; no unsupported embedded API inference. Primary section opened and examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Conversation target identity after session switch, not pilot Autofill focused form targeting. Strongest alternative: a correct case GUID does not choose a conversation.",
+      "revisionReason": "Independent review requested adjacent alternatives and/or observed-condition stems; the documented answer contract and scope remain intact."
+    },
+    {
+      "id": "ab250-d5-q36",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "embedded-conversation-link-applicability",
+      "objectiveIds": [
+        "D5.2.06"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s18",
+          "section": "Link to conversations",
+          "claim": "Review deployment applicability before promising the documented representative linking control; this question does not infer an alternative embedded API contract.",
+          "applicability": "Standalone Copilot Service workspace unless the stem explicitly compares deployment modes; no unsupported embedded API inference. Primary section opened and examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Explicit embedded UI scope, unlike q35 standalone API focus. Strongest alternative: standalone template availability does not establish embedded support."
+    },
+    {
+      "id": "ab250-d5-q37",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "omnichannel-agent-conversation-collection",
+      "objectiveIds": [
+        "D5.2.06"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s11",
+          "section": "Methods: getConversations versus getConversationId",
+          "claim": "Choose conversation collection retrieval for a work list spanning conversations; a focused GUID and UI container enumeration have different scopes.",
+          "applicability": "Standalone Copilot Service workspace unless the stem explicitly compares deployment modes; no unsupported embedded API inference. Primary section opened and examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Study c20 recalls the ongoing conversation GUID. This requires a representative-level record collection and challenges substituting UI container enumeration.",
+      "revisionReason": "Independent reviewer requested a distinct operational decision; exact primary section reopened and examined2026-11-03."
+    },
+    {
+      "id": "ab250-d5-q38",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "knowledge-custom-table-enablement",
+      "objectiveIds": [
+        "D5.3.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s12",
+          "section": "Set up knowledge management: Record types",
+          "claim": "Adding a table to application navigation does not enable its knowledge-management record context.",
+          "applicability": "Standalone workspace knowledge administration or specifically stated Customer Service case feature; primary section opened and claim examined 2026-11-03. No external-search-to-Copilot-grounding inference."
+        }
+      ],
+      "duplicateCheck": "Table-level enablement, unlike q39 search prerequisites and q40 control placement. Strongest alternative: external content integration does not enable a custom record type.",
+      "revisionReason": "Independent review requested adjacent alternatives and/or observed-condition stems; the documented answer contract and scope remain intact."
+    },
+    {
+      "id": "ab250-d5-q39",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "knowledge-search-index-and-pane",
+      "objectiveIds": [
+        "D5.3.01"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s13",
+          "section": "Prerequisites",
+          "claim": "Search readiness has both an assigned-profile surface and documented article-field configuration.",
+          "applicability": "Standalone workspace knowledge administration or specifically stated Customer Service case feature; primary section opened and claim examined 2026-11-03. No external-search-to-Copilot-grounding inference."
+        }
+      ],
+      "duplicateCheck": "Search preparation after table/security readiness, not q38 enabling a table or q51 preview rendering. Strongest alternative: Dataverse search being enabled does not establish the required Quick Find configuration.",
+      "revisionReason": "Independent review requested adjacent alternatives and/or observed-condition stems; the documented answer contract and scope remain intact."
+    },
+    {
+      "id": "ab250-d5-q40",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "knowledge-nonanchor-autosearch-exception",
+      "objectiveIds": [
+        "D5.3.01"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s14",
+          "section": "Applicability note: single-session apps or auto search on non-anchor tabs",
+          "claim": "Apply the non-anchor auto-search exception narrowly; it does not require replacing the primary multisession side-pane experience.",
+          "applicability": "Standalone workspace knowledge administration or specifically stated Customer Service case feature; primary section opened and claim examined 2026-11-03. No external-search-to-Copilot-grounding inference."
+        }
+      ],
+      "duplicateCheck": "Study c24 asks the primary multisession surface. This scenario already has that surface and applies the separate non-anchor auto-search exception.",
+      "revisionReason": "Independent reviewer requested a distinct operational decision; exact primary section reopened and examined2026-11-03."
+    },
+    {
+      "id": "ab250-d5-q41",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "knowledge-all-term-search",
+      "objectiveIds": [
+        "D5.3.01"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s12",
+          "section": "Set up knowledge search logic",
+          "claim": "Use all-term search logic when matching either keyword produces an overly broad result set.",
+          "applicability": "Standalone workspace knowledge administration or specifically stated Customer Service case feature; primary section opened and claim examined 2026-11-03. No external-search-to-Copilot-grounding inference."
+        }
+      ],
+      "duplicateCheck": "Keyword Boolean policy, not indexing prerequisites or preview UI. Strongest alternative: suggestion UX does not change the any-versus-all result rule."
+    },
+    {
+      "id": "ab250-d5-q42",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "external-search-custom-role-federated-privileges",
+      "objectiveIds": [
+        "D5.3.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s15",
+          "section": "Post-configuration representative experience: custom role permissions note",
+          "claim": "Check custom-role federated-result table privileges after source authorization and provider operation have been independently verified.",
+          "applicability": "Standalone workspace knowledge administration or specifically stated Customer Service case feature; primary section opened and claim examined 2026-11-03. No external-search-to-Copilot-grounding inference."
+        }
+      ],
+      "duplicateCheck": "Study c25 asks whether registration grants source access. This verifies that access and diagnoses a separate Dataverse federated-result permission layer.",
+      "revisionReason": "Independent reviewer requested a distinct operational decision; exact primary section reopened and examined2026-11-03."
+    },
+    {
+      "id": "ab250-d5-q43",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "external-search-graph-index-selection",
+      "objectiveIds": [
+        "D5.3.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s15",
+          "section": "Provider types",
+          "claim": "Select the Microsoft Search connector identity for federated discovery; this configuration does not establish a generative-agent knowledge-source configuration.",
+          "applicability": "Standalone workspace knowledge administration or specifically stated Customer Service case feature; primary section opened and claim examined 2026-11-03. No external-search-to-Copilot-grounding inference."
+        }
+      ],
+      "duplicateCheck": "Indexed source/provider selection, not q42 access or q44 public linking. Strongest alternative: the SharePoint URL option is a different provider contract."
+    },
+    {
+      "id": "ab250-d5-q44",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "portal-links-and-attachments",
+      "objectiveIds": [
+        "D5.3.05"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s12",
+          "section": "Set up knowledge management: Portals; Update attachments",
+          "claim": "Public article links and article attachment synchronization require separate portal settings.",
+          "applicability": "Standalone workspace knowledge administration or specifically stated Customer Service case feature; primary section opened and claim examined 2026-11-03. No external-search-to-Copilot-grounding inference."
+        }
+      ],
+      "duplicateCheck": "Public reader integration, distinct from internal search discovery and external-provider federation. Strongest alternative: a working article URL does not establish attachment synchronization."
+    },
+    {
+      "id": "ab250-d5-q45",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "knowledge-harvest-runtime-readiness",
+      "objectiveIds": [
+        "D5.3.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s17",
+          "section": "Set up connection references for Customer Knowledge Management Agent",
+          "claim": "Connection binding, active harvesting flows and the published agent are distinct runtime readiness checks.",
+          "applicability": "Standalone workspace knowledge administration or specifically stated Customer Service case feature; primary section opened and claim examined 2026-11-03. No external-search-to-Copilot-grounding inference."
+        }
+      ],
+      "duplicateCheck": "Post-connection runtime completion, not compliance/publication of generated articles. Strongest alternative: saved connection references do not enable disabled flows.",
+      "revisionReason": "Independent review requested adjacent alternatives and/or observed-condition stems; the documented answer contract and scope remain intact."
+    },
+    {
+      "id": "ab250-d5-q46",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "knowledge-realtime-existing-content-check",
+      "objectiveIds": [
+        "D5.3.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s16",
+          "section": "Enable real-time knowledge creation",
+          "claim": "Real-time eligibility triggers evaluation; it is not a guarantee of a newly created article.",
+          "applicability": "Standalone workspace knowledge administration or specifically stated Customer Service case feature; primary section opened and claim examined 2026-11-03. No external-search-to-Copilot-grounding inference."
+        }
+      ],
+      "duplicateCheck": "Existing-content decision after a qualifying resolution, distinct from q45 runtime setup and q48 publishing governance. Strongest alternative: a trigger match alone does not mandate article creation.",
+      "revisionReason": "Independent review requested adjacent alternatives and/or observed-condition stems; the documented answer contract and scope remain intact."
+    },
+    {
+      "id": "ab250-d5-q47",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "knowledge-historical-harvest-batching",
+      "objectiveIds": [
+        "D5.3.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s16",
+          "section": "Creation from historical cases or conversations",
+          "claim": "Bound the source selection before starting historical harvesting; the documented process cannot be stopped once launched.",
+          "applicability": "Standalone workspace knowledge administration or specifically stated Customer Service case feature; primary section opened and claim examined 2026-11-03. No external-search-to-Copilot-grounding inference."
+        }
+      ],
+      "duplicateCheck": "Bulk job planning, not real-time trigger behavior. Strongest alternative: a UI navigation action does not stop a long-running harvesting process."
+    },
+    {
+      "id": "ab250-d5-q48",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "knowledge-compliant-internal-autopublish",
+      "objectiveIds": [
+        "D5.3.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s16",
+          "section": "Auto publish articles",
+          "claim": "Control compliance eligibility and publication audience independently; internal automatic publication does not require external audience selection.",
+          "applicability": "Standalone workspace knowledge administration or specifically stated Customer Service case feature; primary section opened and claim examined 2026-11-03. No external-search-to-Copilot-grounding inference."
+        }
+      ],
+      "duplicateCheck": "Automatic audience governance, distinct from q49 sensitive-data review and q50 manual draft-review prerequisites. Strongest alternative: internal-and-external publication violates the requested audience."
+    },
+    {
+      "id": "ab250-d5-q49",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "knowledge-sensitive-data-review",
+      "objectiveIds": [
+        "D5.3.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s16",
+          "section": "Set the default compliance state: sensitive information note",
+          "claim": "Automated personal-data removal does not guarantee complete detection; review generated material before its intended publication.",
+          "applicability": "Standalone workspace knowledge administration or specifically stated Customer Service case feature; primary section opened and claim examined 2026-11-03. No external-search-to-Copilot-grounding inference."
+        }
+      ],
+      "duplicateCheck": "Content validation limitation, not q48 audience toggles or q50 reviewer UX. Strongest alternative: successful generation and internal status do not prove safe content."
+    },
+    {
+      "id": "ab250-d5-q50",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "knowledge-manual-review-experience",
+      "objectiveIds": [
+        "D5.3.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s16",
+          "section": "Set up the agent review draft experience",
+          "claim": "Manual draft review needs both appropriate article permissions and the supported case timeline experience after notifications are configured.",
+          "applicability": "Standalone workspace knowledge administration or specifically stated Customer Service case feature; primary section opened and claim examined 2026-11-03. No external-search-to-Copilot-grounding inference."
+        }
+      ],
+      "duplicateCheck": "Reviewer experience prerequisites, not pilot script authoring role or q48 automatic publication. Strongest alternative: notifications alone do not provide editing rights or the case review surface.",
+      "revisionReason": "Independent review requested adjacent alternatives and/or observed-condition stems; the documented answer contract and scope remain intact."
+    },
+    {
+      "id": "ab250-d5-q51",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "knowledge-global-search-preview-mode",
+      "objectiveIds": [
+        "D5.3.01"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d5-s13",
+          "section": "Search the knowledge base in Copilot Service workspace",
+          "claim": "Search discovery and article rendering are distinct settings; enable the knowledge preview option for this global-search experience.",
+          "applicability": "Standalone workspace knowledge administration or specifically stated Customer Service case feature; primary section opened and claim examined 2026-11-03. No external-search-to-Copilot-grounding inference."
+        }
+      ],
+      "duplicateCheck": "Result rendering after successful discovery, unlike q39 preparation or q41 all-term matching. Strongest alternative: harvesting configuration does not select the global-search preview renderer."
+    }
+  ]
+}

@@ -1,0 +1,494 @@
+[
+  {
+    "id": "cc-d5-n01",
+    "revision": 1,
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "a0bb270534c0d9f52762dcf80eda44b52831332de71a0313037d44f4c201f749",
+    "rationale": "The three cited sections jointly support session composition, nonclosable anchor, custom-template policy, iframe compatibility and workstream association. Standalone scope is explicit; its checklist adds a useful troubleshooting method.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-s01",
+        "section": "Overview; custom-template note; Create a session template; Associate application tabs, scripts with session templates",
+        "supported": true,
+        "notes": "Read exact template fields and association steps; anchor and custom-template limitations are explicit."
+      },
+      {
+        "sourceId": "cc-d5-s02",
+        "section": "Third-party website",
+        "supported": true,
+        "notes": "Read iframe-hosting restriction and refused-to-connect behavior for this page type."
+      },
+      {
+        "sourceId": "cc-d5-s05",
+        "section": "Configure advanced settings; Associate templates",
+        "supported": true,
+        "notes": "Read custom session selection under workstream advanced settings."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-n02",
+    "revision": 1,
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "b6cd71cdd1979ab05871ef3b0d9c1da13bc1a0ff37153a90b3ffc8b3b7c12603",
+    "rationale": "Script step types and conditional default, sequential macro entry, runtime context and explicit-save distinction are directly documented. Generic parameter wording avoids conflicting example syntax in the documentation.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-s03",
+        "section": "Prerequisites; Create scripts; Set the default script for representatives",
+        "supported": true,
+        "notes": "Read authoring role, step action types, association and conditional default behavior, including manual script switching."
+      },
+      {
+        "sourceId": "cc-d5-s04",
+        "section": "Create macros; Pass session context variables to macros",
+        "supported": true,
+        "notes": "Read required first step and sequential context-driven macro behavior."
+      },
+      {
+        "sourceId": "cc-d5-s06",
+        "section": "Pass data parameter in macros and scripts; Automation dictionary formats",
+        "supported": true,
+        "notes": "Read context replacement and context-specific parameter formats; no universal syntax is asserted."
+      },
+      {
+        "sourceId": "cc-d5-s07",
+        "section": "Autofill form fields; Save the record",
+        "supported": true,
+        "notes": "Read focused-form/entity requirement, autosave timing and explicit save alternative."
+      }
+    ]
+  },
+  {
+    "id": "cc-d6-n01",
+    "revision": 1,
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "8a8f800ec194c7e70117354db89ba1921900b1c6b1b2cf21446ac44e34bca2be",
+    "rationale": "Monitoring, private coaching and joining are separate documented voice operations. The note correctly separates report reading and report editing permissions.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-s01",
+        "section": "Prerequisites; Consult with a representative during a conversation; Join conversation (barge)",
+        "supported": true,
+        "notes": "Read standalone applicability, role, invisible monitoring, private text consultation and joining notification."
+      },
+      {
+        "sourceId": "cc-d6-s02",
+        "section": "Configure user access to analytics and dashboards",
+        "supported": true,
+        "notes": "Read report-table access, underlying-entity Read privileges and Analytics Report Author distinction."
+      }
+    ]
+  },
+  {
+    "id": "cc-d6-n02",
+    "revision": 1,
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "86d66306447bac1d966c82547f7f6d466abc3852695c4b9402aff3fcc9bd57da",
+    "rationale": "The voice prerequisite and diagnostics setup are directly supported. Critically, the note confines the out-of-the-box-method restriction to diagnostic insights rather than incorrectly excluding all custom-assignment telemetry.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-s03",
+        "section": "Manage Omnichannel real-time analytics reports: Additional options",
+        "supported": true,
+        "notes": "Read explicit voice-configuration dependency for the additional voice-analytics option."
+      },
+      {
+        "sourceId": "cc-d6-s04",
+        "section": "Overview; Prerequisites; View conversation diagnostics",
+        "supported": true,
+        "notes": "Read Managed environment, Azure, query and administration prerequisites and Application Insights storage."
+      },
+      {
+        "sourceId": "cc-d6-s05",
+        "section": "Assignment and routing; Supervisor actions; Other non-channel specific events; Representative configuration scenario",
+        "supported": true,
+        "notes": "Read named lifecycle events and explicit custom assignment ruleset telemetry; matches the bounded claims."
+      },
+      {
+        "sourceId": "cc-d6-s06",
+        "section": "Things to keep in mind; Use the Debug tab to view assignment data",
+        "supported": true,
+        "notes": "Read method limitation and event-time requirements/representative comparison rather than current-state-only diagnosis."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-c01",
+    "revision": 1,
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "d80e1bbc604c18323440d39e8bc546ca1c3a23d9a2baa7b2f9dfcd6d0448af94",
+    "rationale": "The session template specifies an anchor that opens at session start and cannot be closed. A distinct foundational retrieval target.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-s01",
+        "section": "Overview; custom-template note; Create a session template; Associate application tabs, scripts with session templates",
+        "supported": true,
+        "notes": "Read exact template fields and association steps; anchor and custom-template limitations are explicit."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-c02",
+    "revision": 1,
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "4c0282e6aa60b8fb70a2f895f8c1a3d1ea2e1c7432a22f033514a2c05b0c05b9",
+    "rationale": "Microsoft explicitly directs authors to create custom session templates rather than customize supplied templates.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-s01",
+        "section": "Overview; custom-template note; Create a session template; Associate application tabs, scripts with session templates",
+        "supported": true,
+        "notes": "Read exact template fields and association steps; anchor and custom-template limitations are explicit."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-c03",
+    "revision": 1,
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "246283ebec4c88d376aa6725b72a0c1b08be5c897dcd830732a5da7b7cbc3f8c",
+    "rationale": "The macro creation section explicitly requires Start macro execution first.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-s04",
+        "section": "Create macros; Pass session context variables to macros",
+        "supported": true,
+        "notes": "Read required first step and sequential context-driven macro behavior."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-c04",
+    "revision": 1,
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "431f3982e144df4d0e9a60dcf5a3151b999bfcf0b806a47eec5b86d128fe0794",
+    "rationale": "Contextual replacement at execution is directly documented. The answer does not assert an unsupported universal slug syntax.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-s06",
+        "section": "Pass data parameter in macros and scripts; Automation dictionary formats",
+        "supported": true,
+        "notes": "Read context replacement and context-specific parameter formats; no universal syntax is asserted."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-c05",
+    "revision": 2,
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "55d6719a2cfcfd5e3f82725cb50a7cdc9c1c44ee857276c05698ddc1c5cf8d28",
+    "rationale": "Revision 2 replaces unrelated choices with form-workflow alternatives. Only explicit save meets the immediate-persistence requirement; the explanation distinguishes autosave correctly.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-s07",
+        "section": "Autofill form fields; Save the record",
+        "supported": true,
+        "notes": "Read focused-form/entity requirement, autosave timing and explicit save alternative."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-c06",
+    "revision": 2,
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "227295347a2c8a158b379a68649ebecfef85defcfcf381ac9cec2efe226f0f6e",
+    "rationale": "Revision 2 distinguishes script availability, naming and step ordering from contextual default selection. Only the expression implements the requested decision.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-s03",
+        "section": "Prerequisites; Create scripts; Set the default script for representatives",
+        "supported": true,
+        "notes": "Read authoring role, step action types, association and conditional default behavior, including manual script switching."
+      }
+    ]
+  },
+  {
+    "id": "cc-d6-c01",
+    "revision": 1,
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "57872e7995b1e077fc7cf95d9fceab8d0a4555208785aa270d7d14e0afc27548",
+    "rationale": "The voice-monitoring prerequisites explicitly name Omnichannel Supervisor for the scoped product.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-s01",
+        "section": "Prerequisites; Consult with a representative during a conversation; Join conversation (barge)",
+        "supported": true,
+        "notes": "Read standalone applicability, role, invisible monitoring, private text consultation and joining notification."
+      }
+    ]
+  },
+  {
+    "id": "cc-d6-c02",
+    "revision": 1,
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "2b3f6861bc1fafe194e5f77e4e508957db0d99c8f527ae45dab5666a7cb02bd1",
+    "rationale": "Private supervisor consultation messages are expressly hidden from the customer; no unsupported private-audio claim is made.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-s01",
+        "section": "Prerequisites; Consult with a representative during a conversation; Join conversation (barge)",
+        "supported": true,
+        "notes": "Read standalone applicability, role, invisible monitoring, private text consultation and joining notification."
+      }
+    ]
+  },
+  {
+    "id": "cc-d6-c03",
+    "revision": 1,
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "46b349c8440208f344a1bb20b043816a7e80969ceff2f1740e5f6309bb36d84e",
+    "rationale": "The analytics access article explicitly names Analytics Report Author for editing. Mapping to access control is appropriate.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-s02",
+        "section": "Configure user access to analytics and dashboards",
+        "supported": true,
+        "notes": "Read report-table access, underlying-entity Read privileges and Analytics Report Author distinction."
+      }
+    ]
+  },
+  {
+    "id": "cc-d6-c04",
+    "revision": 1,
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "911e2df0c7f1793ec1b4e62c09052bab3c10848d5dca7d7482d1512d49c172aa",
+    "rationale": "The diagnostics setup connects to Application Insights to collect and store lifecycle logs.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-s04",
+        "section": "Overview; Prerequisites; View conversation diagnostics",
+        "supported": true,
+        "notes": "Read Managed environment, Azure, query and administration prerequisites and Application Insights storage."
+      }
+    ]
+  },
+  {
+    "id": "cc-d6-c05",
+    "revision": 2,
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "cee3a5513d13cddeadc32930480dec252f6bf1eed1b09cc06f3299d7b2fb6c49",
+    "rationale": "Revision 2 compares plausible diagnostic evidence. Only the event-time eligibility snapshot alongside requirements can explain the historical assignment.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-s06",
+        "section": "Things to keep in mind; Use the Debug tab to view assignment data",
+        "supported": true,
+        "notes": "Read method limitation and event-time requirements/representative comparison rather than current-state-only diagnosis."
+      }
+    ]
+  },
+  {
+    "id": "cc-d6-c06",
+    "revision": 2,
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "bd171201aa7f2c91ab4bde66dcac714b52b12c608ae79e693aad7c2c6ebbf7e4",
+    "rationale": "Revision 2 uses analytics setup misconceptions. The cited page expressly requires configured voice, regardless of report toggles or authoring role.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-s03",
+        "section": "Manage Omnichannel real-time analytics reports: Additional options",
+        "supported": true,
+        "notes": "Read explicit voice-configuration dependency for the additional voice-analytics option."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q01",
+    "revision": 2,
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "ce83d2037c6661c026f9806b3f21cbecffa3f70f06693bb41f1de9a748597b0d",
+    "rationale": "Revision 2 uses tab-configuration alternatives. The source explicitly requires iframe compatibility and marks the data parameter optional; names and anchor placement do not remove the restriction.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-s02",
+        "section": "Third-party website",
+        "supported": true,
+        "notes": "Read iframe-hosting restriction and refused-to-connect behavior for this page type."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q02",
+    "revision": 2,
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "682ca0e69ff6df48cdedf520036b88c1ae4822a3eb1792ab882da2d6f09d174c",
+    "rationale": "Revision 2 contrasts target-selection misconceptions. The source specifies the focused form with matching entity type; anchor context or tab labels do not override that rule.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-s07",
+        "section": "Autofill form fields; Save the record",
+        "supported": true,
+        "notes": "Read focused-form/entity requirement, autosave timing and explicit save alternative."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q03",
+    "revision": 1,
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "69d42c77e245914b53f2c6f4ae1dd7ba5be4ce477613344608c49631ef696f11",
+    "rationale": "The scripts article distinguishes administrator authoring from productivity-tool usage. The other named roles do not satisfy that specific documented prerequisite alone; one correct answer.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-s03",
+        "section": "Prerequisites; Create scripts; Set the default script for representatives",
+        "supported": true,
+        "notes": "Read authoring role, step action types, association and conditional default behavior, including manual script switching."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q04",
+    "revision": 2,
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "220cad75f96a83e6b3bbde49669dcffbe360fc48fa7b2199e3bc20fe27b8a038",
+    "rationale": "Revision 2 uses template-wiring alternatives. Duplicate unassociated records and notification-only configuration do not create the two required relationships.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-s01",
+        "section": "Overview; custom-template note; Create a session template; Associate application tabs, scripts with session templates",
+        "supported": true,
+        "notes": "Read exact template fields and association steps; anchor and custom-template limitations are explicit."
+      },
+      {
+        "sourceId": "cc-d5-s05",
+        "section": "Configure advanced settings; Associate templates",
+        "supported": true,
+        "notes": "Read custom session selection under workstream advanced settings."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d6-q01",
+    "revision": 2,
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "4ef23ce9287b53c20714d4fc49f989cce502b2b9f30ccd6ba73803152cdfccff",
+    "rationale": "Revision 2 replaces the unrelated report action. Private messages and monitoring do not speak to the customer, while representative departure violates the scenario.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-s01",
+        "section": "Prerequisites; Consult with a representative during a conversation; Join conversation (barge)",
+        "supported": true,
+        "notes": "Read standalone applicability, role, invisible monitoring, private text consultation and joining notification."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d6-q02",
+    "revision": 3,
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "b6e5b5ca6d99070cfcb6d0e9d88c05af781df364ca96b4f13c74fdf39a7708f1",
+    "rationale": "Revision 3 explicitly excludes report editing. This rules out Analytics Report Author by the stated requirement, without asserting it never grants read access. Applicable underlying-entity Read access is directly documented; bookmarks and report-table access alone do not satisfy the gap.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-s02",
+        "section": "Configure user access to analytics and dashboards",
+        "supported": true,
+        "notes": "Read report-table access, underlying-entity Read privileges and Analytics Report Author distinction."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d6-q03",
+    "revision": 1,
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "6ab87ee3381edf999d83ac15ffe84c9af7b5da535e5ff21355720a5abd97b2dc",
+    "rationale": "The event table distinguishes RouteToQueue from classification, supervisor entry and assignment notification timeout. The key and all explanations match that table.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-s05",
+        "section": "Assignment and routing; Supervisor actions; Other non-channel specific events; Representative configuration scenario",
+        "supported": true,
+        "notes": "Read named lifecycle events and explicit custom assignment ruleset telemetry; matches the bounded claims."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d6-q04",
+    "revision": 2,
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "564c402988defa520631581c55b5cfb38bb070d44463e779cb1c5765ebaac7b5",
+    "rationale": "Revision 2 distinguishes environment status and permission planes. Sandbox type alone does not meet Managed status; additional Azure access does not supply the stated missing administration role.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-s04",
+        "section": "Overview; Prerequisites; View conversation diagnostics",
+        "supported": true,
+        "notes": "Read Managed environment, Azure, query and administration prerequisites and Application Insights storage."
+      }
+    ]
+  }
+]

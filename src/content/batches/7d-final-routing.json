@@ -1,0 +1,1447 @@
+{
+  "sources": [
+    {
+      "id": "cc-d4-final-s01",
+      "title": "Create and manage queues for unified routing",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/queues-omnichannel"
+    },
+    {
+      "id": "cc-d4-final-s02",
+      "title": "Manage overflow of work items in queues",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/manage-overflow"
+    },
+    {
+      "id": "cc-d4-final-s03",
+      "title": "Create and manage operating hours",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-operating-hours"
+    },
+    {
+      "id": "cc-d4-final-s04",
+      "title": "Create and manage workstreams",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-workstreams"
+    },
+    {
+      "id": "cc-d4-final-s05",
+      "title": "Configure work classification rulesets",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-work-classification"
+    },
+    {
+      "id": "cc-d4-final-s06",
+      "title": "Configure the engagement agent - training",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-routing-contact-center/3-configure-engagement-agent"
+    },
+    {
+      "id": "cc-d4-final-s07",
+      "title": "Understand how skill match algorithm works",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/set-up-skill-based-routing"
+    },
+    {
+      "id": "cc-d4-final-s08",
+      "title": "Set up intelligent skill finder model",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/set-up-isf-model"
+    },
+    {
+      "id": "cc-d4-final-s09",
+      "title": "Configure intent-driven routing (preview)",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-intent-driven-routing"
+    },
+    {
+      "id": "cc-d4-final-s10",
+      "title": "Configure routing to preferred or previously engaged representatives",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-preferred-agent"
+    },
+    {
+      "id": "cc-d4-final-s11",
+      "title": "Set up unified routing for records",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/set-up-record-routing"
+    },
+    {
+      "id": "cc-d4-final-s12",
+      "title": "Route cases using basic routing rulesets",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-rules-automatically-route-cases"
+    },
+    {
+      "id": "cc-d4-final-s13",
+      "title": "Configure conversation diagnostics",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-conversation-diagnostics"
+    },
+    {
+      "id": "cc-d4-final-s14",
+      "title": "Understand conversation diagnostics data",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/conversation-diagnostics-subscenarios"
+    },
+    {
+      "id": "cc-d4-final-s15",
+      "title": "FAQ about unified routing",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/unified-routing-faqs"
+    }
+  ],
+  "notes": [
+    {
+      "id": "cc-d4-n03",
+      "title": "Design the queue pool and assignment policy together",
+      "body": "Create an advanced queue with the appropriate Messaging, Record or Voice type; that type controls which workstreams can target it. Add the representatives who should be eligible, then select its assignment method. A queue without the intended membership is not a completed staffing configuration.\n\nQueue priority governs competition between queues: a smaller number is higher priority. It is different from a work item's priority within a queue. Highest capacity favors the eligible representative with the most available capacity; advanced round robin rotates eligible representatives, and least active favors the least active eligible person. Decide the business policy before choosing the method, while preserving skill, presence and capacity conditions for the selected configuration.",
+      "sourceIds": [
+        "cc-d4-final-s01"
+      ]
+    },
+    {
+      "id": "cc-d4-n04",
+      "title": "Treat fallback, overflow and opening hours as different controls",
+      "body": "Fallback is a workstream safety net for a classification error, route-to-queue error or no matching queue rule. Configure a real fallback queue and its representatives. When a work item reaches it for those reasons, its overflow settings are ignored. Overflow instead applies configured channel-specific condition/action pairs around an otherwise selected queue.\n\nDistinguish the initial prequeue check from waiting-time handling after queueing. For example, out-of-hours handling is an initial condition; prolonged actual waiting can trigger a later queue transfer. Do not assume that every channel supports the same actions.\n\nCreate the operating-hours record, choose its timezone and recurrence, add holidays, then associate it with the queue or channel. Daylight saving is handled for the selected timezone. A queue without configured hours is considered available around the clock. Test an actual holiday and after-hours arrival, including its chosen overflow action.",
+      "sourceIds": [
+        "cc-d4-final-s01",
+        "cc-d4-final-s02",
+        "cc-d4-final-s03"
+      ]
+    },
+    {
+      "id": "cc-d4-n05",
+      "title": "Connect self-service to a deliberately configured workstream",
+      "body": "Choose the workstream type and Push or Pick distribution when creating it. The distribution mode cannot be edited later, and voice uses Push only. Configure capacity, allowed presences and the channel entry point as a connected design.\n\nFor the course's engagement-agent pattern, first configure a Copilot Studio agent and connect it to omnichannel. Select that agent in the workstream's Bot area. Author its escalation behavior in Copilot Studio; the workstream association is not a substitute for a working handoff topic. Collected customer context can then inform classification after escalation.\n\nClassification rules add requirements and attributes before queue selection. Use a linked template when its maintained definition should be reused; choose Copy from template when this workstream needs an editable variation. Test self-service resolution and escalation separately, including whether the handed-off context supports the intended routing.",
+      "sourceIds": [
+        "cc-d4-final-s04",
+        "cc-d4-final-s05",
+        "cc-d4-final-s06"
+      ]
+    },
+    {
+      "id": "cc-d4-n06",
+      "title": "Prepare skill metadata before adding prediction",
+      "body": "Build a rating model, skill types and skills, then assign representative proficiency. Attach the work item's required skills through logical classification or a published prediction model. The rating model used for a skill in classification must match the one used for that representative skill; inconsistent scales can break assignment.\n\nIntelligent skill finder uses an AI Builder category classification model. Check regional availability and the documented AI Builder preview-model prerequisite. Select useful text attributes, load the training data, review and approve labels, train and publish. Test predicted tags against skills that actually exist in the organization; a plausible tag is not automatically a valid skill record.\n\nThen include the model in machine-learning classification. Continue checking representative corrections and retrain with reviewed data. Prediction supplies work requirements; the queue's assignment strategy still decides who receives the work. A training result alone is not an end-to-end routing test.",
+      "sourceIds": [
+        "cc-d4-final-s05",
+        "cc-d4-final-s07",
+        "cc-d4-final-s08"
+      ]
+    },
+    {
+      "id": "cc-d4-n07",
+      "title": "Separate intent requirements from preferred-person exceptions",
+      "body": "The current intent-driven routing documentation is explicitly preview. Enable Customer Intent Agent and intent discovery, and configure the appropriate Copilot agent on the workstream. The upstream agent determines live chat/voice intent and persists its fields during handoff. Classification can attach skills from intent; queue rules can test intent, intent group or line of business. Unified routing does not itself infer live chat or voice intent from raw messages in this flow.\n\nStandard preferred representative routing serves another goal: a known contact's relationship with selected representatives. Map contacts to representatives who belong to the target queue and use a Push workstream. Allowed presence is checked, but this preferred path skips skills, capacity and ordinary assignment-rule checks. Choose the unavailable-preferred fallback deliberately: next-best assignment or remaining unassigned.\n\nDo not assume a preferred-person configuration enforces the same eligibility contract as standard skill-based assignment. Current intent-driven preview and separate orchestration playbooks also should not be mixed with legacy intent-to-user-group mapping instructions.",
+      "sourceIds": [
+        "cc-d4-final-s09",
+        "cc-d4-final-s10"
+      ]
+    },
+    {
+      "id": "cc-d4-n08",
+      "title": "Use intake rules when moving from basic case routing to unified records",
+      "body": "Basic routing rulesets in Customer Service route cases. Create ordered condition/action items, activate the ruleset and test matching cases. The first matching item routes the case and stops further evaluation. Deactivate a ruleset before editing it.\n\nUnified record routing has a broader pipeline. Enable the record type for routing, create a Record workstream and configure intake rules that select its workstream or an active basic routing rule. Those intake conditions are not route-to-queue rules: they choose which routing path receives the record before classification and assignment.\n\nAfter enabling unified routing, an existing active basic rule does not route records until intake rules are configured. Test the transition in a development environment. Confirm representative record access, not only queue membership; unified assignment cannot grant permission to the underlying record.",
+      "sourceIds": [
+        "cc-d4-final-s11",
+        "cc-d4-final-s12",
+        "cc-d4-final-s15"
+      ]
+    },
+    {
+      "id": "cc-d4-n09",
+      "title": "Diagnose the routing stage that actually failed",
+      "body": "Set up conversation diagnostics and its connection to Azure Application Insights before expecting lifecycle evidence. The current setup requires a Managed environment and appropriate Azure and application permissions. This conversation-lifecycle experience replaces reliance on deprecated legacy routing diagnostics; it does not create historical evidence for events that were never collected.\n\nUse the conversation identifier and timestamps to follow Intake, Classification, RouteToQueue and CSRAssignment. Queue selection is not the same as a representative accepting work. When the target queue is correct but work remains unassigned, inspect assignment attempts and the associated snapshot of queue configuration, rules, representative presence, capacity and skills.\n\nChange the failing layer based on evidence. A queue-routing success is no reason to rewrite classification if the assignment snapshot shows an eligibility failure. Conversely, changing representative capacity cannot repair a record that entered the wrong workstream. Keep any query scoped to the relevant conversation and attempt.",
+      "sourceIds": [
+        "cc-d4-final-s13",
+        "cc-d4-final-s14",
+        "cc-d4-final-s15"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "cc-d4-c07",
+      "revision": 1,
+      "topicId": "routing-capacity",
+      "kind": "recall",
+      "prompt": "Which advanced queue type can receive live chat work items?",
+      "answer": "Messaging.",
+      "explanation": "Queue type constrains compatible workstream and transfer destinations; Record and Voice queues serve different workloads.",
+      "sourceIds": [
+        "cc-d4-final-s01"
+      ],
+      "noteIds": [
+        "cc-d4-n03"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "domain:work-distribution",
+        "feature:queue-channel-type",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d4-c08",
+      "revision": 1,
+      "topicId": "routing-capacity",
+      "kind": "recall",
+      "prompt": "Between queue priority values 1 and 3, which is prioritized higher?",
+      "answer": "1.",
+      "explanation": "Smaller queue priority numbers are higher priority; this ranks queues rather than replacing per-work-item ordering.",
+      "sourceIds": [
+        "cc-d4-final-s01"
+      ],
+      "noteIds": [
+        "cc-d4-n03"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "domain:work-distribution",
+        "feature:queue-priority-direction",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d4-c09",
+      "revision": 1,
+      "topicId": "routing-capacity",
+      "kind": "mcq",
+      "prompt": "An operations team wants each new item assigned to the eligible representative with the greatest remaining capacity, rather than rotating offers or favoring the least active person. Which standard method fits?",
+      "answer": "Highest capacity.",
+      "explanation": "The other standard methods express different policies. A custom method is available when standard methods cannot express the requirement.",
+      "sourceIds": [
+        "cc-d4-final-s01"
+      ],
+      "noteIds": [
+        "cc-d4-n03"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "domain:work-distribution",
+        "feature:standard-assignment-policy",
+        "task:configure",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Highest capacity."
+        },
+        {
+          "id": "b",
+          "text": "Advanced round robin."
+        },
+        {
+          "id": "c",
+          "text": "Least active."
+        },
+        {
+          "id": "d",
+          "text": "A custom method ordered by lowest proficiency."
+        }
+      ],
+      "correctOptionId": "a"
+    },
+    {
+      "id": "cc-d4-c10",
+      "revision": 1,
+      "topicId": "routing-capacity",
+      "kind": "recall",
+      "prompt": "What happens to overflow settings on a fallback queue when routing reaches it because no route-to-queue rule matches?",
+      "answer": "They are ignored for that fallback routing path.",
+      "explanation": "Fallback on errors/no match is a safety-net path; it is not ordinary overflow evaluation against a normally selected queue.",
+      "sourceIds": [
+        "cc-d4-final-s02"
+      ],
+      "noteIds": [
+        "cc-d4-n04"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "domain:work-distribution",
+        "feature:fallback-overflow-boundary",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d4-c11",
+      "revision": 1,
+      "topicId": "routing-capacity",
+      "kind": "recall",
+      "prompt": "What schedule setting makes operating hours account for the appropriate daylight-saving transition?",
+      "answer": "The applicable timezone on the operating-hours schedule.",
+      "explanation": "Define the recurrence and holidays, then associate the operating-hours record with the queue or channel.",
+      "sourceIds": [
+        "cc-d4-final-s03"
+      ],
+      "noteIds": [
+        "cc-d4-n04"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "domain:work-distribution",
+        "feature:operating-calendar-timezone",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d4-c12",
+      "revision": 1,
+      "topicId": "routing-capacity",
+      "kind": "mcq",
+      "prompt": "A correctly matched messaging queue receives customers outside its published business hours. The team wants those arrivals handled differently before they wait. Which control should it configure?",
+      "answer": "The queue's prequeue out-of-operating-hours condition and supported action.",
+      "explanation": "This is overflow around a matched queue. Fallback addresses missing/error routing decisions; queued waiting-time overflow addresses time already spent waiting.",
+      "sourceIds": [
+        "cc-d4-final-s02",
+        "cc-d4-final-s03"
+      ],
+      "noteIds": [
+        "cc-d4-n04"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "domain:work-distribution",
+        "feature:after-hours-overflow-design",
+        "task:configure",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "The fallback queue for unmatched classification."
+        },
+        {
+          "id": "b",
+          "text": "The queue's prequeue out-of-operating-hours condition and supported action."
+        },
+        {
+          "id": "c",
+          "text": "Only the automated message announcing the published hours."
+        },
+        {
+          "id": "d",
+          "text": "Only the threshold for time already spent waiting in the queue."
+        }
+      ],
+      "correctOptionId": "b"
+    },
+    {
+      "id": "cc-d4-c13",
+      "revision": 1,
+      "topicId": "routing-capacity",
+      "kind": "recall",
+      "prompt": "Can a workstream's Push/Pick distribution mode be edited after creation?",
+      "answer": "No. Choose it at creation; the documented setting cannot be edited later.",
+      "explanation": "Voice supports Push only. Plan the distribution mode before connecting channels and routing.",
+      "sourceIds": [
+        "cc-d4-final-s04"
+      ],
+      "noteIds": [
+        "cc-d4-n05"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "domain:work-distribution",
+        "feature:workstream-distribution-mode-choice",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d4-c14",
+      "revision": 1,
+      "topicId": "routing-capacity",
+      "kind": "recall",
+      "prompt": "Where is the engagement agent's logic deciding when to escalate to a representative authored?",
+      "answer": "In the Copilot Studio agent's topics.",
+      "explanation": "Connect the agent to omnichannel and associate it with the workstream; that association alone does not define escalation conditions.",
+      "sourceIds": [
+        "cc-d4-final-s06"
+      ],
+      "noteIds": [
+        "cc-d4-n05"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "domain:work-distribution",
+        "feature:engagement-agent-escalation-authoring",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d4-c15",
+      "revision": 1,
+      "topicId": "routing-capacity",
+      "kind": "mcq",
+      "prompt": "A shared classification template is useful, but one workstream needs different conditions that its administrator can edit locally. Which creation option fits?",
+      "answer": "Copy from template.",
+      "explanation": "A linked Template ruleset cannot be edited within that workstream. A copied definition supports local changes; assignment methods operate at a different stage.",
+      "sourceIds": [
+        "cc-d4-final-s05"
+      ],
+      "noteIds": [
+        "cc-d4-n05"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "domain:work-distribution",
+        "feature:classification-template-local-variation",
+        "task:configure",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Link Template ruleset and edit its rule items inside the workstream."
+        },
+        {
+          "id": "b",
+          "text": "Move the proposed classification outputs into a queue assignment rule."
+        },
+        {
+          "id": "c",
+          "text": "Copy from template."
+        },
+        {
+          "id": "d",
+          "text": "Edit the shared template so all linked workstreams receive the change."
+        }
+      ],
+      "correctOptionId": "c"
+    },
+    {
+      "id": "cc-d4-c16",
+      "revision": 1,
+      "topicId": "routing-capacity",
+      "kind": "recall",
+      "prompt": "What must align when the same skill is attached to a work item and assigned to a representative?",
+      "answer": "The skill's rating model.",
+      "explanation": "Do not use different rating models for that skill in the conversation and representative configuration.",
+      "sourceIds": [
+        "cc-d4-final-s05"
+      ],
+      "noteIds": [
+        "cc-d4-n06"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "domain:work-distribution",
+        "feature:skill-rating-model-consistency",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d4-c17",
+      "revision": 1,
+      "topicId": "routing-capacity",
+      "kind": "recall",
+      "prompt": "Which platform model capability underpins intelligent skill finder?",
+      "answer": "An AI Builder custom category classification model.",
+      "explanation": "Check AI Builder availability and the documented preview-model prerequisite, then review, train, publish and test the skill model.",
+      "sourceIds": [
+        "cc-d4-final-s08"
+      ],
+      "noteIds": [
+        "cc-d4-n06"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "domain:work-distribution",
+        "feature:skill-finder-model-dependency",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d4-c18",
+      "revision": 2,
+      "topicId": "routing-capacity",
+      "kind": "mcq",
+      "prompt": "A published skill finder model returns predicted tags during a test, but the administrator receives no linked skills. Training and publication completed successfully. Which configuration should be inspected first?",
+      "answer": "Whether the predicted tag matches an available skill in the organization.",
+      "explanation": "Model testing links predicted tags to matching available organization skills. Verify that taxonomy alignment before changing downstream queue assignment or representative availability.",
+      "sourceIds": [
+        "cc-d4-final-s08"
+      ],
+      "noteIds": [
+        "cc-d4-n06"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "domain:work-distribution",
+        "feature:predicted-tag-skill-alignment",
+        "task:configure",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Whether a different field order would change the training input."
+        },
+        {
+          "id": "b",
+          "text": "Whether the workstream uses a different queue assignment method."
+        },
+        {
+          "id": "c",
+          "text": "Whether representative capacity profiles have sufficient space."
+        },
+        {
+          "id": "d",
+          "text": "Whether the predicted tag matches an available skill in the organization."
+        }
+      ],
+      "correctOptionId": "d"
+    },
+    {
+      "id": "cc-d4-c19",
+      "revision": 1,
+      "topicId": "routing-capacity",
+      "kind": "recall",
+      "prompt": "In the documented intent-driven routing preview, who determines intent for live chat and voice before unified routing evaluates the intent fields?",
+      "answer": "The upstream configured Copilot agent.",
+      "explanation": "Customer Intent Agent and intent discovery are prerequisites; classification and queue rules then consume persisted intent fields.",
+      "sourceIds": [
+        "cc-d4-final-s09"
+      ],
+      "noteIds": [
+        "cc-d4-n07"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "domain:work-distribution",
+        "feature:intent-routing-upstream-determination",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d4-c20",
+      "revision": 1,
+      "topicId": "routing-capacity",
+      "kind": "recall",
+      "prompt": "Which standard eligibility checks are skipped by the documented preferred-representative assignment path?",
+      "answer": "Capacity, skills and assignment-rule checks.",
+      "explanation": "It still requires the preferred representative to be available in an allowed presence; configure contact mapping, queue membership and Push routing.",
+      "sourceIds": [
+        "cc-d4-final-s10"
+      ],
+      "noteIds": [
+        "cc-d4-n07"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "domain:work-distribution",
+        "feature:preferred-routing-eligibility-exception",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d4-c21",
+      "revision": 2,
+      "topicId": "routing-capacity",
+      "kind": "mcq",
+      "prompt": "A team requires every automatic assignment to enforce its skills and capacity rules. It considers enabling standard preferred representative routing to preserve customer relationships. What must it account for?",
+      "answer": "The preferred-person path bypasses those ordinary skills and capacity checks.",
+      "explanation": "That documented exception can conflict with the requirement. Standard assignment and preferred-person assignment do not share an identical eligibility contract.",
+      "sourceIds": [
+        "cc-d4-final-s10"
+      ],
+      "noteIds": [
+        "cc-d4-n07"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "domain:work-distribution",
+        "feature:preferred-routing-policy-conflict",
+        "task:configure",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "The preferred-person path bypasses those ordinary skills and capacity checks."
+        },
+        {
+          "id": "b",
+          "text": "Preferred assignment enforces skill matching, but ignores capacity only when the queue fallback time expires."
+        },
+        {
+          "id": "c",
+          "text": "Preferred assignment checks ordinary capacity and skills, while bypassing the allowed-presence requirement."
+        },
+        {
+          "id": "d",
+          "text": "Preferred assignment bypasses queue membership, but retains the ordinary skills and capacity checks."
+        }
+      ],
+      "correctOptionId": "a"
+    },
+    {
+      "id": "cc-d4-c22",
+      "revision": 1,
+      "topicId": "routing-capacity",
+      "kind": "recall",
+      "prompt": "What do intake rules select in unified record routing?",
+      "answer": "The workstream or active basic routing rule used for the incoming record.",
+      "explanation": "Intake chooses the routing path; downstream queue-selection rules and assignment perform different steps.",
+      "sourceIds": [
+        "cc-d4-final-s11"
+      ],
+      "noteIds": [
+        "cc-d4-n08"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "domain:work-distribution",
+        "feature:record-intake-path-selection",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d4-c23",
+      "revision": 1,
+      "topicId": "routing-capacity",
+      "kind": "recall",
+      "prompt": "How are matching rule items processed in a basic case-routing ruleset?",
+      "answer": "From top to bottom, stopping after the first matching item routes the case.",
+      "explanation": "Activate the ruleset to apply it; deactivate it before edits. Basic routing is case-oriented, unlike general unified record routing.",
+      "sourceIds": [
+        "cc-d4-final-s12"
+      ],
+      "noteIds": [
+        "cc-d4-n08"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "domain:work-distribution",
+        "feature:basic-routing-first-match",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d4-c24",
+      "revision": 1,
+      "topicId": "routing-capacity",
+      "kind": "mcq",
+      "prompt": "An existing case-routing ruleset worked before unified routing was enabled. It remains active, but records no longer follow that path. Which transition configuration should be inspected?",
+      "answer": "The intake rules mapping incoming records to the active basic rule or workstream.",
+      "explanation": "The record-routing documentation explicitly requires intake configuration after enabling unified routing. Activating an old rule alone does not complete the new pipeline.",
+      "sourceIds": [
+        "cc-d4-final-s11"
+      ],
+      "noteIds": [
+        "cc-d4-n08"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "domain:work-distribution",
+        "feature:unified-intake-transition",
+        "task:configure",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Only the active status of the old basic routing rule, without intake changes."
+        },
+        {
+          "id": "b",
+          "text": "The intake rules mapping incoming records to the active basic rule or workstream."
+        },
+        {
+          "id": "c",
+          "text": "Only the queue assignment method, without checking the intake stage."
+        },
+        {
+          "id": "d",
+          "text": "Only the representative capacity limits, without checking the intake stage."
+        }
+      ],
+      "correctOptionId": "b"
+    },
+    {
+      "id": "cc-d4-c25",
+      "revision": 2,
+      "topicId": "routing-capacity",
+      "kind": "recall",
+      "prompt": "A case has been routed several times. Why must a troubleshooter choose the intended routing attempt before examining its intake and routing events?",
+      "answer": "Each routing attempt creates a corresponding conversation; inspect the conversation for the attempt being diagnosed.",
+      "explanation": "The case Diagnose experience lists routing attempts. Selecting the intended attempt avoids attributing a different conversation's intake decisions to the failure under investigation.",
+      "sourceIds": [
+        "cc-d4-final-s13"
+      ],
+      "noteIds": [
+        "cc-d4-n09"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "domain:work-distribution",
+        "feature:case-routing-attempt-scope",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d4-c26",
+      "revision": 1,
+      "topicId": "routing-capacity",
+      "kind": "recall",
+      "prompt": "Which diagnostics subscenario records unified routing attempting representative assignment?",
+      "answer": "CSRAssignment.",
+      "explanation": "RouteToQueue records queue selection; it does not establish a successful representative offer or acceptance.",
+      "sourceIds": [
+        "cc-d4-final-s14"
+      ],
+      "noteIds": [
+        "cc-d4-n09"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "domain:work-distribution",
+        "feature:assignment-diagnostic-subscenario",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d4-c27",
+      "revision": 1,
+      "topicId": "routing-capacity",
+      "kind": "mcq",
+      "prompt": "A conversation reached the intended queue, but no representative receives it. Which evidence best isolates the next routing stage?",
+      "answer": "The CSRAssignment attempts and assignment snapshot for that conversation.",
+      "explanation": "The snapshot exposes assignment rules and representative eligibility details. Successful queue selection is already known; unrelated UI settings do not explain the unassigned work.",
+      "sourceIds": [
+        "cc-d4-final-s14"
+      ],
+      "noteIds": [
+        "cc-d4-n09"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "domain:work-distribution",
+        "feature:assignment-snapshot-troubleshooting",
+        "task:configure",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "The Intake evaluation to choose a different workstream despite the correct queue."
+        },
+        {
+          "id": "b",
+          "text": "The classification outputs alone, without inspecting assignment eligibility."
+        },
+        {
+          "id": "c",
+          "text": "The CSRAssignment attempts and assignment snapshot for that conversation."
+        },
+        {
+          "id": "d",
+          "text": "The route-to-queue rules alone, treating queue arrival as completed assignment."
+        }
+      ],
+      "correctOptionId": "c"
+    }
+  ],
+  "questions": [],
+  "editorial": [
+    {
+      "id": "cc-d4-n03",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "queue-design-assignment-policy",
+      "objectiveIds": [
+        "D4.1.01",
+        "D4.1.02",
+        "D4.1.04"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-final-s01",
+          "section": "Create a queue; Queue prioritization; Fallback queues",
+          "claim": "Queue types match channels; add users, choose assignment method; smaller priority number is higher. Fallback handles classification/routing errors or no match.",
+          "applicability": "Advanced unified-routing queues, not basic queue privacy."
+        }
+      ],
+      "duplicateCheck": "Compared existing D4 pilot and new digital workflow. Adds setup, feature boundary or scoped diagnostic decision; does not repeat pilot exact-match threshold, round-robin per-queue order, classification rule ordering or manual capacity override."
+    },
+    {
+      "id": "cc-d4-c07",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "queue-channel-type",
+      "objectiveIds": [
+        "D4.1.01"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-final-s01",
+          "section": "Create a queue; Queue prioritization; Fallback queues",
+          "claim": "Messaging. Queue type constrains compatible workstream and transfer destinations; Record and Voice queues serve different workloads.",
+          "applicability": "Advanced unified-routing queues, not basic queue privacy."
+        }
+      ],
+      "duplicateCheck": "Compared existing D4 pilot and new digital workflow. Adds setup, feature boundary or scoped diagnostic decision; does not repeat pilot exact-match threshold, round-robin per-queue order, classification rule ordering or manual capacity override."
+    },
+    {
+      "id": "cc-d4-c08",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "queue-priority-direction",
+      "objectiveIds": [
+        "D4.1.02"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-final-s01",
+          "section": "Create a queue; Queue prioritization; Fallback queues",
+          "claim": "1. Smaller queue priority numbers are higher priority; this ranks queues rather than replacing per-work-item ordering.",
+          "applicability": "Advanced unified-routing queues, not basic queue privacy."
+        }
+      ],
+      "duplicateCheck": "Compared existing D4 pilot and new digital workflow. Adds setup, feature boundary or scoped diagnostic decision; does not repeat pilot exact-match threshold, round-robin per-queue order, classification rule ordering or manual capacity override."
+    },
+    {
+      "id": "cc-d4-c09",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "standard-assignment-policy",
+      "objectiveIds": [
+        "D4.1.04"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-final-s01",
+          "section": "Create a queue; Queue prioritization; Fallback queues",
+          "claim": "Highest capacity. The other standard methods express different policies. A custom method is available when standard methods cannot express the requirement.",
+          "applicability": "Advanced unified-routing queues, not basic queue privacy."
+        }
+      ],
+      "duplicateCheck": "Compared existing D4 pilot and new digital workflow. Adds setup, feature boundary or scoped diagnostic decision; does not repeat pilot exact-match threshold, round-robin per-queue order, classification rule ordering or manual capacity override."
+    },
+    {
+      "id": "cc-d4-n04",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "fallback-overflow-operating-hours",
+      "objectiveIds": [
+        "D4.1.03",
+        "D4.1.05"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-final-s01",
+          "section": "Create a queue; Queue prioritization; Fallback queues",
+          "claim": "Queue types match channels; add users, choose assignment method; smaller priority number is higher. Fallback handles classification/routing errors or no match.",
+          "applicability": "Advanced unified-routing queues, not basic queue privacy."
+        },
+        {
+          "sourceId": "cc-d4-final-s02",
+          "section": "Before queueing; When queued; Fallback queues",
+          "claim": "Prequeue overflow and queued waiting-time overflow are separate; fallback caused by errors/no rule match ignores fallback queue overflow settings.",
+          "applicability": "Current queue overflow rules; actions vary by channel."
+        },
+        {
+          "sourceId": "cc-d4-final-s03",
+          "section": "Create record; Define holiday; Add hours to queue",
+          "claim": "Choose timezone with DST handling, add holidays and associate the schedule with queue/channel. No queue hours means round-the-clock availability.",
+          "applicability": "Queue/channel operating calendars, not representative shift bookings."
+        }
+      ],
+      "duplicateCheck": "Compared existing D4 pilot and new digital workflow. Adds setup, feature boundary or scoped diagnostic decision; does not repeat pilot exact-match threshold, round-robin per-queue order, classification rule ordering or manual capacity override."
+    },
+    {
+      "id": "cc-d4-c10",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "fallback-overflow-boundary",
+      "objectiveIds": [
+        "D4.1.03"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-final-s02",
+          "section": "Before queueing; When queued; Fallback queues",
+          "claim": "They are ignored for that fallback routing path. Fallback on errors/no match is a safety-net path; it is not ordinary overflow evaluation against a normally selected queue.",
+          "applicability": "Current queue overflow rules; actions vary by channel."
+        }
+      ],
+      "duplicateCheck": "Compared existing D4 pilot and new digital workflow. Adds setup, feature boundary or scoped diagnostic decision; does not repeat pilot exact-match threshold, round-robin per-queue order, classification rule ordering or manual capacity override."
+    },
+    {
+      "id": "cc-d4-c11",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "operating-calendar-timezone",
+      "objectiveIds": [
+        "D4.1.05"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-final-s03",
+          "section": "Create record; Define holiday; Add hours to queue",
+          "claim": "The applicable timezone on the operating-hours schedule. Define the recurrence and holidays, then associate the operating-hours record with the queue or channel.",
+          "applicability": "Queue/channel operating calendars, not representative shift bookings."
+        }
+      ],
+      "duplicateCheck": "Compared existing D4 pilot and new digital workflow. Adds setup, feature boundary or scoped diagnostic decision; does not repeat pilot exact-match threshold, round-robin per-queue order, classification rule ordering or manual capacity override."
+    },
+    {
+      "id": "cc-d4-c12",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "after-hours-overflow-design",
+      "objectiveIds": [
+        "D4.1.03",
+        "D4.1.05"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-final-s02",
+          "section": "Before queueing; When queued; Fallback queues",
+          "claim": "The queue's prequeue out-of-operating-hours condition and supported action. This is overflow around a matched queue. Fallback addresses missing/error routing decisions; queued waiting-time overflow addresses time already spent waiting.",
+          "applicability": "Current queue overflow rules; actions vary by channel."
+        },
+        {
+          "sourceId": "cc-d4-final-s03",
+          "section": "Create record; Define holiday; Add hours to queue",
+          "claim": "The queue's prequeue out-of-operating-hours condition and supported action. This is overflow around a matched queue. Fallback addresses missing/error routing decisions; queued waiting-time overflow addresses time already spent waiting.",
+          "applicability": "Queue/channel operating calendars, not representative shift bookings."
+        }
+      ],
+      "duplicateCheck": "Compared existing D4 pilot and new digital workflow. Adds setup, feature boundary or scoped diagnostic decision; does not repeat pilot exact-match threshold, round-robin per-queue order, classification rule ordering or manual capacity override."
+    },
+    {
+      "id": "cc-d4-n05",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "workstream-engagement-classification",
+      "objectiveIds": [
+        "D4.2.01",
+        "D4.2.02",
+        "D4.2.03"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-final-s04",
+          "section": "Create a workstream; Configure work distribution",
+          "claim": "Workstream selects channel type and immutable Push/Pick mode; voice supports Push only. Work distribution controls capacity and allowed presences.",
+          "applicability": "Unified-routing workstreams."
+        },
+        {
+          "sourceId": "cc-d4-final-s05",
+          "section": "Create work classification; Logical skill rules",
+          "claim": "Linked template rules cannot be edited within workstream; Copy from template creates an editable definition. Skill rating models must align between work item and representative.",
+          "applicability": "Logical classification, distinct from queue assignment."
+        },
+        {
+          "sourceId": "cc-d4-final-s06",
+          "section": "Connect agent; Add engagement agent; Escalation",
+          "claim": "Configure and connect Copilot Studio agent to omnichannel, select it in workstream Bot area; escalation topics are authored in Studio and supply context for classification.",
+          "applicability": "Engagement agent means workstream-associated Copilot Studio agent; not a separate invented service."
+        }
+      ],
+      "duplicateCheck": "Compared existing D4 pilot and new digital workflow. Adds setup, feature boundary or scoped diagnostic decision; does not repeat pilot exact-match threshold, round-robin per-queue order, classification rule ordering or manual capacity override."
+    },
+    {
+      "id": "cc-d4-c13",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "workstream-distribution-mode-choice",
+      "objectiveIds": [
+        "D4.2.01"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-final-s04",
+          "section": "Create a workstream; Configure work distribution",
+          "claim": "No. Choose it at creation; the documented setting cannot be edited later. Voice supports Push only. Plan the distribution mode before connecting channels and routing.",
+          "applicability": "Unified-routing workstreams."
+        }
+      ],
+      "duplicateCheck": "Compared existing D4 pilot and new digital workflow. Adds setup, feature boundary or scoped diagnostic decision; does not repeat pilot exact-match threshold, round-robin per-queue order, classification rule ordering or manual capacity override."
+    },
+    {
+      "id": "cc-d4-c14",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "engagement-agent-escalation-authoring",
+      "objectiveIds": [
+        "D4.2.03"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-final-s06",
+          "section": "Connect agent; Add engagement agent; Escalation",
+          "claim": "In the Copilot Studio agent's topics. Connect the agent to omnichannel and associate it with the workstream; that association alone does not define escalation conditions.",
+          "applicability": "Engagement agent means workstream-associated Copilot Studio agent; not a separate invented service."
+        }
+      ],
+      "duplicateCheck": "Compared existing D4 pilot and new digital workflow. Adds setup, feature boundary or scoped diagnostic decision; does not repeat pilot exact-match threshold, round-robin per-queue order, classification rule ordering or manual capacity override."
+    },
+    {
+      "id": "cc-d4-c15",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "classification-template-local-variation",
+      "objectiveIds": [
+        "D4.2.02"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-final-s05",
+          "section": "Create work classification; Logical skill rules",
+          "claim": "Copy from template. A linked Template ruleset cannot be edited within that workstream. A copied definition supports local changes; assignment methods operate at a different stage.",
+          "applicability": "Logical classification, distinct from queue assignment."
+        }
+      ],
+      "duplicateCheck": "Compared existing D4 pilot and new digital workflow. Adds setup, feature boundary or scoped diagnostic decision; does not repeat pilot exact-match threshold, round-robin per-queue order, classification rule ordering or manual capacity override."
+    },
+    {
+      "id": "cc-d4-n06",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "skill-taxonomy-and-prediction",
+      "objectiveIds": [
+        "D4.2.04",
+        "D4.2.05"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-final-s05",
+          "section": "Create work classification; Logical skill rules",
+          "claim": "Linked template rules cannot be edited within workstream; Copy from template creates an editable definition. Skill rating models must align between work item and representative.",
+          "applicability": "Logical classification, distinct from queue assignment."
+        },
+        {
+          "sourceId": "cc-d4-final-s07",
+          "section": "Configuration steps; How skills are matched",
+          "claim": "Create rating model and skills, assign representative proficiency and attach work item requirements; custom assignment needs explicit skill conditions.",
+          "applicability": "Standard/custom unified-routing skills configuration."
+        },
+        {
+          "sourceId": "cc-d4-final-s08",
+          "section": "Prerequisite; Create/test/retrain models",
+          "claim": "AI Builder availability/preview-model prerequisite applies; load/review/approve training data, train, publish and test tags against existing skills.",
+          "applicability": "ML skill classification; model predicts requirements, not representative assignment."
+        }
+      ],
+      "duplicateCheck": "Compared existing D4 pilot and new digital workflow. Adds setup, feature boundary or scoped diagnostic decision; does not repeat pilot exact-match threshold, round-robin per-queue order, classification rule ordering or manual capacity override."
+    },
+    {
+      "id": "cc-d4-c16",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "skill-rating-model-consistency",
+      "objectiveIds": [
+        "D4.2.04"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-final-s05",
+          "section": "Create work classification; Logical skill rules",
+          "claim": "The skill's rating model. Do not use different rating models for that skill in the conversation and representative configuration.",
+          "applicability": "Logical classification, distinct from queue assignment."
+        }
+      ],
+      "duplicateCheck": "Compared existing D4 pilot and new digital workflow. Adds setup, feature boundary or scoped diagnostic decision; does not repeat pilot exact-match threshold, round-robin per-queue order, classification rule ordering or manual capacity override."
+    },
+    {
+      "id": "cc-d4-c17",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "skill-finder-model-dependency",
+      "objectiveIds": [
+        "D4.2.05"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-final-s08",
+          "section": "Prerequisite; Create/test/retrain models",
+          "claim": "An AI Builder custom category classification model. Check AI Builder availability and the documented preview-model prerequisite, then review, train, publish and test the skill model.",
+          "applicability": "ML skill classification; model predicts requirements, not representative assignment."
+        }
+      ],
+      "duplicateCheck": "Compared existing D4 pilot and new digital workflow. Adds setup, feature boundary or scoped diagnostic decision; does not repeat pilot exact-match threshold, round-robin per-queue order, classification rule ordering or manual capacity override."
+    },
+    {
+      "id": "cc-d4-c18",
+      "revision": 2,
+      "domainId": "work-distribution",
+      "conceptId": "predicted-tag-skill-alignment",
+      "objectiveIds": [
+        "D4.2.05"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-final-s08",
+          "section": "Prerequisite; Create/test/retrain models",
+          "claim": "Whether the predicted tag matches an available skill in the organization. Model testing links predicted tags to matching available organization skills. Verify that taxonomy alignment before changing downstream queue assignment or representative availability.",
+          "applicability": "ML skill classification; model predicts requirements, not representative assignment."
+        }
+      ],
+      "duplicateCheck": "Compared existing D4 pilot and new digital workflow. Adds setup, feature boundary or scoped diagnostic decision; does not repeat pilot exact-match threshold, round-robin per-queue order, classification rule ordering or manual capacity override."
+    },
+    {
+      "id": "cc-d4-n07",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "intent-versus-preferred-routing",
+      "objectiveIds": [
+        "D4.2.06",
+        "D4.2.07"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-final-s09",
+          "section": "Prerequisites; How routing works; Considerations",
+          "claim": "Customer Intent Agent and intent discovery supply work-item intent fields to classification and route-to-queue rules; routing does not determine live chat/voice intent itself.",
+          "applicability": "Explicitly preview; current experience replaces prior intent-to-user-group mapping."
+        },
+        {
+          "sourceId": "cc-d4-final-s10",
+          "section": "Prerequisites; Configure preferred representative; How routing works",
+          "claim": "Standard preferred routing maps contacts to queue members and works with push; allowed presence checked but skills/capacity/assignment rules skipped; configure unavailable fallback.",
+          "applicability": "Standard preferred representative feature, separate from preview orchestration playbooks."
+        }
+      ],
+      "duplicateCheck": "Compared existing D4 pilot and new digital workflow. Adds setup, feature boundary or scoped diagnostic decision; does not repeat pilot exact-match threshold, round-robin per-queue order, classification rule ordering or manual capacity override."
+    },
+    {
+      "id": "cc-d4-c19",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "intent-routing-upstream-determination",
+      "objectiveIds": [
+        "D4.2.06"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-final-s09",
+          "section": "Prerequisites; How routing works; Considerations",
+          "claim": "The upstream configured Copilot agent. Customer Intent Agent and intent discovery are prerequisites; classification and queue rules then consume persisted intent fields.",
+          "applicability": "Explicitly preview; current experience replaces prior intent-to-user-group mapping."
+        }
+      ],
+      "duplicateCheck": "Compared existing D4 pilot and new digital workflow. Adds setup, feature boundary or scoped diagnostic decision; does not repeat pilot exact-match threshold, round-robin per-queue order, classification rule ordering or manual capacity override."
+    },
+    {
+      "id": "cc-d4-c20",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "preferred-routing-eligibility-exception",
+      "objectiveIds": [
+        "D4.2.07"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-final-s10",
+          "section": "Prerequisites; Configure preferred representative; How routing works",
+          "claim": "Capacity, skills and assignment-rule checks. It still requires the preferred representative to be available in an allowed presence; configure contact mapping, queue membership and Push routing.",
+          "applicability": "Standard preferred representative feature, separate from preview orchestration playbooks."
+        }
+      ],
+      "duplicateCheck": "Compared existing D4 pilot and new digital workflow. Adds setup, feature boundary or scoped diagnostic decision; does not repeat pilot exact-match threshold, round-robin per-queue order, classification rule ordering or manual capacity override."
+    },
+    {
+      "id": "cc-d4-c21",
+      "revision": 2,
+      "domainId": "work-distribution",
+      "conceptId": "preferred-routing-policy-conflict",
+      "objectiveIds": [
+        "D4.2.07"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-final-s10",
+          "section": "Prerequisites; Configure preferred representative; How routing works",
+          "claim": "The preferred-person path bypasses those ordinary skills and capacity checks. That documented exception can conflict with the requirement. Standard assignment and preferred-person assignment do not share an identical eligibility contract.",
+          "applicability": "Standard preferred representative feature, separate from preview orchestration playbooks."
+        }
+      ],
+      "duplicateCheck": "Compared existing D4 pilot and new digital workflow. Adds setup, feature boundary or scoped diagnostic decision; does not repeat pilot exact-match threshold, round-robin per-queue order, classification rule ordering or manual capacity override."
+    },
+    {
+      "id": "cc-d4-n08",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "basic-to-unified-record-intake",
+      "objectiveIds": [
+        "D4.2.08",
+        "D4.2.09"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-final-s11",
+          "section": "Configure record routing; Create workstreams; Intake rules",
+          "claim": "Create Record workstream and ordered intake rules selecting workstream or active basic rule; after enabling unified routing active basic rules need intake configuration.",
+          "applicability": "Customer Service record routing with required table/resources/permissions."
+        },
+        {
+          "sourceId": "cc-d4-final-s12",
+          "section": "Create routing rulesets; Apply rulesets; Things to consider",
+          "claim": "Ordered rule items route case on first match; activate ruleset; deactivate to edit; target mappings require review after solution movement.",
+          "applicability": "Basic case routing; not general custom-table routing."
+        },
+        {
+          "sourceId": "cc-d4-final-s15",
+          "section": "Routing records; Conversation diagnostics",
+          "claim": "Basic routing is for cases only; Application Insights replaces deprecated routing diagnostics; environment/access prerequisites still apply.",
+          "applicability": "Current FAQ clarifies scope and observability transition."
+        }
+      ],
+      "duplicateCheck": "Compared existing D4 pilot and new digital workflow. Adds setup, feature boundary or scoped diagnostic decision; does not repeat pilot exact-match threshold, round-robin per-queue order, classification rule ordering or manual capacity override."
+    },
+    {
+      "id": "cc-d4-c22",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "record-intake-path-selection",
+      "objectiveIds": [
+        "D4.2.08"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-final-s11",
+          "section": "Configure record routing; Create workstreams; Intake rules",
+          "claim": "The workstream or active basic routing rule used for the incoming record. Intake chooses the routing path; downstream queue-selection rules and assignment perform different steps.",
+          "applicability": "Customer Service record routing with required table/resources/permissions."
+        }
+      ],
+      "duplicateCheck": "Compared existing D4 pilot and new digital workflow. Adds setup, feature boundary or scoped diagnostic decision; does not repeat pilot exact-match threshold, round-robin per-queue order, classification rule ordering or manual capacity override."
+    },
+    {
+      "id": "cc-d4-c23",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "basic-routing-first-match",
+      "objectiveIds": [
+        "D4.2.09"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-final-s12",
+          "section": "Create routing rulesets; Apply rulesets; Things to consider",
+          "claim": "From top to bottom, stopping after the first matching item routes the case. Activate the ruleset to apply it; deactivate it before edits. Basic routing is case-oriented, unlike general unified record routing.",
+          "applicability": "Basic case routing; not general custom-table routing."
+        }
+      ],
+      "duplicateCheck": "Compared existing D4 pilot and new digital workflow. Adds setup, feature boundary or scoped diagnostic decision; does not repeat pilot exact-match threshold, round-robin per-queue order, classification rule ordering or manual capacity override."
+    },
+    {
+      "id": "cc-d4-c24",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "unified-intake-transition",
+      "objectiveIds": [
+        "D4.2.08",
+        "D4.2.09"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-final-s11",
+          "section": "Configure record routing; Create workstreams; Intake rules",
+          "claim": "The intake rules mapping incoming records to the active basic rule or workstream. The record-routing documentation explicitly requires intake configuration after enabling unified routing. Activating an old rule alone does not complete the new pipeline.",
+          "applicability": "Customer Service record routing with required table/resources/permissions."
+        }
+      ],
+      "duplicateCheck": "Compared existing D4 pilot and new digital workflow. Adds setup, feature boundary or scoped diagnostic decision; does not repeat pilot exact-match threshold, round-robin per-queue order, classification rule ordering or manual capacity override."
+    },
+    {
+      "id": "cc-d4-n09",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "routing-stage-diagnostics",
+      "objectiveIds": [
+        "D4.2.10"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-final-s13",
+          "section": "Prerequisites; Connection with Application Insights",
+          "claim": "Managed environment and Azure permissions/connection required; lifecycle events stored in Application Insights for diagnosis.",
+          "applicability": "Conversation lifecycle observability, not deprecated legacy routing diagnostics."
+        },
+        {
+          "sourceId": "cc-d4-final-s14",
+          "section": "Assignment and routing; Assignment snapshot; Common metadata",
+          "claim": "Intake/Classification/RouteToQueue/CSRAssignment identify routing stages; resource conversation ID and timestamp scope evidence; assignment snapshots expose eligibility/configuration details.",
+          "applicability": "Configured conversation diagnostics; distinguish attempted assignment from accepted work."
+        },
+        {
+          "sourceId": "cc-d4-final-s15",
+          "section": "Routing records; Conversation diagnostics",
+          "claim": "Basic routing is for cases only; Application Insights replaces deprecated routing diagnostics; environment/access prerequisites still apply.",
+          "applicability": "Current FAQ clarifies scope and observability transition."
+        }
+      ],
+      "duplicateCheck": "Compared existing D4 pilot and new digital workflow. Adds setup, feature boundary or scoped diagnostic decision; does not repeat pilot exact-match threshold, round-robin per-queue order, classification rule ordering or manual capacity override."
+    },
+    {
+      "id": "cc-d4-c25",
+      "revision": 2,
+      "domainId": "work-distribution",
+      "conceptId": "case-routing-attempt-scope",
+      "objectiveIds": [
+        "D4.2.10"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-final-s13",
+          "section": "View case diagnostics",
+          "claim": "Each routing attempt creates a corresponding conversation; inspect the conversation for the attempt being diagnosed. The case Diagnose experience lists routing attempts. Selecting the intended attempt avoids attributing a different conversation's intake decisions to the failure under investigation.",
+          "applicability": "Conversation lifecycle observability, not deprecated legacy routing diagnostics."
+        }
+      ],
+      "duplicateCheck": "Revision 2 replaces a duplicate of frozen pilot cc-d6-c04. Tests per-attempt conversation identity for rerouted cases rather than the diagnostics storage destination. Compared pilot and all current final batches."
+    },
+    {
+      "id": "cc-d4-c26",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "assignment-diagnostic-subscenario",
+      "objectiveIds": [
+        "D4.2.10"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-final-s14",
+          "section": "Assignment and routing; Assignment snapshot; Common metadata",
+          "claim": "CSRAssignment. RouteToQueue records queue selection; it does not establish a successful representative offer or acceptance.",
+          "applicability": "Configured conversation diagnostics; distinguish attempted assignment from accepted work."
+        }
+      ],
+      "duplicateCheck": "Compared existing D4 pilot and new digital workflow. Adds setup, feature boundary or scoped diagnostic decision; does not repeat pilot exact-match threshold, round-robin per-queue order, classification rule ordering or manual capacity override."
+    },
+    {
+      "id": "cc-d4-c27",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "assignment-snapshot-troubleshooting",
+      "objectiveIds": [
+        "D4.2.10"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-final-s14",
+          "section": "Assignment and routing; Assignment snapshot; Common metadata",
+          "claim": "The CSRAssignment attempts and assignment snapshot for that conversation. The snapshot exposes assignment rules and representative eligibility details. Successful queue selection is already known; unrelated UI settings do not explain the unassigned work.",
+          "applicability": "Configured conversation diagnostics; distinguish attempted assignment from accepted work."
+        }
+      ],
+      "duplicateCheck": "Compared existing D4 pilot and new digital workflow. Adds setup, feature boundary or scoped diagnostic decision; does not repeat pilot exact-match threshold, round-robin per-queue order, classification rule ordering or manual capacity override."
+    }
+  ]
+}

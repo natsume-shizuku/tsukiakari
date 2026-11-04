@@ -1,0 +1,2206 @@
+{
+  "sources": [
+    {
+      "id": "exam-d6-s01",
+      "title": "Enable supervisor access to manage conversations",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/enable-monitor-assign-transfer-conv"
+    },
+    {
+      "id": "exam-d6-s02",
+      "title": "Monitor, assign, transfer, and forcibly end conversations",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/monitor-conversations"
+    },
+    {
+      "id": "exam-d6-s03",
+      "title": "Configure analytics and insights dashboards",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-customer-service-analytics-insights-csh"
+    },
+    {
+      "id": "exam-d6-s04",
+      "title": "Manage quality evaluation",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/manage-quality-evaluation-agent"
+    },
+    {
+      "id": "exam-d6-s05",
+      "title": "Use evaluation plan",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/evaluation-plan"
+    },
+    {
+      "id": "exam-d6-s06",
+      "title": "Customize visual display",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/customize-reports"
+    },
+    {
+      "id": "exam-d6-s07",
+      "title": "Overview of data model customization",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/datamodel-overview"
+    },
+    {
+      "id": "exam-d6-s08",
+      "title": "Customize data models of historical and real-time analytics reports",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/model-customize-reports"
+    },
+    {
+      "id": "exam-d6-s09",
+      "title": "Use the out-of-the-box data model in your custom reports",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/use-datamodel"
+    },
+    {
+      "id": "exam-d6-s10",
+      "title": "Explore built-in analytics and reporting capabilities",
+      "url": "https://learn.microsoft.com/en-us/training/modules/analytics-reporting-contact-center/2-out-of-box-analytics"
+    },
+    {
+      "id": "exam-d6-s11",
+      "title": "Configure conversation diagnostics",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-conversation-diagnostics"
+    },
+    {
+      "id": "exam-d6-s12",
+      "title": "Conversation diagnostics in Azure Application Insights",
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/conversation-diagnostics-application-insights"
+    },
+    {
+      "id": "exam-d6-s13",
+      "title": "Enable Diagnose dashboard",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/enable-diagnose-dashboard"
+    },
+    {
+      "id": "exam-d6-s14",
+      "title": "Diagnose contact center health using Application Insights dashboard",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/diagnose-dashboard"
+    },
+    {
+      "id": "exam-d6-s15",
+      "title": "Understand conversation diagnostics data",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/conversation-diagnostics-subscenarios"
+    }
+  ],
+  "questions": [
+    {
+      "id": "ab250-d6-q05",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.1.01",
+        "D6.1.03"
+      ],
+      "conceptId": "supervisor-action-permission-layer",
+      "prompt": "A standalone supervisor can open the Ongoing conversation report and read its data. The rollout grants monitoring but intentionally withholds reassignment and termination. Which configuration best expresses that intervention policy?",
+      "answer": "Enable Supervisor Monitor while leaving Supervisor Assign, Supervisor Transfer and Force Close disabled.",
+      "explanation": "Configure the authorized action set independently of report visibility and authoring.",
+      "sourceIds": [
+        "exam-d6-s01",
+        "exam-d6-s03"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:supervisor-action-permission-layer"
+      ],
+      "options": [
+        {
+          "id": "c",
+          "text": "Grant Report Bookmark privileges and assume monitoring follows."
+        },
+        {
+          "id": "b",
+          "text": "Grant Analytics Report Author and assume it scopes the live interventions."
+        },
+        {
+          "id": "a",
+          "text": "Enable Supervisor Monitor while leaving Supervisor Assign, Supervisor Transfer and Force Close disabled."
+        },
+        {
+          "id": "d",
+          "text": "Enable every supervisor action because dashboard Read access cannot be separated."
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "optionExplanations": {
+        "a": "The settings grant each action separately.",
+        "b": "That role enables report editing, not this action policy.",
+        "c": "Saved report views do not grant intervention permissions.",
+        "d": "The documented action switches are separate and can be disabled independently."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n03"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d6-q06",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.1.04"
+      ],
+      "conceptId": "supervisor-transfer-consultant-lifecycle",
+      "prompt": "A standalone supervisor transfers an Active text messaging conversation from one representative to another. The second representative accepts the notification and now manages the conversation, but the first representative still appears among its participants. Which interpretation best guides the supervisor?",
+      "answer": "Recognize the first representative as a consultant after the acknowledged transfer.",
+      "explanation": "Interpret the participant roles after the acknowledged transfer. A continuing participant entry for the former representative is consistent with the consultant role; it does not establish transfer failure.",
+      "sourceIds": [
+        "exam-d6-s02"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:supervisor-transfer-consultant-lifecycle"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Treat the retained first participant as evidence that the transfer is still awaiting acknowledgment."
+        },
+        {
+          "id": "b",
+          "text": "Treat the operation as a consultation because an Active conversation cannot change its managing representative."
+        },
+        {
+          "id": "c",
+          "text": "Recognize the first representative as a consultant after the acknowledged transfer."
+        },
+        {
+          "id": "d",
+          "text": "Require the first representative to close the conversation before the ownership change can complete."
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "optionExplanations": {
+        "a": "The second representative has already acknowledged the notification; retaining the first participant is part of the documented lifecycle, rather than proof of a pending acknowledgment.",
+        "b": "The supervisor transfer procedure supports Active messaging conversations and adds the former representative as a consultant.",
+        "c": "For an Active representative-to-representative transfer, the guide explicitly adds the first representative as a consultant while the second manages the conversation.",
+        "d": "Force Close ends the interaction and sets Closed; closure is not a prerequisite for this Active transfer."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n03"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d6-q07",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.1.04"
+      ],
+      "conceptId": "monitor-state-channel-scope",
+      "prompt": "A supervisor is authorized to monitor and is not assigned any of the test conversations. Which TWO monitoring targets are supported by the documented state/channel rules? Choose TWO.",
+      "answer": "A digital messaging conversation in Wrap-up. A voice conversation in Active.",
+      "explanation": "Apply the channel-specific monitoring state boundary after checking authorization and self-assignment.",
+      "sourceIds": [
+        "exam-d6-s02"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:monitor-state-channel-scope"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "A voice conversation already in Wrap-up."
+        },
+        {
+          "id": "b",
+          "text": "A digital messaging conversation in Wrap-up."
+        },
+        {
+          "id": "c",
+          "text": "A voice conversation in Active."
+        },
+        {
+          "id": "d",
+          "text": "An Open, unassigned voice conversation before an active call exists."
+        },
+        {
+          "id": "e",
+          "text": "A closed messaging conversation as a live monitoring target."
+        }
+      ],
+      "correctOptionIds": [
+        "b",
+        "c"
+      ],
+      "optionExplanations": {
+        "a": "Voice monitoring is documented for Active only.",
+        "b": "Digital conversations can be monitored in Active or Wrap-up.",
+        "c": "This is the supported voice monitoring state.",
+        "d": "The documented voice monitoring state is Active.",
+        "e": "Closed is not one of the stated live digital monitoring states."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n03"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d6-q08",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.1.04"
+      ],
+      "conceptId": "supervisor-transfer-elevated-media",
+      "prompt": "A standalone supervisor can transfer an Active text Live Chat conversation between representatives. During a second test, the same conversation is elevated to voice or video and that representative-to-representative transfer is unavailable. What should the test report conclude?",
+      "answer": "The elevated media mode falls outside the documented supervisor messaging-transfer support.",
+      "explanation": "A media-mode change can alter support even when the supervisor and original text conversation qualify.",
+      "sourceIds": [
+        "exam-d6-s02"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:supervisor-transfer-elevated-media"
+      ],
+      "options": [
+        {
+          "id": "d",
+          "text": "The elevated media mode falls outside the documented supervisor messaging-transfer support."
+        },
+        {
+          "id": "b",
+          "text": "All messaging transfers require the conversation to be Closed first."
+        },
+        {
+          "id": "c",
+          "text": "The transfer must target an AI agent to bypass the media restriction."
+        },
+        {
+          "id": "a",
+          "text": "The supervisor must enable report authoring before any elevated transfer."
+        }
+      ],
+      "correctOptionIds": [
+        "d"
+      ],
+      "optionExplanations": {
+        "a": "Report authoring is distinct from the documented media-mode transfer restriction.",
+        "b": "The documented transfer states are Active or Waiting.",
+        "c": "Supervisor transfers are between representatives, not AI agents.",
+        "d": "The guide excludes these transfers after escalation from text to voice/video."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n03"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d6-q09",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.1.03"
+      ],
+      "conceptId": "report-bookmark-least-privilege",
+      "prompt": "A dashboard reader already has report and underlying data access. They need to save and maintain personal filter bookmarks, but must not edit the shared report layout. Which permission area should be added?",
+      "answer": "Create, Read, Write and Delete on the Report Bookmark entity.",
+      "explanation": "Grant the permissions for the saved-view artifact rather than broad report authoring or source-data modification.",
+      "sourceIds": [
+        "exam-d6-s03"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:report-bookmark-least-privilege"
+      ],
+      "options": [
+        {
+          "id": "b",
+          "text": "Create, Read, Write and Delete on the Report Bookmark entity."
+        },
+        {
+          "id": "a",
+          "text": "Supervisor Force Close."
+        },
+        {
+          "id": "c",
+          "text": "Analytics Report Author solely for bookmark maintenance."
+        },
+        {
+          "id": "d",
+          "text": "Write access to every analytics source entity instead of bookmark privileges."
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "optionExplanations": {
+        "a": "That is a live intervention rather than saved report-view access.",
+        "b": "The documented bookmark privileges support saving/managing views without granting report authoring.",
+        "c": "That enables report editing, which the requirement excludes.",
+        "d": "Source-data writes are not the documented bookmark permission requirement."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n01"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d6-q10",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.1.02"
+      ],
+      "conceptId": "quality-evaluator-role-boundary",
+      "prompt": "A quality team member must complete or assign evaluations but must not create evaluation criteria, plans, or configure the framework. Which documented quality role most closely matches that responsibility?",
+      "answer": "Quality Evaluator.",
+      "explanation": "Select the quality role whose listed responsibilities match the task rather than granting design/configuration rights.",
+      "sourceIds": [
+        "exam-d6-s04",
+        "exam-d6-s03"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:quality-evaluator-role-boundary"
+      ],
+      "options": [
+        {
+          "id": "c",
+          "text": "Quality Administrator."
+        },
+        {
+          "id": "b",
+          "text": "Quality Manager."
+        },
+        {
+          "id": "a",
+          "text": "Quality Evaluator."
+        },
+        {
+          "id": "d",
+          "text": "Analytics Report Author."
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "optionExplanations": {
+        "a": "Its listed privileges are completing or assigning evaluations.",
+        "b": "That role can also create criteria and plans.",
+        "c": "That role additionally configures quality evaluation.",
+        "d": "That role concerns report editing, not this quality-evaluation responsibility."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n04"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d6-q11",
+      "revision": 2,
+      "kind": "multiple",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.1.02"
+      ],
+      "conceptId": "quality-evaluation-connection-readiness",
+      "prompt": "A tenant has configured quality roles, Copilot credits, AI enablement, required data-movement consent and Conversation evaluation. An active plan matches newly closed test conversations, yet automatic evaluations do not start. Before completing publication of the quality agent, which TWO integration-readiness checks should the administrator perform? Choose TWO.",
+      "answer": "Verify that connection references use the intended connectors and complete any incomplete references. Verify that the required Power Automate flows are enabled and turn on any that are off.",
+      "explanation": "Use the quality prerequisite page to validate service connections and executable flows before finishing agent publication. Matching plan conditions alone do not validate those integration dependencies.",
+      "sourceIds": [
+        "exam-d6-s04"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:quality-evaluation-connection-readiness"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Increase the plan sample to include every matching conversation as a substitute for checking integration setup."
+        },
+        {
+          "id": "b",
+          "text": "Change the scoring threshold so that the same conversations qualify for a different quality rating."
+        },
+        {
+          "id": "c",
+          "text": "Verify that connection references use the intended connectors and complete any incomplete references."
+        },
+        {
+          "id": "d",
+          "text": "Verify that the required Power Automate flows are enabled and turn on any that are off."
+        },
+        {
+          "id": "e",
+          "text": "Replace the evaluation criteria with another set while retaining the same unverified integration setup."
+        }
+      ],
+      "correctOptionIds": [
+        "c",
+        "d"
+      ],
+      "optionExplanations": {
+        "a": "Sampling controls which matching interactions are evaluated; it does not establish that the quality flow can reach its required services.",
+        "b": "The scoring threshold affects interpretation of evaluation scores, rather than connection or flow readiness before publication.",
+        "c": "The prerequisite procedure checks connection-reference readiness and directs administrators to update incomplete references with the intended connector.",
+        "d": "The prerequisite procedure checks Power Automate readiness and directs administrators to enable flows that are off.",
+        "e": "Criteria supply assessment questions and scoring logic; changing them does not verify the connections and flows used to run evaluation."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n04"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d6-q12",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.1.02"
+      ],
+      "conceptId": "quality-ai-assisted-method-contract",
+      "prompt": "An evaluation criteria set contains several AI-enabled questions and several manual questions. The supervisor needs AI help while retaining human completion and editing. Which evaluation method fits that mixed criteria set?",
+      "answer": "AI assisted, with an assigned user or team.",
+      "explanation": "Match the mode to the criteria and reviewer workflow; fully autonomous and AI-assisted requirements differ.",
+      "sourceIds": [
+        "exam-d6-s05"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:quality-ai-assisted-method-contract"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "AI agent, because one AI-enabled question is sufficient for that mode."
+        },
+        {
+          "id": "b",
+          "text": "Manual only, because AI-assisted mode cannot use mixed criteria."
+        },
+        {
+          "id": "d",
+          "text": "AI agent while disabling AI response on every question."
+        },
+        {
+          "id": "c",
+          "text": "AI assisted, with an assigned user or team."
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "optionExplanations": {
+        "a": "AI agent mode requires all questions AI-enabled and disallows manual editing.",
+        "b": "AI assisted requires at least one AI-enabled question, not every question.",
+        "c": "The method supports AI assistance with at least one AI-enabled question and assignment to a reviewer.",
+        "d": "That contradicts the AI agent mode requirement."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n04"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d6-q13",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.1.02"
+      ],
+      "conceptId": "trigger-plan-history-interpretation",
+      "prompt": "A conversation evaluation plan uses a closed-conversation trigger. Qualifying evaluations appear, but the supervisor sees no batch execution entries in Run history and reports the trigger as broken. Which interpretation is supported?",
+      "answer": "The absence of recurring-style Run history is expected for trigger-based plans; inspect the evaluations.",
+      "explanation": "Use the result surface appropriate to the plan type rather than inferring failure from an absent batch history.",
+      "sourceIds": [
+        "exam-d6-s05"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:trigger-plan-history-interpretation"
+      ],
+      "options": [
+        {
+          "id": "b",
+          "text": "The absence of recurring-style Run history is expected for trigger-based plans; inspect the evaluations."
+        },
+        {
+          "id": "a",
+          "text": "Every trigger evaluation must generate a recurring batch-history entry."
+        },
+        {
+          "id": "c",
+          "text": "Change the criteria solely to create history entries."
+        },
+        {
+          "id": "d",
+          "text": "Switch to Once for every future conversation close event."
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "optionExplanations": {
+        "a": "The guide explicitly distinguishes trigger behavior.",
+        "b": "Trigger plans create evaluations on qualifying events without batch records.",
+        "c": "Criteria do not convert the plan execution model.",
+        "d": "Once is a single evaluation run, not the required ongoing event trigger."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n04"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d6-q14",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.1.02"
+      ],
+      "conceptId": "ivr-only-quality-evaluation-scope",
+      "prompt": "A quality team wants automatic future closed-conversation evaluations focused only on customer interactions with IVR/bot, excluding the subsequent representative portion. Which TWO plan choices establish that schedule and participant scope? Choose TWO.",
+      "answer": "Use a Conversations Trigger plan with Closed conversations as the event. Select IVR/Bot for Participant evaluated.",
+      "explanation": "Choose both the event-driven plan and the supported participant scope; criteria alone do not select a transcript participant.",
+      "sourceIds": [
+        "exam-d6-s05"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:ivr-only-quality-evaluation-scope"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Use a Conversations Trigger plan with Closed conversations as the event."
+        },
+        {
+          "id": "b",
+          "text": "Use a Once plan for ongoing evaluation of every future close event."
+        },
+        {
+          "id": "c",
+          "text": "Leave Participant evaluated as Entire record."
+        },
+        {
+          "id": "d",
+          "text": "Use Current owner to select the IVR/bot portion."
+        },
+        {
+          "id": "e",
+          "text": "Select IVR/Bot for Participant evaluated."
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "e"
+      ],
+      "optionExplanations": {
+        "a": "Trigger plans evaluate future qualifying close events and support participant selection.",
+        "b": "Once is a single run and not the required ongoing event schedule.",
+        "c": "That includes representative and other participant interactions.",
+        "d": "Current owner scopes the current conversation owner, not explicitly the IVR/bot interactions.",
+        "e": "That scopes evaluation to the customer/IVR-bot interactions."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n04"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d6-q15",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.2.01"
+      ],
+      "conceptId": "existing-metric-visual-customization",
+      "prompt": "A standalone supervisor needs an existing conversation-volume metric shown as a table by queue instead of a bar chart. The metric logic and available dimensions already satisfy the requirement. Which customization approach is proportionate?",
+      "answer": "Use the embedded report editor to change the visualization and select the existing fields.",
+      "explanation": "Use visual customization when the existing model already answers the analytical question.",
+      "sourceIds": [
+        "exam-d6-s06",
+        "exam-d6-s07"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:existing-metric-visual-customization"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Build an external semantic model solely to recreate the same existing metric."
+        },
+        {
+          "id": "d",
+          "text": "Use the embedded report editor to change the visualization and select the existing fields."
+        },
+        {
+          "id": "c",
+          "text": "Create a duplicate measure with identical logic solely to change the chart type."
+        },
+        {
+          "id": "b",
+          "text": "Overwrite the managed dataset's metric definition."
+        }
+      ],
+      "correctOptionIds": [
+        "d"
+      ],
+      "optionExplanations": {
+        "a": "That adds a model-maintenance task when no new calculation/data is needed.",
+        "b": "The requirement concerns presentation, not calculation; the managed model should not be overwritten.",
+        "c": "A duplicate calculation is unnecessary when the existing metric and dimensions already fit the requirement.",
+        "d": "The editor supports visual type, available measures/dimensions and layout changes."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n05"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d6-q16",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.2.01"
+      ],
+      "conceptId": "embedded-report-metric-density-performance",
+      "prompt": "An author adds 28 KPI tiles to one page of a standalone embedded analytics report. The measures are correct, but the page becomes slow; the team needs to retain access to every KPI. Which redesign best follows the visual-customization guide?",
+      "answer": "Distribute the metrics across additional pages and link those pages from the existing report.",
+      "explanation": "Preserve the required metrics while reducing report density through linked pages. The guide gives a performance recommendation, not a claim that a 21st metric is technically prohibited.",
+      "sourceIds": [
+        "exam-d6-s06"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:embedded-report-metric-density-performance"
+      ],
+      "options": [
+        {
+          "id": "c",
+          "text": "Change each chart into a numeric card while retaining all 28 metric tiles on the same page."
+        },
+        {
+          "id": "b",
+          "text": "Reduce each tile to a smaller physical size while retaining all 28 metrics on the same page."
+        },
+        {
+          "id": "a",
+          "text": "Distribute the metrics across additional pages and link those pages from the existing report."
+        },
+        {
+          "id": "d",
+          "text": "Save the same dense page as a bookmark and use that saved view as the performance remedy."
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "optionExplanations": {
+        "a": "The guide warns that more than 20 metrics or tiles affects performance and recommends extra pages with links when more metrics are needed.",
+        "b": "Smaller visual dimensions leave the metric/tile density unchanged; the documented recommendation addresses the number of metrics or tiles.",
+        "c": "Changing the visual type does not reduce the 28 metrics or tiles, so it does not follow the guide's density recommendation.",
+        "d": "A saved view does not implement the recommended redistribution of metrics across linked pages."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n05"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d6-q17",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.2.01"
+      ],
+      "conceptId": "published-visual-editing-lifecycle",
+      "prompt": "An analytics author has published a reviewed layout and now needs to continue refining it while retaining the existing customization as the starting point. Which embedded-editor action fits, without returning to the default report?",
+      "answer": "Select Resume editing.",
+      "explanation": "Use the publication lifecycle action appropriate to continuing edits; Reset has a different, destructive purpose.",
+      "sourceIds": [
+        "exam-d6-s06"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:published-visual-editing-lifecycle"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Use Reset after checking out the default report."
+        },
+        {
+          "id": "c",
+          "text": "Only apply a temporary report filter and treat it as layout editing."
+        },
+        {
+          "id": "b",
+          "text": "Select Resume editing."
+        },
+        {
+          "id": "d",
+          "text": "Disable and reprovision data-model customization solely to resume visual editing."
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "optionExplanations": {
+        "a": "Reset permanently removes the customizations rather than retaining them as the starting point.",
+        "b": "The documented action continues editing after publication.",
+        "c": "A filter does not reopen authoring for the layout changes.",
+        "d": "The visual editor already provides the required continuation action."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n05"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d6-q18",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.2.02"
+      ],
+      "conceptId": "customized-app-report-state-retention",
+      "prompt": "After a Copilot Service workspace app customization, an embedded analytics report loses its filter/view state whenever the supervisor switches session tabs. The report and data permissions work. Which app configuration should be reviewed?",
+      "answer": "The report navigation page's content type and matching report table in App Designer.",
+      "explanation": "Check the customized app's embedded report page wiring before changing working data or measure logic.",
+      "sourceIds": [
+        "exam-d6-s10"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:customized-app-report-state-retention"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "The report's automatic page-refresh interval only."
+        },
+        {
+          "id": "c",
+          "text": "The report navigation page's content type and matching report table in App Designer."
+        },
+        {
+          "id": "b",
+          "text": "Reset the published report visual customization before checking the app page."
+        },
+        {
+          "id": "d",
+          "text": "The supervisor's Report Bookmark permissions as the sole session-state setting."
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "optionExplanations": {
+        "a": "Data refresh frequency does not configure retention of filter state across session tabs.",
+        "b": "Reset removes visual customizations; the documented customized-app state fix is in navigation content configuration.",
+        "c": "The documented customized-app fix uses Table content type with the corresponding analytics table.",
+        "d": "Bookmarks are saved views; the documented tab-state issue has an app content configuration step."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n07"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d6-q19",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.2.02",
+        "D6.2.03"
+      ],
+      "conceptId": "custom-report-embedding-consumer-access",
+      "prompt": "A standalone custom report works in Power BI for supervisors. Semantic-model permissions and customer-workspace Viewer access are correct. The report is registered in Dynamics navigation, but the team has not granted the additional documented embedding access. Which TWO access changes should be checked for the embedded consumer path? Choose TWO.",
+      "answer": "Include the viewer group in the enabled Embed content in apps tenant setting. Provide the documented Member workspace access to the embedded supervisors.",
+      "explanation": "Validate the current model-customization guide's embedding permissions rather than assuming ordinary Power BI viewing covers the embedded path.",
+      "sourceIds": [
+        "exam-d6-s08",
+        "exam-d6-s03"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:custom-report-embedding-consumer-access"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Grant consumers Write to the managed semantic model as a replacement for embedding access."
+        },
+        {
+          "id": "b",
+          "text": "Assign Analytics Report Author solely to every embedded viewer."
+        },
+        {
+          "id": "c",
+          "text": "Grant every viewer workspace Administrator solely to avoid checking the documented role."
+        },
+        {
+          "id": "d",
+          "text": "Include the viewer group in the enabled Embed content in apps tenant setting."
+        },
+        {
+          "id": "e",
+          "text": "Provide the documented Member workspace access to the embedded supervisors."
+        }
+      ],
+      "correctOptionIds": [
+        "d",
+        "e"
+      ],
+      "optionExplanations": {
+        "a": "Model-write permissions do not enable the missing embedding path and exceed the stated reading task.",
+        "b": "That role is for editing standard analytics, not the documented custom-report embedding access.",
+        "c": "The guide identifies Member for supervisors on this embedded path, not a need for Administrator.",
+        "d": "The model-customization guide requires this permission for Dynamics custom-report consumers.",
+        "e": "The current guide distinguishes Power BI Viewer access from Member access for this embedded use."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n07"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d6-q20",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.2.03"
+      ],
+      "conceptId": "custom-report-navigation-origin",
+      "prompt": "A custom report was added from the historical data-model customization page. It also appears in the shared Customized Reports navigation. An administrator tries to modify that entry from the real-time customization page and assumes the shared navigation gives both pages ownership. What should they do?",
+      "answer": "Modify the entry from the historical customization page that added it.",
+      "explanation": "Shared navigation does not remove the historical/real-time page boundary for managing added reports.",
+      "sourceIds": [
+        "exam-d6-s08"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:custom-report-navigation-origin"
+      ],
+      "options": [
+        {
+          "id": "d",
+          "text": "Treat the shared site map as proof that every page can modify every entry."
+        },
+        {
+          "id": "b",
+          "text": "Use the real-time page's shared-site-map reordering controls to rename the existing historical report entry."
+        },
+        {
+          "id": "c",
+          "text": "Republish every real-time model to take ownership of the historical entry."
+        },
+        {
+          "id": "a",
+          "text": "Modify the entry from the historical customization page that added it."
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "optionExplanations": {
+        "a": "The site map is shared, but entries can be modified/deleted only from their respective origin pages.",
+        "b": "Both pages can reorder reports, but modification or deletion of an existing entry is restricted to its respective historical or real-time origin page.",
+        "c": "Model publication does not change the documented entry-management boundary.",
+        "d": "The guide explicitly distinguishes shared navigation from the respective management pages."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n07"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d6-q21",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.2.03",
+        "D6.2.04"
+      ],
+      "conceptId": "business-metric-logic-extension",
+      "prompt": "A standalone team wants a separate handling-cost measure that combines representative handling time with specialist consultation time under its own cost rules. The standard metrics are available, but their calculation is not this organization's formula. Which approach preserves the standard metrics while adding the requested meaning?",
+      "answer": "Define the organization-specific measure in the report's supported local model extension.",
+      "explanation": "Make a distinct calculation for the business meaning rather than changing a label or overwriting managed definitions.",
+      "sourceIds": [
+        "exam-d6-s07",
+        "exam-d6-s09"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:business-metric-logic-extension"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Rename the standard handle-time visual to Handling cost."
+        },
+        {
+          "id": "d",
+          "text": "Define the organization-specific measure in the report's supported local model extension."
+        },
+        {
+          "id": "c",
+          "text": "Replace the Dynamics-managed dataset logic directly."
+        },
+        {
+          "id": "b",
+          "text": "Only filter the standard handle-time measure by specialist name."
+        }
+      ],
+      "correctOptionIds": [
+        "d"
+      ],
+      "optionExplanations": {
+        "a": "A title change does not implement the requested calculation.",
+        "b": "Filtering an existing calculation does not define the combined custom cost logic.",
+        "c": "Managed changes can be overwritten; the supported pattern is a local extension.",
+        "d": "The documented extension pattern adds custom calculations while retaining out-of-the-box metrics."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n05"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d6-q22",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.2.04"
+      ],
+      "conceptId": "managed-versus-customer-update-lifecycle",
+      "prompt": "A service release updates the managed analytics model with new metrics. The organization's customized report copy does not automatically show the new presentation. Which maintenance expectation matches the documented two-workspace design?",
+      "answer": "Maintain, refresh and redeploy the customer report as needed while the managed model receives service updates.",
+      "explanation": "Treat the customer report and its extensions as maintained artifacts rather than assuming automatic report replacement.",
+      "sourceIds": [
+        "exam-d6-s07",
+        "exam-d6-s08"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:managed-versus-customer-update-lifecycle"
+      ],
+      "options": [
+        {
+          "id": "b",
+          "text": "Maintain, refresh and redeploy the customer report as needed while the managed model receives service updates."
+        },
+        {
+          "id": "a",
+          "text": "The service overwrites every customer report copy automatically on each release."
+        },
+        {
+          "id": "c",
+          "text": "Edit the managed model to prevent all service updates."
+        },
+        {
+          "id": "d",
+          "text": "Reset the built-in visual report and assume it updates the separate customer report copy."
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "optionExplanations": {
+        "a": "The report copies are not overwritten when out-of-the-box reports update.",
+        "b": "Managed model updates and customer-report maintenance have different lifecycles.",
+        "c": "Managed dataset edits are not the supported maintenance strategy and can be overwritten.",
+        "d": "Resetting a built-in customization is not the lifecycle for the separate custom report artifact."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n06"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d6-q23",
+      "revision": 2,
+      "kind": "multiple",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.2.04"
+      ],
+      "conceptId": "composite-model-relationship-design",
+      "prompt": "A standalone reporting team needs standard conversation metrics grouped by a custom contract category held in additional business data. It wants to preserve the maintained Dynamics metrics and use the new category in breakdowns. Which TWO design steps follow the supported composite-model pattern? Choose TWO.",
+      "answer": "Create a local model connected to the Dynamics model and bring in the additional data. Create appropriate relationships between the added entities and existing entities.",
+      "explanation": "Add and relate the extra data in a local extension; a report filter does not replace the underlying analytical relationship.",
+      "sourceIds": [
+        "exam-d6-s09",
+        "exam-d6-s07"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:composite-model-relationship-design"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Create a local model connected to the Dynamics model and bring in the additional data."
+        },
+        {
+          "id": "b",
+          "text": "Directly add the custom column to the Dynamics-managed dataset."
+        },
+        {
+          "id": "c",
+          "text": "Use the custom category as a report-level filter in place of defining its model relationship to conversation entities."
+        },
+        {
+          "id": "d",
+          "text": "Leave the additional data unrelated and assume grouping will match the conversation records."
+        },
+        {
+          "id": "e",
+          "text": "Create appropriate relationships between the added entities and existing entities."
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "e"
+      ],
+      "optionExplanations": {
+        "a": "The local composite extension can retain the standard metrics and add data sources.",
+        "b": "The managed dataset should be treated as read-only and can be overwritten by releases.",
+        "c": "A report filter does not replace the relationship between added business entities and existing model entities required by this documented composite-model design.",
+        "d": "The extension needs relationships for the analytical association.",
+        "e": "The documented pattern includes relationship creation before using the new attributes/metrics."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n06"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d6-q24",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.2.04"
+      ],
+      "conceptId": "hidden-model-field-maintenance-risk",
+      "prompt": "A report author finds a hidden out-of-the-box dimension field that appears to simplify a custom calculation. The report must remain maintainable through service releases. Which review recommendation follows the custom-report guide?",
+      "answer": "Prefer supported exposed fields or a reviewed local calculation, because hidden fields may change or disappear.",
+      "explanation": "Avoid taking a hidden implementation detail as a durable dependency merely because it is currently accessible.",
+      "sourceIds": [
+        "exam-d6-s09"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:hidden-model-field-maintenance-risk"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Hidden status guarantees that the field is a stable public contract."
+        },
+        {
+          "id": "c",
+          "text": "Prefer supported exposed fields or a reviewed local calculation, because hidden fields may change or disappear."
+        },
+        {
+          "id": "b",
+          "text": "Treat current query access to the field as proof of future schema stability."
+        },
+        {
+          "id": "d",
+          "text": "Keep the hidden-field dependency in a local extension and assume that isolation protects it from managed-model schema changes."
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "optionExplanations": {
+        "a": "The guide specifically warns against relying on hidden fields.",
+        "b": "Current access does not remove the documented risk that hidden fields may change or be deleted.",
+        "c": "The guide recommends not using hidden facts/dimensions for that reason.",
+        "d": "A local extension can still depend on the managed field. Its separate ownership does not stop that hidden field from being changed or deleted in the source model."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n06"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d6-q25",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.2.05"
+      ],
+      "conceptId": "diagnostic-insights-versus-raw-custom-events",
+      "prompt": "A queue uses custom assignment rules. A supervisor assumes the Diagnose dashboard's automatic non-assignment insights cover that method, then concludes no custom-rule evidence can exist when those insights are unavailable. Which distinction should correct the investigation?",
+      "answer": "The automatic insights support out-of-the-box methods; inspect available raw custom-assignment telemetry separately.",
+      "explanation": "Do not generalize a dashboard-analysis limitation into a claim that no underlying custom assignment telemetry exists.",
+      "sourceIds": [
+        "exam-d6-s14",
+        "exam-d6-s15"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:diagnostic-insights-versus-raw-custom-events"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "All raw custom-assignment telemetry is prohibited whenever automatic insights are unsupported."
+        },
+        {
+          "id": "d",
+          "text": "The automatic insights support out-of-the-box methods; inspect available raw custom-assignment telemetry separately."
+        },
+        {
+          "id": "c",
+          "text": "The absence of automatic insights proves every assignment succeeded."
+        },
+        {
+          "id": "b",
+          "text": "Change the dashboard filter to the custom queue and assume the automatic insights now support its method."
+        }
+      ],
+      "correctOptionIds": [
+        "d"
+      ],
+      "optionExplanations": {
+        "a": "The event documentation describes custom assignment ruleset details.",
+        "b": "Filtering selects data; it does not change the documented assignment-method support boundary.",
+        "c": "An unsupported analysis surface does not establish the routing outcome.",
+        "d": "The dashboard limitation and raw event capability are different scopes."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n02"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d6-q26",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.2.05"
+      ],
+      "conceptId": "single-export-environment-target",
+      "prompt": "A supported environment already exports conversation diagnostics to one Application Insights instance. A second team wants a parallel export configuration from the same environment to another instance and assumes it can simply add one. Which constraint should the administrator check first?",
+      "answer": "Only one Customer Service-to-Application Insights data export configuration is supported per environment.",
+      "explanation": "Review the existing environment export and target design before assuming parallel configurations are supported.",
+      "sourceIds": [
+        "exam-d6-s12",
+        "exam-d6-s13"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:single-export-environment-target"
+      ],
+      "options": [
+        {
+          "id": "d",
+          "text": "Create one export for each Azure resource and treat the limit as resource-specific."
+        },
+        {
+          "id": "b",
+          "text": "Changing the Diagnose display environment variable creates another ingestion export."
+        },
+        {
+          "id": "c",
+          "text": "Retarget the existing export to the second instance and assume the original instance will continue receiving the same export in parallel."
+        },
+        {
+          "id": "a",
+          "text": "Only one Customer Service-to-Application Insights data export configuration is supported per environment."
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "optionExplanations": {
+        "a": "The Power Platform setup page explicitly states that limit.",
+        "b": "The display ID configures telemetry access, not an additional export pipeline.",
+        "c": "Retargeting a single export is not a second supported parallel configuration. The documented environment limit still applies; the requirement to keep both destinations needs a separate target-design decision.",
+        "d": "The page scopes the single-configuration limit to the source environment."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n08"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d6-q27",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.2.05"
+      ],
+      "conceptId": "diagnostic-dashboard-latency-interpretation",
+      "prompt": "A newly routed conversation does not immediately appear in the Application Insights out-of-the-box dashboard tab. The connection has succeeded and older lifecycle data is visible. Before treating a two-minute absence as a collection failure, what should the engineer account for?",
+      "answer": "The documented dashboard delay, then correlate the intended time range and event timestamps.",
+      "explanation": "Separate expected dashboard visibility delay from evidence that event collection has failed.",
+      "sourceIds": [
+        "exam-d6-s14"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:diagnostic-dashboard-latency-interpretation"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "That every dashboard query must update synchronously with the route event."
+        },
+        {
+          "id": "d",
+          "text": "Increase automatic refresh on a separate model-customized report to accelerate diagnostic ingestion."
+        },
+        {
+          "id": "c",
+          "text": "Declare the connection broken solely because the item is absent after two minutes."
+        },
+        {
+          "id": "b",
+          "text": "The documented dashboard delay, then correlate the intended time range and event timestamps."
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "optionExplanations": {
+        "a": "The documented dashboard can lag behind collection.",
+        "b": "The guide notes a delay of up to 15 minutes in that dashboard tab.",
+        "c": "That conclusion ignores the documented dashboard visibility delay.",
+        "d": "Refreshing an analytical report does not accelerate collection into the diagnostic dashboard."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n08"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d6-q28",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.2.06"
+      ],
+      "conceptId": "diagnose-federated-subject-debugging",
+      "prompt": "Events reach Application Insights, but the embedded Diagnose request fails after app registration. The team needs to verify the federated credential subject value rather than changing the working export. Which troubleshooting artifact does the guide direct it to inspect?",
+      "answer": "The failed msdyn_GetAppInsightsTelemetry network request and its Preview message.",
+      "explanation": "Trace the failed read request to validate the credential value; a successful export does not prove embedded read authorization.",
+      "sourceIds": [
+        "exam-d6-s13"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:diagnose-federated-subject-debugging"
+      ],
+      "options": [
+        {
+          "id": "c",
+          "text": "The failed msdyn_GetAppInsightsTelemetry network request and its Preview message."
+        },
+        {
+          "id": "b",
+          "text": "Only an ingestion query showing the conversation event in Application Insights."
+        },
+        {
+          "id": "a",
+          "text": "Only the configured data-export package and its ingestion destination."
+        },
+        {
+          "id": "d",
+          "text": "Only the custom Power BI report's workspace permissions."
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "optionExplanations": {
+        "a": "That verifies the working write path but does not reveal the failed embedded-read request's missing credential value.",
+        "b": "Existing events establish collection, not the federated credential value required by the failed read.",
+        "c": "The guide uses that message to identify the missing configuration value and update the federated credential Value field.",
+        "d": "Fabric report permissions do not identify the Dataverse telemetry request's federated subject value."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n08"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d6-q29",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.2.06"
+      ],
+      "conceptId": "diagnose-app-identity-and-query-role",
+      "prompt": "A tenant has working diagnostics export and the intended Application Insights ID. A registered app with federated credentials will let Dataverse read that telemetry. Which TWO configuration areas bind the app identity and authorize that read path? Choose TWO.",
+      "answer": "Grant the registered app Monitoring Reader access to the Application Insights resource. Update the managed identity record with the registered app's application and tenant IDs.",
+      "explanation": "Configure the identity used by the application and its resource read authorization separately from the ingestion operator.",
+      "sourceIds": [
+        "exam-d6-s13"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:diagnose-app-identity-and-query-role"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Grant only the human report viewer the Analytics Report Author role."
+        },
+        {
+          "id": "b",
+          "text": "Change only the Dynamics data-export destination while leaving app authorization unchanged."
+        },
+        {
+          "id": "c",
+          "text": "Grant the registered app Monitoring Reader access to the Application Insights resource."
+        },
+        {
+          "id": "d",
+          "text": "Grant only a human operator more export permissions."
+        },
+        {
+          "id": "e",
+          "text": "Update the managed identity record with the registered app's application and tenant IDs."
+        }
+      ],
+      "correctOptionIds": [
+        "c",
+        "e"
+      ],
+      "optionExplanations": {
+        "a": "That edits analytics reports; it does not configure Dataverse's telemetry app identity.",
+        "b": "The export already works and does not establish the separate app query permission.",
+        "c": "The guide assigns this Azure role for the app's telemetry access.",
+        "d": "Human setup permissions do not substitute for the app's read authorization.",
+        "e": "The documented identity update links Dataverse to that application identity."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n08"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d6-q30",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.2.06"
+      ],
+      "conceptId": "diagnose-telemetry-resource-read-selection",
+      "prompt": "After a telemetry-resource migration, new conversation events are visible in the intended Application Insights instance. The Diagnose Debug tab opens and its query authenticates, but its results still correspond to the previous instance. Which configuration should the administrator compare with the intended resource first?",
+      "answer": "The Application Insights ID in both Default Value and Current Value of the environment variable.",
+      "explanation": "Distinguish the resource receiving exported events from the resource selected for Dataverse telemetry reads. Verify the ID at both documented environment-variable values before changing an authenticated identity path.",
+      "sourceIds": [
+        "exam-d6-s13"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:diagnose-telemetry-resource-read-selection"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "The export connection used to push the new conversation events, and recreate that connection first."
+        },
+        {
+          "id": "b",
+          "text": "The Enable Application Insights Dashboard app setting, and toggle tab visibility first."
+        },
+        {
+          "id": "c",
+          "text": "The federated credential subject, and replace it before checking the selected telemetry resource."
+        },
+        {
+          "id": "d",
+          "text": "The Application Insights ID in both Default Value and Current Value of the environment variable."
+        }
+      ],
+      "correctOptionIds": [
+        "d"
+      ],
+      "optionExplanations": {
+        "a": "New events are already reaching the intended instance. The export connection controls ingestion; the guide separately configures the ID used by Dataverse to access telemetry.",
+        "b": "The Debug tab already opens. Its enablement setting exposes the tab rather than selecting the Application Insights instance for Dataverse access.",
+        "c": "The observed query authenticates. Federation authorizes the access path; the resource ID is the more direct check for results from the previous instance.",
+        "d": "The guide requires the Application Insights ID in both environment-variable values for Dataverse to access telemetry from the intended instance."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n08"
+        }
+      ],
+      "status": "draft"
+    }
+  ],
+  "editorial": [
+    {
+      "id": "ab250-d6-q05",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "supervisor-action-permission-layer",
+      "objectiveIds": [
+        "D6.1.01",
+        "D6.1.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d6-s01",
+          "section": "Configure supervisor settings",
+          "claim": "Monitor/Assign/Transfer/Force Close are separate toggles.",
+          "applicability": "Contact Center standalone supervisor workspace."
+        },
+        {
+          "sourceId": "exam-d6-s03",
+          "section": "Configure user access to analytics and dashboards",
+          "claim": "Report access, bookmarks and Analytics Report Author privileges address different reporting tasks.",
+          "applicability": "Contact Center standalone supervisor workspace."
+        }
+      ],
+      "duplicateCheck": "Pilot q02 is missing underlying reader access; this applies least-action authorization after reading already works."
+    },
+    {
+      "id": "ab250-d6-q06",
+      "revision": 2,
+      "domainId": "analytics",
+      "conceptId": "supervisor-transfer-consultant-lifecycle",
+      "objectiveIds": [
+        "D6.1.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d6-s02",
+          "section": "Transfer conversations; End conversations forcibly",
+          "claim": "An Active messaging transfer adds the first representative as a consultant; the second manages the conversation and acknowledges the transfer notification. Force Close ends the interaction.",
+          "applicability": "Authorized standalone supervisor; text messaging between human representatives, with Accept acknowledgment already observed."
+        }
+      ],
+      "duplicateCheck": "Replaces the study c08 Open/unassigned Assign conversion. This tests post-transfer participant lifecycle, distinct from pilot public voice participation, q07 monitoring states and q08 elevated-media transfer restrictions.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent reviewer requested a substantive scenario replacing study-card recall."
+    },
+    {
+      "id": "ab250-d6-q07",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "monitor-state-channel-scope",
+      "objectiveIds": [
+        "D6.1.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d6-s02",
+          "section": "Monitor and join conversations",
+          "claim": "Digital monitoring supports Active/Wrap-up; voice supports Active only; self-assigned conversations cannot be monitored.",
+          "applicability": "Documented standalone workspace monitoring, not historical transcript reading."
+        }
+      ],
+      "duplicateCheck": "New state/channel eligibility set; unlike pilot public-join action and c09 active messaging transfer."
+    },
+    {
+      "id": "ab250-d6-q08",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "supervisor-transfer-elevated-media",
+      "objectiveIds": [
+        "D6.1.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d6-s02",
+          "section": "Transfer conversations",
+          "claim": "Messaging transfers support Active/Waiting representative endpoints; elevated voice/video and AI-agent endpoints are excluded.",
+          "applicability": "This supervisor transfer feature, not a claim about every voice call transfer facility."
+        }
+      ],
+      "duplicateCheck": "New media-boundary diagnosis; not the c09 choice of Transfer for an ordinary Active text conversation."
+    },
+    {
+      "id": "ab250-d6-q09",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "report-bookmark-least-privilege",
+      "objectiveIds": [
+        "D6.1.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d6-s03",
+          "section": "Configure user access to analytics and dashboards: notes",
+          "claim": "Report bookmarks need the stated CRUD privileges; Analytics Report Author is for report editing.",
+          "applicability": "Custom analytics reader with existing data Read access."
+        }
+      ],
+      "duplicateCheck": "Pilot q02 diagnoses missing underlying Read access; this explicitly starts after that works and addresses a separate saved-view artifact."
+    },
+    {
+      "id": "ab250-d6-q10",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "quality-evaluator-role-boundary",
+      "objectiveIds": [
+        "D6.1.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d6-s04",
+          "section": "Roles and privileges",
+          "claim": "Quality Evaluator completes/assigns; Manager creates criteria/plans; Administrator configures.",
+          "applicability": "Current quality-evaluation framework; no employment-scoring use implied."
+        },
+        {
+          "sourceId": "exam-d6-s03",
+          "section": "Configure user access to analytics and dashboards",
+          "claim": "Analytics Report Author edits analytics reports.",
+          "applicability": "Current quality-evaluation framework; no employment-scoring use implied."
+        }
+      ],
+      "duplicateCheck": "No pilot question covers quality roles; different from c10 plan components and c11 setup readiness."
+    },
+    {
+      "id": "ab250-d6-q11",
+      "revision": 2,
+      "domainId": "analytics",
+      "conceptId": "quality-evaluation-connection-readiness",
+      "objectiveIds": [
+        "D6.1.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d6-s04",
+          "section": "How quality evaluation works; Configure connection references; Enable quality evaluation",
+          "claim": "Plans select interactions and criteria define assessment logic. Before Copilot Studio publication, verify Connection References and Power Automate Flows readiness, update incomplete references and enable off flows. Scoring thresholds concern evaluation scores.",
+          "applicability": "Current Conversation quality framework; stated licensing, roles, AI enablement and consent prerequisites are already met. The symptom motivates readiness checks, not a unique proven root cause."
+        }
+      ],
+      "duplicateCheck": "Study c11 lists prerequisites; this asks which integration checks remain relevant when plan eligibility and other prerequisites are verified, without naming the missing configuration in the stem.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent reviewer requested removal of the supplied connection/flow diagnosis and closer alternatives."
+    },
+    {
+      "id": "ab250-d6-q12",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "quality-ai-assisted-method-contract",
+      "objectiveIds": [
+        "D6.1.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d6-s05",
+          "section": "Assign evaluation: Evaluation method notes",
+          "claim": "AI agent needs all questions AI-enabled/no manual editing; AI assisted needs at least one and user/team assignment.",
+          "applicability": "Current quality plan method configuration, not email-preview scope."
+        }
+      ],
+      "duplicateCheck": "New method/criteria compatibility decision absent from pilot and study recall cards."
+    },
+    {
+      "id": "ab250-d6-q13",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "trigger-plan-history-interpretation",
+      "objectiveIds": [
+        "D6.1.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d6-s05",
+          "section": "View run history for a plan",
+          "claim": "Run history is for recurring bulk batches, not trigger-based plans; trigger evaluations are inspected as evaluations.",
+          "applicability": "Current closed-conversation trigger plan with results already observed."
+        }
+      ],
+      "duplicateCheck": "c12 chooses a trigger for future events; this diagnoses observability after the plan is already functioning."
+    },
+    {
+      "id": "ab250-d6-q14",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "ivr-only-quality-evaluation-scope",
+      "objectiveIds": [
+        "D6.1.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d6-s05",
+          "section": "Create and activate evaluation plan; Assign evaluation: Participant evaluated",
+          "claim": "Trigger evaluates future closes; participant scoping is trigger-only, and IVR/Bot excludes representative interactions.",
+          "applicability": "Current conversation evaluation, not case or email scope."
+        }
+      ],
+      "duplicateCheck": "New participant-scope application; c12 supplies trigger prerequisite but no pilot/study question tests IVR-only evaluation."
+    },
+    {
+      "id": "ab250-d6-q15",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "existing-metric-visual-customization",
+      "objectiveIds": [
+        "D6.2.01"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d6-s06",
+          "section": "Customize the display of analytics reports",
+          "claim": "Embedded editor changes visualizations and available metric/dimension selections.",
+          "applicability": "Contact Center standalone supported embedded analytics report."
+        },
+        {
+          "sourceId": "exam-d6-s07",
+          "section": "What is data model customization?",
+          "claim": "Reports present model data; model changes address missing data/calculation logic.",
+          "applicability": "Contact Center standalone supported embedded analytics report."
+        }
+      ],
+      "duplicateCheck": "c15 tests a missing business calculation; this explicitly establishes that existing logic/data is sufficient."
+    },
+    {
+      "id": "ab250-d6-q16",
+      "revision": 2,
+      "domainId": "analytics",
+      "conceptId": "embedded-report-metric-density-performance",
+      "objectiveIds": [
+        "D6.2.01"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d6-s06",
+          "section": "Customize the display of analytics reports: performance note",
+          "claim": "More than 20 metrics or tiles affects report performance; if more metrics are needed, consider additional pages and links from existing pages.",
+          "applicability": "Standalone supported embedded visual customization. This is a performance recommendation, not a hard product enforcement limit."
+        }
+      ],
+      "duplicateCheck": "Replaces the study c13 publication-scope restatement with a metric-density redesign. Distinct from q15 visual type selection and q17 Resume editing lifecycle; no pilot tests this performance decision.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent reviewer requested a new operational decision instead of study-card publication-scope recall."
+    },
+    {
+      "id": "ab250-d6-q17",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "published-visual-editing-lifecycle",
+      "objectiveIds": [
+        "D6.2.01"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d6-s06",
+          "section": "Customize the display of analytics reports",
+          "claim": "Resume editing continues after publishing; Reset permanently removes customization.",
+          "applicability": "Standalone embedded visual customization, not model-extension reprovisioning."
+        }
+      ],
+      "duplicateCheck": "c14 describes Reset; this tests the constructive continuation step in an authoring workflow."
+    },
+    {
+      "id": "ab250-d6-q18",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "customized-app-report-state-retention",
+      "objectiveIds": [
+        "D6.2.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d6-s10",
+          "section": "Retain the report state across session tabs",
+          "claim": "Customized workspace apps need Table content type and matching report-table configuration, then Save/Publish.",
+          "applicability": "Standalone customized workspace app, not an assertion that every external embedded frame retains state."
+        }
+      ],
+      "duplicateCheck": "New tab-state diagnosis; c19 only identifies the built-in embedded surface and q09 addresses explicit bookmarks."
+    },
+    {
+      "id": "ab250-d6-q19",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "custom-report-embedding-consumer-access",
+      "objectiveIds": [
+        "D6.2.02",
+        "D6.2.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d6-s08",
+          "section": "Enable Power BI service features; Grant permissions to customized Power BI report",
+          "claim": "Embed content in apps is required for consumers; the guide specifies Member for supervisors viewing embedded custom reports.",
+          "applicability": "Current standalone model-customization embedding procedure; licensing and other tenant settings already satisfied."
+        },
+        {
+          "sourceId": "exam-d6-s03",
+          "section": "Configure user access: Analytics Report Author",
+          "claim": "Analytics Report Author grants standard report-editing permission.",
+          "applicability": "Current standalone model-customization embedding procedure; licensing and other tenant settings already satisfied."
+        }
+      ],
+      "duplicateCheck": "Different from pilot report-table/underlying-data Read access; this is the custom Power BI embedded-consumer path."
+    },
+    {
+      "id": "ab250-d6-q20",
+      "revision": 2,
+      "domainId": "analytics",
+      "conceptId": "custom-report-navigation-origin",
+      "objectiveIds": [
+        "D6.2.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d6-s08",
+          "section": "Step 4: Embed customized reports back to Dynamics 365",
+          "claim": "The site map is shared and either page can reorder reports; each existing entry is modified/deleted only from its respective historical or real-time page.",
+          "applicability": "Standalone historical/real-time model-customized reports."
+        }
+      ],
+      "duplicateCheck": "New navigation ownership decision; c20/c21 concern which workspace populates the picker, not editing an existing entry.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Replace unrelated permission distractor with the documented reorder-versus-modify boundary."
+    },
+    {
+      "id": "ab250-d6-q21",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "business-metric-logic-extension",
+      "objectiveIds": [
+        "D6.2.03",
+        "D6.2.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d6-s07",
+          "section": "Scenario-based use cases; How customization helps",
+          "claim": "Organization-specific logic, including consultation-related variants, can be added through local model extension while reusing standard metrics.",
+          "applicability": "Standalone analytics extension; no invented built-in Handling cost metric."
+        },
+        {
+          "sourceId": "exam-d6-s09",
+          "section": "Add new metrics based on data available",
+          "claim": "Create DAX measures using supported model entities and publish the report.",
+          "applicability": "Standalone analytics extension; no invented built-in Handling cost metric."
+        }
+      ],
+      "duplicateCheck": "c15 identifies a new metric need; this applies preserving standard metric semantics while deriving a separate business calculation, unlike q15 visual-only work."
+    },
+    {
+      "id": "ab250-d6-q22",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "managed-versus-customer-update-lifecycle",
+      "objectiveIds": [
+        "D6.2.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d6-s07",
+          "section": "Managed workspace; Customer workspace",
+          "claim": "Managed models update with releases; customer report copies are not overwritten.",
+          "applicability": "Standalone model-customization artifacts; no promise that every new field appears without review."
+        },
+        {
+          "sourceId": "exam-d6-s08",
+          "section": "Step 4: custom reports note",
+          "claim": "Custom reports require semantic-model update handling, refresh and redeployment.",
+          "applicability": "Standalone model-customization artifacts; no promise that every new field appears without review."
+        }
+      ],
+      "duplicateCheck": "New update-lifecycle decision; c16 is read-only managed-model recall, and q24 separately tests hidden-field fragility."
+    },
+    {
+      "id": "ab250-d6-q23",
+      "revision": 2,
+      "domainId": "analytics",
+      "conceptId": "composite-model-relationship-design",
+      "objectiveIds": [
+        "D6.2.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d6-s09",
+          "section": "Add new metrics based on dataset and external data",
+          "claim": "Create a local model, add Dataverse/other data and define relationships to existing entities.",
+          "applicability": "Standalone model customization with licensing and access already configured."
+        },
+        {
+          "sourceId": "exam-d6-s07",
+          "section": "Managed workspace",
+          "claim": "Treat the managed dataset as read-only.",
+          "applicability": "Standalone model customization with licensing and access already configured."
+        }
+      ],
+      "duplicateCheck": "c18 names the composite pattern; this tests the complete two-part design needed for a meaningful cross-source breakdown.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Replace a visual-title distractor with a filter-versus-relationship design misconception."
+    },
+    {
+      "id": "ab250-d6-q24",
+      "revision": 2,
+      "domainId": "analytics",
+      "conceptId": "hidden-model-field-maintenance-risk",
+      "objectiveIds": [
+        "D6.2.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d6-s09",
+          "section": "Create a new report: note",
+          "claim": "Hidden out-of-the-box fact/dimension fields are not recommended because future updates may modify or delete them.",
+          "applicability": "Standalone custom report maintainability, not a claim that all exposed fields are immutable forever."
+        }
+      ],
+      "duplicateCheck": "New schema-dependency choice; q22 covers report-copy update responsibility rather than a particular hidden-field risk.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Replace refresh-frequency distractor with a plausible local-extension maintenance misconception."
+    },
+    {
+      "id": "ab250-d6-q25",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "diagnostic-insights-versus-raw-custom-events",
+      "objectiveIds": [
+        "D6.2.05"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d6-s14",
+          "section": "Things to keep in mind",
+          "claim": "Diagnostics insights supports out-of-the-box assignment methods.",
+          "applicability": "Current configured Diagnose dashboard and conversation telemetry; no guaranteed automatic custom-rule diagnosis."
+        },
+        {
+          "sourceId": "exam-d6-s15",
+          "section": "Assignment snapshot; AssignmentRuleset",
+          "claim": "Raw snapshot events include custom assignment ruleset/rule details.",
+          "applicability": "Current configured Diagnose dashboard and conversation telemetry; no guaranteed automatic custom-rule diagnosis."
+        }
+      ],
+      "duplicateCheck": "Pilot q03 identifies a queue event; D4 q35 reconstructs a particular attempt from rule/state history. This tests the supported analytical-surface boundary."
+    },
+    {
+      "id": "ab250-d6-q26",
+      "revision": 2,
+      "domainId": "analytics",
+      "conceptId": "single-export-environment-target",
+      "objectiveIds": [
+        "D6.2.05"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d6-s12",
+          "section": "Set up a connection with Azure Application Insights",
+          "claim": "There can be only one data export configuration per environment.",
+          "applicability": "Specific documented Customer Service conversation export, not a universal Azure data-routing restriction."
+        },
+        {
+          "sourceId": "exam-d6-s13",
+          "section": "Update Application Insights ID in environment variable",
+          "claim": "The environment variable supplies Dataverse access to the telemetry instance.",
+          "applicability": "Specific documented Customer Service conversation export, not a universal Azure data-routing restriction."
+        }
+      ],
+      "duplicateCheck": "New topology constraint; pilot q04 is environment/operator prerequisites, and D4 diagnostics items do not test parallel exports.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Replace package-name distractor with a retarget-versus-parallel-pipeline assumption."
+    },
+    {
+      "id": "ab250-d6-q27",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "diagnostic-dashboard-latency-interpretation",
+      "objectiveIds": [
+        "D6.2.05"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d6-s14",
+          "section": "Things to keep in mind",
+          "claim": "Application Insights out-of-the-box dashboard data can have a delay of up to 15 minutes.",
+          "applicability": "Configured dashboard with earlier data visible; no guarantee for every raw query or a universal recovery timeout."
+        }
+      ],
+      "duplicateCheck": "New telemetry-latency interpretation, distinct from setup prerequisites and D4 past-attempt correlation."
+    },
+    {
+      "id": "ab250-d6-q28",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "diagnose-federated-subject-debugging",
+      "objectiveIds": [
+        "D6.2.06"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d6-s13",
+          "section": "Fix federated identity credentials path",
+          "claim": "Inspect the failed msdyn_GetAppInsightsTelemetry request Preview, identify missing values and update federated credential Value without spaces/special characters.",
+          "applicability": "Current Diagnose embedding troubleshooting with working ingestion."
+        }
+      ],
+      "duplicateCheck": "New concrete credential-path investigation; c24 lists broad setup, not the request evidence used to repair federation."
+    },
+    {
+      "id": "ab250-d6-q29",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "diagnose-app-identity-and-query-role",
+      "objectiveIds": [
+        "D6.2.06"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d6-s13",
+          "section": "Create and register an app; Assign Monitoring Reader role; Update managed identity record",
+          "claim": "The registered app needs Monitoring Reader and its application/tenant IDs are written to the managed identity record.",
+          "applicability": "Current Diagnose telemetry embedding with prerequisites, federation and instance ID already configured."
+        }
+      ],
+      "duplicateCheck": "Different from pilot Azure/human export prerequisites and D4 historical rule snapshots; tests the Dataverse application read path."
+    },
+    {
+      "id": "ab250-d6-q30",
+      "revision": 2,
+      "domainId": "analytics",
+      "conceptId": "diagnose-telemetry-resource-read-selection",
+      "objectiveIds": [
+        "D6.2.06"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_ai_routing",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d6-s13",
+          "section": "Configure conversation diagnostics and connection; Update Application Insights ID in environment variable; Create and register an app; Enable Debug tab for Diagnose dashboard",
+          "claim": "The export connection pushes telemetry into Application Insights, while the Application Insights ID in Default Value and Current Value is required for Dataverse to access telemetry. App identity authorizes access; the app setting exposes Debug.",
+          "applicability": "Current Diagnose embedding after a resource migration; ingestion and authentication are observed working. The ID check is a diagnostic next step, not a proven cause from symptoms alone."
+        }
+      ],
+      "duplicateCheck": "Replaces study c23 Debug-setting recall with post-migration read-resource selection. Distinct from q26 export-count topology, q28 failed federation and q29 application identity/role configuration.",
+      "revisedBy": "/root/exam_ai_routing",
+      "revisionReason": "Independent reviewer requested a new read-path decision rather than repeating the study-card Debug enablement values."
+    }
+  ]
+}

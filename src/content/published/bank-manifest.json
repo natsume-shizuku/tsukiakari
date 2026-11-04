@@ -1,0 +1,40 @@
+{
+  "id": "ab250-original",
+  "version": "1.0.0",
+  "title": "AB-250 — Original Practice",
+  "description": "300 sourced original practice questions across six skill domains. Review explanations and linked notes to revisit decisions. This is independent practice material, not Microsoft exam content.",
+  "fixture": false,
+  "questionCount": 300,
+  "domains": [
+    {
+      "id": "deployment",
+      "title": "Deploy Contact Center",
+      "weight": 17
+    },
+    {
+      "id": "channels",
+      "title": "Implement channels",
+      "weight": 32
+    },
+    {
+      "id": "agents-ai",
+      "title": "Configure agents and AI",
+      "weight": 12
+    },
+    {
+      "id": "work-distribution",
+      "title": "Configure work distribution",
+      "weight": 12
+    },
+    {
+      "id": "representative-experience",
+      "title": "Configure the representative experience",
+      "weight": 17
+    },
+    {
+      "id": "analytics",
+      "title": "Manage analytics",
+      "weight": 10
+    }
+  ]
+}

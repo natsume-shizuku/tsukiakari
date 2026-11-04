@@ -1,0 +1,76 @@
+/* Phase 6 finish: retain the approved geometry and midnight / warm-paper palette. */
+::selection { background: var(--accent); color: var(--accent-ink); }
+
+/* Make edited fields and keyboard focus legible without moving their neighbours. */
+input:focus-visible, select:focus-visible, textarea:focus-visible {
+  border-color: var(--accent);
+}
+textarea { line-height: 1.7; }
+input[type='number'], input[type='date'], input[type='time'] {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Stable number widths keep counters and durations calm as they update. */
+.deck-queue dd, .statistics-metrics strong, .statistics-year-summary dd,
+.statistics-day-reader, .test-score, .test-result-total, .library-state dd,
+.transfer-counts dd, .review-queue, .review-shortcuts {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Long user-authored names and prose must remain inside their surfaces. */
+.deck-tile h3, .review-heading, .review-waiting, .review-paused,
+.test-resume, .statistics-metrics, .statistics-year-summary,
+.transfer-export-grid, .transfer-counts, .card-inspector-metadata {
+  overflow-wrap: anywhere;
+}
+.review-content, .card-inspector-panel, .notes-index, .membership-scroll,
+.library-scroll-list, .manage-settings-scroll {
+  scrollbar-color: var(--subtle) var(--panel);
+}
+
+/* Reading metadata remains subordinate but should not require zooming. */
+.deck-queue dt, .deck-meta, .library-state dt,
+.card-inspector-copy label, .card-inspector-copy .fine-print,
+.card-inspector-metadata, .notes-kind-label, .library-result-count > span {
+  font-size: .75rem;
+  line-height: 1.6;
+}
+.source-links a { max-width: 100%; }
+
+/* Restrict hover treatment to pointer devices; touch selection stays unambiguous. */
+@media (hover: hover) and (pointer: fine) {
+  .button.secondary:hover:not(:disabled) {
+    background: var(--panel-soft);
+    border-color: var(--subtle);
+    filter: none;
+  }
+  .card-inspector-tabs > button:hover:not([aria-selected='true']),
+  .section-nav a:hover:not([aria-current]) {
+    color: var(--text);
+    background: var(--panel-soft);
+  }
+  .card-inspector-references summary:hover,
+  .note-reader-related > summary:hover,
+  .review-annotations > summary:hover,
+  .transfer-preview summary:hover {
+    color: var(--accent);
+  }
+  .test-option:hover:has(input:not(:disabled)):not(.is-selected):not(.is-correct) {
+    border-color: var(--subtle);
+    background: var(--panel-soft);
+  }
+}
+
+/* Do not animate saved answers, selection, layout, or focus. */
+@media (prefers-reduced-motion: no-preference) {
+  .button:not([role="tab"]), .section-nav a {
+    transition: background-color 120ms ease, border-color 120ms ease;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

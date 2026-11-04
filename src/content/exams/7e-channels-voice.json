@@ -1,0 +1,2546 @@
+{
+  "sources": [
+    {
+      "id": "exam-d2-voice-s01",
+      "title": "Configure Teams Phone in voice channel",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-teams-phone-in-voice-channel"
+    },
+    {
+      "id": "exam-d2-voice-s02",
+      "title": "Plan migration from Azure Communication Services",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/migrate-from-azure-communication-services"
+    },
+    {
+      "id": "exam-d2-voice-s03",
+      "title": "Manage phone numbers",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-manage-phone-numbers"
+    },
+    {
+      "id": "exam-d2-voice-s04",
+      "title": "Set up inbound calling",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-inbound-calling"
+    },
+    {
+      "id": "exam-d2-voice-s05",
+      "title": "Integrate a non-Microsoft IVR system with voice channel",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-contextual-transfer-external-ivr"
+    },
+    {
+      "id": "exam-d2-voice-s06",
+      "title": "Bring your own carrier",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-bring-your-own-number"
+    },
+    {
+      "id": "exam-d2-voice-s07",
+      "title": "Configure outbound and inbound profiles",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-outbound-inbound-profiles"
+    },
+    {
+      "id": "exam-d2-voice-s08",
+      "title": "Set up outbound calling",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-outbound-calling"
+    },
+    {
+      "id": "exam-d2-voice-s09",
+      "title": "Configure call recording, transcription, and real-time translation",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-configure-transcripts"
+    },
+    {
+      "id": "exam-d2-voice-s10",
+      "title": "Enable voice call experiences",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-voice-call-experiences"
+    },
+    {
+      "id": "exam-d2-voice-s11",
+      "title": "Transfer calls and consult with users in the voice channel",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/voice-channel-transfer-consult"
+    },
+    {
+      "id": "exam-d2-voice-s12",
+      "title": "Teams Phone extensibility overview",
+      "url": "https://learn.microsoft.com/en-us/azure/communication-services/concepts/interop/tpe/teams-phone-extensibility-overview"
+    },
+    {
+      "id": "exam-d2-voice-s13",
+      "title": "Cost and licensing",
+      "url": "https://learn.microsoft.com/en-us/training/modules/intro-implement-dynamics-365-contact-center/6-cost-and-licensing"
+    }
+  ],
+  "questions": [
+    {
+      "id": "ab250-d2-q36",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.2.01"
+      ],
+      "conceptId": "teams-sync-delegated-permission",
+      "prompt": "A Teams Phone deployment has its resource accounts and numbers prepared, but the person running Sync from Teams lacks the required administrative role and the application has no consented resource-account read permission. Which TWO preparations address those documented sync prerequisites? Choose TWO.",
+      "answer": "Use a Teams Administrator or Teams Telephony Administrator for synchronization. Configure the documented delegated resource-account read permissions, including TeamsResourceAccount.Read.All, and provide admin consent.",
+      "explanation": "Prepare both the operator role and the consented delegated app permission. A valid number assignment alone does not establish authority to read Teams resource accounts. Choose exactly two answers.",
+      "sourceIds": [
+        "exam-d2-voice-s01"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:teams-sync-delegated-permission",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o2",
+          "text": "Assign only a Teams resource account license to the sync operator instead of the required administrative role."
+        },
+        {
+          "id": "o1",
+          "text": "Use a Teams Administrator or Teams Telephony Administrator for synchronization."
+        },
+        {
+          "id": "o4",
+          "text": "Grant delegated resource-account read permission but omit admin consent."
+        },
+        {
+          "id": "o5",
+          "text": "Use voice queue membership as a substitute for Teams synchronization authority."
+        },
+        {
+          "id": "o3",
+          "text": "Configure the documented delegated resource-account read permissions, including TeamsResourceAccount.Read.All, and provide admin consent."
+        }
+      ],
+      "correctOptionIds": [
+        "o1",
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "The guide identifies these roles for synchronization.",
+        "o2": "Resource-account licensing is separate from the documented operator role.",
+        "o3": "The guide explicitly requires the delegated resource-account read permission and consent.",
+        "o4": "The documented sync prerequisite includes admin consent.",
+        "o5": "Queue membership does not replace Teams administrative sync authority."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n16"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q37",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.2.01"
+      ],
+      "conceptId": "teams-dr-external-call-policy",
+      "prompt": "A Teams Direct Routing service number is assigned to its Contact Center resource account. External-number consult and transfer calling still needs the resource-account routing configuration described in the guide. Which remaining Teams-side assignment should the engineer verify?",
+      "answer": "Assign a Direct Routing voice routing policy to the Teams resource account.",
+      "explanation": "Teams Direct Routing number assignment and outbound route policy are distinct steps. Check the policy on the service resource account rather than changing chat context or dialer presentation.",
+      "sourceIds": [
+        "exam-d2-voice-s01"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:teams-dr-external-call-policy",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Assign only the resource account license, leaving its voice routing policy unconfigured."
+        },
+        {
+          "id": "o2",
+          "text": "Assign a Direct Routing voice routing policy to the Teams resource account."
+        },
+        {
+          "id": "o3",
+          "text": "Assign a voice routing policy only to an ordinary Teams user, leaving the service resource account unconfigured."
+        },
+        {
+          "id": "o4",
+          "text": "Rely only on Sync from Teams to replace the resource-account policy assignment."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "The guide has a separate policy step for external-number consult and transfer.",
+        "o2": "This is the documented Teams Direct Routing step for that resource account.",
+        "o3": "The documented policy must apply to the resource account used for the service number.",
+        "o4": "Synchronization creates the number record but does not replace the stated Teams policy assignment."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n16"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q38",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.2.01"
+      ],
+      "conceptId": "teams-calling-plan-service-number",
+      "prompt": "A Contact Center rollout uses a Teams Calling Plan. Its design selects an ordinary user subscriber number as the contact-center service entry number. What should the reviewer require for the documented integration?",
+      "answer": "Choose a Teams Calling Plan service number for the integration.",
+      "explanation": "Number type is part of the Teams Calling Plan prerequisite. Satisfy the service-number requirement rather than attempting to convert a subscriber number with a Contact Center presentation or routing setting.",
+      "sourceIds": [
+        "exam-d2-voice-s01"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:teams-calling-plan-service-number",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Use a subscriber number and rely on outbound enablement to satisfy the number-type requirement."
+        },
+        {
+          "id": "o2",
+          "text": "Use any personal user number as long as the representative has queue membership."
+        },
+        {
+          "id": "o4",
+          "text": "Keep the subscriber number and set it as the outbound profile default caller ID."
+        },
+        {
+          "id": "o3",
+          "text": "Choose a Teams Calling Plan service number for the integration."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "Outbound enablement does not change the documented service-number restriction.",
+        "o2": "User queue membership does not make a personal number a Calling Plan service number.",
+        "o3": "This is the explicit Calling Plan integration requirement.",
+        "o4": "Selecting caller ID does not change the underlying Calling Plan number type."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n16"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q39",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.23"
+      ],
+      "conceptId": "acs-retirement-impact-discrimination",
+      "prompt": "An organization operates one contact center on standalone ACS Direct Offer voice and another already on Teams Phone extensibility. It is reviewing the announced September 2028 changes. Which TWO conclusions match the migration guidance? Choose TWO.",
+      "answer": "The standalone ACS voice configuration needs a supported migration before the specified end of service. The Teams Phone extensibility voice configuration is not affected by this retirement.",
+      "explanation": "Inventory the actual telephony architecture before assigning migration work. The notice affects specified standalone ACS configurations and expressly excludes Teams Phone extensibility. Choose exactly two answers.",
+      "sourceIds": [
+        "exam-d2-voice-s02"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:acs-retirement-impact-discrimination",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "The standalone ACS voice configuration needs a supported migration before the specified end of service."
+        },
+        {
+          "id": "o2",
+          "text": "Both deployments must stop taking calls immediately in November 2026."
+        },
+        {
+          "id": "o4",
+          "text": "The Teams Phone extensibility voice configuration is not affected by this retirement."
+        },
+        {
+          "id": "o3",
+          "text": "The change retires Dynamics 365 Contact Center itself."
+        },
+        {
+          "id": "o5",
+          "text": "The notice means every Azure Communication Services API is being retired."
+        }
+      ],
+      "correctOptionIds": [
+        "o1",
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "ACS Direct Offer voice is in the affected configuration list.",
+        "o2": "The affected capabilities remain supported through the stated transition period.",
+        "o3": "The guidance explicitly says Contact Center continues to operate.",
+        "o4": "The guidance explicitly excludes existing TPE voice configurations from this retirement.",
+        "o5": "The notice concerns specified standalone capabilities, not every ACS API."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n16"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q40",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.2.03",
+        "D2.3.23"
+      ],
+      "conceptId": "new-acs-number-acquisition-date",
+      "prompt": "On 3 November 2026, a new customer with no existing Azure Communication Services resource proposes starting a standalone ACS number-acquisition project for Contact Center. Which transition constraint invalidates that acquisition assumption?",
+      "answer": "Organizations without an existing ACS resource cannot acquire or port numbers into ACS after 30 September 2026.",
+      "explanation": "The acquisition restriction precedes retirement. Plan this new deployment around a supported long-term voice platform and its prerequisites rather than assume the transition permissions for existing ACS resources apply.",
+      "sourceIds": [
+        "exam-d2-voice-s02"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:new-acs-number-acquisition-date",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o4",
+          "text": "Organizations without an existing ACS resource cannot acquire or port numbers into ACS after 30 September 2026."
+        },
+        {
+          "id": "o1",
+          "text": "All existing ACS resources already lost their phone numbers in September 2026."
+        },
+        {
+          "id": "o2",
+          "text": "The restriction applies only after the September 2028 end-of-service date."
+        },
+        {
+          "id": "o3",
+          "text": "New customers can acquire ACS numbers if they create a voice workstream first."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "The guidance preserves transition acquisition and porting capabilities for existing ACS resources.",
+        "o2": "The acquisition restriction took effect in September 2026, before final retirement.",
+        "o3": "A new workstream does not create an exception to the acquisition restriction.",
+        "o4": "This is the explicit existing-resource and date boundary."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n17"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q41",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.23"
+      ],
+      "conceptId": "operator-connect-portability-review",
+      "prompt": "An existing ACS Direct Routing customer wants a participating certified carrier to manage PSTN connectivity after migration. It does not require retaining a customer-managed SBC. It also needs to validate its existing numbers. Which plan best follows the migration guidance?",
+      "answer": "Choose Operator Connect and verify destination, carrier, regional and regulatory portability requirements.",
+      "explanation": "Choose the target for the desired management model, then validate number portability as its own workstream. Operator Connect is the documented participating-carrier path in this scenario.",
+      "sourceIds": [
+        "exam-d2-voice-s02"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:operator-connect-portability-review",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o2",
+          "text": "Choose Teams Direct Routing solely to eliminate customer-managed SBC responsibilities, with all ports guaranteed."
+        },
+        {
+          "id": "o3",
+          "text": "Keep the legacy ACS configuration beyond retirement because carrier management is changing."
+        },
+        {
+          "id": "o1",
+          "text": "Choose Operator Connect and verify destination, carrier, regional and regulatory portability requirements."
+        },
+        {
+          "id": "o4",
+          "text": "Choose Teams Calling Plan and assume every existing carrier number ports without a regional check."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "This matches the recommended carrier-managed option and the separately stated portability checks.",
+        "o2": "The guidance positions Teams Direct Routing for retaining carrier relationships and SBC investment; it does not guarantee all ports.",
+        "o3": "Affected ACS voice still needs migration before end of service.",
+        "o4": "No migration path establishes blanket number portability without those checks."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n16"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q42",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.2.01",
+        "D2.2.03"
+      ],
+      "conceptId": "single-number-multilanguage-design",
+      "prompt": "A support center must publish one inbound telephone number for two languages, with separately configured language greetings and voice settings. A design proposes creating two numbers solely because each voice channel permits only one language. Which correction fits the documented channel setup?",
+      "answer": "Add both languages to the voice channel and configure each language settings.",
+      "explanation": "Language choice does not inherently require separate public numbers. Configure the languages and their voice settings within the inbound voice channel.",
+      "sourceIds": [
+        "exam-d2-voice-s04",
+        "exam-d2-voice-s03"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:single-number-multilanguage-design",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o2",
+          "text": "Add both languages to the voice channel and configure each language settings."
+        },
+        {
+          "id": "o1",
+          "text": "Create two workstreams and assign the same public number to both, one language per workstream."
+        },
+        {
+          "id": "o3",
+          "text": "Change only the primary language each shift so the channel never contains both languages."
+        },
+        {
+          "id": "o4",
+          "text": "Configure only the outbound profile language and assume it defines both inbound greetings."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "A phone number can be associated with only one voice workstream; the guide instead supports multiple channel languages.",
+        "o2": "The voice channel supports several languages with per-language settings.",
+        "o3": "The documented channel supports keeping both languages configured, rather than requiring shift-by-shift replacement.",
+        "o4": "The inbound voice channel has its own language settings."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n17"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q43",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.2.03"
+      ],
+      "conceptId": "direct-routing-csv-number-preservation",
+      "prompt": "An existing eligible ACS Direct Routing deployment imports already-owned 12-digit SBC numbers using the documented PhoneNumber.csv template. Which value format follows that import guidance for msdyn_phonenumber?",
+      "answer": "The complete digits enclosed in double quotes, without adding a plus sign.",
+      "explanation": "Preserve the complete number identity when preparing CSV. Use the documented quoted representation for a 12-digit number; the import supplies the plus sign.",
+      "sourceIds": [
+        "exam-d2-voice-s06"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:direct-routing-csv-number-preservation",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "A scientific-notation numeric value to shorten the CSV field."
+        },
+        {
+          "id": "o2",
+          "text": "An unquoted local-format number with spaces replacing the country code."
+        },
+        {
+          "id": "o4",
+          "text": "The number with its last digits omitted because the template accepts only ten digits."
+        },
+        {
+          "id": "o3",
+          "text": "The complete digits enclosed in double quotes, without adding a plus sign."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "Scientific notation does not preserve the documented complete telephone-number value.",
+        "o2": "The guide calls for the complete number and quotes above ten digits, not a reformatted local value.",
+        "o3": "The guide requires quotes for more than ten digits and adds the plus automatically.",
+        "o4": "The maximum documented length is fifteen digits, not ten; truncation changes the identity."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n17"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q44",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.2.03"
+      ],
+      "conceptId": "inactive-direct-routing-number-repair",
+      "prompt": "An existing Direct Routing phone-number record shows Inactive. The team has isolated the problem to the number record and is following the specific phone-number management note. What corrective action does that note prescribe?",
+      "answer": "Delete the inactive Direct Routing number record and add it again.",
+      "explanation": "Use the narrowly documented repair after establishing the inactive-number condition. This does not mean releasing every number or bypassing dependency checks for general deletion.",
+      "sourceIds": [
+        "exam-d2-voice-s03"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:inactive-direct-routing-number-repair",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Retain the inactive record and rely only on refreshing the phone-number list."
+        },
+        {
+          "id": "o2",
+          "text": "Leave the inactive record in place and rely only on toggling its inbound calling plan."
+        },
+        {
+          "id": "o4",
+          "text": "Delete the inactive Direct Routing number record and add it again."
+        },
+        {
+          "id": "o3",
+          "text": "Assign the same inactive number to a second workstream while retaining its first association."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "A list refresh does not perform the prescribed delete-and-readd repair.",
+        "o2": "The specific inactive Direct Routing note prescribes deleting and re-adding the record, rather than treating calling-plan toggling as the documented repair.",
+        "o3": "A number can belong to only one voice workstream and this is not the documented repair.",
+        "o4": "This is the repair explicitly given for an inactive Direct Routing record."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n17"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q45",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.2.02"
+      ],
+      "conceptId": "external-ivr-uui-supported-formats",
+      "prompt": "An existing ACS Direct Routing IVR integration has matching workstream context variables. A developer must send two named values in the SIP User-to-User header. Which TWO representations are explicitly supported by the contextual-transfer guide? Choose TWO.",
+      "answer": "Plain key=value pairs separated by semicolons. The complete ASCII key/value payload hex-encoded with ;encoding=hex.",
+      "explanation": "Preserve named key/value context and use one of the documented UUI encodings. UUI support does not establish that any custom SIP header carries equivalent context. Choose exactly two answers.",
+      "sourceIds": [
+        "exam-d2-voice-s05"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:external-ivr-uui-supported-formats",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o2",
+          "text": "A JSON object in an unrelated X-Context header, without a UUI payload."
+        },
+        {
+          "id": "o1",
+          "text": "Plain key=value pairs separated by semicolons."
+        },
+        {
+          "id": "o4",
+          "text": "Only the two values separated by commas, with their parameter names removed."
+        },
+        {
+          "id": "o3",
+          "text": "The complete ASCII key/value payload hex-encoded with ;encoding=hex."
+        },
+        {
+          "id": "o5",
+          "text": "Hex-encoded values with all parameter names removed from the payload."
+        }
+      ],
+      "correctOptionIds": [
+        "o1",
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "The guide supports this plain-text UUI form.",
+        "o2": "The source does not establish arbitrary X-headers as interchangeable with this UUI flow.",
+        "o3": "This is its explicit ASCII hex-encoding form.",
+        "o4": "The documented contextual payload retains the named key/value pairs.",
+        "o5": "Encoding does not remove the named parameters needed for context mapping."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n18"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q46",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.2.02"
+      ],
+      "conceptId": "external-ivr-sbc-number-topology",
+      "prompt": "A customer retains an existing external IVR during its supported ACS Direct Routing transition. Before sending contextual SIP transfers, the team must complete the documented connection topology. Which TWO steps are part of that topology? Choose TWO.",
+      "answer": "Connect the IVR-linked SBC to the ACS resource that is connected to the application. Register the phone number assigned to the IVR with the application.",
+      "explanation": "The documented IVR context flow depends on the connected SBC/resource path and the registered IVR number. Defining variables alone does not create that topology. Choose exactly two answers.",
+      "sourceIds": [
+        "exam-d2-voice-s05"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:external-ivr-sbc-number-topology",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Connect the IVR-linked SBC to the ACS resource that is connected to the application."
+        },
+        {
+          "id": "o2",
+          "text": "Configure only an outbound dialer profile and omit IVR-number registration."
+        },
+        {
+          "id": "o3",
+          "text": "Connect the SBC to an unrelated ACS resource without linking it to the application."
+        },
+        {
+          "id": "o5",
+          "text": "Define workstream context variables but omit the IVR-linked SBC route."
+        },
+        {
+          "id": "o4",
+          "text": "Register the phone number assigned to the IVR with the application."
+        }
+      ],
+      "correctOptionIds": [
+        "o1",
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "This is the documented SBC-to-resource connection path.",
+        "o2": "The guide separately requires registering the IVR phone number.",
+        "o3": "The documented resource is connected to the application.",
+        "o4": "The guide includes this number-registration step.",
+        "o5": "Variables define the context contract but do not create the required telephony topology."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n18"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q47",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.24"
+      ],
+      "conceptId": "sbc-dns-region-latency",
+      "prompt": "An existing BYOC Direct Routing deployment has additional media delay after the SBC is moved, while its DNS service remains in a different region. The call route and context mappings are otherwise correct. Which infrastructure alignment does the guidance prioritize?",
+      "answer": "Align the SBC and its DNS service in the recommended deployment region.",
+      "explanation": "Telephony routing can be functionally correct while infrastructure placement still adds latency. Check the documented SBC/DNS regional relationship before changing application context or presentation.",
+      "sourceIds": [
+        "exam-d2-voice-s06"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:sbc-dns-region-latency",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o2",
+          "text": "Enable SIP Application Layer Gateway on the SBC firewall to compensate for regional separation."
+        },
+        {
+          "id": "o1",
+          "text": "Align the SBC and its DNS service in the recommended deployment region."
+        },
+        {
+          "id": "o3",
+          "text": "Move the media endpoint to a private IP address while leaving the regional separation unchanged."
+        },
+        {
+          "id": "o4",
+          "text": "Reuse the same FQDN for Teams and ACS Direct Routing to compensate for DNS geography."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "The source associates cross-region SBC/DNS placement with delay and recommends alignment.",
+        "o2": "The SBC guidance says SIP ALG should be disabled, not enabled.",
+        "o3": "The SBC guidance calls for a public media endpoint IP, not a private one.",
+        "o4": "The SBC guidance requires distinct FQDNs for Teams and ACS even if the port is reused."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n18"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q48",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.2.04"
+      ],
+      "conceptId": "inbound-profile-personal-number-prerequisites",
+      "prompt": "A team needs direct inward dialing to a named representative rather than queue-routed inbound calls. Which TWO number preparations satisfy the inbound-profile prerequisites? Choose TWO.",
+      "answer": "Use an enabled geographic personal number. Assign the personal number to the representative through user Omnichannel settings.",
+      "explanation": "Direct inward dialing uses a prepared personal number and user assignment. A shared outbound number or queue membership alone does not meet those prerequisites. Choose exactly two answers.",
+      "sourceIds": [
+        "exam-d2-voice-s07"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:inbound-profile-personal-number-prerequisites",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o2",
+          "text": "Use an unassigned shared outbound number in place of a personal number."
+        },
+        {
+          "id": "o3",
+          "text": "Assign only an outbound capacity profile instead of assigning the personal number to the user."
+        },
+        {
+          "id": "o1",
+          "text": "Use an enabled geographic personal number."
+        },
+        {
+          "id": "o4",
+          "text": "Assign the personal number to the representative through user Omnichannel settings."
+        },
+        {
+          "id": "o5",
+          "text": "Rely only on voice queue membership instead of assigning the personal number."
+        }
+      ],
+      "correctOptionIds": [
+        "o1",
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "The guide identifies this number prerequisite.",
+        "o2": "The inbound profile prerequisite is a geographic personal number assigned to the representative.",
+        "o3": "Outbound profile eligibility does not replace this personal-number user assignment.",
+        "o4": "This is the documented user assignment location.",
+        "o5": "Queue membership alone does not establish the direct-inward personal-number assignment."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n19"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q49",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.2.04"
+      ],
+      "conceptId": "inbound-forwarding-external-transfer-toggle",
+      "prompt": "A representative personal-number inbound profile is configured, but the rollout also requires call forwarding to an external telephone number. Which profile behavior is specifically required by the inbound-profile guide?",
+      "answer": "Enable Call transfer to external phone number.",
+      "explanation": "The inbound-profile forwarding dependency is the external phone transfer setting. Capture, music and Teams consultation address other call behaviors.",
+      "sourceIds": [
+        "exam-d2-voice-s07"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:inbound-forwarding-external-transfer-toggle",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Set Transcription and recording to Automatic."
+        },
+        {
+          "id": "o2",
+          "text": "Enable Call transfer to external phone number."
+        },
+        {
+          "id": "o3",
+          "text": "Change only the Hold music file."
+        },
+        {
+          "id": "o4",
+          "text": "Enable Consult with Microsoft Teams user instead of external-number transfer."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "Capture start settings do not provide the stated forwarding prerequisite.",
+        "o2": "The guide explicitly states that this toggle is required for inbound-profile call forwarding.",
+        "o3": "Hold audio does not enable external forwarding.",
+        "o4": "Teams-user consult and external-number transfer are separate profile behaviors."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n19"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q50",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.2.04"
+      ],
+      "conceptId": "alternative-caller-id-provisioning",
+      "prompt": "A business wants customers to see its central support number when representatives call from a different outbound profile number. The central number is not yet configured as a workstream channel or outbound profile number. Which preparation does the profile guide require before using that alternative?",
+      "answer": "Configure an outbound profile for the alternative number so its representative settings exist before selecting it as caller ID.",
+      "explanation": "Alternative caller ID has two related checks: the alternative number must first be configured as a workstream channel or outbound-profile number; when a different number is selected as caller ID, the guide specifically says it must have an outbound profile so representative settings exist. Configure that profile rather than treat a dialer label or a bare number selection as sufficient.",
+      "sourceIds": [
+        "exam-d2-voice-s07"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:alternative-caller-id-provisioning",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o3",
+          "text": "Configure an outbound profile for the alternative number so its representative settings exist before selecting it as caller ID."
+        },
+        {
+          "id": "o1",
+          "text": "Enter the central number only in the profile Number label."
+        },
+        {
+          "id": "o2",
+          "text": "Set the alternative caller ID on the profile without provisioning the central number in a channel or outbound profile."
+        },
+        {
+          "id": "o4",
+          "text": "Leave Caller ID number at the profile-number default and rely on the label to show the central number."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "The Number label is dialer presentation, not alternative-number provisioning.",
+        "o2": "The guide explicitly requires configuration of the alternative number before use.",
+        "o3": "The guide first allows alternative-number provisioning as a channel or profile number, then explicitly requires an outbound profile for a different selected caller ID so representative settings are created.",
+        "o4": "The profile-number default keeps that phone number as caller ID; the label does not replace it."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n19"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q51",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.2.04"
+      ],
+      "conceptId": "outbound-number-label-not-cnam",
+      "prompt": "An administrator sets an outbound profile Number label to Billing and expects customers to see Billing as the caller name. Which documented limitation should the engineer explain?",
+      "answer": "The label is used in the representative dialer and is not a supported CNAM label for customers.",
+      "explanation": "Use Number label to help representatives choose the business context in the dialer. It does not implement caller-name delivery to the customer.",
+      "sourceIds": [
+        "exam-d2-voice-s07"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:outbound-number-label-not-cnam",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "The label changes caller name only after the representative edits it in the dialer."
+        },
+        {
+          "id": "o2",
+          "text": "The label becomes CNAM when Caller ID number is set to Profile Number."
+        },
+        {
+          "id": "o3",
+          "text": "The label replaces the caller ID number whenever an alternative number is selected."
+        },
+        {
+          "id": "o4",
+          "text": "The label is used in the representative dialer and is not a supported CNAM label for customers."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "Editing a dialer label does not turn it into the unsupported CNAM function.",
+        "o2": "Caller ID number and Number label are separate; the default does not enable CNAM.",
+        "o3": "Selecting a different caller ID does not turn the dialer label into the telephone number.",
+        "o4": "This is the explicit dialer/CNAM boundary."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n19"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q52",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.2.04"
+      ],
+      "conceptId": "outbound-concurrency-and-incoming-block",
+      "prompt": "A new outbound calling profile must allow each representative only one outbound call at a time and prevent incoming assignments while that outbound call is in progress. The associated users are already configured. Which TWO outbound capacity settings implement these requirements? Choose TWO.",
+      "answer": "Set Work item limit to 1. Set Assignment blocking to Yes.",
+      "explanation": "The concurrency limit and the inbound-assignment block solve separate requirements. Configure both in the outbound capacity profile. Choose exactly two answers.",
+      "sourceIds": [
+        "exam-d2-voice-s08"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:outbound-concurrency-and-incoming-block",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Set Work item limit to 1."
+        },
+        {
+          "id": "o2",
+          "text": "Set Work item limit to 3 so unused slots remain available."
+        },
+        {
+          "id": "o4",
+          "text": "Set Assignment blocking to No to reserve incoming capacity."
+        },
+        {
+          "id": "o3",
+          "text": "Set Assignment blocking to Yes."
+        },
+        {
+          "id": "o5",
+          "text": "Use only a separate outbound queue without configuring these capacity fields."
+        }
+      ],
+      "correctOptionIds": [
+        "o1",
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "The outbound guide defines limit 1 as one concurrent outbound call.",
+        "o2": "The guide explains that limit 3 permits three concurrent outbound calls, contrary to the requirement.",
+        "o3": "The guide explicitly uses this setting to block incoming calls during an outbound call.",
+        "o4": "This does not enable the documented incoming-assignment block.",
+        "o5": "Separate queue organization supports monitoring but does not replace these workload settings."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n19"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q53",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.2.04",
+        "D2.3.24"
+      ],
+      "conceptId": "outbound-queue-monitoring-separation",
+      "prompt": "A supervisor needs clearer visibility into outbound traffic and customer sentiment. The center currently shares one queue for both inbound and outbound calling. Which queue design does the outbound setup guide recommend for this monitoring goal?",
+      "answer": "Create separate inbound and outbound queues, while recognizing that sharing one is supported.",
+      "explanation": "The recommended separation is an observability choice. Do not turn it into a claim that a shared queue is unsupported or replace queue-based calling with a different inbound model.",
+      "sourceIds": [
+        "exam-d2-voice-s08"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:outbound-queue-monitoring-separation",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o2",
+          "text": "Keep one shared queue because separate outbound queues are not supported."
+        },
+        {
+          "id": "o3",
+          "text": "Separate only by language and leave inbound/outbound traffic mixed in each queue as the documented outbound-specific recommendation."
+        },
+        {
+          "id": "o1",
+          "text": "Create separate inbound and outbound queues, while recognizing that sharing one is supported."
+        },
+        {
+          "id": "o4",
+          "text": "Split queues only by representative team while keeping inbound and outbound traffic combined in every queue."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "The guide recommends this separation for monitoring outbound traffic and sentiment.",
+        "o2": "The guide permits both shared and separate queues and recommends separation for this goal.",
+        "o3": "The specific recommendation concerns inbound versus outbound traffic, not language-only separation.",
+        "o4": "This omits the recommended inbound/outbound separation for outbound-specific monitoring."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n19"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q54",
+      "revision": 2,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.2.05"
+      ],
+      "conceptId": "voice-capture-mime-event-prerequisites",
+      "prompt": "An existing supported ACS-backed voice capture deployment has tenant audio recording enabled and its workstream set to Transcription and recording. The engineer is checking the additional capture prerequisites before testing. Which TWO checks are explicitly listed in the recording guide? Choose TWO.",
+      "answer": "Allow audio and mpeg MIME types in the environment. Register the Event Grid system topics needed for the application to listen to ACS events.",
+      "explanation": "Capture depends on more than the workstream dropdown. The guide also requires compatible environment MIME policy and the event-listening setup. Choose exactly two answers.",
+      "sourceIds": [
+        "exam-d2-voice-s09",
+        "exam-d2-voice-s10"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:voice-capture-mime-event-prerequisites",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o2",
+          "text": "Disable tenant audio recording so the workstream controls capture independently."
+        },
+        {
+          "id": "o1",
+          "text": "Allow audio and mpeg MIME types in the environment."
+        },
+        {
+          "id": "o3",
+          "text": "Replace Event Grid event registration with representative call-survey logs."
+        },
+        {
+          "id": "o5",
+          "text": "Select None for workstream capture so Event Grid can override the choice."
+        },
+        {
+          "id": "o4",
+          "text": "Register the Event Grid system topics needed for the application to listen to ACS events."
+        }
+      ],
+      "correctOptionIds": [
+        "o1",
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "The guide lists these allowed MIME types as a recording prerequisite.",
+        "o2": "Disabling tenant audio prevents recording regardless of workstream configuration.",
+        "o3": "Survey diagnostic logs serve representative feedback and do not replace the recording event prerequisite.",
+        "o4": "This is the documented event-registration step for the capture flow.",
+        "o5": "The workstream capture selection is not replaced by Event Grid overriding None."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n20"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q55",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.2.05"
+      ],
+      "conceptId": "manual-capture-resume-label",
+      "prompt": "A test call uses Manual start for recording and transcription. Before the representative begins capture, the button already says Resume recording and transcript. A tester reports this as proof that sensitive audio was previously recorded. Which interpretation matches the documented UI behavior?",
+      "answer": "That is the standard initial Manual-start label and does not prove earlier recording.",
+      "explanation": "Interpret the control using the documented Manual-start behavior. An initial Resume label is not evidence that audio capture occurred before the representative acted.",
+      "sourceIds": [
+        "exam-d2-voice-s09"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:manual-capture-resume-label",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Manual start actually begins capture automatically on every call."
+        },
+        {
+          "id": "o3",
+          "text": "The label proves a previous call recording was appended to this conversation."
+        },
+        {
+          "id": "o4",
+          "text": "The label means the tenant-level recording prohibition has been overridden."
+        },
+        {
+          "id": "o2",
+          "text": "That is the standard initial Manual-start label and does not prove earlier recording."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "The Manual-start setting explicitly leaves starting capture to the representative.",
+        "o2": "The guide specifically warns that this initial label does not imply previous recording and pausing.",
+        "o3": "The documentation does not define the label as evidence of appending another recording.",
+        "o4": "A button label does not override tenant recording controls."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n20"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q56",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.2.05"
+      ],
+      "conceptId": "recording-hold-auto-pause",
+      "prompt": "A workstream records calls automatically. Its operational requirement is to pause recording and transcription when a representative places the customer on hold and resume them when the representative removes hold. Which setting directly targets that hold-driven behavior?",
+      "answer": "Enable Allow automatic pause and resume when agent hold and un-hold the customer.",
+      "explanation": "Initial capture start, manual representative control and hold-driven automation are separate settings. Choose the hold-specific option for the stated lifecycle.",
+      "sourceIds": [
+        "exam-d2-voice-s09"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:recording-hold-auto-pause",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o3",
+          "text": "Enable Allow automatic pause and resume when agent hold and un-hold the customer."
+        },
+        {
+          "id": "o1",
+          "text": "Use Manual start instead of Automatic, without any hold setting."
+        },
+        {
+          "id": "o2",
+          "text": "Allow representatives to pause and resume, but rely solely on manual button presses."
+        },
+        {
+          "id": "o4",
+          "text": "Change the hold-music file without changing recording settings."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "Manual start controls how capture begins, not the requested automatic hold lifecycle.",
+        "o2": "Manual controls do not by themselves automate pause and resume on hold transitions.",
+        "o3": "This is the explicitly documented hold-linked capture setting.",
+        "o4": "Hold music selection does not change capture automation."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n20"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q57",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.2.05"
+      ],
+      "conceptId": "dtmf-only-ai-transcript-boundary",
+      "prompt": "A voice workstream has recording and transcription disabled, but its Copilot Studio agent is enabled for DTMF input only. A reviewer inspects the agent transcript to understand what caller input that configuration captures. Which expectation is documented?",
+      "answer": "Copilot Studio still generates its transcript, capturing keypad entries while spoken input is ignored.",
+      "explanation": "Distinguish the Copilot Studio agent transcript from the voice workstream capture controls. Under the stated DTMF-only configuration, keypad input is captured and speech is not stored in that transcript.",
+      "sourceIds": [
+        "exam-d2-voice-s09"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:dtmf-only-ai-transcript-boundary",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "No agent transcript can exist unless voice workstream recording is enabled."
+        },
+        {
+          "id": "o4",
+          "text": "Copilot Studio still generates its transcript, capturing keypad entries while spoken input is ignored."
+        },
+        {
+          "id": "o2",
+          "text": "The agent transcript captures all caller speech because disabling recording only affects audio files."
+        },
+        {
+          "id": "o3",
+          "text": "The agent transcript converts every spoken answer into the same keypad value automatically."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "The guide explicitly says the Copilot Studio transcript is generated irrespective of workstream recording/transcription settings.",
+        "o2": "For DTMF-only agent input, the guide says caller speech is ignored and not stored in that transcript.",
+        "o3": "The DTMF-only rule does not establish speech-to-keypad conversion.",
+        "o4": "This combines the documented independent agent transcript and the DTMF-only speech boundary."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n20"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q58",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.2.05"
+      ],
+      "conceptId": "voice-transcript-grouped-timestamps",
+      "prompt": "A quality reviewer uses displayed voice transcript timestamps to infer the exact second when each utterance occurred. Several messages share a timestamp interval. Which documentation-based caution should the engineer give?",
+      "answer": "The display groups timestamps into two-minute intervals to account for possible drift, so it does not establish exact-second utterance times.",
+      "explanation": "Use displayed intervals for transcript navigation with the stated precision limit. Do not convert shared group labels into claims of simultaneity, duplicate speech or recording failure.",
+      "sourceIds": [
+        "exam-d2-voice-s09"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:voice-transcript-grouped-timestamps",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o2",
+          "text": "Messages sharing an interval must have been spoken simultaneously."
+        },
+        {
+          "id": "o3",
+          "text": "A repeated timestamp proves the transcription contains duplicate utterances."
+        },
+        {
+          "id": "o1",
+          "text": "The display groups timestamps into two-minute intervals to account for possible drift, so it does not establish exact-second utterance times."
+        },
+        {
+          "id": "o4",
+          "text": "Timestamp grouping means a call recording was never created."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "The guide explicitly documents this grouping and its timing-drift rationale.",
+        "o2": "Grouping does not imply simultaneous speech.",
+        "o3": "Repeated group labels do not by themselves prove duplicated content.",
+        "o4": "The display grouping is not evidence of the recording creation outcome."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n20"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q59",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.2.06"
+      ],
+      "conceptId": "representative-quality-survey-sampling",
+      "prompt": "An operations team already collects technical jitter and latency metrics. It also wants representatives to rate their calling experience after selected calls, with control over presentation frequency and how long the prompt appears. Which feature best matches this requirement?",
+      "answer": "The representative call quality survey with frequency and optional duration configured.",
+      "explanation": "The representative call quality survey adds subjective operational evidence beyond technical metrics. Configure its presentation controls separately from any customer-feedback survey.",
+      "sourceIds": [
+        "exam-d2-voice-s10"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:representative-quality-survey-sampling",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o2",
+          "text": "The representative call quality survey with frequency and optional duration configured."
+        },
+        {
+          "id": "o1",
+          "text": "A customer CSAT survey attached only to the post-call customer flow."
+        },
+        {
+          "id": "o3",
+          "text": "An inbound preconversation survey completed by the customer before routing."
+        },
+        {
+          "id": "o4",
+          "text": "A requirement that representatives use only the technical bitrate graph without any feedback prompt."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "Customer satisfaction measures a different respondent and does not supply the representative quality prompt.",
+        "o2": "The guide describes this feedback feature and its sampling/display controls.",
+        "o3": "Preconversation customer collection is the wrong respondent and lifecycle stage.",
+        "o4": "Technical metrics alone omit the requested subjective representative experience."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n21"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q60",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.24"
+      ],
+      "conceptId": "secure-consult-agent-hold-constraints",
+      "prompt": "A supported secure external-contact consult uses the production-ready preview configuration. Two representatives are on the call, and the contact Hold option is Agent on hold so the customer can interact privately with the contact. Which TWO effects follow this setting? Choose TWO.",
+      "answer": "All representatives on the call are placed on hold when the secure consult joins. Representatives cannot modify that hold during the secure consultation.",
+      "explanation": "Secure consult has stronger hold behavior than ordinary collaboration. Agent on hold protects the interaction from every representative on the call, and the secure hold is not user-removable. Choose exactly two answers.",
+      "sourceIds": [
+        "exam-d2-voice-s10"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:secure-consult-agent-hold-constraints",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o2",
+          "text": "All representatives on the call are placed on hold when the secure consult joins."
+        },
+        {
+          "id": "o1",
+          "text": "Only the primary representative is placed on hold; the secondary continues to hear the secure interaction."
+        },
+        {
+          "id": "o4",
+          "text": "Representatives cannot modify that hold during the secure consultation."
+        },
+        {
+          "id": "o3",
+          "text": "Any representative can remove the secure hold during the active consultation."
+        },
+        {
+          "id": "o5",
+          "text": "The Hold option also defines the hold behavior for every bridged transfer."
+        }
+      ],
+      "correctOptionIds": [
+        "o2",
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "The guide explicitly says all service representatives are placed on hold.",
+        "o2": "This is the documented multiple-representative behavior.",
+        "o3": "The secure hold cannot be removed by the representative.",
+        "o4": "The guide explicitly prohibits modifying that active secure hold.",
+        "o5": "The configuration page states Hold applies to consult only."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n21"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q61",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.24"
+      ],
+      "conceptId": "secure-bridged-transfer-origin-scope",
+      "prompt": "A supported secure external-contact preview deployment has external phone transfers and bridged transfer enabled. A payment contact has the required privacy settings. The rollout plan tests those settings only for manual representative transfers and assumes AI-agent and overflow transfers to the same contact ignore them. Which scope correction follows the voice-call experience guidance?",
+      "answer": "Secure settings apply to all bridged transfers, including those initiated by AI agents and overflow actions.",
+      "explanation": "The voice-call experience guide explicitly states that the secure settings apply to all bridged transfers, including AI-agent and overflow origins. Validate those paths to the configured contact rather than treating manual representative initiation as a privacy-setting prerequisite.",
+      "sourceIds": [
+        "exam-d2-voice-s10"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:secure-bridged-transfer-origin-scope",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Secure settings apply only when a representative manually selects Transfer."
+        },
+        {
+          "id": "o3",
+          "text": "Secure settings apply to all bridged transfers, including those initiated by AI agents and overflow actions."
+        },
+        {
+          "id": "o2",
+          "text": "AI-agent transfers use the secure settings, but overflow transfers always bypass them."
+        },
+        {
+          "id": "o4",
+          "text": "Overflow transfers use the secure settings, but AI-agent transfers always bypass them."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "The final secure-settings note explicitly includes all bridged transfers, not manual initiation only.",
+        "o2": "The note expressly includes overflow actions as well as AI-agent transfers.",
+        "o3": "This is the documented transfer-origin scope.",
+        "o4": "The note expressly includes AI-agent initiation as well as overflow."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n21"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q62",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.24"
+      ],
+      "conceptId": "secure-consult-exit-restoration",
+      "prompt": "A secure external-contact consult suppresses recording and transcription while the contact participates. The contact then leaves, and the original representative continues with the customer. The workstream normally enables capture. Which post-consult behavior is documented?",
+      "answer": "Recording and transcription resume, and participants leave hold according to workstream settings.",
+      "explanation": "The secure interaction is a scoped phase in the call. After the external contact leaves, the system restores capture and hold behavior according to the workstream configuration.",
+      "sourceIds": [
+        "exam-d2-voice-s11"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:secure-consult-exit-restoration",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "The secure-contact capture override remains in force for the rest of the call regardless of workstream configuration."
+        },
+        {
+          "id": "o2",
+          "text": "Recording always stays stopped, while transcription restarts even if disabled in the workstream."
+        },
+        {
+          "id": "o3",
+          "text": "All representatives remain held until they individually override the secure hold."
+        },
+        {
+          "id": "o4",
+          "text": "Recording and transcription resume, and participants leave hold according to workstream settings."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "The guide describes restoration based on workstream settings when the external contact leaves.",
+        "o2": "Restoration follows the workstream settings rather than a universal recording-off/transcription-on combination.",
+        "o3": "The source says participants are removed from hold based on workstream settings after the contact leaves.",
+        "o4": "This is the documented secure-consult exit behavior."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n21"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q63",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.2.07"
+      ],
+      "conceptId": "tpe-agent-client-m365-identity",
+      "prompt": "A developer is implementing the agent-facing client in the documented Teams Phone extensibility architecture. The application must handle the human representative calling experience. Which client/identity pairing matches that architecture?",
+      "answer": "Use Calling SDK or Teams agent call handling initialized with Microsoft 365 identity.",
+      "explanation": "Use the published client-role and identity boundary. This question does not assert an exact Dynamics CCaaS SDK operation: that API contract remains a documented coverage-depth gap.",
+      "sourceIds": [
+        "exam-d2-voice-s12"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:tpe-agent-client-m365-identity",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o2",
+          "text": "Use the customer anonymous-chat identity as the representative identity for this architecture."
+        },
+        {
+          "id": "o3",
+          "text": "Use only the service resource-account identity with no representative identity in the client."
+        },
+        {
+          "id": "o1",
+          "text": "Use Calling SDK or Teams agent call handling initialized with Microsoft 365 identity."
+        },
+        {
+          "id": "o4",
+          "text": "Use only a confidential backend application identity as the human representative calling identity."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "The overview explicitly identifies this client and identity pairing.",
+        "o2": "The architecture states Microsoft 365 identity for the agent-facing calling experience.",
+        "o3": "Service-number provisioning and the agent calling identity are distinct architecture roles.",
+        "o4": "The server-side application identity is not the described Microsoft 365 human representative client identity."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n22"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q64",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.2.07"
+      ],
+      "conceptId": "tpe-multipersona-ringing-policy",
+      "prompt": "A Teams Phone extensibility design uses both Teams and a CCaaS web client for representatives. A proposed implementation assumes an inbound-call API can choose which of those clients rings for each call. What limitation does the architecture overview document?",
+      "answer": "Inbound client ringing is controlled by Teams policy; the overview provides no API to select Calling SDK versus Teams ringing.",
+      "explanation": "Design client selection around the documented policy behavior rather than assuming an unverified per-call SDK selector. The exact Dynamics-specific API contract remains outside verified depth.",
+      "sourceIds": [
+        "exam-d2-voice-s12"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:tpe-multipersona-ringing-policy",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o2",
+          "text": "Inbound client ringing is controlled by Teams policy; the overview provides no API to select Calling SDK versus Teams ringing."
+        },
+        {
+          "id": "o1",
+          "text": "The Teams client and CCaaS web client must share one combined call-history view."
+        },
+        {
+          "id": "o3",
+          "text": "The server can override Teams ringing policy by selecting the client separately on every incoming call."
+        },
+        {
+          "id": "o4",
+          "text": "Each representative browser preference selects the ringing client independently of Teams policy."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "The overview says call activity is kept within the specific end client, not one combined history.",
+        "o2": "This is the explicit policy/API boundary stated in the multipersona call flow.",
+        "o3": "The overview explicitly says inbound Calling SDK versus Teams ringing is policy-controlled and has no API selector.",
+        "o4": "The overview identifies Teams policy as the controller, not an independent browser preference."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n22"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q65",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.26"
+      ],
+      "conceptId": "credit-purchase-model-demand",
+      "prompt": "A contact center is comparing two AI-consumption profiles: a small pilot with unpredictable use and a stable service with steady, predictable use. It wants the documented starting fit for credit purchase models before comparing actual commercial quotes. Which pairing fits the training guidance?",
+      "answer": "PAYG for the low/unpredictable pilot; capacity packs for the steady/predictable service.",
+      "explanation": "Use demand shape to frame the commercial comparison. This is model-fit guidance rather than a price quote or assurance that one option is always cheapest.",
+      "sourceIds": [
+        "exam-d2-voice-s13"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:credit-purchase-model-demand",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Capacity packs for the low/unpredictable pilot; PAYG for the steady/predictable service."
+        },
+        {
+          "id": "o2",
+          "text": "A pre-purchase plan for the small unpredictable pilot; PAYG for the stable service."
+        },
+        {
+          "id": "o4",
+          "text": "Capacity packs for both profiles as the documented starting fit regardless of demand shape."
+        },
+        {
+          "id": "o3",
+          "text": "PAYG for the low/unpredictable pilot; capacity packs for the steady/predictable service."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "This reverses the specific PAYG/pack demand fits listed in the guidance.",
+        "o2": "The guide lists PAYG for low/unpredictable demand and capacity packs for steady/predictable usage; pre-purchase is another option for larger/variable demand.",
+        "o3": "This matches the listed demand-model fits without asserting a lowest actual price.",
+        "o4": "The guide distinguishes low/unpredictable demand from steady/predictable demand rather than assigning both the same starting fit."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n22"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q66",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.26"
+      ],
+      "conceptId": "credit-forecast-generative-share",
+      "prompt": "Two centers have the same monthly self-service interaction count. One uses mostly classical rule-based topics, while the other uses a much larger generative-answer share. Finance proposes identical AI-credit forecasts based only on total interactions. Which modeling correction follows the guidance?",
+      "answer": "Include the generative-answer share and escalation rate as well as interaction volume.",
+      "explanation": "Interaction count alone hides the usage mix. Forecast the relevant generative share and escalation behavior instead of applying an invented equal rate to all classical and generative interactions.",
+      "sourceIds": [
+        "exam-d2-voice-s13"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:credit-forecast-generative-share",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Count every classical topic response as the same generative-credit event."
+        },
+        {
+          "id": "o4",
+          "text": "Include the generative-answer share and escalation rate as well as interaction volume."
+        },
+        {
+          "id": "o2",
+          "text": "Use only the number of named representatives and ignore the self-service workload."
+        },
+        {
+          "id": "o3",
+          "text": "Apply the same average credit allowance solely because both centers have equal total self-service volume."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "The unit distinguishes classical rule-based topic responses from credit-consuming generative responses.",
+        "o2": "The consumption forecast depends on the self-service workload and its mix.",
+        "o3": "That omits the documented generative share and escalation factors.",
+        "o4": "The unit explicitly identifies these demand factors."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n22"
+        }
+      ],
+      "status": "draft"
+    }
+  ],
+  "editorial": [
+    {
+      "id": "ab250-d2-q36",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "teams-sync-delegated-permission",
+      "objectiveIds": [
+        "D2.2.01"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-voice-s01",
+          "section": "Prerequisites",
+          "claim": "Number synchronization requires Teams Administrator or Teams Telephony Administrator role and delegated TeamsResourceAccount.Read.All with admin consent.",
+          "applicability": "Teams Phone integration; resource accounts, licenses and number assignments already prepared."
+        }
+      ],
+      "duplicateCheck": "Study c46 tests resource-account existence. This assumes those objects exist and diagnoses the separate synchronization authorization prerequisites."
+    },
+    {
+      "id": "ab250-d2-q37",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "teams-dr-external-call-policy",
+      "objectiveIds": [
+        "D2.2.01"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-voice-s01",
+          "section": "Assign service number to Teams resource account",
+          "claim": "After Direct Routing number assignment, assign a Direct Routing voice routing policy so the resource account can place external consult/transfer calls.",
+          "applicability": "Teams Phone Direct Routing service resource account, not legacy ACS Direct Routing phone registration."
+        }
+      ],
+      "duplicateCheck": "Different from study c48 target-path selection: this tests the post-assignment resource-account policy required for external scenarios."
+    },
+    {
+      "id": "ab250-d2-q38",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "teams-calling-plan-service-number",
+      "objectiveIds": [
+        "D2.2.01"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-voice-s01",
+          "section": "Prerequisites: Calling Plan note",
+          "claim": "Teams Calling Plan integration supports service numbers only.",
+          "applicability": "Teams Calling Plan PSTN connectivity for Contact Center, not a universal ban on all personal-number features."
+        }
+      ],
+      "duplicateCheck": "Study c46 tests the resource account. This tests the separate Calling Plan number-type restriction."
+    },
+    {
+      "id": "ab250-d2-q39",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "acs-retirement-impact-discrimination",
+      "objectiveIds": [
+        "D2.3.23"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-voice-s02",
+          "section": "Understand the impact; Review the retirement schedule",
+          "claim": "Specified standalone ACS voice Direct Offer/Direct Routing configurations retire September 30 2028; Teams Phone extensibility voice is unaffected.",
+          "applicability": "Planning on 2026-11-03, distinguishing existing deployments; not retiring all ACS services or Contact Center."
+        }
+      ],
+      "duplicateCheck": "Study c47 names the target platform. This tests distinguishing affected from unaffected environments and avoiding an overbroad retirement conclusion."
+    },
+    {
+      "id": "ab250-d2-q40",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "new-acs-number-acquisition-date",
+      "objectiveIds": [
+        "D2.2.03",
+        "D2.3.23"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-voice-s02",
+          "section": "Plan for phone numbers",
+          "claim": "Without an existing ACS resource, organizations cannot acquire or port numbers into ACS after September 30 2026; existing resources retain transition capabilities.",
+          "applicability": "New customer with no existing ACS resource on 2026-11-03; no claim of universal number portability."
+        }
+      ],
+      "duplicateCheck": "Study c47/c48 test migration targets. This tests the earlier new-customer acquisition milestone with an explicit current date."
+    },
+    {
+      "id": "ab250-d2-q41",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "operator-connect-portability-review",
+      "objectiveIds": [
+        "D2.3.23"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-voice-s02",
+          "section": "Choose a voice migration path; Plan for phone numbers",
+          "claim": "Operator Connect is an ACS Direct Routing migration option when a participating certified carrier should manage PSTN connectivity; portability depends on destination/carrier/geography/regulations.",
+          "applicability": "Existing ACS Direct Routing organization changing carrier-management model; no guarantee that all numbers port."
+        }
+      ],
+      "duplicateCheck": "Study c48 tests retaining SBC investment through Teams Direct Routing. This deliberately changes the ownership requirement and adds conditional port validation."
+    },
+    {
+      "id": "ab250-d2-q42",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "single-number-multilanguage-design",
+      "objectiveIds": [
+        "D2.2.01",
+        "D2.2.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-voice-s04",
+          "section": "Add a phone number to the workstream and configure language settings",
+          "claim": "A voice channel can contain multiple languages with per-language settings, supporting one public number for several languages.",
+          "applicability": "One public inbound support number; distinct language prompts and voice settings, not multiple simultaneous workstream ownership."
+        },
+        {
+          "sourceId": "exam-d2-voice-s03",
+          "section": "Add a phone number to a voice workstream",
+          "claim": "A phone number can be associated with only one voice workstream.",
+          "applicability": "Refutes using the same public number in two parallel workstreams solely for language separation."
+        }
+      ],
+      "duplicateCheck": "Study c49/c50 test number-picker eligibility and Push mode. This tests multilingual topology, not those setup choices."
+    },
+    {
+      "id": "ab250-d2-q43",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "direct-routing-csv-number-preservation",
+      "objectiveIds": [
+        "D2.2.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-voice-s06",
+          "section": "Bring your own phone number via direct routing: Import multiple numbers",
+          "claim": "For more than 10 digits, msdyn_phonenumber is quoted in CSV; no plus is needed because upload adds it; flags control inbound/outbound capabilities.",
+          "applicability": "Existing eligible ACS Direct Routing resource during transition; 12-digit already-owned SBC-configured numbers, not new ACS acquisition."
+        }
+      ],
+      "duplicateCheck": "Study c51 tests release dependencies. This tests a bulk-import data-format condition, explicitly scoped to an existing transition deployment."
+    },
+    {
+      "id": "ab250-d2-q44",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "inactive-direct-routing-number-repair",
+      "objectiveIds": [
+        "D2.2.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-voice-s03",
+          "section": "View phone numbers: Note",
+          "claim": "An inactive direct-routing phone number should be deleted and added again.",
+          "applicability": "Existing Direct Routing phone record in inactive state; a documented repair procedure, not a release-every-number migration plan."
+        }
+      ],
+      "duplicateCheck": "Study c49 concerns available-number selection and c51 safe release dependencies. This tests the documented inactive Direct Routing record repair."
+    },
+    {
+      "id": "ab250-d2-q45",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "external-ivr-uui-supported-formats",
+      "objectiveIds": [
+        "D2.2.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-voice-s05",
+          "section": "Set up contextual call transfer using Azure direct routing",
+          "claim": "Supported UUI formats include plain semicolon-separated key/value pairs and ASCII payload hex with ;encoding=hex.",
+          "applicability": "Existing ACS Direct Routing IVR integration; matching workstream context already defined. No claim arbitrary SIP X-headers are equivalent."
+        }
+      ],
+      "duplicateCheck": "Study c52/c54 test name matching, c53 previous IVR transcripts. This tests payload representations after matching variables already exist."
+    },
+    {
+      "id": "ab250-d2-q46",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "external-ivr-sbc-number-topology",
+      "objectiveIds": [
+        "D2.2.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-voice-s05",
+          "section": "Set up contextual call transfer using Azure direct routing: Steps 1 and 2",
+          "claim": "Connect the IVR-linked SBC to the application-connected ACS resource and register the IVR phone number with the application.",
+          "applicability": "Existing eligible ACS Direct Routing integration; not a procedure for Teams Phone provisioning."
+        }
+      ],
+      "duplicateCheck": "Study c52/c54 focus on context naming after calls arrive. This tests the preceding telephony topology, explicitly distinguishing ACS Direct Routing from Teams setup."
+    },
+    {
+      "id": "ab250-d2-q47",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "sbc-dns-region-latency",
+      "objectiveIds": [
+        "D2.3.24"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-voice-s06",
+          "section": "Prerequisites; SBC best practices",
+          "claim": "SBC and DNS placement should be aligned in-region; cross-region SBC/DNS deployment can add delay.",
+          "applicability": "Existing BYOC ACS Direct Routing deployment; DNS/SBC infrastructure diagnosis, not a new-customer acquisition recommendation."
+        }
+      ],
+      "duplicateCheck": "Study material tests carrier choice and context matching. This isolates a source-documented infrastructure latency condition."
+    },
+    {
+      "id": "ab250-d2-q48",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "inbound-profile-personal-number-prerequisites",
+      "objectiveIds": [
+        "D2.2.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-voice-s07",
+          "section": "Prerequisites; Create inbound profiles",
+          "claim": "Inbound profiles require a configured/enabled geographic personal number assigned through the user Omnichannel tab, unlike queue-based workstreams.",
+          "applicability": "Direct inward dialing to a named representative; no claim that the profile uses unified routing."
+        }
+      ],
+      "duplicateCheck": "Study c55 tests historical analytics exclusion. This tests the number-type and ownership prerequisites for creating the direct-inward profile."
+    },
+    {
+      "id": "ab250-d2-q49",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "inbound-forwarding-external-transfer-toggle",
+      "objectiveIds": [
+        "D2.2.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-voice-s07",
+          "section": "Create inbound profiles: Inbound behaviors",
+          "claim": "Call transfer to external phone number must be enabled to use call forwarding for inbound profiles.",
+          "applicability": "Configured personal-number inbound profile; ordinary forwarding, not queue overflow or secure-contact preview."
+        }
+      ],
+      "duplicateCheck": "Study c55–c57 address analytics and outbound capacity association. This tests the specific inbound-profile forwarding dependency."
+    },
+    {
+      "id": "ab250-d2-q50",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "alternative-caller-id-provisioning",
+      "objectiveIds": [
+        "D2.2.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-voice-s07",
+          "section": "Create outbound profiles",
+          "claim": "Alternative numbers must first be configured as a workstream channel or outbound-profile number; a different number selected as caller ID must have an outbound profile so representative settings are created.",
+          "applicability": "Business caller ID differs from outbound profile number; no unsupported CNAM or carrier guarantee."
+        }
+      ],
+      "duplicateCheck": "Study c56/c57 test profile eligibility; this tests the prerequisites behind a different visible caller ID.",
+      "revisedBy": "/root/exam_channels",
+      "revisionReason": "Independent reviewer required complete alternative caller-ID provisioning, including its outbound profile and representative settings."
+    },
+    {
+      "id": "ab250-d2-q51",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "outbound-number-label-not-cnam",
+      "objectiveIds": [
+        "D2.2.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-voice-s07",
+          "section": "Create outbound profiles: Number label note",
+          "claim": "Number label is dialer-only and not caller-name delivery; CNAM is not supported by this profile label.",
+          "applicability": "Outbound profile label; does not claim every telephony provider lacks all caller-name capabilities."
+        },
+        {
+          "sourceId": "exam-d2-voice-s07",
+          "section": "Create outbound profiles: Caller ID number",
+          "claim": "Caller ID number is separate from the Number label and defaults to the profile number.",
+          "applicability": "Clarifies the adjacent number/label configuration alternatives."
+        }
+      ],
+      "duplicateCheck": "Different from q50 alternative caller ID provisioning and study c57 outbound eligibility; this tests the label/caller-name boundary."
+    },
+    {
+      "id": "ab250-d2-q52",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "outbound-concurrency-and-incoming-block",
+      "objectiveIds": [
+        "D2.2.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-voice-s08",
+          "section": "Configure capacity profiles and assign users",
+          "claim": "Outbound Work item limit governs concurrent outbound calls; Assignment blocking Yes prevents incoming calls while an outbound call is in progress.",
+          "applicability": "Outbound capacity profile already associated with users and outbound profile; tests voice-specific simultaneous-call behavior, not changing a populated profile limit."
+        },
+        {
+          "sourceId": "exam-d2-voice-s08",
+          "section": "Configure phone numbers for outbound calling: Note",
+          "claim": "Separate inbound/outbound queues help monitoring; sharing a queue is supported.",
+          "applicability": "Queue separation does not replace outbound capacity fields."
+        }
+      ],
+      "duplicateCheck": "Study c56/c57 test user/profile association. D1 owns generic profile overrides/reset semantics. This tests two outbound-call-specific capacity behaviors on a new profile."
+    },
+    {
+      "id": "ab250-d2-q53",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "outbound-queue-monitoring-separation",
+      "objectiveIds": [
+        "D2.2.04",
+        "D2.3.24"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-voice-s08",
+          "section": "Configure phone numbers for outbound calling: Note",
+          "claim": "Inbound and outbound can share a queue, but separate queues are recommended for monitoring outbound traffic and sentiment.",
+          "applicability": "Operational visibility design; a recommendation, not a universal product requirement."
+        }
+      ],
+      "duplicateCheck": "Study c57 tests outbound capacity association, not monitoring structure. This avoids D1 generic capacity-reset decisions."
+    },
+    {
+      "id": "ab250-d2-q54",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "voice-capture-mime-event-prerequisites",
+      "objectiveIds": [
+        "D2.2.05"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-voice-s09",
+          "section": "Prerequisites; Enable call recording and transcription for voice",
+          "claim": "Allow audio and mpeg MIME types; register Event Grid system topics so applications listen for ACS events.",
+          "applicability": "Existing supported ACS-based capture flow; tenant audio toggle already enabled, workstream Transcription and recording selected, no new ACS acquisition."
+        },
+        {
+          "sourceId": "exam-d2-voice-s10",
+          "section": "Store and view survey data",
+          "claim": "Call Survey Logs retains representative feedback data, not a replacement for recording event registration.",
+          "applicability": "Refutes substituting survey diagnostics for the capture Event Grid prerequisite."
+        }
+      ],
+      "duplicateCheck": "Study c58 tests tenant prohibition and c59 translated transcript dependencies. This assumes tenant enablement and tests the other capture prerequisites.",
+      "revisedBy": "/root/exam_channels",
+      "revisionReason": "Independent reviewer requested explicit ACS capture architecture in the stem, matching the evidence scope."
+    },
+    {
+      "id": "ab250-d2-q55",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "manual-capture-resume-label",
+      "objectiveIds": [
+        "D2.2.05"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-voice-s09",
+          "section": "Enable call recording and transcription for voice: Manual start note",
+          "claim": "Manual Start shows Resume recording and transcript initially; the label does not mean recording previously started and paused.",
+          "applicability": "Workstream configured with Manual start; observed UI label, not an audit assertion that capture ran."
+        }
+      ],
+      "duplicateCheck": "Different from study c58 tenant precedence and c60 secure-contact override; this tests a documented diagnostic UI interpretation."
+    },
+    {
+      "id": "ab250-d2-q56",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "recording-hold-auto-pause",
+      "objectiveIds": [
+        "D2.2.05"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-voice-s09",
+          "section": "Enable call recording and transcription for voice: Steps 7 and 8",
+          "claim": "Allow automatic pause and resume when agent hold and un-hold the customer pauses capture on hold and resumes on unhold.",
+          "applicability": "Configured workstream capture and applicable consent in place; no legal-compliance guarantee."
+        }
+      ],
+      "duplicateCheck": "Study c59 tests translation prerequisites. This tests capture behavior across a customer hold/unhold transition, not the secure-contact hold override."
+    },
+    {
+      "id": "ab250-d2-q57",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "dtmf-only-ai-transcript-boundary",
+      "objectiveIds": [
+        "D2.2.05"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-voice-s09",
+          "section": "Important: Copilot Studio transcript and DTMF-only input",
+          "claim": "Copilot Studio generates an agent transcript independently of voice capture settings; DTMF-only agent ignores spoken input and captures keypad entries, not speech in that transcript.",
+          "applicability": "A Copilot Studio agent explicitly configured for DTMF input only; not all voice agents or representative transcripts."
+        }
+      ],
+      "duplicateCheck": "Study c58/c59 concern voice workstream capture; this tests the separate DTMF-only agent transcript boundary. No broader speech-agent behavior is inferred."
+    },
+    {
+      "id": "ab250-d2-q58",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "voice-transcript-grouped-timestamps",
+      "objectiveIds": [
+        "D2.2.05"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-voice-s09",
+          "section": "View call transcripts: Timestamp note",
+          "claim": "Transcript timestamps are grouped into two-minute intervals to accommodate drift from polling and timing inconsistencies.",
+          "applicability": "Displayed voice transcript timing interpretation, not forensic precision or source audio retention."
+        }
+      ],
+      "duplicateCheck": "Study capture cards do not test timestamp display precision; this is a distinct interpretation constraint."
+    },
+    {
+      "id": "ab250-d2-q59",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "representative-quality-survey-sampling",
+      "objectiveIds": [
+        "D2.2.06"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-voice-s10",
+          "section": "Configure representative call quality feedback survey; Enable representative call quality surveys",
+          "claim": "The representative survey collects post-call subjective quality feedback and supports frequency and optional display duration.",
+          "applicability": "Representative experience feedback, not customer CSAT or technical measurements alone."
+        }
+      ],
+      "duplicateCheck": "Study c61/c63 test retaining survey responses in diagnostics. This tests choosing the respondent/measure and configuring survey presentation, not storage."
+    },
+    {
+      "id": "ab250-d2-q60",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "secure-consult-agent-hold-constraints",
+      "objectiveIds": [
+        "D2.3.24"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-voice-s10",
+          "section": "Set up secure consult with and transfer to external contacts (preview): Hold",
+          "claim": "Agent on hold places all representatives on hold during secure consult; representatives cannot remove that hold.",
+          "applicability": "Production-ready preview secure external-contact consult, not ordinary consult; several representatives present and all documented prerequisites satisfied."
+        }
+      ],
+      "duplicateCheck": "Study c60 tests audio-only suppression and c62 bridged prerequisites. This tests the preview secure-consult hold scope and enforcement, explicitly including multiple representatives."
+    },
+    {
+      "id": "ab250-d2-q61",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "secure-bridged-transfer-origin-scope",
+      "objectiveIds": [
+        "D2.3.24"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-voice-s10",
+          "section": "Set up secure consult with and transfer to external contacts (preview): Final note",
+          "claim": "Secure settings apply to all bridged transfers, including those initiated by AI agents or overflow actions.",
+          "applicability": "Production-ready preview secure external contact, with external phone transfer and bridged transfer enabled; does not claim unbridged transfer inherits these policies."
+        }
+      ],
+      "duplicateCheck": "Replaced previous no-capture policy subset after reviewer found overlap with D3q21. Tests origin scope across manual/AI/overflow bridged transfers, not phase-specific policy values.",
+      "revisedBy": "/root/exam_channels",
+      "revisionReason": "Independent reviewer required substantive distinction from D3 per-phase capture-policy question."
+    },
+    {
+      "id": "ab250-d2-q62",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "secure-consult-exit-restoration",
+      "objectiveIds": [
+        "D2.3.24"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-voice-s11",
+          "section": "Consult with external contacts and transfer a call securely (preview)",
+          "claim": "When the external contact leaves, capture and hold resume/release according to workstream settings.",
+          "applicability": "Secure external-contact preview consult that ends without transferring ownership; workstream normally records/transcribes."
+        }
+      ],
+      "duplicateCheck": "Distinct from q60 active secure hold and q61 override selection; this tests the exit transition back to workstream behavior."
+    },
+    {
+      "id": "ab250-d2-q63",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "tpe-agent-client-m365-identity",
+      "objectiveIds": [
+        "D2.2.07"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-voice-s12",
+          "section": "Overview: Agent calling experience",
+          "claim": "CCaaS embeds call handling with ACS Calling SDK or uses Teams, initialized with Microsoft 365 identity.",
+          "applicability": "Published Azure Teams Phone extensibility architecture, not a claimed exact Dynamics-specific CCaaS SDK method contract."
+        }
+      ],
+      "duplicateCheck": "Study c64 tests server-side SDK responsibility and c66 participant addition. This tests the client identity boundary instead."
+    },
+    {
+      "id": "ab250-d2-q64",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "tpe-multipersona-ringing-policy",
+      "objectiveIds": [
+        "D2.2.07"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-voice-s12",
+          "section": "Multi persona",
+          "claim": "Inbound client ringing is controlled by Teams policy; the overview states no API chooses Calling SDK versus Teams client for inbound ringing.",
+          "applicability": "Published Azure TPE multipersona architecture, not an invented Dynamics SDK selector or custom UI mechanism."
+        }
+      ],
+      "duplicateCheck": "Distinct from study c64/c66 and q63: this tests the explicit multipersona policy/API limitation rather than SDK layer or identity."
+    },
+    {
+      "id": "ab250-d2-q65",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "credit-purchase-model-demand",
+      "objectiveIds": [
+        "D2.3.26"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-voice-s13",
+          "section": "Copilot Credits: AI consumption currency",
+          "claim": "PAYG suits low/unpredictable volume; capacity packs suit steady/predictable usage; prepurchase is another volume-tier option.",
+          "applicability": "Budget modeling exercise using documented model fit; no current price or guaranteed cheapest-model claim."
+        }
+      ],
+      "duplicateCheck": "Study c65 asks why named-user pricing alone is incomplete. This tests a distinct demand-to-purchase-model decision without copying that prompt."
+    },
+    {
+      "id": "ab250-d2-q66",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "credit-forecast-generative-share",
+      "objectiveIds": [
+        "D2.3.26"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-voice-s13",
+          "section": "Copilot Credits: AI consumption currency",
+          "claim": "Consumption estimates should include self-service volume, share using generative answers and escalation rate; classical rule-based topic responses do not consume these credits.",
+          "applicability": "High-level TCO forecast assumptions from the training unit; no invented per-response numerical rate or savings guarantee."
+        }
+      ],
+      "duplicateCheck": "Distinct from q65 purchase-model selection and study c65 broad TCO categories: this tests the workload variables needed for AI-consumption forecasting."
+    }
+  ]
+}

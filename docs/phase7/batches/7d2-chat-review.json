@@ -1,0 +1,254 @@
+[
+  {
+    "id": "cc-d2-n03",
+    "revision": 1,
+    "reviewer": "/root/chat_review",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "f451cabebb78a8db2804e2ac14752074121ba888c2557cbbbd20cf9dc5444457",
+    "rationale": "Supported routing/widget distinction and version-release workflow. Distinct from pilot snippet placement and context collection.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-chat-s01",
+        "section": "Introduction; Create a workstream",
+        "notes": "Verified same-type channel sharing and Messaging/Chat configuration in the opened article.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-chat-s02",
+        "section": "Add to an existing classic Chat channel; Set up the modern widget; Manage modern and classic versions",
+        "notes": "Verified appearance per channel, preserved workstream configuration, pinned testing script and active-version general script.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-n04",
+    "revision": 1,
+    "reviewer": "/root/chat_review",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "ebc7ed39538d3abd41f64ed01dde0de89fd537ef4f9f12bf06ad35b6ec34ddb6",
+    "rationale": "Scoped standalone invitation flow is supported; trigger testing advice is editorial guidance. SDK message and survey controls are separate.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-chat-s03",
+        "section": "Applicability; Enable proactive chat; Customer experience; Agent experience",
+        "notes": "Verified standalone scope, embedded-widget prerequisite and invitation acceptance before representative notification.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-chat-s04",
+        "section": "Parameters; Example",
+        "notes": "Verified notificationUIConfig message and showPrechat Boolean; no unsupported routing behavior inferred.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-chat-s05",
+        "section": "Scenario 1: Customer wait time; Sample code",
+        "notes": "Verified readiness listener and timed invitation. No authentication implementation is taught from its anonymous-context sample.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-n05",
+    "revision": 1,
+    "reviewer": "/root/chat_review",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "679ae3fe002b5ae394d97c9e9b11a76d0eec123d59355b3a5ed4bab6360097c3",
+    "rationale": "Supported language, audience and retrieval distinctions. Diagnostic guidance does not promise automatic localization.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-chat-s06",
+        "section": "Create quick replies; Associate with a workstream; Availability and language settings",
+        "notes": "Verified separate locale records, no automatic localization and unassociated/all-representative availability subject to language.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-chat-s07",
+        "section": "Send quick replies",
+        "notes": "Verified administrator replies on All and enabled personal replies on Personal.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c07",
+    "revision": 1,
+    "reviewer": "/root/chat_review",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "d3452743d95dab861b2da98699262b48aab550977126fe9fcfe843f24b649eae",
+    "rationale": "Messaging/Chat selection directly supported; no pilot question repeats this selection.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-chat-s01",
+        "section": "Introduction; Create a workstream",
+        "notes": "Verified same-type channel sharing and Messaging/Chat configuration in the opened article.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c08",
+    "revision": 1,
+    "reviewer": "/root/chat_review",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "8984c37c8f3fca9a819aaa9a0c9ba0babf657ef04c5258f6488c6bfd1ed63046",
+    "rationale": "Testing script remains version-specific while general script follows active selection.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-chat-s02",
+        "section": "Add to an existing classic Chat channel; Set up the modern widget; Manage modern and classic versions",
+        "notes": "Verified appearance per channel, preserved workstream configuration, pinned testing script and active-version general script.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c09",
+    "revision": 1,
+    "reviewer": "/root/chat_review",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "1780a8608186c296abb9478b9f3e1c64a71b9841cedfde329d61654ae3a5a19b",
+    "rationale": "Shared workstream satisfies common routing; separate channels allow presentation differences. Separate workstreams duplicate maintenance, queue changes do not separate presentation, and mixed channel types contradict same-type sharing.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-chat-s01",
+        "section": "Introduction; Create a workstream",
+        "notes": "Verified same-type channel sharing and Messaging/Chat configuration in the opened article.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-chat-s02",
+        "section": "Add to an existing classic Chat channel; Set up the modern widget; Manage modern and classic versions",
+        "notes": "Verified appearance per channel, preserved workstream configuration, pinned testing script and active-version general script.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c10",
+    "revision": 1,
+    "reviewer": "/root/chat_review",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "1f1aa188779d415cb8994f8ce1fd472d90385b25ac3efe7af4200e1bffa8e2f1",
+    "rationale": "Customer acceptance is the documented event preceding representative notification; trigger firing alone is insufficient.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-chat-s03",
+        "section": "Applicability; Enable proactive chat; Customer experience; Agent experience",
+        "notes": "Verified standalone scope, embedded-widget prerequisite and invitation acceptance before representative notification.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c11",
+    "revision": 1,
+    "reviewer": "/root/chat_review",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "cbdf6383f4fcd41c05244b32d87e5659ef5ba4015b33e393be45ed133fe98a53",
+    "rationale": "showPrechat controls the configured survey visibility, distinct from invitation UI and routing.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-chat-s04",
+        "section": "Parameters; Example",
+        "notes": "Verified notificationUIConfig message and showPrechat Boolean; no unsupported routing behavior inferred.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c12",
+    "revision": 1,
+    "reviewer": "/root/chat_review",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "b0671d0e376d214b3a6c6b3d1881ca20941525ecd0e2e8947596ef5a24674929",
+    "rationale": "notificationUIConfig changes visitor invitation text. Representative template targets another audience, fallback queue targets routing and false showPrechat violates survey preservation.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-chat-s04",
+        "section": "Parameters; Example",
+        "notes": "Verified notificationUIConfig message and showPrechat Boolean; no unsupported routing behavior inferred.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-chat-s05",
+        "section": "Scenario 1: Customer wait time; Sample code",
+        "notes": "Verified readiness listener and timed invitation. No authentication implementation is taught from its anonymous-context sample.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c13",
+    "revision": 1,
+    "reviewer": "/root/chat_review",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "4969102e2bdbc8b61ecc9a40156567411d9532b38bed832dce20c0b12aa7bf3b",
+    "rationale": "No workstream association means broad availability; explanation preserves language filtering.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-chat-s06",
+        "section": "Create quick replies; Associate with a workstream; Availability and language settings",
+        "notes": "Verified separate locale records, no automatic localization and unassociated/all-representative availability subject to language.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c14",
+    "revision": 1,
+    "reviewer": "/root/chat_review",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "4ea8cd483b1fabd5a8edcd0b4cffac25ecabed79ab547f6896be89915bc3976d",
+    "rationale": "Locale does not translate reply text; separate localized records are explicitly documented.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-chat-s06",
+        "section": "Create quick replies; Associate with a workstream; Availability and language settings",
+        "notes": "Verified separate locale records, no automatic localization and unassociated/all-representative availability subject to language.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c15",
+    "revision": 1,
+    "reviewer": "/root/chat_review",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "d93770d1d55a3a9318410b4466d7ed6ae6e076cbe85f2ebf5fe0b06d6252e89a",
+    "rationale": "Given the correct language/workstream, All is the supported retrieval step. Personal duplication, scope broadening and channel-language changes do not address the stated tab mismatch.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-chat-s07",
+        "section": "Send quick replies",
+        "notes": "Verified administrator replies on All and enabled personal replies on Personal.",
+        "supported": true
+      }
+    ]
+  }
+]

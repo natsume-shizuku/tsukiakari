@@ -1,0 +1,1039 @@
+[
+  {
+    "id": "cc-d1-n01",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "representative-host-selection",
+    "objectiveIds": [
+      "D1.1.01",
+      "D1.1.03"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "dc25af21304c5ba1b6e1ce29a7d3f49605f686f63f03cbbeac24d9a9721b7c42"
+  },
+  {
+    "id": "cc-d1-n02",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "configuration-lifecycle",
+    "objectiveIds": [
+      "D1.2.02",
+      "D1.2.03",
+      "D1.2.04"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "5ebf2bffc67c7ffba372c1a2111c074f598c09662f1670e8da192d5f1514ee75"
+  },
+  {
+    "id": "cc-d2-n01",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "chat-trust-and-identification",
+    "objectiveIds": [
+      "D2.1.09",
+      "D2.3.02"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "9d4af844a4dc46ce760c5650330ad4a393422de1c81d3ed2759bd21dd4626e61"
+  },
+  {
+    "id": "cc-d2-n02",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "chat-context-deployment",
+    "objectiveIds": [
+      "D2.1.04",
+      "D2.1.06",
+      "D2.3.01"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "7109630ca651d0cec6f56bf8ee466ccb0a2b919fa867edc6b1a88541c7129f4a"
+  },
+  {
+    "id": "cc-d1-c01",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "embedded-widget",
+    "objectiveIds": [
+      "D1.1.03"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "8aa48ed034096c3b37c595ac4b109cd7e789769ebbb3cdc88a4a9eda2345a2f7"
+  },
+  {
+    "id": "cc-d1-c02",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "workspace-access",
+    "objectiveIds": [
+      "D1.1.01",
+      "D1.3.03"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "0c8e72816fa0b7fce7d2ba0fa9e611bd787524bd9e4c4128743cd0d33810b8e0"
+  },
+  {
+    "id": "cc-d1-c03",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "managed-deployment",
+    "objectiveIds": [
+      "D1.2.02",
+      "D1.2.03"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "a119308ad56d3f288fe38d54d6284e3bb9123a56bfc863602c6332d01e1270c7"
+  },
+  {
+    "id": "cc-d1-c04",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "environment-recovery",
+    "objectiveIds": [
+      "D1.2.04"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "3f13e112e55448db8680cfad63dc255b4c59d709de2ca84791bb66bb94346aa9"
+  },
+  {
+    "id": "cc-d1-c05",
+    "revision": 2,
+    "domainId": "deployment",
+    "conceptId": "active-layer-diagnosis",
+    "objectiveIds": [
+      "D1.2.03"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "4514fc7822691c2d2698883cb2ec0864b509c67378bff3466011ea376087c0e3"
+  },
+  {
+    "id": "cc-d1-c06",
+    "revision": 2,
+    "domainId": "deployment",
+    "conceptId": "migration-resource-associations",
+    "objectiveIds": [
+      "D1.2.03"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "8c5e68fc230f302a125f2838221a9bcf3ad58ad56d36de4b2649ff908c0998bb"
+  },
+  {
+    "id": "cc-d2-c01",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "authentication-vs-identification",
+    "objectiveIds": [
+      "D2.1.09",
+      "D2.3.02"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "9bc903a82b5203b7bd504d81577e323c03b6f030ce58738f248bf5bbcc3c08cc"
+  },
+  {
+    "id": "cc-d2-c02",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "context-name-matching",
+    "objectiveIds": [
+      "D2.3.01"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "35d06d58cc6f4417d4815840e7d22b588782eee8e86944ec2af8aaf3ea44a6d1"
+  },
+  {
+    "id": "cc-d2-c03",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "survey-context",
+    "objectiveIds": [
+      "D2.1.06",
+      "D2.3.01"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "e42dc6f1ee4ff2224b274567d1c281f7f37b9ccd4288ac687236ffce26b97747"
+  },
+  {
+    "id": "cc-d2-c04",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "widget-embedding",
+    "objectiveIds": [
+      "D2.1.04"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "9aef558cf7b2298c5cbb29838ea6b0768e2f16dd8ca987b85d3ee6716c4edfd7"
+  },
+  {
+    "id": "cc-d2-c05",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "ambiguous-identification",
+    "objectiveIds": [
+      "D2.3.02"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "2ef72fadddf97f981cbea77c3b8853ba06c5889e3f2525bcae5357a8cbb5d93b"
+  },
+  {
+    "id": "cc-d2-c06",
+    "revision": 2,
+    "domainId": "channels",
+    "conceptId": "context-dependencies",
+    "objectiveIds": [
+      "D2.3.01"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "d8d3b60909b188a69ed6bf445ba48adffdda6bcad76942e782c6401932604359"
+  },
+  {
+    "id": "ab250-d1-q01",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "salesforce-adapter-url",
+    "objectiveIds": [
+      "D1.1.03"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "0161cbfc777a697fc6d77434644cc7f23c9a3a844cee4836af653b647d40a92d"
+  },
+  {
+    "id": "ab250-d1-q02",
+    "revision": 2,
+    "domainId": "deployment",
+    "conceptId": "post-restore-readiness",
+    "objectiveIds": [
+      "D1.2.04"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "c5ed17957a719a61a7fcc06f84dd696f8b71c2be183427f1e6a5e1dc366b5192"
+  },
+  {
+    "id": "ab250-d1-q03",
+    "revision": 2,
+    "domainId": "deployment",
+    "conceptId": "solution-layer-inspection",
+    "objectiveIds": [
+      "D1.2.03"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "d75035b5a1efb675c466b761193efaa686bbe0bf276813900580f9b453f19bb8"
+  },
+  {
+    "id": "ab250-d1-q04",
+    "revision": 2,
+    "domainId": "deployment",
+    "conceptId": "channel-migration-prerequisites",
+    "objectiveIds": [
+      "D1.2.02",
+      "D1.2.03"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "e5d0040d626388e5f51c6a94224a57a8603c46762bfa4eea11157c8e4fe3aabe"
+  },
+  {
+    "id": "ab250-d2-q01",
+    "revision": 2,
+    "domainId": "channels",
+    "conceptId": "anonymous-context-initialization",
+    "objectiveIds": [
+      "D2.1.08",
+      "D2.3.01"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "f3e6294dd8fab23fcdca1313e5b675a7e7379319f2bbe6ff0e21a928e82973ba"
+  },
+  {
+    "id": "ab250-d2-q02",
+    "revision": 2,
+    "domainId": "channels",
+    "conceptId": "contact-phone-identification",
+    "objectiveIds": [
+      "D2.3.02"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "ece30e42d836411a67da4485892dd8f3bbecb8754ea0c77309267bfaa91eca13"
+  },
+  {
+    "id": "ab250-d2-q03",
+    "revision": 2,
+    "domainId": "channels",
+    "conceptId": "portal-widget-location",
+    "objectiveIds": [
+      "D2.1.04"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "0d2b16137d36e0e04a162162ff8e98e9a19d278a4d7d7b649915bb6533f9f741"
+  },
+  {
+    "id": "ab250-d2-q04",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "survey-consent-configuration",
+    "objectiveIds": [
+      "D2.1.06"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d1_d2",
+    "reviewer": "/root/pilot_d5_d6",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "1cca3c1025e27b60897772f86a87934ab6092b87f4f5d2e26f04105920a89acd"
+  },
+  {
+    "id": "cc-d3-n01",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "copilot-assistance-setup",
+    "objectiveIds": [
+      "D3.1.01",
+      "D3.1.02",
+      "D3.1.03"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "e6efebf3db6dcffb7afe69733252a7d1fa071acb78114f3972f72aa5ab4f5167"
+  },
+  {
+    "id": "cc-d3-n02",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "voice-context-variable-scope",
+    "objectiveIds": [
+      "D3.2.02"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "cf2ece8affa341b35b80ed7fd38f6ba510fc088fdf7b30fff42b3c5fbc2f0cc2"
+  },
+  {
+    "id": "cc-d4-n01",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "classification-versus-assignment",
+    "objectiveIds": [
+      "D4.2.02",
+      "D4.1.04"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "a6e475d0b40f976655d74c6425be9c3c47eba15a965f62904fe20ce30d6883c8"
+  },
+  {
+    "id": "cc-d4-n02",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "skills-and-capacity-boundaries",
+    "objectiveIds": [
+      "D4.2.04",
+      "D1.3.04"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "ddbed6bac0507d99e1d356bb924e395fd0509e8af774f5edb5a33eba25d7552a"
+  },
+  {
+    "id": "cc-d3-c01",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "summary-conversation-inputs",
+    "objectiveIds": [
+      "D3.1.01"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "5ba3d2ee36e1d76ddb0987d8a1b0d62bd466263deabea1e6463cf2e57c5e803e"
+  },
+  {
+    "id": "cc-d3-c02",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "closed-conversation-summary",
+    "objectiveIds": [
+      "D3.1.01"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "340d83b8dd1928285aa304661648f9bef0bce27c42d8f3c1ab503b00265ee333"
+  },
+  {
+    "id": "cc-d3-c03",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "representative-knowledge-filter",
+    "objectiveIds": [
+      "D3.1.02",
+      "D3.1.03"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "6ed8872ef6d82118ef0e94906fcc0e23786c73b1fd0e1c067146e88be8ade0ef"
+  },
+  {
+    "id": "cc-d3-c04",
+    "revision": 2,
+    "domainId": "agents-ai",
+    "conceptId": "global-variable-session-lifetime",
+    "objectiveIds": [
+      "D3.2.02"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "6258e652c647383ad1868c16eca6d3f49c04e4d05639960dd48236edbe9c0754"
+  },
+  {
+    "id": "cc-d3-c05",
+    "revision": 2,
+    "domainId": "agents-ai",
+    "conceptId": "copilot-group-feature-access",
+    "objectiveIds": [
+      "D3.1.02"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "5545d04f661ee070bd8db8b98f745231962af0afb4c09be5e09ae0eac270f56a"
+  },
+  {
+    "id": "cc-d3-c06",
+    "revision": 2,
+    "domainId": "agents-ai",
+    "conceptId": "voice-caller-number-scope",
+    "objectiveIds": [
+      "D3.2.02"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "bd96c2ee6d029f6f8e6a8184d4962e7929563eec578912757b696065002250b8"
+  },
+  {
+    "id": "cc-d4-c01",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "routing-main-stages",
+    "objectiveIds": [
+      "D4.2.02",
+      "D4.1.04"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "abe98eebe201459e3db68747102fc2c5af56f02f637ceaa5e8ff395c842565eb"
+  },
+  {
+    "id": "cc-d4-c02",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "classification-output-dependency",
+    "objectiveIds": [
+      "D4.2.02"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "65ae2b86e6e76ff627c70eda67aad3a74fdbe97bc14c8092e0364033a0d4c457"
+  },
+  {
+    "id": "cc-d4-c03",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "round-robin-queue-scope",
+    "objectiveIds": [
+      "D4.1.04"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "2bc5412b77cb26c93d670ed4012e318e855a7b5902c8ef2524ec29eb8bcc7e39"
+  },
+  {
+    "id": "cc-d4-c04",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "exact-match-proficiency-threshold",
+    "objectiveIds": [
+      "D4.2.04"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "cba1fd5b351ca7e4554bad67322830d2a5d605915eebad3d1822f3ff0874c996"
+  },
+  {
+    "id": "cc-d4-c05",
+    "revision": 2,
+    "domainId": "work-distribution",
+    "conceptId": "classification-first-match-boundary",
+    "objectiveIds": [
+      "D4.2.02"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "1fa514e39e3051738590670df63dece3268d45685445e0e557ca4e62bff5d39a"
+  },
+  {
+    "id": "cc-d4-c06",
+    "revision": 2,
+    "domainId": "work-distribution",
+    "conceptId": "manual-capacity-override",
+    "objectiveIds": [
+      "D1.3.04",
+      "D4.1.04"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "5181a1182eb24adc0a4605e4b4a3b689033a275701fcb7315d05b0443c7855c1"
+  },
+  {
+    "id": "ab250-d3-q01",
+    "revision": 2,
+    "domainId": "agents-ai",
+    "conceptId": "copilot-custom-role-diagnosis",
+    "objectiveIds": [
+      "D3.1.02"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "39128fddf0f2253e825ee69478b5dec9c12578cf43e2f63b81cf587043097370"
+  },
+  {
+    "id": "ab250-d3-q02",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "conversation-summary-join-trigger",
+    "objectiveIds": [
+      "D3.1.01"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "3bd57708521a2818093b2682d2eb0f06ef8d53ab299219df6d71106a3c4044fe"
+  },
+  {
+    "id": "ab250-d3-q03",
+    "revision": 2,
+    "domainId": "agents-ai",
+    "conceptId": "copilot-preset-knowledge-filter",
+    "objectiveIds": [
+      "D3.1.02",
+      "D3.1.03"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "3c4a580e7cd9af6b203ab762d86cbcaf130d6d8da8c82eb966a7c2b987c717dc"
+  },
+  {
+    "id": "ab250-d3-q04",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "voice-external-variable-usage",
+    "objectiveIds": [
+      "D3.2.02"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "14c1829e9e6ea079c195da6020e64c5f0d00dfee8755ef1672c5726cf6c91ff9"
+  },
+  {
+    "id": "ab250-d4-q01",
+    "revision": 2,
+    "domainId": "work-distribution",
+    "conceptId": "routing-static-attribute-reuse",
+    "objectiveIds": [
+      "D4.2.02"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "a4c71b96fbe0716fe82ab374221ee14b3a61bf8f678e09c14605b2f10a36c905"
+  },
+  {
+    "id": "ab250-d4-q02",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "highest-capacity-exact-ordering",
+    "objectiveIds": [
+      "D4.1.04",
+      "D4.2.04"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "cd03fa125ad05d4db89bf0c43e5b1ac38e10c50088d9d99ea632842d93daedfb"
+  },
+  {
+    "id": "ab250-d4-q03",
+    "revision": 2,
+    "domainId": "work-distribution",
+    "conceptId": "custom-assignment-skill-condition",
+    "objectiveIds": [
+      "D4.2.04"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "e62fa7744c6fc50382fcc0469d6df092813a61201be8231df60c770ae9197760"
+  },
+  {
+    "id": "ab250-d4-q04",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "capacity-custom-limit-and-blocking",
+    "objectiveIds": [
+      "D4.1.04",
+      "D1.3.04"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d3_d4",
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "3c5e623f60669e1a574655ba56665cf198c335d0225c9db0dec84af4ffbecfe7"
+  },
+  {
+    "id": "cc-d5-n01",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "session-template-composition",
+    "objectiveIds": [
+      "D5.1.02",
+      "D5.1.04"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "a0bb270534c0d9f52762dcf80eda44b52831332de71a0313037d44f4c201f749"
+  },
+  {
+    "id": "cc-d5-n02",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "workspace-guidance-automation",
+    "objectiveIds": [
+      "D5.2.02",
+      "D5.2.03"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "b6cd71cdd1979ab05871ef3b0d9c1da13bc1a0ff37153a90b3ffc8b3b7c12603"
+  },
+  {
+    "id": "cc-d6-n01",
+    "revision": 1,
+    "domainId": "analytics",
+    "conceptId": "supervisor-action-access",
+    "objectiveIds": [
+      "D6.1.03",
+      "D6.1.04"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "8a8f800ec194c7e70117354db89ba1921900b1c6b1b2cf21446ac44e34bca2be"
+  },
+  {
+    "id": "cc-d6-n02",
+    "revision": 1,
+    "domainId": "analytics",
+    "conceptId": "metrics-to-diagnostic-evidence",
+    "objectiveIds": [
+      "D6.1.01",
+      "D6.2.05",
+      "D6.2.06"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "86d66306447bac1d966c82547f7f6d466abc3852695c4b9402aff3fcc9bd57da"
+  },
+  {
+    "id": "cc-d5-c01",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "session-anchor",
+    "objectiveIds": [
+      "D5.1.04"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "d80e1bbc604c18323440d39e8bc546ca1c3a23d9a2baa7b2f9dfcd6d0448af94"
+  },
+  {
+    "id": "cc-d5-c02",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "custom-session-template",
+    "objectiveIds": [
+      "D5.1.04"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "4c0282e6aa60b8fb70a2f895f8c1a3d1ea2e1c7432a22f033514a2c05b0c05b9"
+  },
+  {
+    "id": "cc-d5-c03",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "macro-entry-step",
+    "objectiveIds": [
+      "D5.2.03"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "246283ebec4c88d376aa6725b72a0c1b08be5c897dcd830732a5da7b7cbc3f8c"
+  },
+  {
+    "id": "cc-d5-c04",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "runtime-context-parameter",
+    "objectiveIds": [
+      "D5.2.02",
+      "D5.2.03"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "431f3982e144df4d0e9a60dcf5a3151b999bfcf0b806a47eec5b86d128fe0794"
+  },
+  {
+    "id": "cc-d5-c05",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "explicit-macro-save",
+    "objectiveIds": [
+      "D5.2.03"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "55d6719a2cfcfd5e3f82725cb50a7cdc9c1c44ee857276c05698ddc1c5cf8d28"
+  },
+  {
+    "id": "cc-d5-c06",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "conditional-default-script",
+    "objectiveIds": [
+      "D5.2.02"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "227295347a2c8a158b379a68649ebecfef85defcfcf381ac9cec2efe226f0f6e"
+  },
+  {
+    "id": "cc-d6-c01",
+    "revision": 1,
+    "domainId": "analytics",
+    "conceptId": "voice-supervisor-role",
+    "objectiveIds": [
+      "D6.1.04"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "57872e7995b1e077fc7cf95d9fceab8d0a4555208785aa270d7d14e0afc27548"
+  },
+  {
+    "id": "cc-d6-c02",
+    "revision": 1,
+    "domainId": "analytics",
+    "conceptId": "private-supervisor-guidance",
+    "objectiveIds": [
+      "D6.1.04"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "2b3f6861bc1fafe194e5f77e4e508957db0d99c8f527ae45dab5666a7cb02bd1"
+  },
+  {
+    "id": "cc-d6-c03",
+    "revision": 1,
+    "domainId": "analytics",
+    "conceptId": "analytics-author-role",
+    "objectiveIds": [
+      "D6.1.03"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "46b349c8440208f344a1bb20b043816a7e80969ceff2f1740e5f6309bb36d84e"
+  },
+  {
+    "id": "cc-d6-c04",
+    "revision": 1,
+    "domainId": "analytics",
+    "conceptId": "conversation-log-destination",
+    "objectiveIds": [
+      "D6.2.05"
+    ],
+    "level": "core",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "911e2df0c7f1793ec1b4e62c09052bab3c10848d5dca7d7482d1512d49c172aa"
+  },
+  {
+    "id": "cc-d6-c05",
+    "revision": 2,
+    "domainId": "analytics",
+    "conceptId": "historical-assignment-eligibility",
+    "objectiveIds": [
+      "D6.2.06"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "cee3a5513d13cddeadc32930480dec252f6bf1eed1b09cc06f3299d7b2fb6c49"
+  },
+  {
+    "id": "cc-d6-c06",
+    "revision": 2,
+    "domainId": "analytics",
+    "conceptId": "voice-analytics-prerequisite",
+    "objectiveIds": [
+      "D6.1.01"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "bd171201aa7f2c91ab4bde66dcac714b52b12c608ae79e693aad7c2c6ebbf7e4"
+  },
+  {
+    "id": "ab250-d5-q01",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "website-tab-embedding",
+    "objectiveIds": [
+      "D5.1.02"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "ce83d2037c6661c026f9806b3f21cbecffa3f70f06693bb41f1de9a748597b0d"
+  },
+  {
+    "id": "ab250-d5-q02",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "autofill-target-focus",
+    "objectiveIds": [
+      "D5.2.03"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "682ca0e69ff6df48cdedf520036b88c1ae4822a3eb1792ab882da2d6f09d174c"
+  },
+  {
+    "id": "ab250-d5-q03",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "script-author-permission",
+    "objectiveIds": [
+      "D5.2.02"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "69d42c77e245914b53f2c6f4ae1dd7ba5be4ce477613344608c49631ef696f11"
+  },
+  {
+    "id": "ab250-d5-q04",
+    "revision": 2,
+    "domainId": "representative-experience",
+    "conceptId": "session-workstream-composition",
+    "objectiveIds": [
+      "D5.1.02",
+      "D5.1.04"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "220cad75f96a83e6b3bbde49669dcffbe360fc48fa7b2199e3bc20fe27b8a038"
+  },
+  {
+    "id": "ab250-d6-q01",
+    "revision": 2,
+    "domainId": "analytics",
+    "conceptId": "supervisor-public-intervention",
+    "objectiveIds": [
+      "D6.1.04"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "4ef23ce9287b53c20714d4fc49f989cce502b2b9f30ccd6ba73803152cdfccff"
+  },
+  {
+    "id": "ab250-d6-q02",
+    "revision": 3,
+    "domainId": "analytics",
+    "conceptId": "custom-analytics-reader-data",
+    "objectiveIds": [
+      "D6.1.03"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "b6e5b5ca6d99070cfcb6d0e9d88c05af781df364ca96b4f13c74fdf39a7708f1"
+  },
+  {
+    "id": "ab250-d6-q03",
+    "revision": 1,
+    "domainId": "analytics",
+    "conceptId": "queue-selection-event",
+    "objectiveIds": [
+      "D6.2.05"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "6ab87ee3381edf999d83ac15ffe84c9af7b5da535e5ff21355720a5abd97b2dc"
+  },
+  {
+    "id": "ab250-d6-q04",
+    "revision": 2,
+    "domainId": "analytics",
+    "conceptId": "diagnostics-setup-prerequisites",
+    "objectiveIds": [
+      "D6.2.05"
+    ],
+    "level": "advanced",
+    "author": "/root/pilot_d5_d6",
+    "reviewer": "/root/pilot_d3_d4",
+    "reviewedAt": "2026-10-30",
+    "fingerprint": "564c402988defa520631581c55b5cfb38bb070d44463e779cb1c5765ebaac7b5"
+  }
+]

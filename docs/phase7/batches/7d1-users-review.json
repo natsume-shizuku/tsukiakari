@@ -1,0 +1,254 @@
+[
+  {
+    "id": "cc-d1-n06",
+    "revision": 1,
+    "reviewer": "/root/d1_operations",
+    "reviewedAt": "2026-10-31",
+    "decision": "approved",
+    "fingerprint": "bcc7997b7268a60b8a278ef3888e4b37013ae80df5c5374caeca8ae1dafd88a3",
+    "rationale": "Onboarding layers, human-resource preparation and task-specific roles are supported. End-to-end rollout check is clearly useful author guidance. D1.3.01-.03 partial mapping is appropriate.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-users-s01",
+        "section": "Create a user account; Requirements for successfully adding users in Dataverse",
+        "supported": true,
+        "notes": "Reviewed regular-human Microsoft 365 creation, enabled/licensed eligibility and separate direct or group-team security-role requirements."
+      },
+      {
+        "sourceId": "cc-d1-users-s02",
+        "section": "Control user access to environments with security groups and licenses",
+        "supported": true,
+        "notes": "Reviewed environment membership versus data-role requirements; ordinary non-admin scope avoids documented administrator exceptions."
+      },
+      {
+        "sourceId": "cc-d1-users-s03",
+        "section": "Manage contact center users; Manage users using the classic experience",
+        "supported": true,
+        "notes": "Reviewed pre-existing bulk attributes, bookable-resource prerequisite, capacity-profile association and initial Default Presence at workspace sign-in."
+      },
+      {
+        "sourceId": "cc-d1-users-s07",
+        "section": "Roles in Dynamics 365 Contact Center; Manage users through Microsoft Entra security groups; Assign roles to users",
+        "supported": true,
+        "notes": "Current opened body explicitly permits direct or team role assignment; Basic User and case-work Customer Service Representative requirements are stated."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-n07",
+    "revision": 1,
+    "reviewer": "/root/d1_operations",
+    "reviewedAt": "2026-10-31",
+    "decision": "approved",
+    "fingerprint": "3f9914fe8b8bcb161d6ab173c6dd6713a66b33974b4b840b837c569be6e3337e",
+    "rationale": "Correctly separates cumulative privileges, persona mapping and surface authorization. Copying retains minimum functionality without promising every copied role is least privilege.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-users-s04",
+        "section": "Create custom security roles; Map roles to personas; Enable access to applications; Enable access to forms and dashboards",
+        "supported": true,
+        "notes": "Reviewed suitable-role copying, minimum access/persona privileges and separate application/form/dashboard grants; mapping does not automatically authorize app access."
+      },
+      {
+        "sourceId": "cc-d1-users-s05",
+        "section": "Assign a security role to a user",
+        "supported": true,
+        "notes": "Reviewed cumulative grants and at least one role directly or through group-team membership. Existing identity or membership alone does not supply table privileges."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-n08",
+    "revision": 1,
+    "reviewer": "/root/d1_operations",
+    "reviewedAt": "2026-10-31",
+    "decision": "approved",
+    "fingerprint": "f948d1babf9ffe7c0d0b99a9cc343a6f38751b2e1a02fb5b2c79306f7907d139",
+    "rationale": "Custom defaults, override persistence, reset-frequency replacement and non-retroactive assignment effects are directly supported. Concise note is adequate without padding.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-users-s06",
+        "section": "Create a capacity profile and assign to users; Configure representative-specific work limits; How representative-specific limits work",
+        "supported": true,
+        "notes": "Reviewed bookable resources, reset-frequency recreation, clearing custom overrides, default-change isolation and new-work-only custom-limit effects."
+      },
+      {
+        "sourceId": "cc-d1-users-s03",
+        "section": "Manage contact center users; Manage users using the classic experience",
+        "supported": true,
+        "notes": "Reviewed pre-existing bulk attributes, bookable-resource prerequisite, capacity-profile association and initial Default Presence at workspace sign-in."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c16",
+    "revision": 1,
+    "reviewer": "/root/d1_operations",
+    "reviewedAt": "2026-10-31",
+    "decision": "approved",
+    "fingerprint": "c67f3bb80f661692d1fe1f4e1c559215faf6ffb12415c3e875507c2766c384ba",
+    "rationale": "The question asks for the documented human-account administration entry point, not an exclusive identity-provisioning mechanism. Eligibility and roles remain separate.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-users-s01",
+        "section": "Create a user account; Requirements for successfully adding users in Dataverse",
+        "supported": true,
+        "notes": "Reviewed regular-human Microsoft 365 creation, enabled/licensed eligibility and separate direct or group-team security-role requirements."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c17",
+    "revision": 1,
+    "reviewer": "/root/d1_operations",
+    "reviewedAt": "2026-10-31",
+    "decision": "approved",
+    "fingerprint": "19f5e8a349bac1abb1aeb5147b73a106e1a5640d714e903f56d9333307ee93e5",
+    "rationale": "Bookable-resource prerequisite is explicit for human representatives using unified routing. Does not claim this record alone guarantees assignment.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-users-s03",
+        "section": "Manage contact center users; Manage users using the classic experience",
+        "supported": true,
+        "notes": "Reviewed pre-existing bulk attributes, bookable-resource prerequisite, capacity-profile association and initial Default Presence at workspace sign-in."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c18",
+    "revision": 1,
+    "reviewer": "/root/d1_operations",
+    "reviewedAt": "2026-10-31",
+    "decision": "approved",
+    "fingerprint": "46678716e5d42b710a4808744545c0eb96257f4112db03e3e1a69d561c2934e2",
+    "rationale": "Copy-and-adjust starting point and minimum privileges are explicitly documented; distinct from the pilot default representative-role recall.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-users-s04",
+        "section": "Create custom security roles; Map roles to personas; Enable access to applications; Enable access to forms and dashboards",
+        "supported": true,
+        "notes": "Reviewed suitable-role copying, minimum access/persona privileges and separate application/form/dashboard grants; mapping does not automatically authorize app access."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c19",
+    "revision": 1,
+    "reviewer": "/root/d1_operations",
+    "reviewedAt": "2026-10-31",
+    "decision": "approved",
+    "fingerprint": "8d67a075c4d294f1bfb037d74436aaf5e8f1d212454d24ff1ea6810e1fa132f8",
+    "rationale": "Cumulative role privileges directly support the answer and explanation; a narrower added role cannot revoke another role grant.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-users-s05",
+        "section": "Assign a security role to a user",
+        "supported": true,
+        "notes": "Reviewed cumulative grants and at least one role directly or through group-team membership. Existing identity or membership alone does not supply table privileges."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c20",
+    "revision": 1,
+    "reviewer": "/root/d1_operations",
+    "reviewedAt": "2026-10-31",
+    "decision": "approved",
+    "fingerprint": "d8230ab67f72e5273d397ba7dfa036edc7c8219c01ec9c9bea40b9fa088e5906",
+    "rationale": "The source explicitly excludes reset frequency from editable settings and requires profile recreation.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-users-s06",
+        "section": "Create a capacity profile and assign to users; Configure representative-specific work limits; How representative-specific limits work",
+        "supported": true,
+        "notes": "Reviewed bookable resources, reset-frequency recreation, clearing custom overrides, default-change isolation and new-work-only custom-limit effects."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c21",
+    "revision": 1,
+    "reviewer": "/root/d1_operations",
+    "reviewedAt": "2026-10-31",
+    "decision": "approved",
+    "fingerprint": "c0cac747921c803266c832f5d63898720eb9aaa9c7c04d1dc9aa538a26891eca",
+    "rationale": "Default Presence table row supports initial workspace sign-in status, distinct from skill and capacity configuration.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-users-s03",
+        "section": "Manage contact center users; Manage users using the classic experience",
+        "supported": true,
+        "notes": "Reviewed pre-existing bulk attributes, bookable-resource prerequisite, capacity-profile association and initial Default Presence at workspace sign-in."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c22",
+    "revision": 2,
+    "reviewer": "/root/d1_operations",
+    "reviewedAt": "2026-10-31",
+    "decision": "approved",
+    "fingerprint": "cbbeb21d098c1537c53699ca50db2db6616616d83f91ed2647b5ba9bf7c16850",
+    "rationale": "Revision 2 removes the supplied diagnosis. Environment membership and licensing remain distinct from data security roles; only option c supplies that access configuration. Source applicability and direct/team access were rechecked.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-users-s02",
+        "section": "Control user access to environments with security groups and licenses",
+        "supported": true,
+        "notes": "Reviewed environment membership versus data-role requirements; ordinary non-admin scope avoids documented administrator exceptions."
+      },
+      {
+        "sourceId": "cc-d1-users-s05",
+        "section": "Assign a security role to a user",
+        "supported": true,
+        "notes": "Reviewed cumulative grants and at least one role directly or through group-team membership. Existing identity or membership alone does not supply table privileges."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c23",
+    "revision": 3,
+    "reviewer": "/root/d1_operations",
+    "reviewedAt": "2026-10-31",
+    "decision": "approved",
+    "fingerprint": "c1db5daa621bff2af200e1155d0ba1dff1d42f160c7c78166cbf6a33ee03ec69",
+    "rationale": "Revision 3 retains the revised rollout stem and aligns explanation wording with it. Only option a completes application authorization after privileges/persona setup; form access, experience profiles and repeating mapping do not.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-users-s04",
+        "section": "Create custom security roles; Map roles to personas; Enable access to applications; Enable access to forms and dashboards",
+        "supported": true,
+        "notes": "Reviewed suitable-role copying, minimum access/persona privileges and separate application/form/dashboard grants; mapping does not automatically authorize app access."
+      }
+    ]
+  },
+  {
+    "id": "cc-d1-c24",
+    "revision": 1,
+    "reviewer": "/root/d1_operations",
+    "reviewedAt": "2026-10-31",
+    "decision": "approved",
+    "fingerprint": "90dd7614561178abf7a546f27f1a7683d40f662791fbe475ae3eebc41020d3d0",
+    "rationale": "Only option d matches the documented new-assignment-only effect. Options a/b invent redistribution; c incorrectly ties custom overrides to the default. Distinct from pilot manual capacity override.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d1-users-s06",
+        "section": "Create a capacity profile and assign to users; Configure representative-specific work limits; How representative-specific limits work",
+        "supported": true,
+        "notes": "Reviewed bookable resources, reset-frequency recreation, clearing custom overrides, default-change isolation and new-work-only custom-limit effects."
+      }
+    ]
+  }
+]

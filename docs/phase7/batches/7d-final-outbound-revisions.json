@@ -1,0 +1,62 @@
+[
+  {
+    "id": "cc-d2-c69",
+    "fromRevision": 1,
+    "toRevision": 2,
+    "changedAt": "2026-11-03",
+    "reviewerFinding": "Implausible alternatives reduced the application question to keyword recognition.",
+    "resolution": "Replaced with adjacent consent scopes, planning artifacts/inherited fields or actual retry policies; answer key retained.",
+    "status": "awaiting-independent-recheck",
+    "finalDisposition": {
+      "status": "independently-approved",
+      "revision": 2,
+      "reviewer": "/root/finish_deployment",
+      "reviewedAt": "2026-11-03"
+    }
+  },
+  {
+    "id": "cc-d2-c78",
+    "fromRevision": 1,
+    "toRevision": 2,
+    "changedAt": "2026-11-03",
+    "reviewerFinding": "Implausible alternatives reduced the application question to keyword recognition.",
+    "resolution": "Replaced with adjacent consent scopes, planning artifacts/inherited fields or actual retry policies; answer key retained.",
+    "status": "awaiting-independent-recheck",
+    "finalDisposition": {
+      "status": "independently-approved",
+      "revision": 2,
+      "reviewer": "/root/finish_deployment",
+      "reviewedAt": "2026-11-03"
+    }
+  },
+  {
+    "id": "cc-d2-c81",
+    "fromRevision": 1,
+    "toRevision": 2,
+    "changedAt": "2026-11-03",
+    "reviewerFinding": "Implausible alternatives reduced the application question to keyword recognition.",
+    "resolution": "Replaced with adjacent consent scopes, planning artifacts/inherited fields or actual retry policies; answer key retained.",
+    "status": "awaiting-independent-recheck",
+    "finalDisposition": {
+      "status": "independently-approved",
+      "revision": 2,
+      "reviewer": "/root/finish_deployment",
+      "reviewedAt": "2026-11-03"
+    }
+  },
+  {
+    "id": "cc-d2-c84",
+    "fromRevision": 1,
+    "toRevision": 2,
+    "changedAt": "2026-11-03",
+    "reviewerFinding": "Implausible alternatives reduced the application question to keyword recognition.",
+    "resolution": "Replaced with adjacent consent scopes, planning artifacts/inherited fields or actual retry policies; answer key retained.",
+    "status": "awaiting-independent-recheck",
+    "finalDisposition": {
+      "status": "independently-approved",
+      "revision": 2,
+      "reviewer": "/root/finish_deployment",
+      "reviewedAt": "2026-11-03"
+    }
+  }
+]

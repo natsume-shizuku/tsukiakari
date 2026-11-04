@@ -1,0 +1,633 @@
+{
+  "sources": [
+    {
+      "id": "cc-d2-chat-s01",
+      "title": "Create and manage workstreams",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-workstreams"
+    },
+    {
+      "id": "cc-d2-chat-s02",
+      "title": "Configure a chat widget",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/add-chat-widget"
+    },
+    {
+      "id": "cc-d2-chat-s03",
+      "title": "Configure proactive chat",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/proactive-chat"
+    },
+    {
+      "id": "cc-d2-chat-s04",
+      "title": "startProactiveChat API",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/reference/methods/startproactivechat"
+    },
+    {
+      "id": "cc-d2-chat-s05",
+      "title": "Start a chat proactively",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/start-proactive-chat"
+    },
+    {
+      "id": "cc-d2-chat-s06",
+      "title": "Create quick replies",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-quick-replies"
+    },
+    {
+      "id": "cc-d2-chat-s07",
+      "title": "View the communication panel for conversations",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/oc-conversation-control"
+    }
+  ],
+  "notes": [
+    {
+      "id": "cc-d2-n03",
+      "title": "Separate chat routing from widget rollout",
+      "body": "Start by choosing Messaging and Chat for the workstream. It owns routing and assignment behavior; the widget is the customer-facing entry point. Multiple chat channels may share that workstream, so plan shared routing deliberately.\n\nFor an existing classic channel, adding Modern UI preserves the workstream configuration. Test with the version-specific testing script. The general script follows whichever version is active, so changing that selection is a release decision, not just a preview action. Confirm the intended version on a test page before switching the live channel.",
+      "sourceIds": [
+        "cc-d2-chat-s01",
+        "cc-d2-chat-s02"
+      ]
+    },
+    {
+      "id": "cc-d2-n04",
+      "title": "Plan proactive invitations around customer choice",
+      "body": "For Contact Center standalone, first enable proactive chat on the widget and ensure the target page embeds it. The visitor receives an invitation and can decline it; the representative notification follows acceptance.\n\nChoose a meaningful trigger separately from the invitation wording. The developer example uses elapsed time after widget readiness. Supply the message through notificationUIConfig and choose showPrechat intentionally if the widget has a survey. Test the accept and decline paths as well as the trigger itself; an invitation is not an already accepted service conversation.",
+      "sourceIds": [
+        "cc-d2-chat-s03",
+        "cc-d2-chat-s04",
+        "cc-d2-chat-s05"
+      ]
+    },
+    {
+      "id": "cc-d2-n05",
+      "title": "Publish quick replies for the right audience",
+      "body": "Treat language and audience as separate checks. Write a separate response for each locale; selecting a locale does not translate its text. Associate departmental replies with the relevant workstreams. A reply without an association is broadly available, subject to language settings.\n\nThen check the representative experience. Administrator-created responses appear on All, while personal responses appear on Personal when that feature is enabled. Before duplicating an apparently missing response, check the tab, language and workstream. This keeps a useful shared response from becoming several separately maintained personal copies.",
+      "sourceIds": [
+        "cc-d2-chat-s06",
+        "cc-d2-chat-s07"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "cc-d2-c07",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "Which workstream type and channel should you select for live chat?",
+      "answer": "Messaging type with Chat as the channel.",
+      "explanation": "The workstream controls how those conversations are routed and assigned.",
+      "sourceIds": [
+        "cc-d2-chat-s01"
+      ],
+      "noteIds": [
+        "cc-d2-n03"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:chat-workstreams",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c08",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "Which widget script should a test page use to stay on one chosen version even when the active version changes?",
+      "answer": "That version's testing script.",
+      "explanation": "The general script follows the active version instead.",
+      "sourceIds": [
+        "cc-d2-chat-s02"
+      ],
+      "noteIds": [
+        "cc-d2-n03"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:chat-widget",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c09",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "mcq",
+      "prompt": "Two websites need different chat presentation but must share one maintained routing and assignment configuration. Which design fits that requirement?",
+      "answer": "Use separate chat channels attached to one shared workstream.",
+      "explanation": "Channels of the same type can share a workstream. Separate workstreams introduce separate routing maintenance; changing queues or channel types is not the requested separation.",
+      "sourceIds": [
+        "cc-d2-chat-s01",
+        "cc-d2-chat-s02"
+      ],
+      "noteIds": [
+        "cc-d2-n03"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:chat-workstreams",
+        "task:configure",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Create separate workstreams and manually copy every routing update."
+        },
+        {
+          "id": "b",
+          "text": "Use separate chat channels attached to one shared workstream."
+        },
+        {
+          "id": "c",
+          "text": "Use one widget and change the queue whenever visitors change websites."
+        },
+        {
+          "id": "d",
+          "text": "Use two channel types under one workstream to separate the branding."
+        }
+      ],
+      "correctOptionId": "b"
+    },
+    {
+      "id": "cc-d2-c10",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "In standalone Contact Center proactive chat, what customer action causes a representative to receive the chat notification?",
+      "answer": "Accepting the proactive invitation.",
+      "explanation": "Showing the invitation alone does not mean that the customer accepted a conversation.",
+      "sourceIds": [
+        "cc-d2-chat-s03"
+      ],
+      "noteIds": [
+        "cc-d2-n04"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:proactive-chat",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c11",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "For startProactiveChat, which argument controls whether the widget's configured prechat survey is displayed?",
+      "answer": "showPrechat.",
+      "explanation": "It is a Boolean argument; it controls that invitation flow rather than deleting the survey configuration.",
+      "sourceIds": [
+        "cc-d2-chat-s04"
+      ],
+      "noteIds": [
+        "cc-d2-n04"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:proactive-chat",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c12",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "mcq",
+      "prompt": "A standalone website already triggers proactive chat at the intended moment. The invitation should explain why help is offered on that page, while preserving its survey. What should the developer change?",
+      "answer": "Pass the invitation message in notificationUIConfig.",
+      "explanation": "The API separates invitation text from survey visibility. Representative notification templates and fallback routing address different parts of the service flow.",
+      "sourceIds": [
+        "cc-d2-chat-s04",
+        "cc-d2-chat-s05"
+      ],
+      "noteIds": [
+        "cc-d2-n04"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:proactive-chat",
+        "task:configure",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Change the representative notification template."
+        },
+        {
+          "id": "b",
+          "text": "Change the workstream fallback queue."
+        },
+        {
+          "id": "c",
+          "text": "Pass the invitation message in notificationUIConfig."
+        },
+        {
+          "id": "d",
+          "text": "Set showPrechat to false without changing the message configuration."
+        }
+      ],
+      "correctOptionId": "c"
+    },
+    {
+      "id": "cc-d2-c13",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "What is the workstream scope of an administrator quick reply with no workstream association?",
+      "answer": "It is available across workstreams rather than restricted to one.",
+      "explanation": "Language settings still affect which replies a representative sees.",
+      "sourceIds": [
+        "cc-d2-chat-s06"
+      ],
+      "noteIds": [
+        "cc-d2-n05"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:quick-replies",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c14",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "Does selecting a quick reply's locale translate its message into that language?",
+      "answer": "No. Author a separate translated reply for each required locale.",
+      "explanation": "Locale identifies the reply's language; it does not generate translated text.",
+      "sourceIds": [
+        "cc-d2-chat-s06"
+      ],
+      "noteIds": [
+        "cc-d2-n05"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:quick-replies",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c15",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "mcq",
+      "prompt": "An administrator has published an approved response in the correct language and workstream. A representative is looking for it on Personal. What is the most direct next step?",
+      "answer": "Open All in the Quick replies panel.",
+      "explanation": "Administrator responses are on All. A new personal copy or broader audience would change content management unnecessarily; the scenario already establishes the correct language.",
+      "sourceIds": [
+        "cc-d2-chat-s07"
+      ],
+      "noteIds": [
+        "cc-d2-n05"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:quick-replies",
+        "task:configure",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Create a personal duplicate of the approved response."
+        },
+        {
+          "id": "b",
+          "text": "Remove its workstream association to make it global."
+        },
+        {
+          "id": "c",
+          "text": "Change the customer's channel language."
+        },
+        {
+          "id": "d",
+          "text": "Open All in the Quick replies panel."
+        }
+      ],
+      "correctOptionId": "d"
+    }
+  ],
+  "questions": [],
+  "editorial": [
+    {
+      "id": "cc-d2-n03",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "chat-configuration-and-widget-rollout",
+      "objectiveIds": [
+        "D2.1.01",
+        "D2.1.04"
+      ],
+      "level": "core",
+      "author": "/root/d2_chat",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-chat-s01",
+          "section": "Introduction; Create a workstream",
+          "claim": "Messaging with Chat is the chat workstream configuration; same-type channels can share routing and assignment settings.",
+          "applicability": "Chat channels in the documented Contact Center workstream model."
+        },
+        {
+          "sourceId": "cc-d2-chat-s02",
+          "section": "Add to an existing classic Chat channel; Manage modern and classic versions of the widget",
+          "claim": "A testing script pins a widget version; the general script follows the active version.",
+          "applicability": "Modern/classic widget migration on an existing Chat channel."
+        }
+      ],
+      "duplicateCheck": "Pilot n02 explains context collection and snippet placement. This note teaches workstream ownership and version rollout, without repeating those procedures."
+    },
+    {
+      "id": "cc-d2-n04",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "proactive-chat-flow",
+      "objectiveIds": [
+        "D2.1.05"
+      ],
+      "level": "core",
+      "author": "/root/d2_chat",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-chat-s03",
+          "section": "Enable proactive chat in new admin apps; Customer experience; Agent experience",
+          "claim": "Enable the widget toggle and embed it on target pages; customer acceptance precedes the representative notification.",
+          "applicability": "Customer Service or Contact Center standalone website chat; no embedded-mode availability claim."
+        },
+        {
+          "sourceId": "cc-d2-chat-s04",
+          "section": "Parameters; Example",
+          "claim": "notificationUIConfig supplies invitation text; showPrechat controls whether the configured survey is displayed.",
+          "applicability": "Live Chat SDK proactive invitation after the widget is ready; not a general survey deletion setting."
+        },
+        {
+          "sourceId": "cc-d2-chat-s05",
+          "section": "Scenario 1: Customer wait time",
+          "claim": "The website example waits for widget readiness and uses a timed call to startProactiveChat.",
+          "applicability": "Website trigger logic; no copied sample or authentication/context implementation taught."
+        }
+      ],
+      "duplicateCheck": "Distinct from pilot startup/context sequencing: focuses on invitation acceptance and trigger/message/survey decisions; no reused SDK setup quiz."
+    },
+    {
+      "id": "cc-d2-n05",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "quick-reply-publishing-and-retrieval",
+      "objectiveIds": [
+        "D2.1.07"
+      ],
+      "level": "core",
+      "author": "/root/d2_chat",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-chat-s06",
+          "section": "Create quick replies; Associate quick replies with a workstream",
+          "claim": "Locale does not translate message text; workstream associations restrict applicability. Unassociated replies are broadly available.",
+          "applicability": "Administrator-created quick replies; retrieval also depends on language settings."
+        },
+        {
+          "sourceId": "cc-d2-chat-s07",
+          "section": "Send quick replies",
+          "claim": "Administrator-created responses are on All; personal responses are on Personal when enabled.",
+          "applicability": "Representative communication panel during a conversation."
+        }
+      ],
+      "duplicateCheck": "No pilot card or note covers quick reply management. Separates publishing scope and language from representative retrieval."
+    },
+    {
+      "id": "cc-d2-c07",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "chat-workstream-type",
+      "objectiveIds": [
+        "D2.1.01"
+      ],
+      "level": "core",
+      "author": "/root/d2_chat",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-chat-s01",
+          "section": "Introduction; Create a workstream",
+          "claim": "Messaging with Chat is the chat workstream configuration; same-type channels can share routing and assignment settings.",
+          "applicability": "Chat channels in the documented Contact Center workstream model."
+        }
+      ],
+      "duplicateCheck": "Compared cc-d2-c01..06 and pilot questions; adds chat-workstream-type rather than re-asking authentication, context names, survey creation or snippet placement. Sibling cards separate foundational recall from a scoped application."
+    },
+    {
+      "id": "cc-d2-c08",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "chat-widget-testing-script",
+      "objectiveIds": [
+        "D2.1.04"
+      ],
+      "level": "core",
+      "author": "/root/d2_chat",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-chat-s02",
+          "section": "Add to an existing classic Chat channel; Manage modern and classic versions of the widget",
+          "claim": "A testing script pins a widget version; the general script follows the active version.",
+          "applicability": "Modern/classic widget migration on an existing Chat channel."
+        }
+      ],
+      "duplicateCheck": "Compared cc-d2-c01..06 and pilot questions; adds chat-widget-testing-script rather than re-asking authentication, context names, survey creation or snippet placement. Sibling cards separate foundational recall from a scoped application."
+    },
+    {
+      "id": "cc-d2-c09",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "shared-chat-routing-design",
+      "objectiveIds": [
+        "D2.1.01",
+        "D2.1.04"
+      ],
+      "level": "advanced",
+      "author": "/root/d2_chat",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-chat-s01",
+          "section": "Introduction; Create a workstream",
+          "claim": "Messaging with Chat is the chat workstream configuration; same-type channels can share routing and assignment settings.",
+          "applicability": "Chat channels in the documented Contact Center workstream model."
+        },
+        {
+          "sourceId": "cc-d2-chat-s02",
+          "section": "Configure the modern chat widget; Set up the modern widget",
+          "claim": "Widget appearance is configured for a chat channel.",
+          "applicability": "Same-type chat channels with different customer-facing configuration."
+        }
+      ],
+      "duplicateCheck": "Compared cc-d2-c01..06 and pilot questions; adds shared-chat-routing-design rather than re-asking authentication, context names, survey creation or snippet placement. Sibling cards separate foundational recall from a scoped application."
+    },
+    {
+      "id": "cc-d2-c10",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "proactive-invitation-acceptance",
+      "objectiveIds": [
+        "D2.1.05"
+      ],
+      "level": "core",
+      "author": "/root/d2_chat",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-chat-s03",
+          "section": "Enable proactive chat in new admin apps; Customer experience; Agent experience",
+          "claim": "Enable the widget toggle and embed it on target pages; customer acceptance precedes the representative notification.",
+          "applicability": "Customer Service or Contact Center standalone website chat; no embedded-mode availability claim."
+        }
+      ],
+      "duplicateCheck": "Compared cc-d2-c01..06 and pilot questions; adds proactive-invitation-acceptance rather than re-asking authentication, context names, survey creation or snippet placement. Sibling cards separate foundational recall from a scoped application."
+    },
+    {
+      "id": "cc-d2-c11",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "proactive-survey-argument",
+      "objectiveIds": [
+        "D2.1.05"
+      ],
+      "level": "core",
+      "author": "/root/d2_chat",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-chat-s04",
+          "section": "Parameters; Example",
+          "claim": "notificationUIConfig supplies invitation text; showPrechat controls whether the configured survey is displayed.",
+          "applicability": "Live Chat SDK proactive invitation after the widget is ready; not a general survey deletion setting."
+        }
+      ],
+      "duplicateCheck": "Compared cc-d2-c01..06 and pilot questions; adds proactive-survey-argument rather than re-asking authentication, context names, survey creation or snippet placement. Sibling cards separate foundational recall from a scoped application."
+    },
+    {
+      "id": "cc-d2-c12",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "proactive-invitation-message-design",
+      "objectiveIds": [
+        "D2.1.05"
+      ],
+      "level": "advanced",
+      "author": "/root/d2_chat",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-chat-s04",
+          "section": "Parameters; Example",
+          "claim": "notificationUIConfig supplies invitation text; showPrechat controls whether the configured survey is displayed.",
+          "applicability": "Live Chat SDK proactive invitation after the widget is ready; not a general survey deletion setting."
+        },
+        {
+          "sourceId": "cc-d2-chat-s05",
+          "section": "Scenario 1: Customer wait time",
+          "claim": "The website example waits for widget readiness and uses a timed call to startProactiveChat.",
+          "applicability": "Website trigger logic; no copied sample or authentication/context implementation taught."
+        }
+      ],
+      "duplicateCheck": "Compared cc-d2-c01..06 and pilot questions; adds proactive-invitation-message-design rather than re-asking authentication, context names, survey creation or snippet placement. Sibling cards separate foundational recall from a scoped application."
+    },
+    {
+      "id": "cc-d2-c13",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "quick-reply-unassociated-scope",
+      "objectiveIds": [
+        "D2.1.07"
+      ],
+      "level": "core",
+      "author": "/root/d2_chat",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-chat-s06",
+          "section": "Create quick replies; Associate quick replies with a workstream",
+          "claim": "Locale does not translate message text; workstream associations restrict applicability. Unassociated replies are broadly available.",
+          "applicability": "Administrator-created quick replies; retrieval also depends on language settings."
+        }
+      ],
+      "duplicateCheck": "Compared cc-d2-c01..06 and pilot questions; adds quick-reply-unassociated-scope rather than re-asking authentication, context names, survey creation or snippet placement. Sibling cards separate foundational recall from a scoped application."
+    },
+    {
+      "id": "cc-d2-c14",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "quick-reply-localization",
+      "objectiveIds": [
+        "D2.1.07"
+      ],
+      "level": "core",
+      "author": "/root/d2_chat",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-chat-s06",
+          "section": "Create quick replies; Associate quick replies with a workstream",
+          "claim": "Locale does not translate message text; workstream associations restrict applicability. Unassociated replies are broadly available.",
+          "applicability": "Administrator-created quick replies; retrieval also depends on language settings."
+        }
+      ],
+      "duplicateCheck": "Compared cc-d2-c01..06 and pilot questions; adds quick-reply-localization rather than re-asking authentication, context names, survey creation or snippet placement. Sibling cards separate foundational recall from a scoped application."
+    },
+    {
+      "id": "cc-d2-c15",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "quick-reply-shared-tab-troubleshooting",
+      "objectiveIds": [
+        "D2.1.07"
+      ],
+      "level": "advanced",
+      "author": "/root/d2_chat",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-chat-s07",
+          "section": "Send quick replies",
+          "claim": "Administrator-created responses are on All; personal responses are on Personal when enabled.",
+          "applicability": "Representative communication panel during a conversation."
+        }
+      ],
+      "duplicateCheck": "Compared cc-d2-c01..06 and pilot questions; adds quick-reply-shared-tab-troubleshooting rather than re-asking authentication, context names, survey creation or snippet placement. Sibling cards separate foundational recall from a scoped application."
+    }
+  ]
+}

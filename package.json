@@ -1,0 +1,38 @@
+{
+  "name": "tsukiakari",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "vite --host localhost --port 5186 --strictPort",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host localhost --port 4186 --strictPort",
+    "lint": "tsc --noEmit",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "check:browser": "node scripts/check-browser.mjs",
+    "content:check": "node scripts/compile-exam-bank.mjs --check",
+    "prebuild": "npm run content:check"
+  },
+  "dependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "dexie": "4.4.6",
+    "zod": "4.6.7",
+    "ts-fsrs": "5.4.2"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@types/node": "^24.0.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "vite": "8.3.4",
+    "typescript": "7.0.2",
+    "vitest": "5.0.5",
+    "fake-indexeddb": "^6.2.0",
+    "@playwright/test": "1.64.1"
+  }
+}

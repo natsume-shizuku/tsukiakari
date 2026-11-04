@@ -1,0 +1,2474 @@
+{
+  "sources": [
+    {
+      "id": "exam-d2-operations-s01",
+      "title": "How to set up proactive engagement",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-proactive-engagement"
+    },
+    {
+      "id": "exam-d2-operations-s02",
+      "title": "Configure proactive engagement for voice",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-proactive-engagement-voice"
+    },
+    {
+      "id": "exam-d2-operations-s03",
+      "title": "Dial modes for proactive engagement",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/proactive-engagement-dial-modes"
+    },
+    {
+      "id": "exam-d2-operations-s04",
+      "title": "Proactive Engagement dashboard",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/proactive-engagement-dashboard"
+    },
+    {
+      "id": "exam-d2-operations-s05",
+      "title": "Manage consent for proactive engagement",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/proactive-engagement-manage-consent"
+    },
+    {
+      "id": "exam-d2-operations-s06",
+      "title": "Workforce Engagement Management app (preview)",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/workforce-management-wem-app-overview"
+    },
+    {
+      "id": "exam-d2-operations-s07",
+      "title": "Set up and manage planning groups",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/workforce-management-use-planning-groups"
+    },
+    {
+      "id": "exam-d2-operations-s08",
+      "title": "Create and manage forecast scenarios",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/workforce-management-forecast-scenarios"
+    },
+    {
+      "id": "exam-d2-operations-s09",
+      "title": "Create and schedule a shift plan",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/workforce-management-shift-plan"
+    },
+    {
+      "id": "exam-d2-operations-s10",
+      "title": "Manage schedules in Workforce Management",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/workforce-management-schedule-workforce"
+    },
+    {
+      "id": "exam-d2-operations-s11",
+      "title": "Integrate third-party workforce management solutions",
+      "url": "https://learn.microsoft.com/en-us/training/modules/optimize-staffing-workforce-management-contact-center/5-integrate-third-party"
+    },
+    {
+      "id": "exam-d2-operations-s12",
+      "title": "Workforce management security roles in the Workforce Engagement Management app (preview)",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/workforce-management-security-roles"
+    },
+    {
+      "id": "exam-d2-operations-s13",
+      "title": "Best practices for configuring AI agents",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-bot-best-practices"
+    },
+    {
+      "id": "exam-d2-operations-s14",
+      "title": "Transparency note: Real-time agents",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/implement/transparency-note-real-time-voice-agents"
+    },
+    {
+      "id": "exam-d2-operations-s15",
+      "title": "Configure outbound and inbound profiles",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-outbound-inbound-profiles"
+    }
+  ],
+  "questions": [
+    {
+      "id": "ab250-d2-q67",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.16"
+      ],
+      "conceptId": "proactive-file-versus-journey-intake",
+      "prompt": "A service-outreach pilot will upload its contact list directly in Contact Center. The project plan treats Customer Insights - Journeys as mandatory even though no journey authoring is required. Which assessment follows the setup guide?",
+      "answer": "Select Contact Center file intake; the stated Customer Insights dependency applies when using journey authoring.",
+      "explanation": "Choose dependencies for the selected intake path. Direct Contact Center file intake does not become a Customer Insights journey simply because the engagement is proactive.",
+      "sourceIds": [
+        "exam-d2-operations-s01"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:proactive-file-versus-journey-intake",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Customer Insights is required for every proactive engagement, regardless of intake."
+        },
+        {
+          "id": "o3",
+          "text": "Use the CCaaS API only, because direct Contact Center file intake always requires Journeys."
+        },
+        {
+          "id": "o4",
+          "text": "Choose conversational journeys without enabling Customer Insights because a voice workstream automatically provisions Journeys."
+        },
+        {
+          "id": "o2",
+          "text": "Select Contact Center file intake; the stated Customer Insights dependency applies when using journey authoring."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "The guide makes this dependency conditional on choosing journey authoring.",
+        "o2": "File upload is a documented Contact Center intake route separate from conversational journeys.",
+        "o3": "The guide explicitly lists file upload as a Contact Center intake route, separate from Customer Insights journey authoring.",
+        "o4": "The guide makes Customer Insights a prerequisite when choosing journey authoring; a voice workstream does not replace it."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n23"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q68",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.16"
+      ],
+      "conceptId": "engagement-priority-competing-queues",
+      "prompt": "Two proactive engagements compete for the same queue and skill set. A critical service-restoration engagement has pending requests, while a normal follow-up engagement is also waiting. Which processing rule should the scheduler expect?",
+      "answer": "Critical requests are processed first; round-robin fairness applies between engagements of the same priority.",
+      "explanation": "Distinguish priority across competing configurations from record order inside one configuration. Same-priority round robin does not let a normal request bypass pending critical work.",
+      "sourceIds": [
+        "exam-d2-operations-s02"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:engagement-priority-competing-queues",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "FIFO across both configurations ignores their configured priority."
+        },
+        {
+          "id": "o3",
+          "text": "Critical requests are processed first; round-robin fairness applies between engagements of the same priority."
+        },
+        {
+          "id": "o2",
+          "text": "Normal is processed first because lower priority values always win."
+        },
+        {
+          "id": "o4",
+          "text": "Changing Call order within the normal engagement overrides critical priority for the entire queue."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "The guide states that higher-priority competing engagements are processed first.",
+        "o2": "The guide explicitly orders higher priorities first.",
+        "o3": "This combines the documented inter-engagement priority and same-priority fairness rules.",
+        "o4": "Call order sorts records within an engagement; it is not the stated competing-engagement priority override."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n23"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q69",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.15"
+      ],
+      "conceptId": "display-number-contact-rules",
+      "prompt": "A voice engagement has eligible display numbers and must choose one by the contact State attribute. Another team proposes Automated rotation because it assumes rotation honors State. Which TWO configurations implement the documented deterministic selection? Choose TWO.",
+      "answer": "Configure multiple display numbers on the engagement. Select Rule-based distribution and create State conditions with the intended display numbers.",
+      "explanation": "Automated distribution balances numbers; rule-based selection implements contact-specific intent. Configure the eligible numbers and the attribute rules on the engagement. Choose exactly two answers.",
+      "sourceIds": [
+        "exam-d2-operations-s02",
+        "exam-d2-operations-s15"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:display-number-contact-rules",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Configure multiple display numbers on the engagement."
+        },
+        {
+          "id": "o2",
+          "text": "Add several display numbers directly to the workstream instead of the engagement."
+        },
+        {
+          "id": "o3",
+          "text": "Keep Automated distribution to select a specified number for each State."
+        },
+        {
+          "id": "o4",
+          "text": "Select Rule-based distribution and create State conditions with the intended display numbers."
+        },
+        {
+          "id": "o5",
+          "text": "Use Number label alone to control the originating phone number."
+        }
+      ],
+      "correctOptionIds": [
+        "o1",
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "Multiple display-number configuration is supported at engagement level.",
+        "o2": "The guide says multiple display numbers are configured at engagement level only.",
+        "o3": "Automated uses pseudo-random distribution and does not let you control a particular number for a specific call.",
+        "o4": "Contact-attribute matching is the documented rule-based selection mechanism.",
+        "o5": "A representative dialer label is not this originating-number rule configuration."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n23"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q70",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.15"
+      ],
+      "conceptId": "retry-business-disposition-category",
+      "prompt": "A service team wants a business disposition named Wrong department to trigger a retry. It is not one of the fixed systemic outcomes. Which configuration follows the proactive retry guide?",
+      "answer": "Create a disposition code under Not right party and select it for retry.",
+      "explanation": "Keep telephony outcomes and representative-entered business outcomes separate. Use the supported disposition category rather than trying to extend the fixed systemic list.",
+      "sourceIds": [
+        "exam-d2-operations-s02",
+        "exam-d2-operations-s05"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:retry-business-disposition-category",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o4",
+          "text": "Create a disposition code under Not right party and select it for retry."
+        },
+        {
+          "id": "o1",
+          "text": "Add Wrong department to the fixed No answer/Busy/Failed/Answering Machine system list."
+        },
+        {
+          "id": "o2",
+          "text": "Create the business disposition under an unrelated category and assume every category is offered in retry selection."
+        },
+        {
+          "id": "o3",
+          "text": "Mark every such conversation Do not contact so the system retries it."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "The guide says the systemic outcomes list cannot be extended with custom values.",
+        "o2": "The guide requires the Not right party category for retry selection.",
+        "o3": "Do not contact creates an opt-out and conflicts with retrying outreach.",
+        "o4": "This is the documented category that makes a business code available for retry selection."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n23"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q71",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.15"
+      ],
+      "conceptId": "quiet-hours-each-phone-type",
+      "prompt": "A voice engagement selects both Mobile Phone and Business Phone, but configures quiet hours only for Mobile. It also needs Business tried before Mobile. Which completion follows the frequency-limit setup?",
+      "answer": "Set quiet hours for both selected types and reorder the types to put Business first.",
+      "explanation": "The selected number types have both their own quiet-hour configuration and a preferred order. Correct timezone data does not supply missing type-specific settings.",
+      "sourceIds": [
+        "exam-d2-operations-s02"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:quiet-hours-each-phone-type",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o2",
+          "text": "Keep quiet hours only on Mobile because all selected types inherit that record automatically."
+        },
+        {
+          "id": "o3",
+          "text": "Replace all type-specific quiet hours with only the overall delivery window and leave phone-type schedules empty."
+        },
+        {
+          "id": "o1",
+          "text": "Set quiet hours for both selected types and reorder the types to put Business first."
+        },
+        {
+          "id": "o4",
+          "text": "Change only the contact timezone to make Business automatically precede Mobile."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "The guide requires quiet hours for every selected type and provides arrows for preferred order.",
+        "o2": "The guide explicitly requires each selected type to be configured.",
+        "o3": "The guide requires quiet hours for every selected number type; the delivery window does not replace them.",
+        "o4": "Timezone governs quiet-hour evaluation rather than phone-type preference."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n23"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q72",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.16"
+      ],
+      "conceptId": "default-proactive-delivery-window",
+      "prompt": "A service delivery has an earliest scheduled date in the future but supplies no delivery window. The tester assumes its default 24-hour window starts at upload time and expires before that date. Which expectation matches the setup guide?",
+      "answer": "The default window starts at the earliest scheduled future date.",
+      "explanation": "The default window respects a future earliest schedule. It is a delivery eligibility window, not a promise of completion or an unbounded retry lifetime.",
+      "sourceIds": [
+        "exam-d2-operations-s01"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:default-proactive-delivery-window",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o2",
+          "text": "The default window starts at the earliest scheduled future date."
+        },
+        {
+          "id": "o1",
+          "text": "The system rejects every future-scheduled delivery without an explicit window."
+        },
+        {
+          "id": "o3",
+          "text": "The delivery remains eligible indefinitely because no window was provided."
+        },
+        {
+          "id": "o4",
+          "text": "The default starts only after the customer answers the first attempt."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "The guide defines a default for that exact situation.",
+        "o2": "The guide anchors the default 24-hour window at the earliest scheduled date when that date is in the future.",
+        "o3": "The documented default is bounded rather than indefinite.",
+        "o4": "Window scheduling precedes the attempt outcome; it does not wait for an answer."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n23"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q73",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.15"
+      ],
+      "conceptId": "proactive-consent-channel-and-evidence",
+      "prompt": "A proactive voice rollout checks only Text consent records and treats the PES technical implicit-opt-in setting as proof that customers provided every required consent. Which TWO corrections follow the consent documentation? Choose TWO.",
+      "answer": "Evaluate the corresponding Voice consent records for voice deliveries. Keep the technical profile setting separate from evidence of any legally required customer consent.",
+      "explanation": "Consent channel and consent evidence are separate checks. Voice uses its corresponding records, and a technical profile default does not itself establish the underlying consent evidence. Choose exactly two answers.",
+      "sourceIds": [
+        "exam-d2-operations-s05"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:proactive-consent-channel-and-evidence",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o2",
+          "text": "Treat an approved message template as proof of voice consent."
+        },
+        {
+          "id": "o1",
+          "text": "Evaluate the corresponding Voice consent records for voice deliveries."
+        },
+        {
+          "id": "o3",
+          "text": "Assume file upload bypasses the same contact-point eligibility checks."
+        },
+        {
+          "id": "o4",
+          "text": "Use the technical implicit-opt-in setting as the complete evidence of legally required consent."
+        },
+        {
+          "id": "o5",
+          "text": "Keep the technical profile setting separate from evidence of any legally required customer consent."
+        }
+      ],
+      "correctOptionIds": [
+        "o1",
+        "o5"
+      ],
+      "optionExplanations": {
+        "o1": "The guide explicitly maps voice deliveries to Voice consent records.",
+        "o2": "Approved templates do not establish customer consent.",
+        "o3": "The guide applies consent eligibility across API, file, MCP and journey intake.",
+        "o4": "The page explicitly warns this technical setting is not evidence of legally required consent.",
+        "o5": "This preserves the precise technical-versus-consent-evidence boundary."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n23"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q74",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.17"
+      ],
+      "conceptId": "predictive-low-availability-fallback",
+      "prompt": "A configured predictive service-outreach engagement previously had enough available representatives. Availability drops to eight, and dialing changes to one call per newly available representative. Which documented mechanism explains the change?",
+      "answer": "Predictive falls back to progressive behavior below its available-representative threshold.",
+      "explanation": "The documented pacing protects experience at low availability. The changed dialing pattern can be expected behavior rather than an intake or contact-identity failure.",
+      "sourceIds": [
+        "exam-d2-operations-s03"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:predictive-low-availability-fallback",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "The engagement automatically changes to manual preview and waits for every representative to click Dial."
+        },
+        {
+          "id": "o2",
+          "text": "Eight available representatives keep the configured predictive rate because availability never changes its operating mode."
+        },
+        {
+          "id": "o4",
+          "text": "All proactive calling permanently stops whenever availability changes."
+        },
+        {
+          "id": "o3",
+          "text": "Predictive falls back to progressive behavior below its available-representative threshold."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "The documented low-availability fallback is progressive, not manual preview.",
+        "o2": "The guide explicitly states the below-ten progressive fallback.",
+        "o3": "The guide explicitly states this fallback below ten available representatives.",
+        "o4": "The behavior is temporary, with predictive resuming as availability returns above the documented threshold."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n24"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q75",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.17"
+      ],
+      "conceptId": "progressive-engagement-type-sequencing",
+      "prompt": "A service center compares the two progressive engagement types. It needs to understand when preliminary customer validation happens and when a human representative is reserved. Which TWO descriptions match the dial-mode guide? Choose TWO.",
+      "answer": "AI-led progressive adds an AI agent for preliminary checks before the representative continues. Representative-led progressive reserves a representative before the call is placed.",
+      "explanation": "The engagement type changes who begins the customer interaction and the representative reservation sequence. Do not apply preview mechanics to progressive dialing. Choose exactly two answers.",
+      "sourceIds": [
+        "exam-d2-operations-s03"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:progressive-engagement-type-sequencing",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o2",
+          "text": "AI-led progressive adds an AI agent for preliminary checks before the representative continues."
+        },
+        {
+          "id": "o1",
+          "text": "AI-led progressive always bypasses AI validation and connects a human first."
+        },
+        {
+          "id": "o3",
+          "text": "Representative-led progressive reserves a representative before the call is placed."
+        },
+        {
+          "id": "o4",
+          "text": "Representative-led progressive waits until after customer validation to reserve any representative."
+        },
+        {
+          "id": "o5",
+          "text": "Both types require the representative to click Dial after manually reviewing every contact."
+        }
+      ],
+      "correctOptionIds": [
+        "o2",
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "The guide places the AI agent preliminary checks first for that type.",
+        "o2": "The guide describes AI checking the intended person and availability before the representative joins.",
+        "o3": "This is the documented representative-led reservation sequence.",
+        "o4": "The guide states reservation occurs ahead of the call for representative-led progressive.",
+        "o5": "Manual contact review and dial start describes preview behavior rather than both progressive types."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n24"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q76",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.17"
+      ],
+      "conceptId": "outbound-threshold-pause-manual-restart",
+      "prompt": "A representative-led progressive engagement reaches its configured abandonment threshold. The supervisor expects it to pause briefly and restart by itself as soon as current wait times improve. Which behavior does the configuration guide specify?",
+      "answer": "It pauses and requires manual intervention to restart.",
+      "explanation": "The threshold response includes an operational restart step. A runbook that assumes automatic recovery after current metrics improve omits the documented manual intervention.",
+      "sourceIds": [
+        "exam-d2-operations-s02"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:outbound-threshold-pause-manual-restart",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Resume automatically as soon as representative availability rises above the predictive minimum."
+        },
+        {
+          "id": "o4",
+          "text": "It pauses and requires manual intervention to restart."
+        },
+        {
+          "id": "o2",
+          "text": "Continue at one call per newly available representative and scale back automatically."
+        },
+        {
+          "id": "o3",
+          "text": "Resume automatically when the recent average wait time drops below its target."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "Availability-driven fallback is a different mechanism; the representative-led abandonment threshold requires manual restart.",
+        "o2": "That describes availability fallback rather than the configured threshold pause/manual restart.",
+        "o3": "The guide states manual intervention is required after this threshold pauses the engagement.",
+        "o4": "This is the stated threshold behavior for these representative-led modes."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n24"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q77",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.18"
+      ],
+      "conceptId": "proactive-dashboard-filter-scope",
+      "prompt": "A supervisor compares two screenshots of live proactive workload. One includes all business units and queues, while the other should represent only the East support queue in its business unit. Before treating differing pending totals as lost deliveries, which action follows the dashboard design?",
+      "answer": "Align the Proactive engagement, QueueName, Time zone and Business unit filters for the intended scope.",
+      "explanation": "Different filter populations can produce different totals without missing data. Establish the same intended outbound scope before interpreting the discrepancy.",
+      "sourceIds": [
+        "exam-d2-operations-s04"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:proactive-dashboard-filter-scope",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o2",
+          "text": "Match engagement and queue filters but leave different Business unit and Time zone filters in place."
+        },
+        {
+          "id": "o3",
+          "text": "Match only Business unit while leaving the comparison on different queues and engagement configurations."
+        },
+        {
+          "id": "o1",
+          "text": "Align the Proactive engagement, QueueName, Time zone and Business unit filters for the intended scope."
+        },
+        {
+          "id": "o4",
+          "text": "Match only the Time zone filter while leaving one screenshot tenant-wide and the other queue-specific."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "The dashboard explicitly provides these filters to scope its live data.",
+        "o2": "That does not align the full intended data population and time basis.",
+        "o3": "The dashboard has separate queue and engagement filters that must match the intended scope.",
+        "o4": "A common time basis does not align different queue/business-unit workload scopes."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n25"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q78",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.18"
+      ],
+      "conceptId": "proactive-abandonment-denominator",
+      "prompt": "A proactive delivery connects to the customer, but the interaction ends before a representative can be added. An analyst wants to express this experience as the documented abandonment rate. Which interpretation is correct?",
+      "answer": "Treat them as abandoned deliveries and divide by total attempted deliveries.",
+      "explanation": "The rate measures a particular failed handoff experience among attempted deliveries. Do not confuse it with pending volume, workforce availability or handle-time duration.",
+      "sourceIds": [
+        "exam-d2-operations-s04"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:proactive-abandonment-denominator",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Divide those events only by deliveries that already reached their final completed state."
+        },
+        {
+          "id": "o3",
+          "text": "Treat them as pending deliveries and divide by the next scheduled retry count."
+        },
+        {
+          "id": "o4",
+          "text": "Count them only as talk time, because a customer connection cannot be abandoned."
+        },
+        {
+          "id": "o2",
+          "text": "Treat them as abandoned deliveries and divide by total attempted deliveries."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "The documented denominator is total attempted deliveries, not only final completed deliveries.",
+        "o2": "This is the documented event definition and denominator.",
+        "o3": "These are attempted and connected events, not merely unattempted pending workload.",
+        "o4": "The guide explicitly defines abandonment after connection but before representative addition."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n25"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q79",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.19"
+      ],
+      "conceptId": "wem-combined-functional-roles",
+      "prompt": "A planner in the preview WEM app must edit forecasts and capacity plans and also create and publish schedules. Which TWO functional roles provide this combined job without broad WFM Administrator access? Choose TWO.",
+      "answer": "WFM Forecaster. WFM Scheduler.",
+      "explanation": "Combine Forecaster and Scheduler when the job spans both functions. Keep this preview role model separate from Copilot Service workspace role behavior.",
+      "sourceIds": [
+        "exam-d2-operations-s12",
+        "exam-d2-operations-s06"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:wem-combined-functional-roles",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o2",
+          "text": "WFM Intraday Analyst alone."
+        },
+        {
+          "id": "o1",
+          "text": "WFM Forecaster."
+        },
+        {
+          "id": "o3",
+          "text": "WFM Service Rep."
+        },
+        {
+          "id": "o4",
+          "text": "WFM Scheduler."
+        },
+        {
+          "id": "o5",
+          "text": "Omnichannel agent alone instead of the WEM functional roles."
+        }
+      ],
+      "correctOptionIds": [
+        "o1",
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "Forecaster provides forecast/capacity editing.",
+        "o2": "The analyst monitors and reads plans rather than editing and publishing them.",
+        "o3": "Self-service does not provide these planning/publication privileges.",
+        "o4": "Scheduler provides shift-plan editing and publication.",
+        "o5": "Agent self-service does not replace these WEM planning privileges."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n26"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q80",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.21"
+      ],
+      "conceptId": "planning-shrinkage-occupancy",
+      "prompt": "A staffing plan assumes all scheduled time is available for customer work, including training and breaks. Which service-objective input represents that unavailable time without redefining the logged-in handling-time share?",
+      "answer": "Shrinkage, which includes breaks, training and other unavailable time.",
+      "explanation": "Shrinkage and occupancy describe different staffing assumptions. Account for unavailable time with Shrinkage and retain separate handling and response targets.",
+      "sourceIds": [
+        "exam-d2-operations-s07"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:planning-shrinkage-occupancy",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o3",
+          "text": "Shrinkage, which includes breaks, training and other unavailable time."
+        },
+        {
+          "id": "o1",
+          "text": "Occupancy, because it measures the percentage of scheduled time unavailable."
+        },
+        {
+          "id": "o2",
+          "text": "Voice concurrency, because it counts training intervals."
+        },
+        {
+          "id": "o4",
+          "text": "Target Answer Time, set equal to the duration of a break."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "Occupancy describes handling time, including related after-work, rather than scheduled unavailability.",
+        "o2": "Concurrency counts simultaneous interactions, not training time.",
+        "o3": "This matches the documented unavailable-time definition.",
+        "o4": "Target Answer Time is a response commitment, not an unavailable-time percentage."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n27"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q81",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.19",
+        "D2.3.21"
+      ],
+      "conceptId": "planning-channel-service-objectives",
+      "prompt": "A design combines voice and email demand in one planning group, although their service-level targets differ. Which grouping recommendation follows the workforce guide?",
+      "answer": "Create separate planning groups for channel scopes needing different service-level targets.",
+      "explanation": "Keep demand scope and service commitments aligned through the documented grouping structure. Separate different channel scopes instead of duplicating a workload.",
+      "sourceIds": [
+        "exam-d2-operations-s07"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:planning-channel-service-objectives",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Assume each forecast silently supplies a different group service objective while both share one group."
+        },
+        {
+          "id": "o2",
+          "text": "Create separate planning groups for channel scopes needing different service-level targets."
+        },
+        {
+          "id": "o3",
+          "text": "Assign the same queue/channel pair to two groups to count its demand twice."
+        },
+        {
+          "id": "o4",
+          "text": "Change only the historical data range and assume it creates different service-level commitments for the two channel scopes."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "The guide recommends separate channel groups for different service-level targets.",
+        "o2": "This is the explicit channel-target guidance.",
+        "o3": "A queue/channel pair cannot belong to multiple groups.",
+        "o4": "Historical demand range does not define different service objectives."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n26"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q82",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.21"
+      ],
+      "conceptId": "forecast-defining-source-immutable",
+      "prompt": "An existing forecast scenario uses Internal data. The team wants to change its Data source to External while retaining the same definition. Which authoring constraint must it account for?",
+      "answer": "Data source is a defining setting that cannot be changed after scenario creation.",
+      "explanation": "Distinguish editable forecasting inputs from the creation-time definition. Respect the source-type boundary when redesigning a scenario.",
+      "sourceIds": [
+        "exam-d2-operations-s08"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:forecast-defining-source-immutable",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Editing Name also permits editing the defining source type."
+        },
+        {
+          "id": "o2",
+          "text": "Changing the historical start date converts the source type."
+        },
+        {
+          "id": "o4",
+          "text": "Data source is a defining setting that cannot be changed after scenario creation."
+        },
+        {
+          "id": "o3",
+          "text": "Changing the holiday calendar converts the source type."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "Editable names do not make defining source settings editable.",
+        "o2": "Historical start date is a separate editable input.",
+        "o3": "Seasonality does not convert the defining source type.",
+        "o4": "The guide lists Data source among immutable defining settings."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n27"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q83",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.21"
+      ],
+      "conceptId": "forecast-snapshot-output-versioning",
+      "prompt": "A scenario has Auto refresh off. The planner changes history inputs and wants a new output version while retaining earlier output. Which TWO documented behaviors apply to Create New Snapshot? Choose TWO.",
+      "answer": "It starts a background job whose progress appears in job history. The latest snapshot becomes the capacity-planning default while earlier output remains selectable or restorable.",
+      "explanation": "Snapshots version forecast output rather than redefine the scenario. Check job completion and the downstream default version.",
+      "sourceIds": [
+        "exam-d2-operations-s08"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:forecast-snapshot-output-versioning",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "It starts a background job whose progress appears in job history."
+        },
+        {
+          "id": "o2",
+          "text": "It changes Internal Data source to External."
+        },
+        {
+          "id": "o3",
+          "text": "It deletes every previous snapshot."
+        },
+        {
+          "id": "o4",
+          "text": "It is available only while Auto refresh is on."
+        },
+        {
+          "id": "o5",
+          "text": "The latest snapshot becomes the capacity-planning default while earlier output remains selectable or restorable."
+        }
+      ],
+      "correctOptionIds": [
+        "o1",
+        "o5"
+      ],
+      "optionExplanations": {
+        "o1": "The guide describes background generation and history.",
+        "o2": "Snapshot generation does not change the defining source.",
+        "o3": "The guide explicitly allows earlier-version selection and reversion.",
+        "o4": "The action is unavailable with Auto refresh on.",
+        "o5": "This is the documented output/default behavior."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n27"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q84",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.21"
+      ],
+      "conceptId": "forecast-first-scheduled-run",
+      "prompt": "A planner saves a new scheduled forecast and immediately sees Draft with no output. Its first scheduled run time has not occurred. Which interpretation follows the guide?",
+      "answer": "Draft is expected before the first scheduled run; use job history to verify execution and status afterward.",
+      "explanation": "Confirm whether a run occurred before diagnosing missing results. Saved configuration and generated output have different lifecycle stages.",
+      "sourceIds": [
+        "exam-d2-operations-s08"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:forecast-first-scheduled-run",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Draft is expected before the first scheduled run; use job history to verify execution and status afterward."
+        },
+        {
+          "id": "o2",
+          "text": "Treat saving as immediate generation and regard an empty job history before the first run as a failed execution."
+        },
+        {
+          "id": "o3",
+          "text": "Select View Output and assume that viewing the report starts the first generation job."
+        },
+        {
+          "id": "o4",
+          "text": "Use Create New Snapshot only as a way to edit the immutable forecast type."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "The guide explicitly describes deferred execution and history.",
+        "o2": "The guide says generation does not run immediately on save.",
+        "o3": "View Output opens the report; saving a scheduled scenario defers execution until its first run.",
+        "o4": "Snapshot creation generates output; it does not edit defining settings."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n27"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q85",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.20"
+      ],
+      "conceptId": "shift-plan-capacity-itinerary",
+      "prompt": "A scheduler needs a repeatable shift containing work, training and breaks, with staffing based on forecasted capacity per interval. Which TWO plan inputs address this? Choose TWO.",
+      "answer": "Select the relevant capacity plan. Define work and nonoperational activities in the itinerary.",
+      "explanation": "Demand sizing and the activity pattern are separate inputs. Configure both rather than assuming a queue supplies an itinerary.",
+      "sourceIds": [
+        "exam-d2-operations-s09"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:shift-plan-capacity-itinerary",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Use only the representative calendar and leave the shift itinerary empty."
+        },
+        {
+          "id": "o3",
+          "text": "Assume choosing a queue inserts training and breaks automatically."
+        },
+        {
+          "id": "o2",
+          "text": "Select the relevant capacity plan."
+        },
+        {
+          "id": "o4",
+          "text": "Define work and nonoperational activities in the itinerary."
+        },
+        {
+          "id": "o5",
+          "text": "Use raw forecasted interaction volume as though it already defines the required representative count and activity pattern."
+        }
+      ],
+      "correctOptionIds": [
+        "o2",
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "The guide uses a shift plan to standardize the repeated structure.",
+        "o2": "The guide uses a selected capacity plan for interval staffing.",
+        "o3": "Queue selection does not define the required activities.",
+        "o4": "The itinerary defines the repeated shift activities.",
+        "o5": "The selected capacity plan supplies interval staffing, while the itinerary separately defines activities."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n28"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q86",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.20"
+      ],
+      "conceptId": "schedule-filter-intersection",
+      "prompt": "A scheduler filters the board by one skill and one queue. A representative in the queue lacks the skill; another has the skill but not queue membership. Neither appears. Which filter behavior explains this?",
+      "answer": "Representatives must match all selected criteria.",
+      "explanation": "Each separate match is insufficient when both filters apply. Check the intersection before changing memberships.",
+      "sourceIds": [
+        "exam-d2-operations-s10"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:schedule-filter-intersection",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "The board combines every selected criterion with OR."
+        },
+        {
+          "id": "o2",
+          "text": "Only the first filter applies and the second changes sorting."
+        },
+        {
+          "id": "o4",
+          "text": "Filtering by a skill automatically adds the representative to the selected queue."
+        },
+        {
+          "id": "o3",
+          "text": "Representatives must match all selected criteria."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "The guide specifies all selected criteria.",
+        "o2": "The guide supports multiple simultaneous filters.",
+        "o3": "This is the documented intersection behavior.",
+        "o4": "Filtering does not create queue membership."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n28"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q87",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.20"
+      ],
+      "conceptId": "schedule-paid-hour-input",
+      "prompt": "A training booking appears on the board, but scheduled hours exceed paid hours. Which activity configuration should the scheduler inspect before treating the difference as lost booking data?",
+      "answer": "The activity type Paid classification in Copilot Service admin center.",
+      "explanation": "Scheduled and paid totals can legitimately differ. Verify the documented activity flag instead of assuming a missing booking.",
+      "sourceIds": [
+        "exam-d2-operations-s10"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:schedule-paid-hour-input",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Whether every scheduled activity is assumed paid regardless of its activity configuration."
+        },
+        {
+          "id": "o3",
+          "text": "Whether changing the board display granularity alone will classify training as paid."
+        },
+        {
+          "id": "o2",
+          "text": "The activity type Paid classification in Copilot Service admin center."
+        },
+        {
+          "id": "o4",
+          "text": "Whether changing only the board time zone changes the training activity Paid flag."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "The guide includes only activities marked Paid in the paid-hours calculation.",
+        "o2": "The guide uses this classification in paid-hour calculation.",
+        "o3": "Granularity changes display detail, not the activity Paid classification.",
+        "o4": "Time-zone display does not replace the activity payment classification."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n28"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q88",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.20"
+      ],
+      "conceptId": "recurring-adhoc-activity",
+      "prompt": "A scheduler needs weekly coaching for selected representatives without rebuilding their shift template. Which operation directly follows the ad-hoc activity flow?",
+      "answer": "Add an ad-hoc activity, verify start/duration/timezone, and configure recurrence with its day of week.",
+      "explanation": "Use the recurrence controls rather than rely on copying or naming. Verify the time zone as part of scheduling.",
+      "sourceIds": [
+        "exam-d2-operations-s10"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:recurring-adhoc-activity",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Change the forecast start date to the coaching weekday."
+        },
+        {
+          "id": "o4",
+          "text": "Add an ad-hoc activity, verify start/duration/timezone, and configure recurrence with its day of week."
+        },
+        {
+          "id": "o2",
+          "text": "Copy a booking once and assume it automatically becomes weekly."
+        },
+        {
+          "id": "o3",
+          "text": "Change only the entire shift template recurrence rather than adding the scoped coaching activity."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "A forecast date does not schedule a representative coaching activity.",
+        "o2": "Copying one booking does not define recurrence.",
+        "o3": "The requested scoped change is directly supported by the ad-hoc recurrence flow without rebuilding the shared shift template.",
+        "o4": "This matches the documented recurring ad-hoc flow."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n28"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q89",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.22"
+      ],
+      "conceptId": "external-wfm-flow-direction",
+      "prompt": "An external WFM tool remains the schedule authority and calculates adherence. Representatives should view its schedules in workspace, while the external tool needs current activity evidence. Which TWO flows match the integration guide? Choose TWO.",
+      "answer": "Import external schedules and shift activities into Dynamics for the representative calendar. Export Dynamics presence, current activity and status changes for external adherence.",
+      "explanation": "Use each direction for its purpose: planned schedules flow inward and operational state flows outward. Historical forecasting data does not replace live adherence evidence.",
+      "sourceIds": [
+        "exam-d2-operations-s11"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:external-wfm-flow-direction",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o3",
+          "text": "Send only monthly forecast volumes outward instead of current state for real-time adherence."
+        },
+        {
+          "id": "o1",
+          "text": "Import external schedules and shift activities into Dynamics for the representative calendar."
+        },
+        {
+          "id": "o4",
+          "text": "Replace imported schedule bookings with only actual presence transitions."
+        },
+        {
+          "id": "o5",
+          "text": "Keep imported schedules exclusively outside workspace because its calendar cannot display them."
+        },
+        {
+          "id": "o2",
+          "text": "Export Dynamics presence, current activity and status changes for external adherence."
+        }
+      ],
+      "correctOptionIds": [
+        "o1",
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "The guide describes this schedule synchronization.",
+        "o2": "The guide provides these data inputs for external adherence.",
+        "o3": "Historical demand volumes do not replace current-state evidence for adherence.",
+        "o4": "Actual state and planned bookings serve different purposes; presence alone does not supply the imported schedule.",
+        "o5": "The guide explicitly supports displaying imported schedules in workspace."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n28"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q90",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.22"
+      ],
+      "conceptId": "external-wfm-service-authentication",
+      "prompt": "A background WFM synchronization job needs Dataverse access without representative sign-in on each run. Which authentication design does the integration unit recommend?",
+      "answer": "Register the external application in Microsoft Entra ID and use OAuth 2.0 client credentials.",
+      "explanation": "Use the application authentication model for automated access. Distinguish object identifiers, customer identity and service authorization.",
+      "sourceIds": [
+        "exam-d2-operations-s11"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:external-wfm-service-authentication",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Use an interactive delegated user sign-in for each scheduled job."
+        },
+        {
+          "id": "o2",
+          "text": "Use an existing representative manual connection as the design instead of registering the external application."
+        },
+        {
+          "id": "o4",
+          "text": "Choose an authorization-code flow that requires representative approval during each execution."
+        },
+        {
+          "id": "o3",
+          "text": "Register the external application in Microsoft Entra ID and use OAuth 2.0 client credentials."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "That does not match the required unattended service-to-service design or the unit client-credentials recommendation.",
+        "o2": "The unit recommends Entra application registration and client credentials for this automated integration.",
+        "o3": "This is the explicitly documented model.",
+        "o4": "That interactive design does not meet the unattended requirement or the documented client-credentials approach."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n28"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q91",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.25"
+      ],
+      "conceptId": "greeting-agent-workstream-location",
+      "prompt": "A greeting agent is configured on a queue. The team wants the documented configuration that avoids engaging the routing engine before the greeting agent starts. Which association should it use?",
+      "answer": "Configure the greeting agent on the workstream rather than the queue.",
+      "explanation": "The placement of the greeting agent is a separate decision from its greeting wording or lookup sequence. Use the workstream association for the stated optimization.",
+      "sourceIds": [
+        "exam-d2-operations-s13"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:greeting-agent-workstream-location",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Configure the greeting agent on the workstream rather than the queue."
+        },
+        {
+          "id": "o2",
+          "text": "Rely only on the agent default queue without explicit association."
+        },
+        {
+          "id": "o3",
+          "text": "Assign only the greeting agent to a queue and require that routing step for every greeting."
+        },
+        {
+          "id": "o4",
+          "text": "Move only the same queue association to a different queue while omitting the workstream association."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "This is the documented placement recommendation.",
+        "o2": "The guide says AI agents are not automatically added to default queues and recommends explicit workstream greeting association.",
+        "o3": "The requested optimization avoids that routing requirement.",
+        "o4": "Changing queues does not implement the recommended workstream placement."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n29"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q92",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.25"
+      ],
+      "conceptId": "ai-data-source-performance-choice",
+      "prompt": "A voice agent waits for a Power Automate flow for simple retrieval. One lookup reads Dataverse; another reads an external system. Which documented starting pairing should the engineer evaluate to reduce retrieval overhead?",
+      "answer": "Use the built-in Dataverse connector for internal data and HTTP requests for external data.",
+      "explanation": "Consider data source and execution path when investigating wait behavior. Evaluate the documented efficient options and monitor any retained flows.",
+      "sourceIds": [
+        "exam-d2-operations-s13"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:ai-data-source-performance-choice",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Always use Power Automate because the agent never waits for flow completion."
+        },
+        {
+          "id": "o2",
+          "text": "Use the built-in Dataverse connector for internal data and HTTP requests for external data."
+        },
+        {
+          "id": "o3",
+          "text": "Use HTTP only for Dataverse and reject it for external data."
+        },
+        {
+          "id": "o4",
+          "text": "Keep the flow implementation unchanged and assume connector choice cannot affect latency."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "The guide says the agent can pause until the flow completes.",
+        "o2": "This is the source-specific performance guidance.",
+        "o3": "This reverses the documented recommendations.",
+        "o4": "The guide explicitly discusses data-access choices and flow latency."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n29"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q93",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.25"
+      ],
+      "conceptId": "ai-payload-metadata-size",
+      "prompt": "An AI card has 25 KB of visible content and 5 KB of metadata. The developer counts only visible text against the documented 28 KB message limit. Which correction follows the guidance?",
+      "answer": "Reduce the complete message, including metadata, to the documented limit.",
+      "explanation": "Count the full payload. Metadata can put a card over the limit even when visible content alone is below it.",
+      "sourceIds": [
+        "exam-d2-operations-s13"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:ai-payload-metadata-size",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o4",
+          "text": "Reduce the complete message, including metadata, to the documented limit."
+        },
+        {
+          "id": "o1",
+          "text": "Exclude all timestamps and tags from size accounting."
+        },
+        {
+          "id": "o2",
+          "text": "Apply the limit only to customer plain text, not AI cards."
+        },
+        {
+          "id": "o3",
+          "text": "Treat every card below 28 KB visible content as valid regardless of total size."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "The guide includes metadata such as timestamps and tags.",
+        "o2": "The guide explicitly covers complex cards and activity payloads.",
+        "o3": "Total payload matters; this card totals 30 KB.",
+        "o4": "This matches the inclusive size boundary."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n29"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q94",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.25"
+      ],
+      "conceptId": "realtime-long-context-boundary",
+      "prompt": "A real-time agent is reliable in short tests but becomes inconsistent late in long, stateful conversations. The design assumes all details remain equally available indefinitely. Which response follows the transparency note?",
+      "answer": "Introduce explicit resets or topic boundaries for highly stateful interactions.",
+      "explanation": "Long-call behavior requires deliberate state design and validation. Short-test success does not establish unlimited conversational retention.",
+      "sourceIds": [
+        "exam-d2-operations-s14"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:realtime-long-context-boundary",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Extend the same free-form conversation because retention is guaranteed without limit."
+        },
+        {
+          "id": "o2",
+          "text": "Treat all late-call inconsistency as evidence of a telephony disconnect."
+        },
+        {
+          "id": "o3",
+          "text": "Introduce explicit resets or topic boundaries for highly stateful interactions."
+        },
+        {
+          "id": "o4",
+          "text": "Remove topic boundaries so every state transition depends only on free-form generation."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "The note identifies retention boundaries.",
+        "o2": "The limitation does not itself prove a disconnected call.",
+        "o3": "The note identifies these measures for predictable behavior.",
+        "o4": "The note recommends boundaries rather than unbounded free-form state."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n29"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q95",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.25"
+      ],
+      "conceptId": "realtime-first-turn-static-content",
+      "prompt": "A real-time design puts customer account details into a cached or optimized first-turn greeting. Which recommendation follows the transparency note for that path?",
+      "answer": "Prefer static first-turn content and handle dynamic customer details through an appropriate subsequent flow.",
+      "explanation": "The guidance is scoped to optimized first turns. Keep that path simple and validate dynamic content in its intended context.",
+      "sourceIds": [
+        "exam-d2-operations-s14"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:realtime-first-turn-static-content",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o2",
+          "text": "Keep account-specific variable lookups inside the optimized first-turn greeting to maximize initial personalization."
+        },
+        {
+          "id": "o3",
+          "text": "Perform the dynamic account lookup first and move the static greeting after it."
+        },
+        {
+          "id": "o4",
+          "text": "Keep the dynamic cached first turn and adjust only interruption sensitivity to address its privacy and caching behavior."
+        },
+        {
+          "id": "o1",
+          "text": "Prefer static first-turn content and handle dynamic customer details through an appropriate subsequent flow."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "The note recommends static content and avoiding dynamic references on this path.",
+        "o2": "The note recommends static content and avoiding dynamic references on this latency-sensitive path.",
+        "o3": "That retains dynamic work in the optimized first-turn path rather than applying the recommended static design.",
+        "o4": "Interruption tuning does not remove the documented dynamic-content privacy/caching risks."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n29"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q96",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.25"
+      ],
+      "conceptId": "realtime-speed-quality-tradeoff",
+      "prompt": "A pilot lowers response latency and sounds more natural, but answers become incomplete during interruptions. The release metric rewards only speed. Which evaluation change follows the guidance?",
+      "answer": "Evaluate speed alongside accuracy, completeness and conversational stability under intended conditions.",
+      "explanation": "Latency is one quality dimension. Tune using representative operating conditions and assess the resulting interaction quality.",
+      "sourceIds": [
+        "exam-d2-operations-s14"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:realtime-speed-quality-tradeoff",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Select the setting with the best average response time and use that single metric as the release decision."
+        },
+        {
+          "id": "o4",
+          "text": "Evaluate speed alongside accuracy, completeness and conversational stability under intended conditions."
+        },
+        {
+          "id": "o2",
+          "text": "Compare only isolated single-turn answers and omit multi-turn interruption scenarios."
+        },
+        {
+          "id": "o3",
+          "text": "Tune only an escalation-confidence threshold and infer completeness from the resulting escalation count."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "The note recommends evaluating speed together with accuracy and stability tradeoffs.",
+        "o2": "The reported failure involves conversational interruptions, which need representative interaction testing.",
+        "o3": "An escalation proxy alone does not validate answer completeness, accuracy and stability under interruptions.",
+        "o4": "This follows the documented use-case validation recommendation."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n29"
+        }
+      ],
+      "status": "draft"
+    }
+  ],
+  "editorial": [
+    {
+      "id": "ab250-d2-q67",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "proactive-file-versus-journey-intake",
+      "objectiveIds": [
+        "D2.3.16"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-operations-s01",
+          "section": "Prerequisites; Set up proactive engagement",
+          "claim": "Customer Insights is needed when using journey authoring; Contact Center file upload is a separate audience/intake route.",
+          "applicability": "Provisioned voice service outreach with CSV intake; no marketing-permission or regional-availability claim."
+        }
+      ],
+      "duplicateCheck": "Study c67 tests external contact identity. This tests intake architecture and the conditional journey dependency.",
+      "revisedBy": "/root/exam_channels",
+      "revisionReason": "Independent reviewer requested plausible adjacent product, lifecycle, authentication or evaluation alternatives rather than unrelated settings or unsupported guarantees."
+    },
+    {
+      "id": "ab250-d2-q68",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "engagement-priority-competing-queues",
+      "objectiveIds": [
+        "D2.3.16"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-operations-s02",
+          "section": "Dialing modes: Priority",
+          "claim": "Higher-priority engagements sharing queue/skills process first; same-priority engagements in a queue use round robin.",
+          "applicability": "Competing proactive engagement configurations targeting the same representatives; not individual call-order sorting."
+        }
+      ],
+      "duplicateCheck": "No existing study card tests inter-engagement priority; q70 tests retry selection and q74 pacing instead."
+    },
+    {
+      "id": "ab250-d2-q69",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "display-number-contact-rules",
+      "objectiveIds": [
+        "D2.3.15"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-operations-s02",
+          "section": "Display number configuration",
+          "claim": "Multiple display numbers belong at engagement level; Rule-based distribution chooses numbers from contact attribute conditions while Automated is pseudo-random.",
+          "applicability": "Supported provisioned matching-type display numbers already available, not arbitrary caller ID ownership."
+        },
+        {
+          "sourceId": "exam-d2-operations-s15",
+          "section": "Create outbound profiles: Number label",
+          "claim": "Number label is representative dialer presentation, not originating-number selection.",
+          "applicability": "Distinguishes labels from engagement display-number distribution."
+        }
+      ],
+      "duplicateCheck": "Voice q50 tests alternative profile caller-ID prerequisites. This tests engagement-level multi-number distribution by contact attributes."
+    },
+    {
+      "id": "ab250-d2-q70",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "retry-business-disposition-category",
+      "objectiveIds": [
+        "D2.3.15"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-operations-s02",
+          "section": "Reattempts",
+          "claim": "Systemic retry outcomes are fixed; business disposition codes become selectable for retry when created under Not right party.",
+          "applicability": "Business-defined service-outreach retry reason, not opt-out or a new systemic network outcome."
+        },
+        {
+          "sourceId": "exam-d2-operations-s05",
+          "section": "Automatic opt-out",
+          "claim": "Do not contact disposition creates a corresponding channel opt-out.",
+          "applicability": "Explains why opt-out disposition is not a business retry substitute."
+        }
+      ],
+      "duplicateCheck": "Study c69 concerns migrated opt-outs. This tests extensible business retry selection rather than contact suppression."
+    },
+    {
+      "id": "ab250-d2-q71",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "quiet-hours-each-phone-type",
+      "objectiveIds": [
+        "D2.3.15"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-operations-s02",
+          "section": "Frequency limits: Schedule",
+          "claim": "Every selected phone-number type requires quiet hours; voice can order Mobile/Business/Home contact preferences.",
+          "applicability": "Voice proactive engagement with Mobile and Business phone selected; contact timezone already supplied correctly."
+        }
+      ],
+      "duplicateCheck": "Study c68 tests timezone inference. This assumes valid timezone data and tests phone-type-specific windows and ordering."
+    },
+    {
+      "id": "ab250-d2-q72",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "default-proactive-delivery-window",
+      "objectiveIds": [
+        "D2.3.16"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-operations-s01",
+          "section": "Set up proactive engagement: Delivery window note",
+          "claim": "Without explicit delivery window, default is 24 hours starting immediately or at earliest future scheduled date.",
+          "applicability": "A future-scheduled service delivery without a supplied window; not a guarantee every request succeeds in that time."
+        }
+      ],
+      "duplicateCheck": "No existing study card tests delivery-window anchoring; q74–q76 cover dial pacing instead."
+    },
+    {
+      "id": "ab250-d2-q73",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "proactive-consent-channel-and-evidence",
+      "objectiveIds": [
+        "D2.3.15"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-operations-s05",
+          "section": "Channel support; How consent is enforced; PES compliance profile note",
+          "claim": "Voice uses Voice consent, SMS uses Text consent; technical transactional implicit opt-in is not evidence of legally required customer consent.",
+          "applicability": "Technical consent configuration/evidence boundary only; no legal determination for a particular jurisdiction."
+        }
+      ],
+      "duplicateCheck": "Study c69 tests importing historical opt-outs; digital q07 tests provider-side SMS consent. This tests voice/text record selection and the documented technical-setting evidence limit."
+    },
+    {
+      "id": "ab250-d2-q74",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "predictive-low-availability-fallback",
+      "objectiveIds": [
+        "D2.3.17"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-operations-s03",
+          "section": "Predictive: Minimum available representatives note",
+          "claim": "With fewer than ten available representatives, predictive operates as progressive, one call per newly available representative.",
+          "applicability": "Documented predictive service outreach, not commercial marketing; available count falls from above threshold to eight."
+        }
+      ],
+      "duplicateCheck": "Study c70–c72 test Copilot/preview mode selection. This tests predictive runtime fallback under a specific availability condition."
+    },
+    {
+      "id": "ab250-d2-q75",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "progressive-engagement-type-sequencing",
+      "objectiveIds": [
+        "D2.3.17"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-operations-s03",
+          "section": "Progressive",
+          "claim": "AI-led progressive uses AI preliminary validation before adding a representative; representative-led progressive reserves the representative before dialing.",
+          "applicability": "Service-outreach comparison of the two progressive types, not a claim of regulatory approval or zero wait."
+        }
+      ],
+      "duplicateCheck": "Distinct from study c70 Copilot mode and c72 preview selection, and q74 predictive availability fallback."
+    },
+    {
+      "id": "ab250-d2-q76",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "outbound-threshold-pause-manual-restart",
+      "objectiveIds": [
+        "D2.3.17"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-operations-s02",
+          "section": "Dialing modes: Representative-led Use rules",
+          "claim": "For representative-led progressive/predictive abandonment threshold, reaching it pauses the engagement and requires manual intervention to restart.",
+          "applicability": "Explicit representative-led threshold behavior; service outreach, not a blanket legality claim."
+        }
+      ],
+      "duplicateCheck": "No study card tests threshold restart semantics; q74 tests availability-driven fallback, which is a different mechanism.",
+      "revisedBy": "/root/exam_channels",
+      "revisionReason": "Independent reviewer requested plausible adjacent product, lifecycle, authentication or evaluation alternatives rather than unrelated settings or unsupported guarantees."
+    },
+    {
+      "id": "ab250-d2-q77",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "proactive-dashboard-filter-scope",
+      "objectiveIds": [
+        "D2.3.18"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-operations-s04",
+          "section": "Proactive Engagement dashboard: Introduction",
+          "claim": "Filters include Proactive engagement, QueueName, Time zone and Business unit to scope live outbound metrics.",
+          "applicability": "Real-time proactive dashboard already enabled; comparison of a defined queue/business unit, not all historical analytics."
+        }
+      ],
+      "duplicateCheck": "Study c73 tests access role and c74/c75 throughput/connect-rate meaning. This tests live operational filter scope rather than those facts.",
+      "revisedBy": "/root/exam_channels",
+      "revisionReason": "Independent reviewer requested plausible adjacent product, lifecycle, authentication or evaluation alternatives rather than unrelated settings or unsupported guarantees."
+    },
+    {
+      "id": "ab250-d2-q78",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "proactive-abandonment-denominator",
+      "objectiveIds": [
+        "D2.3.18"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-operations-s04",
+          "section": "Use proactive engagement metrics: Abandoned rate %",
+          "claim": "An abandoned delivery connects a customer but ends before a representative is added; rate denominator is total attempted deliveries.",
+          "applicability": "Measure interpretation for outbound experience, not queue abandonment on an unrelated inbound report."
+        }
+      ],
+      "duplicateCheck": "Study c75 tests connect rate. This tests the separate abandonment event and denominator; q77 tests scope rather than the measure formula."
+    },
+    {
+      "id": "ab250-d2-q79",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "wem-combined-functional-roles",
+      "objectiveIds": [
+        "D2.3.19"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-operations-s12",
+          "section": "Choose a role; Privileges by capability",
+          "claim": "Forecaster edits forecasts/capacity; Scheduler builds/publishes schedules; users can hold both.",
+          "applicability": "Preview WEM app only; not replacing workspace roles."
+        },
+        {
+          "sourceId": "exam-d2-operations-s06",
+          "section": "Relationship to Copilot Service workspace",
+          "claim": "Preview WEM function roles differ from existing workspace roles and can be combined.",
+          "applicability": "Avoids conflating the preview app with workspace role behavior."
+        }
+      ],
+      "duplicateCheck": "Study c77 tests WEM versus workspace role scope; this tests functional least-privilege composition."
+    },
+    {
+      "id": "ab250-d2-q80",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "planning-shrinkage-occupancy",
+      "objectiveIds": [
+        "D2.3.21"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-operations-s07",
+          "section": "Service objective settings",
+          "claim": "Shrinkage covers scheduled unavailable time; occupancy covers logged-in handling and after-work share.",
+          "applicability": "Workforce staffing objectives, not routing capacity profiles."
+        }
+      ],
+      "duplicateCheck": "Study c79 contrasts forecasting/capacity purpose; this tests staffing-assumption definitions."
+    },
+    {
+      "id": "ab250-d2-q81",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "planning-channel-service-objectives",
+      "objectiveIds": [
+        "D2.3.19",
+        "D2.3.21"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-operations-s07",
+          "section": "Configure service objectives: Note",
+          "claim": "Different channel scopes with different service-level targets should use separate planning groups.",
+          "applicability": "Different channel demand scopes, not duplicating the same queue/channel pair."
+        }
+      ],
+      "duplicateCheck": "Study c78 tests duplicate-pair validation; this tests grouping by differing service targets."
+    },
+    {
+      "id": "ab250-d2-q82",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "forecast-defining-source-immutable",
+      "objectiveIds": [
+        "D2.3.21"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-operations-s08",
+          "section": "Edit the scenario",
+          "claim": "Forecast type, interval, entity and data source cannot change after creation.",
+          "applicability": "Existing Internal scenario redesign to External; no numerical forecasting limit."
+        }
+      ],
+      "duplicateCheck": "Study c80 tests external auto-refresh and c81 group inheritance; this tests definition immutability."
+    },
+    {
+      "id": "ab250-d2-q83",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "forecast-snapshot-output-versioning",
+      "objectiveIds": [
+        "D2.3.21"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-operations-s08",
+          "section": "Create a new snapshot",
+          "claim": "Snapshot starts background generation; latest output becomes capacity default and earlier versions remain selectable/revertible; action unavailable with Auto refresh on.",
+          "applicability": "Existing scenario with Auto refresh off; no disputed horizon/history number."
+        }
+      ],
+      "duplicateCheck": "Distinct from study c79/c80; tests output version/default lifecycle, not purpose or refresh eligibility."
+    },
+    {
+      "id": "ab250-d2-q84",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "forecast-first-scheduled-run",
+      "objectiveIds": [
+        "D2.3.21"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-operations-s08",
+          "section": "Create a forecast scenario: Note; View job history",
+          "claim": "Saving does not run immediately; scenario remains Draft until first scheduled run; job history verifies run status.",
+          "applicability": "New internally scheduled scenario before its first configured run."
+        }
+      ],
+      "duplicateCheck": "Different from q83 post-change snapshot versioning; tests initial deferred run.",
+      "revisedBy": "/root/exam_channels",
+      "revisionReason": "Independent reviewer requested plausible adjacent product, lifecycle, authentication or evaluation alternatives rather than unrelated settings or unsupported guarantees."
+    },
+    {
+      "id": "ab250-d2-q85",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "shift-plan-capacity-itinerary",
+      "objectiveIds": [
+        "D2.3.20"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-operations-s09",
+          "section": "Create a shift plan: Capacity plan; Shift activities; Activity Itinerary",
+          "claim": "A selected capacity plan supplies interval staffing; itinerary defines repeated work/training/break activities.",
+          "applicability": "Capacity-backed shift template; no assertion based on inconsistent overnight-duration wording."
+        }
+      ],
+      "duplicateCheck": "Study c82 tests republishing after committed-booking edits; this tests initial template construction."
+    },
+    {
+      "id": "ab250-d2-q86",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "schedule-filter-intersection",
+      "objectiveIds": [
+        "D2.3.20"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-operations-s10",
+          "section": "Filter representatives",
+          "claim": "Multiple skill and queue filters require all selected criteria.",
+          "applicability": "Schedule Workforce display filter, not routing assignment or permissions."
+        }
+      ],
+      "duplicateCheck": "No study card tests schedule filter intersection; distinct from routing eligibility."
+    },
+    {
+      "id": "ab250-d2-q87",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "schedule-paid-hour-input",
+      "objectiveIds": [
+        "D2.3.20"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-operations-s10",
+          "section": "View daily paid hours and scheduled hours",
+          "claim": "Paid hours include only activities marked Paid in admin center.",
+          "applicability": "Displayed WFM hour totals, not payroll advice."
+        }
+      ],
+      "duplicateCheck": "Different from itinerary creation and committed/unpublished lifecycle.",
+      "revisedBy": "/root/exam_channels",
+      "revisionReason": "Independent reviewer requested plausible adjacent product, lifecycle, authentication or evaluation alternatives rather than unrelated settings or unsupported guarantees."
+    },
+    {
+      "id": "ab250-d2-q88",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "recurring-adhoc-activity",
+      "objectiveIds": [
+        "D2.3.20"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-operations-s10",
+          "section": "Add ad-hoc activities",
+          "claim": "Ad-hoc scheduling supports start/duration/timezone and recurring dates with weekday selection.",
+          "applicability": "Weekly coaching for selected representatives, without rebuilding their shift template."
+        }
+      ],
+      "duplicateCheck": "No study card tests recurring ad-hoc scheduling."
+    },
+    {
+      "id": "ab250-d2-q89",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "external-wfm-flow-direction",
+      "objectiveIds": [
+        "D2.3.22"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-operations-s11",
+          "section": "Integration architecture; Schedule synchronization; Real-time adherence reporting",
+          "claim": "Schedules import to Dynamics calendar; presence/current activity/status changes export for external adherence.",
+          "applicability": "Dataverse integration with external schedule authority/adherence calculation."
+        }
+      ],
+      "duplicateCheck": "Study c83 names the API and c84 backoff; this tests data-flow purpose/direction."
+    },
+    {
+      "id": "ab250-d2-q90",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "external-wfm-service-authentication",
+      "objectiveIds": [
+        "D2.3.22"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-operations-s11",
+          "section": "Design considerations: Authentication",
+          "claim": "Use Entra app registration and OAuth2 client credentials for automated service-to-service Dataverse access.",
+          "applicability": "Background external WFM synchronization, not interactive delegated access."
+        }
+      ],
+      "duplicateCheck": "Different from digital q15 Messaging API header; this tests WFM automated integration identity design.",
+      "revisedBy": "/root/exam_channels",
+      "revisionReason": "Independent reviewer requested plausible adjacent product, lifecycle, authentication or evaluation alternatives rather than unrelated settings or unsupported guarantees."
+    },
+    {
+      "id": "ab250-d2-q91",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "greeting-agent-workstream-location",
+      "objectiveIds": [
+        "D2.3.25"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-operations-s13",
+          "section": "Best practices: Greeting agent",
+          "claim": "Configure greeting agent on workstream rather than queue so routing engine need not engage.",
+          "applicability": "Greeting association optimization, not phone-channel provisioning or greeting-before-lookup order."
+        }
+      ],
+      "duplicateCheck": "Study c85 tests greeting order; D3 q17 connectivity. This tests workstream-versus-queue placement."
+    },
+    {
+      "id": "ab250-d2-q92",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "ai-data-source-performance-choice",
+      "objectiveIds": [
+        "D2.3.25"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-operations-s13",
+          "section": "Best practices: Data access",
+          "claim": "Dataverse connector is most efficient for internal Dynamics data; HTTP best for external; flow execution can pause agent.",
+          "applicability": "Documented starting performance guidance, no numerical latency guarantee."
+        }
+      ],
+      "duplicateCheck": "Study c85/c87 test acknowledgement and fallback, not retrieval implementation choice."
+    },
+    {
+      "id": "ab250-d2-q93",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "ai-payload-metadata-size",
+      "objectiveIds": [
+        "D2.3.25"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-operations-s13",
+          "section": "Best practices: Message size",
+          "claim": "28KB messaging limit includes metadata and custom Direct Line activity payload.",
+          "applicability": "Digital AI card payload, not audio size."
+        }
+      ],
+      "duplicateCheck": "New AI payload-size decision, distinct from D3 DTMF and sensitive-variable questions."
+    },
+    {
+      "id": "ab250-d2-q94",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "realtime-long-context-boundary",
+      "objectiveIds": [
+        "D2.3.25"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-operations-s14",
+          "section": "Context retention boundaries",
+          "claim": "Very long/stateful conversations can exceed optimal retention windows; resets/topic boundaries help predictability.",
+          "applicability": "Real-time state design; no fixed token-count or perpetual identity claim."
+        }
+      ],
+      "duplicateCheck": "Distinct from study c87 timeout recovery and D3 rollback/trigger questions."
+    },
+    {
+      "id": "ab250-d2-q95",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "realtime-first-turn-static-content",
+      "objectiveIds": [
+        "D2.3.25"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-operations-s14",
+          "section": "Best practices: Latency-sensitive messages",
+          "claim": "Prefer static content for cached/optimized first turns; dynamic variable references may cause latency/privacy/caching risks.",
+          "applicability": "Specifically optimized/cached first-turn path, not a universal ban on personalization."
+        }
+      ],
+      "duplicateCheck": "Distinct from greeting-before-lookup order and q91 association; tests first-turn caching/privacy constraint.",
+      "revisedBy": "/root/exam_channels",
+      "revisionReason": "Independent reviewer requested plausible adjacent product, lifecycle, authentication or evaluation alternatives rather than unrelated settings or unsupported guarantees."
+    },
+    {
+      "id": "ab250-d2-q96",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "realtime-speed-quality-tradeoff",
+      "objectiveIds": [
+        "D2.3.25"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-operations-s14",
+          "section": "Evaluating and integrating real-time agents for your use",
+          "claim": "Lower latency can increase incomplete/less accurate answers; validate speed/accuracy/stability tradeoffs under target conditions.",
+          "applicability": "Real-time tuning evaluation, no universal numeric target."
+        }
+      ],
+      "duplicateCheck": "Distinct from tool failure fallback and simulation setup; tests the performance tuning tradeoff.",
+      "revisedBy": "/root/exam_channels",
+      "revisionReason": "Independent reviewer requested plausible adjacent product, lifecycle, authentication or evaluation alternatives rather than unrelated settings or unsupported guarantees."
+    }
+  ]
+}

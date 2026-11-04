@@ -1,0 +1,2612 @@
+{
+  "sources": [
+    {
+      "id": "exam-d2-digital-s01",
+      "title": "Configure a chat widget",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/add-chat-widget"
+    },
+    {
+      "id": "exam-d2-digital-s02",
+      "title": "Enable tables for queues in unified routing",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/enable-entities-for-queues"
+    },
+    {
+      "id": "exam-d2-digital-s03",
+      "title": "Configure an SMS channel for Twilio",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-sms-channel-twilio"
+    },
+    {
+      "id": "exam-d2-digital-s05",
+      "title": "Configure proactive chat",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/proactive-chat"
+    },
+    {
+      "id": "exam-d2-digital-s06",
+      "title": "Configure a preconversation survey",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-pre-chat-survey"
+    },
+    {
+      "id": "exam-d2-digital-s07",
+      "title": "Create quick replies",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-quick-replies"
+    },
+    {
+      "id": "exam-d2-digital-s08",
+      "title": "startProactiveChat API",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/reference/methods/startproactivechat"
+    },
+    {
+      "id": "exam-d2-digital-s09",
+      "title": "Configure authentication settings",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-chat-auth-settings"
+    },
+    {
+      "id": "exam-d2-digital-s10",
+      "title": "Customize live chat widgets for mobile apps",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/render-live-chat-widget-mobile"
+    },
+    {
+      "id": "exam-d2-digital-s11",
+      "title": "Overview of messaging APIs",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/extend/intro-messaging-apis"
+    },
+    {
+      "id": "exam-d2-digital-s13",
+      "title": "Enable real-time translation of conversations",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/enable-real-time-translation"
+    },
+    {
+      "id": "exam-d2-digital-s14",
+      "title": "Set up visitor location detection",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/geo-location-provider"
+    },
+    {
+      "id": "exam-d2-digital-s15",
+      "title": "Manage context variables",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/manage-context-variables"
+    },
+    {
+      "id": "exam-d2-digital-s16",
+      "title": "Identify customers automatically",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/record-identification-rule"
+    },
+    {
+      "id": "exam-d2-digital-s17",
+      "title": "Close conversations automatically",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/auto-close-conversation-powerapps"
+    },
+    {
+      "id": "exam-d2-digital-s18",
+      "title": "View the communication panel for conversations",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/oc-conversation-control"
+    },
+    {
+      "id": "exam-d2-digital-s19",
+      "title": "Create and manage data masking rules",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/data-masking-settings"
+    },
+    {
+      "id": "exam-d2-digital-s20",
+      "title": "Configure and manage custom presence",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/presence-custom-presence"
+    },
+    {
+      "id": "exam-d2-digital-s21",
+      "title": "Configure automated messages",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-automated-message"
+    },
+    {
+      "id": "exam-d2-digital-s22",
+      "title": "Manage enhanced Active Conversation settings",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/active-enh-conv-settings"
+    },
+    {
+      "id": "exam-d2-digital-s23",
+      "title": "Set up the timeline control",
+      "url": "https://learn.microsoft.com/en-us/power-apps/maker/model-driven-apps/set-up-timeline-control"
+    },
+    {
+      "id": "exam-d2-digital-s24",
+      "title": "Use custom connectors with the timeline control",
+      "url": "https://learn.microsoft.com/en-us/power-apps/maker/model-driven-apps/custom-connectors-timeline-control"
+    },
+    {
+      "id": "exam-d2-digital-s25",
+      "title": "Choose between Channel Integration Framework 1.0 and 2.0",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/channel-integration-framework/choose-between-versions"
+    },
+    {
+      "id": "exam-d2-digital-s26",
+      "title": "Configure feedback surveys using Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-surveys"
+    },
+    {
+      "id": "exam-d2-digital-s27",
+      "title": "Enable file attachments",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/enable-file-attachments"
+    },
+    {
+      "id": "exam-d2-digital-s28",
+      "title": "Enable self-service settings for customer actions",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/enable-self-service-settings"
+    },
+    {
+      "id": "exam-d2-digital-s29",
+      "title": "Create and manage workstreams",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-workstreams"
+    },
+    {
+      "id": "exam-d2-digital-s30",
+      "title": "Configure persistent chat",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/persistent-chat"
+    }
+  ],
+  "questions": [
+    {
+      "id": "ab250-d2-q05",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.01",
+        "D2.1.04"
+      ],
+      "conceptId": "widget-active-version-release",
+      "prompt": "A retailer has successfully tested the modern widget on a separate page. Its production website uses the general widget script, while a diagnostic page uses the classic testing script. The retailer sets Modern as active. Which outcome should its release test expect?",
+      "answer": "Production switches to Modern; the diagnostic page continues to load Classic.",
+      "explanation": "Release behavior depends on the script type. Setting Modern as active updates the existing general tag without changing the classic testing tag. This supports rollout while preserving a diagnostic comparison.",
+      "sourceIds": [
+        "exam-d2-digital-s01"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:widget-active-version-release",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Both pages switch to Modern because the channel has one active version."
+        },
+        {
+          "id": "o3",
+          "text": "The diagnostic page switches to Modern; production requires a new workstream."
+        },
+        {
+          "id": "o2",
+          "text": "Production switches to Modern; the diagnostic page continues to load Classic."
+        },
+        {
+          "id": "o4",
+          "text": "Neither page changes until the general script is replaced with the Modern testing script."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "Testing scripts always load their selected version.",
+        "o2": "The general tag follows the active version; the testing tag is version-specific.",
+        "o3": "The testing tag remains pinned, and an existing channel can retain its workstream.",
+        "o4": "Setting an active version is explicitly how an already deployed general tag goes live."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n03"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q06",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.02"
+      ],
+      "conceptId": "record-queue-capability-irreversibility",
+      "prompt": "A team wants to trial queue-based routing for a custom table in a development environment. Its rollback plan says to enable Can be added to a queue, run the trial, and clear that checkbox afterward. What should the implementation reviewer change in the plan?",
+      "answer": "Treat queue enablement as irreversible and plan the trial accordingly.",
+      "explanation": "The table capability is a durable schema decision. A development trial must account for that restriction; neither audit settings, default queues nor ruleset removal makes it reversible.",
+      "sourceIds": [
+        "exam-d2-digital-s02"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:record-queue-capability-irreversibility",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o4",
+          "text": "Treat queue enablement as irreversible and plan the trial accordingly."
+        },
+        {
+          "id": "o1",
+          "text": "Clear Can be added to a queue after removing all currently queued records."
+        },
+        {
+          "id": "o2",
+          "text": "Remove the table from the selected solution to reverse queue enablement."
+        },
+        {
+          "id": "o3",
+          "text": "Keep the rollback step, but remove every routing ruleset first."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "The capability cannot be disabled after enablement; removing records does not provide the planned reversal.",
+        "o2": "The underlying table capability remains irreversible; solution membership is not the documented reversal.",
+        "o3": "Deleting routing rules does not make the documented capability reversible.",
+        "o4": "The checkbox cannot be cleared after enablement."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n09"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q07",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.03"
+      ],
+      "conceptId": "twilio-number-and-optout-boundaries",
+      "prompt": "An eligible US Twilio SMS number is already purchased. During acceptance, an administrator enters +1 (425) 230-6549 in the Dynamics SMS number field and assumes creating that account also configures provider opt-out processing. Which TWO corrections follow the documented integration? Choose TWO.",
+      "answer": "Enter the support number as country code plus number, without spaces or special characters. Configure consent settings directly with the SMS provider.",
+      "explanation": "Account creation does not replace the separate provider consent configuration. The support-number field also has its own formatting requirement, distinct from credentials and callback URLs. Choose exactly two answers.",
+      "sourceIds": [
+        "exam-d2-digital-s03"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:twilio-number-and-optout-boundaries",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o2",
+          "text": "Include a plus prefix and formatted separators in the Dynamics SMS number field."
+        },
+        {
+          "id": "o1",
+          "text": "Enter the support number as country code plus number, without spaces or special characters."
+        },
+        {
+          "id": "o3",
+          "text": "Rely on successful credential validation to configure provider opt-out processing."
+        },
+        {
+          "id": "o4",
+          "text": "Configure consent settings directly with the SMS provider."
+        },
+        {
+          "id": "o5",
+          "text": "Enable Twilio link shortening as a required delivery prerequisite."
+        }
+      ],
+      "correctOptionIds": [
+        "o1",
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "This matches the documented phone-number field format.",
+        "o2": "The field excludes special characters and spaces.",
+        "o3": "Credential validation checks the Account SID and Auth Token, while consent must be configured directly with the provider.",
+        "o4": "The integration specifically requires provider-side consent configuration.",
+        "o5": "The documentation says Twilio link shortening is not supported."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n06"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q08",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.04"
+      ],
+      "conceptId": "chat-domain-display-restriction",
+      "prompt": "A correctly embedded modern chat widget must be visible on the support portal but not on an unrelated site that reuses the same layout. The team wants a widget display restriction rather than a customer sign-in requirement. Which setting most directly implements it?",
+      "answer": "Enable Only show widget on the provided domains and enter the portal link.",
+      "explanation": "The modern widget has an explicit domain restriction. Apply it to the portal link; authentication and queue waiting information solve other requirements.",
+      "sourceIds": [
+        "exam-d2-digital-s01"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:chat-domain-display-restriction",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Add an authentication record to require sign-in on every site that loads the widget."
+        },
+        {
+          "id": "o2",
+          "text": "Use Show widget during operation hours without specifying permitted domains."
+        },
+        {
+          "id": "o4",
+          "text": "Activate a version-specific testing script as the domain restriction."
+        },
+        {
+          "id": "o3",
+          "text": "Enable Only show widget on the provided domains and enter the portal link."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "That imposes authentication rather than the requested widget domain display rule.",
+        "o2": "Operating hours apply a time restriction rather than the requested domain restriction.",
+        "o3": "This is the documented widget domain restriction.",
+        "o4": "Testing scripts pin a widget version; they do not define permitted domains."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n03"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q09",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.05"
+      ],
+      "conceptId": "proactive-invitation-expiry",
+      "prompt": "A standalone Contact Center website displays proactive invitations at the correct point in the customer journey. A stakeholder asks for the built-in unaccepted invitation to remain visible for five minutes. Which response is supported by the documented customer experience?",
+      "answer": "The built-in one-minute invitation closure timer cannot be configured.",
+      "explanation": "An invitation is not yet a customer conversation. Its fixed expiry is separate from conversation stages, survey requirements and operating hours.",
+      "sourceIds": [
+        "exam-d2-digital-s05"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:proactive-invitation-expiry",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o2",
+          "text": "Change the conversation wrap-up threshold to extend the unaccepted invitation."
+        },
+        {
+          "id": "o1",
+          "text": "The built-in one-minute invitation closure timer cannot be configured."
+        },
+        {
+          "id": "o3",
+          "text": "Extend the widget operating-hours interval to set invitation expiry."
+        },
+        {
+          "id": "o4",
+          "text": "Make the preconversation survey mandatory to keep the invitation open."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "The documentation explicitly states that the invitation timer is fixed.",
+        "o2": "A wrap-up threshold applies to a conversation stage, not the invitation timer.",
+        "o3": "Widget operating hours do not configure the fixed invitation timer.",
+        "o4": "Survey response requirements do not configure the fixed invitation timer."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n04"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q10",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.06"
+      ],
+      "conceptId": "survey-optional-validation",
+      "prompt": "A chat pilot has a preconversation field with built-in validation. The requirement changes so visitors may leave it unanswered, but the team still expects the same built-in validation on this now-optional field. Which design assumption must be revised?",
+      "answer": "Built-in validation is supported only for mandatory fields.",
+      "explanation": "Optional collection and supported built-in validation cannot be assumed to work together in this control. Revisit the requirement or integration design rather than relying on labels, ordering or text-field type.",
+      "sourceIds": [
+        "exam-d2-digital-s06"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:survey-optional-validation",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Validation requires renaming Question text to the internal survey question name."
+        },
+        {
+          "id": "o2",
+          "text": "Changing to Multiple lines preserves validation for optional fields."
+        },
+        {
+          "id": "o3",
+          "text": "Moving the question to the first position enables optional-field validation."
+        },
+        {
+          "id": "o4",
+          "text": "Built-in validation is supported only for mandatory fields."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "Internal name and displayed text serve different roles; renaming does not change validation support.",
+        "o2": "Changing text answer type does not remove the mandatory-field validation boundary.",
+        "o3": "Question ordering does not enable optional validation.",
+        "o4": "This is the documented validation restriction."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n02"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q11",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.07"
+      ],
+      "conceptId": "quick-reply-context-and-audience",
+      "prompt": "An OrderID context value is already present in chat conversations. An administrator must create a reusable order-status reply that inserts this value and is offered only for the returns workstream. Which TWO configurations satisfy the requirement? Choose TWO.",
+      "answer": "Put {OCContext.OrderID} in the quick reply message. Associate the quick reply with the returns workstream.",
+      "explanation": "Quick replies use their own context placeholder format. Combine that format with a workstream association to meet both personalization and audience requirements. Choose exactly two answers.",
+      "sourceIds": [
+        "exam-d2-digital-s07",
+        "exam-d2-digital-s21"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:quick-reply-context-and-audience",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o2",
+          "text": "Put {OCContext.OrderID} in the quick reply message."
+        },
+        {
+          "id": "o1",
+          "text": "Put {$OrderID$} in the quick reply message."
+        },
+        {
+          "id": "o5",
+          "text": "Associate the quick reply with the returns workstream."
+        },
+        {
+          "id": "o3",
+          "text": "Leave the quick reply without any workstream association."
+        },
+        {
+          "id": "o4",
+          "text": "Apply a returns tag without associating the reply with a workstream."
+        }
+      ],
+      "correctOptionIds": [
+        "o2",
+        "o5"
+      ],
+      "optionExplanations": {
+        "o1": "This is automated-message-style syntax, not the documented quick reply custom-context syntax.",
+        "o2": "This is the documented context-key format for a quick reply.",
+        "o3": "An unassociated reply is available for all representatives.",
+        "o4": "Tags categorize replies; workstream associations establish the required audience scope.",
+        "o5": "Workstream association is the documented audience boundary."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n05"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q12",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.08"
+      ],
+      "conceptId": "sdk-proactive-window-parameters",
+      "prompt": "A developer already waits for lcw:ready. The configured proactive invitation must skip its existing prechat survey and open the accepted chat in a new window. Which argument list matches the documented startProactiveChat contract?",
+      "answer": "({message: \"Need help?\"}, false, {inNewWindow: true})",
+      "explanation": "The notification configuration, survey Boolean, and options object are separate arguments. Correct parameter placement matters even when SDK readiness is already handled.",
+      "sourceIds": [
+        "exam-d2-digital-s08"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:sdk-proactive-window-parameters",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "({message: \"Need help?\", showPrechat: false, inNewWindow: true})"
+        },
+        {
+          "id": "o2",
+          "text": "({message: \"Need help?\"}, true, {inNewWindow: false})"
+        },
+        {
+          "id": "o4",
+          "text": "({message: \"Need help?\"}, {showPrechat: false}, true)"
+        },
+        {
+          "id": "o3",
+          "text": "({message: \"Need help?\"}, false, {inNewWindow: true})"
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "showPrechat and inNewWindow are separate parameters, not both notification UI fields.",
+        "o2": "These values request the opposite behavior.",
+        "o3": "The Boolean skips configured prechat, and the third options object requests a new window.",
+        "o4": "The second parameter must be a Boolean and the window option belongs in an object."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n04"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q13",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.09"
+      ],
+      "conceptId": "authenticated-chat-key-endpoint",
+      "prompt": "A custom portal passes a signed JWT through its configured JavaScript client function, but the authentication record Public key URL points at the portal login page. The widget already references this authentication record. Which correction targets signature validation?",
+      "answer": "Point Public key URL at an endpoint returning the portal public key.",
+      "explanation": "Token retrieval and signature verification are separate parts of authenticated chat. Repair the endpoint that supplies verification keys; the linked authentication record and client token function cannot turn a login page into a public key.",
+      "sourceIds": [
+        "exam-d2-digital-s09"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:authenticated-chat-key-endpoint",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Point Public key URL at an endpoint returning the portal public key."
+        },
+        {
+          "id": "o2",
+          "text": "Point Public key URL at the endpoint issuing the signed JWT."
+        },
+        {
+          "id": "o3",
+          "text": "Point Public key URL at the portal sign-in redirect destination."
+        },
+        {
+          "id": "o4",
+          "text": "Keep the login-page URL and replace the signed JWT with an email-only survey match."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "The server uses that endpoint to obtain the public key for validating the JWT signature.",
+        "o2": "Token issuance and public-key retrieval have different purposes; this field requires verification keys.",
+        "o3": "A sign-in destination does not provide the public key needed to validate the token.",
+        "o4": "A survey match does not authenticate the customer or repair signature validation."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n01"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q14",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.10"
+      ],
+      "conceptId": "native-mobile-sdk-ui-and-push",
+      "prompt": "A native mobile team chooses the Contact Center Messaging SDKs. It wants to brand the supplied messaging interface and enable supported push notifications. Which TWO implementation decisions match the mobile SDK guidance? Choose TWO.",
+      "answer": "Apply interface styling in the mobile application code. Use Azure Notification Hub for supported push notifications.",
+      "explanation": "The native SDK provides an interface and lifecycle support, but the application owns its visual styling. Its documented push capability uses Azure Notification Hub. Choose exactly two answers.",
+      "sourceIds": [
+        "exam-d2-digital-s10",
+        "exam-d2-digital-s11"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:native-mobile-sdk-ui-and-push",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o2",
+          "text": "Use the admin center widget color controls as the native UI styling mechanism."
+        },
+        {
+          "id": "o3",
+          "text": "Omit mobile notification infrastructure because native SDKs use only in-app polling."
+        },
+        {
+          "id": "o1",
+          "text": "Apply interface styling in the mobile application code."
+        },
+        {
+          "id": "o5",
+          "text": "Replace the native SDK with direct Messaging API calls from customer devices."
+        },
+        {
+          "id": "o4",
+          "text": "Use Azure Notification Hub for supported push notifications."
+        }
+      ],
+      "correctOptionIds": [
+        "o1",
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "The mobile SDK out-of-box interface is styled through application code.",
+        "o2": "The documentation explicitly distinguishes native styling from admin center widget styling.",
+        "o3": "Azure Notification Hub support is explicitly included in the SDK capabilities.",
+        "o4": "The documentation lists this push-notification integration.",
+        "o5": "The chosen native SDK integration supports these needs; service-to-service Messaging APIs are a different surface."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n10"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q15",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.11"
+      ],
+      "conceptId": "messaging-api-auth-header-failure",
+      "prompt": "A back-end custom-channel service sends HTTPS requests with channel-id and organization-id headers. It receives 401 Unauthorized because it omitted authentication. Which addition is required by the Messaging API contract?",
+      "answer": "Add Authorization: Bearer followed by a valid Microsoft Entra access token.",
+      "explanation": "Organization and channel identities identify the target but do not authenticate the request. The backend must also provide the valid Entra bearer token required for every API call.",
+      "sourceIds": [
+        "exam-d2-digital-s11"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:messaging-api-auth-header-failure",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Put the organization GUID in Authorization: Bearer."
+        },
+        {
+          "id": "o3",
+          "text": "Send the Entra application client ID as the bearer token."
+        },
+        {
+          "id": "o2",
+          "text": "Add Authorization: Bearer followed by a valid Microsoft Entra access token."
+        },
+        {
+          "id": "o4",
+          "text": "Use the custom channel GUID as the authorization credential."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "The organization GUID identifies the target organization and is not an access token.",
+        "o2": "This is the documented authentication header.",
+        "o3": "The application ID identifies an application, while the API requires a valid Entra access token.",
+        "o4": "The channel GUID belongs in channel-id and does not replace bearer authentication."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n10"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q16",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.12"
+      ],
+      "conceptId": "translation-target-language-setting",
+      "prompt": "A multilingual chat team already has a working translation web resource. Customer messages are being translated into English, but the representatives need to read them in French. The customer language should still be detected separately. Which configuration should the administrator change?",
+      "answer": "Set Default input language to French in Real Time Translation Settings.",
+      "explanation": "For this feature, Default input language governs the representative-facing translation language. The working translator and customer-language detection serve separate roles and need not be replaced.",
+      "sourceIds": [
+        "exam-d2-digital-s13"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:translation-target-language-setting",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Change the chat widget channel language but leave Real Time Translation Settings unchanged."
+        },
+        {
+          "id": "o4",
+          "text": "Set Default input language to French in Real Time Translation Settings."
+        },
+        {
+          "id": "o2",
+          "text": "Change the quick reply locale but leave Real Time Translation Settings unchanged."
+        },
+        {
+          "id": "o3",
+          "text": "Change only the detected customer language to French in the translator."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "The translation feature has a dedicated representative target-language setting.",
+        "o2": "Quick reply locale governs available reply language rather than incoming message translation.",
+        "o3": "The requirement concerns what representatives read, while customer-language detection must remain separate.",
+        "o4": "This is the documented representative target-language setting."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n07"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q17",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.13"
+      ],
+      "conceptId": "eligible-location-enable-and-consent",
+      "prompt": "An existing Bing Maps for Enterprise customer remains eligible for the documented visitor-location feature on 3 November 2026. Its valid geo location provider record already exists. A support widget still has location detection disabled, and a tester previously denied browser location sharing. Which TWO steps are needed for this documented flow? Choose TWO.",
+      "answer": "Enable Customer location detection on the widget and select the existing provider. Ask the tester to allow the browser location request.",
+      "explanation": "The eligible provider, widget configuration and browser permission are separate dependencies. An existing provider record does not enable every widget or override a visitor denial. Choose exactly two answers.",
+      "sourceIds": [
+        "exam-d2-digital-s14"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:eligible-location-enable-and-consent",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o2",
+          "text": "Enable Customer location detection on the widget and select the existing provider."
+        },
+        {
+          "id": "o1",
+          "text": "Create a second provider record but leave location detection disabled on the widget."
+        },
+        {
+          "id": "o4",
+          "text": "Convert the provider record to Azure Maps, which this feature uses automatically."
+        },
+        {
+          "id": "o3",
+          "text": "Ask the tester to allow the browser location request."
+        },
+        {
+          "id": "o5",
+          "text": "Use the customer address record to override denied browser geolocation permission."
+        }
+      ],
+      "correctOptionIds": [
+        "o2",
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "Another provider record does not enable this widget.",
+        "o2": "The provider must be associated with the enabled widget.",
+        "o3": "The browser must permit sharing for location to be detected.",
+        "o4": "The page explicitly excludes Azure Maps customers from this documented feature.",
+        "o5": "A stored address does not override browser permission for this visitor-location flow."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n08"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q18",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.01"
+      ],
+      "conceptId": "context-numeric-definition",
+      "prompt": "A chat implementation must define CartTotal as numeric conversation context before developers use it in business rules. The identifier has already been agreed with integrations. Which authoring action explicitly creates a numeric workstream context variable?",
+      "answer": "Add CartTotal under the workstream Advanced settings and select Number as Type.",
+      "explanation": "Define numeric context in the workstream context-variable collection. Naming a tag or presentation field the same way does not establish that typed context contract.",
+      "sourceIds": [
+        "exam-d2-digital-s15",
+        "exam-d2-digital-s06"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:context-numeric-definition",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Add CartTotal under the workstream Advanced settings and select Number as Type."
+        },
+        {
+          "id": "o2",
+          "text": "Add CartTotal under the workstream Advanced settings as Text and rely on the numeric-looking name to declare its type."
+        },
+        {
+          "id": "o3",
+          "text": "Add CartTotal as a Multiple lines survey question to declare numeric context."
+        },
+        {
+          "id": "o4",
+          "text": "Send CartTotal as custom SDK context without creating a workstream variable, and treat that alone as the explicit workstream Number-type declaration."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "The context-variable editor provides the Number type.",
+        "o2": "The name does not replace the selected variable Type.",
+        "o3": "Multiple lines declares a text answer control rather than the explicit Number context type.",
+        "o4": "Supplying custom context is not the requested explicit Number-type definition in the workstream context-variable editor."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n02"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q19",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.02"
+      ],
+      "conceptId": "identification-standard-active-status",
+      "prompt": "A unique contact email exactly matches the chat preconversation response, and the standard question mapping is correct. The contact uses a custom status code instead of the documented active status code. Which limitation should the engineer investigate before changing the email mapping?",
+      "answer": "Built-in record identification does not support custom status codes for contact or account searches.",
+      "explanation": "An exact field match is insufficient if the record falls outside the built-in search conditions. Check standard active-status applicability before altering correct mappings.",
+      "sourceIds": [
+        "exam-d2-digital-s16"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:identification-standard-active-status",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "The standard search requires a linked case before it can identify a contact."
+        },
+        {
+          "id": "o3",
+          "text": "Built-in record identification does not support custom status codes for contact or account searches."
+        },
+        {
+          "id": "o2",
+          "text": "The standard search accepts accounts but cannot identify contacts by email."
+        },
+        {
+          "id": "o4",
+          "text": "The standard search requires a business phone match even when a valid email match is supplied."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "Contact identification can lead to automatic linking of a sole active case; a prelinked case is not its prerequisite.",
+        "o2": "The source explicitly supports contact email identification.",
+        "o3": "The identification documentation explicitly calls out this status-code restriction.",
+        "o4": "Email is a documented lookup field; a mandatory account business-phone match is not the stated contact email lookup."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n01"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q20",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.03"
+      ],
+      "conceptId": "autoclose-scheduler-recalculation",
+      "prompt": "A monitoring test expects a wrap-up chat to close at an exact wall-clock instant based only on when it first entered wrap-up. A consult or transfer action later modifies the conversation. Which test expectation follows the automatic-closure guidance?",
+      "answer": "Use the updated conversation timing and allow a subsequent scheduler run after eligibility.",
+      "explanation": "Automatic closure is a scheduler-driven eligibility process. Tests must account for modifiedon, later actions, channel/state rules and the scheduler rather than assert an exact time based only on initial stage entry.",
+      "sourceIds": [
+        "exam-d2-digital-s17"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:autoclose-scheduler-recalculation",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "The original stage-entry timestamp guarantees closure even after later activity."
+        },
+        {
+          "id": "o3",
+          "text": "Change the conversation status reason directly in Dataverse to force an accurate test."
+        },
+        {
+          "id": "o2",
+          "text": "Use the updated conversation timing and allow a subsequent scheduler run after eligibility."
+        },
+        {
+          "id": "o4",
+          "text": "Treat every chat state as having the same automatic-closure threshold."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "Conversation actions cause the scheduler to recalculate closure timing.",
+        "o2": "The scheduler checks modifiedon and closes eligible items on its run.",
+        "o3": "Microsoft recommends avoiding manual state/status updates because they can cause inaccurate statuses.",
+        "o4": "Thresholds and transitions differ by channel and state."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n11"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q21",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.04"
+      ],
+      "conceptId": "consult-secondary-customer-join",
+      "prompt": "A primary representative consults a specialist during a chat. The specialist accepts, sees the exchanged messages, and wants to address the customer. Which TWO statements describe the documented transition from private consultation to customer participation? Choose TWO.",
+      "answer": "The accepted specialist initially has a read-only view of the primary/customer messages. The primary representative must select the people icon to add the specialist.",
+      "explanation": "Accepting a consult opens collaboration without automatically making the specialist a customer-chat participant. The primary representative explicitly adds them after consultation. Choose exactly two answers.",
+      "sourceIds": [
+        "exam-d2-digital-s18"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:consult-secondary-customer-join",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Acceptance transfers ownership and removes the primary representative immediately."
+        },
+        {
+          "id": "o3",
+          "text": "The accepted specialist initially has a read-only view of the primary/customer messages."
+        },
+        {
+          "id": "o2",
+          "text": "The specialist is automatically a customer-chat participant immediately after accepting."
+        },
+        {
+          "id": "o4",
+          "text": "The specialist must end the private consult before the primary can add them to the customer chat."
+        },
+        {
+          "id": "o5",
+          "text": "The primary representative must select the people icon to add the specialist."
+        }
+      ],
+      "correctOptionIds": [
+        "o3",
+        "o5"
+      ],
+      "optionExplanations": {
+        "o1": "A consult is not an ownership transfer.",
+        "o2": "Acceptance opens the consult experience; an additional primary-controlled join action is required.",
+        "o3": "This is the documented initial customer-message visibility.",
+        "o4": "The documented add-to-chat action occurs within the accepted consult flow, not after ending it.",
+        "o5": "The primary controls this explicit customer-conversation join step."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n11"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q22",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.05"
+      ],
+      "conceptId": "automated-masking-irrecoverable-original",
+      "prompt": "A digital channel automatically masks matching account identifiers before ingestion. An auditor proposes turning on Encrypt masked messages so that the original values from those automatically masked messages can later be exported. What is the correct design assessment?",
+      "answer": "Encryption applies to manual masking; it cannot recover originals that automated masking did not store.",
+      "explanation": "Do not promise audit recovery of automatically masked originals. If encrypted audit retention is required, assess the documented manual-masking design separately and validate that it meets organizational requirements.",
+      "sourceIds": [
+        "exam-d2-digital-s19"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:automated-masking-irrecoverable-original",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "This works for automated masking if the administrator configures an RSA public key."
+        },
+        {
+          "id": "o2",
+          "text": "This works for automated masking once the conversation is closed."
+        },
+        {
+          "id": "o3",
+          "text": "This works for automated masking if the original is requested through transcript export."
+        },
+        {
+          "id": "o4",
+          "text": "Encryption applies to manual masking; it cannot recover originals that automated masking did not store."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "RSA encryption configuration supports manual masking; it does not retain automatically masked originals.",
+        "o2": "Closing a conversation does not reconstruct originals that were not stored.",
+        "o3": "An export cannot retrieve automatically masked originals that were never ingested.",
+        "o4": "The documentation distinguishes automatic masking from optional encrypted retention for manual masking."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n12"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q23",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.06"
+      ],
+      "conceptId": "inactive-presence-system-transition",
+      "prompt": "A supervisor asks representatives to select the built-in Inactive status before training, but the status is absent from their manual selector. Missed-notification handling is enabled in this deployment. Which explanation matches the documented presence model?",
+      "answer": "Inactive is system-set after unanswered notifications and is not manually selectable.",
+      "explanation": "Use an appropriately mapped custom presence if training needs a selectable availability label. Built-in Inactive belongs to the missed-notification behavior.",
+      "sourceIds": [
+        "exam-d2-digital-s20"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:inactive-presence-system-transition",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o2",
+          "text": "Inactive becomes manually selectable after the representative misses one notification."
+        },
+        {
+          "id": "o1",
+          "text": "Inactive is system-set after unanswered notifications and is not manually selectable."
+        },
+        {
+          "id": "o3",
+          "text": "Inactive is a standard selectable alternative to Away for planned training."
+        },
+        {
+          "id": "o4",
+          "text": "Inactive becomes manually selectable once it is assigned as a user default presence."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "This is the documented built-in behavior.",
+        "o2": "A missed notification can cause the system transition, but does not make the status manually selectable.",
+        "o3": "The page explicitly says representatives cannot manually select Inactive.",
+        "o4": "Default sign-in presence does not override the documented unavailability of Inactive for manual selection."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n11"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q24",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.07"
+      ],
+      "conceptId": "automated-overflow-message-fallback",
+      "prompt": "An administrator deactivates the automated message configured for a queue overflow condition, expecting the overflow action to become silent. The overflow action itself remains configured. What does the automated-message guide say happens?",
+      "answer": "The default automated message plays for the overflow action.",
+      "explanation": "Deactivating a configured overflow-condition message does not make that action silent. The guide explicitly says the default automated message plays for the overflow action. Validate the resulting customer experience rather than assume deactivation suppresses all overflow audio or text.",
+      "sourceIds": [
+        "exam-d2-digital-s21"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:automated-overflow-message-fallback",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o3",
+          "text": "The default automated message plays for the overflow action."
+        },
+        {
+          "id": "o1",
+          "text": "The overflow action is disabled together with its message."
+        },
+        {
+          "id": "o2",
+          "text": "The customer always receives no message because deactivation suppresses the overflow action default."
+        },
+        {
+          "id": "o4",
+          "text": "The deactivated custom overflow text still plays because deactivation does not affect runtime messages."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "The guide describes a default-message fallback, not deactivation of the overflow action.",
+        "o2": "The source explicitly says the default automated message plays when an overflow-condition message is deactivated.",
+        "o3": "This is the documented overflow-message fallback behavior.",
+        "o4": "The guide specifies the default message fallback, rather than continued use of the deactivated custom text."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n13"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q25",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.08"
+      ],
+      "conceptId": "enhanced-form-default-tab-performance",
+      "prompt": "A team enables Customize active conversation form and adds several rarely used data-driven controls to its default tab. Representative load times worsen. Which revision aligns with the specific form guidance?",
+      "answer": "Keep frequent controls on the default tab and move the others to secondary tabs.",
+      "explanation": "The default tab should prioritize frequent tasks. Distributing other data-driven controls to secondary tabs and limiting load-time customization addresses the documented performance concern.",
+      "sourceIds": [
+        "exam-d2-digital-s22"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:enhanced-form-default-tab-performance",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Move rarely used controls into form Onload logic so all of them initialize before the default tab is usable."
+        },
+        {
+          "id": "o3",
+          "text": "Add every external-data Canvas app to the default tab to consolidate requests there."
+        },
+        {
+          "id": "o2",
+          "text": "Keep frequent controls on the default tab and move the others to secondary tabs."
+        },
+        {
+          "id": "o4",
+          "text": "Retain all default-tab controls and rely only on hiding the form selector."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "The guidance recommends limiting Onload customizations, not using them to eagerly initialize all optional controls.",
+        "o2": "This is the documented strategy for reducing default-tab work.",
+        "o3": "The guidance says to limit external Canvas app data and distribute infrequently used controls.",
+        "o4": "Hiding navigation does not address the stated default-tab custom-control load."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n13"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q26",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.09"
+      ],
+      "conceptId": "timeline-runtime-validation-publication",
+      "prompt": "A maker configures the timeline on a contact form and sees no activity history inside the form designer. Related activities exist on a test contact. Which TWO actions or interpretations support a valid acceptance check? Choose TWO.",
+      "answer": "Save and publish the configuration, then refresh the runtime form. Use a test contact with related activity data to inspect the runtime timeline.",
+      "explanation": "The form designer is a configuration surface, not a live customer history viewer. Publish the changes and inspect a related-data-bearing runtime record. Choose exactly two answers.",
+      "sourceIds": [
+        "exam-d2-digital-s23"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:timeline-runtime-validation-publication",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o3",
+          "text": "Save and publish the configuration, then refresh the runtime form."
+        },
+        {
+          "id": "o1",
+          "text": "Treat the blank design-time area as evidence that the runtime timeline cannot use existing related activities."
+        },
+        {
+          "id": "o2",
+          "text": "Change every activity relationship before testing because a blank designer proves the relationships are invalid."
+        },
+        {
+          "id": "o5",
+          "text": "Validate only in the designer, because it displays the same underlying record data as a runtime contact."
+        },
+        {
+          "id": "o4",
+          "text": "Use a test contact with related activity data to inspect the runtime timeline."
+        }
+      ],
+      "correctOptionIds": [
+        "o3",
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "The designer has no underlying related record data, so the blank area does not prove a runtime failure.",
+        "o2": "Blank design-time output is expected and does not by itself establish a relationship defect.",
+        "o3": "Publication and runtime refresh are needed to see updates.",
+        "o4": "A related-data-bearing runtime record supplies the history to inspect.",
+        "o5": "The form designer does not have the underlying record data used by the runtime timeline."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n14"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q27",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.10"
+      ],
+      "conceptId": "timeline-connector-timezone-context",
+      "prompt": "A timeline custom connector renders external interactions several hours apart from built-in activities for the same event. The integration must use the same user timezone basis as the timeline. Which source should the developer use?",
+      "answer": "UserSettings Timezone from the context passed to init().",
+      "explanation": "Timeline custom connectors must follow the user timezone information supplied through initialization context. Applying a host timezone or fixed offset can make external records inconsistent with built-in entries.",
+      "sourceIds": [
+        "exam-d2-digital-s24"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:timeline-connector-timezone-context",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o4",
+          "text": "UserSettings Timezone from the context passed to init()."
+        },
+        {
+          "id": "o1",
+          "text": "The timezone configured on the external service host."
+        },
+        {
+          "id": "o2",
+          "text": "The operating-system timezone from the browser rather than initialization context."
+        },
+        {
+          "id": "o3",
+          "text": "A fixed UTC offset stored in the connector resource."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "The host timezone can differ from the app user timezone.",
+        "o2": "The contract explicitly supplies the user timezone through init context rather than requiring an independent browser assumption.",
+        "o3": "A fixed offset does not use the documented user timezone context.",
+        "o4": "This is the documented source for consistency with timeline rendering."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n14"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q28",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.11"
+      ],
+      "conceptId": "cif2-panel-mode-contract",
+      "prompt": "A provider is adapting its single-session telephony panel controls for an existing CIF 2.0 integration in Copilot Service workspace. Which panel-mode set should its design follow for that version?",
+      "answer": "Docked, Minimized, and Hidden.",
+      "explanation": "CIF 2.0 has its own documented panel modes. A provider migrating its controls must adapt to that contract rather than carry over the 1.0 Expanded-mode design unchanged.",
+      "sourceIds": [
+        "exam-d2-digital-s25"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:cif2-panel-mode-contract",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Expanded and Minimized."
+        },
+        {
+          "id": "o3",
+          "text": "Expanded, Minimized, and Hidden."
+        },
+        {
+          "id": "o4",
+          "text": "Expanded and Hidden."
+        },
+        {
+          "id": "o2",
+          "text": "Docked, Minimized, and Hidden."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "This is the listed CIF 1.0 set.",
+        "o2": "This is the listed CIF 2.0 set.",
+        "o3": "CIF 2.0 lists Docked rather than Expanded.",
+        "o4": "CIF 2.0 lists Docked and Minimized as well as Hidden; Expanded belongs to the 1.0 set."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n14"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q29",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.12"
+      ],
+      "conceptId": "transfer-empty-queue-result",
+      "prompt": "A representative transfers an active digital conversation to an operational queue. The destination queue has no representatives. A test designer expects the conversation to wait there for a later assignment. Which documented result should the test instead check?",
+      "answer": "The application sets the conversation status to Closed.",
+      "explanation": "Queue transfers do not guarantee indefinite waiting. Validate destination staffing before transfer workflows, because the documented empty-destination condition closes the conversation.",
+      "sourceIds": [
+        "exam-d2-digital-s18"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:transfer-empty-queue-result",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o2",
+          "text": "The original representative remains a participant until the next shift."
+        },
+        {
+          "id": "o1",
+          "text": "The application sets the conversation status to Closed."
+        },
+        {
+          "id": "o3",
+          "text": "The transfer automatically becomes a private consult with the original representative."
+        },
+        {
+          "id": "o4",
+          "text": "The conversation always returns to the workstream fallback queue."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "The transfer guidance explicitly identifies this no-representatives result.",
+        "o2": "After a completed transfer, the initiating representative cannot participate; the empty-queue rule closes the conversation.",
+        "o3": "Queue transfer and consult are separate actions.",
+        "o4": "The documented result for this transfer condition is Closed, not an initial-routing fallback."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n11"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q30",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.13"
+      ],
+      "conceptId": "survey-dataverse-publish-dependencies",
+      "prompt": "A survey created in Customer feedback remains In Progress. Its MCS Survey Dataverse connection reference has no connection selected, and its survey agent has never been published. Which TWO actions address these documented prerequisites? Choose TWO.",
+      "answer": "Assign a Microsoft Dataverse connection to the Microsoft Dataverse connection reference for MCS Survey. Publish the survey agent in Copilot Studio after completing its configuration.",
+      "explanation": "Complete the connection reference and publish the agent. Survey creation alone leaves configuration work outstanding; naming changes do not satisfy these dependencies. Choose exactly two answers.",
+      "sourceIds": [
+        "exam-d2-digital-s26"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:survey-dataverse-publish-dependencies",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Save the survey in Customer feedback and treat its automatically created agent as already published."
+        },
+        {
+          "id": "o2",
+          "text": "Assign a Microsoft Dataverse connection to the Microsoft Dataverse connection reference for MCS Survey."
+        },
+        {
+          "id": "o3",
+          "text": "Select a Customer Voice survey in the same Customer feedback administration list."
+        },
+        {
+          "id": "o5",
+          "text": "Publish the survey agent in Copilot Studio after completing its configuration."
+        },
+        {
+          "id": "o4",
+          "text": "Select Demo link as a substitute for publishing the configured survey agent."
+        }
+      ],
+      "correctOptionIds": [
+        "o2",
+        "o5"
+      ],
+      "optionExplanations": {
+        "o1": "Saving creates the agent with In Progress status; it does not replace connection binding and publication.",
+        "o2": "This is the documented connection-reference setup.",
+        "o3": "This administration list does not manage surveys created through Customer Voice.",
+        "o4": "Demo link previews runtime appearance; it does not publish the agent.",
+        "o5": "Publishing is the documented step leading to Ready status after processing."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n15"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q31",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.14"
+      ],
+      "conceptId": "attachment-txt-transcript-dependency",
+      "prompt": "An administrator adds txt to the organization blocked-file-extension list while hardening messaging attachments. Closed-conversation transcripts then become unavailable. Which documented dependency should be checked first?",
+      "answer": "Remove the .txt block because closed-conversation transcripts require it to remain allowed.",
+      "explanation": "Attachment hardening can affect other features that use the same file-extension policy. Retain .txt support as directed by the transcript dependency rather than treating every extension as an isolated upload restriction.",
+      "sourceIds": [
+        "exam-d2-digital-s27"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:attachment-txt-transcript-dependency",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Keep .txt blocked and increase the organization attachment size limit."
+        },
+        {
+          "id": "o2",
+          "text": "Keep .txt blocked and enable customer attachments on every channel."
+        },
+        {
+          "id": "o3",
+          "text": "Remove the .txt block because closed-conversation transcripts require it to remain allowed."
+        },
+        {
+          "id": "o4",
+          "text": "Keep .txt blocked and enable representative attachments on every channel."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "The warning concerns the blocked extension, not insufficient attachment size.",
+        "o2": "Channel attachment enablement does not remove the organization extension block.",
+        "o3": "The attachment guide explicitly warns that blocking .txt makes closed transcripts unavailable.",
+        "o4": "Representative attachment permission does not remove the organization extension block."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n12"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q32",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.01",
+        "D2.1.03"
+      ],
+      "conceptId": "workstream-distribution-mode-immutable",
+      "prompt": "An SMS workstream was created in Pick mode. The rollout plan now requires automatic message alerts through Push mode. The plan assumes the existing workstream mode can simply be edited. Which constraint must the engineer account for?",
+      "answer": "Work distribution mode cannot be edited after workstream creation.",
+      "explanation": "Push and Pick are creation-time choices. Revisit the workstream configuration design rather than planning an unsupported in-place mode edit or provider-side workaround.",
+      "sourceIds": [
+        "exam-d2-digital-s29"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:workstream-distribution-mode-immutable",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "SMS permits only Pick, so a new SMS workstream cannot offer automatic distribution."
+        },
+        {
+          "id": "o4",
+          "text": "Work distribution mode cannot be edited after workstream creation."
+        },
+        {
+          "id": "o2",
+          "text": "An existing mode can be edited after all open work items have been removed."
+        },
+        {
+          "id": "o3",
+          "text": "The mode changes automatically when an administrator switches the assignment method."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "The guidance offers Push or Pick for messaging; the Push-only restriction belongs to voice.",
+        "o2": "The documented creation-time restriction does not provide an empty-workstream exception.",
+        "o3": "Assignment methods and the creation-time distribution mode are different configuration decisions.",
+        "o4": "The guidance explicitly states this restriction."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n03"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q33",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.01",
+        "D2.1.09"
+      ],
+      "conceptId": "persistent-returning-autoassign-affinity",
+      "prompt": "An authenticated persistent chat workstream already has Keep same agent for entire conversation enabled. A customer returns while the original representative is offline. The business specifically requires retaining assignment to that representative even if the chat waits. Which documented configuration addresses that requirement?",
+      "answer": "Use a returning-conversation template based on Chat - incoming authenticated - default with Auto-assign work items set to Yes.",
+      "explanation": "The same-representative toggle alone does not guarantee the requested offline assignment. Use the documented returning notification template and consciously accept the warning that the chat might remain assigned during extended absence.",
+      "sourceIds": [
+        "exam-d2-digital-s30"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:persistent-returning-autoassign-affinity",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Use a returning-conversation template based on Chat - incoming authenticated - default with Auto-assign work items set to Yes."
+        },
+        {
+          "id": "o2",
+          "text": "Rely on Keep same agent alone, which guarantees assignment to an offline representative."
+        },
+        {
+          "id": "o3",
+          "text": "Apply the auto-assign template only to new incoming conversations, leaving Returning Conversation unchanged."
+        },
+        {
+          "id": "o4",
+          "text": "Disable Keep same agent so returning chats remain assigned to the original representative automatically."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "The documented Returning Conversation template procedure implements this requirement, with an extended-offline caution.",
+        "o2": "The page states that an unavailable representative can lead to reassignment with that toggle alone.",
+        "o3": "The documented template must be selected for Returning Conversation in the persistent workstream.",
+        "o4": "The documented affinity setup requires Keep same agent enabled plus the returning-template configuration."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n03"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q34",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.05"
+      ],
+      "conceptId": "manual-mask-language-and-permission",
+      "prompt": "Manual masking is enabled globally. A new representative persona needs to mask customer messages, and a new workstream language has no replacement message configured. Which TWO additional setup actions meet the documented requirements? Choose TWO.",
+      "answer": "Map the Masking Customer Messages security role to the appropriate persona. Configure masked-message text for the workstream language.",
+      "explanation": "Global enablement is only one prerequisite. Manual masking also needs the relevant message-side permission and replacement text for the workstream language. Choose exactly two answers.",
+      "sourceIds": [
+        "exam-d2-digital-s19"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:manual-mask-language-and-permission",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o3",
+          "text": "Map the Masking Customer Messages security role to the appropriate persona."
+        },
+        {
+          "id": "o1",
+          "text": "Assign only permission to edit automated regex rules to the representative."
+        },
+        {
+          "id": "o4",
+          "text": "Configure masked-message text for the workstream language."
+        },
+        {
+          "id": "o2",
+          "text": "Configure a generic replacement message for another language instead of this workstream language."
+        },
+        {
+          "id": "o5",
+          "text": "Assign only Masking Agent Messages when the representative must mask customer-sent content."
+        }
+      ],
+      "correctOptionIds": [
+        "o3",
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "Automated rule administration does not provide the manual customer-message masking role.",
+        "o2": "The documented requirement is replacement text for every workstream language in use.",
+        "o3": "This role permits masking messages sent by the customer.",
+        "o4": "Missing language-specific text causes manual masking errors.",
+        "o5": "That role permits masking representative-sent messages rather than the required customer-sent messages."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n12"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d2-q35",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.13"
+      ],
+      "conceptId": "selfservice-per-action-records",
+      "prompt": "A standalone Contact Center implementation already passes self-service history and displays it to representatives. A developer must inspect the stored action-by-action context associated with closed conversations rather than infer it from chat messages. Which documented data structure is the starting point?",
+      "answer": "Self service (msdyn_visitorjourney) rows for each self-service action and action type.",
+      "explanation": "Self-service context has dedicated stored action records. Use the documented visitor-journey structure for this investigation rather than reverse-engineering actions from unrelated channel configuration.",
+      "sourceIds": [
+        "exam-d2-digital-s28"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:selfservice-per-action-records",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "A single field on the Conversation row that retains only the final self-service action summary."
+        },
+        {
+          "id": "o3",
+          "text": "One transcript message per action, stored only as ordinary representative/customer chat text."
+        },
+        {
+          "id": "o4",
+          "text": "Only the current workstream context-variable definition, with no conversation-linked per-action records."
+        },
+        {
+          "id": "o2",
+          "text": "Self service (msdyn_visitorjourney) rows for each self-service action and action type."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "The documented feature stores a record per self-service action and action type rather than only a final-action summary.",
+        "o2": "This is the documented visitor-journey per-action data structure.",
+        "o3": "The feature identifies a dedicated self-service table; ordinary chat transcript text is not the documented per-action storage model.",
+        "o4": "A context definition declares a variable, while the source describes stored action records for the closed conversation."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n08"
+        }
+      ],
+      "status": "draft"
+    }
+  ],
+  "editorial": [
+    {
+      "id": "ab250-d2-q05",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "widget-active-version-release",
+      "objectiveIds": [
+        "D2.1.01",
+        "D2.1.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-digital-s01",
+          "section": "Manage modern and classic versions of the widget",
+          "claim": "Setting the active version changes the version loaded by the general script; version-specific testing scripts remain pinned.",
+          "applicability": "Existing classic channel with both widget versions; no routing reconfiguration required."
+        }
+      ],
+      "duplicateCheck": "Pilot q03 tests portal snippet storage. Study c08 tests selecting a pinned script; this item tests simultaneous production and diagnostic outcomes during activation."
+    },
+    {
+      "id": "ab250-d2-q06",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "record-queue-capability-irreversibility",
+      "objectiveIds": [
+        "D2.1.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-digital-s02",
+          "section": "Enable a table for queues",
+          "claim": "Can be added to a queue cannot be disabled after it is enabled.",
+          "applicability": "Dataverse table queue capability; does not assert that routing rules are irreversible."
+        }
+      ],
+      "duplicateCheck": "Study c25 asks which capability is needed and c27 addresses owner default queues. This tests the separate rollback constraint."
+    },
+    {
+      "id": "ab250-d2-q07",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "twilio-number-and-optout-boundaries",
+      "objectiveIds": [
+        "D2.1.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-digital-s03",
+          "section": "Get Twilio account details; Configure the SMS number",
+          "claim": "The phone field uses country code plus number without special characters; third-party provider consent must be configured with that provider.",
+          "applicability": "Existing eligible US Twilio support number and provisioned SMS channel. No telephony acquisition or legal conclusion."
+        }
+      ],
+      "duplicateCheck": "Study c16/c17/c22 test callback delivery and credential validation. This tests number-field format and provider consent boundaries instead."
+    },
+    {
+      "id": "ab250-d2-q08",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "chat-domain-display-restriction",
+      "objectiveIds": [
+        "D2.1.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-digital-s01",
+          "section": "Set up the modern widget: Chat Widget",
+          "claim": "Only show widget on the provided domains restricts the widget to supplied domains.",
+          "applicability": "Modern widget already embedded correctly; domain display requirement, not authentication."
+        }
+      ],
+      "duplicateCheck": "Pilot q03 tests Portal Management placement, study c04 website body placement, c09 shared routing. This tests a distinct display-policy setting."
+    },
+    {
+      "id": "ab250-d2-q09",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "proactive-invitation-expiry",
+      "objectiveIds": [
+        "D2.1.05"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-digital-s05",
+          "section": "Customer experience of proactive chat",
+          "claim": "An unaccepted invitation closes after one minute and that timer cannot be configured.",
+          "applicability": "Standalone Contact Center proactive invitation, not conversation timeout."
+        }
+      ],
+      "duplicateCheck": "Study c10 tests acceptance notification. This tests the documented invitation timeout constraint, without converting it into a conversation inactivity rule."
+    },
+    {
+      "id": "ab250-d2-q10",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "survey-optional-validation",
+      "objectiveIds": [
+        "D2.1.06"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-digital-s06",
+          "section": "Configure a preconversation survey: Note",
+          "claim": "Preconversation survey validation is supported for mandatory fields only.",
+          "applicability": "Built-in preconversation survey validation, not custom website validators."
+        }
+      ],
+      "duplicateCheck": "Pilot q04 tests mandatory consent. Study c03 tests context creation. This tests optional-field validation applicability."
+    },
+    {
+      "id": "ab250-d2-q11",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "quick-reply-context-and-audience",
+      "objectiveIds": [
+        "D2.1.07"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-digital-s07",
+          "section": "Create quick replies; Associate quick replies with a workstream",
+          "claim": "Custom context uses {OCContext.contextKey}; mapping the quick reply to a workstream limits its audience.",
+          "applicability": "Administrator quick reply with an existing OrderID context key, independent of language localization."
+        },
+        {
+          "sourceId": "exam-d2-digital-s21",
+          "section": "Use placeholders in messages",
+          "claim": "Digital automated messages use {$VariableName$}, unlike quick reply {OCContext.contextKey}.",
+          "applicability": "Only used to distinguish adjacent placeholder contracts, not voice messages."
+        }
+      ],
+      "duplicateCheck": "Study c13 tests unscoped availability and c14 localization. The combined requirement tests actual quick-reply context syntax and scoped publication; q24 will use automated-message syntax for a different feature."
+    },
+    {
+      "id": "ab250-d2-q12",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "sdk-proactive-window-parameters",
+      "objectiveIds": [
+        "D2.1.08"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-digital-s08",
+          "section": "Syntax; Parameters",
+          "claim": "showPrechat is the second Boolean parameter and inNewWindow belongs in the third options object.",
+          "applicability": "Ready live-chat SDK with a configured prechat survey; does not retest readiness sequencing."
+        }
+      ],
+      "duplicateCheck": "Pilot q01 tests initialization. Study c11/c12 test the survey argument and notification text separately. This tests the full window-and-survey invocation, not lifecycle ordering."
+    },
+    {
+      "id": "ab250-d2-q13",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "authenticated-chat-key-endpoint",
+      "objectiveIds": [
+        "D2.1.09"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-digital-s09",
+          "section": "Create an authentication setting record; Add authentication to chat widget",
+          "claim": "The client function retrieves/passes the JWT; the public-key endpoint validates its signature.",
+          "applicability": "Custom signed-in portal with authentication record already linked to widget."
+        }
+      ],
+      "duplicateCheck": "Pilot has no token-key scenario. Study c01 contrasts identification with authentication; this tests the concrete signature-verification endpoint."
+    },
+    {
+      "id": "ab250-d2-q14",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "native-mobile-sdk-ui-and-push",
+      "objectiveIds": [
+        "D2.1.10"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-digital-s10",
+          "section": "Integrate with the Dynamics 365 Contact Center mobile SDKs",
+          "claim": "Native SDKs offer Azure Notification Hub push support; their out-of-box UI is styled in app code rather than admin center.",
+          "applicability": "Native iOS/Android Messaging SDK integration; no claim about web-widget feature parity."
+        },
+        {
+          "sourceId": "exam-d2-digital-s11",
+          "section": "Overview: Note",
+          "claim": "Messaging APIs are backend service integrations, not recommended as direct client-device calls.",
+          "applicability": "Native SDK client integration alternative."
+        }
+      ],
+      "duplicateCheck": "Study c28 asks which integration Microsoft recommends. This tests two implementation consequences after that choice, not integration selection."
+    },
+    {
+      "id": "ab250-d2-q15",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "messaging-api-auth-header-failure",
+      "objectiveIds": [
+        "D2.1.11"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-digital-s11",
+          "section": "Authentication headers",
+          "claim": "API requests require an Entra access token in Authorization plus channel-id and organization-id; omitted authentication causes 401.",
+          "applicability": "Backend custom messaging service; does not prescribe unverified SDK operations."
+        }
+      ],
+      "duplicateCheck": "Study c29 tests registration identities. This tests the request-time authentication contract and a concrete failure response."
+    },
+    {
+      "id": "ab250-d2-q16",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "translation-target-language-setting",
+      "objectiveIds": [
+        "D2.1.12"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-digital-s13",
+          "section": "Enable real-time translation for representative and customer conversations",
+          "claim": "Default input language is the language into which customer messages are translated for representatives.",
+          "applicability": "Working translation web resource and provider for text conversations; not voice transcript setup."
+        }
+      ],
+      "duplicateCheck": "Study c18/c19/c23 test web-resource prerequisites, global endpoint and history detection. This tests the representative translation target."
+    },
+    {
+      "id": "ab250-d2-q17",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "eligible-location-enable-and-consent",
+      "objectiveIds": [
+        "D2.1.13"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-digital-s14",
+          "section": "Set up visitor location detection; Enable visitor location detection",
+          "claim": "Existing Bing Maps for Enterprise customers remain eligible until June 30 2028; select the provider on the widget and obtain browser location permission.",
+          "applicability": "Existing eligible Bing Maps for Enterprise customer on 2026-11-03; not new customers or Azure Maps."
+        }
+      ],
+      "duplicateCheck": "Study c20 asks only whether browser denial can be overridden. This tests provider-to-widget association plus permission within the explicitly dated existing-customer eligibility boundary."
+    },
+    {
+      "id": "ab250-d2-q18",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "context-numeric-definition",
+      "objectiveIds": [
+        "D2.3.01"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-digital-s15",
+          "section": "Add context variables",
+          "claim": "Context variables are created on the workstream with a Name and Type of Text or Number.",
+          "applicability": "Custom workstream context definition for a numeric amount; no claim about implicit coercion."
+        },
+        {
+          "sourceId": "exam-d2-digital-s06",
+          "section": "Survey answer types",
+          "claim": "Multiple lines is a text answer control; adding a survey question creates corresponding context.",
+          "applicability": "Does not establish explicit Number variable creation."
+        }
+      ],
+      "duplicateCheck": "Study c02/c06 test exact names and dependency checks; pilot q01 tests SDK order. This tests numeric context declaration. Distractors use adjacent named configuration objects rather than an invented API."
+    },
+    {
+      "id": "ab250-d2-q19",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "identification-standard-active-status",
+      "objectiveIds": [
+        "D2.3.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-digital-s16",
+          "section": "Identify customers automatically: Note",
+          "claim": "Record identification searches the active status code for contacts/accounts; custom status codes do not work for this identification.",
+          "applicability": "Standard built-in contact/account identification, exact unique email already verified; not custom search code."
+        }
+      ],
+      "duplicateCheck": "Pilot q02 tests contact phone mapping; study c05 tests ambiguity. This isolates the separate standard-status-code requirement."
+    },
+    {
+      "id": "ab250-d2-q20",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "autoclose-scheduler-recalculation",
+      "objectiveIds": [
+        "D2.3.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-digital-s17",
+          "section": "Close conversations automatically: Important; Default time",
+          "claim": "Scheduler uses modifiedon and recalculates closure time after actions such as consult or transfer; threshold means eligible at a subsequent run.",
+          "applicability": "Ordinary chat in Wrap-up with documented default, not Active or persistent chat."
+        }
+      ],
+      "duplicateCheck": "Study c31 asks whether Active chat auto-closes. This tests scheduler recalculation and acceptance-test timing for Wrap-up."
+    },
+    {
+      "id": "ab250-d2-q21",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "consult-secondary-customer-join",
+      "objectiveIds": [
+        "D2.3.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-digital-s18",
+          "section": "Consult with representative or supervisor: Common consult events",
+          "claim": "Accepted consultees have read-only view of primary/customer messages; primary must explicitly add secondary to customer conversation.",
+          "applicability": "Default representative-to-representative chat consult; no assertion about capacity because optional blocking changes it."
+        }
+      ],
+      "duplicateCheck": "Study c33 tests consult versus transfer selection. This tests the separate accepted-consultee permissions and customer-join transition."
+    },
+    {
+      "id": "ab250-d2-q22",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "automated-masking-irrecoverable-original",
+      "objectiveIds": [
+        "D2.3.05"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-digital-s19",
+          "section": "Automated data masking; Encrypt manually masked messages: Note",
+          "claim": "Automatically masked data is masked before ingestion and not stored; encryption is only available for manually masked messages.",
+          "applicability": "Future automated masking of matching digital messages; not a claim about previously stored data."
+        }
+      ],
+      "duplicateCheck": "Study c34/c36 test active regex and async UI behavior. This tests the distinct pre-ingestion retention boundary and excludes historical backfill."
+    },
+    {
+      "id": "ab250-d2-q23",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "inactive-presence-system-transition",
+      "objectiveIds": [
+        "D2.3.06"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-digital-s20",
+          "section": "Out-of-the-box presence statuses",
+          "claim": "Inactive is not manually selectable; it is set when missed notifications are enabled and incoming requests go unanswered.",
+          "applicability": "Built-in Inactive status and missed-notification feature; not a custom Away label."
+        }
+      ],
+      "duplicateCheck": "Study c32 tests custom base-status meaning. This tests the built-in system-only Inactive lifecycle."
+    },
+    {
+      "id": "ab250-d2-q24",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "automated-overflow-message-fallback",
+      "objectiveIds": [
+        "D2.3.07"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-digital-s21",
+          "section": "How channel-level and channel instance-level messages work together; Customize automated messages: Important",
+          "claim": "When an overflow-condition message is deactivated, the default automated message plays for the overflow action.",
+          "applicability": "An existing overflow action with a deactivated configured automated message; no claim deactivation disables queue overflow."
+        }
+      ],
+      "duplicateCheck": "Independent reviewer flagged former placeholder inversion with q11. Replaced it with overflow default-message fallback. Study c37 tests instance precedence and c39 transcript visibility, not this deactivation condition.",
+      "revisedBy": "/root/exam_channels",
+      "revisionReason": "Independent digital reviewer requested a substantively different automated-message decision from q11."
+    },
+    {
+      "id": "ab250-d2-q25",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "enhanced-form-default-tab-performance",
+      "objectiveIds": [
+        "D2.3.08"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-digital-s22",
+          "section": "Manage Active Conversation form settings",
+          "claim": "Reduce custom controls on default tab, move remaining data-driven controls to secondary tabs and limit Onload customizations.",
+          "applicability": "Customize active conversation form enabled; performance guidance rather than guaranteed timing."
+        }
+      ],
+      "duplicateCheck": "Study c38 asks how to restore the form selector. This tests performance after enabling customization."
+    },
+    {
+      "id": "ab250-d2-q26",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "timeline-runtime-validation-publication",
+      "objectiveIds": [
+        "D2.3.09"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-digital-s23",
+          "section": "Add the timeline component to a form; Advanced",
+          "claim": "Designer is blank because it has no underlying related data; changes require save, publish and runtime refresh.",
+          "applicability": "Model-driven table form timeline, records already have related activities; not an external connector."
+        }
+      ],
+      "duplicateCheck": "Study c88 tests creating a custom activity table. This tests designer/runtime separation and timeline release validation."
+    },
+    {
+      "id": "ab250-d2-q27",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "timeline-connector-timezone-context",
+      "objectiveIds": [
+        "D2.3.10"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-digital-s24",
+          "section": "Filter support",
+          "claim": "Timeline custom connectors must use UserSettings Timezone from the context passed to init().",
+          "applicability": "Custom IRecordSource in a supported model-driven table form; no unsupported external authentication design."
+        }
+      ],
+      "duplicateCheck": "Study c40/c42 test packaging and secure retrieval. This tests rendering consistency in the IRecordSource lifecycle."
+    },
+    {
+      "id": "ab250-d2-q28",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "cif2-panel-mode-contract",
+      "objectiveIds": [
+        "D2.3.11"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-digital-s25",
+          "section": "Versions 1.0 and 2.0: Communication panel modes",
+          "claim": "CIF 2.0 panel modes are Docked, Minimized, Hidden; 1.0 lists Minimized and Expanded.",
+          "applicability": "Existing third-party telephony integration in multisession Copilot Service workspace using CIF 2.0."
+        }
+      ],
+      "duplicateCheck": "Study c41 asks which version supports multisession telephony. This assumes that version choice and tests the panel contract used during adaptation."
+    },
+    {
+      "id": "ab250-d2-q29",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "transfer-empty-queue-result",
+      "objectiveIds": [
+        "D2.3.12"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-digital-s18",
+          "section": "Transfer conversations",
+          "claim": "Queue transfer invokes assignment; if the destination queue has no representatives, the application closes the conversation.",
+          "applicability": "Digital conversation queue transfer, not initial route-to-queue fallback or queue consult."
+        }
+      ],
+      "duplicateCheck": "Study c33 tests consult choice. This tests a separate failure condition of queue transfer and distinguishes it from initial-routing fallback."
+    },
+    {
+      "id": "ab250-d2-q30",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "survey-dataverse-publish-dependencies",
+      "objectiveIds": [
+        "D2.3.13"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-digital-s26",
+          "section": "Verify the Dataverse connection; Complete the configuration in Copilot Studio",
+          "claim": "Microsoft Dataverse connection reference for MCS Survey needs a connection; publishing moves survey from In Progress to Ready.",
+          "applicability": "Customer feedback survey created through admin center, same environment, not Customer Voice."
+        }
+      ],
+      "duplicateCheck": "Study c43 tests publication, c44 variable naming and c45 copied-environment agents. This tests a connection-reference publication failure with two explicitly missing prerequisites."
+    },
+    {
+      "id": "ab250-d2-q31",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "attachment-txt-transcript-dependency",
+      "objectiveIds": [
+        "D2.3.14"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-digital-s27",
+          "section": "Configure file extensions: Note",
+          "claim": "Blocking .txt files makes transcripts unavailable for closed conversations.",
+          "applicability": "Organization blocked-extension policy for messaging attachments; no invented universal attachment size."
+        }
+      ],
+      "duplicateCheck": "Study c35 tests independent customer/representative directions. This tests the organization file policy impact on closed transcripts."
+    },
+    {
+      "id": "ab250-d2-q32",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "workstream-distribution-mode-immutable",
+      "objectiveIds": [
+        "D2.1.01",
+        "D2.1.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-digital-s29",
+          "section": "Create a workstream: Work distribution mode",
+          "claim": "Push or Pick is selected at creation and cannot be edited later.",
+          "applicability": "Messaging SMS workstream; voice has a separate Push-only restriction and is outside this question."
+        }
+      ],
+      "duplicateCheck": "Study c07 tests workstream/channel type and c09 shared routing. This tests an immutable distribution choice for SMS rather than voice mode availability."
+    },
+    {
+      "id": "ab250-d2-q33",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "persistent-returning-autoassign-affinity",
+      "objectiveIds": [
+        "D2.1.01",
+        "D2.1.09"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-digital-s30",
+          "section": "Assign work items automatically for returning conversations",
+          "claim": "Keep same representative can reassign when unavailable; a returning notification template with Auto-assign work items can retain assignment, with offline-duration caution.",
+          "applicability": "Authenticated persistent chat already configured; returning conversation notifications and explicit affinity requirement."
+        }
+      ],
+      "duplicateCheck": "Question q13 tests token verification and q32 an immutable distribution setting. This tests persistent-chat returning assignment, absent from pilot and existing D2 recall prompts."
+    },
+    {
+      "id": "ab250-d2-q34",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "manual-mask-language-and-permission",
+      "objectiveIds": [
+        "D2.3.05"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-digital-s19",
+          "section": "Allow manual masking globally; Configure masked message text; Mask messages as a representative",
+          "claim": "Manual masking requires global enablement, appropriate masking roles mapped to personas and masked-message text for each workstream language.",
+          "applicability": "Global manual masking already on; representative needs to mask customer messages in an additional-language workstream."
+        }
+      ],
+      "duplicateCheck": "Study c34/c36 and q22 concern automated rules/display/retention. This tests manual authorization and language-specific setup."
+    },
+    {
+      "id": "ab250-d2-q35",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "selfservice-per-action-records",
+      "objectiveIds": [
+        "D2.1.13"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_channels",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d2-digital-s28",
+          "section": "Enable self-service settings: Introduction",
+          "claim": "Recent self-service actions are stored for the closed conversation with a record for each action and action type; table is msdyn_visitorjourney.",
+          "applicability": "Standalone Contact Center self-service integration already passes action history; not portal page analytics without instrumentation."
+        }
+      ],
+      "duplicateCheck": "Study c21/c24 test history instrumentation. This assumes that integration works and tests where its per-action evidence is stored after closure."
+    }
+  ]
+}

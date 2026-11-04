@@ -1,0 +1,252 @@
+[
+  {
+    "id": "cc-d4-c18",
+    "fromRevision": 1,
+    "toRevision": 2,
+    "changedAt": "2026-11-03",
+    "author": "/root/finish_digital",
+    "reason": "Remove the diagnosis from the stem and describe an observed model-test symptom.",
+    "before": {
+      "id": "cc-d4-c18",
+      "revision": 1,
+      "topicId": "routing-capacity",
+      "kind": "mcq",
+      "prompt": "A published skill finder model predicts a useful tag, but that tag does not link to an organization skill during testing. What should the administrator verify first?",
+      "answer": "Whether the predicted tag matches an available skill in the organization.",
+      "explanation": "The model test links predicted tags that match available skills. A queue label or representative presence value cannot supply the missing skill taxonomy alignment.",
+      "sourceIds": [
+        "cc-d4-final-s08"
+      ],
+      "noteIds": [
+        "cc-d4-n06"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "domain:work-distribution",
+        "feature:predicted-tag-skill-alignment",
+        "task:configure",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Whether a different field order would change the training input."
+        },
+        {
+          "id": "b",
+          "text": "Whether the workstream uses a different queue assignment method."
+        },
+        {
+          "id": "c",
+          "text": "Whether representative capacity profiles have sufficient space."
+        },
+        {
+          "id": "d",
+          "text": "Whether the predicted tag matches an available skill in the organization."
+        }
+      ],
+      "correctOptionId": "d"
+    },
+    "after": {
+      "id": "cc-d4-c18",
+      "revision": 2,
+      "topicId": "routing-capacity",
+      "kind": "mcq",
+      "prompt": "A published skill finder model returns predicted tags during a test, but the administrator receives no linked skills. Training and publication completed successfully. Which configuration should be inspected first?",
+      "answer": "Whether the predicted tag matches an available skill in the organization.",
+      "explanation": "Model testing links predicted tags to matching available organization skills. Verify that taxonomy alignment before changing downstream queue assignment or representative availability.",
+      "sourceIds": [
+        "cc-d4-final-s08"
+      ],
+      "noteIds": [
+        "cc-d4-n06"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "domain:work-distribution",
+        "feature:predicted-tag-skill-alignment",
+        "task:configure",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Whether a different field order would change the training input."
+        },
+        {
+          "id": "b",
+          "text": "Whether the workstream uses a different queue assignment method."
+        },
+        {
+          "id": "c",
+          "text": "Whether representative capacity profiles have sufficient space."
+        },
+        {
+          "id": "d",
+          "text": "Whether the predicted tag matches an available skill in the organization."
+        }
+      ],
+      "correctOptionId": "d"
+    },
+    "finalDisposition": {
+      "status": "independently-approved",
+      "revision": 2,
+      "reviewer": "/root/finish_voice",
+      "reviewedAt": "2026-11-03"
+    }
+  },
+  {
+    "id": "cc-d4-c21",
+    "fromRevision": 1,
+    "toRevision": 2,
+    "changedAt": "2026-11-03",
+    "author": "/root/finish_digital",
+    "reason": "Replace obviously false options with adjacent preferred-routing eligibility and fallback misconceptions.",
+    "before": {
+      "id": "cc-d4-c21",
+      "revision": 1,
+      "topicId": "routing-capacity",
+      "kind": "mcq",
+      "prompt": "A team requires every automatic assignment to enforce its skills and capacity rules. It considers enabling standard preferred representative routing to preserve customer relationships. What must it account for?",
+      "answer": "The preferred-person path bypasses those ordinary skills and capacity checks.",
+      "explanation": "That documented exception can conflict with the requirement. Standard assignment and preferred-person assignment do not share an identical eligibility contract.",
+      "sourceIds": [
+        "cc-d4-final-s10"
+      ],
+      "noteIds": [
+        "cc-d4-n07"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "domain:work-distribution",
+        "feature:preferred-routing-policy-conflict",
+        "task:configure",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "The preferred-person path bypasses those ordinary skills and capacity checks."
+        },
+        {
+          "id": "b",
+          "text": "Preferred routing automatically adds every missing skill to the representative."
+        },
+        {
+          "id": "c",
+          "text": "Preferred routing works only with Pick workstreams."
+        },
+        {
+          "id": "d",
+          "text": "Preferred routing cannot map an identified contact to a representative."
+        }
+      ],
+      "correctOptionId": "a"
+    },
+    "after": {
+      "id": "cc-d4-c21",
+      "revision": 2,
+      "topicId": "routing-capacity",
+      "kind": "mcq",
+      "prompt": "A team requires every automatic assignment to enforce its skills and capacity rules. It considers enabling standard preferred representative routing to preserve customer relationships. What must it account for?",
+      "answer": "The preferred-person path bypasses those ordinary skills and capacity checks.",
+      "explanation": "That documented exception can conflict with the requirement. Standard assignment and preferred-person assignment do not share an identical eligibility contract.",
+      "sourceIds": [
+        "cc-d4-final-s10"
+      ],
+      "noteIds": [
+        "cc-d4-n07"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "domain:work-distribution",
+        "feature:preferred-routing-policy-conflict",
+        "task:configure",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "The preferred-person path bypasses those ordinary skills and capacity checks."
+        },
+        {
+          "id": "b",
+          "text": "Preferred assignment enforces skill matching, but ignores capacity only when the queue fallback time expires."
+        },
+        {
+          "id": "c",
+          "text": "Preferred assignment checks ordinary capacity and skills, while bypassing the allowed-presence requirement."
+        },
+        {
+          "id": "d",
+          "text": "Preferred assignment bypasses queue membership, but retains the ordinary skills and capacity checks."
+        }
+      ],
+      "correctOptionId": "a"
+    },
+    "finalDisposition": {
+      "status": "independently-approved",
+      "revision": 2,
+      "reviewer": "/root/finish_voice",
+      "reviewedAt": "2026-11-03"
+    }
+  },
+  {
+    "id": "cc-d4-c25",
+    "fromRevision": 1,
+    "toRevision": 2,
+    "changedAt": "2026-11-03",
+    "author": "/root/finish_digital",
+    "reason": "Replace duplicate App Insights destination recall with source-supported per-attempt conversation scope for rerouted cases.",
+    "before": {
+      "id": "cc-d4-c25",
+      "revision": 1,
+      "topicId": "routing-capacity",
+      "kind": "recall",
+      "prompt": "Which service stores the documented conversation lifecycle diagnostics used to trace routing decisions?",
+      "answer": "Azure Application Insights.",
+      "explanation": "Configure the environment connection and required access; a Managed environment is a prerequisite of this documented setup.",
+      "sourceIds": [
+        "cc-d4-final-s13"
+      ],
+      "noteIds": [
+        "cc-d4-n09"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "domain:work-distribution",
+        "feature:routing-diagnostic-store",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    "after": {
+      "id": "cc-d4-c25",
+      "revision": 2,
+      "topicId": "routing-capacity",
+      "kind": "recall",
+      "prompt": "A case has been routed several times. Why must a troubleshooter choose the intended routing attempt before examining its intake and routing events?",
+      "answer": "Each routing attempt creates a corresponding conversation; inspect the conversation for the attempt being diagnosed.",
+      "explanation": "The case Diagnose experience lists routing attempts. Selecting the intended attempt avoids attributing a different conversation's intake decisions to the failure under investigation.",
+      "sourceIds": [
+        "cc-d4-final-s13"
+      ],
+      "noteIds": [
+        "cc-d4-n09"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "domain:work-distribution",
+        "feature:case-routing-attempt-scope",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    "finalDisposition": {
+      "status": "independently-approved",
+      "revision": 2,
+      "reviewer": "/root/finish_voice",
+      "reviewedAt": "2026-11-03"
+    }
+  }
+]

@@ -1,0 +1,1360 @@
+{
+  "id": "contact-center-core",
+  "version": "0.1.0",
+  "title": "Contact Center source collection",
+  "description": "Reviewed Phase 7C pilot. A small selection of implementation concepts, not complete certification coverage.",
+  "fixture": false,
+  "examEnabled": false,
+  "topics": [
+    {
+      "id": "architecture-deployment",
+      "title": "Architecture and deployment"
+    },
+    {
+      "id": "lifecycle-management",
+      "title": "Lifecycle management"
+    },
+    {
+      "id": "chat-digital",
+      "title": "Chat and digital channels"
+    },
+    {
+      "id": "copilot-ai",
+      "title": "Copilot and AI"
+    },
+    {
+      "id": "routing-capacity",
+      "title": "Routing and capacity"
+    },
+    {
+      "id": "representative-workspace",
+      "title": "Representative workspace"
+    },
+    {
+      "id": "supervision-analytics",
+      "title": "Supervision and analytics"
+    }
+  ],
+  "sources": [
+    {
+      "id": "cc-d1-s01",
+      "title": "Dynamics 365 Contact Center overview",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/implement/overview-contact-center"
+    },
+    {
+      "id": "cc-d1-s02",
+      "title": "Use Copilot Service workspace",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/ccw-overview"
+    },
+    {
+      "id": "cc-d1-s03",
+      "title": "Set up the embedded experience in Salesforce",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/set-up-embedded-experience"
+    },
+    {
+      "id": "cc-d1-s04",
+      "title": "Best practices for application lifecycle management",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/alm-best-practices"
+    },
+    {
+      "id": "cc-d1-s05",
+      "title": "Migrate configurations for channels using solutions",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/migrate-channel-config-using-solutions"
+    },
+    {
+      "id": "cc-d1-s06",
+      "title": "Manage Dynamics 365 Contact Center environments",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/implement/restore-environment"
+    },
+    {
+      "id": "cc-d2-s01",
+      "title": "Configure authentication settings",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-chat-auth-settings"
+    },
+    {
+      "id": "cc-d2-s02",
+      "title": "Identify customers automatically",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/record-identification-rule"
+    },
+    {
+      "id": "cc-d2-s03",
+      "title": "Configure a preconversation survey",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-pre-chat-survey"
+    },
+    {
+      "id": "cc-d2-s04",
+      "title": "Manage context variables",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/manage-context-variables"
+    },
+    {
+      "id": "cc-d2-s05",
+      "title": "Embed chat widget in your website or portal",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/embed-chat-widget-portal"
+    },
+    {
+      "id": "cc-d1-s07",
+      "title": "Solution layers",
+      "url": "https://learn.microsoft.com/en-us/power-apps/maker/data-platform/solution-layers"
+    },
+    {
+      "id": "cc-d2-s06",
+      "title": "Send custom context during live chat",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/send-context-starting-chat"
+    },
+    {
+      "id": "cc-d3-s01",
+      "title": "Configure Copilot features",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-copilot-features"
+    },
+    {
+      "id": "cc-d3-s02",
+      "title": "Enable Copilot case and conversation summaries",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/copilot-enable-summary"
+    },
+    {
+      "id": "cc-d3-s03",
+      "title": "Use Copilot to summarize conversations",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/copilot-summarize-conversations"
+    },
+    {
+      "id": "cc-d3-s04",
+      "title": "Configure Copilot features in the help pane",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/copilot-enable-help-pane"
+    },
+    {
+      "id": "cc-d3-s05",
+      "title": "Configure context variables for AI agents",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/context-variables-for-bot"
+    },
+    {
+      "id": "cc-d3-s06",
+      "title": "Work with global variables",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-variables-bot"
+    },
+    {
+      "id": "cc-d3-s07",
+      "title": "Work with variables",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-variables"
+    },
+    {
+      "id": "cc-d4-s01",
+      "title": "Overview of unified routing",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/overview-unified-routing"
+    },
+    {
+      "id": "cc-d4-s02",
+      "title": "Configure work classification rulesets",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-work-classification"
+    },
+    {
+      "id": "cc-d4-s03",
+      "title": "Understand skill matching in unified routing",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/set-up-skill-based-routing"
+    },
+    {
+      "id": "cc-d4-s04",
+      "title": "Create and manage capacity profiles",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/capacity-profiles"
+    },
+    {
+      "id": "cc-d4-s05",
+      "title": "Assignment methods in unified routing",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/assignment-methods"
+    },
+    {
+      "id": "cc-d4-s06",
+      "title": "Best practices for unified routing",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/unified-routing-best-practices"
+    },
+    {
+      "id": "cc-d5-s01",
+      "title": "Microsoft Learn: Manage session templates",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/session-templates"
+    },
+    {
+      "id": "cc-d5-s02",
+      "title": "Microsoft Learn: Manage application tab templates",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/application-tab-templates"
+    },
+    {
+      "id": "cc-d5-s03",
+      "title": "Microsoft Learn: Guide representatives with scripts",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/agent-scripts"
+    },
+    {
+      "id": "cc-d5-s04",
+      "title": "Microsoft Learn: Configure macros",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/macros"
+    },
+    {
+      "id": "cc-d5-s05",
+      "title": "Microsoft Learn: Create and manage workstreams",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-workstreams"
+    },
+    {
+      "id": "cc-d5-s06",
+      "title": "Microsoft Learn: Automation dictionary",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/automation-dictionary-keys"
+    },
+    {
+      "id": "cc-d5-s07",
+      "title": "Microsoft Learn: Productivity automation macros",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/macros-productivity-automation"
+    },
+    {
+      "id": "cc-d6-s01",
+      "title": "Microsoft Learn: Monitor voice calls",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/voice-channel-monitor-calls"
+    },
+    {
+      "id": "cc-d6-s02",
+      "title": "Microsoft Learn: Analytics access and dashboards",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-customer-service-analytics-insights-csh"
+    },
+    {
+      "id": "cc-d6-s03",
+      "title": "Microsoft Learn: Manage real-time analytics",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/enable-realtime-analytics-dashboard-administrator"
+    },
+    {
+      "id": "cc-d6-s04",
+      "title": "Microsoft Learn: Configure conversation diagnostics",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-conversation-diagnostics"
+    },
+    {
+      "id": "cc-d6-s05",
+      "title": "Microsoft Learn: Conversation diagnostics events",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/conversation-diagnostics-subscenarios"
+    },
+    {
+      "id": "cc-d6-s06",
+      "title": "Microsoft Learn: Diagnose contact center health",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/diagnose-dashboard"
+    }
+  ],
+  "notes": [
+    {
+      "id": "cc-d1-n01",
+      "title": "Choose where representatives handle conversations",
+      "body": "Start with the representative’s working environment. Copilot Service workspace brings customer sessions and CRM context into one representative-facing application. Its separate sessions preserve the context of concurrent interactions. A representative needs the Omnichannel Agent role to use it.\n\nWhen a team must remain in a non-Microsoft CRM, consider the embedded conversation widget. The Salesforce setup connects the widget through a call-center definition and softphone utility. Its adapter URL must point to the embedded widget, not to a customer-facing chat script.\n\nThese are workspace decisions within a broader contact-center implementation. Validate channel provisioning and the chosen integration’s prerequisites before rollout. A familiar CRM screen does not remove the need to configure the underlying contact-center service.",
+      "sourceIds": [
+        "cc-d1-s01",
+        "cc-d1-s02",
+        "cc-d1-s03"
+      ]
+    },
+    {
+      "id": "cc-d1-n02",
+      "title": "Move configuration without losing deployment control",
+      "body": "Keep the configuration’s source of truth in development. Microsoft recommends authoring in an unmanaged solution, then exporting it as managed for the destination. Check installed solution-version parity first. Direct changes to imported managed records create an active layer that can hide later managed updates.\n\nA channel migration also has dependencies. Prepare referenced custom schema and appropriate migration permissions. Inspect the documented migration scope instead of assuming that every connected service setting travels with the channel.\n\nEnvironment recovery is a separate operation. After a reset, restore, or tenant move, follow the documented channel provisioning or unified-routing enablement steps. Include a functional conversation check in the rollout plan; an environment being available is not the same as its contact-center configuration being ready.",
+      "sourceIds": [
+        "cc-d1-s04",
+        "cc-d1-s05",
+        "cc-d1-s06"
+      ]
+    },
+    {
+      "id": "cc-d2-n01",
+      "title": "Distinguish authenticated customers from matching records",
+      "body": "Customer identification and authentication solve different problems. Preconversation answers can locate a contact or account, but a supplied email address is not proof that the visitor owns that identity. If identification finds several matching records, the system does not automatically link one arbitrarily.\n\nAuthenticated chat instead uses a signed token from the website’s sign-in flow. Configure the authentication record and associate it with the chat channel instance. Creating the record alone does not wire it into that widget.\n\nFor a support portal, review both outcomes: is the visitor authenticated, and is the intended customer record linked? Treat them as separate acceptance checks. The source documents specific record-search conditions; do not infer that every custom field or status value participates in automatic matching.",
+      "sourceIds": [
+        "cc-d2-s01",
+        "cc-d2-s02"
+      ]
+    },
+    {
+      "id": "cc-d2-n02",
+      "title": "Collect chat context and deploy the correct widget",
+      "body": "A preconversation survey collects information before chat begins. Its internal question name and its customer-facing wording serve different purposes. Adding a question creates a corresponding workstream context variable; the displayed sentence is not a substitute for that variable’s identifier.\n\nUse stable context names consistently across integrations. Names are case-sensitive. Before changing or removing a variable, check whether routing rules depend on it. Context can also support representative tools such as scripts and macros.\n\nFinally, deploy the customer-facing widget from the intended chat instance. For a conventional website, copy its snippet into the page body; a Power Apps portal uses its Chat Widget Code content snippet. Test the actual customer page so that survey configuration, widget selection, and collected context are checked together.",
+      "sourceIds": [
+        "cc-d2-s03",
+        "cc-d2-s04",
+        "cc-d2-s05"
+      ]
+    },
+    {
+      "id": "cc-d3-n01",
+      "title": "Give representatives the right Copilot assistance",
+      "body": "Start with the task: finding a knowledge-based answer and recapping a conversation are different needs. Configure the help pane for questions; configure conversation summaries for a recap. Then enable the appropriate features in the representatives’ experience profile rather than assuming global setup gives every group identical access.\n\nCustom security roles also need the documented Copilot privileges.\n\nFor standalone Contact Center, conversation summaries can cover chat and transcribed voice. An administrator can trigger them when someone joins, at the end, or on demand. Representatives can copy a summary or give feedback; creating a case from it additionally requires case management and the enabled action.\n\nFor example, a consultation needs a useful recap, while a product-policy question needs suitable published knowledge. Validate both workflows with the intended profile.",
+      "sourceIds": [
+        "cc-d3-s01",
+        "cc-d3-s02",
+        "cc-d3-s03",
+        "cc-d3-s04"
+      ]
+    },
+    {
+      "id": "cc-d3-n02",
+      "title": "Scope voice-agent variables before sharing context",
+      "body": "For the native standalone integration, a context variable and its Copilot Studio counterpart need matching names and compatible types. A global variable is accessible across topics in one user session; it is not a permanent customer record. Use a Set variable value node when the agent must assign a value itself.\n\nFor external values, enable the global and external-source usage settings. Keep the channel’s limitations explicit: Contact Center IVR does not support the external-variable timeout setting described for other scenarios. Do not design voice recovery around that timer.\n\nFor example, retain a caller’s selected service category across topics, then pass the relevant context at escalation. This transfers conversation context, not proof that an arbitrary value authenticates the caller.",
+      "sourceIds": [
+        "cc-d3-s05",
+        "cc-d3-s06",
+        "cc-d3-s07"
+      ]
+    },
+    {
+      "id": "cc-d4-n01",
+      "title": "Separate work enrichment from representative assignment",
+      "body": "Classification enriches a work item; assignment selects an eligible representative. Keep these responsibilities visible when troubleshooting. A useful classification attribute can be reused by queue-routing or prioritization rules, instead of repeating the same business test in several places.\n\nRuleset order matters. Classification runs before route-to-queue evaluation, and a later classification ruleset can consume an earlier ruleset’s output. Within one classification ruleset, a matching item passes processing to the next ruleset.\n\nFor example, derive an urgency category once, then use it downstream. Separately inspect the queue’s assignment method and representative eligibility. A classification result does not mean that a suitable representative is immediately available; automated assignment retries when it cannot find one.",
+      "sourceIds": [
+        "cc-d4-s01",
+        "cc-d4-s02",
+        "cc-d4-s05",
+        "cc-d4-s06"
+      ]
+    },
+    {
+      "id": "cc-d4-n02",
+      "title": "Treat skill eligibility and workload limits separately",
+      "body": "An exact skill match requires the attached skills at sufficient proficiency. With standard assignment, presence and available capacity also matter. A queue using custom assignment needs its own skill conditions; the workstream’s default skill algorithm does not supply those conditions automatically.\n\nCapacity profiles describe workload limits. Assignment blocking can stop further automatic work when a profile reaches its limit, even if another profile has room. A supervisor’s manual assignment can exceed configured capacity, so the limit is not an absolute ban on every assignment path.\n\nFor example, an unassigned language-specific conversation calls for an eligibility check, while unexpected extra manually assigned work calls for a capacity-path check. Do not treat these as the same fault.",
+      "sourceIds": [
+        "cc-d4-s03",
+        "cc-d4-s04"
+      ]
+    },
+    {
+      "id": "cc-d5-n01",
+      "title": "Build a session from reusable templates",
+      "body": "Scope: Dynamics 365 Contact Center standalone in Copilot Service workspace.\n\nA session template determines the anchor application, additional tabs, and initial communication-panel mode. The anchor remains available throughout the session. Create custom templates instead of editing supplied templates.\n\nApplication tab templates describe the pages to open. A third-party website tab requires a site that permits iframe hosting; a valid URL alone is insufficient. Associate the needed tabs with the session template, then connect that session experience to the workstream.\n\nFor a troubleshooting checklist, separate three questions: Which session template is selected? Which application tabs does it reference? Can each target page load in the chosen page type? Test these relationships with a representative conversation.",
+      "sourceIds": [
+        "cc-d5-s01",
+        "cc-d5-s02",
+        "cc-d5-s05"
+      ]
+    },
+    {
+      "id": "cc-d5-n02",
+      "title": "Separate guidance, automation, and session context",
+      "body": "Scope: Dynamics 365 Contact Center standalone in Copilot Service workspace.\n\nScripts guide a representative through a process; a step can show an instruction, run a macro, or open another script. An expression on the session template can choose a default script from those associated with that session.\n\nMacros execute configured actions in sequence. Begin with Start macro execution. For reusable automation, resolve context through supported parameters rather than hard-coding a customer's identity. The automation dictionary supplies runtime values; use the documented format for the particular context.\n\nCheck what each action actually commits. Autofill form fields changes the form; add a save action when the workflow must explicitly persist those values rather than waiting for autosave.",
+      "sourceIds": [
+        "cc-d5-s03",
+        "cc-d5-s04",
+        "cc-d5-s06",
+        "cc-d5-s07"
+      ]
+    },
+    {
+      "id": "cc-d6-n01",
+      "title": "Choose a supervisor intervention and the right access",
+      "body": "Scope: Dynamics 365 Contact Center standalone, with voice and supervisor capabilities configured.\n\nFor a voice call, monitoring lets a supervisor observe without appearing as a participant. Private messages can guide the representative without showing the message to the customer. Joining the call is a different intervention: the supervisor speaks in the conversation and the representative is notified. The documented role for these voice operations is Omnichannel Supervisor.\n\nAnalytics access is a separate configuration concern. A custom reporting role needs applicable report-table and underlying data read privileges. Editing analytics reports uses the Analytics Report Author role. Decide whether the person needs to inspect a live interaction, read dashboards, or author reports before choosing permissions.",
+      "sourceIds": [
+        "cc-d6-s01",
+        "cc-d6-s02"
+      ]
+    },
+    {
+      "id": "cc-d6-n02",
+      "title": "Move from operational metrics to conversation evidence",
+      "body": "Real-time reports help a supervisor inspect current operations. In a standalone voice-enabled contact center, the voice analytics option adds voice insights. A missing option can reflect missing voice configuration rather than a report-layout problem.\n\nFor event-level investigation, conversation diagnostics stores lifecycle data in Azure Application Insights. Configuration requires a Managed environment and the documented Azure and Power Platform permissions. Inspect the relevant event: classification and queue selection are different stages.\n\nThe Diagnose dashboard can compare requirements against a representative's presence, capacity, and skills at an assignment attempt. Its diagnostic insights are documented for out-of-the-box assignment methods. Do not extend that limitation to all raw telemetry: the event documentation also describes custom assignment ruleset details.",
+      "sourceIds": [
+        "cc-d6-s03",
+        "cc-d6-s04",
+        "cc-d6-s05",
+        "cc-d6-s06"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "cc-d1-c01",
+      "revision": 1,
+      "topicId": "architecture-deployment",
+      "kind": "recall",
+      "prompt": "Which Contact Center component brings representative conversations into a non-Microsoft CRM?",
+      "answer": "The embedded conversation widget.",
+      "explanation": "It supports hosting the representative experience in a suitable HTML/JavaScript application.",
+      "sourceIds": [
+        "cc-d1-s03"
+      ],
+      "noteIds": [
+        "cc-d1-n01"
+      ],
+      "tags": [
+        "topic:architecture-deployment",
+        "domain:deployment",
+        "feature:embedded-widget",
+        "task:configure"
+      ]
+    },
+    {
+      "id": "cc-d1-c02",
+      "revision": 1,
+      "topicId": "architecture-deployment",
+      "kind": "recall",
+      "prompt": "Which security role does the Contact Center workspace overview require for a representative?",
+      "answer": "Omnichannel Agent.",
+      "explanation": "This is the documented prerequisite for using Copilot Service workspace.",
+      "sourceIds": [
+        "cc-d1-s02"
+      ],
+      "noteIds": [
+        "cc-d1-n01"
+      ],
+      "tags": [
+        "topic:architecture-deployment",
+        "domain:deployment",
+        "feature:workspace-access",
+        "task:configure"
+      ]
+    },
+    {
+      "id": "cc-d1-c03",
+      "revision": 1,
+      "topicId": "lifecycle-management",
+      "kind": "recall",
+      "prompt": "How should a development solution be packaged when deploying Contact Center configuration to production?",
+      "answer": "Author it unmanaged in development, then export it as managed for production.",
+      "explanation": "This preserves a controlled deployment boundary.",
+      "sourceIds": [
+        "cc-d1-s04"
+      ],
+      "noteIds": [
+        "cc-d1-n02"
+      ],
+      "tags": [
+        "topic:lifecycle-management",
+        "domain:deployment",
+        "feature:managed-deployment",
+        "task:configure"
+      ]
+    },
+    {
+      "id": "cc-d1-c04",
+      "revision": 1,
+      "topicId": "lifecycle-management",
+      "kind": "recall",
+      "prompt": "Does restoring a Contact Center environment finish all omnichannel recovery work?",
+      "answer": "No. Follow up with channel provisioning or unified-routing enablement as applicable.",
+      "explanation": "The restored environment still needs the documented service setup steps.",
+      "sourceIds": [
+        "cc-d1-s06"
+      ],
+      "noteIds": [
+        "cc-d1-n02"
+      ],
+      "tags": [
+        "topic:lifecycle-management",
+        "domain:deployment",
+        "feature:environment-recovery",
+        "task:configure"
+      ]
+    },
+    {
+      "id": "cc-d1-c05",
+      "revision": 2,
+      "topicId": "lifecycle-management",
+      "kind": "mcq",
+      "prompt": "A managed configuration update imports successfully into a target with matching installed solution versions. The imported package contains the intended change, but a record previously edited directly in the target still shows its old customization. What should you investigate?",
+      "answer": "An active customization layer overriding the managed layer.",
+      "explanation": "Investigate the target-side active customization: it can take precedence over the incoming managed configuration. The scenario rules out a failed import, version mismatch, and an omitted source change.",
+      "sourceIds": [
+        "cc-d1-s04"
+      ],
+      "noteIds": [
+        "cc-d1-n02"
+      ],
+      "tags": [
+        "topic:lifecycle-management",
+        "domain:deployment",
+        "feature:active-layer-diagnosis",
+        "task:troubleshoot"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "The target record's active customization layer."
+        },
+        {
+          "id": "o2",
+          "text": "A failed solution import that prevented the package from arriving."
+        },
+        {
+          "id": "o3",
+          "text": "Different installed solution versions between source and target."
+        },
+        {
+          "id": "o4",
+          "text": "A source change omitted from the exported package."
+        }
+      ],
+      "correctOptionId": "o1"
+    },
+    {
+      "id": "cc-d1-c06",
+      "revision": 2,
+      "topicId": "lifecycle-management",
+      "kind": "mcq",
+      "prompt": "After migrating skill-based routing configuration, which target-side follow-up does Microsoft explicitly require where skills and ratings are used?",
+      "answer": "Link, associate, or create the relevant users, bookable resources, and characteristics.",
+      "explanation": "Ruleset rendering is one verification step, but skills and ratings also require user, bookable-resource, and characteristic associations. Capacity-profile associations address a separate configuration; reimporting definitions alone does not perform the required association check.",
+      "sourceIds": [
+        "cc-d1-s05"
+      ],
+      "noteIds": [
+        "cc-d1-n02"
+      ],
+      "tags": [
+        "topic:lifecycle-management",
+        "domain:deployment",
+        "feature:migration-resource-associations",
+        "task:troubleshoot"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Verify only that the imported routing rulesets render without errors."
+        },
+        {
+          "id": "o2",
+          "text": "Associate only resource capacity-profile records, leaving skill characteristics unlinked."
+        },
+        {
+          "id": "o3",
+          "text": "Link or create the users, resources, and characteristics."
+        },
+        {
+          "id": "o4",
+          "text": "Reimport the skill definitions without checking their target resource associations."
+        }
+      ],
+      "correctOptionId": "o3"
+    },
+    {
+      "id": "cc-d2-c01",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "Does linking a visitor to a contact through a preconversation email address authenticate the visitor?",
+      "answer": "No. Record identification is not authentication.",
+      "explanation": "Authenticated chat verifies a signed token from the website's sign-in flow.",
+      "sourceIds": [
+        "cc-d2-s01"
+      ],
+      "noteIds": [
+        "cc-d2-n01"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:authentication-vs-identification",
+        "task:configure"
+      ]
+    },
+    {
+      "id": "cc-d2-c02",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "What naming rule matters when an integration supplies a workstream context variable?",
+      "answer": "The supplied name must match exactly, including letter case.",
+      "explanation": "Keep the defined name consistent across the integration.",
+      "sourceIds": [
+        "cc-d2-s04"
+      ],
+      "noteIds": [
+        "cc-d2-n02"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:context-name-matching",
+        "task:configure"
+      ]
+    },
+    {
+      "id": "cc-d2-c03",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "What happens to workstream context when a preconversation survey question is added?",
+      "answer": "A corresponding context variable is created.",
+      "explanation": "Inspect it under the workstream's advanced context-variable settings.",
+      "sourceIds": [
+        "cc-d2-s03"
+      ],
+      "noteIds": [
+        "cc-d2-n02"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:survey-context",
+        "task:configure"
+      ]
+    },
+    {
+      "id": "cc-d2-c04",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "Where does the documented website integration place a chat instance's widget snippet?",
+      "answer": "Inside the website's HTML body.",
+      "explanation": "Copy the snippet from that chat instance's Chat widget tab.",
+      "sourceIds": [
+        "cc-d2-s05"
+      ],
+      "noteIds": [
+        "cc-d2-n02"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:widget-embedding",
+        "task:configure"
+      ]
+    },
+    {
+      "id": "cc-d2-c05",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "mcq",
+      "prompt": "A preconversation lookup finds two active contacts with the same supplied email. What automatic-linking outcome should you expect?",
+      "answer": "No automatic customer link is made from the ambiguous match.",
+      "explanation": "The lookup does not choose the oldest, newest, or first returned matching record.",
+      "sourceIds": [
+        "cc-d2-s02"
+      ],
+      "noteIds": [
+        "cc-d2-n01"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:ambiguous-identification",
+        "task:troubleshoot"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "The oldest contact is linked."
+        },
+        {
+          "id": "o2",
+          "text": "No record is automatically linked from that match."
+        },
+        {
+          "id": "o3",
+          "text": "The first returned contact is linked."
+        },
+        {
+          "id": "o4",
+          "text": "The newest contact is linked."
+        }
+      ],
+      "correctOptionId": "o2"
+    },
+    {
+      "id": "cc-d2-c06",
+      "revision": 2,
+      "topicId": "chat-digital",
+      "kind": "mcq",
+      "prompt": "A developer wants to delete a workstream context variable. What should be checked first?",
+      "answer": "Whether classification or assignment rules use it.",
+      "explanation": "Microsoft specifically requires checking unified-routing classification and assignment dependencies before a necessary update or deletion. Survey, website, or AI-agent checks can be useful, but none alone establishes that routing rules no longer depend on the variable.",
+      "sourceIds": [
+        "cc-d2-s04"
+      ],
+      "noteIds": [
+        "cc-d2-n02"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:context-dependencies",
+        "task:troubleshoot"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Inspect only whether a preconversation survey displays the variable."
+        },
+        {
+          "id": "o2",
+          "text": "Inspect only the website custom-context provider code."
+        },
+        {
+          "id": "o3",
+          "text": "Inspect only the variable names used by the AI agent."
+        },
+        {
+          "id": "o4",
+          "text": "Whether classification or assignment rules reference it."
+        }
+      ],
+      "correctOptionId": "o4"
+    },
+    {
+      "id": "cc-d3-c01",
+      "revision": 1,
+      "topicId": "copilot-ai",
+      "kind": "recall",
+      "prompt": "Which conversation types can Copilot summarize in standalone Contact Center?",
+      "answer": "Chat and transcribed voice conversations.",
+      "explanation": "The conversation-summary setup targets a conversation recap, distinct from a case summary.",
+      "sourceIds": [
+        "cc-d3-s02"
+      ],
+      "noteIds": [
+        "cc-d3-n01"
+      ],
+      "tags": [
+        "topic:copilot-ai",
+        "feature:conversation-summary",
+        "task:configure",
+        "domain:agents-ai"
+      ]
+    },
+    {
+      "id": "cc-d3-c02",
+      "revision": 1,
+      "topicId": "copilot-ai",
+      "kind": "recall",
+      "prompt": "Where can a representative find a saved summary for a closed conversation?",
+      "answer": "Open the conversation from Activities and use its Summary tab.",
+      "explanation": "The closed conversation remains a place to review its generated recap.",
+      "sourceIds": [
+        "cc-d3-s03"
+      ],
+      "noteIds": [
+        "cc-d3-n01"
+      ],
+      "tags": [
+        "topic:copilot-ai",
+        "feature:conversation-summary",
+        "task:operate",
+        "domain:agents-ai"
+      ]
+    },
+    {
+      "id": "cc-d3-c03",
+      "revision": 1,
+      "topicId": "copilot-ai",
+      "kind": "recall",
+      "prompt": "Which Copilot filter lets representatives choose knowledge filters themselves in Ask a question?",
+      "answer": "A representative filter.",
+      "explanation": "Enable its filter status so it appears in the help pane.",
+      "sourceIds": [
+        "cc-d3-s04"
+      ],
+      "noteIds": [
+        "cc-d3-n01"
+      ],
+      "tags": [
+        "topic:copilot-ai",
+        "feature:knowledge-filter",
+        "task:configure",
+        "domain:agents-ai"
+      ]
+    },
+    {
+      "id": "cc-d3-c04",
+      "revision": 2,
+      "topicId": "copilot-ai",
+      "kind": "recall",
+      "prompt": "Does a Copilot Studio global variable retain its value across all future customer sessions?",
+      "answer": "No. Its scope spans topics within one user session.",
+      "explanation": "A global variable is session-scoped, not permanent customer storage; clearing or resetting variables can also remove its value.",
+      "sourceIds": [
+        "cc-d3-s06"
+      ],
+      "noteIds": [
+        "cc-d3-n02"
+      ],
+      "tags": [
+        "topic:copilot-ai",
+        "feature:context-variables",
+        "task:configure",
+        "domain:agents-ai"
+      ]
+    },
+    {
+      "id": "cc-d3-c05",
+      "revision": 2,
+      "topicId": "copilot-ai",
+      "kind": "mcq",
+      "prompt": "Copilot is configured and all representatives have the required security privileges. Only the escalation team should receive the selected Copilot features. Which configuration should define that team's feature access?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Enable the selected features in a custom experience profile and assign it to that team."
+        },
+        {
+          "id": "b",
+          "text": "Enable the features in the default experience profile assigned to every representative."
+        },
+        {
+          "id": "c",
+          "text": "Enable recording of Copilot interactions for the escalation team."
+        },
+        {
+          "id": "d",
+          "text": "Apply a preset knowledge filter for the team's subject area."
+        }
+      ],
+      "correctOptionId": "a",
+      "answer": "Enable the selected features in a custom experience profile and assign it to that team.",
+      "explanation": "Experience profiles determine the Copilot features available to assigned representatives. A shared default profile does not isolate the team; recording captures interactions, and knowledge filters restrict response content rather than feature access.",
+      "sourceIds": [
+        "cc-d3-s01"
+      ],
+      "noteIds": [
+        "cc-d3-n01"
+      ],
+      "tags": [
+        "topic:copilot-ai",
+        "feature:experience-profile",
+        "task:configure",
+        "domain:agents-ai",
+        "level:advanced"
+      ]
+    },
+    {
+      "id": "cc-d3-c06",
+      "revision": 2,
+      "topicId": "copilot-ai",
+      "kind": "mcq",
+      "prompt": "A native standalone voice agent needs the caller's phone number in several topics. Where should it first copy Activity.From.Name?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Into a topic variable in Conversation Start, then reference it directly from every topic."
+        },
+        {
+          "id": "b",
+          "text": "Into a global variable in Conversation Start."
+        },
+        {
+          "id": "c",
+          "text": "Into a global variable in the later topic where the number is first needed."
+        },
+        {
+          "id": "d",
+          "text": "Into a separate topic variable by reading Activity.From.Name again in each later topic."
+        }
+      ],
+      "correctOptionId": "b",
+      "answer": "Into a global variable in Conversation Start.",
+      "explanation": "Activity.From.Name is available only in Conversation Start. Copy it there into a global variable for subsequent topics. A topic-only variable lacks direct cross-topic scope; waiting to read the system variable in later topics loses the documented access point.",
+      "sourceIds": [
+        "cc-d3-s05"
+      ],
+      "noteIds": [
+        "cc-d3-n02"
+      ],
+      "tags": [
+        "topic:copilot-ai",
+        "feature:voice-context",
+        "task:configure",
+        "domain:agents-ai",
+        "level:advanced"
+      ]
+    },
+    {
+      "id": "cc-d4-c01",
+      "revision": 1,
+      "topicId": "routing-capacity",
+      "kind": "recall",
+      "prompt": "What are unified routing's two main stages?",
+      "answer": "Classification and assignment.",
+      "explanation": "Classification enriches the work item; assignment prioritizes and matches work to representatives.",
+      "sourceIds": [
+        "cc-d4-s01"
+      ],
+      "noteIds": [
+        "cc-d4-n01"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "feature:unified-routing",
+        "task:design",
+        "domain:work-distribution"
+      ]
+    },
+    {
+      "id": "cc-d4-c02",
+      "revision": 1,
+      "topicId": "routing-capacity",
+      "kind": "recall",
+      "prompt": "Can a later work classification ruleset use an attribute set by an earlier ruleset?",
+      "answer": "Yes.",
+      "explanation": "Order the rulesets so the producer runs before the consumer.",
+      "sourceIds": [
+        "cc-d4-s02"
+      ],
+      "noteIds": [
+        "cc-d4-n01"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "feature:classification",
+        "task:configure",
+        "domain:work-distribution"
+      ]
+    },
+    {
+      "id": "cc-d4-c03",
+      "revision": 1,
+      "topicId": "routing-capacity",
+      "kind": "recall",
+      "prompt": "In advanced round robin, is assignment order maintained globally or per queue?",
+      "answer": "Per queue.",
+      "explanation": "Membership in multiple queues can therefore lead to consecutive assignments from different queues.",
+      "sourceIds": [
+        "cc-d4-s05"
+      ],
+      "noteIds": [
+        "cc-d4-n01"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "feature:assignment",
+        "task:operate",
+        "domain:work-distribution"
+      ]
+    },
+    {
+      "id": "cc-d4-c04",
+      "revision": 1,
+      "topicId": "routing-capacity",
+      "kind": "recall",
+      "prompt": "Does Exact Match require proficiency to equal the required rating exactly?",
+      "answer": "No. A matching representative can meet or exceed the required proficiency.",
+      "explanation": "All required skills must still be satisfied.",
+      "sourceIds": [
+        "cc-d4-s03"
+      ],
+      "noteIds": [
+        "cc-d4-n02"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "feature:skill-matching",
+        "task:configure",
+        "domain:work-distribution"
+      ]
+    },
+    {
+      "id": "cc-d4-c05",
+      "revision": 2,
+      "topicId": "routing-capacity",
+      "kind": "mcq",
+      "prompt": "Two conditions match within one work classification ruleset. The first rule sets priority; a later rule would set severity, but severity remains unset. Both classifications must run. What should you change?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Put the severity rule first and keep both rules in this ruleset."
+        },
+        {
+          "id": "b",
+          "text": "Move the severity rule into a subsequent work classification ruleset."
+        },
+        {
+          "id": "c",
+          "text": "Leave the rules unchanged and rely on the next assignment cycle to evaluate the severity rule."
+        },
+        {
+          "id": "d",
+          "text": "Put route-to-queue rules before work classification to make every classification rule run."
+        }
+      ],
+      "correctOptionId": "b",
+      "answer": "Move the severity rule into a subsequent work classification ruleset.",
+      "explanation": "After the first matching classification rule, evaluation proceeds to the next ruleset. Reordering the two rules still runs only the first match; later assignment does not rerun skipped classification rules.",
+      "sourceIds": [
+        "cc-d4-s02"
+      ],
+      "noteIds": [
+        "cc-d4-n01"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "feature:classification-order",
+        "task:troubleshoot",
+        "domain:work-distribution",
+        "level:advanced"
+      ]
+    },
+    {
+      "id": "cc-d4-c06",
+      "revision": 2,
+      "topicId": "routing-capacity",
+      "kind": "mcq",
+      "prompt": "A supervisor manually assigns an extra conversation beyond a representative's configured capacity. Automatic assignments respect the limit. Which explanation best fits the documented behavior?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The work item limit is only enforced when an Exact Match skill algorithm is selected."
+        },
+        {
+          "id": "b",
+          "text": "The representative must have lost their capacity-profile association."
+        },
+        {
+          "id": "c",
+          "text": "Manual assignment can override the configured capacity limit."
+        },
+        {
+          "id": "d",
+          "text": "Any extra conversation proves that the profile's automatic assignment limit is invalid."
+        }
+      ],
+      "correctOptionId": "c",
+      "answer": "Manual assignment can override the configured capacity limit.",
+      "explanation": "Microsoft documents supervisor manual assignment as an override of configured capacity. The scenario supplies no evidence of a missing profile or invalid automatic limit, and the capacity override is not defined by choosing Exact Match.",
+      "sourceIds": [
+        "cc-d4-s04"
+      ],
+      "noteIds": [
+        "cc-d4-n02"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "feature:capacity-profile",
+        "task:troubleshoot",
+        "domain:work-distribution",
+        "level:advanced"
+      ]
+    },
+    {
+      "id": "cc-d5-c01",
+      "revision": 1,
+      "topicId": "representative-workspace",
+      "kind": "recall",
+      "prompt": "What does the anchor tab provide in a Copilot Service workspace session?",
+      "answer": "The application's persistent starting tab; the representative cannot close it.",
+      "explanation": "The session template selects the anchor application.",
+      "sourceIds": [
+        "cc-d5-s01"
+      ],
+      "noteIds": [
+        "cc-d5-n01"
+      ],
+      "tags": [
+        "topic:representative-workspace",
+        "domain:D5",
+        "task:configure",
+        "feature:session-anchor",
+        "deployment:standalone"
+      ]
+    },
+    {
+      "id": "cc-d5-c02",
+      "revision": 1,
+      "topicId": "representative-workspace",
+      "kind": "recall",
+      "prompt": "How should you change a supplied session-template experience?",
+      "answer": "Create a custom session template.",
+      "explanation": "Supplied session templates are not customizable.",
+      "sourceIds": [
+        "cc-d5-s01"
+      ],
+      "noteIds": [
+        "cc-d5-n01"
+      ],
+      "tags": [
+        "topic:representative-workspace",
+        "domain:D5",
+        "task:configure",
+        "feature:custom-session-template",
+        "deployment:standalone"
+      ]
+    },
+    {
+      "id": "cc-d5-c03",
+      "revision": 1,
+      "topicId": "representative-workspace",
+      "kind": "recall",
+      "prompt": "Which step begins a newly designed macro?",
+      "answer": "Start macro execution.",
+      "explanation": "It precedes the macro's configured actions.",
+      "sourceIds": [
+        "cc-d5-s04"
+      ],
+      "noteIds": [
+        "cc-d5-n02"
+      ],
+      "tags": [
+        "topic:representative-workspace",
+        "domain:D5",
+        "task:configure",
+        "feature:macro-entry-step",
+        "deployment:standalone"
+      ]
+    },
+    {
+      "id": "cc-d5-c04",
+      "revision": 1,
+      "topicId": "representative-workspace",
+      "kind": "recall",
+      "prompt": "What does an automation-dictionary parameter resolve when an action runs?",
+      "answer": "A value from the available runtime context.",
+      "explanation": "Choose a supported context and parameter format rather than assuming one syntax fits every use.",
+      "sourceIds": [
+        "cc-d5-s06"
+      ],
+      "noteIds": [
+        "cc-d5-n02"
+      ],
+      "tags": [
+        "topic:representative-workspace",
+        "domain:D5",
+        "task:configure",
+        "feature:runtime-context-parameter",
+        "deployment:standalone"
+      ]
+    },
+    {
+      "id": "cc-d5-c05",
+      "revision": 2,
+      "topicId": "representative-workspace",
+      "kind": "mcq",
+      "prompt": "A macro fills a form, but the process must save before its next step instead of waiting for autosave. What should follow the autofill action?",
+      "answer": "A Save the record action.",
+      "explanation": "Autofill changes the focused form and can wait for autosave. Save the record explicitly persists those changes before the next step. Refreshing, repeating Autofill, or changing focus does not provide that explicit save guarantee.",
+      "sourceIds": [
+        "cc-d5-s07"
+      ],
+      "noteIds": [
+        "cc-d5-n02"
+      ],
+      "tags": [
+        "topic:representative-workspace",
+        "domain:D5",
+        "task:troubleshoot",
+        "feature:explicit-macro-save",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Refresh the form immediately after Autofill"
+        },
+        {
+          "id": "o2",
+          "text": "Run Autofill again with the same values"
+        },
+        {
+          "id": "o3",
+          "text": "Run Save the record before continuing"
+        },
+        {
+          "id": "o4",
+          "text": "Move focus to another open record without a save action"
+        }
+      ],
+      "correctOptionId": "o3"
+    },
+    {
+      "id": "cc-d5-c06",
+      "revision": 2,
+      "topicId": "representative-workspace",
+      "kind": "mcq",
+      "prompt": "Two scripts are associated with a session template. The product involved should determine which appears by default. What should you configure?",
+      "answer": "The session template's script expression.",
+      "explanation": "The expression evaluates the conversation context and chooses a default from the associated scripts. Association makes scripts available; changing names or internal step order does not define a product-based choice. Representatives can still switch scripts.",
+      "sourceIds": [
+        "cc-d5-s03"
+      ],
+      "noteIds": [
+        "cc-d5-n02"
+      ],
+      "tags": [
+        "topic:representative-workspace",
+        "domain:D5",
+        "task:troubleshoot",
+        "feature:conditional-default-script",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Associate both scripts but leave the default expression disabled"
+        },
+        {
+          "id": "o2",
+          "text": "Change the scripts' display names to match the products"
+        },
+        {
+          "id": "o3",
+          "text": "Reorder the steps inside one script"
+        },
+        {
+          "id": "o4",
+          "text": "Configure the session template's script expression"
+        }
+      ],
+      "correctOptionId": "o4"
+    },
+    {
+      "id": "cc-d6-c01",
+      "revision": 1,
+      "topicId": "supervision-analytics",
+      "kind": "recall",
+      "prompt": "Which role is documented for monitoring voice calls in standalone Contact Center?",
+      "answer": "Omnichannel Supervisor.",
+      "explanation": "The role supports monitoring, joining, and consulting on ongoing voice calls.",
+      "sourceIds": [
+        "cc-d6-s01"
+      ],
+      "noteIds": [
+        "cc-d6-n01"
+      ],
+      "tags": [
+        "topic:supervision-analytics",
+        "domain:D6",
+        "task:configure",
+        "feature:voice-supervisor-role",
+        "deployment:standalone"
+      ]
+    },
+    {
+      "id": "cc-d6-c02",
+      "revision": 1,
+      "topicId": "supervision-analytics",
+      "kind": "recall",
+      "prompt": "How can a voice supervisor coach a representative without sending the guidance to the customer?",
+      "answer": "Send private messages to the representative while monitoring.",
+      "explanation": "These consultation messages are hidden from the customer.",
+      "sourceIds": [
+        "cc-d6-s01"
+      ],
+      "noteIds": [
+        "cc-d6-n01"
+      ],
+      "tags": [
+        "topic:supervision-analytics",
+        "domain:D6",
+        "task:configure",
+        "feature:private-supervisor-guidance",
+        "deployment:standalone"
+      ]
+    },
+    {
+      "id": "cc-d6-c03",
+      "revision": 1,
+      "topicId": "supervision-analytics",
+      "kind": "recall",
+      "prompt": "Which role is used to permit editing analytics reports?",
+      "answer": "Analytics Report Author.",
+      "explanation": "Read-only dashboard access and report editing are different permissions.",
+      "sourceIds": [
+        "cc-d6-s02"
+      ],
+      "noteIds": [
+        "cc-d6-n01"
+      ],
+      "tags": [
+        "topic:supervision-analytics",
+        "domain:D6",
+        "task:configure",
+        "feature:analytics-author-role",
+        "deployment:standalone"
+      ]
+    },
+    {
+      "id": "cc-d6-c04",
+      "revision": 1,
+      "topicId": "supervision-analytics",
+      "kind": "recall",
+      "prompt": "Where does configured conversation diagnostics collect lifecycle logs?",
+      "answer": "Azure Application Insights.",
+      "explanation": "Use the recorded events to investigate a particular conversation.",
+      "sourceIds": [
+        "cc-d6-s04"
+      ],
+      "noteIds": [
+        "cc-d6-n02"
+      ],
+      "tags": [
+        "topic:supervision-analytics",
+        "domain:D6",
+        "task:configure",
+        "feature:conversation-log-destination",
+        "deployment:standalone"
+      ]
+    },
+    {
+      "id": "cc-d6-c05",
+      "revision": 2,
+      "topicId": "supervision-analytics",
+      "kind": "mcq",
+      "prompt": "With the Diagnose dashboard configured and a supported out-of-the-box assignment method, an available representative was skipped earlier. What should you compare?",
+      "answer": "Requirements and representative eligibility at that assignment event.",
+      "explanation": "Compare the conversation requirements with presence, capacity and skills at the attempted assignment. Current state may have changed; daily totals and requirements alone do not show whether that representative was eligible then.",
+      "sourceIds": [
+        "cc-d6-s06"
+      ],
+      "noteIds": [
+        "cc-d6-n02"
+      ],
+      "tags": [
+        "topic:supervision-analytics",
+        "domain:D6",
+        "task:troubleshoot",
+        "feature:historical-assignment-eligibility",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Only the representative's current presence and capacity"
+        },
+        {
+          "id": "o2",
+          "text": "Conversation requirements and the representative's eligibility at the assignment event"
+        },
+        {
+          "id": "o3",
+          "text": "Only the queue's total number of assignments for the day"
+        },
+        {
+          "id": "o4",
+          "text": "Only the configured required skills, without the representative snapshot"
+        }
+      ],
+      "correctOptionId": "o2"
+    },
+    {
+      "id": "cc-d6-c06",
+      "revision": 2,
+      "topicId": "supervision-analytics",
+      "kind": "mcq",
+      "prompt": "A standalone environment has no configured voice feature. Why is the option to add voice insights to real-time analytics unavailable?",
+      "answer": "That option requires voice to be configured.",
+      "explanation": "The voice option has its own channel prerequisite. Enabling general or historical reports does not configure the voice feature, and a report-author role does not replace that requirement.",
+      "sourceIds": [
+        "cc-d6-s03"
+      ],
+      "noteIds": [
+        "cc-d6-n02"
+      ],
+      "tags": [
+        "topic:supervision-analytics",
+        "domain:D6",
+        "task:troubleshoot",
+        "feature:voice-analytics-prerequisite",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Enabling the general real-time analytics toggle also provisions voice automatically"
+        },
+        {
+          "id": "o2",
+          "text": "Enabling historical analytics satisfies the voice prerequisite"
+        },
+        {
+          "id": "o3",
+          "text": "The organization must have the voice feature configured"
+        },
+        {
+          "id": "o4",
+          "text": "Assigning Analytics Report Author alone makes the voice option available"
+        }
+      ],
+      "correctOptionId": "o3"
+    }
+  ]
+}

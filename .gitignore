@@ -1,0 +1,19 @@
+node_modules/
+dist/
+.vite/
+playwright-report/
+test-results/
+.env
+.env.*
+!.env.example
+*.local
+*.log
+
+# Audit output is large and regenerated. Keep only the compact per-phase results
+# that AGENTS.md and the phase reports cite.
+reports/*
+!reports/phase*/
+reports/phase*/*
+!reports/phase*/checks.json
+!reports/phase*/summary.json
+!reports/phase*/preservation-result.json

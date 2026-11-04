@@ -1,0 +1,638 @@
+{
+  "sources": [
+    {
+      "id": "cc-d1-users-s01",
+      "title": "Create users",
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/create-users"
+    },
+    {
+      "id": "cc-d1-users-s02",
+      "title": "Control user access to environments with security groups and licenses",
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/control-user-access"
+    },
+    {
+      "id": "cc-d1-users-s03",
+      "title": "Use the enhanced experience to manage users",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/users-user-profiles"
+    },
+    {
+      "id": "cc-d1-users-s04",
+      "title": "Manage personas and custom security roles",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/role-persona-mapping"
+    },
+    {
+      "id": "cc-d1-users-s05",
+      "title": "Assign a security role to a user",
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/assign-security-roles"
+    },
+    {
+      "id": "cc-d1-users-s06",
+      "title": "Create and manage capacity profiles",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/capacity-profiles"
+    },
+    {
+      "id": "cc-d1-users-s07",
+      "title": "Assign roles and enable users",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/implement/add-users-assign-roles"
+    }
+  ],
+  "notes": [
+    {
+      "id": "cc-d1-n06",
+      "title": "Prepare a representative account for real work",
+      "body": "Treat onboarding as several checks. Create the regular human account in Microsoft 365, then verify that it is enabled and eligible for the intended Dataverse environment. Where an environment security group is used, check membership. Do not confuse appearing in the user list with being allowed to use its data: environment security roles are a separate requirement.\n\nNext check the Contact Center duties. Basic User is required for Contact Center users, while the task-specific roles depend on what the person will do. Working with cases adds its own Customer Service Representative requirement. Use the documented role matrix rather than assuming that one familiar role covers every feature.\n\nFinally prepare routing-related user settings. A human representative needs a bookable resource for unified routing. Default presence controls their initial status when signing in to the workspace. Enhanced user management can update existing skills, queues and capacity profiles in bulk. A useful rollout check follows one representative from sign-in through receiving an appropriate work item; it tests several layers that an account-creation check alone misses.",
+      "sourceIds": [
+        "cc-d1-users-s01",
+        "cc-d1-users-s02",
+        "cc-d1-users-s03",
+        "cc-d1-users-s07"
+      ]
+    },
+    {
+      "id": "cc-d1-n07",
+      "title": "Separate role privileges, personas and application access",
+      "body": "Begin custom-role design with the user's tasks. Copy a suitable existing Contact Center role, then review its privileges and access levels. Preserve the minimum access needed for those tasks, including the required persona privilege. The mapping uses the admin, supervisor or agent archetype; it is not a reason to make every user a system administrator.\n\nRole assignments combine. Adding a narrower custom role does not cancel a broader permission already supplied by another assigned role. A least-privilege review must therefore examine the user's whole set of role grants, not just the newly created role.\n\nAfter mapping a custom role to a persona, check application, form and dashboard access separately. Persona mapping does not automatically grant those surfaces. For example, if the user has the intended privileges and persona but the application is unavailable, inspect that application's permitted roles before changing routing or adding broad administrative access.",
+      "sourceIds": [
+        "cc-d1-users-s04",
+        "cc-d1-users-s05"
+      ]
+    },
+    {
+      "id": "cc-d1-n08",
+      "title": "Change capacity settings without surprising existing work",
+      "body": "Capacity profiles describe workload limits and are assigned to representatives who have bookable resources. Keep the profile's default limit separate from a representative-specific custom limit. A custom value governs that representative until it is cleared; changing the profile default does not replace it.\n\nConfiguration changes do not necessarily alter work already assigned. A lower custom limit affects new assignments without redistributing the representative's current work. Reset frequency is a different decision: changing it requires recreating the profile. Plan that change and its user associations rather than treating it as an ordinary limit edit.",
+      "sourceIds": [
+        "cc-d1-users-s06",
+        "cc-d1-users-s03"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "cc-d1-c16",
+      "revision": 1,
+      "topicId": "users-security",
+      "kind": "recall",
+      "prompt": "Which administration center does Microsoft document for creating a regular human account that needs Contact Center access?",
+      "answer": "Microsoft 365 admin center.",
+      "explanation": "Creating the identity is only the start; environment eligibility and assigned security roles still need checking.",
+      "sourceIds": [
+        "cc-d1-users-s01"
+      ],
+      "noteIds": [
+        "cc-d1-n06"
+      ],
+      "tags": [
+        "topic:users-security",
+        "domain:deployment",
+        "feature:user-provisioning",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d1-c17",
+      "revision": 1,
+      "topicId": "users-security",
+      "kind": "recall",
+      "prompt": "What resource record must a human representative have to receive work through unified routing?",
+      "answer": "A bookable resource.",
+      "explanation": "An enabled user account alone does not provide the routing resource configuration.",
+      "sourceIds": [
+        "cc-d1-users-s03"
+      ],
+      "noteIds": [
+        "cc-d1-n06"
+      ],
+      "tags": [
+        "topic:users-security",
+        "domain:deployment",
+        "feature:bookable-resources",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d1-c18",
+      "revision": 1,
+      "topicId": "users-security",
+      "kind": "recall",
+      "prompt": "What is the documented starting point for a custom Contact Center security role tailored to a representative task?",
+      "answer": "Copy a suitable existing role, then adjust its privileges and access levels.",
+      "explanation": "Keep the required minimum privileges for the task and persona; starting from a copy reduces accidental under-granting.",
+      "sourceIds": [
+        "cc-d1-users-s04"
+      ],
+      "noteIds": [
+        "cc-d1-n07"
+      ],
+      "tags": [
+        "topic:users-security",
+        "domain:deployment",
+        "feature:custom-security-roles",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d1-c19",
+      "revision": 1,
+      "topicId": "users-security",
+      "kind": "recall",
+      "prompt": "Does assigning a narrower security role remove access already granted by another assigned security role?",
+      "answer": "No. Security-role privileges are cumulative.",
+      "explanation": "Review the other grants when reducing access; the new role is not a deny rule.",
+      "sourceIds": [
+        "cc-d1-users-s05"
+      ],
+      "noteIds": [
+        "cc-d1-n07"
+      ],
+      "tags": [
+        "topic:users-security",
+        "domain:deployment",
+        "feature:security-roles",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d1-c20",
+      "revision": 1,
+      "topicId": "routing-capacity",
+      "kind": "recall",
+      "prompt": "Can an existing capacity profile change its reset frequency in place?",
+      "answer": "No. Recreate the profile to change reset frequency.",
+      "explanation": "Treat this as a profile replacement, not a routine work-limit edit.",
+      "sourceIds": [
+        "cc-d1-users-s06"
+      ],
+      "noteIds": [
+        "cc-d1-n08"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "domain:deployment",
+        "feature:capacity-profiles",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d1-c21",
+      "revision": 1,
+      "topicId": "users-security",
+      "kind": "recall",
+      "prompt": "What does a representative user's Default Presence setting determine?",
+      "answer": "Their initial presence when signing in to Copilot Service workspace.",
+      "explanation": "This sets the starting presence; it is not a skill rating or workload limit.",
+      "sourceIds": [
+        "cc-d1-users-s03"
+      ],
+      "noteIds": [
+        "cc-d1-n06"
+      ],
+      "tags": [
+        "topic:users-security",
+        "domain:deployment",
+        "feature:presence",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d1-c22",
+      "revision": 2,
+      "topicId": "users-security",
+      "kind": "mcq",
+      "prompt": "An administrator onboards a non-admin representative by creating an enabled account, assigning the correct license and adding the person to the target environment security group. The user now appears in Dataverse. Which additional access configuration must the administrator verify before the representative can use environment data?",
+      "answer": "Assign the appropriate environment security roles.",
+      "explanation": "Membership permits environment participation; it does not replace data privileges. Repeating account synchronization, changing the group, or recreating the user does not supply the missing roles.",
+      "sourceIds": [
+        "cc-d1-users-s02",
+        "cc-d1-users-s05"
+      ],
+      "noteIds": [
+        "cc-d1-n06"
+      ],
+      "tags": [
+        "topic:users-security",
+        "domain:deployment",
+        "feature:environment-access",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Refresh the user repeatedly to resynchronize the existing identity."
+        },
+        {
+          "id": "b",
+          "text": "Replace the environment security group with a new group containing the same user."
+        },
+        {
+          "id": "c",
+          "text": "Assign the appropriate environment security roles."
+        },
+        {
+          "id": "d",
+          "text": "Recreate the user with the same license and group membership."
+        }
+      ],
+      "correctOptionId": "c"
+    },
+    {
+      "id": "cc-d1-c23",
+      "revision": 3,
+      "topicId": "users-security",
+      "kind": "mcq",
+      "prompt": "A contact center creates a custom representative role by copying and adapting an existing role. The administrator verifies the required table privileges and maps the role to the Agent persona. Which additional step belongs in the rollout checklist so that these users can open the intended model-driven application without receiving broader data privileges?",
+      "answer": "Allow the custom role in the application's role access settings.",
+      "explanation": "Persona mapping does not grant application access automatically. The application must permit the custom role. Form access, experience configuration and repeating an already valid persona mapping do not complete that application authorization step.",
+      "sourceIds": [
+        "cc-d1-users-s04"
+      ],
+      "noteIds": [
+        "cc-d1-n07"
+      ],
+      "tags": [
+        "topic:users-security",
+        "domain:deployment",
+        "feature:persona-mapping",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Allow the custom role in the application's role access settings."
+        },
+        {
+          "id": "b",
+          "text": "Permit the role on a form while leaving the application's role list unchanged."
+        },
+        {
+          "id": "c",
+          "text": "Assign a different experience profile without changing the application's role list."
+        },
+        {
+          "id": "d",
+          "text": "Remove and recreate the same Agent persona mapping."
+        }
+      ],
+      "correctOptionId": "a"
+    },
+    {
+      "id": "cc-d1-c24",
+      "revision": 1,
+      "topicId": "routing-capacity",
+      "kind": "mcq",
+      "prompt": "A representative has four assigned work items. After their custom capacity limit is lowered to two, do the existing four automatically move to other representatives?",
+      "answer": "No. The lower custom limit applies to new assignments.",
+      "explanation": "Current work is not automatically redistributed. Neither the profile default nor a limit edit changes this behavior.",
+      "sourceIds": [
+        "cc-d1-users-s06"
+      ],
+      "noteIds": [
+        "cc-d1-n08"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "domain:deployment",
+        "feature:capacity-profiles",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Yes; all four are immediately returned to the queue."
+        },
+        {
+          "id": "b",
+          "text": "Yes; exactly two are automatically reassigned."
+        },
+        {
+          "id": "c",
+          "text": "No; the lower limit is ignored until the default is also reduced."
+        },
+        {
+          "id": "d",
+          "text": "No. The lower custom limit applies to new assignments."
+        }
+      ],
+      "correctOptionId": "d"
+    }
+  ],
+  "questions": [],
+  "editorial": [
+    {
+      "id": "cc-d1-n06",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "representative-onboarding-layers",
+      "objectiveIds": [
+        "D1.3.01",
+        "D1.3.02",
+        "D1.3.03"
+      ],
+      "level": "core",
+      "author": "/root/d1_users",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-users-s01",
+          "section": "Create a user account; Requirements for successfully adding users in Dataverse",
+          "claim": "Regular human account creation and environment eligibility are separate from role access.",
+          "applicability": "Dynamics 365 Contact Center human representatives using Dataverse and unified routing; not AI agent identities."
+        },
+        {
+          "sourceId": "cc-d1-users-s02",
+          "section": "Control user access to environments with security groups and licenses",
+          "claim": "Environment group membership does not replace security roles.",
+          "applicability": "Dynamics 365 Contact Center human representatives using Dataverse and unified routing; not AI agent identities."
+        },
+        {
+          "sourceId": "cc-d1-users-s03",
+          "section": "Manage contact center users; Manage users using the classic experience",
+          "claim": "Routing needs a bookable resource; default presence applies at sign-in; bulk attributes exist before assignment.",
+          "applicability": "Dynamics 365 Contact Center human representatives using Dataverse and unified routing; not AI agent identities."
+        },
+        {
+          "sourceId": "cc-d1-users-s07",
+          "section": "Roles in Dynamics 365 Contact Center",
+          "claim": "Basic User and task-specific roles have different requirements, including case work.",
+          "applicability": "Dynamics 365 Contact Center human representatives using Dataverse and unified routing; not AI agent identities."
+        }
+      ],
+      "duplicateCheck": "New onboarding sequence; pilot cc-d1-n01 explains workspace choice, not account readiness."
+    },
+    {
+      "id": "cc-d1-n07",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "custom-role-access-layers",
+      "objectiveIds": [
+        "D1.3.03"
+      ],
+      "level": "core",
+      "author": "/root/d1_users",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-users-s04",
+          "section": "Create custom security roles; Enable access to applications; Enable access to forms and dashboards",
+          "claim": "Copy and customize a suitable role, map its persona and grant application surfaces separately.",
+          "applicability": "Dynamics 365 Contact Center human representatives using Dataverse and unified routing; not AI agent identities."
+        },
+        {
+          "sourceId": "cc-d1-users-s05",
+          "section": "Assign a security role to a user",
+          "claim": "Assigned security-role privileges accumulate.",
+          "applicability": "Dynamics 365 Contact Center human representatives using Dataverse and unified routing; not AI agent identities."
+        }
+      ],
+      "duplicateCheck": "New distinction among cumulative privileges, persona and app access; does not repeat pilot Copilot access or workspace role recall."
+    },
+    {
+      "id": "cc-d1-n08",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "capacity-configuration-lifecycle",
+      "objectiveIds": [
+        "D1.3.04"
+      ],
+      "level": "core",
+      "author": "/root/d1_users",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-users-s06",
+          "section": "Create a capacity profile and assign to users; How representative-specific limits work",
+          "claim": "Reset-frequency change requires recreation; custom limits persist and affect new work, not redistribution.",
+          "applicability": "Dynamics 365 Contact Center human representatives using Dataverse and unified routing; not AI agent identities."
+        },
+        {
+          "sourceId": "cc-d1-users-s03",
+          "section": "Manage users using the classic experience",
+          "claim": "Configure a bookable resource and associate the capacity profile.",
+          "applicability": "Dynamics 365 Contact Center human representatives using Dataverse and unified routing; not AI agent identities."
+        }
+      ],
+      "duplicateCheck": "Distinct from pilot cc-d4-n02 and c06 manual assignment override; this note focuses on editing and persistence."
+    },
+    {
+      "id": "cc-d1-c16",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "human-account-creation-entry",
+      "objectiveIds": [
+        "D1.3.02"
+      ],
+      "level": "core",
+      "author": "/root/d1_users",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-users-s01",
+          "section": "Create a user account; Requirements for successfully adding users in Dataverse",
+          "claim": "Regular human account creation and environment eligibility are separate from role access.",
+          "applicability": "Dynamics 365 Contact Center human representatives using Dataverse and unified routing; not AI agent identities."
+        }
+      ],
+      "duplicateCheck": "Compared against all 36 pilot cards: this tests a new administrative distinction, not the existing workspace-role or manual-capacity-override fact."
+    },
+    {
+      "id": "cc-d1-c17",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "representative-bookable-resource",
+      "objectiveIds": [
+        "D1.3.01"
+      ],
+      "level": "core",
+      "author": "/root/d1_users",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-users-s03",
+          "section": "Manage contact center users; Manage users using the classic experience",
+          "claim": "Routing needs a bookable resource; default presence applies at sign-in; bulk attributes exist before assignment.",
+          "applicability": "Dynamics 365 Contact Center human representatives using Dataverse and unified routing; not AI agent identities."
+        }
+      ],
+      "duplicateCheck": "Compared against all 36 pilot cards: this tests a new administrative distinction, not the existing workspace-role or manual-capacity-override fact."
+    },
+    {
+      "id": "cc-d1-c18",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "custom-role-starting-point",
+      "objectiveIds": [
+        "D1.3.03"
+      ],
+      "level": "core",
+      "author": "/root/d1_users",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-users-s04",
+          "section": "Create custom security roles; Enable access to applications; Enable access to forms and dashboards",
+          "claim": "Copy and customize a suitable role, map its persona and grant application surfaces separately.",
+          "applicability": "Dynamics 365 Contact Center human representatives using Dataverse and unified routing; not AI agent identities."
+        }
+      ],
+      "duplicateCheck": "Compared against all 36 pilot cards: this tests a new administrative distinction, not the existing workspace-role or manual-capacity-override fact."
+    },
+    {
+      "id": "cc-d1-c19",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "cumulative-role-privileges",
+      "objectiveIds": [
+        "D1.3.03"
+      ],
+      "level": "core",
+      "author": "/root/d1_users",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-users-s05",
+          "section": "Assign a security role to a user",
+          "claim": "Assigned security-role privileges accumulate.",
+          "applicability": "Dynamics 365 Contact Center human representatives using Dataverse and unified routing; not AI agent identities."
+        }
+      ],
+      "duplicateCheck": "Compared against all 36 pilot cards: this tests a new administrative distinction, not the existing workspace-role or manual-capacity-override fact."
+    },
+    {
+      "id": "cc-d1-c20",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "capacity-reset-frequency-immutability",
+      "objectiveIds": [
+        "D1.3.04"
+      ],
+      "level": "core",
+      "author": "/root/d1_users",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-users-s06",
+          "section": "Create a capacity profile and assign to users; How representative-specific limits work",
+          "claim": "Reset-frequency change requires recreation; custom limits persist and affect new work, not redistribution.",
+          "applicability": "Dynamics 365 Contact Center human representatives using Dataverse and unified routing; not AI agent identities."
+        }
+      ],
+      "duplicateCheck": "Compared against all 36 pilot cards: this tests a new administrative distinction, not the existing workspace-role or manual-capacity-override fact."
+    },
+    {
+      "id": "cc-d1-c21",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "default-presence-signin",
+      "objectiveIds": [
+        "D1.3.01"
+      ],
+      "level": "core",
+      "author": "/root/d1_users",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-users-s03",
+          "section": "Manage contact center users; Manage users using the classic experience",
+          "claim": "Routing needs a bookable resource; default presence applies at sign-in; bulk attributes exist before assignment.",
+          "applicability": "Dynamics 365 Contact Center human representatives using Dataverse and unified routing; not AI agent identities."
+        }
+      ],
+      "duplicateCheck": "Compared against all 36 pilot cards: this tests a new administrative distinction, not the existing workspace-role or manual-capacity-override fact."
+    },
+    {
+      "id": "cc-d1-c22",
+      "revision": 2,
+      "domainId": "deployment",
+      "conceptId": "environment-membership-not-data-access",
+      "objectiveIds": [
+        "D1.3.02",
+        "D1.3.03"
+      ],
+      "level": "advanced",
+      "author": "/root/d1_users",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-users-s02",
+          "section": "Control user access to environments with security groups and licenses",
+          "claim": "Environment group membership does not replace security roles.",
+          "applicability": "Dynamics 365 Contact Center human representatives using Dataverse and unified routing; not AI agent identities."
+        },
+        {
+          "sourceId": "cc-d1-users-s05",
+          "section": "Assign a security role to a user",
+          "claim": "Assigned security-role privileges accumulate.",
+          "applicability": "Dynamics 365 Contact Center human representatives using Dataverse and unified routing; not AI agent identities."
+        }
+      ],
+      "duplicateCheck": "Compared against all 36 pilot cards: this tests a new administrative distinction, not the existing workspace-role or manual-capacity-override fact.",
+      "revisedBy": "/root",
+      "revisionReason": "Removes the supplied missing-role diagnosis while retaining ordinary-user scope and the environment-membership versus data-privilege distinction. Existing answer/options remain supported."
+    },
+    {
+      "id": "cc-d1-c23",
+      "revision": 3,
+      "domainId": "deployment",
+      "conceptId": "persona-application-access-omission",
+      "objectiveIds": [
+        "D1.3.03"
+      ],
+      "level": "advanced",
+      "author": "/root/d1_users",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-users-s04",
+          "section": "Create custom security roles; Enable access to applications; Enable access to forms and dashboards",
+          "claim": "Copy and customize a suitable role, map its persona and grant application surfaces separately.",
+          "applicability": "Dynamics 365 Contact Center human representatives using Dataverse and unified routing; not AI agent identities."
+        }
+      ],
+      "duplicateCheck": "Compared against all 36 pilot cards: this tests a new administrative distinction, not the existing workspace-role or manual-capacity-override fact.",
+      "revisedBy": "/root",
+      "revisionReason": "Removes explicit disclosure of the app role-list omission. Tests the additional application-authorization layer after role/persona configuration; other choices remain insufficient. Align explanation with revised rollout-checklist stem; it no longer states a diagnosed omission."
+    },
+    {
+      "id": "cc-d1-c24",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "custom-capacity-no-retroactive-redistribution",
+      "objectiveIds": [
+        "D1.3.04"
+      ],
+      "level": "advanced",
+      "author": "/root/d1_users",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-users-s06",
+          "section": "Create a capacity profile and assign to users; How representative-specific limits work",
+          "claim": "Reset-frequency change requires recreation; custom limits persist and affect new work, not redistribution.",
+          "applicability": "Dynamics 365 Contact Center human representatives using Dataverse and unified routing; not AI agent identities."
+        }
+      ],
+      "duplicateCheck": "Compared against all 36 pilot cards: this tests a new administrative distinction, not the existing workspace-role or manual-capacity-override fact."
+    }
+  ]
+}

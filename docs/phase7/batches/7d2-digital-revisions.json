@@ -1,0 +1,31 @@
+{
+  "author": "/root/digital_finish",
+  "revisedAt": "2026-11-02",
+  "changes": [
+    {
+      "id": "cc-d2-c22",
+      "fromRevision": 1,
+      "toRevision": 2,
+      "finding": "Weak operating-hours-label distractor and insufficient provider-connection scope.",
+      "resolution": "Scoped the diagnostic layer before assignment; replaced the label distractor with a real queue-association check.",
+      "changedFields": [
+        "prompt",
+        "options",
+        "explanation"
+      ]
+    },
+    {
+      "id": "cc-d2-c24",
+      "fromRevision": 1,
+      "toRevision": 2,
+      "finding": "Stem disclosed that activity tracking was missing; alternatives were too easy.",
+      "resolution": "Replaced disclosed diagnosis with observed empty history despite working chat, then asks which dependency to verify. Alternatives concern plausible adjacent customer-context settings.",
+      "changedFields": [
+        "prompt",
+        "answer",
+        "options",
+        "explanation"
+      ]
+    }
+  ]
+}

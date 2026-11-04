@@ -1,0 +1,794 @@
+{
+  "sources": [
+    {
+      "id": "cc-d1-final-s01",
+      "title": "Configure the connector for any CRM solution",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/extend/configure-custom-connector"
+    },
+    {
+      "id": "cc-d1-final-s02",
+      "title": "Set up the embedded experience in Salesforce",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/set-up-embedded-experience"
+    },
+    {
+      "id": "cc-d1-final-s03",
+      "title": "Contact center using existing CRM and CCaaS solution with Copilot for Service and Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/guidance/reference-architectures/contact-center-existing-crm-ccaas-solution-copilot-service-copilot-studio"
+    },
+    {
+      "id": "cc-d1-final-s04",
+      "title": "Migrate configurations for channels using solutions",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/migrate-channel-config-using-solutions"
+    },
+    {
+      "id": "cc-d1-final-s05",
+      "title": "Best practices for application lifecycle management",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/alm-best-practices"
+    },
+    {
+      "id": "cc-d1-final-s06",
+      "title": "Copy an environment with omnichannel capabilities",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/implement/copy-environment-with-omnichannel"
+    },
+    {
+      "id": "cc-d1-final-s07",
+      "title": "Disconnect from Azure Communication Services resources",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-disconnect-from-acs"
+    }
+  ],
+  "notes": [
+    {
+      "id": "cc-d1-n09",
+      "title": "Preserve CRM identity while designing synchronization",
+      "body": "Connect the source CRM and Dataverse in the intended environment. The documented connector needs matching Power Apps and Power Automate environments, plus Source CRM, Source CRM ID and Source CRM URL columns on account and contact records. These preserve where a synchronized record came from.\n\nPlan initial loading separately from ongoing changes. A manual initial load may need pagination; incremental triggers or webhooks carry later create, update and delete events. Test a changed source record as well as an initial import before considering the integration ready.",
+      "sourceIds": [
+        "cc-d1-final-s01"
+      ]
+    },
+    {
+      "id": "cc-d1-n10",
+      "title": "Separate embedded desktop setup from retained-provider responsibilities",
+      "body": "For Salesforce embedding, importing the call-center definition is only one part of setup. Add the intended user to that call center, configure a default softphone layout and add the Open CTI Softphone utility to the Service Console. Validate the representative experience with that user.\n\nMicrosoft also documents an architecture that retains both an existing CRM and CCaaS provider while adding Copilot assistance. In that specific architecture, existing providers still handle routing, follow-up and supervision. An assistance component should not be mistaken for replacement of those operational services.",
+      "sourceIds": [
+        "cc-d1-final-s02",
+        "cc-d1-final-s03"
+      ]
+    },
+    {
+      "id": "cc-d1-n11",
+      "title": "Plan channel migration dependencies and managed cleanup",
+      "body": "Build a channel migration checklist before exporting records. The documented sequence moves session and notification templates, skill rules, new capacity profiles and queues before channel workstreams/settings. The channel procedure excludes account, provider, agent and AI/analytics setup, so assign separate work for those dependencies.\n\nTreat cleanup as a managed lifecycle operation. Imported managed configuration cannot simply be deleted as a target record; Microsoft directs removal through the supplying managed solution. Assess that solution’s contents and dependencies before removal so cleanup does not unintentionally remove other configuration.",
+      "sourceIds": [
+        "cc-d1-final-s04",
+        "cc-d1-final-s05"
+      ]
+    },
+    {
+      "id": "cc-d1-n12",
+      "title": "Revalidate target integrations after an omnichannel environment copy",
+      "body": "A full environment copy carries integration configuration, not proof that the target can safely serve users. Review target accounts, numbers, agents and websites, then test routing and escalation. Record-routing configuration needs separate target configuration and validation. Replace a website’s source chat snippet with the generated target snippet.\n\nFor ACS voice, the copy guidance requires a target-specific resource and number rather than sharing the source resource. Plan disconnection carefully: the disconnection procedure releases associated numbers from Dynamics 365 and calls for Event Grid subscription cleanup. Validate target agent connections and publish the intended agent before testing it.",
+      "sourceIds": [
+        "cc-d1-final-s06",
+        "cc-d1-final-s07"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "cc-d1-c25",
+      "revision": 1,
+      "topicId": "architecture-deployment",
+      "kind": "recall",
+      "prompt": "Which three provenance columns does the documented any-CRM connector require on Account and Contact?",
+      "answer": "Source CRM, Source CRM ID and Source CRM URL.",
+      "explanation": "These identify the originating system, record and link.",
+      "sourceIds": [
+        "cc-d1-final-s01"
+      ],
+      "noteIds": [
+        "cc-d1-n09"
+      ],
+      "tags": [
+        "topic:architecture-deployment",
+        "domain:deployment",
+        "feature:crm-connectors",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d1-c26",
+      "revision": 1,
+      "topicId": "architecture-deployment",
+      "kind": "recall",
+      "prompt": "Must Power Apps and Power Automate use the same environment for the documented any-CRM connector?",
+      "answer": "Yes.",
+      "explanation": "Verify the selected environments before creating the synchronization connections.",
+      "sourceIds": [
+        "cc-d1-final-s01"
+      ],
+      "noteIds": [
+        "cc-d1-n09"
+      ],
+      "tags": [
+        "topic:architecture-deployment",
+        "domain:deployment",
+        "feature:crm-connectors",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d1-c27",
+      "revision": 1,
+      "topicId": "architecture-deployment",
+      "kind": "mcq",
+      "prompt": "An any-CRM integration imports existing contacts successfully when an operator runs it. The requirement is automatic incremental updates after later source edits. Which design addition addresses that requirement?",
+      "answer": "Configure automated change triggers or CRM webhooks.",
+      "explanation": "Use change capture for ongoing updates. Repeating a manual initial load, editing provenance or separating environments does not create the required automated trigger.",
+      "sourceIds": [
+        "cc-d1-final-s01"
+      ],
+      "noteIds": [
+        "cc-d1-n09"
+      ],
+      "tags": [
+        "topic:architecture-deployment",
+        "domain:deployment",
+        "feature:crm-connectors",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Configure automated change triggers or CRM webhooks."
+        },
+        {
+          "id": "b",
+          "text": "Run the unchanged manual initial-load flow once more."
+        },
+        {
+          "id": "c",
+          "text": "Change only each record’s Source CRM URL value."
+        },
+        {
+          "id": "d",
+          "text": "Move the Dataverse connection to a different environment."
+        }
+      ],
+      "correctOptionId": "a"
+    },
+    {
+      "id": "cc-d1-c28",
+      "revision": 1,
+      "topicId": "architecture-deployment",
+      "kind": "recall",
+      "prompt": "After importing the Salesforce call-center definition, where does the documented procedure add the signed-in user?",
+      "answer": "Manage Call Center Users → Add more users.",
+      "explanation": "The imported definition alone does not assign the user to its call center.",
+      "sourceIds": [
+        "cc-d1-final-s02"
+      ],
+      "noteIds": [
+        "cc-d1-n10"
+      ],
+      "tags": [
+        "topic:architecture-deployment",
+        "domain:deployment",
+        "feature:embedded-crm",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d1-c29",
+      "revision": 1,
+      "topicId": "architecture-deployment",
+      "kind": "recall",
+      "prompt": "Which Salesforce Service Console utility does the embedded Contact Center setup add?",
+      "answer": "Open CTI Softphone.",
+      "explanation": "Configure the utility through the application settings after preparing its softphone layout.",
+      "sourceIds": [
+        "cc-d1-final-s02"
+      ],
+      "noteIds": [
+        "cc-d1-n10"
+      ],
+      "tags": [
+        "topic:architecture-deployment",
+        "domain:deployment",
+        "feature:embedded-crm",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d1-c30",
+      "revision": 1,
+      "topicId": "architecture-deployment",
+      "kind": "mcq",
+      "prompt": "A design follows Microsoft’s reference architecture retaining the existing CRM and CCaaS while adding Copilot assistance. Who continues to provide routing and supervisor operations?",
+      "answer": "The existing CRM/CCaaS services.",
+      "explanation": "The described architecture preserves those operational responsibilities. Adding assistance does not by itself move them into Dynamics routing or reporting.",
+      "sourceIds": [
+        "cc-d1-final-s03"
+      ],
+      "noteIds": [
+        "cc-d1-n10"
+      ],
+      "tags": [
+        "topic:architecture-deployment",
+        "domain:deployment",
+        "feature:third-party-ccaas",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Copilot for Service takes routing; CCaaS keeps supervision."
+        },
+        {
+          "id": "b",
+          "text": "The existing CRM/CCaaS services."
+        },
+        {
+          "id": "c",
+          "text": "Copilot Studio takes both routing and supervision."
+        },
+        {
+          "id": "d",
+          "text": "Dynamics unified routing and analytics replace both automatically."
+        }
+      ],
+      "correctOptionId": "b"
+    },
+    {
+      "id": "cc-d1-c31",
+      "revision": 1,
+      "topicId": "lifecycle-management",
+      "kind": "recall",
+      "prompt": "Does the documented channel configuration migration procedure also migrate provider accounts, agent configuration and AI/analytics settings?",
+      "answer": "No. Those are outside its stated scope.",
+      "explanation": "Plan their configuration separately from moving channel records.",
+      "sourceIds": [
+        "cc-d1-final-s04"
+      ],
+      "noteIds": [
+        "cc-d1-n11"
+      ],
+      "tags": [
+        "topic:lifecycle-management",
+        "domain:deployment",
+        "feature:configuration-migration",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d1-c32",
+      "revision": 1,
+      "topicId": "lifecycle-management",
+      "kind": "recall",
+      "prompt": "How does Microsoft direct removal of imported managed configuration from a target environment?",
+      "answer": "Remove the managed solution that supplied it.",
+      "explanation": "Do not treat a direct record delete as the supported cleanup; assess the full solution-removal impact first.",
+      "sourceIds": [
+        "cc-d1-final-s05"
+      ],
+      "noteIds": [
+        "cc-d1-n11"
+      ],
+      "tags": [
+        "topic:lifecycle-management",
+        "domain:deployment",
+        "feature:managed-solutions",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d1-c33",
+      "revision": 1,
+      "topicId": "lifecycle-management",
+      "kind": "mcq",
+      "prompt": "A team has migrated templates, skill rules and new capacity profiles. It still needs channel queues and workstreams. Which next sequence follows the documented channel migration procedure?",
+      "answer": "Migrate queues, then workstreams and channel settings.",
+      "explanation": "The stated dependency order puts queues before channel workstreams. Reversing the order or omitting queues does not follow that procedure.",
+      "sourceIds": [
+        "cc-d1-final-s04"
+      ],
+      "noteIds": [
+        "cc-d1-n11"
+      ],
+      "tags": [
+        "topic:lifecycle-management",
+        "domain:deployment",
+        "feature:configuration-migration",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Migrate workstreams first, then queues."
+        },
+        {
+          "id": "b",
+          "text": "Migrate only the channel settings and omit queues."
+        },
+        {
+          "id": "c",
+          "text": "Migrate queues, then workstreams and channel settings."
+        },
+        {
+          "id": "d",
+          "text": "Repeat template migration instead of migrating queues."
+        }
+      ],
+      "correctOptionId": "c"
+    },
+    {
+      "id": "cc-d1-c34",
+      "revision": 1,
+      "topicId": "lifecycle-management",
+      "kind": "recall",
+      "prompt": "When an ACS resource is disconnected from Dynamics 365, what happens to its associated phone numbers in the application?",
+      "answer": "They are released from Dynamics 365.",
+      "explanation": "Plan the impact before disconnecting; the resource-disconnection procedure is separate from permanently releasing purchased numbers.",
+      "sourceIds": [
+        "cc-d1-final-s07"
+      ],
+      "noteIds": [
+        "cc-d1-n12"
+      ],
+      "tags": [
+        "topic:lifecycle-management",
+        "domain:deployment",
+        "feature:environment-operations",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d1-c35",
+      "revision": 1,
+      "topicId": "lifecycle-management",
+      "kind": "recall",
+      "prompt": "Does an omnichannel environment copy provide a supported copy of record-routing configuration?",
+      "answer": "No. Configure and validate record or unified routing separately in the target.",
+      "explanation": "The environment-copy article explicitly calls out this limitation.",
+      "sourceIds": [
+        "cc-d1-final-s06"
+      ],
+      "noteIds": [
+        "cc-d1-n12"
+      ],
+      "tags": [
+        "topic:lifecycle-management",
+        "domain:deployment",
+        "feature:environment-operations",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d1-c36",
+      "revision": 1,
+      "topicId": "lifecycle-management",
+      "kind": "mcq",
+      "prompt": "After copying an omnichannel environment for a target pilot, a website still uses its source chat snippet. The pilot must exercise the copied target. Which change aligns the website with that target?",
+      "answer": "Replace it with the target environment’s generated widget snippet.",
+      "explanation": "The copied environment generates its own widget configuration. A source snippet does not become target-specific because a database copy completed.",
+      "sourceIds": [
+        "cc-d1-final-s06"
+      ],
+      "noteIds": [
+        "cc-d1-n12"
+      ],
+      "tags": [
+        "topic:lifecycle-management",
+        "domain:deployment",
+        "feature:environment-operations",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Rename the source widget without changing its snippet."
+        },
+        {
+          "id": "b",
+          "text": "Change only the representative notification text."
+        },
+        {
+          "id": "c",
+          "text": "Enable the source widget’s proactive-chat invitation."
+        },
+        {
+          "id": "d",
+          "text": "Replace it with the target environment’s generated widget snippet."
+        }
+      ],
+      "correctOptionId": "d"
+    }
+  ],
+  "questions": [],
+  "editorial": [
+    {
+      "id": "cc-d1-n09",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "crm-sync-provenance-and-lifecycle",
+      "objectiveIds": [
+        "D1.1.02"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-final-s01",
+          "section": "Prerequisites; Copy data; Add a connector using webhooks",
+          "claim": "Keep Power Apps/Power Automate in the same environment, retain CRM provenance columns and use manual initial versus automated incremental sync.",
+          "applicability": "Documented any-CRM Power Automate connector syncing accounts and contacts to Dataverse."
+        }
+      ],
+      "duplicateCheck": "Extends connector setup; previous D1 material addresses representative access and embedded adapters, not data-sync provenance or change capture."
+    },
+    {
+      "id": "cc-d1-c25",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "crm-record-provenance",
+      "objectiveIds": [
+        "D1.1.02"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-final-s01",
+          "section": "Prerequisites",
+          "claim": "Account and Contact require the three Source CRM columns.",
+          "applicability": "Any-CRM connector."
+        }
+      ],
+      "duplicateCheck": "No prior card tests the source-record provenance columns."
+    },
+    {
+      "id": "cc-d1-c26",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "crm-connector-environment-alignment",
+      "objectiveIds": [
+        "D1.1.02"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-final-s01",
+          "section": "Prerequisites",
+          "claim": "Power Apps and Power Automate environments must be the same.",
+          "applicability": "Any-CRM connector setup."
+        }
+      ],
+      "duplicateCheck": "Distinct from existing user environment eligibility checks."
+    },
+    {
+      "id": "cc-d1-c27",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "crm-sync-incremental-diagnosis",
+      "objectiveIds": [
+        "D1.1.02"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-final-s01",
+          "section": "Copy data; Add a connector using webhooks",
+          "claim": "Initial copy uses manual triggers; incremental sync uses automated triggers and webhooks for record changes.",
+          "applicability": "Any-CRM integration after initial data import."
+        }
+      ],
+      "duplicateCheck": "Applies synchronization lifecycle to a failure rather than repeating the prerequisite recall."
+    },
+    {
+      "id": "cc-d1-n10",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "embedded-desktop-and-retained-provider-boundaries",
+      "objectiveIds": [
+        "D1.1.03",
+        "D1.1.04"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-final-s02",
+          "section": "Set up the call center in Salesforce; Set up a softphone in Salesforce",
+          "claim": "Call-center user membership and Open CTI Softphone utility are separate embedded-CRM setup steps.",
+          "applicability": "Documented Salesforce Service Console integration after omnichannel provisioning and adapter configuration."
+        },
+        {
+          "sourceId": "cc-d1-final-s03",
+          "section": "Architecture; Dataflow",
+          "claim": "The retained-CRM/CCaaS reference architecture leaves routing, follow-up and supervisor operations with existing providers.",
+          "applicability": "The specific Microsoft reference architecture retaining existing CRM and CCaaS; not a new-product provisioning recipe."
+        }
+      ],
+      "duplicateCheck": "Pilot n01/c01 and question q01 cover component choice and adapter URL; this note covers user/utility readiness and retained-provider responsibility."
+    },
+    {
+      "id": "cc-d1-c28",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "salesforce-call-center-membership",
+      "objectiveIds": [
+        "D1.1.03"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-final-s02",
+          "section": "Set up the call center in Salesforce",
+          "claim": "The user is added through Manage Call Center Users after import.",
+          "applicability": "Documented Salesforce setup."
+        }
+      ],
+      "duplicateCheck": "Different from pilot adapter URL and generic Contact Center security-role cards."
+    },
+    {
+      "id": "cc-d1-c29",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "salesforce-softphone-utility",
+      "objectiveIds": [
+        "D1.1.03"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-final-s02",
+          "section": "Set up a softphone in Salesforce",
+          "claim": "Add Open CTI Softphone under Utility Items for the Service Console.",
+          "applicability": "Documented Salesforce embedded experience."
+        }
+      ],
+      "duplicateCheck": "No previous card tests the application utility rather than the adapter URL."
+    },
+    {
+      "id": "cc-d1-c30",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "retained-ccaas-operations-boundary",
+      "objectiveIds": [
+        "D1.1.04"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-final-s03",
+          "section": "Architecture; Dataflow",
+          "claim": "The retained-CRM/CCaaS reference architecture leaves routing, follow-up and supervisor operations with existing providers.",
+          "applicability": "The specific Microsoft reference architecture retaining existing CRM and CCaaS; not a new-product provisioning recipe."
+        }
+      ],
+      "duplicateCheck": "Distinct architectural responsibility decision, explicitly scoped to the retained-provider reference architecture."
+    },
+    {
+      "id": "cc-d1-n11",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "channel-migration-scope-and-removal",
+      "objectiveIds": [
+        "D1.2.02",
+        "D1.2.03"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-final-s04",
+          "section": "Important; Channel configuration migration steps",
+          "claim": "Channel migration excludes account, provider, agent, AI/analytics configuration and follows templates, skill rules, capacity, queues, then workstreams.",
+          "applicability": "Documented solutions plus Configuration Migration tool procedure; not a claim about autonomous migration agents."
+        },
+        {
+          "sourceId": "cc-d1-final-s05",
+          "section": "Deletion of managed configuration records",
+          "claim": "Imported managed configuration is removed through the managed solution that supplied it, not a direct record deletion.",
+          "applicability": "Managed configuration imported into a target environment; impact of solution removal must be assessed."
+        }
+      ],
+      "duplicateCheck": "Pilot covers managed packaging, active layers and skill ratings; this adds excluded migration scope, dependency sequence and managed-record removal."
+    },
+    {
+      "id": "cc-d1-c31",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "channel-migration-exclusions",
+      "objectiveIds": [
+        "D1.2.02"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-final-s04",
+          "section": "Important",
+          "claim": "Account, channel provider, agent configuration and AI/analytics settings are not in scope.",
+          "applicability": "Documented channel migration procedure."
+        }
+      ],
+      "duplicateCheck": "Adds explicit exclusions rather than pilot table/column prerequisite checks."
+    },
+    {
+      "id": "cc-d1-c32",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "managed-configuration-removal",
+      "objectiveIds": [
+        "D1.2.03"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-final-s05",
+          "section": "Deletion of managed configuration records",
+          "claim": "Imported managed configuration is removed through the managed solution that supplied it, not a direct record deletion.",
+          "applicability": "Managed configuration imported into a target environment; impact of solution removal must be assessed."
+        }
+      ],
+      "duplicateCheck": "Different lifecycle action from existing managed-update/active-layer cards."
+    },
+    {
+      "id": "cc-d1-c33",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "migration-queue-before-workstream",
+      "objectiveIds": [
+        "D1.2.02",
+        "D1.2.03"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-final-s04",
+          "section": "Channel configuration migration steps",
+          "claim": "Migrate queues before channel workstreams and channel settings.",
+          "applicability": "Remaining steps after templates, skill rules and new capacity profiles are complete."
+        }
+      ],
+      "duplicateCheck": "Applies documented dependency order; no prior card tests queue/workstream migration sequence."
+    },
+    {
+      "id": "cc-d1-n12",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "environment-copy-target-integration-checks",
+      "objectiveIds": [
+        "D1.2.04"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-final-s06",
+          "section": "Configure the target environment after the copy; Chat channel; Configure Copilot agents in the target environment",
+          "claim": "Copy requires target-specific integrations, record-routing validation and a newly generated chat snippet; target agents need reviewed connections and publishing.",
+          "applicability": "Copied omnichannel environment, not a restore or a claim that an autonomous agent migrates every integration."
+        },
+        {
+          "sourceId": "cc-d1-final-s07",
+          "section": "Important; Disconnect from an Azure Communication Services resource",
+          "claim": "Disconnecting releases associated phone numbers from Dynamics 365 and requires cleanup of created Event Grid subscriptions.",
+          "applicability": "ACS disconnection workflow; plan impact before performing it."
+        }
+      ],
+      "duplicateCheck": "Distinct from pilot restore/reconnect overview: copy-specific record routing, widget identity and disconnection effects are explicit."
+    },
+    {
+      "id": "cc-d1-c34",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "acs-disconnect-number-impact",
+      "objectiveIds": [
+        "D1.2.04"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-final-s07",
+          "section": "Important; Disconnect from an Azure Communication Services resource",
+          "claim": "Disconnecting releases associated phone numbers from Dynamics 365 and requires cleanup of created Event Grid subscriptions.",
+          "applicability": "ACS disconnection workflow; plan impact before performing it."
+        }
+      ],
+      "duplicateCheck": "No previous D1 card tests the disconnection effect; not a repeat of generic post-restore repair."
+    },
+    {
+      "id": "cc-d1-c35",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "copy-record-routing-limit",
+      "objectiveIds": [
+        "D1.2.04"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-final-s06",
+          "section": "Configure the target environment after the copy",
+          "claim": "Copy of record-routing configuration is not currently supported; configure and validate routing separately.",
+          "applicability": "Omnichannel environment copy."
+        }
+      ],
+      "duplicateCheck": "Adds a copy-specific limitation absent from prior restore cards."
+    },
+    {
+      "id": "cc-d1-c36",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "copied-chat-widget-target-identity",
+      "objectiveIds": [
+        "D1.2.04"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-final-s06",
+          "section": "Chat channel",
+          "claim": "Use the newly generated target widget snippet on the website or portal.",
+          "applicability": "Chat integration after copying an omnichannel environment."
+        }
+      ],
+      "duplicateCheck": "Different from pilot question about HTML/portal placement: this tests environment identity after copy."
+    }
+  ]
+}

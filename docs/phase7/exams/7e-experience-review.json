@@ -1,0 +1,1012 @@
+[
+  {
+    "id": "ab250-d5-q05",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "fe2c7c111227a15263ceb57fcafc02b36e717da44a7e8ff6fe6067c5fae14c7e",
+    "rationale": "Targeted pane configuration belongs in an assigned custom profile. Supplied defaults are not editable for this purpose; queue membership and a global default do not express the team-specific association.",
+    "findings": [
+      "Resolved at revision2: Strengthened adjacent configuration alternatives and/or removed supplied diagnosis without changing the supported key. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s01",
+        "supported": true,
+        "section": "Create experience profiles; Assign users and templates",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Targeted pane configuration belongs in an assigned custom profile. Supplied defaults are not editable for this purpose; queue membership and a global default do not express the team-specific association. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q06",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "d1c4ba4291a85c5cb2da4bdfdd84cbd3d63684c63c397fe766fcda2a49ca6295",
+    "rationale": "A working peer proves the configured features can be delivered. Checking the affected user association distinguishes an unintended default experience from the already verified permission layer.",
+    "findings": [
+      "Resolved at revision2: Strengthened adjacent configuration alternatives and/or removed supplied diagnosis without changing the supported key. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s01",
+        "supported": true,
+        "section": "Default profiles; Assign users and templates",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "A working peer proves the configured features can be delivered. Checking the affected user association distinguishes an unintended default experience from the already verified permission layer. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q07",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "951dde712c166535a7053c94fa173201ab00d8f7baf8fafa33fff7a8a1a82c04",
+    "rationale": "The new view must include both requested record types and be shown to representatives. Filtering only conversations or replacing them with email does not satisfy the combined view requirement.",
+    "findings": [
+      "Resolved at revision2: Strengthened adjacent configuration alternatives and/or removed supplied diagnosis without changing the supported key. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s02",
+        "supported": true,
+        "section": "Configure custom views",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "The new view must include both requested record types and be shown to representatives. Filtering only conversations or replacing them with email does not satisfy the combined view requirement. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q08",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "e7439b9bb16adae451e8fffe78b6ba8a406d9f77dcb63bf9cc3976eae2af4097",
+    "rationale": "Membership is intentionally preserved while ordering changes. Custom sort configures entity, attribute and direction; filters and visible columns serve different purposes.",
+    "findings": [
+      "Resolved at revision2: Replaced Advanced-filter recall with sorting while preserving view membership. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s02",
+        "supported": true,
+        "section": "Configure custom sort in the inbox",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Membership is intentionally preserved while ordering changes. Custom sort configures entity, attribute and direction; filters and visible columns serve different purposes. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q09",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "9f66f10d9291db690f11b134b2d0c7f7e909b7d997cd253e9228cd5310045b00",
+    "rationale": "Inbox awareness and voice session creation coexist. The documented behavior does not reuse a chat session or depend on whether the representative is currently in the inbox.",
+    "findings": [
+      "Resolved at revision2: Strengthened adjacent configuration alternatives and/or removed supplied diagnosis without changing the supported key. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s02",
+        "supported": true,
+        "section": "Live chat and voice channel in inbox",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Inbox awareness and voice session creation coexist. The documented behavior does not reuse a chat session or depend on whether the representative is currently in the inbox. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q10",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "ef2bba73657c8f8cd97ded07929885526b3b98ecebb16f1efbe6aa43e4b2cd01",
+    "rationale": "A valid accessible dashboard can still fall back when absent from the app module. Dashboard packaging, personal defaults and entity-list parameters are distinct contracts.",
+    "findings": [
+      "Resolved at revision2: Strengthened adjacent configuration alternatives and/or removed supplied diagnosis without changing the supported key. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s03",
+        "supported": true,
+        "section": "Page types: Dashboard",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "A valid accessible dashboard can still fall back when absent from the app module. Dashboard packaging, personal defaults and entity-list parameters are distinct contracts. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q11",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "9e704da288df17feb37521b0014980a5f85fa441fc329bebf2a2af2070482aa9",
+    "rationale": "Intentional creation and existing-ID lookup must preserve separate business intentions. Existence validation guards the lookup without turning its stale ID into an unintended new customer.",
+    "findings": [
+      "Resolved at revision2: Separated intentional create mode from stale-ID lookup validation across two business flows. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s03",
+        "supported": true,
+        "section": "Page types: Entity record, existing-record and create-form parameters",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Intentional creation and existing-ID lookup must preserve separate business intentions. Existence validation guards the lookup without turning its stale ID into an unintended new customer. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q12",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "5162a4815bb10d61d769d1cf1febee22cd132c58ec713d6c520dba1889395d44",
+    "rationale": "The website template combines an HTTPS address with scoped runtime data. Static case copies and an unfiltered query do not supply the intended session case number.",
+    "findings": [
+      "Resolved at revision2: Strengthened adjacent configuration alternatives and/or removed supplied diagnosis without changing the supported key. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s03",
+        "supported": true,
+        "section": "Third-party website: How parsing works",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "The website template combines an HTTPS address with scoped runtime data. Static case copies and an unfiltered query do not supply the intended session case number. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q13",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "b702e4dd0696e8823d631eed3feea03a7fcd64146f3d2101c0298109caf23ec1",
+    "rationale": "The Entity selector is constrained by table ownership. A table being visible elsewhere or usable in an application tab does not remove its documented user-owned scope.",
+    "findings": [
+      "Resolved at revision2: Replaced generic session-type recall with an organization-owned table selector boundary. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s04",
+        "supported": true,
+        "section": "Create a session template: Entity field note",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "The Entity selector is constrained by table ownership. A table being visible elsewhere or usable in an application tab does not remove its documented user-owned scope. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q14",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "0d9266096fa714daf1b621213575e47ad2195095a231348bb2aa0c051cf06b40",
+    "rationale": "The initial communication-panel mode belongs to the session template. Desktop delivery policy, notification timeout and a manual runtime minimization do not configure that starting state.",
+    "findings": [
+      "Resolved at revision2: Strengthened adjacent configuration alternatives and/or removed supplied diagnosis without changing the supported key. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s04",
+        "supported": true,
+        "section": "Create a session template: Communication panel mode",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "The initial communication-panel mode belongs to the session template. Desktop delivery policy, notification timeout and a manual runtime minimization do not configure that starting state. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q15",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "8789f18f960d43d3ab236aff9b19bb2bc517d9eea86789bea8c17bf7152bc887",
+    "rationale": "A desktop alert body brings the application forward for an acceptance decision. It does not itself accept, reject or start the customer session.",
+    "findings": [
+      "Resolved at revision2: Replaced a notification recall conversion with desktop body versus Accept lifecycle testing. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s05",
+        "supported": true,
+        "section": "Desktop notifications: body selection versus Accept/Reject",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "A desktop alert body brings the application forward for an acceptance decision. It does not itself accept, reject or start the customer session. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q16",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "fbc89ebece0867b064af4aff6d36340026e66b3c020ea06e35fe55e3439ad089",
+    "rationale": "Record-routing assignment does not become representative-controlled rejection because a Reject button is displayed. The guide recommends omitting that affordance for custom record notifications.",
+    "findings": [
+      "Resolved at revision2: Strengthened adjacent configuration alternatives and/or removed supplied diagnosis without changing the supported key. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s05",
+        "supported": true,
+        "section": "Manage templates: record routing note",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Record-routing assignment does not become representative-controlled rejection because a Reject button is displayed. The guide recommends omitting that affordance for custom record notifications. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q17",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "982b1bb4ada3b270706664d91a0f08027f7fbec5da71d3a38b8396abea0ab7a9",
+    "rationale": "The affected browser needs site notification permission separately from enabled application delivery. Countdown or always-on policy cannot override a browser denial.",
+    "findings": [
+      "Resolved at revision2: Strengthened adjacent configuration alternatives and/or removed supplied diagnosis without changing the supported key. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s05",
+        "supported": true,
+        "section": "Allow a browser to show notifications",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "The affected browser needs site notification permission separately from enabled application delivery. Countdown or always-on policy cannot override a browser denial. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q18",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "8692d47ccc0b0e6cda1b3ee4410671fc95956023edd4273c03856af9fb7d49a5",
+    "rationale": "Reusable guidance is a script target with Script action type. Text copies lose single maintenance and a macro target has an automation contract.",
+    "findings": [
+      "Resolved at revision2: Replaced step-order recall with reusable script composition. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s06",
+        "supported": true,
+        "section": "Create scripts: Action Type and Target script",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Reusable guidance is a script target with Script action type. Text copies lose single maintenance and a macro target has an automation contract. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q19",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "c7d72b717fe6d33b396948b4d7e77faba56d0b29919b3f8ae7ea5ae829a17b33",
+    "rationale": "Execution of the existing macro requires both the Macro action type and its target selection. Authoring permissions or instruction text do not wire execution.",
+    "findings": [
+      "Resolved at revision2: Strengthened adjacent configuration alternatives and/or removed supplied diagnosis without changing the supported key. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s06",
+        "supported": true,
+        "section": "Create scripts: Action Type; Target macro",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Execution of the existing macro requires both the Macro action type and its target selection. Authoring permissions or instruction text do not wire execution. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q20",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "0892e2b852bf02216dd1a85d632f300ae838dedec4ea676b42c4e900e0998d35",
+    "rationale": "A one-session exception can be handled by manual selection among associated scripts. Changing the shared default or removing guidance would unnecessarily affect other sessions.",
+    "findings": [
+      "Resolved at revision2: Replaced default-expression recall with an individual manual exception among associated scripts. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s06",
+        "supported": true,
+        "section": "Set the default script for representatives: manual selection",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "A one-session exception can be handled by manual selection among associated scripts. Changing the shared default or removing guidance would unnecessarily affect other sessions. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q21",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "54778cda3ad8c41fd987e95c331b79ea8045a87f952db5530ca165db76fc539e",
+    "rationale": "The authoring list follows Dataverse-enabled languages. Translated script content, another script record or browser language does not itself enable an environment language.",
+    "findings": [
+      "Resolved at revision2: Strengthened adjacent configuration alternatives and/or removed supplied diagnosis without changing the supported key. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s06",
+        "supported": true,
+        "section": "Create scripts: Language",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "The authoring list follows Dataverse-enabled languages. Translated script content, another script record or browser language does not itself enable an environment language. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q22",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "b5cd74be26d049da70651b43868b2e3b9c572122850b1c79712f53fab5769cd4",
+    "rationale": "The related contact must be retrieved using the anchor customer lookup identity. The case ID, unrelated focused account and assumed inherited contact fields have different scopes.",
+    "findings": [
+      "Resolved at revision2: Replaced generic anchor recall with related-contact retrieval despite an unrelated focused tab. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s07",
+        "supported": true,
+        "section": "Pass session context variables to macros: related-record OData query",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "The related contact must be retrieved using the anchor customer lookup identity. The case ID, unrelated focused account and assumed inherited contact fields have different scopes. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q23",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "b234111d6ccc6d346500228989ff6496d7335bef78fda4ebb1e9d3610d77c798",
+    "rationale": "Additional-record identity and additional attributes need separate handling. CurrentTab identifies the chosen account and a scoped query retrieves its other values; anchor customer data is intentionally excluded.",
+    "findings": [
+      "Resolved at revision2: Strengthened adjacent configuration alternatives and/or removed supplied diagnosis without changing the supported key. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s07",
+        "supported": true,
+        "section": "Additional tabs",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Additional-record identity and additional attributes need separate handling. CurrentTab identifies the chosen account and a scoped query retrieves its other values; anchor customer data is intentionally excluded. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q24",
+    "revision": 1,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "0ad95c5becb3aa9c154c0bf5bd0cea37d8337c1105cf30e2e4c492a2dccb1511",
+    "rationale": "The documented lookup input is the separate record ID, type and name. Display title alone and incomplete combinations do not implement that pattern.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s20",
+        "supported": true,
+        "section": "Open a new form to create a record",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "The documented lookup input is the separate record ID, type and name. Display title alone and incomplete combinations do not implement that pattern. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q25",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "86c490addd44cb29cd931f466c7177989a7f5a514fcd80bf9b48e4fa6be917af",
+    "rationale": "Save already exists but validation identifies mandatory inputs. Populate those fields before saving; repeated saves or edits to optional details do not satisfy the action contract.",
+    "findings": [
+      "Resolved at revision2: Replaced add-Save recall with failure of an existing Save due to mandatory-field validation. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s20",
+        "supported": true,
+        "section": "Save the record",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Save already exists but validation identifies mandatory inputs. Populate those fields before saving; repeated saves or edits to optional details do not satisfy the action contract. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q26",
+    "revision": 1,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "b92a1c0e9e22f7f808fcbeeddc30574c8ecc9d2b88740399720591e005be30f0",
+    "rationale": "Action-generated macro context can feed later actions without becoming a reusable template parameter. Templates do not inherit the action execution that produced the runtime identifier.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s19",
+        "supported": true,
+        "section": "Context data from other macro actions",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Action-generated macro context can feed later actions without becoming a reusable template parameter. Templates do not inherit the action execution that produced the runtime identifier. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q27",
+    "revision": 1,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "40be698970c24b2ee60595bc6a49612f68dd45bc7b532c64cc0a25838b2f6b82",
+    "rationale": "Tab operations belong to the Session connector and flow invocation to the Flow connector. Their similar automation surfaces do not make the Omnichannel connector interchangeable.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s07",
+        "supported": true,
+        "section": "Predefined automation actions",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Tab operations belong to the Session connector and flow invocation to the Flow connector. Their similar automation surfaces do not make the Omnichannel connector interchangeable. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q28",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "0c5724c4c743789a64050e9270d99d053392118bc1148bb628fc6c60bd9baf48",
+    "rationale": "A target tool reference requires the deployed and published component. Registration, role expansion and a duplicate tool reference do not build that component.",
+    "findings": [
+      "Resolved at revision2: Replaced profile-enable recall with a source-to-target component deployment dependency. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s08",
+        "supported": true,
+        "section": "Prerequisites; Configure a custom productivity tool",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "A target tool reference requires the deployed and published component. Registration, role expansion and a duplicate tool reference do not build that component. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q29",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "183f28a79e2b9c6511c265b46df022df19c61d7d4ab2a1b3a1575390ff51f03b",
+    "rationale": "Custom tool visibility is separate from context binding. Global availability and registration do not automatically deliver the current case or conversation; explicit integration is required.",
+    "findings": [
+      "Resolved at revision2: Strengthened adjacent configuration alternatives and/or removed supplied diagnosis without changing the supported key. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s08",
+        "supported": true,
+        "section": "Understand the limitations of custom tools",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Custom tool visibility is separate from context binding. Global availability and registration do not automatically deliver the current case or conversation; explicit integration is required. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q30",
+    "revision": 1,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "cff6a648e9796d818daa189c7d2ee09aa7578750bf60fe531a76be6d3c98db84",
+    "rationale": "Teams multisession readiness includes the custom profile and equivalent productivity-pane permissions. App-wide enablement cannot substitute for either user-specific layer.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s09",
+        "supported": true,
+        "section": "Permissions required; Specific multisession users",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Teams multisession readiness includes the custom profile and equivalent productivity-pane permissions. App-wide enablement cannot substitute for either user-specific layer. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q31",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "17ed181952f3c2a5a2feac721f75c661d98a3b12fab9ce427e240d3bd5a60638",
+    "rationale": "The static introduction note can expose included fields despite denied linked-record access. Supported field types do not provide per-collaborator field-level filtering; review included context fields.",
+    "findings": [
+      "Resolved at revision2: Replaced linked-record permission recall with static introduction-note field exposure. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s09",
+        "supported": true,
+        "section": "Add record types: static context-card fields and field-level permissions note",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "The static introduction note can expose included fields despite denied linked-record access. Supported field types do not provide per-collaborator field-level filtering; review included context fields. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q32",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "0e37c75f08eb4383377a34b708436e1b539f27721f7d30a7c5b2a2a36f2df716",
+    "rationale": "Teams connected-chat record types require their own configuration. Inbox types, knowledge enablement and another app profile do not extend that connection list.",
+    "findings": [
+      "Resolved at revision2: Strengthened adjacent configuration alternatives and/or removed supplied diagnosis without changing the supported key. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s09",
+        "supported": true,
+        "section": "Add record types",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Teams connected-chat record types require their own configuration. Inbox types, knowledge enablement and another app profile do not extend that connection list. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q33",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "1640f72edad7dce347cf29eed1bb669710b6c9bb47ae95276c8e21954fd737ef",
+    "rationale": "Retrieve the known existing session and signal attention with requestFocus. The focused-session getter targets another customer and immediate focus violates the nonintrusive requirement.",
+    "findings": [
+      "Resolved at revision2: Replaced creation-guard recall with attention to a known nonfocused session without changing focus. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s10",
+        "supported": true,
+        "section": "Session management: getSession; requestFocus versus focus",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Retrieve the known existing session and signal attention with requestFocus. The focused-session getter targets another customer and immediate focus violates the nonintrusive requirement. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q34",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "5f5279be921603dfb611592c2684cbe8090858e883388d0e3f15ef6defdc35e5",
+    "rationale": "Future macros consume dictionary values updated by updateContext. New-tab parameters, a UI refresh and underlying record edits are different operations from explicit session dictionary mutation.",
+    "findings": [
+      "Resolved at revision2: Strengthened adjacent configuration alternatives and/or removed supplied diagnosis without changing the supported key. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s10",
+        "supported": true,
+        "section": "Context management",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Future macros consume dictionary values updated by updateContext. New-tab parameters, a UI refresh and underlying record edits are different operations from explicit session dictionary mutation. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q35",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "521ec105ca1a94f308d5519225ef40184b533573f975ecdf2719b437b883c52f",
+    "rationale": "The linking method targets the focused conversation at execution time. A correct case identity or unchecked newly focused GUID does not protect against a customer-session switch.",
+    "findings": [
+      "Resolved at revision2: Strengthened adjacent configuration alternatives and/or removed supplied diagnosis without changing the supported key. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s11",
+        "supported": true,
+        "section": "Methods: linkToConversation",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "The linking method targets the focused conversation at execution time. A correct case identity or unchecked newly focused GUID does not protect against a customer-session switch. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q36",
+    "revision": 1,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "aec191df15b0c9fe915120a1215aac692bdd4d6a4eab6413a252257a105b1da8",
+    "rationale": "The specific communication-panel linking control excludes embedded deployment. This does not establish a substitute embedded API or make standalone templates a compatibility mechanism.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s18",
+        "supported": true,
+        "section": "Link to conversations",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "The specific communication-panel linking control excludes embedded deployment. This does not establish a substitute embedded API or make standalone templates a compatibility mechanism. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q37",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "e42a3dcc931816c4d4f3e6ed90c179f710a080e09e7d982acb0457c13c39e324",
+    "rationale": "The representative conversation collection is returned by getConversations. UI tab/session identifiers and one ongoing conversation GUID cannot replace that record collection.",
+    "findings": [
+      "Resolved at revision2: Replaced single current-conversation GUID recall with a representative conversation collection. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s11",
+        "supported": true,
+        "section": "Methods: getConversations versus getConversationId",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "The representative conversation collection is returned by getConversations. UI tab/session identifiers and one ongoing conversation GUID cannot replace that record collection. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q38",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "e87ba21e55acbb017ff9bb15d260b866072a062b5a5af29aa667d84765d77fbb",
+    "rationale": "Knowledge management must be enabled for the custom record type. Application navigation and an external content provider do not establish that record context.",
+    "findings": [
+      "Resolved at revision2: Strengthened adjacent configuration alternatives and/or removed supplied diagnosis without changing the supported key. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s12",
+        "supported": true,
+        "section": "Set up knowledge management: Record types",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Knowledge management must be enabled for the custom record type. Application navigation and an external content provider do not establish that record context. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q39",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "4e2d6e7a7b25dad8d7e1991d7c99afbd566eeea2a4037cb9937f8c505bafd0a6",
+    "rationale": "The symptoms distinguish profile search-surface availability from searchable article fields. Assigned-profile settings and Quick Find Content configuration address those separate layers.",
+    "findings": [
+      "Resolved at revision2: Strengthened adjacent configuration alternatives and/or removed supplied diagnosis without changing the supported key. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s13",
+        "supported": true,
+        "section": "Prerequisites",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "The symptoms distinguish profile search-surface availability from searchable article fields. Assigned-profile settings and Quick Find Content configuration address those separate layers. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q40",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "ba2c8354710a3f3d04f4750e5a7ce928da0beafb232411d7b4b66ea423842fb1",
+    "rationale": "The form-control article includes non-anchor auto-search as a specific exception. It does not require replacing the primary multisession side pane or forbid this additional-tab case.",
+    "findings": [
+      "Resolved at revision2: Replaced primary multisession surface recall with its explicit non-anchor auto-search exception. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s14",
+        "supported": true,
+        "section": "Applicability note: single-session apps or auto search on non-anchor tabs",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "The form-control article includes non-anchor auto-search as a specific exception. It does not require replacing the primary multisession side pane or forbid this additional-tab case. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q41",
+    "revision": 1,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "7e247387b99ec321c6b9cf76ad1dd21a63d866417c7924b6ce16315fa6a38240",
+    "rationale": "All-term matching narrows either-term results without changing the search platform. Result count, suggestions and article authoring language do not select the requested matching logic.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s12",
+        "supported": true,
+        "section": "Set up knowledge search logic",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "All-term matching narrows either-term results without changing the search platform. Result count, suggestions and article authoring language do not select the requested matching logic. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q42",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "2a6f2992d89f7f7249b311c0b896420d659c22c1fe396a1427ff63df25895ed2",
+    "rationale": "Verified external access and a working standard role isolate the custom-role layer. The guide names federated-result tables and their required privileges, separately from internal article permissions.",
+    "findings": [
+      "Resolved at revision2: Replaced generic source-access recall with custom-role federated-table privileges after source access is verified. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s15",
+        "supported": true,
+        "section": "Post-configuration representative experience: custom role permissions note",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Verified external access and a working standard role isolate the custom-role layer. The guide names federated-result tables and their required privileges, separately from internal article permissions. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q43",
+    "revision": 1,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "e9774bed5368028dd0a55f66598e1b54901fcdf9ff4f8b39ff45795b14886e4b",
+    "rationale": "Microsoft Search-indexed external data uses the Graph connector identity. A repository URL, direct SharePoint source and another Dynamics organization represent different provider configurations.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s15",
+        "supported": true,
+        "section": "Provider types",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Microsoft Search-indexed external data uses the Graph connector identity. A repository URL, direct SharePoint source and another Dynamics organization represent different provider configurations. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q44",
+    "revision": 1,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "bd790f648a04ef366502301d852032fd11906233f1ec92ff63eddb75c61949ea",
+    "rationale": "Public article URL construction and attachment synchronization are separate portal settings. Search federation and internal authoring links do not supply those integration requirements.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s12",
+        "supported": true,
+        "section": "Set up knowledge management: Portals; Update attachments",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Public article URL construction and attachment synchronization are separate portal settings. Search federation and internal authoring links do not supply those integration requirements. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q45",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "a78125876253ebae810857f23f5538a2d4c6e4d3434ea22c4827e21238bc8e27",
+    "rationale": "Connection readiness is only one runtime dependency. The manual procedure also requires enabled harvesting flows and the named published agent in the same environment.",
+    "findings": [
+      "Resolved at revision2: Strengthened adjacent configuration alternatives and/or removed supplied diagnosis without changing the supported key. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s17",
+        "supported": true,
+        "section": "Set up connection references for Customer Knowledge Management Agent",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Connection readiness is only one runtime dependency. The manual procedure also requires enabled harvesting flows and the named published agent in the same environment. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q46",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "7068a1ef1f394f1577d6800a864b30478b11ba07fb9420cb52975ece99a6f78a",
+    "rationale": "A real-time rule makes a record eligible for evaluation, then existing content is considered before creation. Rule priority and template selection do not bypass that comparison.",
+    "findings": [
+      "Resolved at revision2: Strengthened adjacent configuration alternatives and/or removed supplied diagnosis without changing the supported key. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s16",
+        "supported": true,
+        "section": "Enable real-time knowledge creation",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "A real-time rule makes a record eligible for evaluation, then existing content is considered before creation. Rule priority and template selection do not bypass that comparison. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q47",
+    "revision": 1,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "860e81ab4abab283a4bb137b42a89924e2a3ca32ca79cf7c855bf28d6d5542ed",
+    "rationale": "A historical run cannot be stopped under the documented process, so bound its source scope before launch. Page navigation and result filters do not cancel active harvesting.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s16",
+        "supported": true,
+        "section": "Creation from historical cases or conversations",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "A historical run cannot be stopped under the documented process, so bound its source scope before launch. Page navigation and result filters do not cancel active harvesting. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q48",
+    "revision": 1,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "781e4d930d23992e7799e59330c028739fa5fb228ef1a74290f97c503610df5b",
+    "rationale": "Automatic compliant-article publication and internal audience selection jointly meet the requirement. External audience, disabled publishing and Noncompliant status change the result.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s16",
+        "supported": true,
+        "section": "Auto publish articles",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Automatic compliant-article publication and internal audience selection jointly meet the requirement. External audience, disabled publishing and Noncompliant status change the result. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q49",
+    "revision": 1,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "1b768947beceb8d136ff7dbef53fd5bfb9738685d48f4873cd7718ad196f8bf5",
+    "rationale": "Automated personal-data removal may miss sensitive details. Generation success, internal status and compliance flags do not justify skipping content inspection.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s16",
+        "supported": true,
+        "section": "Set the default compliance state: sensitive information note",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Automated personal-data removal may miss sensitive details. Generation success, internal status and compliance flags do not justify skipping content inspection. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q50",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "06ec54d928e2d2895c0398b7ea07ff0c711ab53face70211e780f6070908bce0",
+    "rationale": "The manual draft-review experience needs article editing and the case Timeline with Timeline highlights. Notifications alone and read-only access leave those prerequisites unmet.",
+    "findings": [
+      "Resolved at revision2: Strengthened adjacent configuration alternatives and/or removed supplied diagnosis without changing the supported key. Final saved prompt, all choices, option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s16",
+        "supported": true,
+        "section": "Set up the agent review draft experience",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "The manual draft-review experience needs article editing and the case Timeline with Timeline highlights. Notifications alone and read-only access leave those prerequisites unmet. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d5-q51",
+    "revision": 1,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "6c1582527d617e08fc5e1e8e231d0d87f1bd4b09a0d87c357a4e1b474a0c1561",
+    "rationale": "Global-search article opening mode is separate from matching and discovery. The dedicated preview setting controls the requested renderer when the command is unmodified.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d5-s13",
+        "supported": true,
+        "section": "Search the knowledge base in Copilot Service workspace",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Global-search article opening mode is separate from matching and discovery. The dedicated preview setting controls the requested renderer when the command is unmodified. Exact primary body section checked; deployment conditions and the complete answer set challenged."
+      }
+    ]
+  }
+]

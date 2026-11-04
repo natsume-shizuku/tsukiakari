@@ -1,0 +1,242 @@
+[
+  {
+    "id": "cc-d2-n06",
+    "revision": 1,
+    "reviewer": "/root/chat_review",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "1d13237169b0523c609a33927c86ac715d446e81af8db762c50570994c599833",
+    "rationale": "The provider/account/workstream sequence, scoped number support and callback versus validation distinction are supported; delivery testing is useful author guidance.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-digital-s01",
+        "section": "Prerequisites; Get Twilio account details; Establish a connection; Twilio account and phone number validation",
+        "notes": "Verified US-number scope, provider consent, secure-column prerequisite, inbound URL in number Messaging settings and credential-only validation.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-n07",
+    "revision": 1,
+    "reviewer": "/root/chat_review",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "28ece39f1ec8ee5da73db9bd84fb04a7d6a8493f5e260c57cb6fe5c5d24cd2f1",
+    "rationale": "Published web-resource procedure is accurately scoped. It does not equate a release-plan date with delivered behavior.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-digital-s02",
+        "section": "Prerequisites; Enable real-time translation; Enable score-based language detection",
+        "notes": "Verified web-resource workflow, representative input language, Azure global endpoint and history-based detection. No release-plan availability inferred.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-digital-s03",
+        "section": "Add a web resource; Upload the web resource file",
+        "notes": "Verified customization, upload, publication and URL registration of translation JavaScript.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-n08",
+    "revision": 1,
+    "reviewer": "/root/chat_review",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "8582dafcb11607ceebec4575aeba826c405179fe505c7c409511abeb912dec10",
+    "rationale": "Accurately separates legacy location eligibility/browser permission from standalone portal-history integration.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-digital-s04",
+        "section": "Availability note; Create a geo location provider record; Enable visitor location detection",
+        "notes": "Verified existing Bing Maps Enterprise restriction through June30,2028, exclusion of new/Azure Maps customers, provider association and browser permission.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-digital-s05",
+        "section": "Applicability; Prerequisites; Enable self-service settings",
+        "notes": "Verified standalone scope, portal code/history prerequisite and enabled Self service tab.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c16",
+    "revision": 1,
+    "reviewer": "/root/chat_review",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "d1096825f7b0de78dcc35f0bcbb383907151bc874f5a290c32e3e1511a0dacea",
+    "rationale": "The documented provider connection places the workstream inbound URL in the selected number Messaging settings.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-digital-s01",
+        "section": "Prerequisites; Get Twilio account details; Establish a connection; Twilio account and phone number validation",
+        "notes": "Verified US-number scope, provider consent, secure-column prerequisite, inbound URL in number Messaging settings and credential-only validation.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c17",
+    "revision": 1,
+    "reviewer": "/root/chat_review",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "5de9a86629060da0f027a8d647bf7f92b2867af84e6eb29527b7ff6caf3cf793",
+    "rationale": "Validation tests SID/token; the article treats actual inbound callback delivery separately.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-digital-s01",
+        "section": "Prerequisites; Get Twilio account details; Establish a connection; Twilio account and phone number validation",
+        "notes": "Verified US-number scope, provider consent, secure-column prerequisite, inbound URL in number Messaging settings and credential-only validation.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c18",
+    "revision": 1,
+    "reviewer": "/root/chat_review",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "a588876e5c55189fa76b206399863dfbc12a7ae871e80e0ae83c8061b858f7ea",
+    "rationale": "The configured service plus published JavaScript integration are prerequisites of this stated workflow.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-digital-s02",
+        "section": "Prerequisites; Enable real-time translation; Enable score-based language detection",
+        "notes": "Verified web-resource workflow, representative input language, Azure global endpoint and history-based detection. No release-plan availability inferred.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-digital-s03",
+        "section": "Add a web resource; Upload the web resource file",
+        "notes": "Verified customization, upload, publication and URL registration of translation JavaScript.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c19",
+    "revision": 1,
+    "reviewer": "/root/chat_review",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "e6269cda1f4aac1b5f24d56939b1b0e253b83dd8ac6e9ab9e2ae232cc7b58852",
+    "rationale": "The opened administration article explicitly specifies the Azure global endpoint.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-digital-s02",
+        "section": "Prerequisites; Enable real-time translation; Enable score-based language detection",
+        "notes": "Verified web-resource workflow, representative input language, Azure global endpoint and history-based detection. No release-plan availability inferred.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c20",
+    "revision": 1,
+    "reviewer": "/root/chat_review",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "e46c689e891db6bb21620a266c029108c302c2d9684cd816af66129face3e738",
+    "rationale": "Browser sharing remains required even for an eligible configured location feature.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-digital-s04",
+        "section": "Availability note; Create a geo location provider record; Enable visitor location detection",
+        "notes": "Verified existing Bing Maps Enterprise restriction through June30,2028, exclusion of new/Azure Maps customers, provider association and browser permission.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c21",
+    "revision": 1,
+    "reviewer": "/root/chat_review",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "7c2a5da9bac78282b313755cc526da9da1953d9fb61c95e2ca0a566fba85a5e6",
+    "rationale": "Developer-supplied action history is an explicit prerequisite, distinct from enabling its tab.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-digital-s05",
+        "section": "Applicability; Prerequisites; Enable self-service settings",
+        "notes": "Verified standalone scope, portal code/history prerequisite and enabled Self service tab.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c22",
+    "revision": 2,
+    "reviewer": "/root/chat_review",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "5f8496cb1f849219e6b6f1043bf9e52b2b332687c86025bff5fcb7a21126ea24",
+    "rationale": "Revision2 scopes diagnosis to provider ingress, making callback verification unambiguous. Queue association is a real subsequent routing check; session template and language do not configure provider ingress.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-digital-s01",
+        "section": "Prerequisites; Get Twilio account details; Establish a connection; Twilio account and phone number validation",
+        "notes": "Verified US-number scope, provider consent, secure-column prerequisite, inbound URL in number Messaging settings and credential-only validation.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c23",
+    "revision": 1,
+    "reviewer": "/root/chat_review",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "a6cdad2f6cbe0d134447f980005c203dd4dc93975574b6f067f79f962dec0546",
+    "rationale": "History-based detection addresses one-off language switches. Display/widget locales target other settings; substituting the portal URL breaks resource registration rather than detection.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-digital-s02",
+        "section": "Prerequisites; Enable real-time translation; Enable score-based language detection",
+        "notes": "Verified web-resource workflow, representative input language, Azure global endpoint and history-based detection. No release-plan availability inferred.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-digital-s03",
+        "section": "Add a web resource; Upload the web resource file",
+        "notes": "Verified customization, upload, publication and URL registration of translation JavaScript.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c24",
+    "revision": 2,
+    "reviewer": "/root/chat_review",
+    "reviewedAt": "2026-11-02",
+    "decision": "approved",
+    "fingerprint": "cfe40d6cef95b49b3cdeb2c038943182498aa7b4c908eb4d3b14f9206fcd8bc0",
+    "rationale": "Revision2 presents symptoms without supplying the missing implementation. History integration is the prerequisite; required survey answers, location keys and language choices do not provide preceding actions.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-digital-s05",
+        "section": "Applicability; Prerequisites; Enable self-service settings",
+        "notes": "Verified standalone scope, portal code/history prerequisite and enabled Self service tab.",
+        "supported": true
+      }
+    ]
+  }
+]

@@ -1,0 +1,614 @@
+{
+  "sources": [
+    {
+      "id": "cc-d1-ops-s01",
+      "title": "Overview of agent hub",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/overview-agent-hub"
+    },
+    {
+      "id": "cc-d1-ops-s02",
+      "title": "Create rollout plans to manage AI agents",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/create-rollout-plans"
+    },
+    {
+      "id": "cc-d1-ops-s03",
+      "title": "Use AI-generated conversations for agentic simulations (preview)",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-simulation-agent"
+    },
+    {
+      "id": "cc-d1-ops-s04",
+      "title": "Use Service Operations Agent",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/use-service-operations-agent"
+    },
+    {
+      "id": "cc-d1-ops-s05",
+      "title": "Overview of Service Operations Agent",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/overview-service-operations-agent"
+    },
+    {
+      "id": "cc-d1-ops-s06",
+      "title": "Responsible AI FAQ for Service Operations Agent",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/implement/service-operations-agent-rai-faq"
+    }
+  ],
+  "notes": [
+    {
+      "id": "cc-d1-n03",
+      "title": "Control rollout separately from agent configuration",
+      "body": "Agent hub brings adoption guidance, rollout management and agent performance information together. Use it to organize a controlled introduction of AI capabilities, rather than treating every agent setting as one global switch. Its guidance also covers security, architecture and privacy considerations.\n\nThe rollout manager works with agent configurations that already exist. Enable the autonomous agents before creating a plan, then follow the wizard for the selected agents and business scope. A plan can cover one agent or several, and Schedule can enable the plan at a future date and time. Individual agent settings remain on their corresponding administration pages.\n\nPlan lifecycle actions have different effects by agent. Deactivating or deleting a Customer Intent Agent or Customer Knowledge Management Agent plan leaves the corresponding agent setting intact. For Case Management Agent, those plan actions also deactivate or delete the associated rules. Before stopping a rollout, identify the selected agent and check the relevant settings or rules afterward. Do not assume that a plan disappearing means every underlying capability has stopped.",
+      "sourceIds": [
+        "cc-d1-ops-s01",
+        "cc-d1-ops-s02"
+      ]
+    },
+    {
+      "id": "cc-d1-n04",
+      "title": "Design a simulation that the preview can actually run",
+      "body": "Agentic simulation is a preview capability for testing configurations, agents and routing before rollout. Its documented scope is inbound voice workstreams in English; it does not support DTMF menu interaction and is not intended for production use. These limits matter when deciding whether a proposed test can validate a complete journey.\n\nPrepare the documented administrator roles, provision voice and configure the destination phone number for simulation. Launch the Agentic Simulation tile in Copilot Service admin center and describe the test in a natural-language prompt. Supply the number belonging to the workstream that should receive the call. The simulation supplies its own caller number; that is not the destination to put in the prompt.\n\nWatch running calls in the Ongoing conversation report. Afterward, inspect run status and the submitted prompt in Simulation Run History, then use the closed conversation form for transcripts and recordings. Configure representatives and routing realistically before testing. A completed run is useful evidence about the supported journey you exercised; it cannot establish that an unsupported keypad branch works.",
+      "sourceIds": [
+        "cc-d1-ops-s03"
+      ]
+    },
+    {
+      "id": "cc-d1-n05",
+      "title": "Use conversational setup within its supported boundaries",
+      "body": "Service Operations Agent helps Contact Center administrators configure, inspect and validate the environment using natural language in English. It can manage common components such as queues and workstreams. The conversational interface assists an administrator; it does not remove the need to understand the change being made.\n\nFor access, Microsoft specifies the Omnichannel administrator role. Managing Power Apps and MCP connections requires System Administrator. The prerequisites also include consumption-based billing; troubleshooting during setup requires Application Insights configured and connected. Conversational setup needs a Dataverse connection through the MCP server. Check this connection when the agent cannot retrieve information or perform supported actions.\n\nTool support has boundaries. The documented tools can create route-to-queue rules without conditions, but adding or editing rule conditions is a manual Copilot Service admin center task. Custom assignment and several other ruleset types also fall outside these tools. Provide precise names and channel context, review proposed changes and verify the resulting configuration. If an operation is unsupported, use its manual administration path instead of repeatedly rephrasing a prompt or escalating permissions without evidence.",
+      "sourceIds": [
+        "cc-d1-ops-s05",
+        "cc-d1-ops-s04",
+        "cc-d1-ops-s06"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "cc-d1-c07",
+      "revision": 1,
+      "topicId": "lifecycle-management",
+      "kind": "recall",
+      "prompt": "What must be true of the autonomous agents before you create an Agent hub rollout plan?",
+      "answer": "The autonomous agents must already be enabled.",
+      "explanation": "The rollout manager uses existing agent configurations; the plan is not a substitute for the prerequisite enablement.",
+      "sourceIds": [
+        "cc-d1-ops-s02"
+      ],
+      "noteIds": [
+        "cc-d1-n03"
+      ],
+      "tags": [
+        "topic:lifecycle-management",
+        "domain:deployment",
+        "feature:agent-hub",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d1-c08",
+      "revision": 1,
+      "topicId": "lifecycle-management",
+      "kind": "recall",
+      "prompt": "Which rollout-plan action enables a plan automatically at a chosen future time?",
+      "answer": "Schedule.",
+      "explanation": "Choose the future date and time with Schedule; activation is then timed instead of being performed immediately.",
+      "sourceIds": [
+        "cc-d1-ops-s02"
+      ],
+      "noteIds": [
+        "cc-d1-n03"
+      ],
+      "tags": [
+        "topic:lifecycle-management",
+        "domain:deployment",
+        "feature:agent-hub",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d1-c09",
+      "revision": 2,
+      "topicId": "lifecycle-management",
+      "kind": "mcq",
+      "prompt": "After a Customer Knowledge Management Agent pilot, an administrator deactivates its rollout plan. The corresponding agent setting remains enabled. Which next step addresses that setting through the documented configuration boundary?",
+      "answer": "Manage the agent setting on its corresponding administration settings page.",
+      "explanation": "Knowledge and Intent agent settings remain independent of rollout-plan deactivation or deletion. Use the corresponding agent administration page to manage the setting. Further plan changes do not substitute for that configuration; Case Management rules have a different documented lifecycle.",
+      "sourceIds": [
+        "cc-d1-ops-s02"
+      ],
+      "noteIds": [
+        "cc-d1-n03"
+      ],
+      "tags": [
+        "topic:lifecycle-management",
+        "domain:deployment",
+        "feature:agent-hub",
+        "task:configure",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Delete the rollout plan instead of deactivating it."
+        },
+        {
+          "id": "b",
+          "text": "Remove the agent from a multi-agent rollout plan."
+        },
+        {
+          "id": "c",
+          "text": "Manage the agent setting on its corresponding administration settings page."
+        },
+        {
+          "id": "d",
+          "text": "Create an inactive replacement rollout plan for the same agent."
+        }
+      ],
+      "correctOptionId": "c"
+    },
+    {
+      "id": "cc-d1-c10",
+      "revision": 1,
+      "topicId": "lifecycle-management",
+      "kind": "recall",
+      "prompt": "In an agentic simulation preview prompt, which phone number identifies where the simulated call should arrive?",
+      "answer": "The configured number associated with the receiving workstream.",
+      "explanation": "The simulation supplies the caller number. Use the intended destination workstream number in the prompt.",
+      "sourceIds": [
+        "cc-d1-ops-s03"
+      ],
+      "noteIds": [
+        "cc-d1-n04"
+      ],
+      "tags": [
+        "topic:lifecycle-management",
+        "domain:deployment",
+        "feature:agentic-simulation",
+        "task:configure",
+        "level:core",
+        "status:preview"
+      ]
+    },
+    {
+      "id": "cc-d1-c11",
+      "revision": 1,
+      "topicId": "lifecycle-management",
+      "kind": "recall",
+      "prompt": "After an agentic simulation preview finishes, where do you inspect its conversation transcript and recording?",
+      "answer": "The closed conversation form.",
+      "explanation": "Simulation Run History shows run-level information; the conversation form supplies the detailed transcript and recording.",
+      "sourceIds": [
+        "cc-d1-ops-s03"
+      ],
+      "noteIds": [
+        "cc-d1-n04"
+      ],
+      "tags": [
+        "topic:lifecycle-management",
+        "domain:deployment",
+        "feature:agentic-simulation",
+        "task:configure",
+        "level:core",
+        "status:preview"
+      ]
+    },
+    {
+      "id": "cc-d1-c12",
+      "revision": 2,
+      "topicId": "lifecycle-management",
+      "kind": "mcq",
+      "prompt": "A team plans an agentic simulation preview for an English inbound voice journey. Which planned activity falls outside the documented simulation support?",
+      "answer": "Enter keypad digits through DTMF.",
+      "explanation": "The preview supports the other listed activities, but not DTMF. Testing a supported spoken conversation cannot validate a keypad-dependent branch.",
+      "sourceIds": [
+        "cc-d1-ops-s03"
+      ],
+      "noteIds": [
+        "cc-d1-n04"
+      ],
+      "tags": [
+        "topic:lifecycle-management",
+        "domain:deployment",
+        "feature:agentic-simulation",
+        "task:configure",
+        "level:advanced",
+        "status:preview"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Call the configured number of the receiving workstream."
+        },
+        {
+          "id": "b",
+          "text": "Enter keypad digits through DTMF."
+        },
+        {
+          "id": "c",
+          "text": "Run a single inbound conversation."
+        },
+        {
+          "id": "d",
+          "text": "Inspect the transcript in the closed conversation form."
+        }
+      ],
+      "correctOptionId": "b"
+    },
+    {
+      "id": "cc-d1-c13",
+      "revision": 1,
+      "topicId": "architecture-deployment",
+      "kind": "recall",
+      "prompt": "Which data connection does Service Operations Agent require for conversational setup?",
+      "answer": "A Dataverse connection through the MCP server.",
+      "explanation": "That connection enables access to environment information and supported configuration actions. Check it if those operations cannot run.",
+      "sourceIds": [
+        "cc-d1-ops-s04"
+      ],
+      "noteIds": [
+        "cc-d1-n05"
+      ],
+      "tags": [
+        "topic:architecture-deployment",
+        "domain:deployment",
+        "feature:service-operations-agent",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d1-c14",
+      "revision": 1,
+      "topicId": "architecture-deployment",
+      "kind": "recall",
+      "prompt": "Which roles does Microsoft distinguish for accessing Service Operations Agent and managing its Power Apps/MCP connections?",
+      "answer": "Omnichannel administrator for agent access; System Administrator for connection management.",
+      "explanation": "Accessing the administration assistant and managing its connections are separate prerequisite responsibilities.",
+      "sourceIds": [
+        "cc-d1-ops-s04"
+      ],
+      "noteIds": [
+        "cc-d1-n05"
+      ],
+      "tags": [
+        "topic:architecture-deployment",
+        "domain:deployment",
+        "feature:service-operations-agent",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d1-c15",
+      "revision": 1,
+      "topicId": "architecture-deployment",
+      "kind": "mcq",
+      "prompt": "Service Operations Agent successfully creates an unconditional route-to-queue rule. The administrator now needs to add a condition based on conversation context. Which next step follows the documented tool boundary?",
+      "answer": "Add the condition manually in Copilot Service admin center.",
+      "explanation": "The tools do not add or edit rule conditions. Creating the unconditional rule already demonstrates a working connection for that operation; reconnecting, raising permissions or changing assignment strategy does not add condition support.",
+      "sourceIds": [
+        "cc-d1-ops-s04"
+      ],
+      "noteIds": [
+        "cc-d1-n05"
+      ],
+      "tags": [
+        "topic:architecture-deployment",
+        "domain:deployment",
+        "feature:service-operations-agent",
+        "task:configure",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Reconnect Dataverse through MCP and retry the identical condition request."
+        },
+        {
+          "id": "b",
+          "text": "Assign System Administrator solely to make condition editing available to the tool."
+        },
+        {
+          "id": "c",
+          "text": "Change the queue to an out-of-the-box assignment method and retry the condition request."
+        },
+        {
+          "id": "d",
+          "text": "Add the condition manually in Copilot Service admin center."
+        }
+      ],
+      "correctOptionId": "d"
+    }
+  ],
+  "questions": [],
+  "editorial": [
+    {
+      "id": "cc-d1-n03",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "agent-hub-controlled-rollout",
+      "objectiveIds": [
+        "D1.2.01"
+      ],
+      "level": "core",
+      "author": "/root/d1_operations",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-ops-s01",
+          "section": "Unified view: Learn, Rollout manager, Agent insights, Security, Architecture, Privacy and compliance",
+          "claim": "Agent hub groups adoption guidance, rollout and performance views with governance information.",
+          "applicability": "Agent hub rollout manager in Dynamics 365 Contact Center; agent-specific effects must not be generalized to every agent."
+        },
+        {
+          "sourceId": "cc-d1-ops-s02",
+          "section": "Prerequisite; Create rollout plans; Manage rollout plans; Considerations for rollout plans",
+          "claim": "Agents must be enabled first; plans use existing settings, may include multiple agents, can be scheduled, and have different deactivate/delete effects for Intent/Knowledge versus Case Management.",
+          "applicability": "Agent hub rollout manager in Dynamics 365 Contact Center; agent-specific effects must not be generalized to every agent."
+        }
+      ],
+      "duplicateCheck": "New operational teaching topic. Compared all 36 pilot prompts and 12 notes; not the existing ALM packaging/layering or workspace deployment explanations."
+    },
+    {
+      "id": "cc-d1-n04",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "agentic-simulation-test-boundaries",
+      "objectiveIds": [
+        "D1.1.05"
+      ],
+      "level": "core",
+      "author": "/root/d1_operations",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-ops-s03",
+          "section": "Prerelease notice; Prerequisites; Run a simulation; Things to consider",
+          "claim": "Preview supports inbound voice/English but not DTMF; requires administrator roles, provisioned voice and configured number; prompt uses receiving-workstream number; ongoing/history/closed-conversation views serve distinct inspection purposes.",
+          "applicability": "Agentic simulations preview: inbound voice workstreams, English only; not intended for production use. No DTMF support."
+        }
+      ],
+      "duplicateCheck": "New operational teaching topic. Compared all 36 pilot prompts and 12 notes; not the existing ALM packaging/layering or workspace deployment explanations."
+    },
+    {
+      "id": "cc-d1-n05",
+      "revision": 2,
+      "domainId": "deployment",
+      "conceptId": "conversational-setup-tool-boundaries",
+      "objectiveIds": [
+        "D1.1.07"
+      ],
+      "level": "core",
+      "author": "/root/d1_operations",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-ops-s05",
+          "section": "Key capabilities",
+          "claim": "Service Operations Agent assists natural-language configuration, validation and management of common contact center components.",
+          "applicability": "Service Operations Agent in Dynamics 365 Contact Center; documented conversational setup tools, not every manual administration capability."
+        },
+        {
+          "sourceId": "cc-d1-ops-s04",
+          "section": "Supported capabilities; Prerequisites; Steps to access; Create and manage routing rules",
+          "claim": "The supported-capabilities note limits the agent to English. Access and connection-management roles differ; billing and telemetry prerequisites apply; Dataverse MCP connection is required; condition editing and custom assignment are outside supported tools.",
+          "applicability": "Service Operations Agent in Dynamics 365 Contact Center; documented conversational setup tools, not every manual administration capability."
+        },
+        {
+          "sourceId": "cc-d1-ops-s06",
+          "section": "Intended uses; Limitations; Operational factors",
+          "claim": "Human judgment, specific context, review and verification remain necessary; manual administration is appropriate for unsupported workflows.",
+          "applicability": "Service Operations Agent in Dynamics 365 Contact Center; documented conversational setup tools, not every manual administration capability."
+        }
+      ],
+      "duplicateCheck": "New operational teaching topic. Compared all 36 pilot prompts and 12 notes; not the existing ALM packaging/layering or workspace deployment explanations.",
+      "revisedBy": "/root",
+      "revisionReason": "Preserve the current English-only Service Operations Agent scope from the supported-capabilities note."
+    },
+    {
+      "id": "cc-d1-c07",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "rollout-agent-enablement-prerequisite",
+      "objectiveIds": [
+        "D1.2.01"
+      ],
+      "level": "core",
+      "author": "/root/d1_operations",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-ops-s02",
+          "section": "Prerequisite; Considerations for rollout plans",
+          "claim": "Autonomous agents must be enabled before plan creation; rollout manager uses existing settings.",
+          "applicability": "Agent hub rollout manager in Dynamics 365 Contact Center; agent-specific effects must not be generalized to every agent."
+        }
+      ],
+      "duplicateCheck": "Compared pilot registry and sibling cards: tests a distinct rollout-agent-enablement-prerequisite decision; reference note supplies context rather than another copy of the prompt."
+    },
+    {
+      "id": "cc-d1-c08",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "rollout-scheduled-activation",
+      "objectiveIds": [
+        "D1.2.01"
+      ],
+      "level": "core",
+      "author": "/root/d1_operations",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-ops-s02",
+          "section": "Manage rollout plans",
+          "claim": "Schedule sets a future date and time for automatic plan enablement.",
+          "applicability": "Agent hub rollout manager in Dynamics 365 Contact Center; agent-specific effects must not be generalized to every agent."
+        }
+      ],
+      "duplicateCheck": "Compared pilot registry and sibling cards: tests a distinct rollout-scheduled-activation decision; reference note supplies context rather than another copy of the prompt."
+    },
+    {
+      "id": "cc-d1-c09",
+      "revision": 2,
+      "domainId": "deployment",
+      "conceptId": "rollout-agent-specific-deactivation",
+      "objectiveIds": [
+        "D1.2.01"
+      ],
+      "level": "advanced",
+      "author": "/root/d1_operations",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-ops-s02",
+          "section": "Considerations for rollout plans",
+          "claim": "Intent and Knowledge agent settings remain when a plan is deactivated/deleted; Case Management rules are deactivated/deleted with its plan.",
+          "applicability": "Agent hub rollout manager in Dynamics 365 Contact Center; agent-specific effects must not be generalized to every agent."
+        }
+      ],
+      "duplicateCheck": "Compared pilot registry and sibling cards: tests a distinct rollout-agent-specific-deactivation decision; reference note supplies context rather than another copy of the prompt.",
+      "revisedBy": "/root",
+      "revisionReason": "Replace implausible scheduled-deactivation/global-plan distractors with plausible attempts to manage agent settings through plan operations."
+    },
+    {
+      "id": "cc-d1-c10",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "simulation-destination-number",
+      "objectiveIds": [
+        "D1.1.05"
+      ],
+      "level": "core",
+      "author": "/root/d1_operations",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-ops-s03",
+          "section": "Run a simulation; Things to consider",
+          "claim": "Prompt must include the configured number of the incoming-call workstream; simulated caller number is supplied by the agent.",
+          "applicability": "Agentic simulations preview: inbound voice workstreams, English only; not intended for production use. No DTMF support."
+        }
+      ],
+      "duplicateCheck": "Compared pilot registry and sibling cards: tests a distinct simulation-destination-number decision; reference note supplies context rather than another copy of the prompt."
+    },
+    {
+      "id": "cc-d1-c11",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "simulation-conversation-evidence",
+      "objectiveIds": [
+        "D1.1.05"
+      ],
+      "level": "core",
+      "author": "/root/d1_operations",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-ops-s03",
+          "section": "Run a simulation",
+          "claim": "Run history displays prompt/status/completed runs; transcripts and recordings are viewed in the closed conversation form.",
+          "applicability": "Agentic simulations preview: inbound voice workstreams, English only; not intended for production use. No DTMF support."
+        }
+      ],
+      "duplicateCheck": "Compared pilot registry and sibling cards: tests a distinct simulation-conversation-evidence decision; reference note supplies context rather than another copy of the prompt."
+    },
+    {
+      "id": "cc-d1-c12",
+      "revision": 2,
+      "domainId": "deployment",
+      "conceptId": "simulation-unsupported-keypad-path",
+      "objectiveIds": [
+        "D1.1.05"
+      ],
+      "level": "advanced",
+      "author": "/root/d1_operations",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-ops-s03",
+          "section": "Introduction; Things to consider",
+          "claim": "Preview is inbound voice in English and has no DTMF functionality; a prompt can request multiple conversations.",
+          "applicability": "Agentic simulations preview: inbound voice workstreams, English only; not intended for production use. No DTMF support."
+        }
+      ],
+      "duplicateCheck": "Compared pilot registry and sibling cards: tests a distinct simulation-unsupported-keypad-path decision; reference note supplies context rather than another copy of the prompt.",
+      "revisedBy": "/root",
+      "revisionReason": "Test the DTMF boundary against supported simulation activities instead of implausible false channel/concurrency claims."
+    },
+    {
+      "id": "cc-d1-c13",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "service-operations-dataverse-connection",
+      "objectiveIds": [
+        "D1.1.07"
+      ],
+      "level": "core",
+      "author": "/root/d1_operations",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-ops-s04",
+          "section": "Steps to access",
+          "claim": "Service Operations Agent requires Dataverse through MCP to access/manage the environment; verify connection when actions or retrieval fail.",
+          "applicability": "Service Operations Agent in Dynamics 365 Contact Center; documented conversational setup tools, not every manual administration capability."
+        }
+      ],
+      "duplicateCheck": "Compared pilot registry and sibling cards: tests a distinct service-operations-dataverse-connection decision; reference note supplies context rather than another copy of the prompt."
+    },
+    {
+      "id": "cc-d1-c14",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "service-operations-role-boundaries",
+      "objectiveIds": [
+        "D1.1.07"
+      ],
+      "level": "core",
+      "author": "/root/d1_operations",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-ops-s04",
+          "section": "Prerequisites",
+          "claim": "Omnichannel administrator is needed for access; System Administrator is needed to manage Power Apps and MCP connections.",
+          "applicability": "Service Operations Agent in Dynamics 365 Contact Center; documented conversational setup tools, not every manual administration capability."
+        }
+      ],
+      "duplicateCheck": "Compared pilot registry and sibling cards: tests a distinct service-operations-role-boundaries decision; reference note supplies context rather than another copy of the prompt."
+    },
+    {
+      "id": "cc-d1-c15",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "service-operations-manual-condition-edit",
+      "objectiveIds": [
+        "D1.1.07"
+      ],
+      "level": "advanced",
+      "author": "/root/d1_operations",
+      "authoredAt": "2026-10-31",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d1-ops-s04",
+          "section": "Create and manage routing rules",
+          "claim": "Adding/editing conditions is unsupported through the tools and must be configured manually in Copilot Service admin center.",
+          "applicability": "Service Operations Agent in Dynamics 365 Contact Center; documented conversational setup tools, not every manual administration capability."
+        }
+      ],
+      "duplicateCheck": "Compared pilot registry and sibling cards: tests a distinct service-operations-manual-condition-edit decision; reference note supplies context rather than another copy of the prompt."
+    }
+  ]
+}

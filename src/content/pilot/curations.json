@@ -1,0 +1,616 @@
+[
+  {
+    "id": "d365-contact-center",
+    "version": "0.1.0",
+    "title": "D365 Contact Center — Implementation",
+    "description": "Pilot · 24 foundational recall cards. Learn selected configuration concepts and practical decisions with linked references.",
+    "fixture": false,
+    "topics": [
+      {
+        "id": "architecture-deployment",
+        "title": "Architecture and deployment"
+      },
+      {
+        "id": "lifecycle-management",
+        "title": "Lifecycle management"
+      },
+      {
+        "id": "chat-digital",
+        "title": "Chat and digital channels"
+      },
+      {
+        "id": "copilot-ai",
+        "title": "Copilot and AI"
+      },
+      {
+        "id": "routing-capacity",
+        "title": "Routing and capacity"
+      },
+      {
+        "id": "representative-workspace",
+        "title": "Representative workspace"
+      },
+      {
+        "id": "supervision-analytics",
+        "title": "Supervision and analytics"
+      }
+    ],
+    "cards": [
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d1-c01",
+        "topicId": "architecture-deployment"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d1-c02",
+        "topicId": "architecture-deployment"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d1-c03",
+        "topicId": "lifecycle-management"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d1-c04",
+        "topicId": "lifecycle-management"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d2-c01",
+        "topicId": "chat-digital"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d2-c02",
+        "topicId": "chat-digital"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d2-c03",
+        "topicId": "chat-digital"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d2-c04",
+        "topicId": "chat-digital"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d3-c01",
+        "topicId": "copilot-ai"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d3-c02",
+        "topicId": "copilot-ai"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d3-c03",
+        "topicId": "copilot-ai"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d3-c04",
+        "topicId": "copilot-ai"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d4-c01",
+        "topicId": "routing-capacity"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d4-c02",
+        "topicId": "routing-capacity"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d4-c03",
+        "topicId": "routing-capacity"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d4-c04",
+        "topicId": "routing-capacity"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d5-c01",
+        "topicId": "representative-workspace"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d5-c02",
+        "topicId": "representative-workspace"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d5-c03",
+        "topicId": "representative-workspace"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d5-c04",
+        "topicId": "representative-workspace"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d6-c01",
+        "topicId": "supervision-analytics"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d6-c02",
+        "topicId": "supervision-analytics"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d6-c03",
+        "topicId": "supervision-analytics"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d6-c04",
+        "topicId": "supervision-analytics"
+      }
+    ],
+    "notes": [
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d1-n01"
+      },
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d1-n02"
+      },
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d2-n01"
+      },
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d2-n02"
+      },
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d3-n01"
+      },
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d3-n02"
+      },
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d4-n01"
+      },
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d4-n02"
+      },
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d5-n01"
+      },
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d5-n02"
+      },
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d6-n01"
+      },
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d6-n02"
+      }
+    ],
+    "questionBankIds": []
+  },
+  {
+    "id": "ab250-preparation",
+    "version": "0.1.0",
+    "title": "AB-250 — Certification Preparation",
+    "description": "Pilot · 36 cards across all six domains. Includes shared foundations and scenario cards; this is partial objective coverage.",
+    "fixture": false,
+    "topics": [
+      {
+        "id": "deployment",
+        "title": "Deploy Contact Center"
+      },
+      {
+        "id": "channels",
+        "title": "Implement channels"
+      },
+      {
+        "id": "agents-ai",
+        "title": "Configure agents and AI"
+      },
+      {
+        "id": "work-distribution",
+        "title": "Configure work distribution"
+      },
+      {
+        "id": "representative-experience",
+        "title": "Configure the representative experience"
+      },
+      {
+        "id": "analytics",
+        "title": "Manage analytics"
+      }
+    ],
+    "cards": [
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d1-c01",
+        "topicId": "deployment"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d1-c02",
+        "topicId": "deployment"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d1-c03",
+        "topicId": "deployment"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d1-c04",
+        "topicId": "deployment"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d1-c05",
+        "topicId": "deployment"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d1-c06",
+        "topicId": "deployment"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d2-c01",
+        "topicId": "channels"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d2-c02",
+        "topicId": "channels"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d2-c03",
+        "topicId": "channels"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d2-c04",
+        "topicId": "channels"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d2-c05",
+        "topicId": "channels"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d2-c06",
+        "topicId": "channels"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d3-c01",
+        "topicId": "agents-ai"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d3-c02",
+        "topicId": "agents-ai"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d3-c03",
+        "topicId": "agents-ai"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d3-c04",
+        "topicId": "agents-ai"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d3-c05",
+        "topicId": "agents-ai"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d3-c06",
+        "topicId": "agents-ai"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d4-c01",
+        "topicId": "work-distribution"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d4-c02",
+        "topicId": "work-distribution"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d4-c03",
+        "topicId": "work-distribution"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d4-c04",
+        "topicId": "work-distribution"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d4-c05",
+        "topicId": "work-distribution"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d4-c06",
+        "topicId": "work-distribution"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d5-c01",
+        "topicId": "representative-experience"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d5-c02",
+        "topicId": "representative-experience"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d5-c03",
+        "topicId": "representative-experience"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d5-c04",
+        "topicId": "representative-experience"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d5-c05",
+        "topicId": "representative-experience"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d5-c06",
+        "topicId": "representative-experience"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d6-c01",
+        "topicId": "analytics"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d6-c02",
+        "topicId": "analytics"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d6-c03",
+        "topicId": "analytics"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d6-c04",
+        "topicId": "analytics"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d6-c05",
+        "topicId": "analytics"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d6-c06",
+        "topicId": "analytics"
+      }
+    ],
+    "notes": [
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d1-n01"
+      },
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d1-n02"
+      },
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d2-n01"
+      },
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d2-n02"
+      },
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d3-n01"
+      },
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d3-n02"
+      },
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d4-n01"
+      },
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d4-n02"
+      },
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d5-n01"
+      },
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d5-n02"
+      },
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d6-n01"
+      },
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d6-n02"
+      }
+    ],
+    "questionBankIds": [
+      "ab250-original"
+    ]
+  },
+  {
+    "id": "ab250-advanced",
+    "version": "0.1.0",
+    "title": "AB-250 — Advanced Scenarios",
+    "description": "Pilot · 12 application cards. Work through scoped decisions rather than duplicate the foundational recall cards.",
+    "fixture": false,
+    "topics": [
+      {
+        "id": "deployment",
+        "title": "Deploy Contact Center"
+      },
+      {
+        "id": "channels",
+        "title": "Implement channels"
+      },
+      {
+        "id": "agents-ai",
+        "title": "Configure agents and AI"
+      },
+      {
+        "id": "work-distribution",
+        "title": "Configure work distribution"
+      },
+      {
+        "id": "representative-experience",
+        "title": "Configure the representative experience"
+      },
+      {
+        "id": "analytics",
+        "title": "Manage analytics"
+      }
+    ],
+    "cards": [
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d1-c05",
+        "topicId": "deployment"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d1-c06",
+        "topicId": "deployment"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d2-c05",
+        "topicId": "channels"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d2-c06",
+        "topicId": "channels"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d3-c05",
+        "topicId": "agents-ai"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d3-c06",
+        "topicId": "agents-ai"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d4-c05",
+        "topicId": "work-distribution"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d4-c06",
+        "topicId": "work-distribution"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d5-c05",
+        "topicId": "representative-experience"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d5-c06",
+        "topicId": "representative-experience"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d6-c05",
+        "topicId": "analytics"
+      },
+      {
+        "packId": "contact-center-core",
+        "cardId": "cc-d6-c06",
+        "topicId": "analytics"
+      }
+    ],
+    "notes": [
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d1-n02"
+      },
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d2-n01"
+      },
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d2-n02"
+      },
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d3-n01"
+      },
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d3-n02"
+      },
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d4-n01"
+      },
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d4-n02"
+      },
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d5-n02"
+      },
+      {
+        "packId": "contact-center-core",
+        "noteId": "cc-d6-n02"
+      }
+    ],
+    "questionBankIds": [
+      "ab250-original"
+    ]
+  }
+]

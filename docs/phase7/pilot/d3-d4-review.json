@@ -1,0 +1,488 @@
+[
+  {
+    "id": "cc-d3-n01",
+    "revision": 1,
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "e6efebf3db6dcffb7afe69733252a7d1fa071acb78114f3972f72aa5ab4f5167",
+    "rationale": "Separates knowledge assistance from summaries and checks profile plus security access. Standalone summary scope and case-management prerequisite are explicit. D3.1.01-03 are relevant partial objectives.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-s01",
+        "section": "Make Copilot available / Assign roles and privileges",
+        "supported": true,
+        "notes": "Read feature-profile instructions and custom-role privileges; both apply to configured Copilot access."
+      },
+      {
+        "sourceId": "cc-d3-s02",
+        "section": "Enable conversation summaries",
+        "supported": true,
+        "notes": "Read standalone conversation-summary scope and join/end/on-demand triggers; case summaries have a separate scope."
+      },
+      {
+        "sourceId": "cc-d3-s03",
+        "section": "View open/closed conversation summary",
+        "supported": true,
+        "notes": "Read open-summary actions, case-management prerequisite, and closed Activities/Summary navigation."
+      },
+      {
+        "sourceId": "cc-d3-s04",
+        "section": "Enable Copilot experiences / Knowledge sources",
+        "supported": true,
+        "notes": "Read applicability and help-pane setup, knowledge sources, and preset/representative/automated filter distinctions."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-n02",
+    "revision": 1,
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "cf2ece8affa341b35b80ed7fd38f6ba510fc088fdf7b30fff42b3c5fbc2f0cc2",
+    "rationale": "Scope, typed native mapping, external initialization, and IVR timeout exception are supported. Context is not presented as authentication. D3.2.02 is the appropriate locator.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-s05",
+        "section": "Configure context variables for Copilot agent",
+        "supported": true,
+        "notes": "Read native standalone mapping steps, type table, voice-only Activity.From.Name, and escalation-context explanation."
+      },
+      {
+        "sourceId": "cc-d3-s06",
+        "section": "Set global variables from external sources",
+        "supported": true,
+        "notes": "Read global session lifetime, reset behavior, external Usage configuration, and explicit IVR timeout exclusion."
+      },
+      {
+        "sourceId": "cc-d3-s07",
+        "section": "Set a variable",
+        "supported": true,
+        "notes": "Read Set a variable and same-type value assignment instructions."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-n01",
+    "revision": 1,
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "a6e475d0b40f976655d74c6425be9c3c47eba15a965f62904fe20ce30d6883c8",
+    "rationale": "Correctly separates enrichment, ordered classification, and iterative assignment. Cross-references support each of these distinct stages. D4.2.02 and D4.1.04 apply.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-s01",
+        "section": "Overview",
+        "supported": true,
+        "notes": "Read the overview distinction between classification enrichment and assignment prioritization/matching."
+      },
+      {
+        "sourceId": "cc-d4-s02",
+        "section": "How classification rulesets work",
+        "supported": true,
+        "notes": "Read ordered rulesets, first matching rule transition, and downstream output reuse."
+      },
+      {
+        "sourceId": "cc-d4-s05",
+        "section": "How automated assignment works",
+        "supported": true,
+        "notes": "Read automated retries, Highest capacity Exact/Closest matching, and per-queue Advanced round robin."
+      },
+      {
+        "sourceId": "cc-d4-s06",
+        "section": "Use classification rules for enhanced assignment performance",
+        "supported": true,
+        "notes": "Read static classification reuse in route-to-queue/prioritization guidance."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-n02",
+    "revision": 1,
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "ddbed6bac0507d99e1d356bb924e395fd0509e8af774f5edb5a33eba25d7552a",
+    "rationale": "Preserves standard/custom assignment distinction and manual-capacity exception. Capacity is a justified D1.3.04 cross-domain dependency alongside D4.2.04 skills.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-s03",
+        "section": "How skills are matched / Exact match",
+        "supported": true,
+        "notes": "Read Exact Match thresholds and explicit custom-assignment conditions overriding the default algorithm."
+      },
+      {
+        "sourceId": "cc-d4-s04",
+        "section": "Overview / Assignment blocking",
+        "supported": true,
+        "notes": "Read manual overrides, Assignment blocking, and representative-specific limits/default interaction."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-c01",
+    "revision": 1,
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "5ba3d2ee36e1d76ddb0987d8a1b0d62bd466263deabea1e6463cf2e57c5e803e",
+    "rationale": "The standalone conversation inputs are explicit in the summary configuration page; no case-summary or embedded-support generalization. D3.1.01.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-s02",
+        "section": "Enable conversation summaries",
+        "supported": true,
+        "notes": "Read standalone conversation-summary scope and join/end/on-demand triggers; case summaries have a separate scope."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-c02",
+    "revision": 1,
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "340d83b8dd1928285aa304661648f9bef0bce27c42d8f3c1ab503b00265ee333",
+    "rationale": "Closed-conversation Activities/Summary path is documented for standalone and Customer Service. Related note provides the standalone context; no new administration claim. D3.1.01.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-s03",
+        "section": "View a summary for a closed conversation",
+        "supported": true,
+        "notes": "Read open-summary actions, case-management prerequisite, and closed Activities/Summary navigation."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-c03",
+    "revision": 1,
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "6ed8872ef6d82118ef0e94906fcc0e23786c73b1fd0e1c067146e88be8ade0ef",
+    "rationale": "Representative filters are selectable, and Filter status must be enabled. Current help-pane article explicitly covers Contact Center. D3.1.02/03.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-s04",
+        "section": "Representative filters",
+        "supported": true,
+        "notes": "Read applicability and help-pane setup, knowledge sources, and preset/representative/automated filter distinctions."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-c04",
+    "revision": 2,
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "6258e652c647383ad1868c16eca6d3f49c04e4d05639960dd48236edbe9c0754",
+    "rationale": "Revision 2 replaces the duplicated name-case recall with session lifetime and reset behavior, supported by the global-variable introduction and Lifecycle sections. D3.2.02 remains appropriate.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-s06",
+        "section": "Introduction; Lifecycle of global variables",
+        "supported": true,
+        "notes": "Checked global session scope and clear/reset behavior in cc-d3-s06."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-c05",
+    "revision": 2,
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "5545d04f661ee070bd8db8b98f745231962af0afb4c09be5e09ae0eac270f56a",
+    "rationale": "Revision 2 establishes correct security privileges and tests team-specific profile access. Shared default profile, interaction recording, and response filtering now form relevant competing configurations. Custom profile remains uniquely correct. D3.1.02.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-s01",
+        "section": "Make Copilot available to service representatives",
+        "supported": true,
+        "notes": "Read feature-profile instructions and custom-role privileges; both apply to configured Copilot access."
+      }
+    ]
+  },
+  {
+    "id": "cc-d3-c06",
+    "revision": 2,
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "bd96c2ee6d029f6f8e6a8184d4962e7929563eec578912757b696065002250b8",
+    "rationale": "Revision 2 distinguishes global versus topic scope and Conversation Start versus later access. The documented voice variable access point makes global copying at Conversation Start uniquely correct. D3.2.02.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-s05",
+        "section": "Voice-only variables / note after step 11",
+        "supported": true,
+        "notes": "Read native standalone mapping steps, type table, voice-only Activity.From.Name, and escalation-context explanation."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-c01",
+    "revision": 1,
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "abe98eebe201459e3db68747102fc2c5af56f02f637ceaa5e8ff395c842565eb",
+    "rationale": "The overview names these two stages and their responsibilities. Foundation for D4.2.02 and D4.1.04, not complete coverage.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-s01",
+        "section": "Overview",
+        "supported": true,
+        "notes": "Read the overview distinction between classification enrichment and assignment prioritization/matching."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-c02",
+    "revision": 1,
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "65ae2b86e6e76ff627c70eda67aad3a74fdbe97bc14c8092e0364033a0d4c457",
+    "rationale": "Later classification rulesets can consume earlier output. A focused dependency recall correctly maps to D4.2.02.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-s02",
+        "section": "How classification rulesets work",
+        "supported": true,
+        "notes": "Read ordered rulesets, first matching rule transition, and downstream output reuse."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-c03",
+    "revision": 1,
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "2bc5412b77cb26c93d670ed4012e318e855a7b5902c8ef2524ec29eb8bcc7e39",
+    "rationale": "Queue-specific round-robin ordering and consecutive cross-queue assignments are directly documented. D4.1.04.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-s05",
+        "section": "Advanced round robin",
+        "supported": true,
+        "notes": "Read automated retries, Highest capacity Exact/Closest matching, and per-queue Advanced round robin."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-c04",
+    "revision": 1,
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "cba1fd5b351ca7e4554bad67322830d2a5d605915eebad3d1822f3ff0874c996",
+    "rationale": "Exact match compares required ratings with greater-than-or-equal proficiency and all required skills. D4.2.04.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-s03",
+        "section": "Exact match",
+        "supported": true,
+        "notes": "Read Exact Match thresholds and explicit custom-assignment conditions overriding the default algorithm."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-c05",
+    "revision": 2,
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "1fa514e39e3051738590670df63dece3268d45685445e0e557ca4e62bff5d39a",
+    "rationale": "Revision 2 tests first-match behavior inside a classification ruleset, distinct from producer/consumer order. The subsequent ruleset is the supported solution; reordering only changes which matching item runs. D4.2.02.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-s02",
+        "section": "How classification rulesets work",
+        "supported": true,
+        "notes": "Checked first-match transition and classification-before-queue evaluation in cc-d4-s02."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-c06",
+    "revision": 2,
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "5181a1182eb24adc0a4605e4b4a3b689033a275701fcb7315d05b0443c7855c1",
+    "rationale": "Revision 2 explicitly states automatic assignments respect the limit and contrasts manual override with unsupported capacity-path diagnoses. The documented supervisor override is the defensible answer. D1.3.04/D4.1.04.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-s04",
+        "section": "Overview",
+        "supported": true,
+        "notes": "Read manual overrides, Assignment blocking, and representative-specific limits/default interaction."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q01",
+    "revision": 2,
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "39128fddf0f2253e825ee69478b5dec9c12578cf43e2f63b81cf587043097370",
+    "rationale": "Revision 2 contrasts environment enablement, profile assignment, privileges, and interaction recording in the same workflow. Working standard users and an already correct profile isolate the custom-role check. D3.1.02.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-s01",
+        "section": "Assign roles and privileges",
+        "supported": true,
+        "notes": "Read feature-profile instructions and custom-role privileges; both apply to configured Copilot access."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q02",
+    "revision": 1,
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "3bd57708521a2818093b2682d2eb0f06ef8d53ab299219df6d71106a3c4044fe",
+    "rationale": "Join-trigger configuration explicitly includes consultations and transfers. End/manual/case-close choices fail the requested automatic consultation timing. D3.1.01.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-s02",
+        "section": "Enable conversation summaries",
+        "supported": true,
+        "notes": "Read standalone conversation-summary scope and join/end/on-demand triggers; case summaries have a separate scope."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q03",
+    "revision": 2,
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "3c4a580e7cd9af6b203ab762d86cbcaf130d6d8da8c82eb966a7c2b987c717dc",
+    "rationale": "Revision 2 uses knowledge-source selection as the remaining distractor. Choosing a source is insufficient to apply fixed topic restrictions; representative and record-driven filters fail explicit constraints. Preset remains uniquely correct. D3.1.02/03.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-s04",
+        "section": "Preset / Representative / Automated filters",
+        "supported": true,
+        "notes": "Read applicability and help-pane setup, knowledge sources, and preset/representative/automated filter distinctions."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q04",
+    "revision": 1,
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "14c1829e9e6ea079c195da6020e64c5f0d00dfee8755ef1672c5726cf6c91ff9",
+    "rationale": "Both stated Usage settings are documented and required for this scope/external-input scenario. Exactly two answers; the IVR timeout caveat is retained. D3.2.02.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d3-s06",
+        "section": "Set global variables from external sources, step 6",
+        "supported": true,
+        "notes": "Read global session lifetime, reset behavior, external Usage configuration, and explicit IVR timeout exclusion."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q01",
+    "revision": 2,
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "a4c71b96fbe0716fe82ab374221ee14b3a61bf8f678e09c14605b2f10a36c905",
+    "rationale": "Revision 2 keeps all choices within classification, routing, prioritization, and assignment. Only classification creates the reusable static value before downstream evaluation; other designs retain repetition or reverse dependencies. D4.2.02.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-s06",
+        "section": "Use classification rules for enhanced assignment performance",
+        "supported": true,
+        "notes": "Read static classification reuse in route-to-queue/prioritization guidance."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q02",
+    "revision": 1,
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "cd03fa125ad05d4db89bf0c43e5b1ac38e10c50088d9d99ea632842d93daedfb",
+    "rationale": "Highest capacity plus Exact Match filters eligibility then ranks capacity. The alternatives alter strict matching or the requested ranking. D4.1.04/D4.2.04.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-s05",
+        "section": "Highest capacity",
+        "supported": true,
+        "notes": "Read automated retries, Highest capacity Exact/Closest matching, and per-queue Advanced round robin."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q03",
+    "revision": 2,
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "e62fa7744c6fc50382fcc0469d6df092813a61201be8231df60c770ae9197760",
+    "rationale": "Revision 2 separates skill attachment, workstream default, candidate ordering, and custom eligibility. Explicit skill conditions remain necessary when custom rules are retained. D4.2.04.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-s03",
+        "section": "How skills are matched / Exact match",
+        "supported": true,
+        "notes": "Read Exact Match thresholds and explicit custom-assignment conditions overriding the default algorithm."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q04",
+    "revision": 1,
+    "reviewer": "/root/pilot_d1_d2",
+    "reviewedAt": "2026-10-30",
+    "decision": "approved",
+    "fingerprint": "3c5e623f60669e1a574655ba56665cf198c335d0225c9db0dec84af4ffbecfe7",
+    "rationale": "Individual custom limits preserve trainee defaults, and blocking prevents further automatic work at the applicable limit. Exactly two defensible choices. D1.3.04 cross-map is appropriate.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-s04",
+        "section": "Assignment blocking / Representative-specific work limits",
+        "supported": true,
+        "notes": "Read manual overrides, Assignment blocking, and representative-specific limits/default interaction."
+      }
+    ]
+  }
+]

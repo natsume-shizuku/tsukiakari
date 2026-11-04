@@ -1,0 +1,1495 @@
+{
+  "sources": [
+    {
+      "id": "cc-d3-s01",
+      "title": "Configure Copilot features",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-copilot-features"
+    },
+    {
+      "id": "cc-d3-s02",
+      "title": "Enable Copilot case and conversation summaries",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/copilot-enable-summary"
+    },
+    {
+      "id": "cc-d3-s03",
+      "title": "Use Copilot to summarize conversations",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/copilot-summarize-conversations"
+    },
+    {
+      "id": "cc-d3-s04",
+      "title": "Configure Copilot features in the help pane",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/copilot-enable-help-pane"
+    },
+    {
+      "id": "cc-d3-s05",
+      "title": "Configure context variables for AI agents",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/context-variables-for-bot"
+    },
+    {
+      "id": "cc-d3-s06",
+      "title": "Work with global variables",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-variables-bot"
+    },
+    {
+      "id": "cc-d3-s07",
+      "title": "Work with variables",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-variables"
+    },
+    {
+      "id": "cc-d4-s01",
+      "title": "Overview of unified routing",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/overview-unified-routing"
+    },
+    {
+      "id": "cc-d4-s02",
+      "title": "Configure work classification rulesets",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-work-classification"
+    },
+    {
+      "id": "cc-d4-s03",
+      "title": "Understand skill matching in unified routing",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/set-up-skill-based-routing"
+    },
+    {
+      "id": "cc-d4-s04",
+      "title": "Create and manage capacity profiles",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/capacity-profiles"
+    },
+    {
+      "id": "cc-d4-s05",
+      "title": "Assignment methods in unified routing",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/assignment-methods"
+    },
+    {
+      "id": "cc-d4-s06",
+      "title": "Best practices for unified routing",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/unified-routing-best-practices"
+    }
+  ],
+  "notes": [
+    {
+      "id": "cc-d3-n01",
+      "title": "Give representatives the right Copilot assistance",
+      "body": "Start with the task: finding a knowledge-based answer and recapping a conversation are different needs. Configure the help pane for questions; configure conversation summaries for a recap. Then enable the appropriate features in the representatives’ experience profile rather than assuming global setup gives every group identical access.\n\nCustom security roles also need the documented Copilot privileges.\n\nFor standalone Contact Center, conversation summaries can cover chat and transcribed voice. An administrator can trigger them when someone joins, at the end, or on demand. Representatives can copy a summary or give feedback; creating a case from it additionally requires case management and the enabled action.\n\nFor example, a consultation needs a useful recap, while a product-policy question needs suitable published knowledge. Validate both workflows with the intended profile.",
+      "sourceIds": [
+        "cc-d3-s01",
+        "cc-d3-s02",
+        "cc-d3-s03",
+        "cc-d3-s04"
+      ]
+    },
+    {
+      "id": "cc-d3-n02",
+      "title": "Scope voice-agent variables before sharing context",
+      "body": "For the native standalone integration, a context variable and its Copilot Studio counterpart need matching names and compatible types. A global variable is accessible across topics in one user session; it is not a permanent customer record. Use a Set variable value node when the agent must assign a value itself.\n\nFor external values, enable the global and external-source usage settings. Keep the channel’s limitations explicit: Contact Center IVR does not support the external-variable timeout setting described for other scenarios. Do not design voice recovery around that timer.\n\nFor example, retain a caller’s selected service category across topics, then pass the relevant context at escalation. This transfers conversation context, not proof that an arbitrary value authenticates the caller.",
+      "sourceIds": [
+        "cc-d3-s05",
+        "cc-d3-s06",
+        "cc-d3-s07"
+      ]
+    },
+    {
+      "id": "cc-d4-n01",
+      "title": "Separate work enrichment from representative assignment",
+      "body": "Classification enriches a work item; assignment selects an eligible representative. Keep these responsibilities visible when troubleshooting. A useful classification attribute can be reused by queue-routing or prioritization rules, instead of repeating the same business test in several places.\n\nRuleset order matters. Classification runs before route-to-queue evaluation, and a later classification ruleset can consume an earlier ruleset’s output. Within one classification ruleset, a matching item passes processing to the next ruleset.\n\nFor example, derive an urgency category once, then use it downstream. Separately inspect the queue’s assignment method and representative eligibility. A classification result does not mean that a suitable representative is immediately available; automated assignment retries when it cannot find one.",
+      "sourceIds": [
+        "cc-d4-s01",
+        "cc-d4-s02",
+        "cc-d4-s05",
+        "cc-d4-s06"
+      ]
+    },
+    {
+      "id": "cc-d4-n02",
+      "title": "Treat skill eligibility and workload limits separately",
+      "body": "An exact skill match requires the attached skills at sufficient proficiency. With standard assignment, presence and available capacity also matter. A queue using custom assignment needs its own skill conditions; the workstream’s default skill algorithm does not supply those conditions automatically.\n\nCapacity profiles describe workload limits. Assignment blocking can stop further automatic work when a profile reaches its limit, even if another profile has room. A supervisor’s manual assignment can exceed configured capacity, so the limit is not an absolute ban on every assignment path.\n\nFor example, an unassigned language-specific conversation calls for an eligibility check, while unexpected extra manually assigned work calls for a capacity-path check. Do not treat these as the same fault.",
+      "sourceIds": [
+        "cc-d4-s03",
+        "cc-d4-s04"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "cc-d3-c01",
+      "revision": 1,
+      "topicId": "copilot-ai",
+      "kind": "recall",
+      "prompt": "Which conversation types can Copilot summarize in standalone Contact Center?",
+      "answer": "Chat and transcribed voice conversations.",
+      "explanation": "The conversation-summary setup targets a conversation recap, distinct from a case summary.",
+      "sourceIds": [
+        "cc-d3-s02"
+      ],
+      "noteIds": [
+        "cc-d3-n01"
+      ],
+      "tags": [
+        "topic:copilot-ai",
+        "feature:conversation-summary",
+        "task:configure",
+        "domain:agents-ai"
+      ]
+    },
+    {
+      "id": "cc-d3-c02",
+      "revision": 1,
+      "topicId": "copilot-ai",
+      "kind": "recall",
+      "prompt": "Where can a representative find a saved summary for a closed conversation?",
+      "answer": "Open the conversation from Activities and use its Summary tab.",
+      "explanation": "The closed conversation remains a place to review its generated recap.",
+      "sourceIds": [
+        "cc-d3-s03"
+      ],
+      "noteIds": [
+        "cc-d3-n01"
+      ],
+      "tags": [
+        "topic:copilot-ai",
+        "feature:conversation-summary",
+        "task:operate",
+        "domain:agents-ai"
+      ]
+    },
+    {
+      "id": "cc-d3-c03",
+      "revision": 1,
+      "topicId": "copilot-ai",
+      "kind": "recall",
+      "prompt": "Which Copilot filter lets representatives choose knowledge filters themselves in Ask a question?",
+      "answer": "A representative filter.",
+      "explanation": "Enable its filter status so it appears in the help pane.",
+      "sourceIds": [
+        "cc-d3-s04"
+      ],
+      "noteIds": [
+        "cc-d3-n01"
+      ],
+      "tags": [
+        "topic:copilot-ai",
+        "feature:knowledge-filter",
+        "task:configure",
+        "domain:agents-ai"
+      ]
+    },
+    {
+      "id": "cc-d3-c04",
+      "revision": 2,
+      "topicId": "copilot-ai",
+      "kind": "recall",
+      "prompt": "Does a Copilot Studio global variable retain its value across all future customer sessions?",
+      "answer": "No. Its scope spans topics within one user session.",
+      "explanation": "A global variable is session-scoped, not permanent customer storage; clearing or resetting variables can also remove its value.",
+      "sourceIds": [
+        "cc-d3-s06"
+      ],
+      "noteIds": [
+        "cc-d3-n02"
+      ],
+      "tags": [
+        "topic:copilot-ai",
+        "feature:context-variables",
+        "task:configure",
+        "domain:agents-ai"
+      ]
+    },
+    {
+      "id": "cc-d3-c05",
+      "revision": 2,
+      "topicId": "copilot-ai",
+      "kind": "mcq",
+      "prompt": "Copilot is configured and all representatives have the required security privileges. Only the escalation team should receive the selected Copilot features. Which configuration should define that team's feature access?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Enable the selected features in a custom experience profile and assign it to that team."
+        },
+        {
+          "id": "b",
+          "text": "Enable the features in the default experience profile assigned to every representative."
+        },
+        {
+          "id": "c",
+          "text": "Enable recording of Copilot interactions for the escalation team."
+        },
+        {
+          "id": "d",
+          "text": "Apply a preset knowledge filter for the team's subject area."
+        }
+      ],
+      "correctOptionId": "a",
+      "answer": "Enable the selected features in a custom experience profile and assign it to that team.",
+      "explanation": "Experience profiles determine the Copilot features available to assigned representatives. A shared default profile does not isolate the team; recording captures interactions, and knowledge filters restrict response content rather than feature access.",
+      "sourceIds": [
+        "cc-d3-s01"
+      ],
+      "noteIds": [
+        "cc-d3-n01"
+      ],
+      "tags": [
+        "topic:copilot-ai",
+        "feature:experience-profile",
+        "task:configure",
+        "domain:agents-ai",
+        "level:advanced"
+      ]
+    },
+    {
+      "id": "cc-d3-c06",
+      "revision": 2,
+      "topicId": "copilot-ai",
+      "kind": "mcq",
+      "prompt": "A native standalone voice agent needs the caller's phone number in several topics. Where should it first copy Activity.From.Name?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Into a topic variable in Conversation Start, then reference it directly from every topic."
+        },
+        {
+          "id": "b",
+          "text": "Into a global variable in Conversation Start."
+        },
+        {
+          "id": "c",
+          "text": "Into a global variable in the later topic where the number is first needed."
+        },
+        {
+          "id": "d",
+          "text": "Into a separate topic variable by reading Activity.From.Name again in each later topic."
+        }
+      ],
+      "correctOptionId": "b",
+      "answer": "Into a global variable in Conversation Start.",
+      "explanation": "Activity.From.Name is available only in Conversation Start. Copy it there into a global variable for subsequent topics. A topic-only variable lacks direct cross-topic scope; waiting to read the system variable in later topics loses the documented access point.",
+      "sourceIds": [
+        "cc-d3-s05"
+      ],
+      "noteIds": [
+        "cc-d3-n02"
+      ],
+      "tags": [
+        "topic:copilot-ai",
+        "feature:voice-context",
+        "task:configure",
+        "domain:agents-ai",
+        "level:advanced"
+      ]
+    },
+    {
+      "id": "cc-d4-c01",
+      "revision": 1,
+      "topicId": "routing-capacity",
+      "kind": "recall",
+      "prompt": "What are unified routing's two main stages?",
+      "answer": "Classification and assignment.",
+      "explanation": "Classification enriches the work item; assignment prioritizes and matches work to representatives.",
+      "sourceIds": [
+        "cc-d4-s01"
+      ],
+      "noteIds": [
+        "cc-d4-n01"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "feature:unified-routing",
+        "task:design",
+        "domain:work-distribution"
+      ]
+    },
+    {
+      "id": "cc-d4-c02",
+      "revision": 1,
+      "topicId": "routing-capacity",
+      "kind": "recall",
+      "prompt": "Can a later work classification ruleset use an attribute set by an earlier ruleset?",
+      "answer": "Yes.",
+      "explanation": "Order the rulesets so the producer runs before the consumer.",
+      "sourceIds": [
+        "cc-d4-s02"
+      ],
+      "noteIds": [
+        "cc-d4-n01"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "feature:classification",
+        "task:configure",
+        "domain:work-distribution"
+      ]
+    },
+    {
+      "id": "cc-d4-c03",
+      "revision": 1,
+      "topicId": "routing-capacity",
+      "kind": "recall",
+      "prompt": "In advanced round robin, is assignment order maintained globally or per queue?",
+      "answer": "Per queue.",
+      "explanation": "Membership in multiple queues can therefore lead to consecutive assignments from different queues.",
+      "sourceIds": [
+        "cc-d4-s05"
+      ],
+      "noteIds": [
+        "cc-d4-n01"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "feature:assignment",
+        "task:operate",
+        "domain:work-distribution"
+      ]
+    },
+    {
+      "id": "cc-d4-c04",
+      "revision": 1,
+      "topicId": "routing-capacity",
+      "kind": "recall",
+      "prompt": "Does Exact Match require proficiency to equal the required rating exactly?",
+      "answer": "No. A matching representative can meet or exceed the required proficiency.",
+      "explanation": "All required skills must still be satisfied.",
+      "sourceIds": [
+        "cc-d4-s03"
+      ],
+      "noteIds": [
+        "cc-d4-n02"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "feature:skill-matching",
+        "task:configure",
+        "domain:work-distribution"
+      ]
+    },
+    {
+      "id": "cc-d4-c05",
+      "revision": 2,
+      "topicId": "routing-capacity",
+      "kind": "mcq",
+      "prompt": "Two conditions match within one work classification ruleset. The first rule sets priority; a later rule would set severity, but severity remains unset. Both classifications must run. What should you change?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Put the severity rule first and keep both rules in this ruleset."
+        },
+        {
+          "id": "b",
+          "text": "Move the severity rule into a subsequent work classification ruleset."
+        },
+        {
+          "id": "c",
+          "text": "Leave the rules unchanged and rely on the next assignment cycle to evaluate the severity rule."
+        },
+        {
+          "id": "d",
+          "text": "Put route-to-queue rules before work classification to make every classification rule run."
+        }
+      ],
+      "correctOptionId": "b",
+      "answer": "Move the severity rule into a subsequent work classification ruleset.",
+      "explanation": "After the first matching classification rule, evaluation proceeds to the next ruleset. Reordering the two rules still runs only the first match; later assignment does not rerun skipped classification rules.",
+      "sourceIds": [
+        "cc-d4-s02"
+      ],
+      "noteIds": [
+        "cc-d4-n01"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "feature:classification-order",
+        "task:troubleshoot",
+        "domain:work-distribution",
+        "level:advanced"
+      ]
+    },
+    {
+      "id": "cc-d4-c06",
+      "revision": 2,
+      "topicId": "routing-capacity",
+      "kind": "mcq",
+      "prompt": "A supervisor manually assigns an extra conversation beyond a representative's configured capacity. Automatic assignments respect the limit. Which explanation best fits the documented behavior?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The work item limit is only enforced when an Exact Match skill algorithm is selected."
+        },
+        {
+          "id": "b",
+          "text": "The representative must have lost their capacity-profile association."
+        },
+        {
+          "id": "c",
+          "text": "Manual assignment can override the configured capacity limit."
+        },
+        {
+          "id": "d",
+          "text": "Any extra conversation proves that the profile's automatic assignment limit is invalid."
+        }
+      ],
+      "correctOptionId": "c",
+      "answer": "Manual assignment can override the configured capacity limit.",
+      "explanation": "Microsoft documents supervisor manual assignment as an override of configured capacity. The scenario supplies no evidence of a missing profile or invalid automatic limit, and the capacity override is not defined by choosing Exact Match.",
+      "sourceIds": [
+        "cc-d4-s04"
+      ],
+      "noteIds": [
+        "cc-d4-n02"
+      ],
+      "tags": [
+        "topic:routing-capacity",
+        "feature:capacity-profile",
+        "task:troubleshoot",
+        "domain:work-distribution",
+        "level:advanced"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "ab250-d3-q01",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.1.02"
+      ],
+      "conceptId": "copilot-custom-role-diagnosis",
+      "prompt": "A standalone Contact Center pilot has Copilot enabled and the intended experience profile assigned. Representatives with the standard role can use it, but a custom-role group cannot. What should the administrator check next?",
+      "answer": "Check the custom role's required Copilot privileges.",
+      "explanation": "The working standard-role group and confirmed profile isolate the next check to the failing custom role's Copilot privileges.",
+      "sourceIds": [
+        "cc-d3-s01"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:troubleshoot"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Re-enable Copilot for the environment, without inspecting the custom role."
+        },
+        {
+          "id": "b",
+          "text": "Check the custom role's required Copilot privileges."
+        },
+        {
+          "id": "c",
+          "text": "Reassign the same experience profile that the scenario already confirms is correct."
+        },
+        {
+          "id": "d",
+          "text": "Enable recording of representative interactions with Copilot."
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "optionExplanations": {
+        "a": "Standard-role users already succeed, so repeating environment enablement does not address the role-specific difference.",
+        "b": "Custom security roles must include the documented Copilot privileges.",
+        "c": "The intended profile is already assigned; repeating that assignment does not check the missing permission layer.",
+        "d": "Interaction recording captures usage and feedback rather than granting the custom role access."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n01"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q02",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.1.01"
+      ],
+      "conceptId": "conversation-summary-join-trigger",
+      "prompt": "A standalone Contact Center team wants an automatic chat recap when a colleague joins a consultation, before the conversation ends. Which conversation-summary trigger meets that timing requirement?",
+      "answer": "When a representative joins the conversation",
+      "explanation": "Configure the join event rather than relying on end-of-conversation or manual generation.",
+      "sourceIds": [
+        "cc-d3-s02"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Only when the conversation ends"
+        },
+        {
+          "id": "b",
+          "text": "Only when a representative requests a summary"
+        },
+        {
+          "id": "c",
+          "text": "Only when the case closes"
+        },
+        {
+          "id": "d",
+          "text": "When a representative joins the conversation"
+        }
+      ],
+      "correctOptionIds": [
+        "d"
+      ],
+      "optionExplanations": {
+        "a": "This waits until the wrong event.",
+        "b": "This requires a manual request.",
+        "c": "The requirement concerns a live conversation, not case closure.",
+        "d": "The join trigger includes consultation and transfer scenarios."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n01"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q03",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.1.02",
+        "D3.1.03"
+      ],
+      "conceptId": "copilot-preset-knowledge-filter",
+      "prompt": "For Ask a question using the organization's knowledge base, an administrator needs the same fixed topic restriction applied in the background. It must not depend on the current record or be selectable by representatives. Which filter type fits?",
+      "answer": "Preset filter",
+      "explanation": "Use a preset filter for the fixed restriction; ensure matching knowledge content exists.",
+      "sourceIds": [
+        "cc-d3-s04"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Preset filter"
+        },
+        {
+          "id": "b",
+          "text": "Representative filter"
+        },
+        {
+          "id": "c",
+          "text": "Automated filter driven by current-record values"
+        },
+        {
+          "id": "d",
+          "text": "Enable the organization's knowledge base without defining filter conditions"
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "optionExplanations": {
+        "a": "Preset conditions apply the fixed restriction in the background.",
+        "b": "These expose filtering choices to representatives, contrary to the requirement.",
+        "c": "This uses current-record context, which the requirement excludes.",
+        "d": "Choosing a knowledge source alone does not define the requested topic restriction."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n01"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d3-q04",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.02"
+      ],
+      "conceptId": "voice-external-variable-usage",
+      "prompt": "A Copilot Studio voice agent must accept serviceCategory from the native Contact Center integration and reuse it across topics. Its name and data type already match the external value. Which TWO Usage settings are required? Choose two.",
+      "answer": "Global (any topic can access) External sources can set values",
+      "explanation": "These settings provide scope and external initialization; they do not imply that IVR supports variable timeouts.",
+      "sourceIds": [
+        "cc-d3-s06"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Restrict the variable to its current topic"
+        },
+        {
+          "id": "b",
+          "text": "Global (any topic can access)"
+        },
+        {
+          "id": "c",
+          "text": "Prevent external sources from changing values"
+        },
+        {
+          "id": "d",
+          "text": "External sources can set values"
+        }
+      ],
+      "correctOptionIds": [
+        "b",
+        "d"
+      ],
+      "optionExplanations": {
+        "a": "Topic-only scope cannot meet the cross-topic requirement.",
+        "b": "Global scope allows other topics to use it.",
+        "c": "This contradicts receiving the external value.",
+        "d": "This permits the integration to supply the value."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n02"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q01",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.02"
+      ],
+      "conceptId": "routing-static-attribute-reuse",
+      "prompt": "Several routing rules repeat the same static VIP-customer check, adding work to repeated assignment cycles. The result is also needed for queue selection. Which design best follows Microsoft's guidance?",
+      "answer": "Derive a reusable attribute during work classification.",
+      "explanation": "Compute stable categorization once, then consume it in route-to-queue and prioritization rules.",
+      "sourceIds": [
+        "cc-d4-s06"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Repeat the full VIP check in every prioritization rule during each assignment cycle."
+        },
+        {
+          "id": "b",
+          "text": "Evaluate VIP status only in route-to-queue rules and leave downstream prioritization to repeat the full check."
+        },
+        {
+          "id": "c",
+          "text": "Derive a reusable attribute during work classification."
+        },
+        {
+          "id": "d",
+          "text": "Add the full VIP check to a custom assignment rule and rely on it to populate the earlier queue-selection decision."
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "optionExplanations": {
+        "a": "This preserves the repeated processing that the design should reduce.",
+        "b": "Queue-only evaluation does not provide the shared classification value needed downstream.",
+        "c": "Microsoft recommends classifying static values once and reusing the attribute in route-to-queue and prioritization rules.",
+        "d": "Assignment occurs after queue routing; it cannot supply that earlier decision, and repeating complex assignment logic does not follow the guidance."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n01"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q02",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.1.04",
+        "D4.2.04"
+      ],
+      "conceptId": "highest-capacity-exact-ordering",
+      "prompt": "A queue must assign work to the representative with the greatest available capacity among those satisfying every required skill and allowed presence. Which out-of-the-box configuration meets that requirement?",
+      "answer": "Highest capacity with Exact Match",
+      "explanation": "The required ranking and strict eligibility must both be configured.",
+      "sourceIds": [
+        "cc-d4-s05"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Highest capacity with Exact Match"
+        },
+        {
+          "id": "b",
+          "text": "Highest capacity with Closest Match"
+        },
+        {
+          "id": "c",
+          "text": "Advanced round robin with Exact Match"
+        },
+        {
+          "id": "d",
+          "text": "A custom alphabetical ordering"
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "optionExplanations": {
+        "a": "Exact Match filters eligibility before capacity ordering.",
+        "b": "Closest Match orders by skill closeness rather than available capacity.",
+        "c": "Round robin uses assignment order, not greatest available capacity.",
+        "d": "Alphabetical order does not satisfy the capacity ranking requirement."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n01"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q03",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.04"
+      ],
+      "conceptId": "custom-assignment-skill-condition",
+      "prompt": "A queue uses custom assignment rules that must be retained. The workstream's default is Exact Match, but the custom rules do not check skills. What change enforces the required skills without replacing those custom rules?",
+      "answer": "Add an explicit exact-skill condition to the custom assignment rules.",
+      "explanation": "The custom method overrides the workstream's default skill algorithm.",
+      "sourceIds": [
+        "cc-d4-s03"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Switch the workstream's default algorithm to Closest Match while leaving the custom rules unchanged."
+        },
+        {
+          "id": "b",
+          "text": "Attach required skills during classification but leave the custom assignment conditions unchanged."
+        },
+        {
+          "id": "c",
+          "text": "Order custom assignment candidates by available capacity without adding a skill condition."
+        },
+        {
+          "id": "d",
+          "text": "Add an explicit exact-skill condition to the custom assignment rules."
+        }
+      ],
+      "correctOptionIds": [
+        "d"
+      ],
+      "optionExplanations": {
+        "a": "Changing the workstream default does not add conditions to a custom assignment method.",
+        "b": "Attaching required skills describes the work, but custom assignment still needs a matching condition.",
+        "c": "Capacity ordering ranks candidates; it does not enforce the missing skill eligibility condition.",
+        "d": "Custom assignment needs its own skill conditions because it overrides the default skill algorithm."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n02"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d4-q04",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.1.04",
+        "D1.3.04"
+      ],
+      "conceptId": "capacity-custom-limit-and-blocking",
+      "prompt": "A capacity profile defaults to three chats. Experienced representatives should handle six, while trainees retain three. Reaching the applicable limit must block further automatic work across other profiles too. Which TWO changes meet these requirements? Choose two.",
+      "answer": "Set a custom limit of six for experienced representatives Enable Assignment blocking on the profile",
+      "explanation": "Combine individual workload limits with profile-level assignment blocking.",
+      "sourceIds": [
+        "cc-d4-s04"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Raise the default limit for everyone to six"
+        },
+        {
+          "id": "b",
+          "text": "Set a custom limit of six for experienced representatives"
+        },
+        {
+          "id": "c",
+          "text": "Enable Assignment blocking on the profile"
+        },
+        {
+          "id": "d",
+          "text": "Add a second nonblocking profile for trainees"
+        }
+      ],
+      "correctOptionIds": [
+        "b",
+        "c"
+      ],
+      "optionExplanations": {
+        "a": "That also raises the trainees' limit.",
+        "b": "Custom limits override the default for selected representatives.",
+        "c": "Blocking stops further automatic work when the applicable limit is met.",
+        "d": "Another nonblocking profile does not enforce the requested stop."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n02"
+        }
+      ],
+      "status": "draft"
+    }
+  ],
+  "editorial": [
+    {
+      "id": "cc-d3-n01",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "copilot-assistance-setup",
+      "objectiveIds": [
+        "D3.1.01",
+        "D3.1.02",
+        "D3.1.03"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d3_d4",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d3-s01",
+          "section": "Make Copilot available / Assign roles and privileges",
+          "claim": "Profiles select features; custom roles require privileges.",
+          "applicability": "Standalone Contact Center"
+        },
+        {
+          "sourceId": "cc-d3-s02",
+          "section": "Enable conversation summaries",
+          "claim": "Join, end, and on-demand triggers serve different timing needs.",
+          "applicability": "Standalone chat/transcribed voice"
+        },
+        {
+          "sourceId": "cc-d3-s03",
+          "section": "View open/closed conversation summary",
+          "claim": "Copy, feedback, and conditional case creation are documented.",
+          "applicability": "Standalone; case action needs case management"
+        },
+        {
+          "sourceId": "cc-d3-s04",
+          "section": "Enable Copilot experiences / Knowledge sources",
+          "claim": "Help pane answers questions using configured knowledge.",
+          "applicability": "Organization knowledge base"
+        }
+      ],
+      "duplicateCheck": "Canonical reference explanation; reusable across curations, not duplicated per pack."
+    },
+    {
+      "id": "cc-d3-n02",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "voice-context-variable-scope",
+      "objectiveIds": [
+        "D3.2.02"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d3_d4",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d3-s05",
+          "section": "Configure context variables for Copilot agent",
+          "claim": "Native variable mapping uses exact names; context transfers at escalation.",
+          "applicability": "Standalone native integration"
+        },
+        {
+          "sourceId": "cc-d3-s06",
+          "section": "Set global variables from external sources",
+          "claim": "Global/external settings; IVR excludes external-value timeouts.",
+          "applicability": "Contact Center IVR exception"
+        },
+        {
+          "sourceId": "cc-d3-s07",
+          "section": "Set a variable",
+          "claim": "Set variable value assigns a value explicitly.",
+          "applicability": "Copilot Studio topics"
+        }
+      ],
+      "duplicateCheck": "Canonical reference explanation; reusable across curations, not duplicated per pack."
+    },
+    {
+      "id": "cc-d4-n01",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "classification-versus-assignment",
+      "objectiveIds": [
+        "D4.2.02",
+        "D4.1.04"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d3_d4",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-s01",
+          "section": "Overview",
+          "claim": "Classification enriches; assignment matches work.",
+          "applicability": "Unified routing"
+        },
+        {
+          "sourceId": "cc-d4-s02",
+          "section": "How classification rulesets work",
+          "claim": "Ordered rulesets can consume prior output.",
+          "applicability": "Work classification"
+        },
+        {
+          "sourceId": "cc-d4-s05",
+          "section": "How automated assignment works",
+          "claim": "Unassigned work remains eligible for later cycles.",
+          "applicability": "Automatic assignment"
+        },
+        {
+          "sourceId": "cc-d4-s06",
+          "section": "Use classification rules for enhanced assignment performance",
+          "claim": "Reuse static classifications downstream.",
+          "applicability": "Workstream rules"
+        }
+      ],
+      "duplicateCheck": "Canonical reference explanation; reusable across curations, not duplicated per pack."
+    },
+    {
+      "id": "cc-d4-n02",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "skills-and-capacity-boundaries",
+      "objectiveIds": [
+        "D4.2.04",
+        "D1.3.04"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d3_d4",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-s03",
+          "section": "How skills are matched / Exact match",
+          "claim": "Required skills/proficiency and custom-method distinction.",
+          "applicability": "Standard versus custom assignment"
+        },
+        {
+          "sourceId": "cc-d4-s04",
+          "section": "Overview / Assignment blocking",
+          "claim": "Blocking limits automatic work; manual override exists.",
+          "applicability": "Capacity profiles"
+        }
+      ],
+      "duplicateCheck": "Canonical reference explanation; reusable across curations, not duplicated per pack."
+    },
+    {
+      "id": "cc-d3-c01",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "summary-conversation-inputs",
+      "objectiveIds": [
+        "D3.1.01"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d3_d4",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d3-s02",
+          "section": "Enable conversation summaries",
+          "claim": "Chat and transcribed voice can be summarized.",
+          "applicability": "Standalone only"
+        }
+      ],
+      "duplicateCheck": "Distinct retrieval target or application; same canonical identity will be reused by curations."
+    },
+    {
+      "id": "cc-d3-c02",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "closed-conversation-summary",
+      "objectiveIds": [
+        "D3.1.01"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d3_d4",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d3-s03",
+          "section": "View a summary for a closed conversation",
+          "claim": "Activities to conversation Summary tab.",
+          "applicability": "Standalone"
+        }
+      ],
+      "duplicateCheck": "Distinct retrieval target or application; same canonical identity will be reused by curations."
+    },
+    {
+      "id": "cc-d3-c03",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "representative-knowledge-filter",
+      "objectiveIds": [
+        "D3.1.02",
+        "D3.1.03"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d3_d4",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d3-s04",
+          "section": "Representative filters",
+          "claim": "Enabled representative filters are selectable in help pane.",
+          "applicability": "Ask a question"
+        }
+      ],
+      "duplicateCheck": "Distinct retrieval target or application; same canonical identity will be reused by curations."
+    },
+    {
+      "id": "cc-d3-c04",
+      "revision": 2,
+      "domainId": "agents-ai",
+      "conceptId": "global-variable-session-lifetime",
+      "objectiveIds": [
+        "D3.2.02"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d3_d4",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d3-s06",
+          "section": "Introduction; Lifecycle of global variables",
+          "claim": "Global variables span topics in one user session and can be cleared or reset.",
+          "applicability": "Copilot Studio standard-harness global variables"
+        }
+      ],
+      "duplicateCheck": "Replaces the context-name case-sensitivity duplicate of cc-d2-c02 with a distinct lifetime misconception.",
+      "revisedBy": "/root"
+    },
+    {
+      "id": "cc-d3-c05",
+      "revision": 2,
+      "domainId": "agents-ai",
+      "conceptId": "copilot-group-feature-access",
+      "objectiveIds": [
+        "D3.1.02"
+      ],
+      "level": "advanced",
+      "author": "/root/pilot_d3_d4",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d3-s01",
+          "section": "Make Copilot available to service representatives",
+          "claim": "Custom profiles choose features for assigned users.",
+          "applicability": "Configured Copilot features"
+        }
+      ],
+      "duplicateCheck": "Distinct retrieval target or application; same canonical identity will be reused by curations.",
+      "revisedBy": "/root",
+      "revisionReason": "Replace unrelated routing and presentation distractors with plausible Copilot access mechanisms."
+    },
+    {
+      "id": "cc-d3-c06",
+      "revision": 2,
+      "domainId": "agents-ai",
+      "conceptId": "voice-caller-number-scope",
+      "objectiveIds": [
+        "D3.2.02"
+      ],
+      "level": "advanced",
+      "author": "/root/pilot_d3_d4",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d3-s05",
+          "section": "Voice-only variables / note after step 11",
+          "claim": "Copy Activity.From.Name in Conversation Start to global scope.",
+          "applicability": "Standalone native voice"
+        }
+      ],
+      "duplicateCheck": "Distinct retrieval target or application; same canonical identity will be reused by curations.",
+      "revisedBy": "/root",
+      "revisionReason": "Replace queue/profile distractors with realistic variable scope and initialization errors."
+    },
+    {
+      "id": "cc-d4-c01",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "routing-main-stages",
+      "objectiveIds": [
+        "D4.2.02",
+        "D4.1.04"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d3_d4",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-s01",
+          "section": "Overview",
+          "claim": "Two main stages have distinct responsibilities.",
+          "applicability": "Unified routing"
+        }
+      ],
+      "duplicateCheck": "Distinct retrieval target or application; same canonical identity will be reused by curations."
+    },
+    {
+      "id": "cc-d4-c02",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "classification-output-dependency",
+      "objectiveIds": [
+        "D4.2.02"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d3_d4",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-s02",
+          "section": "How classification rulesets work",
+          "claim": "Later rulesets consume previous outputs.",
+          "applicability": "Ordered classification"
+        }
+      ],
+      "duplicateCheck": "Distinct retrieval target or application; same canonical identity will be reused by curations."
+    },
+    {
+      "id": "cc-d4-c03",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "round-robin-queue-scope",
+      "objectiveIds": [
+        "D4.1.04"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d3_d4",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-s05",
+          "section": "Advanced round robin",
+          "claim": "Ordering maintained per queue.",
+          "applicability": "Multiple queue memberships"
+        }
+      ],
+      "duplicateCheck": "Distinct retrieval target or application; same canonical identity will be reused by curations."
+    },
+    {
+      "id": "cc-d4-c04",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "exact-match-proficiency-threshold",
+      "objectiveIds": [
+        "D4.2.04"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d3_d4",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-s03",
+          "section": "Exact match",
+          "claim": "Skill rating meets or exceeds requirement.",
+          "applicability": "Exact matching"
+        }
+      ],
+      "duplicateCheck": "Distinct retrieval target or application; same canonical identity will be reused by curations."
+    },
+    {
+      "id": "cc-d4-c05",
+      "revision": 2,
+      "domainId": "work-distribution",
+      "conceptId": "classification-first-match-boundary",
+      "objectiveIds": [
+        "D4.2.02"
+      ],
+      "level": "advanced",
+      "author": "/root/pilot_d3_d4",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-s02",
+          "section": "How classification rulesets work",
+          "claim": "A matching rule transfers evaluation to the next ruleset; classification precedes route-to-queue.",
+          "applicability": "Unified routing work classification rulesets"
+        }
+      ],
+      "duplicateCheck": "Replaces the simple A-before-B duplicate of cc-d4-c02 with troubleshooting first-match behavior inside a ruleset.",
+      "revisedBy": "/root"
+    },
+    {
+      "id": "cc-d4-c06",
+      "revision": 2,
+      "domainId": "work-distribution",
+      "conceptId": "manual-capacity-override",
+      "objectiveIds": [
+        "D1.3.04",
+        "D4.1.04"
+      ],
+      "level": "advanced",
+      "author": "/root/pilot_d3_d4",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-s04",
+          "section": "Overview",
+          "claim": "Supervisor manual assignment can exceed capacity.",
+          "applicability": "Manual versus automatic work"
+        }
+      ],
+      "duplicateCheck": "Distinct retrieval target or application; same canonical identity will be reused by curations.",
+      "revisedBy": "/root",
+      "revisionReason": "Replace repeated absolute-ceiling and display-label distractors with competing capacity-path diagnoses."
+    },
+    {
+      "id": "ab250-d3-q01",
+      "revision": 2,
+      "domainId": "agents-ai",
+      "conceptId": "copilot-custom-role-diagnosis",
+      "objectiveIds": [
+        "D3.1.02"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d3_d4",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d3-s01",
+          "section": "Assign roles and privileges",
+          "claim": "Custom roles need Copilot privileges.",
+          "applicability": "Profile already correct"
+        }
+      ],
+      "duplicateCheck": "Separate exam scenario; no question duplicated within this domain batch. Supporting flashcards deliberately reinforce prerequisite concepts.",
+      "revisedBy": "/root",
+      "revisionReason": "Replace unrelated routing settings with plausible Copilot setup, access, and data settings."
+    },
+    {
+      "id": "ab250-d3-q02",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "conversation-summary-join-trigger",
+      "objectiveIds": [
+        "D3.1.01"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d3_d4",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d3-s02",
+          "section": "Enable conversation summaries",
+          "claim": "Join trigger covers consultation.",
+          "applicability": "Standalone live chat"
+        }
+      ],
+      "duplicateCheck": "Separate exam scenario; no question duplicated within this domain batch. Supporting flashcards deliberately reinforce prerequisite concepts."
+    },
+    {
+      "id": "ab250-d3-q03",
+      "revision": 2,
+      "domainId": "agents-ai",
+      "conceptId": "copilot-preset-knowledge-filter",
+      "objectiveIds": [
+        "D3.1.02",
+        "D3.1.03"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d3_d4",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d3-s04",
+          "section": "Preset / Representative / Automated filters",
+          "claim": "Preset rules apply hidden fixed restrictions.",
+          "applicability": "Knowledge-base Ask a question"
+        }
+      ],
+      "duplicateCheck": "Separate exam scenario; no question duplicated within this domain batch. Supporting flashcards deliberately reinforce prerequisite concepts.",
+      "revisedBy": "/root",
+      "revisionReason": "Replace unrelated session-template option with a plausible knowledge-source configuration."
+    },
+    {
+      "id": "ab250-d3-q04",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "voice-external-variable-usage",
+      "objectiveIds": [
+        "D3.2.02"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d3_d4",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d3-s06",
+          "section": "Set global variables from external sources, step 6",
+          "claim": "Usage enables global scope and external setting.",
+          "applicability": "Matching name/type already established"
+        }
+      ],
+      "duplicateCheck": "Separate exam scenario; no question duplicated within this domain batch. Supporting flashcards deliberately reinforce prerequisite concepts."
+    },
+    {
+      "id": "ab250-d4-q01",
+      "revision": 2,
+      "domainId": "work-distribution",
+      "conceptId": "routing-static-attribute-reuse",
+      "objectiveIds": [
+        "D4.2.02"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d3_d4",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-s06",
+          "section": "Use classification rules for enhanced assignment performance",
+          "claim": "Compute reusable static attribute during classification.",
+          "applicability": "Static VIP requirement"
+        }
+      ],
+      "duplicateCheck": "Separate exam scenario; no question duplicated within this domain batch. Supporting flashcards deliberately reinforce prerequisite concepts.",
+      "revisedBy": "/root",
+      "revisionReason": "Keep all alternatives in the routing rule lifecycle instead of unrelated notification or removed business requirements."
+    },
+    {
+      "id": "ab250-d4-q02",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "highest-capacity-exact-ordering",
+      "objectiveIds": [
+        "D4.1.04",
+        "D4.2.04"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d3_d4",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-s05",
+          "section": "Highest capacity",
+          "claim": "Exact match filters; available capacity orders.",
+          "applicability": "Out-of-box method"
+        }
+      ],
+      "duplicateCheck": "Separate exam scenario; no question duplicated within this domain batch. Supporting flashcards deliberately reinforce prerequisite concepts."
+    },
+    {
+      "id": "ab250-d4-q03",
+      "revision": 2,
+      "domainId": "work-distribution",
+      "conceptId": "custom-assignment-skill-condition",
+      "objectiveIds": [
+        "D4.2.04"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d3_d4",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-s03",
+          "section": "How skills are matched / Exact match",
+          "claim": "Custom assignment needs explicit skill conditions.",
+          "applicability": "Custom method retained"
+        }
+      ],
+      "duplicateCheck": "Separate exam scenario; no question duplicated within this domain batch. Supporting flashcards deliberately reinforce prerequisite concepts.",
+      "revisedBy": "/root",
+      "revisionReason": "Replace priority and passive-wait distractors with plausible incorrect custom-versus-default skill configurations."
+    },
+    {
+      "id": "ab250-d4-q04",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "capacity-custom-limit-and-blocking",
+      "objectiveIds": [
+        "D4.1.04",
+        "D1.3.04"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d3_d4",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d4-s04",
+          "section": "Assignment blocking / Representative-specific work limits",
+          "claim": "Custom limits and blocking combine.",
+          "applicability": "Automatic assignment only"
+        }
+      ],
+      "duplicateCheck": "Separate exam scenario; no question duplicated within this domain batch. Supporting flashcards deliberately reinforce prerequisite concepts."
+    }
+  ]
+}

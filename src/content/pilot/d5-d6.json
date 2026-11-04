@@ -1,0 +1,1533 @@
+{
+  "sources": [
+    {
+      "id": "cc-d5-s01",
+      "title": "Microsoft Learn: Manage session templates",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/session-templates"
+    },
+    {
+      "id": "cc-d5-s02",
+      "title": "Microsoft Learn: Manage application tab templates",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/application-tab-templates"
+    },
+    {
+      "id": "cc-d5-s03",
+      "title": "Microsoft Learn: Guide representatives with scripts",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/agent-scripts"
+    },
+    {
+      "id": "cc-d5-s04",
+      "title": "Microsoft Learn: Configure macros",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/macros"
+    },
+    {
+      "id": "cc-d5-s05",
+      "title": "Microsoft Learn: Create and manage workstreams",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-workstreams"
+    },
+    {
+      "id": "cc-d5-s06",
+      "title": "Microsoft Learn: Automation dictionary",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/automation-dictionary-keys"
+    },
+    {
+      "id": "cc-d5-s07",
+      "title": "Microsoft Learn: Productivity automation macros",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/macros-productivity-automation"
+    },
+    {
+      "id": "cc-d6-s01",
+      "title": "Microsoft Learn: Monitor voice calls",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/voice-channel-monitor-calls"
+    },
+    {
+      "id": "cc-d6-s02",
+      "title": "Microsoft Learn: Analytics access and dashboards",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-customer-service-analytics-insights-csh"
+    },
+    {
+      "id": "cc-d6-s03",
+      "title": "Microsoft Learn: Manage real-time analytics",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/enable-realtime-analytics-dashboard-administrator"
+    },
+    {
+      "id": "cc-d6-s04",
+      "title": "Microsoft Learn: Configure conversation diagnostics",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-conversation-diagnostics"
+    },
+    {
+      "id": "cc-d6-s05",
+      "title": "Microsoft Learn: Conversation diagnostics events",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/conversation-diagnostics-subscenarios"
+    },
+    {
+      "id": "cc-d6-s06",
+      "title": "Microsoft Learn: Diagnose contact center health",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/diagnose-dashboard"
+    }
+  ],
+  "notes": [
+    {
+      "id": "cc-d5-n01",
+      "title": "Build a session from reusable templates",
+      "body": "Scope: Dynamics 365 Contact Center standalone in Copilot Service workspace.\n\nA session template determines the anchor application, additional tabs, and initial communication-panel mode. The anchor remains available throughout the session. Create custom templates instead of editing supplied templates.\n\nApplication tab templates describe the pages to open. A third-party website tab requires a site that permits iframe hosting; a valid URL alone is insufficient. Associate the needed tabs with the session template, then connect that session experience to the workstream.\n\nFor a troubleshooting checklist, separate three questions: Which session template is selected? Which application tabs does it reference? Can each target page load in the chosen page type? Test these relationships with a representative conversation.",
+      "sourceIds": [
+        "cc-d5-s01",
+        "cc-d5-s02",
+        "cc-d5-s05"
+      ]
+    },
+    {
+      "id": "cc-d5-n02",
+      "title": "Separate guidance, automation, and session context",
+      "body": "Scope: Dynamics 365 Contact Center standalone in Copilot Service workspace.\n\nScripts guide a representative through a process; a step can show an instruction, run a macro, or open another script. An expression on the session template can choose a default script from those associated with that session.\n\nMacros execute configured actions in sequence. Begin with Start macro execution. For reusable automation, resolve context through supported parameters rather than hard-coding a customer's identity. The automation dictionary supplies runtime values; use the documented format for the particular context.\n\nCheck what each action actually commits. Autofill form fields changes the form; add a save action when the workflow must explicitly persist those values rather than waiting for autosave.",
+      "sourceIds": [
+        "cc-d5-s03",
+        "cc-d5-s04",
+        "cc-d5-s06",
+        "cc-d5-s07"
+      ]
+    },
+    {
+      "id": "cc-d6-n01",
+      "title": "Choose a supervisor intervention and the right access",
+      "body": "Scope: Dynamics 365 Contact Center standalone, with voice and supervisor capabilities configured.\n\nFor a voice call, monitoring lets a supervisor observe without appearing as a participant. Private messages can guide the representative without showing the message to the customer. Joining the call is a different intervention: the supervisor speaks in the conversation and the representative is notified. The documented role for these voice operations is Omnichannel Supervisor.\n\nAnalytics access is a separate configuration concern. A custom reporting role needs applicable report-table and underlying data read privileges. Editing analytics reports uses the Analytics Report Author role. Decide whether the person needs to inspect a live interaction, read dashboards, or author reports before choosing permissions.",
+      "sourceIds": [
+        "cc-d6-s01",
+        "cc-d6-s02"
+      ]
+    },
+    {
+      "id": "cc-d6-n02",
+      "title": "Move from operational metrics to conversation evidence",
+      "body": "Real-time reports help a supervisor inspect current operations. In a standalone voice-enabled contact center, the voice analytics option adds voice insights. A missing option can reflect missing voice configuration rather than a report-layout problem.\n\nFor event-level investigation, conversation diagnostics stores lifecycle data in Azure Application Insights. Configuration requires a Managed environment and the documented Azure and Power Platform permissions. Inspect the relevant event: classification and queue selection are different stages.\n\nThe Diagnose dashboard can compare requirements against a representative's presence, capacity, and skills at an assignment attempt. Its diagnostic insights are documented for out-of-the-box assignment methods. Do not extend that limitation to all raw telemetry: the event documentation also describes custom assignment ruleset details.",
+      "sourceIds": [
+        "cc-d6-s03",
+        "cc-d6-s04",
+        "cc-d6-s05",
+        "cc-d6-s06"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "cc-d5-c01",
+      "revision": 1,
+      "topicId": "representative-workspace",
+      "kind": "recall",
+      "prompt": "What does the anchor tab provide in a Copilot Service workspace session?",
+      "answer": "The application's persistent starting tab; the representative cannot close it.",
+      "explanation": "The session template selects the anchor application.",
+      "sourceIds": [
+        "cc-d5-s01"
+      ],
+      "noteIds": [
+        "cc-d5-n01"
+      ],
+      "tags": [
+        "topic:representative-workspace",
+        "domain:D5",
+        "task:configure",
+        "feature:session-anchor",
+        "deployment:standalone"
+      ]
+    },
+    {
+      "id": "cc-d5-c02",
+      "revision": 1,
+      "topicId": "representative-workspace",
+      "kind": "recall",
+      "prompt": "How should you change a supplied session-template experience?",
+      "answer": "Create a custom session template.",
+      "explanation": "Supplied session templates are not customizable.",
+      "sourceIds": [
+        "cc-d5-s01"
+      ],
+      "noteIds": [
+        "cc-d5-n01"
+      ],
+      "tags": [
+        "topic:representative-workspace",
+        "domain:D5",
+        "task:configure",
+        "feature:custom-session-template",
+        "deployment:standalone"
+      ]
+    },
+    {
+      "id": "cc-d5-c03",
+      "revision": 1,
+      "topicId": "representative-workspace",
+      "kind": "recall",
+      "prompt": "Which step begins a newly designed macro?",
+      "answer": "Start macro execution.",
+      "explanation": "It precedes the macro's configured actions.",
+      "sourceIds": [
+        "cc-d5-s04"
+      ],
+      "noteIds": [
+        "cc-d5-n02"
+      ],
+      "tags": [
+        "topic:representative-workspace",
+        "domain:D5",
+        "task:configure",
+        "feature:macro-entry-step",
+        "deployment:standalone"
+      ]
+    },
+    {
+      "id": "cc-d5-c04",
+      "revision": 1,
+      "topicId": "representative-workspace",
+      "kind": "recall",
+      "prompt": "What does an automation-dictionary parameter resolve when an action runs?",
+      "answer": "A value from the available runtime context.",
+      "explanation": "Choose a supported context and parameter format rather than assuming one syntax fits every use.",
+      "sourceIds": [
+        "cc-d5-s06"
+      ],
+      "noteIds": [
+        "cc-d5-n02"
+      ],
+      "tags": [
+        "topic:representative-workspace",
+        "domain:D5",
+        "task:configure",
+        "feature:runtime-context-parameter",
+        "deployment:standalone"
+      ]
+    },
+    {
+      "id": "cc-d5-c05",
+      "revision": 2,
+      "topicId": "representative-workspace",
+      "kind": "mcq",
+      "prompt": "A macro fills a form, but the process must save before its next step instead of waiting for autosave. What should follow the autofill action?",
+      "answer": "A Save the record action.",
+      "explanation": "Autofill changes the focused form and can wait for autosave. Save the record explicitly persists those changes before the next step. Refreshing, repeating Autofill, or changing focus does not provide that explicit save guarantee.",
+      "sourceIds": [
+        "cc-d5-s07"
+      ],
+      "noteIds": [
+        "cc-d5-n02"
+      ],
+      "tags": [
+        "topic:representative-workspace",
+        "domain:D5",
+        "task:troubleshoot",
+        "feature:explicit-macro-save",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Refresh the form immediately after Autofill"
+        },
+        {
+          "id": "o2",
+          "text": "Run Autofill again with the same values"
+        },
+        {
+          "id": "o3",
+          "text": "Run Save the record before continuing"
+        },
+        {
+          "id": "o4",
+          "text": "Move focus to another open record without a save action"
+        }
+      ],
+      "correctOptionId": "o3"
+    },
+    {
+      "id": "cc-d5-c06",
+      "revision": 2,
+      "topicId": "representative-workspace",
+      "kind": "mcq",
+      "prompt": "Two scripts are associated with a session template. The product involved should determine which appears by default. What should you configure?",
+      "answer": "The session template's script expression.",
+      "explanation": "The expression evaluates the conversation context and chooses a default from the associated scripts. Association makes scripts available; changing names or internal step order does not define a product-based choice. Representatives can still switch scripts.",
+      "sourceIds": [
+        "cc-d5-s03"
+      ],
+      "noteIds": [
+        "cc-d5-n02"
+      ],
+      "tags": [
+        "topic:representative-workspace",
+        "domain:D5",
+        "task:troubleshoot",
+        "feature:conditional-default-script",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Associate both scripts but leave the default expression disabled"
+        },
+        {
+          "id": "o2",
+          "text": "Change the scripts' display names to match the products"
+        },
+        {
+          "id": "o3",
+          "text": "Reorder the steps inside one script"
+        },
+        {
+          "id": "o4",
+          "text": "Configure the session template's script expression"
+        }
+      ],
+      "correctOptionId": "o4"
+    },
+    {
+      "id": "cc-d6-c01",
+      "revision": 1,
+      "topicId": "supervision-analytics",
+      "kind": "recall",
+      "prompt": "Which role is documented for monitoring voice calls in standalone Contact Center?",
+      "answer": "Omnichannel Supervisor.",
+      "explanation": "The role supports monitoring, joining, and consulting on ongoing voice calls.",
+      "sourceIds": [
+        "cc-d6-s01"
+      ],
+      "noteIds": [
+        "cc-d6-n01"
+      ],
+      "tags": [
+        "topic:supervision-analytics",
+        "domain:D6",
+        "task:configure",
+        "feature:voice-supervisor-role",
+        "deployment:standalone"
+      ]
+    },
+    {
+      "id": "cc-d6-c02",
+      "revision": 1,
+      "topicId": "supervision-analytics",
+      "kind": "recall",
+      "prompt": "How can a voice supervisor coach a representative without sending the guidance to the customer?",
+      "answer": "Send private messages to the representative while monitoring.",
+      "explanation": "These consultation messages are hidden from the customer.",
+      "sourceIds": [
+        "cc-d6-s01"
+      ],
+      "noteIds": [
+        "cc-d6-n01"
+      ],
+      "tags": [
+        "topic:supervision-analytics",
+        "domain:D6",
+        "task:configure",
+        "feature:private-supervisor-guidance",
+        "deployment:standalone"
+      ]
+    },
+    {
+      "id": "cc-d6-c03",
+      "revision": 1,
+      "topicId": "supervision-analytics",
+      "kind": "recall",
+      "prompt": "Which role is used to permit editing analytics reports?",
+      "answer": "Analytics Report Author.",
+      "explanation": "Read-only dashboard access and report editing are different permissions.",
+      "sourceIds": [
+        "cc-d6-s02"
+      ],
+      "noteIds": [
+        "cc-d6-n01"
+      ],
+      "tags": [
+        "topic:supervision-analytics",
+        "domain:D6",
+        "task:configure",
+        "feature:analytics-author-role",
+        "deployment:standalone"
+      ]
+    },
+    {
+      "id": "cc-d6-c04",
+      "revision": 1,
+      "topicId": "supervision-analytics",
+      "kind": "recall",
+      "prompt": "Where does configured conversation diagnostics collect lifecycle logs?",
+      "answer": "Azure Application Insights.",
+      "explanation": "Use the recorded events to investigate a particular conversation.",
+      "sourceIds": [
+        "cc-d6-s04"
+      ],
+      "noteIds": [
+        "cc-d6-n02"
+      ],
+      "tags": [
+        "topic:supervision-analytics",
+        "domain:D6",
+        "task:configure",
+        "feature:conversation-log-destination",
+        "deployment:standalone"
+      ]
+    },
+    {
+      "id": "cc-d6-c05",
+      "revision": 2,
+      "topicId": "supervision-analytics",
+      "kind": "mcq",
+      "prompt": "With the Diagnose dashboard configured and a supported out-of-the-box assignment method, an available representative was skipped earlier. What should you compare?",
+      "answer": "Requirements and representative eligibility at that assignment event.",
+      "explanation": "Compare the conversation requirements with presence, capacity and skills at the attempted assignment. Current state may have changed; daily totals and requirements alone do not show whether that representative was eligible then.",
+      "sourceIds": [
+        "cc-d6-s06"
+      ],
+      "noteIds": [
+        "cc-d6-n02"
+      ],
+      "tags": [
+        "topic:supervision-analytics",
+        "domain:D6",
+        "task:troubleshoot",
+        "feature:historical-assignment-eligibility",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Only the representative's current presence and capacity"
+        },
+        {
+          "id": "o2",
+          "text": "Conversation requirements and the representative's eligibility at the assignment event"
+        },
+        {
+          "id": "o3",
+          "text": "Only the queue's total number of assignments for the day"
+        },
+        {
+          "id": "o4",
+          "text": "Only the configured required skills, without the representative snapshot"
+        }
+      ],
+      "correctOptionId": "o2"
+    },
+    {
+      "id": "cc-d6-c06",
+      "revision": 2,
+      "topicId": "supervision-analytics",
+      "kind": "mcq",
+      "prompt": "A standalone environment has no configured voice feature. Why is the option to add voice insights to real-time analytics unavailable?",
+      "answer": "That option requires voice to be configured.",
+      "explanation": "The voice option has its own channel prerequisite. Enabling general or historical reports does not configure the voice feature, and a report-author role does not replace that requirement.",
+      "sourceIds": [
+        "cc-d6-s03"
+      ],
+      "noteIds": [
+        "cc-d6-n02"
+      ],
+      "tags": [
+        "topic:supervision-analytics",
+        "domain:D6",
+        "task:troubleshoot",
+        "feature:voice-analytics-prerequisite",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Enabling the general real-time analytics toggle also provisions voice automatically"
+        },
+        {
+          "id": "o2",
+          "text": "Enabling historical analytics satisfies the voice prerequisite"
+        },
+        {
+          "id": "o3",
+          "text": "The organization must have the voice feature configured"
+        },
+        {
+          "id": "o4",
+          "text": "Assigning Analytics Report Author alone makes the voice option available"
+        }
+      ],
+      "correctOptionId": "o3"
+    }
+  ],
+  "questions": [
+    {
+      "id": "ab250-d5-q01",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.1.02"
+      ],
+      "conceptId": "website-tab-embedding",
+      "prompt": "In standalone Contact Center, a service team's supplier portal opens normally in a browser but refuses to load in a Third-party website application tab. The URL is correct. What should you verify first?",
+      "answer": "Verify iframe compatibility.",
+      "explanation": "A valid URL is insufficient for this application-tab page type.",
+      "sourceIds": [
+        "cc-d5-s02"
+      ],
+      "tags": [
+        "domain:D5",
+        "topic:representative-workspace",
+        "feature:website-tab-embedding",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Whether making the website the anchor tab would bypass its embedding restrictions"
+        },
+        {
+          "id": "o2",
+          "text": "Whether the portal permits iframe hosting"
+        },
+        {
+          "id": "o3",
+          "text": "Whether the optional data parameter must be populated even for a complete fixed URL"
+        },
+        {
+          "id": "o4",
+          "text": "Whether the template title must exactly match the portal page title"
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "Anchor placement does not change the iframe compatibility requirement.",
+        "o2": "The Third-party website page type can host only iframe-compatible sites.",
+        "o3": "The data parameter is optional; a complete URL does not inherently require it.",
+        "o4": "The display title does not establish the target site's embedding policy."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n01"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q02",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.2.03"
+      ],
+      "conceptId": "autofill-target-focus",
+      "prompt": "A standalone workspace session contains two account forms. A macro's Autofill form fields action targets the account entity but changes the wrong account form. The intended form is open in another tab. What should the designer address?",
+      "answer": "Ensure the intended account form is focused.",
+      "explanation": "The entity type alone does not distinguish two open account forms.",
+      "sourceIds": [
+        "cc-d5-s07"
+      ],
+      "tags": [
+        "domain:D5",
+        "topic:representative-workspace",
+        "feature:autofill-target-focus",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Whether renaming the intended tab changes which account form Autofill targets"
+        },
+        {
+          "id": "o2",
+          "text": "Whether the account entity logical name alone identifies one of the two forms"
+        },
+        {
+          "id": "o3",
+          "text": "Whether the anchor record always overrides the focused form for Autofill"
+        },
+        {
+          "id": "o4",
+          "text": "Which account form is focused when Autofill runs"
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "Renaming the tab does not change the focused-form targeting rule.",
+        "o2": "Both forms have the same entity type, so that setting alone does not distinguish them.",
+        "o3": "Anchor context can supply values, but this action applies to the focused form of the specified type.",
+        "o4": "Focus selects the intended form when more than one form has the same entity type."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n02"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q03",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.2.02"
+      ],
+      "conceptId": "script-author-permission",
+      "prompt": "A standalone Contact Center administrator is assigning permissions to a specialist who will create representative scripts. Which documented productivity role supports that task?",
+      "answer": "Productivity tools administrator.",
+      "explanation": "Distinguish configuration access from using the resulting scripts.",
+      "sourceIds": [
+        "cc-d5-s03"
+      ],
+      "tags": [
+        "domain:D5",
+        "topic:representative-workspace",
+        "feature:script-author-permission",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Productivity tools administrator"
+        },
+        {
+          "id": "o2",
+          "text": "Productivity tools user"
+        },
+        {
+          "id": "o3",
+          "text": "Analytics Report Author"
+        },
+        {
+          "id": "o4",
+          "text": "Omnichannel Supervisor alone"
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "The scripts documentation lists this authoring role.",
+        "o2": "This supports representatives and supervisors using productivity tools.",
+        "o3": "This concerns report editing, not script authoring.",
+        "o4": "The scripts prerequisites separately specify the productivity authoring role."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n02"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d5-q04",
+      "revision": 2,
+      "kind": "multiple",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.1.02",
+        "D5.1.04"
+      ],
+      "conceptId": "session-workstream-composition",
+      "prompt": "A custom session template and a valid application tab template already exist in standalone Contact Center. A chat workstream must use that session experience and open the additional application automatically. Which two configurations connect these existing components? Choose two.",
+      "answer": "Associate the application tab with the session template and the session template with the workstream.",
+      "explanation": "Both relationships are needed; creating the records alone does not connect them.",
+      "sourceIds": [
+        "cc-d5-s01",
+        "cc-d5-s05"
+      ],
+      "tags": [
+        "domain:D5",
+        "topic:representative-workspace",
+        "feature:session-workstream-composition",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Create a second unassociated copy of the application tab template"
+        },
+        {
+          "id": "o2",
+          "text": "Associate the application tab template with the session template"
+        },
+        {
+          "id": "o3",
+          "text": "Select only a representative notification template for the workstream"
+        },
+        {
+          "id": "o4",
+          "text": "Associate the session template with the chat workstream"
+        }
+      ],
+      "correctOptionIds": [
+        "o2",
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "Another record without an association still does not add the application to the session.",
+        "o2": "This association makes the additional tab part of the selected session.",
+        "o3": "Notification selection does not select the session template or its additional tabs.",
+        "o4": "This selects the intended session experience for conversations in that workstream."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n01"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d6-q01",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.1.04"
+      ],
+      "conceptId": "supervisor-public-intervention",
+      "prompt": "An authorized supervisor is monitoring a standalone Contact Center voice call. The customer asks to speak directly with the supervisor while the representative remains involved. Which action fits this request?",
+      "answer": "Join the call.",
+      "explanation": "Monitoring, private coaching, and joining are different interventions.",
+      "sourceIds": [
+        "cc-d6-s01"
+      ],
+      "tags": [
+        "domain:D6",
+        "topic:supervision-analytics",
+        "feature:supervisor-public-intervention",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Continue sending private coaching messages"
+        },
+        {
+          "id": "o2",
+          "text": "Have the representative leave, then speak with the customer alone"
+        },
+        {
+          "id": "o3",
+          "text": "Join the call"
+        },
+        {
+          "id": "o4",
+          "text": "Continue monitoring without joining"
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "Private coaching does not let the customer hear the supervisor.",
+        "o2": "Removing the representative fails the requirement that the representative remain involved.",
+        "o3": "Joining lets the supervisor speak in the existing call and notifies the representative.",
+        "o4": "Monitoring alone observes the call without making the supervisor a speaking participant."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n01"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d6-q02",
+      "revision": 3,
+      "kind": "single",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.1.03"
+      ],
+      "conceptId": "custom-analytics-reader-data",
+      "prompt": "A custom security role has Read access to the Omnichannel real-time report table, but its users still lack the data access needed by the dashboard. Viewers must not receive report-editing permissions. What additional permission area should the administrator review?",
+      "answer": "Review the underlying analytics entities' Read privileges.",
+      "explanation": "Report-table access and the applicable data privileges must both be considered.",
+      "sourceIds": [
+        "cc-d6-s02"
+      ],
+      "tags": [
+        "domain:D6",
+        "topic:supervision-analytics",
+        "feature:custom-analytics-reader-data",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Grant Report Bookmark create and update privileges instead of reviewing data access"
+        },
+        {
+          "id": "o2",
+          "text": "Review Read privileges on the underlying entities used by the analytics"
+        },
+        {
+          "id": "o3",
+          "text": "Grant Analytics Report Author solely to address this read-only data-access gap"
+        },
+        {
+          "id": "o4",
+          "text": "Treat Read on the report table as sufficient and leave data privileges unchanged"
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "Bookmark privileges manage saved report views; they do not replace the documented underlying-data checks.",
+        "o2": "Custom roles need applicable Read access for the report and the underlying analytics entities.",
+        "o3": "Analytics Report Author permits report editing, which the stated read-only requirement excludes. Review the custom role's underlying data Read privileges instead.",
+        "o4": "The documentation separately requires applicable underlying-entity Read privileges for custom roles."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n01"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d6-q03",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.2.05"
+      ],
+      "conceptId": "queue-selection-event",
+      "prompt": "Conversation diagnostics is already configured. An engineer needs the event that records which queue unified routing selected, rather than the earlier classification of the work item. Which subscenario should the engineer inspect?",
+      "answer": "RouteToQueue.",
+      "explanation": "Select evidence for the routing stage under investigation.",
+      "sourceIds": [
+        "cc-d6-s05"
+      ],
+      "tags": [
+        "domain:D6",
+        "topic:supervision-analytics",
+        "feature:queue-selection-event",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "RouteToQueue"
+        },
+        {
+          "id": "o2",
+          "text": "Classification"
+        },
+        {
+          "id": "o3",
+          "text": "SupervisorJoin"
+        },
+        {
+          "id": "o4",
+          "text": "CSRNotificationTimeout"
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "This records queue assignment by unified routing.",
+        "o2": "This concerns classification, not queue assignment.",
+        "o3": "This records a supervisor entering a conversation.",
+        "o4": "This concerns a representative not accepting an assignment notification."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n02"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d6-q04",
+      "revision": 2,
+      "kind": "multiple",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.2.05"
+      ],
+      "conceptId": "diagnostics-setup-prerequisites",
+      "prompt": "An operator will configure conversation diagnostics for a supported commercial environment. They already have Azure Contributor and Application Insights query access. The environment is unmanaged and the operator has neither Power Platform administrator nor System Administrator access. Which two prerequisite changes are needed? Choose two.",
+      "answer": "Use a Managed environment and provide the required administration access.",
+      "explanation": "Azure permissions alone do not satisfy the environment and Power Platform prerequisites.",
+      "sourceIds": [
+        "cc-d6-s04"
+      ],
+      "tags": [
+        "domain:D6",
+        "topic:supervision-analytics",
+        "feature:diagnostics-setup-prerequisites",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Use a sandbox environment instead, while leaving it unmanaged"
+        },
+        {
+          "id": "o2",
+          "text": "Use a Managed environment"
+        },
+        {
+          "id": "o3",
+          "text": "Grant additional Azure permissions while leaving Power Platform administration access unchanged"
+        },
+        {
+          "id": "o4",
+          "text": "Arrange Power Platform administrator or System Administrator access for the export tasks"
+        }
+      ],
+      "correctOptionIds": [
+        "o2",
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "Changing the environment type alone does not satisfy the explicitly stated Managed environment prerequisite.",
+        "o2": "The configuration prerequisites require a Managed environment.",
+        "o3": "More Azure permissions do not replace the separately required administration access in the scenario.",
+        "o4": "The documented export tasks require one of these administration roles."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n02"
+        }
+      ],
+      "status": "draft"
+    }
+  ],
+  "editorial": [
+    {
+      "id": "cc-d5-n01",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "session-template-composition",
+      "objectiveIds": [
+        "D5.1.02",
+        "D5.1.04"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d5_d6",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-s01",
+          "section": "Session experience; Associate application tabs",
+          "claim": "Session templates define the anchor, additional tabs, and panel mode; create custom templates.",
+          "applicability": "Dynamics 365 Contact Center standalone, Copilot Service workspace."
+        },
+        {
+          "sourceId": "cc-d5-s02",
+          "section": "Third-party website",
+          "claim": "Website tabs require iframe-compatible targets.",
+          "applicability": "Dynamics 365 Contact Center standalone, Copilot Service workspace."
+        },
+        {
+          "sourceId": "cc-d5-s05",
+          "section": "Configure advanced settings",
+          "claim": "Workstream advanced settings include Sessions.",
+          "applicability": "Dynamics 365 Contact Center standalone, Copilot Service workspace."
+        }
+      ],
+      "duplicateCheck": "Reference explanation; related recall and scenarios apply its concepts without copying the note."
+    },
+    {
+      "id": "cc-d5-n02",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "workspace-guidance-automation",
+      "objectiveIds": [
+        "D5.2.02",
+        "D5.2.03"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d5_d6",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-s03",
+          "section": "Create scripts; Set the default script",
+          "claim": "Script steps support instruction, macro, and script; an expression selects the session's default script.",
+          "applicability": "Dynamics 365 Contact Center standalone, Copilot Service workspace."
+        },
+        {
+          "sourceId": "cc-d5-s04",
+          "section": "Create macros",
+          "claim": "A macro begins with Start macro execution.",
+          "applicability": "Dynamics 365 Contact Center standalone, Copilot Service workspace."
+        },
+        {
+          "sourceId": "cc-d5-s06",
+          "section": "Pass data parameter in macros and scripts",
+          "claim": "Dictionary keys resolve context at execution.",
+          "applicability": "Dynamics 365 Contact Center standalone, Copilot Service workspace."
+        },
+        {
+          "sourceId": "cc-d5-s07",
+          "section": "Autofill form fields",
+          "claim": "Autofill does not immediately save changed values; a save action can persist them.",
+          "applicability": "Dynamics 365 Contact Center standalone, Copilot Service workspace."
+        }
+      ],
+      "duplicateCheck": "Reference explanation; related recall and scenarios apply its concepts without copying the note."
+    },
+    {
+      "id": "cc-d6-n01",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "supervisor-action-access",
+      "objectiveIds": [
+        "D6.1.03",
+        "D6.1.04"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d5_d6",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-s01",
+          "section": "Prerequisites; Consult; Join conversation",
+          "claim": "Omnichannel Supervisor can monitor, privately consult, and join voice calls; joining notifies the representative.",
+          "applicability": "Dynamics 365 Contact Center standalone; required roles and features configured."
+        },
+        {
+          "sourceId": "cc-d6-s02",
+          "section": "Configure user access",
+          "claim": "Custom report readers need applicable read privileges; editing uses Analytics Report Author.",
+          "applicability": "Dynamics 365 Contact Center standalone; required roles and features configured."
+        }
+      ],
+      "duplicateCheck": "Reference explanation; related recall and scenarios apply its concepts without copying the note."
+    },
+    {
+      "id": "cc-d6-n02",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "metrics-to-diagnostic-evidence",
+      "objectiveIds": [
+        "D6.1.01",
+        "D6.2.05",
+        "D6.2.06"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d5_d6",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-s03",
+          "section": "Manage Omnichannel real-time analytics reports",
+          "claim": "Voice analytics option is available only when voice is configured.",
+          "applicability": "Dynamics 365 Contact Center standalone; required roles and features configured."
+        },
+        {
+          "sourceId": "cc-d6-s04",
+          "section": "Prerequisites; View conversation diagnostics",
+          "claim": "Diagnostics requires a Managed environment and permissions; it uses Application Insights lifecycle events.",
+          "applicability": "Dynamics 365 Contact Center standalone; required roles and features configured."
+        },
+        {
+          "sourceId": "cc-d6-s05",
+          "section": "Assignment and routing; Assignment snapshot",
+          "claim": "RouteToQueue and Classification are distinct; custom assignment rule details may be logged.",
+          "applicability": "Dynamics 365 Contact Center standalone; required roles and features configured."
+        },
+        {
+          "sourceId": "cc-d6-s06",
+          "section": "Things to keep in mind; Assignment event details",
+          "claim": "Diagnostic insights support out-of-the-box assignment methods and compare historical eligibility.",
+          "applicability": "Dynamics 365 Contact Center standalone; required roles and features configured."
+        }
+      ],
+      "duplicateCheck": "Reference explanation; related recall and scenarios apply its concepts without copying the note."
+    },
+    {
+      "id": "cc-d5-c01",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "session-anchor",
+      "objectiveIds": [
+        "D5.1.04"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d5_d6",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-s01",
+          "section": "Create a session template: Anchor tab",
+          "claim": "The anchor opens when a session starts and cannot be closed.",
+          "applicability": "Dynamics 365 Contact Center standalone, Copilot Service workspace."
+        }
+      ],
+      "duplicateCheck": "Distinct retrieval target within this batch; exam scenarios use additional constraints rather than repeating this prompt."
+    },
+    {
+      "id": "cc-d5-c02",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "custom-session-template",
+      "objectiveIds": [
+        "D5.1.04"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d5_d6",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-s01",
+          "section": "Note on out-of-the-box templates",
+          "claim": "Create a custom template rather than changing the supplied one.",
+          "applicability": "Dynamics 365 Contact Center standalone, Copilot Service workspace."
+        }
+      ],
+      "duplicateCheck": "Distinct retrieval target within this batch; exam scenarios use additional constraints rather than repeating this prompt."
+    },
+    {
+      "id": "cc-d5-c03",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "macro-entry-step",
+      "objectiveIds": [
+        "D5.2.03"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d5_d6",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-s04",
+          "section": "Create macros",
+          "claim": "Always begin macro creation with Start macro execution.",
+          "applicability": "Dynamics 365 Contact Center standalone, Copilot Service workspace."
+        }
+      ],
+      "duplicateCheck": "Distinct retrieval target within this batch; exam scenarios use additional constraints rather than repeating this prompt."
+    },
+    {
+      "id": "cc-d5-c04",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "runtime-context-parameter",
+      "objectiveIds": [
+        "D5.2.02",
+        "D5.2.03"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d5_d6",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-s06",
+          "section": "Pass data parameter in macros and scripts",
+          "claim": "Parameter keys are replaced using available runtime context.",
+          "applicability": "Dynamics 365 Contact Center standalone, Copilot Service workspace."
+        }
+      ],
+      "duplicateCheck": "Distinct retrieval target within this batch; exam scenarios use additional constraints rather than repeating this prompt."
+    },
+    {
+      "id": "cc-d5-c05",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "explicit-macro-save",
+      "objectiveIds": [
+        "D5.2.03"
+      ],
+      "level": "advanced",
+      "author": "/root/pilot_d5_d6",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-s07",
+          "section": "Autofill form fields",
+          "claim": "Use a save action rather than waiting for form autosave.",
+          "applicability": "Dynamics 365 Contact Center standalone, Copilot Service workspace."
+        }
+      ],
+      "duplicateCheck": "Distinct retrieval target within this batch; exam scenarios use additional constraints rather than repeating this prompt.",
+      "revisedBy": "/root",
+      "revisionReason": "Replace unrelated settings with plausible form-workflow mistakes."
+    },
+    {
+      "id": "cc-d5-c06",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "conditional-default-script",
+      "objectiveIds": [
+        "D5.2.02"
+      ],
+      "level": "advanced",
+      "author": "/root/pilot_d5_d6",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-s03",
+          "section": "Set the default script for representatives",
+          "claim": "A session-template expression chooses a contextual default script.",
+          "applicability": "Dynamics 365 Contact Center standalone, Copilot Service workspace."
+        }
+      ],
+      "duplicateCheck": "Distinct retrieval target within this batch; exam scenarios use additional constraints rather than repeating this prompt.",
+      "revisedBy": "/root",
+      "revisionReason": "Test the distinction between making scripts available and choosing a contextual default."
+    },
+    {
+      "id": "cc-d6-c01",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "voice-supervisor-role",
+      "objectiveIds": [
+        "D6.1.04"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d5_d6",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-s01",
+          "section": "Prerequisites",
+          "claim": "Voice monitoring requires Omnichannel Supervisor.",
+          "applicability": "Dynamics 365 Contact Center standalone; required roles and features configured."
+        }
+      ],
+      "duplicateCheck": "Distinct retrieval target within this batch; exam scenarios use additional constraints rather than repeating this prompt."
+    },
+    {
+      "id": "cc-d6-c02",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "private-supervisor-guidance",
+      "objectiveIds": [
+        "D6.1.04"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d5_d6",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-s01",
+          "section": "Consult with a representative during a conversation",
+          "claim": "Supervisor consultation messages are private from the customer.",
+          "applicability": "Dynamics 365 Contact Center standalone; required roles and features configured."
+        }
+      ],
+      "duplicateCheck": "Distinct retrieval target within this batch; exam scenarios use additional constraints rather than repeating this prompt."
+    },
+    {
+      "id": "cc-d6-c03",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "analytics-author-role",
+      "objectiveIds": [
+        "D6.1.03"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d5_d6",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-s02",
+          "section": "Configure user access: note",
+          "claim": "Grant Analytics Report Author to edit reports.",
+          "applicability": "Dynamics 365 Contact Center standalone; required roles and features configured."
+        }
+      ],
+      "duplicateCheck": "Distinct retrieval target within this batch; exam scenarios use additional constraints rather than repeating this prompt."
+    },
+    {
+      "id": "cc-d6-c04",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "conversation-log-destination",
+      "objectiveIds": [
+        "D6.2.05"
+      ],
+      "level": "core",
+      "author": "/root/pilot_d5_d6",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-s04",
+          "section": "Overview",
+          "claim": "An Application Insights connection collects and stores conversation logs.",
+          "applicability": "Dynamics 365 Contact Center standalone; required roles and features configured."
+        }
+      ],
+      "duplicateCheck": "Distinct retrieval target within this batch; exam scenarios use additional constraints rather than repeating this prompt."
+    },
+    {
+      "id": "cc-d6-c05",
+      "revision": 2,
+      "domainId": "analytics",
+      "conceptId": "historical-assignment-eligibility",
+      "objectiveIds": [
+        "D6.2.06"
+      ],
+      "level": "advanced",
+      "author": "/root/pilot_d5_d6",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-s06",
+          "section": "Assignment event details",
+          "claim": "Compare required presence, skills and capacity against the representative at the attempted assignment.",
+          "applicability": "Dynamics 365 Contact Center standalone; required roles and features configured."
+        }
+      ],
+      "duplicateCheck": "Distinct retrieval target within this batch; exam scenarios use additional constraints rather than repeating this prompt.",
+      "revisedBy": "/root",
+      "revisionReason": "Use realistic but insufficient diagnostic evidence rather than unrelated UI labels."
+    },
+    {
+      "id": "cc-d6-c06",
+      "revision": 2,
+      "domainId": "analytics",
+      "conceptId": "voice-analytics-prerequisite",
+      "objectiveIds": [
+        "D6.1.01"
+      ],
+      "level": "advanced",
+      "author": "/root/pilot_d5_d6",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-s03",
+          "section": "Manage reports: Additional options",
+          "claim": "Add real-time analytics for Omnichannel voice is available only with voice configured.",
+          "applicability": "Dynamics 365 Contact Center standalone; required roles and features configured."
+        }
+      ],
+      "duplicateCheck": "Distinct retrieval target within this batch; exam scenarios use additional constraints rather than repeating this prompt.",
+      "revisedBy": "/root",
+      "revisionReason": "Use adjacent analytics setup misconceptions."
+    },
+    {
+      "id": "ab250-d5-q01",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "website-tab-embedding",
+      "objectiveIds": [
+        "D5.1.02"
+      ],
+      "level": "advanced",
+      "author": "/root/pilot_d5_d6",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-s02",
+          "section": "Third-party website",
+          "claim": "The target must support iframe hosting or it refuses to connect.",
+          "applicability": "Dynamics 365 Contact Center standalone in the stated configured scenario."
+        }
+      ],
+      "duplicateCheck": "Original constrained scenario; compare against cards and other pilot items during independent review. No external exam item was copied.",
+      "revisedBy": "/root",
+      "revisionReason": "Keep every alternative within application-tab setup and distinguish actual hosting requirements from display/parameter misconceptions."
+    },
+    {
+      "id": "ab250-d5-q02",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "autofill-target-focus",
+      "objectiveIds": [
+        "D5.2.03"
+      ],
+      "level": "advanced",
+      "author": "/root/pilot_d5_d6",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-s07",
+          "section": "Autofill form fields",
+          "claim": "The action applies to the focused tab's form of the specified entity type.",
+          "applicability": "Dynamics 365 Contact Center standalone in the stated configured scenario."
+        }
+      ],
+      "duplicateCheck": "Original constrained scenario; compare against cards and other pilot items during independent review. No external exam item was copied.",
+      "revisedBy": "/root",
+      "revisionReason": "Replace unrelated features with target-selection misconceptions grounded in the Autofill rule."
+    },
+    {
+      "id": "ab250-d5-q03",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "script-author-permission",
+      "objectiveIds": [
+        "D5.2.02"
+      ],
+      "level": "advanced",
+      "author": "/root/pilot_d5_d6",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-s03",
+          "section": "Prerequisites",
+          "claim": "Script configuration requires Productivity tools administrator; users have a separate productivity role.",
+          "applicability": "Dynamics 365 Contact Center standalone in the stated configured scenario."
+        }
+      ],
+      "duplicateCheck": "Original constrained scenario; compare against cards and other pilot items during independent review. No external exam item was copied."
+    },
+    {
+      "id": "ab250-d5-q04",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "session-workstream-composition",
+      "objectiveIds": [
+        "D5.1.02",
+        "D5.1.04"
+      ],
+      "level": "advanced",
+      "author": "/root/pilot_d5_d6",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-s01",
+          "section": "Associate application tabs, scripts with session templates",
+          "claim": "Add application tab templates to the session; then associate it with a workstream.",
+          "applicability": "Dynamics 365 Contact Center standalone in the stated configured scenario."
+        },
+        {
+          "sourceId": "cc-d5-s05",
+          "section": "Configure advanced settings",
+          "claim": "Workstream advanced settings include Sessions.",
+          "applicability": "Dynamics 365 Contact Center standalone in the stated configured scenario."
+        }
+      ],
+      "duplicateCheck": "Original constrained scenario; compare against cards and other pilot items during independent review. No external exam item was copied.",
+      "revisedBy": "/root",
+      "revisionReason": "Use plausible component-wiring mistakes while preserving the exact two correct relationships."
+    },
+    {
+      "id": "ab250-d6-q01",
+      "revision": 2,
+      "domainId": "analytics",
+      "conceptId": "supervisor-public-intervention",
+      "objectiveIds": [
+        "D6.1.04"
+      ],
+      "level": "advanced",
+      "author": "/root/pilot_d5_d6",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-s01",
+          "section": "Join conversation (barge)",
+          "claim": "Joining enables participation and notifies the representative.",
+          "applicability": "Dynamics 365 Contact Center standalone in the stated configured scenario."
+        }
+      ],
+      "duplicateCheck": "Original constrained scenario; compare against cards and other pilot items during independent review. No external exam item was copied.",
+      "revisedBy": "/root",
+      "revisionReason": "Replace report editing with a call-handling alternative ruled out by the explicit requirement."
+    },
+    {
+      "id": "ab250-d6-q02",
+      "revision": 3,
+      "domainId": "analytics",
+      "conceptId": "custom-analytics-reader-data",
+      "objectiveIds": [
+        "D6.1.03"
+      ],
+      "level": "advanced",
+      "author": "/root/pilot_d5_d6",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-s02",
+          "section": "Configure user access to analytics and dashboards",
+          "claim": "Custom roles require applicable report and underlying entity Read privileges.",
+          "applicability": "Dynamics 365 Contact Center standalone in the stated configured scenario."
+        }
+      ],
+      "duplicateCheck": "Original constrained scenario; compare against cards and other pilot items during independent review. No external exam item was copied.",
+      "revisedBy": "/root",
+      "revisionReason": "Require read-only viewers explicitly so the report-author role is excluded without assuming it never grants useful data access."
+    },
+    {
+      "id": "ab250-d6-q03",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "queue-selection-event",
+      "objectiveIds": [
+        "D6.2.05"
+      ],
+      "level": "advanced",
+      "author": "/root/pilot_d5_d6",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-s05",
+          "section": "Assignment and routing; Other non-channel specific events",
+          "claim": "RouteToQueue identifies queue assignment; the other named events have different meanings.",
+          "applicability": "Dynamics 365 Contact Center standalone in the stated configured scenario."
+        }
+      ],
+      "duplicateCheck": "Original constrained scenario; compare against cards and other pilot items during independent review. No external exam item was copied."
+    },
+    {
+      "id": "ab250-d6-q04",
+      "revision": 2,
+      "domainId": "analytics",
+      "conceptId": "diagnostics-setup-prerequisites",
+      "objectiveIds": [
+        "D6.2.05"
+      ],
+      "level": "advanced",
+      "author": "/root/pilot_d5_d6",
+      "authoredAt": "2026-10-30",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d6-s04",
+          "section": "Prerequisites",
+          "claim": "Configuration requires a Managed environment and Power Platform administrator or System Administrator for export tasks.",
+          "applicability": "Dynamics 365 Contact Center standalone in the stated configured scenario."
+        }
+      ],
+      "duplicateCheck": "Original constrained scenario; compare against cards and other pilot items during independent review. No external exam item was copied.",
+      "revisedBy": "/root",
+      "revisionReason": "Use environment and permission-boundary misconceptions rather than queue configuration or removing a prerequisite."
+    }
+  ]
+}

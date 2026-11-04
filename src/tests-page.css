@@ -1,0 +1,64 @@
+.tests-page { min-width: 0; }
+.test-attempt { width: 100%; max-width: 1120px; margin-inline: auto; }
+.test-setup, .test-resume { margin-bottom: 24px; }
+.test-setup h2 { margin-top: 0; }
+.test-setup-fields { display: grid; grid-template-columns: minmax(220px, 2fr) repeat(3, minmax(150px, 1fr)); gap: 16px; }
+.test-setup-fields > div { display: flex; flex-direction: column; gap: 8px; font-size: .82rem; font-weight: 600; min-width: 0; }
+.test-setup-fields input, .test-setup-fields select { width: 100%; min-width: 0; }
+.test-fixture-notice { color: var(--accent); font-size: .82rem; line-height: 1.6; }
+.test-resume { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.test-resume h2 { margin-top: 0; }
+.test-resume p { margin-bottom: 0; }
+.test-attempt-heading { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 14px; }
+.test-attempt-heading h1 { font-size: clamp(1.5rem, 2.4vw, 2.4rem); margin-bottom: 0; overflow-wrap: anywhere; }
+.test-attempt-heading .eyebrow { margin-bottom: 8px; }
+.test-attempt-heading > button { flex-shrink: 0; }
+.test-session-bar { position: sticky; top: 0; z-index: 2; background: var(--bg); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 0; border-block: 1px solid var(--line); margin: 20px 0 28px; }
+.test-session-bar > strong { font-size: 1.3rem; font-variant-numeric: tabular-nums; color: var(--accent); }
+.test-score { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; margin-bottom: 28px; }
+.test-score > strong { font-size: 1.8rem; }
+.test-score .test-actions { width: 100%; }
+.test-actions, .test-question-actions, .test-pending-answer { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.test-questions { display: grid; gap: 24px; }
+.test-question.panel { min-width: 0; padding: 20px 24px 24px; margin: 0; }
+.test-question-title { font-size: 1.07rem; font-weight: 600; line-height: 1.6; color: var(--text); margin: 0 0 20px; overflow-wrap: anywhere; white-space: pre-wrap; }
+.test-question-number { display: block; font-size: .78rem; color: var(--muted); margin-bottom: 6px; }
+.test-options { display: grid; gap: 8px; border: 0; padding: 0; margin: 0; min-width: 0; }
+.test-option { display: flex; gap: 12px; align-items: center; border: 1px solid var(--line); background: var(--bg); border-radius: 8px; padding: 12px 14px; min-height: 48px; cursor: pointer; font-size: .93rem; overflow-wrap: anywhere; }
+.test-option input { flex: 0 0 18px; height: 18px; min-height: 18px; width: 18px; padding: 0; accent-color: var(--accent); margin: 0; }
+.test-option:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: 3px; }
+.test-option.is-selected { border-color: var(--accent); }
+.test-option.is-correct { border-color: var(--success, var(--accent)); background: var(--panel-soft); }
+.test-option-result { display: inline-block; margin-left: 12px; font-size: .75rem; font-weight: 600; color: var(--accent); }
+.test-option:has(input:disabled) { cursor: default; }
+.test-question-actions { margin-top: 14px; }
+.test-answer { border-top: 1px solid var(--line); margin-top: 20px; padding-top: 16px; overflow-wrap: anywhere; }
+.test-answer h3 { font-size: .85rem; margin: 16px 0 8px; }
+.test-answer p { white-space: pre-wrap; }
+.test-answer-status { color: var(--accent); font-weight: 600; font-size: .82rem; }
+.test-answer ul { padding-left: 20px; }
+.test-answer a { display: inline-block; min-height: 44px; padding: 10px 0; }
+.test-pending-answer { padding-top: 14px; }
+.test-pending-answer p { width: 100%; margin: 0; }
+.test-finish { margin-top: 28px; padding: 20px 0; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.test-finish p { margin: 0; }
+.test-results-dialog { color: var(--text); background: var(--panel); border: 1px solid var(--line); border-radius: 14px; width: min(520px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); overflow: auto; padding: 28px; }
+.test-results-dialog::backdrop { background: color-mix(in srgb, var(--bg) 80%, transparent); }
+.test-result-total { font-size: 2.2rem; color: var(--accent); font-weight: 600; margin: 24px 0; }
+@media (max-width: 1100px) { .test-setup-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) {
+  .test-setup-fields { grid-template-columns: minmax(0, 1fr); }
+  .test-resume, .test-attempt-heading, .test-finish { align-items: stretch; flex-direction: column; }
+  .test-question.panel { padding: 16px 12px; }
+  .test-option { padding: 12px 10px; }
+  .test-option-result { display: block; margin: 5px 0 0; }
+  .test-results-dialog { padding: 20px; }
+}
+
+.test-setup-fields label { margin: 0; }
+
+.test-selection-hint { font-size: .85rem; color: var(--muted); margin: -8px 0 16px; line-height: 1.6; }
+.test-option-explanations { display: grid; gap: 14px; margin: 0; }
+.test-option-explanations dt { font-weight: 600; font-size: .88rem; }
+.test-option-explanations dd { margin: 5px 0 0; line-height: 1.6; }
+.test-bank-error p { margin-top: 0; }

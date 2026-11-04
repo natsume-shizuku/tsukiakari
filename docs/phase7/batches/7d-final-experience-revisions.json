@@ -1,0 +1,39 @@
+[
+  {
+    "date": "2026-11-03",
+    "reviewer": "/root/finish_voice",
+    "items": [
+      "cc-d5-c09",
+      "cc-d5-c12",
+      "cc-d5-c15",
+      "cc-d5-c18",
+      "cc-d5-c24",
+      "cc-d5-c27",
+      "cc-d5-c30"
+    ],
+    "revisions": 2,
+    "findings": [
+      "Challenge adjacent alternatives, remove explicit diagnosis from stems, and distinguish compliance states."
+    ],
+    "resolution": [
+      "Replaced implausible alternatives with neighboring view/template/context/profile/search/portal and publication settings; revised stems and explanations."
+    ],
+    "status": "awaiting-independent-recheck"
+  },
+  {
+    "date": "2026-11-03",
+    "reviewer": "/root/finish_deployment",
+    "items": [
+      "cc-d5-n07",
+      "cc-d5-c21"
+    ],
+    "revisions": 2,
+    "findings": [
+      "Record linking is explicitly unavailable in embedded Contact Center."
+    ],
+    "resolution": [
+      "Added primary source19, visible standalone scope, source-linked evidence and note warning."
+    ],
+    "status": "awaiting-independent-recheck"
+  }
+]

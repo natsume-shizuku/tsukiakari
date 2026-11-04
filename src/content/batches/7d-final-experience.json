@@ -1,0 +1,1653 @@
+{
+  "sources": [
+    {
+      "id": "cc-d5-final-s01",
+      "title": "Create and use experience profiles",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-agent-experience-profile"
+    },
+    {
+      "id": "cc-d5-final-s02",
+      "title": "Configure the inbox",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-inbox"
+    },
+    {
+      "id": "cc-d5-final-s03",
+      "title": "Manage application tab templates",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/application-tab-templates"
+    },
+    {
+      "id": "cc-d5-final-s04",
+      "title": "Manage session templates",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/session-templates"
+    },
+    {
+      "id": "cc-d5-final-s05",
+      "title": "Manage notification settings and templates",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/app-profile-manager/notification-templates"
+    },
+    {
+      "id": "cc-d5-final-s06",
+      "title": "Guide representatives with scripts",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/agent-scripts"
+    },
+    {
+      "id": "cc-d5-final-s07",
+      "title": "Configure macros to improve representative productivity",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/macros"
+    },
+    {
+      "id": "cc-d5-final-s08",
+      "title": "Create productivity automation macros",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/macros-productivity-automation"
+    },
+    {
+      "id": "cc-d5-final-s09",
+      "title": "Enable custom productivity panels",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-productivity-tools-contact-center/3-enable-custom-productivity-panels"
+    },
+    {
+      "id": "cc-d5-final-s10",
+      "title": "Configure Microsoft Teams chat in Customer Service",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-teams-chat"
+    },
+    {
+      "id": "cc-d5-final-s11",
+      "title": "App profile manager JavaScript API Reference",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/microsoft-apm"
+    },
+    {
+      "id": "cc-d5-final-s12",
+      "title": "Omnichannel JavaScript API Reference",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/omnichannel-api-reference"
+    },
+    {
+      "id": "cc-d5-final-s13",
+      "title": "Configure knowledge management",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/set-up-knowledge-management-embedded-knowledge-search"
+    },
+    {
+      "id": "cc-d5-final-s14",
+      "title": "Search knowledge articles",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/search-knowledge-articles-csh"
+    },
+    {
+      "id": "cc-d5-final-s15",
+      "title": "Add the Knowledge Base Search control to forms",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/add-knowledge-base-search-control-forms"
+    },
+    {
+      "id": "cc-d5-final-s16",
+      "title": "Set up external search providers",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/set-up-search-providers"
+    },
+    {
+      "id": "cc-d5-final-s17",
+      "title": "Manage Customer Knowledge Management Agent",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/admin-km-agent"
+    },
+    {
+      "id": "cc-d5-final-s18",
+      "title": "Configure connection references",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/admin-km-agent-connections"
+    },
+    {
+      "id": "cc-d5-final-s19",
+      "title": "View the communication panel for conversations",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/oc-conversation-control"
+    }
+  ],
+  "notes": [
+    {
+      "id": "cc-d5-n03",
+      "title": "Assign a workspace experience and shape the inbox for its users",
+      "body": "Create a custom experience profile for the team and configure its pane tools, templates and channels. Assign the intended users and verify which profile they receive; an unassigned user gets a supplied default experience. Treat visible tools and permission checks as separate rollout checks.\n\nEnable the inbox and build views around record types and work scope. Use simple filters when they meet the requirement, or advanced conversation conditions for a more specific view. Check Representative visibility and test with the assigned user. An administrator’s successful view configuration is not proof that every representative sees that view.",
+      "sourceIds": [
+        "cc-d5-final-s01",
+        "cc-d5-final-s02"
+      ]
+    },
+    {
+      "id": "cc-d5-n04",
+      "title": "Set template behavior through the relevant configuration layer",
+      "body": "Choose the application tab’s page type and parameters deliberately. For an existing entity record, validateRecord prevents an unmatched ID from opening a create form. Choose a Generic session template for channel association or an Entity template for the intended user-owned table. Keep that session structure separate from notification display.\n\nA notification template controls the request presented to the representative. Show timeout changes timer visibility; it does not extend the countdown. Test a missing record, a normal session and an unanswered notification so configuration errors do not become accidental create forms or misleading acceptance expectations.",
+      "sourceIds": [
+        "cc-d5-final-s03",
+        "cc-d5-final-s04",
+        "cc-d5-final-s05"
+      ]
+    },
+    {
+      "id": "cc-d5-n05",
+      "title": "Keep script order and macro record context explicit",
+      "body": "Use the script-step Order field for the intended display sequence and resolve dynamic text with the supported slug syntax. Associate the script with its session template. Guidance and execution remain separate: a text instruction does not perform a macro’s data operation.\n\nFor macro inputs, distinguish the session anchor from the currently focused tab. Opening an additional account tab does not replace the anchor case context. Use Session.CurrentTab entity identity when the operation intentionally targets that tab, then obtain other values with supported queries. Test macros after switching tabs so automation does not act on a valid but unintended record.",
+      "sourceIds": [
+        "cc-d5-final-s06",
+        "cc-d5-final-s07"
+      ]
+    },
+    {
+      "id": "cc-d5-n06",
+      "title": "Register productivity tools and enable collaboration for the intended profile",
+      "body": "Build and publish a custom page or PCF control before registering a pane tool. Registration makes it available for configuration; enable it in the relevant experience profile before expecting representatives to see it. Custom tools do not automatically receive the current session’s context, so design that integration explicitly.\n\nFor Teams collaboration, check the app’s Teams-chat settings, the user’s custom profile and the required permissions. Connecting a chat to a record helps colleagues keep the discussion together, but it does not grant access to the record. Test with the actual representative and collaborator identities rather than only an administrator account.",
+      "sourceIds": [
+        "cc-d5-final-s09",
+        "cc-d5-final-s10"
+      ]
+    },
+    {
+      "id": "cc-d5-n07",
+      "title": "Use the API that owns the workspace or conversation operation",
+      "body": "Use the app profile manager API for sessions, tabs and session context. Check canCreateSession or canCreateTab before attempting another UI container, and verify API role prerequisites. An opened tab is a workspace navigation result.\n\nUse the Omnichannel JavaScript API for conversation operations such as retrieving its ID or linking an account, contact or case. Confirm the focused session before linking because that operation targets its conversation. Keep this representative-side SDK separate from the customer-facing widget SDK. Test a session switch before performing the action so navigation success is not mistaken for a correct conversation association. Record linking here is scoped to standalone Contact Center or the documented Customer Service workspace; Link to conversation is not applicable to the embedded Contact Center experience.",
+      "sourceIds": [
+        "cc-d5-final-s11",
+        "cc-d5-final-s12",
+        "cc-d5-final-s19"
+      ]
+    },
+    {
+      "id": "cc-d5-n08",
+      "title": "Prepare the table and search surface for internal knowledge",
+      "body": "Enable knowledge management for the intended record type and configure the relevant search surface. In the workspace, enable the side pane and knowledge search in the assigned experience profile. Set up Dataverse search and the Knowledge Article Quick Find columns, including Content, so the intended fields participate in discovery. Keep article privileges aligned with the user’s duties.\n\nMatch control placement to the app. The form-control procedure is scoped to single-session apps or non-anchor auto-search; multisession apps use the knowledge search control on the app side pane. Validate discovery with a representative record and a known article rather than assuming successful control placement establishes useful search.",
+      "sourceIds": [
+        "cc-d5-final-s13",
+        "cc-d5-final-s14",
+        "cc-d5-final-s15"
+      ]
+    },
+    {
+      "id": "cc-d5-n09",
+      "title": "Configure external discovery and public links as separate integrations",
+      "body": "Add an external search provider for the intended source and verify access to that source with the representative identity. A provider record does not authorize external content. Keep federated search distinct from selecting knowledge sources for a generative agent.\n\nFor customer-facing article links, create the portal and configure Use an external portal with the documented URL format. The kbnum placeholder resolves to the article’s public number. Enable attachment synchronization separately if required. Test the resulting link and attachments as an intended external reader; a working internal search result does not demonstrate a working public article page.",
+      "sourceIds": [
+        "cc-d5-final-s16",
+        "cc-d5-final-s13"
+      ]
+    },
+    {
+      "id": "cc-d5-n10",
+      "title": "Separate knowledge harvesting from publication approval",
+      "body": "Prepare knowledge management, Copilot knowledge access and the required connection references. Enable the associated flows and publish the knowledge-harvest agent. For real-time creation, configure rules for resolved cases or closed conversations; the agent compares existing knowledge before deciding that a new article is needed.\n\nChoose publication governance separately. A Pending compliance state can support reviewer approval, while automatic publication depends on compliant status and the selected internal or internal-and-external audience. The product warns that sensitive-data removal can miss content, so inspect generated material before broad publication. Test creation, review and the intended audience rather than treating a generated draft as an approved public article.",
+      "sourceIds": [
+        "cc-d5-final-s17",
+        "cc-d5-final-s18"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "cc-d5-c07",
+      "revision": 1,
+      "topicId": "representative-workspace",
+      "kind": "recall",
+      "prompt": "What workspace experience does the profile guide document when a representative has no custom profile assignment?",
+      "answer": "The supplied default profile.",
+      "explanation": "Verify actual profile assignment when custom tools or inbox changes are missing.",
+      "sourceIds": [
+        "cc-d5-final-s01"
+      ],
+      "noteIds": [
+        "cc-d5-n03"
+      ],
+      "tags": [
+        "topic:representative-workspace",
+        "domain:representative-experience",
+        "feature:experience-profiles",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d5-c08",
+      "revision": 1,
+      "topicId": "representative-workspace",
+      "kind": "recall",
+      "prompt": "Which inbox-view option supports conversation conditions beyond the predefined simple filters?",
+      "answer": "Advanced settings with the condition builder.",
+      "explanation": "Configure the relevant record type and make the view visible to its intended representatives.",
+      "sourceIds": [
+        "cc-d5-final-s02"
+      ],
+      "noteIds": [
+        "cc-d5-n03"
+      ],
+      "tags": [
+        "topic:representative-workspace",
+        "domain:representative-experience",
+        "feature:inbox-views",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d5-c09",
+      "revision": 2,
+      "topicId": "representative-workspace",
+      "kind": "mcq",
+      "prompt": "A team needs a new inbox view available to representatives without changing which conversations match it. The view has been saved and assigned through the intended experience profile. Which view setting controls whether representatives can see it?",
+      "answer": "Set Representative visibility to Show for that view.",
+      "explanation": "Representative visibility controls availability of the view. Query filters change its matching records; incoming-tab behavior controls navigation; another record type changes its subject rather than exposing the intended view.",
+      "sourceIds": [
+        "cc-d5-final-s02"
+      ],
+      "noteIds": [
+        "cc-d5-n03"
+      ],
+      "tags": [
+        "topic:representative-workspace",
+        "domain:representative-experience",
+        "feature:inbox-views",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Set Representative visibility to Show for that view."
+        },
+        {
+          "id": "b",
+          "text": "Change the view’s conversation assignment filter."
+        },
+        {
+          "id": "c",
+          "text": "Change the incoming work-item tab behavior."
+        },
+        {
+          "id": "d",
+          "text": "Change the view’s record type to a different table."
+        }
+      ],
+      "correctOptionId": "a"
+    },
+    {
+      "id": "cc-d5-c10",
+      "revision": 1,
+      "topicId": "representative-workspace",
+      "kind": "recall",
+      "prompt": "Which entity-record application-tab parameter prevents an unmatched record ID from opening a create form?",
+      "answer": "validateRecord set to true.",
+      "explanation": "The parameter checks whether the record exists before loading it.",
+      "sourceIds": [
+        "cc-d5-final-s03"
+      ],
+      "noteIds": [
+        "cc-d5-n04"
+      ],
+      "tags": [
+        "topic:representative-workspace",
+        "domain:representative-experience",
+        "feature:application-tabs",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d5-c11",
+      "revision": 1,
+      "topicId": "representative-workspace",
+      "kind": "recall",
+      "prompt": "Which session-template type does the guide select when a template must be associated with a conversation channel?",
+      "answer": "Generic.",
+      "explanation": "Entity templates instead target a user-owned table.",
+      "sourceIds": [
+        "cc-d5-final-s04"
+      ],
+      "noteIds": [
+        "cc-d5-n04"
+      ],
+      "tags": [
+        "topic:representative-workspace",
+        "domain:representative-experience",
+        "feature:session-templates",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d5-c12",
+      "revision": 2,
+      "topicId": "representative-workspace",
+      "kind": "mcq",
+      "prompt": "A notification template hides its timeout display. A representative expects the request to remain indefinitely, but it still disappears. What explains the documented behavior?",
+      "answer": "The countdown still runs even when its display is hidden.",
+      "explanation": "Show timeout controls display, not the actual countdown. It neither pauses expiration nor delegates its duration to a session template; the countdown remains operative.",
+      "sourceIds": [
+        "cc-d5-final-s05"
+      ],
+      "noteIds": [
+        "cc-d5-n04"
+      ],
+      "tags": [
+        "topic:representative-workspace",
+        "domain:representative-experience",
+        "feature:notification-templates",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Hiding the timer pauses countdown until the notification is focused."
+        },
+        {
+          "id": "b",
+          "text": "The notification uses only the session template to determine expiration."
+        },
+        {
+          "id": "c",
+          "text": "The countdown still runs even when its display is hidden."
+        },
+        {
+          "id": "d",
+          "text": "Hiding the timer disables expiration but preserves automatic rejection."
+        }
+      ],
+      "correctOptionId": "c"
+    },
+    {
+      "id": "cc-d5-c13",
+      "revision": 1,
+      "topicId": "representative-workspace",
+      "kind": "recall",
+      "prompt": "Which script-step field defines the order in which instructions are displayed to representatives?",
+      "answer": "Order.",
+      "explanation": "Set the intended sequence on the individual steps; a name or description is not that ordering field.",
+      "sourceIds": [
+        "cc-d5-final-s06"
+      ],
+      "noteIds": [
+        "cc-d5-n05"
+      ],
+      "tags": [
+        "topic:representative-workspace",
+        "domain:representative-experience",
+        "feature:agent-scripts",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d5-c14",
+      "revision": 1,
+      "topicId": "representative-workspace",
+      "kind": "recall",
+      "prompt": "Does opening an additional record tab replace the macro session context derived from the anchor case?",
+      "answer": "No. The anchor context remains separate from additional-tab identity.",
+      "explanation": "For the current tab, use the documented Session.CurrentTab entity identity values.",
+      "sourceIds": [
+        "cc-d5-final-s07"
+      ],
+      "noteIds": [
+        "cc-d5-n05"
+      ],
+      "tags": [
+        "topic:representative-workspace",
+        "domain:representative-experience",
+        "feature:macros",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d5-c15",
+      "revision": 2,
+      "topicId": "representative-workspace",
+      "kind": "mcq",
+      "prompt": "A case-anchored session opens an additional account tab. A macro must target that focused account rather than the case. Which context should supply the record identity?",
+      "answer": "Use Session.CurrentTab.entityId and Session.CurrentTab.entityName.",
+      "explanation": "The target is the focused account tab, so use CurrentTab identity. The anchor remains the case, its customer might be a different account or contact, and previously captured session context does not identify the focused additional tab.",
+      "sourceIds": [
+        "cc-d5-final-s07"
+      ],
+      "noteIds": [
+        "cc-d5-n05"
+      ],
+      "tags": [
+        "topic:representative-workspace",
+        "domain:representative-experience",
+        "feature:macros",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Use the case anchor’s incidentid and incident entity name."
+        },
+        {
+          "id": "b",
+          "text": "Use Session.CurrentTab.entityId and Session.CurrentTab.entityName."
+        },
+        {
+          "id": "c",
+          "text": "Use the customer identity associated with the anchor case."
+        },
+        {
+          "id": "d",
+          "text": "Use session-level context captured before the additional tab opened."
+        }
+      ],
+      "correctOptionId": "b"
+    },
+    {
+      "id": "cc-d5-c16",
+      "revision": 1,
+      "topicId": "representative-workspace",
+      "kind": "recall",
+      "prompt": "After registering a published custom page as a productivity tool, what makes it visible to the intended representatives?",
+      "answer": "Enable the tool in their experience profile.",
+      "explanation": "The tool record alone does not expose its pane tab to users.",
+      "sourceIds": [
+        "cc-d5-final-s09"
+      ],
+      "noteIds": [
+        "cc-d5-n06"
+      ],
+      "tags": [
+        "topic:representative-workspace",
+        "domain:representative-experience",
+        "feature:custom-productivity-tools",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d5-c17",
+      "revision": 1,
+      "topicId": "representative-workspace",
+      "kind": "recall",
+      "prompt": "Does connecting a Teams chat to a Dynamics record give every chat participant permission to view that record?",
+      "answer": "No. Record access permissions still apply.",
+      "explanation": "A connected conversation is not an authorization grant.",
+      "sourceIds": [
+        "cc-d5-final-s10"
+      ],
+      "noteIds": [
+        "cc-d5-n06"
+      ],
+      "tags": [
+        "topic:representative-workspace",
+        "domain:representative-experience",
+        "feature:teams-collaboration",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d5-c18",
+      "revision": 2,
+      "topicId": "representative-workspace",
+      "kind": "mcq",
+      "prompt": "Teams chat is enabled for the app and works for a default-profile user. A custom-profile group lacks its pane feature, although record permissions are verified. Which group-specific setting should be checked next?",
+      "answer": "Teams-chat productivity feature enablement in the assigned custom experience profile.",
+      "explanation": "Multisession setup includes enablement in assigned custom experience profiles. Global enablement already works; supported record types and automatic suggestions do not grant the missing profile pane feature.",
+      "sourceIds": [
+        "cc-d5-final-s10"
+      ],
+      "noteIds": [
+        "cc-d5-n06"
+      ],
+      "tags": [
+        "topic:representative-workspace",
+        "domain:representative-experience",
+        "feature:teams-collaboration",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Enable Teams chat globally again for every app."
+        },
+        {
+          "id": "b",
+          "text": "Change which record types support connected Teams chats."
+        },
+        {
+          "id": "c",
+          "text": "Enable automatic suggestions for connected chats."
+        },
+        {
+          "id": "d",
+          "text": "Teams-chat productivity feature enablement in the assigned custom experience profile."
+        }
+      ],
+      "correctOptionId": "d"
+    },
+    {
+      "id": "cc-d5-c19",
+      "revision": 1,
+      "topicId": "representative-workspace",
+      "kind": "recall",
+      "prompt": "Which app-profile-manager checks tell code whether another session or tab can be created?",
+      "answer": "canCreateSession and canCreateTab.",
+      "explanation": "Use the supported capacity checks before requesting another container.",
+      "sourceIds": [
+        "cc-d5-final-s11"
+      ],
+      "noteIds": [
+        "cc-d5-n07"
+      ],
+      "tags": [
+        "topic:representative-workspace",
+        "domain:representative-experience",
+        "feature:workspace-api",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d5-c20",
+      "revision": 1,
+      "topicId": "representative-workspace",
+      "kind": "recall",
+      "prompt": "Which Omnichannel JavaScript method retrieves the ongoing conversation GUID for the current session?",
+      "answer": "getConversationId.",
+      "explanation": "Keep the conversation identity distinct from a tab or session identifier.",
+      "sourceIds": [
+        "cc-d5-final-s12"
+      ],
+      "noteIds": [
+        "cc-d5-n07"
+      ],
+      "tags": [
+        "topic:representative-workspace",
+        "domain:representative-experience",
+        "feature:omnichannel-api",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d5-c21",
+      "revision": 2,
+      "topicId": "representative-workspace",
+      "kind": "mcq",
+      "prompt": "In standalone Contact Center, code opens an account record in a workspace tab successfully. It must also associate that account with the conversation in the focused session. Which API operation provides that separate association?",
+      "answer": "Omnichannel linkToConversation.",
+      "explanation": "Creating a tab handles navigation. Linking a record is a conversation relationship operation and depends on the focused session.",
+      "sourceIds": [
+        "cc-d5-final-s11",
+        "cc-d5-final-s12",
+        "cc-d5-final-s19"
+      ],
+      "noteIds": [
+        "cc-d5-n07"
+      ],
+      "tags": [
+        "topic:representative-workspace",
+        "domain:representative-experience",
+        "feature:omnichannel-api",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Omnichannel linkToConversation."
+        },
+        {
+          "id": "b",
+          "text": "App profile manager createTab alone."
+        },
+        {
+          "id": "c",
+          "text": "App profile manager refreshTab alone."
+        },
+        {
+          "id": "d",
+          "text": "App profile manager requestFocus alone."
+        }
+      ],
+      "correctOptionId": "a"
+    },
+    {
+      "id": "cc-d5-c22",
+      "revision": 1,
+      "topicId": "knowledge-management",
+      "kind": "recall",
+      "prompt": "Where does the knowledge setup procedure add record types for which knowledge management should be enabled?",
+      "answer": "Knowledge → Record types → Manage in Copilot Service admin center.",
+      "explanation": "Enable the intended record type before relying on its knowledge search experience.",
+      "sourceIds": [
+        "cc-d5-final-s13"
+      ],
+      "noteIds": [
+        "cc-d5-n08"
+      ],
+      "tags": [
+        "topic:knowledge-management",
+        "domain:representative-experience",
+        "feature:knowledge-configuration",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d5-c23",
+      "revision": 1,
+      "topicId": "knowledge-management",
+      "kind": "recall",
+      "prompt": "Which Knowledge Article Quick Find column contains the article body that the search prerequisites list?",
+      "answer": "Content.",
+      "explanation": "The field is hidden in the UI to avoid unintended content deletion, but it remains part of the documented search setup.",
+      "sourceIds": [
+        "cc-d5-final-s14"
+      ],
+      "noteIds": [
+        "cc-d5-n08"
+      ],
+      "tags": [
+        "topic:knowledge-management",
+        "domain:representative-experience",
+        "feature:knowledge-search",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d5-c24",
+      "revision": 2,
+      "topicId": "knowledge-management",
+      "kind": "mcq",
+      "prompt": "An administrator follows a single-session form-control walkthrough for a multisession representative workspace. Which search surface does the control guide specify for multisession apps?",
+      "answer": "The knowledge search control on the app side pane.",
+      "explanation": "The guide specifies the app side-pane knowledge control for multisession apps. Single-session form steps, global search and duplicated controls in additional tabs do not replace that documented workspace surface.",
+      "sourceIds": [
+        "cc-d5-final-s15"
+      ],
+      "noteIds": [
+        "cc-d5-n08"
+      ],
+      "tags": [
+        "topic:knowledge-management",
+        "domain:representative-experience",
+        "feature:knowledge-search",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Use only the form-level control described for single-session apps."
+        },
+        {
+          "id": "b",
+          "text": "The knowledge search control on the app side pane."
+        },
+        {
+          "id": "c",
+          "text": "Use only the global Dataverse search bar instead of a knowledge control."
+        },
+        {
+          "id": "d",
+          "text": "Place a duplicate knowledge control in every additional record tab."
+        }
+      ],
+      "correctOptionId": "b"
+    },
+    {
+      "id": "cc-d5-c25",
+      "revision": 1,
+      "topicId": "knowledge-management",
+      "kind": "recall",
+      "prompt": "Does registering an external knowledge search provider itself grant representatives access to that external content?",
+      "answer": "No. Representatives must already have the necessary external-content access.",
+      "explanation": "Check source authorization as well as the provider and relevant Dataverse role privileges.",
+      "sourceIds": [
+        "cc-d5-final-s16"
+      ],
+      "noteIds": [
+        "cc-d5-n09"
+      ],
+      "tags": [
+        "topic:knowledge-management",
+        "domain:representative-experience",
+        "feature:external-knowledge",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d5-c26",
+      "revision": 1,
+      "topicId": "knowledge-management",
+      "kind": "recall",
+      "prompt": "What does the kbnum placeholder represent in the configured external knowledge portal URL format?",
+      "answer": "The knowledge article number.",
+      "explanation": "It is substituted when forming the customer-facing article link.",
+      "sourceIds": [
+        "cc-d5-final-s13"
+      ],
+      "noteIds": [
+        "cc-d5-n09"
+      ],
+      "tags": [
+        "topic:knowledge-management",
+        "domain:representative-experience",
+        "feature:knowledge-portals",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d5-c27",
+      "revision": 2,
+      "topicId": "knowledge-management",
+      "kind": "mcq",
+      "prompt": "Public knowledge article pages open through the configured portal URL, but their article attachments do not appear on that portal. Which knowledge-management setting specifically governs copying those attachments to the portal?",
+      "answer": "Enable Sync attachments to the portal.",
+      "explanation": "Attachment synchronization is a separate knowledge setting. Search-provider discovery, article-link formatting and email link behavior do not themselves synchronize the attachment content.",
+      "sourceIds": [
+        "cc-d5-final-s13"
+      ],
+      "noteIds": [
+        "cc-d5-n09"
+      ],
+      "tags": [
+        "topic:knowledge-management",
+        "domain:representative-experience",
+        "feature:knowledge-portals",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Configure an external search provider for portal article discovery."
+        },
+        {
+          "id": "b",
+          "text": "Change the external portal article-link URL format."
+        },
+        {
+          "id": "c",
+          "text": "Enable Sync attachments to the portal."
+        },
+        {
+          "id": "d",
+          "text": "Change the email article-sharing link setting."
+        }
+      ],
+      "correctOptionId": "c"
+    },
+    {
+      "id": "cc-d5-c28",
+      "revision": 1,
+      "topicId": "knowledge-management",
+      "kind": "recall",
+      "prompt": "Which components must the manual Customer Knowledge Management Agent connection setup configure beyond an agent display name?",
+      "answer": "Dataverse and Copilot Studio connection references, the associated flow and the published harvest agent.",
+      "explanation": "The documentation identifies CustomerServiceKnowledgeHarvest for the Copilot Studio publication step.",
+      "sourceIds": [
+        "cc-d5-final-s18"
+      ],
+      "noteIds": [
+        "cc-d5-n10"
+      ],
+      "tags": [
+        "topic:knowledge-management",
+        "domain:representative-experience",
+        "feature:knowledge-agent",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d5-c29",
+      "revision": 1,
+      "topicId": "knowledge-management",
+      "kind": "recall",
+      "prompt": "Which lifecycle events trigger configured real-time knowledge creation from cases or conversations?",
+      "answer": "Resolving the case or closing the conversation.",
+      "explanation": "The agent checks existing articles and configured rules before deciding whether a new article is required.",
+      "sourceIds": [
+        "cc-d5-final-s17"
+      ],
+      "noteIds": [
+        "cc-d5-n10"
+      ],
+      "tags": [
+        "topic:knowledge-management",
+        "domain:representative-experience",
+        "feature:knowledge-agent",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d5-c30",
+      "revision": 2,
+      "topicId": "knowledge-management",
+      "kind": "mcq",
+      "prompt": "A knowledge-harvesting pilot needs articles to enter a human compliance-review queue before publication. Which initial-state and publication-policy combination supports that workflow?",
+      "answer": "Use a Pending compliance state with the documented review process and leave automatic publication disabled.",
+      "explanation": "Pending records identify work awaiting compliance review; disabling automatic publication preserves the review gate. Compliant skips that pending classification, Noncompliant records a failed state rather than awaiting review, and automatic publication does not satisfy the required human gate.",
+      "sourceIds": [
+        "cc-d5-final-s17"
+      ],
+      "noteIds": [
+        "cc-d5-n10"
+      ],
+      "tags": [
+        "topic:knowledge-management",
+        "domain:representative-experience",
+        "feature:knowledge-agent",
+        "task:troubleshoot",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Set initial compliance to Compliant and disable automatic publication."
+        },
+        {
+          "id": "b",
+          "text": "Set initial compliance to Noncompliant and disable automatic publication."
+        },
+        {
+          "id": "c",
+          "text": "Set initial compliance to Pending and enable automatic publication for all generated articles."
+        },
+        {
+          "id": "d",
+          "text": "Use a Pending compliance state with the documented review process and leave automatic publication disabled."
+        }
+      ],
+      "correctOptionId": "d"
+    }
+  ],
+  "questions": [],
+  "editorial": [
+    {
+      "id": "cc-d5-n03",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "profile-assignment-and-inbox-views",
+      "objectiveIds": [
+        "D5.1.01",
+        "D5.1.03"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s01",
+          "section": "Create experience profiles; Assign users, templates, configure productivity pane, channels",
+          "claim": "Custom profiles select users, templates, pane tools and channels; default profiles are supplied when no custom profile is assigned.",
+          "applicability": "Copilot Service workspace experience configuration; not a replacement for each feature’s data permissions."
+        },
+        {
+          "sourceId": "cc-d5-final-s02",
+          "section": "Configure custom views for the inbox; Advanced settings for conversations",
+          "claim": "Custom inbox views select record types and simple or advanced filters; representative visibility controls appearance.",
+          "applicability": "Inbox views in experience profiles; case records apply to Customer Service only."
+        }
+      ],
+      "duplicateCheck": "Adds default-profile assignment and inbox scope; pilot only covers reusable session templates and Copilot feature access."
+    },
+    {
+      "id": "cc-d5-c07",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "profile-default-fallback",
+      "objectiveIds": [
+        "D5.1.01"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s01",
+          "section": "Create experience profiles; Assign users, templates, configure productivity pane, channels",
+          "claim": "Custom profiles select users, templates, pane tools and channels; default profiles are supplied when no custom profile is assigned.",
+          "applicability": "Copilot Service workspace experience configuration; not a replacement for each feature’s data permissions."
+        }
+      ],
+      "duplicateCheck": "Distinct profile fallback fact, not repeated session-template immutability."
+    },
+    {
+      "id": "cc-d5-c08",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "inbox-advanced-conversation-filter",
+      "objectiveIds": [
+        "D5.1.03"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s02",
+          "section": "Configure custom views for the inbox; Advanced settings for conversations",
+          "claim": "Custom inbox views select record types and simple or advanced filters; representative visibility controls appearance.",
+          "applicability": "Inbox views in experience profiles; case records apply to Customer Service only."
+        }
+      ],
+      "duplicateCheck": "No prior card tests inbox view construction."
+    },
+    {
+      "id": "cc-d5-c09",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "inbox-view-visibility-diagnosis",
+      "objectiveIds": [
+        "D5.1.03"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s02",
+          "section": "Configure custom views for the inbox; Advanced settings for conversations",
+          "claim": "Custom inbox views select record types and simple or advanced filters; representative visibility controls appearance.",
+          "applicability": "Inbox views in experience profiles; case records apply to Customer Service only."
+        }
+      ],
+      "duplicateCheck": "Applies a scoped display condition without implying inbox filtering grants data access."
+    },
+    {
+      "id": "cc-d5-n04",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "typed-tabs-sessions-and-notification-timeouts",
+      "objectiveIds": [
+        "D5.1.02",
+        "D5.1.04",
+        "D5.1.05"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s03",
+          "section": "Entity record",
+          "claim": "An entity-record tab can open a create form if the record ID is unmatched; validateRecord=true restricts opening to an existing record.",
+          "applicability": "Application tab templates for standalone Contact Center/Customer Service."
+        },
+        {
+          "sourceId": "cc-d5-final-s04",
+          "section": "Create a session template",
+          "claim": "Generic session templates can be assigned to channels; Entity templates target a user-owned table; entity-routing communication panel is hidden.",
+          "applicability": "Documented workspace session template types; no change to supplied templates."
+        },
+        {
+          "sourceId": "cc-d5-final-s05",
+          "section": "Create a notification template; Show timeout",
+          "claim": "Hiding the timeout display does not stop the countdown; the notification disappears after its configured duration.",
+          "applicability": "Representative notification template behavior, not a guarantee about desktop browser permissions."
+        }
+      ],
+      "duplicateCheck": "Extends pilot anchor/tab association with record validation, template typing and hidden timer behavior."
+    },
+    {
+      "id": "cc-d5-c10",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "tab-existing-record-validation",
+      "objectiveIds": [
+        "D5.1.02"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s03",
+          "section": "Entity record",
+          "claim": "An entity-record tab can open a create form if the record ID is unmatched; validateRecord=true restricts opening to an existing record.",
+          "applicability": "Application tab templates for standalone Contact Center/Customer Service."
+        }
+      ],
+      "duplicateCheck": "Different from pilot iframe hosting and anchor-tab function."
+    },
+    {
+      "id": "cc-d5-c11",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "generic-versus-entity-session-type",
+      "objectiveIds": [
+        "D5.1.04"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s04",
+          "section": "Create a session template",
+          "claim": "Generic session templates can be assigned to channels; Entity templates target a user-owned table; entity-routing communication panel is hidden.",
+          "applicability": "Documented workspace session template types; no change to supplied templates."
+        }
+      ],
+      "duplicateCheck": "New type-selection rule, not reuse of the anchor or custom-template basics."
+    },
+    {
+      "id": "cc-d5-c12",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "notification-hidden-timer-still-expires",
+      "objectiveIds": [
+        "D5.1.05"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s05",
+          "section": "Create a notification template; Show timeout",
+          "claim": "Hiding the timeout display does not stop the countdown; the notification disappears after its configured duration.",
+          "applicability": "Representative notification template behavior, not a guarantee about desktop browser permissions."
+        }
+      ],
+      "duplicateCheck": "Application distinguishes presentation from runtime timer."
+    },
+    {
+      "id": "cc-d5-n05",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "script-order-and-macro-record-targets",
+      "objectiveIds": [
+        "D5.2.02",
+        "D5.2.03"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s06",
+          "section": "Create scripts; Script steps",
+          "claim": "The Order field controls step display; text steps can use slugs and OData; scripts must be associated to a session template.",
+          "applicability": "Representative scripts for standalone Contact Center/Customer Service."
+        },
+        {
+          "sourceId": "cc-d5-final-s07",
+          "section": "Pass session context variables to macros; Predefined automation actions",
+          "claim": "Case context derives from the anchor record; additional tabs expose Session.CurrentTab.entityId/entityName; connector families serve different action types.",
+          "applicability": "Workspace macro context, not a promise that opening a tab replaces the session anchor."
+        }
+      ],
+      "duplicateCheck": "Does not repeat Start macro execution, default-script expression or explicit save; adds display order and anchor-versus-current-tab targeting."
+    },
+    {
+      "id": "cc-d5-c13",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "script-step-order-field",
+      "objectiveIds": [
+        "D5.2.02"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s06",
+          "section": "Create scripts; Script steps",
+          "claim": "The Order field controls step display; text steps can use slugs and OData; scripts must be associated to a session template.",
+          "applicability": "Representative scripts for standalone Contact Center/Customer Service."
+        }
+      ],
+      "duplicateCheck": "Pilot covers action types/default script rather than display ordering."
+    },
+    {
+      "id": "cc-d5-c14",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "macro-anchor-versus-focused-tab",
+      "objectiveIds": [
+        "D5.2.03"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s07",
+          "section": "Pass session context variables to macros; Predefined automation actions",
+          "claim": "Case context derives from the anchor record; additional tabs expose Session.CurrentTab.entityId/entityName; connector families serve different action types.",
+          "applicability": "Workspace macro context, not a promise that opening a tab replaces the session anchor."
+        }
+      ],
+      "duplicateCheck": "Extends prior generic automation-dictionary recall with concrete context ownership."
+    },
+    {
+      "id": "cc-d5-c15",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "macro-focused-account-identity",
+      "objectiveIds": [
+        "D5.2.03"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s07",
+          "section": "Pass session context variables to macros; Predefined automation actions",
+          "claim": "Case context derives from the anchor record; additional tabs expose Session.CurrentTab.entityId/entityName; connector families serve different action types.",
+          "applicability": "Workspace macro context, not a promise that opening a tab replaces the session anchor."
+        }
+      ],
+      "duplicateCheck": "New cross-tab targeting decision, not a repeat of save-after-autofill."
+    },
+    {
+      "id": "cc-d5-n06",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "custom-pane-tools-and-teams-profile-access",
+      "objectiveIds": [
+        "D5.2.01",
+        "D5.2.04"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s09",
+          "section": "Prerequisites; Configure a custom productivity tool; Enable the tool in an experience profile",
+          "claim": "A published custom page or PCF control is registered as a pane tool and enabled in the relevant profile; custom tools do not automatically inherit session context.",
+          "applicability": "Current Contact Center learning unit custom productivity tool configuration; not arbitrary client-secret storage."
+        },
+        {
+          "sourceId": "cc-d5-final-s10",
+          "section": "Enable or disable Teams chat; Add the Teams chat settings page for specific multisession users; Data security and privacy",
+          "claim": "Teams chat scope includes app enablement and custom experience-profile feature access; connected records still honor access permissions.",
+          "applicability": "Standalone Contact Center/Customer Service embedded Teams chat, distinct from the Teams customer-messaging channel."
+        }
+      ],
+      "duplicateCheck": "New custom tool and embedded collaboration setup; not generic global Copilot/profile access."
+    },
+    {
+      "id": "cc-d5-c16",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "custom-tool-profile-enablement",
+      "objectiveIds": [
+        "D5.2.01"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s09",
+          "section": "Prerequisites; Configure a custom productivity tool; Enable the tool in an experience profile",
+          "claim": "A published custom page or PCF control is registered as a pane tool and enabled in the relevant profile; custom tools do not automatically inherit session context.",
+          "applicability": "Current Contact Center learning unit custom productivity tool configuration; not arbitrary client-secret storage."
+        }
+      ],
+      "duplicateCheck": "Distinct from creating the underlying page/PCF control."
+    },
+    {
+      "id": "cc-d5-c17",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "teams-record-link-permission-boundary",
+      "objectiveIds": [
+        "D5.2.04"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s10",
+          "section": "Enable or disable Teams chat; Add the Teams chat settings page for specific multisession users; Data security and privacy",
+          "claim": "Teams chat scope includes app enablement and custom experience-profile feature access; connected records still honor access permissions.",
+          "applicability": "Standalone Contact Center/Customer Service embedded Teams chat, distinct from the Teams customer-messaging channel."
+        }
+      ],
+      "duplicateCheck": "New collaboration security boundary rather than Contact Center role-persona mapping."
+    },
+    {
+      "id": "cc-d5-c18",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "teams-custom-profile-feature-check",
+      "objectiveIds": [
+        "D5.2.04"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s10",
+          "section": "Enable or disable Teams chat; Add the Teams chat settings page for specific multisession users; Data security and privacy",
+          "claim": "Teams chat scope includes app enablement and custom experience-profile feature access; connected records still honor access permissions.",
+          "applicability": "Standalone Contact Center/Customer Service embedded Teams chat, distinct from the Teams customer-messaging channel."
+        }
+      ],
+      "duplicateCheck": "Scoped profile check for Teams rather than another global feature toggle."
+    },
+    {
+      "id": "cc-d5-n07",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "workspace-versus-conversation-api-ownership",
+      "objectiveIds": [
+        "D5.2.05",
+        "D5.2.06"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s11",
+          "section": "Prerequisite; Session management; Tab management; Context management",
+          "claim": "App-profile APIs manage sessions/tabs and expose canCreateSession/canCreateTab checks; require App Profile user or Productivity tools user permissions.",
+          "applicability": "Copilot Service workspace JavaScript API surface, not generic browser tab automation."
+        },
+        {
+          "sourceId": "cc-d5-final-s12",
+          "section": "Methods",
+          "claim": "getConversationId returns the focused ongoing conversation ID; linkToConversation associates account/contact/incident with the focused conversation.",
+          "applicability": "Documented Omnichannel representative SDK; not customer-side Live Chat Widget SDK."
+        },
+        {
+          "sourceId": "cc-d5-final-s19",
+          "section": "Link to conversations",
+          "claim": "Link to conversation is not applicable to embedded Contact Center; standalone linking associates account, contact or case with a conversation.",
+          "applicability": "Explicit standalone/Customer Service scope for the record-linking example."
+        }
+      ],
+      "duplicateCheck": "No pilot API cards; new distinction between workspace navigation and conversation relationship operations."
+    },
+    {
+      "id": "cc-d5-c19",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "apm-container-creation-checks",
+      "objectiveIds": [
+        "D5.2.05"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s11",
+          "section": "Prerequisite; Session management; Tab management; Context management",
+          "claim": "App-profile APIs manage sessions/tabs and expose canCreateSession/canCreateTab checks; require App Profile user or Productivity tools user permissions.",
+          "applicability": "Copilot Service workspace JavaScript API surface, not generic browser tab automation."
+        }
+      ],
+      "duplicateCheck": "New API capability checks rather than template configuration."
+    },
+    {
+      "id": "cc-d5-c20",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "omnichannel-current-conversation-id",
+      "objectiveIds": [
+        "D5.2.06"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s12",
+          "section": "Methods",
+          "claim": "getConversationId returns the focused ongoing conversation ID; linkToConversation associates account/contact/incident with the focused conversation.",
+          "applicability": "Documented Omnichannel representative SDK; not customer-side Live Chat Widget SDK."
+        }
+      ],
+      "duplicateCheck": "No previous card tests this representative-side conversation API."
+    },
+    {
+      "id": "cc-d5-c21",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "conversation-record-link-versus-tab-open",
+      "objectiveIds": [
+        "D5.2.06"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s11",
+          "section": "Prerequisite; Session management; Tab management; Context management",
+          "claim": "App-profile APIs manage sessions/tabs and expose canCreateSession/canCreateTab checks; require App Profile user or Productivity tools user permissions.",
+          "applicability": "Copilot Service workspace JavaScript API surface, not generic browser tab automation."
+        },
+        {
+          "sourceId": "cc-d5-final-s12",
+          "section": "Methods",
+          "claim": "getConversationId returns the focused ongoing conversation ID; linkToConversation associates account/contact/incident with the focused conversation.",
+          "applicability": "Documented Omnichannel representative SDK; not customer-side Live Chat Widget SDK."
+        },
+        {
+          "sourceId": "cc-d5-final-s19",
+          "section": "Link to conversations",
+          "claim": "Link to conversation is not applicable to embedded Contact Center; standalone linking associates account, contact or case with a conversation.",
+          "applicability": "Explicit standalone/Customer Service scope for the record-linking example."
+        }
+      ],
+      "duplicateCheck": "New interaction between UI and conversation APIs."
+    },
+    {
+      "id": "cc-d5-n08",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "internal-knowledge-table-and-search-surface",
+      "objectiveIds": [
+        "D5.3.01",
+        "D5.3.03"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s13",
+          "section": "Set up knowledge management; Prerequisites",
+          "claim": "Add supported record types for knowledge management and configure the knowledge-search experience; knowledge table privileges remain required.",
+          "applicability": "Standalone Contact Center/Customer Service knowledge setup, not Copilot grounding configuration."
+        },
+        {
+          "sourceId": "cc-d5-final-s14",
+          "section": "Prerequisites; Search the knowledge base in Copilot Service workspace",
+          "claim": "Dataverse search and Knowledge Article quick-find columns support search; workspace needs app side pane and knowledge search enabled.",
+          "applicability": "Internal representative article search in the workspace."
+        },
+        {
+          "sourceId": "cc-d5-final-s15",
+          "section": "Scope note; Prerequisites",
+          "claim": "Form Knowledge Base Search control instructions are for single-session or non-anchor auto-search; multisession apps use the app-side-pane control.",
+          "applicability": "Native knowledge search control placement, not the deprecated classic web-client control."
+        }
+      ],
+      "duplicateCheck": "Complements AI grounding note: this is representative search/table enablement, not Copilot source selection."
+    },
+    {
+      "id": "cc-d5-c22",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "knowledge-record-type-enablement",
+      "objectiveIds": [
+        "D5.3.03"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s13",
+          "section": "Set up knowledge management; Prerequisites",
+          "claim": "Add supported record types for knowledge management and configure the knowledge-search experience; knowledge table privileges remain required.",
+          "applicability": "Standalone Contact Center/Customer Service knowledge setup, not Copilot grounding configuration."
+        }
+      ],
+      "duplicateCheck": "No pilot card tests table-level knowledge enablement."
+    },
+    {
+      "id": "cc-d5-c23",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "knowledge-content-search-column",
+      "objectiveIds": [
+        "D5.3.01"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s14",
+          "section": "Prerequisites; Search the knowledge base in Copilot Service workspace",
+          "claim": "Dataverse search and Knowledge Article quick-find columns support search; workspace needs app side pane and knowledge search enabled.",
+          "applicability": "Internal representative article search in the workspace."
+        }
+      ],
+      "duplicateCheck": "Different from Copilot article publication/language conditions."
+    },
+    {
+      "id": "cc-d5-c24",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "multisession-knowledge-control-placement",
+      "objectiveIds": [
+        "D5.3.01"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s15",
+          "section": "Scope note; Prerequisites",
+          "claim": "Form Knowledge Base Search control instructions are for single-session or non-anchor auto-search; multisession apps use the app-side-pane control.",
+          "applicability": "Native knowledge search control placement, not the deprecated classic web-client control."
+        }
+      ],
+      "duplicateCheck": "Application of explicit app-surface scope."
+    },
+    {
+      "id": "cc-d5-n09",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "external-knowledge-discovery-and-portal-links",
+      "objectiveIds": [
+        "D5.3.02",
+        "D5.3.05"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s16",
+          "section": "Set up a search provider; Post-configuration representative experience",
+          "claim": "External providers federate content; representatives require external-content access and custom-role privileges on federated article tables.",
+          "applicability": "Standalone Contact Center/Customer Service external representative search, not automatic Copilot grounding."
+        },
+        {
+          "sourceId": "cc-d5-final-s13",
+          "section": "Configure knowledge base article URLs; Update knowledge article attachments for portal",
+          "claim": "External portal URL format uses kbnum placeholder; attachments synchronize through a separate portal toggle.",
+          "applicability": "Configured public portal article links; not a guarantee every internal article should be externally exposed."
+        }
+      ],
+      "duplicateCheck": "New external-search and portal-deployment workflow; not earlier AI source compatibility or customer self-service journey history."
+    },
+    {
+      "id": "cc-d5-c25",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "external-provider-content-permission",
+      "objectiveIds": [
+        "D5.3.02"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s16",
+          "section": "Set up a search provider; Post-configuration representative experience",
+          "claim": "External providers federate content; representatives require external-content access and custom-role privileges on federated article tables.",
+          "applicability": "Standalone Contact Center/Customer Service external representative search, not automatic Copilot grounding."
+        }
+      ],
+      "duplicateCheck": "New external federation permission boundary."
+    },
+    {
+      "id": "cc-d5-c26",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "portal-public-article-number-url",
+      "objectiveIds": [
+        "D5.3.05"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s13",
+          "section": "Configure knowledge base article URLs; Update knowledge article attachments for portal",
+          "claim": "External portal URL format uses kbnum placeholder; attachments synchronize through a separate portal toggle.",
+          "applicability": "Configured public portal article links; not a guarantee every internal article should be externally exposed."
+        }
+      ],
+      "duplicateCheck": "Different from internal record GUIDs and attachment identity."
+    },
+    {
+      "id": "cc-d5-c27",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "portal-attachment-sync-separation",
+      "objectiveIds": [
+        "D5.3.05"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s13",
+          "section": "Configure knowledge base article URLs; Update knowledge article attachments for portal",
+          "claim": "External portal URL format uses kbnum placeholder; attachments synchronize through a separate portal toggle.",
+          "applicability": "Configured public portal article links; not a guarantee every internal article should be externally exposed."
+        }
+      ],
+      "duplicateCheck": "Application distinguishes page-link readiness from attachment deployment."
+    },
+    {
+      "id": "cc-d5-n10",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "knowledge-agent-harvest-review-publication",
+      "objectiveIds": [
+        "D5.3.04"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s17",
+          "section": "Prerequisites; Enable real-time knowledge creation; Auto publish articles; Set default compliance state",
+          "claim": "Real-time harvesting runs at case resolution/conversation closure; configure knowledge and connection/flow prerequisites; auto-publishing requires compliant status and chosen target audience.",
+          "applicability": "Customer Knowledge Management Agent, not a guarantee automatic PII removal catches all sensitive material."
+        },
+        {
+          "sourceId": "cc-d5-final-s18",
+          "section": "Set up connection references for Customer Knowledge Management Agent",
+          "claim": "Configure Dataverse/Copilot Studio connection references, enable the cloud flow and publish CustomerServiceKnowledgeHarvest.",
+          "applicability": "Documented manual connection setup for Customer Knowledge Management Agent."
+        }
+      ],
+      "duplicateCheck": "Distinct from D1 rollout-plan lifecycle and D3 representative knowledge consumption."
+    },
+    {
+      "id": "cc-d5-c28",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "knowledge-harvest-connection-flow-publication",
+      "objectiveIds": [
+        "D5.3.04"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s18",
+          "section": "Set up connection references for Customer Knowledge Management Agent",
+          "claim": "Configure Dataverse/Copilot Studio connection references, enable the cloud flow and publish CustomerServiceKnowledgeHarvest.",
+          "applicability": "Documented manual connection setup for Customer Knowledge Management Agent."
+        }
+      ],
+      "duplicateCheck": "New operational setup rather than Agent hub rollout scheduling."
+    },
+    {
+      "id": "cc-d5-c29",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "knowledge-harvest-close-resolve-trigger",
+      "objectiveIds": [
+        "D5.3.04"
+      ],
+      "level": "core",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s17",
+          "section": "Prerequisites; Enable real-time knowledge creation; Auto publish articles; Set default compliance state",
+          "claim": "Real-time harvesting runs at case resolution/conversation closure; configure knowledge and connection/flow prerequisites; auto-publishing requires compliant status and chosen target audience.",
+          "applicability": "Customer Knowledge Management Agent, not a guarantee automatic PII removal catches all sensitive material."
+        }
+      ],
+      "duplicateCheck": "No prior card tests knowledge-harvest source-event timing."
+    },
+    {
+      "id": "cc-d5-c30",
+      "revision": 2,
+      "domainId": "representative-experience",
+      "conceptId": "knowledge-harvest-human-review-gate",
+      "objectiveIds": [
+        "D5.3.04"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d5-final-s17",
+          "section": "Prerequisites; Enable real-time knowledge creation; Auto publish articles; Set default compliance state",
+          "claim": "Real-time harvesting runs at case resolution/conversation closure; configure knowledge and connection/flow prerequisites; auto-publishing requires compliant status and chosen target audience.",
+          "applicability": "Customer Knowledge Management Agent, not a guarantee automatic PII removal catches all sensitive material."
+        }
+      ],
+      "duplicateCheck": "Application separates creation from controlled publication."
+    }
+  ]
+}

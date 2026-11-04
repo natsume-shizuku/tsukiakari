@@ -1,0 +1,29 @@
+.data-transfer { margin: 28px 0; }
+.transfer-heading h2 { margin-top: 0; }
+.transfer-heading > p, .transfer-export-grid p, .transfer-import > p { color: var(--muted); font-size: .9rem; line-height: 1.7; }
+.transfer-export-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin: 24px 0; }
+.transfer-export-grid > section { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; }
+.transfer-export-grid h3 { margin: 0; font-size: 1rem; }
+.transfer-export-grid p { flex: 1; }
+.transfer-export-grid select { width: 100%; margin-bottom: 12px; }
+.transfer-export-grid label, .transfer-import > label { display: block; font-size: .8rem; margin-bottom: 8px; }
+.transfer-import { border-top: 1px solid var(--line); padding-top: 24px; }
+.transfer-import h3 { margin-top: 0; }
+.transfer-import input[type=file] { display: block; width: 100%; min-width: 0; min-height: 44px; padding: 8px; font-size: .85rem; overflow: hidden; }
+.transfer-import input[type=file]::file-selector-button { min-height: 44px; color: var(--text); background: var(--panel-soft); border: 1px solid var(--line); border-radius: 6px; margin-right: 12px; padding: 8px 12px; cursor: pointer; }
+.transfer-file-name, .transfer-error, .transfer-preview { overflow-wrap: anywhere; }
+.transfer-preview { border: 1px solid var(--line); border-radius: 8px; margin-top: 20px; padding: 20px; }
+.transfer-preview h4 { margin: 0 0 12px; font-size: 1rem; }
+.transfer-preview p { font-size: .88rem; line-height: 1.7; }
+.transfer-preview ul { padding-left: 22px; }
+.transfer-preview summary { cursor: pointer; min-height: 44px; padding-block: 12px; }
+.transfer-counts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin: 20px 0; }
+.transfer-counts dt { color: var(--muted); font-size: .78rem; }
+.transfer-counts dd { font-size: 1.2rem; margin: 6px 0 0; }
+.transfer-safety { border-top: 1px solid var(--line); padding-top: 20px; margin-top: 20px; }
+.transfer-check { display: flex; align-items: center; gap: 10px; min-height: 44px; margin-top: 12px; font-size: .85rem; cursor: pointer; }
+.transfer-check input { width: 20px; height: 20px; min-height: 20px; flex-shrink: 0; margin: 0; accent-color: var(--accent); }
+.transfer-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+.data-transfer > .notice { margin-top: 20px; margin-bottom: 0; }
+@media (max-width: 1000px) { .transfer-export-grid { grid-template-columns: 1fr; } .transfer-export-grid > section + section { border-top: 1px solid var(--line); padding-top: 20px; } }
+@media (max-width: 600px) { .transfer-preview { padding: 14px; } .transfer-counts { grid-template-columns: repeat(2, minmax(0, 1fr)); } .transfer-actions { flex-direction: column; } .transfer-actions > button { width: 100%; } }

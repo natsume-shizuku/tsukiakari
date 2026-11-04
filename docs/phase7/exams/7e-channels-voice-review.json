@@ -1,0 +1,588 @@
+[
+  {
+    "id": "ab250-d2-q36",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "d0293ed361d215a6f16f1b18fd6d6a09af8ad81914af18ce26126b663a09d13f",
+    "rationale": "Sync requires both a Teams administrative operator and consented delegated resource-account reads; licenses and queues do not supply these.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-voice-s01",
+        "section": "Prerequisites",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. Number synchronization requires Teams Administrator or Teams Telephony Administrator role and delegated TeamsResourceAccount.Read.All with admin consent."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q37",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "5d3274932c33081f5ec08b62f9042fc18ceca18c601d8c1b2472e3b880dcd440",
+    "rationale": "The Direct Routing policy belongs to the service resource account; number synchronization is not that Teams assignment.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-voice-s01",
+        "section": "Assign service number to Teams resource account",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. After Direct Routing number assignment, assign a Direct Routing voice routing policy so the resource account can place external consult/transfer calls."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q38",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "1e860121dd7b2ba0016dfce58f22e89ca9c009b17a811b2718c858d01bf0fc03",
+    "rationale": "Calling Plan integration explicitly requires a service number; subscriber number labels or outbound presentation do not change its type.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-voice-s01",
+        "section": "Prerequisites: Calling Plan note",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. Teams Calling Plan integration supports service numbers only."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q39",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "32243e5f38dcbc55dd9b7cbdbb57a1d56c5571f06709d7b8aacb26ce59e1d7a5",
+    "rationale": "The dated retirement applies to specified standalone ACS configurations and excludes existing TPE voice, not Contact Center or every ACS API.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-voice-s02",
+        "section": "Understand the impact; Review the retirement schedule",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. Specified standalone ACS voice Direct Offer/Direct Routing configurations retire September 30 2028; Teams Phone extensibility voice is unaffected."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q40",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "ee84122ab74bc6fe5708a12798eae2ea35bf25296f18a278672c4071d079b204",
+    "rationale": "The September2026 acquisition boundary distinguishes organizations without an existing ACS resource from transition permissions of existing resources.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-voice-s02",
+        "section": "Plan for phone numbers",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. Without an existing ACS resource, organizations cannot acquire or port numbers into ACS after September 30 2026; existing resources retain transition capabilities."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q41",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "18867a999c4883c6eacd98d4e5562de37d79db8d85a323cf4201b530b83dba54",
+    "rationale": "Operator Connect fits participating-carrier-managed PSTN; portability remains a separate destination/carrier/geography/regulatory validation.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-voice-s02",
+        "section": "Choose a voice migration path; Plan for phone numbers",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. Operator Connect is an ACS Direct Routing migration option when a participating certified carrier should manage PSTN connectivity; portability depends on destination/carrier/geography/regulations."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q42",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "f523315a8e382bc875b11ae2407718b51487219bf6bfe3c992e13c2891daa236",
+    "rationale": "Multiple inbound languages have per-language settings under one number; the number cannot instead belong to parallel voice workstreams.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-voice-s04",
+        "section": "Add a phone number to the workstream and configure language settings",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. A voice channel can contain multiple languages with per-language settings, supporting one public number for several languages."
+      },
+      {
+        "sourceId": "exam-d2-voice-s03",
+        "section": "Add a phone number to a voice workstream",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. A phone number can be associated with only one voice workstream."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q43",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "12cf3f8e9149a1fe2c99ae12c100b31b947cedb00ec03ea532e04a68e3ef7e98",
+    "rationale": "The CSV contract preserves the complete over-ten-digit number in quotes and supplies the plus; numeric shortening or truncation breaks identity.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-voice-s06",
+        "section": "Bring your own phone number via direct routing: Import multiple numbers",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. For more than 10 digits, msdyn_phonenumber is quoted in CSV; no plus is needed because upload adds it; flags control inbound/outbound capabilities."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q44",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "3e33c396b75b01417121eef504b3506648a971d760725c6e458b90826587fcfc",
+    "rationale": "The specific inactive Direct Routing note prescribes deletion and re-addition; list refresh and calling-plan toggles are not that repair.",
+    "findings": [
+      "Resolved: Replaced label/music workarounds with adjacent list/state/calling-plan repair alternatives."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-voice-s03",
+        "section": "View phone numbers: Note",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. An inactive direct-routing phone number should be deleted and added again."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q45",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "e6da9d23cfcd590283b9d2be6b688fa4a6debf7d2b5c43f50c3fa1a67a4a9700",
+    "rationale": "Named key/value pairs are preserved in the two listed supported UUI encodings; arbitrary X-headers and nameless values are not equivalent.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-voice-s05",
+        "section": "Set up contextual call transfer using Azure direct routing",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. Supported UUI formats include plain semicolon-separated key/value pairs and ASCII payload hex with ;encoding=hex."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q46",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "80ddedc494337ffe29492427b5757f25f728d4b7b4d94c9cb368aa9be14984bb",
+    "rationale": "The SBC must connect to the application-connected ACS resource and the IVR number must be registered; context variables alone do not build topology.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-voice-s05",
+        "section": "Set up contextual call transfer using Azure direct routing: Steps 1 and 2",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. Connect the IVR-linked SBC to the application-connected ACS resource and register the IVR phone number with the application."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q47",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "f2f7ee0fb730f404d3be3ce63bff8252dea5cca813d4d8ebad3a8d3140b097b8",
+    "rationale": "The documented SBC/DNS regional relationship addresses latency; SIP ALG, private media IP and shared FQDN alternatives contradict explicit infrastructure guidance.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-voice-s06",
+        "section": "Prerequisites; SBC best practices",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. SBC and DNS placement should be aligned in-region; cross-region SBC/DNS deployment can add delay."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q48",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "4ae1e1c3084545403306a514765f844356db47d8d9e85b0013aded52a48f1123",
+    "rationale": "DID requires an enabled geographic personal number and its user assignment, separate from shared outbound profile or queue membership.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-voice-s07",
+        "section": "Prerequisites; Create inbound profiles",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. Inbound profiles require a configured/enabled geographic personal number assigned through the user Omnichannel tab, unlike queue-based workstreams."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q49",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "378323fe99da1774f8d9d4fded1f0c788c61aea7a8df168d5ddb176bf77ace33",
+    "rationale": "The inbound-profile external transfer toggle is an explicit call-forwarding dependency, unlike recording start, hold music or Teams consultation.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-voice-s07",
+        "section": "Create inbound profiles: Inbound behaviors",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. Call transfer to external phone number must be enabled to use call forwarding for inbound profiles."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q50",
+    "revision": 2,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "a9ed55d880bfcbb0101b4bce88411edd53a05249d6bbdf9034b8e27b4db73763",
+    "rationale": "Revision2 includes the selected alternative caller IDs outbound profile so representative settings exist, not only its preliminary channel-or-profile provisioning.",
+    "findings": [
+      "Resolved: Revision2 corrects incomplete alternative-number readiness by requiring its outbound profile and representative settings."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-voice-s07",
+        "section": "Create outbound profiles",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. Alternative numbers must first be configured as a workstream channel or outbound-profile number; a different number selected as caller ID must have an outbound profile so representative settings are created."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q51",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "b86105c1854d880bbe074b8b8908d6bb63921a9446b808dfdef13d2a84e34534",
+    "rationale": "The Number label is representative dialer context, distinct from caller ID number and unsupported profile-label CNAM delivery.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-voice-s07",
+        "section": "Create outbound profiles: Number label note; Create outbound profiles: Caller ID number",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. Number label is dialer-only and not caller-name delivery; CNAM is not supported by this profile label. Caller ID number is separate from the Number label and defaults to the profile number."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q52",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "313abaf5eaef3edbfa3df41938c38bb35bf22aa1f1d24dc5b635f821412c1053",
+    "rationale": "Outbound concurrency1 and incoming assignment blocking are two separate profile requirements; this is not the pilot individual custom-limit design.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-voice-s08",
+        "section": "Configure capacity profiles and assign users; Configure phone numbers for outbound calling: Note",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. Outbound Work item limit governs concurrent outbound calls; Assignment blocking Yes prevents incoming calls while an outbound call is in progress. Separate inbound/outbound queues help monitoring; sharing a queue is supported."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q53",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "7908d194112cad06fbdfa7250fe245e2b82441cfd9393bae99a6fbcb23edd45d",
+    "rationale": "Separate inbound/outbound queues are a recommendation for operational visibility, while shared queues remain supported; team/language-only splits do not implement it.",
+    "findings": [
+      "Resolved: Replaced cosmetic rename with a real but insufficient team-only queue split."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-voice-s08",
+        "section": "Configure phone numbers for outbound calling: Note",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. Inbound and outbound can share a queue, but separate queues are recommended for monitoring outbound traffic and sentiment."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q54",
+    "revision": 2,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "7a241e0f9980eee17cdcf20bd2e55a1b7a0e92a88b435d4cc2140244bd11ec8a",
+    "rationale": "Revision2 explicitly scopes the ACS-backed capture flow; environment MIME policy and Event Grid listening remain required beyond tenant/workstream toggles.",
+    "findings": [
+      "Resolved: Revision2 makes ACS-backed capture architecture explicit in the stem."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-voice-s09",
+        "section": "Prerequisites; Enable call recording and transcription for voice",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. Allow audio and mpeg MIME types; register Event Grid system topics so applications listen for ACS events."
+      },
+      {
+        "sourceId": "exam-d2-voice-s10",
+        "section": "Store and view survey data",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. Call Survey Logs retains representative feedback data, not a replacement for recording event registration."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q55",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "00bc8e5e10bbadd464e1ab31bc9c5d60450d7cba04e3d41436f66c01808b257e",
+    "rationale": "Manual capture initially shows Resume by design; the label is not evidence of prior recording or tenant-control override.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-voice-s09",
+        "section": "Enable call recording and transcription for voice: Manual start note",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. Manual Start shows Resume recording and transcript initially; the label does not mean recording previously started and paused."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q56",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "f50cbbf675dad1fa8ce3983e0454bd5d98c3cd9f86aa54d13f66be19a22b72f0",
+    "rationale": "Hold-driven capture automation has its own toggle; manual start/manual buttons and hold music do not implement that automatic lifecycle.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-voice-s09",
+        "section": "Enable call recording and transcription for voice: Steps 7 and 8",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. Allow automatic pause and resume when agent hold and un-hold the customer pauses capture on hold and resumes on unhold."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q57",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "951510fffa209c859b2e454e43468cca8bf607ef6076ee3e628431f0bfc2b5bd",
+    "rationale": "The Copilot Studio transcript exists independently of workstream capture; DTMF-only input excludes speech and includes keypad entries.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-voice-s09",
+        "section": "Important: Copilot Studio transcript and DTMF-only input",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. Copilot Studio generates an agent transcript independently of voice capture settings; DTMF-only agent ignores spoken input and captures keypad entries, not speech in that transcript."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q58",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "8e5422311f935a404d5f84e4104c694952237a7545a12afe561590a8299de6ad",
+    "rationale": "Displayed transcript group timestamps have documented two-minute precision/drift limits; repeated intervals do not prove simultaneous or duplicate speech.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-voice-s09",
+        "section": "View call transcripts: Timestamp note",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. Transcript timestamps are grouped into two-minute intervals to accommodate drift from polling and timing inconsistencies."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q59",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "bb150b27514a21b71eeade4ed60b4627588d997c95cbd1829bd4a3ad64442a67",
+    "rationale": "The representative quality survey supplies post-call subjective evidence and frequency/duration controls, distinct from customer CSAT and technical measurements.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-voice-s10",
+        "section": "Configure representative call quality feedback survey; Enable representative call quality surveys",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. The representative survey collects post-call subjective quality feedback and supports frequency and optional display duration."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q60",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "880cf3355911a26600bd3e3e0dae870de56f90c48714eeafdb1d14dee5fb5b7e",
+    "rationale": "Secure preview Agent on hold applies to all representatives and cannot be removed during consultation; Hold does not configure every bridged transfer.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-voice-s10",
+        "section": "Set up secure consult with and transfer to external contacts (preview): Hold",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. Agent on hold places all representatives on hold during secure consult; representatives cannot remove that hold."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q61",
+    "revision": 2,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "2e11f2ac1dde7e2f4c4fa221f2b5889291030a35fe3e9b90fdce8c7f7bab93db",
+    "rationale": "Revision2 tests secure override origin scope: all bridged transfers include AI-agent and overflow origins. It no longer repeats D3 capture-option selection.",
+    "findings": [
+      "Resolved: Revision2 replaces a D3 capture-choice subset with distinct all-bridged-origin scope, directly checked in source10 finalNote."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-voice-s10",
+        "section": "Set up secure consult with and transfer to external contacts (preview): Final note",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. Secure settings apply to all bridged transfers, including those initiated by AI agents or overflow actions."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q62",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "10a9e3e47448d59e23172d4d41f3cb3964eb4edce00726b563e7db14546c7102",
+    "rationale": "After the secure contact leaves, workstream settings govern restored capture and hold release; the contact-phase suppression is not permanent.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-voice-s11",
+        "section": "Consult with external contacts and transfer a call securely (preview)",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. When the external contact leaves, capture and hold resume/release according to workstream settings."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q63",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "855d3e34b2197fe3ed7b2aa3b46b3d98f4024469fb46a9cc18ce779a3d1504db",
+    "rationale": "The published TPE client uses Calling SDK or Teams with Microsoft365 identity; this is not an invented Dynamics CCaaS SDK operation.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-voice-s12",
+        "section": "Overview: Agent calling experience",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. CCaaS embeds call handling with ACS Calling SDK or uses Teams, initialized with Microsoft 365 identity."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q64",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "4640844d15b92cf0fee4d222bc71555cc5c9ba0535f52be55f7b5cfbbfb8dd3c",
+    "rationale": "The multipersona overview explicitly assigns inbound client ringing to Teams policy and states no CallingSDK-versus-Teams selector API.",
+    "findings": [
+      "Resolved: Replaced handset/callerID distractors with plausible server-override/browser-policy misconceptions."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-voice-s12",
+        "section": "Multi persona",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. Inbound client ringing is controlled by Teams policy; the overview states no API chooses Calling SDK versus Teams client for inbound ringing."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q65",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "fb3914afbdb7b86e426f34bbb4a5627c5f4c8a558d8ca8d06302719fa8d52054",
+    "rationale": "The unit maps low/unpredictable demand to PAYG and predictable demand to packs; this is a starting fit, not a lowest-price assurance.",
+    "findings": [
+      "Resolved: Replaced no-budget/mandatory-plan choices with competing documented commercial-model pairings."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-voice-s13",
+        "section": "Copilot Credits: AI consumption currency",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. PAYG suits low/unpredictable volume; capacity packs suit steady/predictable usage; prepurchase is another volume-tier option."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q66",
+    "revision": 1,
+    "reviewer": "/root/exam_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "8a6f536f2ffbd38d344b7b8c87ba3f302343dec5e0bcd47bbf359f945d057092",
+    "rationale": "Forecasting includes generative share and escalation alongside interaction volume; equal volumes do not establish equal consumption or erase workload mix.",
+    "findings": [
+      "Resolved: Replaced zero-consumption absurdity with a plausible equal-volume average-credit assumption."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-voice-s13",
+        "section": "Copilot Credits: AI consumption currency",
+        "supported": true,
+        "notes": "Primary page and exact supporting section independently opened 2026-11-03. Consumption estimates should include self-service volume, share using generative answers and escalation rate; classical rule-based topic responses do not consume these credits."
+      }
+    ]
+  }
+]

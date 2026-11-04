@@ -1,0 +1,16 @@
+[
+  {
+    "id": "cc-d1-c22",
+    "changes": {
+      "prompt": "An administrator onboards a non-admin representative by creating an enabled account, assigning the correct license and adding the person to the target environment security group. The user now appears in Dataverse. Which additional access configuration must the administrator verify before the representative can use environment data?"
+    },
+    "reason": "Removes the supplied missing-role diagnosis while retaining ordinary-user scope and the environment-membership versus data-privilege distinction. Existing answer/options remain supported."
+  },
+  {
+    "id": "cc-d1-c23",
+    "changes": {
+      "prompt": "A contact center creates a custom representative role by copying and adapting an existing role. The administrator verifies the required table privileges and maps the role to the Agent persona. Which additional step belongs in the rollout checklist so that these users can open the intended model-driven application without receiving broader data privileges?"
+    },
+    "reason": "Removes explicit disclosure of the app role-list omission. Tests the additional application-authorization layer after role/persona configuration; other choices remain insufficient."
+  }
+]

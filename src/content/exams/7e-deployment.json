@@ -1,0 +1,3799 @@
+{
+  "sources": [
+    {
+      "id": "exam-d1-s01",
+      "title": "Configure the connector for any CRM solution",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/extend/configure-custom-connector"
+    },
+    {
+      "id": "exam-d1-s02",
+      "title": "Set up the embedded experience in Salesforce",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/set-up-embedded-experience"
+    },
+    {
+      "id": "exam-d1-s03",
+      "title": "Contact center with existing CRM and CCaaS",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/guidance/reference-architectures/contact-center-existing-crm-ccaas-solution-copilot-service-copilot-studio"
+    },
+    {
+      "id": "exam-d1-s04",
+      "title": "Use Copilot Service workspace",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/ccw-overview"
+    },
+    {
+      "id": "exam-d1-s05",
+      "title": "Agentic simulations (preview)",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-simulation-agent"
+    },
+    {
+      "id": "exam-d1-s06",
+      "title": "Use Service Operations Agent",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/use-service-operations-agent"
+    },
+    {
+      "id": "exam-d1-s07",
+      "title": "Create rollout plans to manage AI agents",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/create-rollout-plans"
+    },
+    {
+      "id": "exam-d1-s08",
+      "title": "Best practices for application lifecycle management",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/alm-best-practices"
+    },
+    {
+      "id": "exam-d1-s09",
+      "title": "Migrate configurations for channels using solutions",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/migrate-channel-config-using-solutions"
+    },
+    {
+      "id": "exam-d1-s10",
+      "title": "Copy an environment with omnichannel capabilities",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/implement/copy-environment-with-omnichannel"
+    },
+    {
+      "id": "exam-d1-s11",
+      "title": "Use enhanced user management",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/users-user-profiles"
+    },
+    {
+      "id": "exam-d1-s12",
+      "title": "Manage personas and custom security roles",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/role-persona-mapping"
+    },
+    {
+      "id": "exam-d1-s13",
+      "title": "Create and manage capacity profiles",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/capacity-profiles"
+    },
+    {
+      "id": "exam-d1-s14",
+      "title": "Control user access with security groups and licenses",
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/control-user-access"
+    },
+    {
+      "id": "exam-d1-s15",
+      "title": "Assign security roles",
+      "url": "https://learn.microsoft.com/en-us/power-platform/admin/assign-security-roles"
+    },
+    {
+      "id": "exam-d1-s16",
+      "title": "Assign roles and enable users",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/implement/add-users-assign-roles"
+    }
+  ],
+  "questions": [
+    {
+      "id": "ab250-d1-q05",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.1.02"
+      ],
+      "conceptId": "connector-initial-load-completeness",
+      "prompt": "An engineer manually loads accounts from a retained CRM into Dataverse. The flow succeeds, but only the first page of a much larger account set arrives. Later incremental updates work. Which change addresses the incomplete initial load?",
+      "answer": "Enable pagination for the initial-load connector operation.",
+      "explanation": "Treat historical loading separately from later event delivery. Pagination addresses the missing initial pages.",
+      "sourceIds": [
+        "exam-d1-s01"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:connector-initial-load-completeness",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Recreate the incremental webhook subscriptions."
+        },
+        {
+          "id": "o2",
+          "text": "Change the initial-load trigger from manual to scheduled, retaining the same page retrieval."
+        },
+        {
+          "id": "o3",
+          "text": "Enable pagination for the initial-load connector operation."
+        },
+        {
+          "id": "o4",
+          "text": "Rerun the first-page request with a narrower account filter."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "Incremental notifications do not fetch omitted historical pages.",
+        "o2": "Trigger timing does not retrieve the omitted historical pages.",
+        "o3": "Pagination retrieves records beyond the connector fetch page.",
+        "o4": "Narrowing the requested account set does not complete the required full initial load."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n09"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q06",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.1.02"
+      ],
+      "conceptId": "connector-change-delivery",
+      "prompt": "A one-time CRM account import is complete. Contact Center must now react to source create, update, and delete events rather than depend on periodic full reloads. The CRM exposes webhooks. Which design meets this requirement?",
+      "answer": "Deliver source changes through CRM webhooks to flow endpoints.",
+      "explanation": "Use incremental event delivery for ongoing changes; a complete initial load is a separate milestone.",
+      "sourceIds": [
+        "exam-d1-s01"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:connector-change-delivery",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Deliver source changes through CRM webhooks to flow endpoints."
+        },
+        {
+          "id": "o2",
+          "text": "Schedule periodic full imports without subscribing to source change events."
+        },
+        {
+          "id": "o3",
+          "text": "Increase initial-load pagination without configuring source change notifications."
+        },
+        {
+          "id": "o4",
+          "text": "Subscribe only to new-record notifications and use the completed initial load for later edits and deletions."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "Webhooks notify flows about source record changes.",
+        "o2": "A full-import schedule does not provide the required event-driven change delivery.",
+        "o3": "Paging completes batch retrieval, not ongoing event delivery.",
+        "o4": "Create-only notifications omit the required update/delete events."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n09"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q07",
+      "revision": 2,
+      "kind": "multiple",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.1.02"
+      ],
+      "conceptId": "connector-record-provenance",
+      "prompt": "Two retained CRM systems contain contacts with identical display names. The integration design must preserve which source record each Dataverse contact represents and provide a route back to that record. Which TWO design choices follow the connector prerequisites? Choose TWO.",
+      "answer": "Store the originating CRM in Source CRM. Preserve Source CRM ID and Source CRM URL on each synchronized record.",
+      "explanation": "Keep both source-system identity and the source record reference in the documented account/contact columns.",
+      "sourceIds": [
+        "exam-d1-s01"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:connector-record-provenance",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Use display name as the only source identity."
+        },
+        {
+          "id": "o2",
+          "text": "Store the originating CRM in Source CRM."
+        },
+        {
+          "id": "o3",
+          "text": "Replace Source CRM ID whenever the contact name changes."
+        },
+        {
+          "id": "o4",
+          "text": "Preserve Source CRM ID and Source CRM URL on each synchronized record."
+        },
+        {
+          "id": "o5",
+          "text": "Store the source CRM only on a flow configuration record and omit source identity from synchronized contacts."
+        }
+      ],
+      "correctOptionIds": [
+        "o2",
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "Names are not stable source-record identifiers.",
+        "o2": "This identifies the originating system.",
+        "o3": "A name edit should not replace source record provenance.",
+        "o4": "These columns preserve source identity and navigation.",
+        "o5": "Flow-level metadata does not preserve the documented source-record columns on each contact."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n09"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q08",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.1.02"
+      ],
+      "conceptId": "connector-environment-alignment",
+      "prompt": "A deployment has the required connector solution and account/contact columns. The engineer built the Power Apps setup in the service environment but selected a separate sandbox for Power Automate. Before diagnosing credentials, which prerequisite should be corrected?",
+      "answer": "Use the same Power Apps and Power Automate environment.",
+      "explanation": "Check environment alignment before treating this cross-environment setup as a connector authentication defect.",
+      "sourceIds": [
+        "exam-d1-s01"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:connector-environment-alignment",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Grant the flow owner more CRM permissions."
+        },
+        {
+          "id": "o2",
+          "text": "Reinstall the connector in the sandbox."
+        },
+        {
+          "id": "o3",
+          "text": "Recreate the Dataverse connection in the sandbox and keep the Power Apps setup elsewhere."
+        },
+        {
+          "id": "o4",
+          "text": "Use the same Power Apps and Power Automate environment."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "Additional privileges do not correct environment alignment.",
+        "o2": "Reinstallation leaves the documented environment mismatch.",
+        "o3": "A connection recreation in the wrong environment does not fix alignment.",
+        "o4": "The connector prerequisite requires matching environments."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n09"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q09",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.1.03"
+      ],
+      "conceptId": "salesforce-call-center-membership",
+      "prompt": "The embedded conversation widget works for the Salesforce administrator who performed setup. Another intended representative uses the same Service Console and has the required Contact Center access. The call-center definition and default softphone layout are correct. Which Salesforce configuration should be checked for this user?",
+      "answer": "Check the representative call-center membership.",
+      "explanation": "Validate the per-user Salesforce call-center association after the shared definition and layout are configured.",
+      "sourceIds": [
+        "exam-d1-s02"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:salesforce-call-center-membership",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Reimport the shared call-center XML."
+        },
+        {
+          "id": "o2",
+          "text": "Check the representative call-center membership."
+        },
+        {
+          "id": "o3",
+          "text": "Change the default layout for everyone even though that shared setting is verified."
+        },
+        {
+          "id": "o4",
+          "text": "Replace the adapter URL used by all users even though it works for the administrator."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "Reimporting shared configuration does not address the missing individual association.",
+        "o2": "The documented setup adds the intended user through Manage Call Center Users.",
+        "o3": "The question states the shared layout is correct.",
+        "o4": "The adapter is already verified; user association is the remaining specific check."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n10"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q10",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.1.03"
+      ],
+      "conceptId": "salesforce-console-utility",
+      "prompt": "The Salesforce call-center definition, adapter URL, intended user membership, and default softphone layout are verified. The representative can use the embedded widget in a configured Salesforce app but does not see it in Service Console. Which Service Console application configuration should the engineer inspect?",
+      "answer": "Add Open CTI Softphone to the Service Console Utility Items.",
+      "explanation": "Embedding includes application-level softphone setup as well as call-center configuration.",
+      "sourceIds": [
+        "exam-d1-s02"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:salesforce-console-utility",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Add Open CTI Softphone to the Service Console Utility Items."
+        },
+        {
+          "id": "o2",
+          "text": "Reimport the shared call-center definition without reviewing Service Console configuration."
+        },
+        {
+          "id": "o3",
+          "text": "Change the existing default softphone layout without reviewing application Utility Items."
+        },
+        {
+          "id": "o4",
+          "text": "Reassign the user to the already verified call center without changing Service Console Utility Items."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "This adds the documented application-level utility.",
+        "o2": "The verified shared definition does not establish the utility for this application.",
+        "o3": "The shared default layout is already verified; its presence does not configure the console utility.",
+        "o4": "Membership is verified and does not add the required application utility."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n10"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q11",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.1.04"
+      ],
+      "conceptId": "retained-provider-operational-ownership",
+      "prompt": "An organization selects the documented architecture that retains both its CRM and its CCaaS provider while adding Copilot for Service and Copilot Studio. During the design review, who should remain responsible for routing and post-conversation operational supervision?",
+      "answer": "The existing CRM and CCaaS services retain those operational responsibilities.",
+      "explanation": "Keep the documented architecture boundary: adding assistance does not transfer retained-provider routing and supervision duties.",
+      "sourceIds": [
+        "exam-d1-s03"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:retained-provider-operational-ownership",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Copilot Studio automatically replaces both services when an agent is published."
+        },
+        {
+          "id": "o2",
+          "text": "A new Dynamics unified-routing deployment is an inherent requirement of this architecture."
+        },
+        {
+          "id": "o3",
+          "text": "The existing CRM and CCaaS services retain those operational responsibilities."
+        },
+        {
+          "id": "o4",
+          "text": "The embedded Copilot component becomes the authoritative routing and supervision service."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "Self-service automation does not replace all provider operations.",
+        "o2": "This retained-provider architecture does not inherently replace its routing service.",
+        "o3": "The architecture assigns routing, follow-up and supervision to the retained providers.",
+        "o4": "Assistance inside CRM does not itself own these operational services."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n10"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q12",
+      "revision": 2,
+      "kind": "multiple",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.1.03"
+      ],
+      "conceptId": "embedded-salesforce-readiness",
+      "prompt": "A project plans the documented Salesforce embedded conversation experience. System requirements, the widget URL, representative membership, and the console utility are already verified. Which TWO remaining checks belong to readiness before representative acceptance testing? Choose TWO.",
+      "answer": "Verify omnichannel capabilities are enabled. Verify a softphone layout is selected as default.",
+      "explanation": "Check the underlying contact-center service and the Salesforce softphone default, rather than treating a visible utility as full readiness.",
+      "sourceIds": [
+        "exam-d1-s02"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:embedded-salesforce-readiness",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Reimport the call-center definition and treat that alone as proof the service and layout are ready."
+        },
+        {
+          "id": "o2",
+          "text": "Verify omnichannel capabilities are enabled."
+        },
+        {
+          "id": "o3",
+          "text": "Grant all consuming representatives Salesforce System Administrator, matching the provisioning user."
+        },
+        {
+          "id": "o4",
+          "text": "Verify a softphone layout is selected as default."
+        },
+        {
+          "id": "o5",
+          "text": "Keep the intended softphone layout nondefault because adding a console utility implicitly makes it default."
+        }
+      ],
+      "correctOptionIds": [
+        "o2",
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "A definition import does not establish omnichannel provisioning or the default layout.",
+        "o2": "The underlying service must be provisioned.",
+        "o3": "The provisioning-user permission does not imply all consuming representatives need that role.",
+        "o4": "The documented layout must be selected as default.",
+        "o5": "The setup separately requires selecting the default layout; the utility does not remove that step."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n10"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q13",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.1.01"
+      ],
+      "conceptId": "workspace-session-context-navigation",
+      "prompt": "A team is configuring its workspace acceptance test. A representative accepts a customer conversation and then opens that customer record from the conversation session. What behavior should the test expect?",
+      "answer": "Open a tab in the current conversation session.",
+      "explanation": "Sessions preserve interaction context; related customer records can open as tabs within the active session.",
+      "sourceIds": [
+        "exam-d1-s04"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:workspace-session-context-navigation",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Replace the conversation with Home."
+        },
+        {
+          "id": "o2",
+          "text": "Open a new independent session and move the existing conversation into it."
+        },
+        {
+          "id": "o3",
+          "text": "Close the conversation session before the related customer record can be opened."
+        },
+        {
+          "id": "o4",
+          "text": "Open a tab in the current conversation session."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "Related record navigation does not replace the conversation with Home.",
+        "o2": "The documented behavior is a tab within the existing session.",
+        "o3": "The workspace supports opening customer context without closing the conversation.",
+        "o4": "This preserves that conversation session context."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n01"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q14",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.1.05"
+      ],
+      "conceptId": "simulation-keypad-acceptance-boundary",
+      "prompt": "A test lead proposes using the agentic simulation preview as the sole acceptance test for an English inbound voice journey that requires callers to press keypad digits to choose a branch. What is the appropriate assessment?",
+      "answer": "Use a separate keypad test; simulation preview excludes DTMF.",
+      "explanation": "A supported inbound voice channel does not establish keypad coverage. Keep this preview limit explicit in the acceptance plan.",
+      "sourceIds": [
+        "exam-d1-s05"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:simulation-keypad-acceptance-boundary",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Accept it because it uses an inbound voice workstream."
+        },
+        {
+          "id": "o2",
+          "text": "Use a separate keypad test; simulation preview excludes DTMF."
+        },
+        {
+          "id": "o3",
+          "text": "Accept it after describing each keypad press explicitly in a more detailed English prompt."
+        },
+        {
+          "id": "o4",
+          "text": "Select a DTMF-enabled receiving workstream."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "Inbound voice scope alone does not establish DTMF support.",
+        "o2": "The preview does not support keypad interaction.",
+        "o3": "Prompt detail cannot supply an unsupported simulation feature.",
+        "o4": "A receiving workstream capability does not change the simulation limitation."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n04"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q15",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.1.05"
+      ],
+      "conceptId": "simulation-evidence-location",
+      "prompt": "After a supported agentic simulation preview run, the lead needs both the exact submitted prompt with run status and the conversation transcript with recording. Which TWO places supply that evidence? Choose TWO.",
+      "answer": "Simulation Run History for the submitted prompt and run status. The closed conversation form for transcript and recording.",
+      "explanation": "Use run metadata and conversation artifacts together; neither is a substitute for the other.",
+      "sourceIds": [
+        "exam-d1-s05"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:simulation-evidence-location",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Simulation Run History for the submitted prompt and run status."
+        },
+        {
+          "id": "o2",
+          "text": "The closed conversation form as the authoritative history of the exact simulation request prompt."
+        },
+        {
+          "id": "o3",
+          "text": "The closed conversation form for transcript and recording."
+        },
+        {
+          "id": "o4",
+          "text": "The Ongoing conversation report as the permanent source of the submitted simulation prompt."
+        },
+        {
+          "id": "o5",
+          "text": "The run status alone, without opening the conversation, as evidence of its exact dialogue."
+        }
+      ],
+      "correctOptionIds": [
+        "o1",
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "Run History supplies the simulation request and status.",
+        "o2": "The documented submitted-prompt location is Run History.",
+        "o3": "The form supplies the dialogue artifacts.",
+        "o4": "Live monitoring does not replace the required prompt/status history.",
+        "o5": "Completion status does not show what the conversation said."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n04"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q16",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.1.05"
+      ],
+      "conceptId": "simulation-destination-number",
+      "prompt": "An administrator has provisioned voice and configured a workstream number for the agentic simulation preview. To test that workstream, which number should the administrator include in the natural-language simulation prompt?",
+      "answer": "The intended receiving workstream number.",
+      "explanation": "Distinguish the receiving workstream number from the caller number supplied by the simulation service.",
+      "sourceIds": [
+        "exam-d1-s05"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:simulation-destination-number",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "The previous simulated caller number."
+        },
+        {
+          "id": "o2",
+          "text": "A representatives callback number."
+        },
+        {
+          "id": "o3",
+          "text": "The intended receiving workstream number."
+        },
+        {
+          "id": "o4",
+          "text": "An unassociated spare test number."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "The simulation supplies the caller identity, not the destination.",
+        "o2": "This does not identify the receiving workstream.",
+        "o3": "The prompt identifies the receiving workstream number.",
+        "o4": "An unassociated number does not address the configured receiving journey."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n04"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q17",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.1.05"
+      ],
+      "conceptId": "simulation-supported-journey-selection",
+      "prompt": "A validation team has completed all documented simulation-preview prerequisites. It must choose one initial journey that falls within the published channel, direction, and language scope; none uses keypad input. Which candidate can be exercised within that scope?",
+      "answer": "An English inbound voice journey using a simulation-configured receiving number.",
+      "explanation": "Select a supported journey before interpreting its run as validation evidence: the preview scope is English inbound voice.",
+      "sourceIds": [
+        "exam-d1-s05"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:simulation-supported-journey-selection",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "An English outbound voice callback journey through the campaign dialer."
+        },
+        {
+          "id": "o2",
+          "text": "A French inbound voice journey handled entirely through spoken dialogue."
+        },
+        {
+          "id": "o3",
+          "text": "An English website live-chat journey with the same escalation rules as voice."
+        },
+        {
+          "id": "o4",
+          "text": "An English inbound voice journey using a simulation-configured receiving number."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "The preview scope is inbound voice, not outbound calls.",
+        "o2": "The documented simulation language is English only.",
+        "o3": "The preview is for voice, not website chat.",
+        "o4": "This candidate meets the documented inbound voice and English scope."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n04"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q18",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.1.07"
+      ],
+      "conceptId": "service-operations-mcp-diagnosis",
+      "prompt": "A Contact Center administrator has the documented access role and working billing setup. Service Operations Agent previously performed supported requests, but now cannot retrieve environment information or perform actions. Before changing operational configuration, which documented connection dependency should the administrator verify?",
+      "answer": "Verify the environment Dataverse MCP connection.",
+      "explanation": "Investigate the documented environment connection when supported retrieval and action requests fail together.",
+      "sourceIds": [
+        "exam-d1-s06"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:service-operations-mcp-diagnosis",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Verify the environment Dataverse MCP connection."
+        },
+        {
+          "id": "o2",
+          "text": "Configure Application Insights and assume monitoring supplies the agents Dataverse management connection."
+        },
+        {
+          "id": "o3",
+          "text": "Grant broader representative data roles without checking the administrators existing Dataverse connection."
+        },
+        {
+          "id": "o4",
+          "text": "Point the existing connection to another environment and assume it will manage the intended environment."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "The agent requires this connection for environment access.",
+        "o2": "Application Insights is a troubleshooting prerequisite, not the required MCP connection to access and manage Dataverse.",
+        "o3": "The administrator access role is verified; new representative grants do not verify the failing connection.",
+        "o4": "The agent must connect correctly to the intended environment, not another one."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n05"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q19",
+      "revision": 2,
+      "kind": "multiple",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.1.07"
+      ],
+      "conceptId": "service-operations-troubleshooting-observability",
+      "prompt": "An organization has Service Operations Agent access, consumption-based billing, and its Dataverse MCP connection working. It now wants the documented troubleshooting capability during setup. Which TWO additional observability checks are required? Choose TWO.",
+      "answer": "Configure Application Insights. Connect Application Insights with Dynamics 365 Contact Center.",
+      "explanation": "Monitoring provisioning and the Contact Center connection are separate prerequisites for this troubleshooting path.",
+      "sourceIds": [
+        "exam-d1-s06"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:service-operations-troubleshooting-observability",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Refresh the already working Dataverse MCP connection and treat that as Application Insights setup."
+        },
+        {
+          "id": "o2",
+          "text": "Grant the administrator source-table export privileges without configuring a monitoring service."
+        },
+        {
+          "id": "o3",
+          "text": "Configure Application Insights."
+        },
+        {
+          "id": "o4",
+          "text": "Grant broader Dataverse read privileges and skip connecting monitoring to Contact Center."
+        },
+        {
+          "id": "o5",
+          "text": "Connect Application Insights with Dynamics 365 Contact Center."
+        }
+      ],
+      "correctOptionIds": [
+        "o3",
+        "o5"
+      ],
+      "optionExplanations": {
+        "o1": "A working environment-management connection does not configure the separate monitoring prerequisite.",
+        "o2": "Table export access does not provide Application Insights configuration.",
+        "o3": "Application Insights must be configured.",
+        "o4": "Broader read access is not the documented monitoring-service connection.",
+        "o5": "The configured monitoring service must be connected to Contact Center."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n05"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q20",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.1.07"
+      ],
+      "conceptId": "service-operations-condition-authoring-boundary",
+      "prompt": "An administrator uses Service Operations Agent to create a route-to-queue rule. The rule must now check a customer-tier condition. Existing queues and the workstream use the same channel. How should the condition be added under the documented tool support?",
+      "answer": "Configure the condition manually in Copilot Service admin center.",
+      "explanation": "Separate supported rule creation from unsupported condition authoring; use the manual configuration path for the latter.",
+      "sourceIds": [
+        "exam-d1-s06"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:service-operations-condition-authoring-boundary",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Ask the agent to convert the rule to percentage-based distribution."
+        },
+        {
+          "id": "o2",
+          "text": "Configure the condition manually in Copilot Service admin center."
+        },
+        {
+          "id": "o3",
+          "text": "Grant the agent a broader role."
+        },
+        {
+          "id": "o4",
+          "text": "Change the queues assignment method."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "Percentage-based distribution is also outside the tools and does not express this condition.",
+        "o2": "Adding or editing rule conditions requires the manual administration path.",
+        "o3": "This is a capability boundary, not a documented missing privilege.",
+        "o4": "Queue assignment strategy does not author a route condition."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n05"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q21",
+      "revision": 3,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.2.01"
+      ],
+      "conceptId": "rollout-enabled-agent-prerequisite",
+      "prompt": "An authorized deployment lead is planning a phased Customer Intent Agent rollout for a new business scope. Which sequence follows the documented relationship between autonomous-agent setup and rollout-plan creation?",
+      "answer": "Enable the autonomous agent, then create the plan.",
+      "explanation": "Rollout manager uses existing enabled agent configurations; it does not remove the enablement prerequisite.",
+      "sourceIds": [
+        "exam-d1-s07"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:rollout-enabled-agent-prerequisite",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Create and Schedule the plan first, relying on its future lifecycle action to perform agent setup."
+        },
+        {
+          "id": "o2",
+          "text": "Create an inactive plan first and use Activate to replace enablement of the underlying agent."
+        },
+        {
+          "id": "o3",
+          "text": "Enable the autonomous agent, then create the plan."
+        },
+        {
+          "id": "o4",
+          "text": "Create a plan using another enabled agent and assume its rollout activates the intended agent too."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "Scheduling a plan does not replace the prerequisite enabled agent configuration.",
+        "o2": "Plan activation is not a substitute for the documented agent prerequisite.",
+        "o3": "Agent enablement precedes plan creation.",
+        "o4": "The intended selected agent must satisfy its own enablement prerequisite."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n03"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q22",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.2.01"
+      ],
+      "conceptId": "rollout-scheduled-activation",
+      "prompt": "An enabled agent has an approved rollout plan. The business wants the plan enabled automatically at a specified future date and time without an administrator returning then. Which plan action meets this requirement?",
+      "answer": "Schedule.",
+      "explanation": "Use the plan lifecycle action that explicitly supports future automatic enablement.",
+      "sourceIds": [
+        "exam-d1-s07"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:rollout-scheduled-activation",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Schedule."
+        },
+        {
+          "id": "o2",
+          "text": "Edit the approved scope while leaving the plan inactive and without a schedule."
+        },
+        {
+          "id": "o3",
+          "text": "Activate immediately and rely on the future business date to delay the effect."
+        },
+        {
+          "id": "o4",
+          "text": "Deactivate the plan and expect it to reactivate automatically at the requested time."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "Schedule supplies automatic future enablement.",
+        "o2": "Edit changes plan settings but does not provide the requested future automatic enablement.",
+        "o3": "Activate is immediate rather than the requested scheduled action.",
+        "o4": "Deactivation alone does not supply a future activation schedule."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n03"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q23",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.2.01"
+      ],
+      "conceptId": "rollout-stop-effects-by-agent",
+      "prompt": "An operator is preparing to deactivate one Customer Knowledge Management Agent rollout plan and one Case Management Agent rollout plan. Which TWO effects must the operator account for? Choose TWO.",
+      "answer": "The knowledge agent setting remains after plan deactivation. The corresponding Case Management Agent rules are also deactivated.",
+      "explanation": "Plan deactivation has agent-specific effects; verify the underlying settings or rules instead of assuming a universal stop behavior.",
+      "sourceIds": [
+        "exam-d1-s07"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:rollout-stop-effects-by-agent",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "The knowledge agent setting is always deleted with its plan."
+        },
+        {
+          "id": "o2",
+          "text": "The knowledge agent setting remains after plan deactivation."
+        },
+        {
+          "id": "o3",
+          "text": "Case Management Agent rules remain active regardless of plan deactivation."
+        },
+        {
+          "id": "o4",
+          "text": "The corresponding Case Management Agent rules are also deactivated."
+        },
+        {
+          "id": "o5",
+          "text": "All unrelated agents are automatically disabled."
+        }
+      ],
+      "correctOptionIds": [
+        "o2",
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "The documentation says this agent setting is not deactivated or deleted with the plan.",
+        "o2": "The underlying knowledge agent setting persists.",
+        "o3": "Case Management Agent has the documented rule lifecycle coupling.",
+        "o4": "Its corresponding rules are deactivated with the plan.",
+        "o5": "The documented effect is agent-specific, not an organization-wide disable."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n03"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q24",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.2.01"
+      ],
+      "conceptId": "rollout-combined-scope",
+      "prompt": "Two enabled autonomous agents will be adopted together under one business rollout. Their individual configuration remains on the corresponding administrator pages. Which approach fits rollout manager without creating a second configuration authority?",
+      "answer": "Use one multi-agent rollout plan and the existing settings.",
+      "explanation": "Plan composition can span agents while their detailed settings remain in the documented administration surfaces.",
+      "sourceIds": [
+        "exam-d1-s07"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:rollout-combined-scope",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Clone agent settings into private plan records."
+        },
+        {
+          "id": "o2",
+          "text": "Require separate plans because rollout manager cannot group enabled agents under one rollout."
+        },
+        {
+          "id": "o3",
+          "text": "Replace the agents existing administrator configuration with manual target edits during activation."
+        },
+        {
+          "id": "o4",
+          "text": "Use one multi-agent rollout plan and the existing settings."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "The manager uses existing settings without duplicating controls.",
+        "o2": "A single plan may cover multiple agents.",
+        "o3": "The documented design retains corresponding agent administration settings.",
+        "o4": "The plan can cover both enabled agents without duplicating configuration authority."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n03"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q25",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.2.02"
+      ],
+      "conceptId": "alm-development-release-artifact",
+      "prompt": "A team needs editable configuration in development and a controlled deployment artifact for preproduction. Which packaging approach follows the Contact Center ALM recommendation?",
+      "answer": "Author in an unmanaged source solution and export a managed solution for the target.",
+      "explanation": "Maintain an editable source configuration and distribute its managed export to target environments.",
+      "sourceIds": [
+        "exam-d1-s08"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:alm-development-release-artifact",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Build directly in a managed solution in production and export it to development."
+        },
+        {
+          "id": "o2",
+          "text": "Author in an unmanaged source solution and export a managed solution for the target."
+        },
+        {
+          "id": "o3",
+          "text": "Import the unmanaged development solution as the permanent production customization layer."
+        },
+        {
+          "id": "o4",
+          "text": "Keep separate handwritten configuration in every target environment."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "This reverses the recommended source-to-target flow.",
+        "o2": "Source authoring remains editable while the target receives a managed artifact.",
+        "o3": "The recommendation is a managed export for the target.",
+        "o4": "Independent target changes weaken source-controlled deployment."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n02"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q26",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.2.03"
+      ],
+      "conceptId": "alm-release-preflight",
+      "prompt": "A release lead is preparing the next managed Contact Center configuration update. The team wants a repeatable deployment that allows later changes to arrive from development. Which TWO actions belong in this release policy? Choose TWO.",
+      "answer": "Keep source and target installed solution versions in parity. Deliver managed configuration changes through managed solution imports.",
+      "explanation": "Check platform-solution parity and keep update ownership in managed releases.",
+      "sourceIds": [
+        "exam-d1-s08"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:alm-release-preflight",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Allow local target edits as the normal source of future configuration changes."
+        },
+        {
+          "id": "o2",
+          "text": "Ignore installed solution versions if the configuration names match."
+        },
+        {
+          "id": "o3",
+          "text": "Keep source and target installed solution versions in parity."
+        },
+        {
+          "id": "o4",
+          "text": "Import the release as unmanaged to suppress all active customizations automatically."
+        },
+        {
+          "id": "o5",
+          "text": "Deliver managed configuration changes through managed solution imports."
+        }
+      ],
+      "correctOptionIds": [
+        "o3",
+        "o5"
+      ],
+      "optionExplanations": {
+        "o1": "Local target edits create active customizations and undermine later updates.",
+        "o2": "Names do not establish the documented version parity.",
+        "o3": "Version parity is an explicit import prerequisite.",
+        "o4": "An unmanaged import is not the documented managed-update approach.",
+        "o5": "The documented approach keeps changes in managed imports."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n02"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q27",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.2.03"
+      ],
+      "conceptId": "alm-active-layer-precedence",
+      "prompt": "A managed configuration was imported, then edited directly in the target. A later managed release imports successfully, but the target still behaves according to the local edit. Which explanation best fits the documented ALM behavior?",
+      "answer": "The active customization can take precedence over the managed update.",
+      "explanation": "Successful import and effective runtime values can diverge when a target active customization remains above the managed layer.",
+      "sourceIds": [
+        "exam-d1-s08"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:alm-active-layer-precedence",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "A successful import guarantees that the newest managed values override every local customization."
+        },
+        {
+          "id": "o2",
+          "text": "A newer managed solution always takes precedence over the active local layer solely because its version increased."
+        },
+        {
+          "id": "o3",
+          "text": "The solution version inventory alone determines runtime property values, independent of component layers."
+        },
+        {
+          "id": "o4",
+          "text": "The active customization can take precedence over the managed update."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "Import success does not override an active layer that masks the managed values.",
+        "o2": "The documented active layer can mask future managed configuration updates.",
+        "o3": "Installed versions do not remove the active-layer precedence described for this case.",
+        "o4": "An active layer can mask later imported managed changes."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n02"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q28",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.2.03"
+      ],
+      "conceptId": "alm-managed-configuration-removal",
+      "prompt": "A retired configuration exists only because a managed solution supplied it. The team has assessed that solution contents and dependencies and approved its removal. Which cleanup path does the Contact Center guidance prescribe?",
+      "answer": "Delete the managed solution that introduced the configuration.",
+      "explanation": "Managed ownership determines the documented removal operation. The solution impact assessment in the stem is essential to this cleanup decision.",
+      "sourceIds": [
+        "exam-d1-s08"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:alm-managed-configuration-removal",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Delete the managed solution that introduced the configuration."
+        },
+        {
+          "id": "o2",
+          "text": "Delete the target managed configuration record directly using a bulk record deletion operation."
+        },
+        {
+          "id": "o3",
+          "text": "Remove only an active customization and assume that also uninstalls the underlying managed configuration."
+        },
+        {
+          "id": "o4",
+          "text": "Remove the component from an unmanaged target container and assume its managed ownership disappears."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "Removal is performed through the supplying managed solution.",
+        "o2": "The guide does not allow target record-level deletion of imported managed configuration.",
+        "o3": "Removing an override is not the documented removal of the supplying managed configuration.",
+        "o4": "Unmanaged container membership does not delete the supplying managed solution ownership."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n11"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q29",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.2.02"
+      ],
+      "conceptId": "channel-migration-excluded-dependencies",
+      "prompt": "A migration plan uses the documented channel configuration procedure. Templates, skill rules, new capacity profiles, queues, and workstreams are in the procedure work package. Which TWO additional work packages must be planned separately because the procedure explicitly excludes them? Choose TWO.",
+      "answer": "Channel provider and account setup. Agent configuration plus AI and analytics settings.",
+      "explanation": "Migration scope is a deployment boundary: channel configuration movement does not establish readiness of the excluded integrations and services.",
+      "sourceIds": [
+        "exam-d1-s09"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:channel-migration-excluded-dependencies",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Channel provider and account setup."
+        },
+        {
+          "id": "o2",
+          "text": "Session and notification template configuration."
+        },
+        {
+          "id": "o3",
+          "text": "Queue configuration."
+        },
+        {
+          "id": "o4",
+          "text": "Agent configuration plus AI and analytics settings."
+        },
+        {
+          "id": "o5",
+          "text": "New capacity profile configuration."
+        }
+      ],
+      "correctOptionIds": [
+        "o1",
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "These are explicitly excluded from the documented scope.",
+        "o2": "Templates are listed in the migration sequence.",
+        "o3": "Queues are included in that sequence.",
+        "o4": "These settings are explicitly outside the procedure scope.",
+        "o5": "New capacity profiles are included in the sequence."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n11"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q30",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.2.02"
+      ],
+      "conceptId": "channel-migration-dependency-order",
+      "prompt": "A migration runbook imports channel workstreams first and plans to import their templates, skill rules, capacity profiles, and queues afterward. Permissions and custom schema are already ready. What change aligns the runbook with the documented dependency sequence?",
+      "answer": "Move the documented dependencies before channel workstreams/settings.",
+      "explanation": "Import foundational routing configuration before channel workstreams and settings, then verify the assembled target.",
+      "sourceIds": [
+        "exam-d1-s09"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:channel-migration-dependency-order",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Verify workstreams before their dependencies arrive."
+        },
+        {
+          "id": "o2",
+          "text": "Import all channel workstreams before importing queues and template dependencies."
+        },
+        {
+          "id": "o3",
+          "text": "Move the documented dependencies before channel workstreams/settings."
+        },
+        {
+          "id": "o4",
+          "text": "Skip template migration when names already match."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "Verification follows the assembled configuration, not missing dependencies.",
+        "o2": "This retains the reversed dependency sequence.",
+        "o3": "Templates, skills, profiles and queues precede channel workstreams/settings.",
+        "o4": "Matching names do not replace the documented configuration migration."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n11"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q31",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.2.02"
+      ],
+      "conceptId": "channel-migration-user-associations",
+      "prompt": "A channel migration imported skill-based rules and capacity profiles, and the target rules render without errors. Intended representative accounts and roles exist. Before accepting their skill/profile-based assignments, which additional target verification work does the documented procedure call for?",
+      "answer": "Establish the target user/resource skill and capacity-profile associations.",
+      "explanation": "Configuration import success leaves target user/resource associations as a separate verification responsibility.",
+      "sourceIds": [
+        "exam-d1-s09"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:channel-migration-user-associations",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Reimport unchanged workstreams and treat error-free rendering as proof of representative readiness."
+        },
+        {
+          "id": "o2",
+          "text": "Establish the target user/resource skill and capacity-profile associations."
+        },
+        {
+          "id": "o3",
+          "text": "Raise the default capacity limits and assume the relevant user/profile associations then exist."
+        },
+        {
+          "id": "o4",
+          "text": "Treat matching source and target ruleset names as sufficient without checking user/resource links."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "Rendering checks do not establish the required target user/resource associations.",
+        "o2": "Verification explicitly requires these target associations.",
+        "o3": "A higher limit does not establish the required associations.",
+        "o4": "Names do not establish the manual linking, association or creation steps in verification."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n11"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q32",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.2.04"
+      ],
+      "conceptId": "environment-minimal-copy-scope",
+      "prompt": "A team needs a test environment containing schema and customizations but no source business data. It will create its own channels and workstreams after the documented channel reset step. Which copy choice matches the plan?",
+      "answer": "Minimal copy, with the documented channel preparation.",
+      "explanation": "Choose the copy scope based on data needs; minimal copy requires its documented channel preparation.",
+      "sourceIds": [
+        "exam-d1-s10"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:environment-minimal-copy-scope",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Full copy, retaining source business data."
+        },
+        {
+          "id": "o2",
+          "text": "Minimal copy, leaving channels unchanged and assuming copied business data is available for testing."
+        },
+        {
+          "id": "o3",
+          "text": "Managed solution import alone, treating that operation as a copy of the entire source environment."
+        },
+        {
+          "id": "o4",
+          "text": "Minimal copy, with the documented channel preparation."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "A full copy includes source data.",
+        "o2": "Minimal copy excludes source data and requires documented channel preparation.",
+        "o3": "A solution import is not the requested environment-copy option.",
+        "o4": "Minimal copy copies schema/customizations without source data and has documented channel follow-up."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n12"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q33",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.2.04"
+      ],
+      "conceptId": "copy-chat-and-record-routing",
+      "prompt": "After a full omnichannel environment copy, the team prepares an isolated target website and target record routing. Other channel integrations are already reviewed. Which TWO actions address these specific target requirements? Choose TWO.",
+      "answer": "Replace the website snippet with the target-generated chat snippet. Configure and validate record routing separately in the target.",
+      "explanation": "Website integration and record routing each need their own target action; a full Dataverse copy is not an acceptance test for either.",
+      "sourceIds": [
+        "exam-d1-s10"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:copy-chat-and-record-routing",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Keep the source website snippet because both environments contain similarly named workstreams."
+        },
+        {
+          "id": "o2",
+          "text": "Replace the website snippet with the target-generated chat snippet."
+        },
+        {
+          "id": "o3",
+          "text": "Assume record-routing configuration is supported by the copy and skip its target configuration."
+        },
+        {
+          "id": "o4",
+          "text": "Use source credentials as proof that target routing works."
+        },
+        {
+          "id": "o5",
+          "text": "Configure and validate record routing separately in the target."
+        }
+      ],
+      "correctOptionIds": [
+        "o2",
+        "o5"
+      ],
+      "optionExplanations": {
+        "o1": "The source snippet targets the source integration.",
+        "o2": "The copied target generates its own widget configuration.",
+        "o3": "The documentation excludes supported copying of record-routing configuration.",
+        "o4": "Credential reuse does not validate target routing.",
+        "o5": "The documented copy guidance calls for separate target configuration and validation."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n12"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q34",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.2.04"
+      ],
+      "conceptId": "copy-acs-resource-isolation",
+      "prompt": "A full copy of an existing ACS-backed voice environment leaves the target referencing the source ACS resource. The source must keep serving its users. Which target plan follows the copy guidance?",
+      "answer": "Replace the copied target ACS reference with target-specific voice resources.",
+      "explanation": "Isolate the target ACS integration while preserving the source. This concerns an existing copied configuration, not availability of new standalone ACS provisioning.",
+      "sourceIds": [
+        "exam-d1-s10"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:copy-acs-resource-isolation",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Replace the copied target ACS reference with target-specific voice resources."
+        },
+        {
+          "id": "o2",
+          "text": "Share the source ACS resource between the two environments."
+        },
+        {
+          "id": "o3",
+          "text": "Disconnect the source and keep the target reference unchanged."
+        },
+        {
+          "id": "o4",
+          "text": "Rename the target workstream and keep the shared ACS resource."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "The guidance requires environment-specific resource and number configuration.",
+        "o2": "A resource can be used in one environment only under this guidance.",
+        "o3": "This does not provide the target-specific integration and jeopardizes the source requirement.",
+        "o4": "A workstream rename does not correct the environment-specific external resource dependency."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n12"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q35",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.2.04"
+      ],
+      "conceptId": "copy-teams-channel-cross-environment-link",
+      "prompt": "A copied Microsoft Teams messaging account still references the source agent/application. The target must operate independently. Which remediation follows the environment-copy guidance?",
+      "answer": "Recreate the target Teams channel and its target associations.",
+      "explanation": "Review external associations after copying; copied messaging records can retain a source agent/application dependency.",
+      "sourceIds": [
+        "exam-d1-s10"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:copy-teams-channel-cross-environment-link",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Keep the copied messaging account and change only its workstream association while retaining the source agent/application reference."
+        },
+        {
+          "id": "o2",
+          "text": "Publish a target agent but keep the copied messaging account linked to the source application."
+        },
+        {
+          "id": "o3",
+          "text": "Recreate the target Teams channel and its target associations."
+        },
+        {
+          "id": "o4",
+          "text": "Reauthenticate the source-associated messaging account and treat that as a recreated target channel."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "Changing only the workstream leaves the cross-environment messaging-account dependency.",
+        "o2": "Agent publishing alone does not recreate the target-specific Teams messaging account/channel.",
+        "o3": "Recreation and target associations remove the copied source dependency.",
+        "o4": "Refreshing authentication alone is not the documented target channel recreation and association process."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n12"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q36",
+      "revision": 2,
+      "kind": "multiple",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.2.04"
+      ],
+      "conceptId": "copy-agent-validation-and-publication",
+      "prompt": "An omnichannel copy includes a Copilot agent configuration. All target channel resources and user permissions are ready. Before accepting agent escalation in the target, which TWO actions belong to the documented agent checks? Choose TWO.",
+      "answer": "Review connections/authentication and associate workstreams with the intended target agent. Publish the agent and test escalation and routing scenarios in the target.",
+      "explanation": "Validate the target agent dependencies, then publish and exercise its escalation path.",
+      "sourceIds": [
+        "exam-d1-s10"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:copy-agent-validation-and-publication",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Treat copied agent capability records as proof that target connections and authentication are valid."
+        },
+        {
+          "id": "o2",
+          "text": "Publish the copied agent without checking which target workstreams or connections it uses."
+        },
+        {
+          "id": "o3",
+          "text": "Review connections/authentication and associate workstreams with the intended target agent."
+        },
+        {
+          "id": "o4",
+          "text": "Validate only agent authoring availability and omit escalation and routing tests after publishing."
+        },
+        {
+          "id": "o5",
+          "text": "Publish the agent and test escalation and routing scenarios in the target."
+        }
+      ],
+      "correctOptionIds": [
+        "o3",
+        "o5"
+      ],
+      "optionExplanations": {
+        "o1": "Copied configuration must still be checked for source-environment dependencies.",
+        "o2": "Publication alone does not validate the required environment-specific associations.",
+        "o3": "Target associations and environment-specific settings must be reviewed.",
+        "o4": "The documented target acceptance includes escalation and routing scenarios.",
+        "o5": "The guidance explicitly calls for publication and scenario testing."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n12"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q37",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.3.02"
+      ],
+      "conceptId": "environment-security-group-onboarding",
+      "prompt": "A regular employee has an enabled account and the required license but is outside the security group assigned to the service environment. Other members can enter that environment. Which onboarding correction addresses the stated environment boundary?",
+      "answer": "Add the employee to the environment group, then check roles.",
+      "explanation": "Separate environment admission from subsequent data permissions; an enabled licensed account can still be outside the intended group.",
+      "sourceIds": [
+        "exam-d1-s14"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:environment-security-group-onboarding",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Add the employees account to a routing queue in the environment without changing group membership."
+        },
+        {
+          "id": "o2",
+          "text": "Assign a broader data role elsewhere and expect it to override this environments admission group."
+        },
+        {
+          "id": "o3",
+          "text": "Add the employee to the environment group, then check roles."
+        },
+        {
+          "id": "o4",
+          "text": "Create a bookable resource and assume that substitutes for environment group admission."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "Queue readiness does not override the stated admission boundary.",
+        "o2": "An unrelated role grant does not correct membership in this environment group.",
+        "o3": "This addresses environment admission, followed by data/task access.",
+        "o4": "A routing resource does not replace the environment admission requirement."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n06"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q38",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.3.02"
+      ],
+      "conceptId": "nested-group-team-provisioning",
+      "prompt": "A service environment security group contains a nested Entra group of new representatives. The owner expects those nested members to be pre-provisioned automatically with data access. Which supported design corrects that expectation while retaining group-based role management?",
+      "answer": "Use a Dataverse group team for the nested group and grant its role.",
+      "explanation": "Nested group membership is not automatic role provisioning; use the documented group-team path for group-managed access.",
+      "sourceIds": [
+        "exam-d1-s14"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:nested-group-team-provisioning",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Use a Dataverse group team for the nested group and grant its role."
+        },
+        {
+          "id": "o2",
+          "text": "Rely on the nested relationship alone."
+        },
+        {
+          "id": "o3",
+          "text": "Assume nesting alone assigns each member an individual Dataverse security role without a group team."
+        },
+        {
+          "id": "o4",
+          "text": "Assign all nested members to a queue and treat queue membership as their environment security role."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "The documented nested-group path uses a group team with a role.",
+        "o2": "Nested membership alone does not provide the claimed provisioning and access.",
+        "o3": "The documented nested-group approach requires a Dataverse group team and its security role rather than this automatic individual grant.",
+        "o4": "Queue membership is not a Dataverse security role grant."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n06"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q39",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.3.03"
+      ],
+      "conceptId": "representative-case-role-set",
+      "prompt": "An administrator is preparing the required role grants for a human who will handle Contact Center conversations and work with cases. Application-profile access is already arranged. Considering the three core account/task roles listed below, which THREE should be included? Choose THREE.",
+      "answer": "Basic User. Omnichannel agent. Customer Service Representative.",
+      "explanation": "Match required grants to both conversation handling and case work; a familiar representative role does not replace all account and case prerequisites.",
+      "sourceIds": [
+        "exam-d1-s16"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:representative-case-role-set",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Omnichannel API access."
+        },
+        {
+          "id": "o2",
+          "text": "Basic User."
+        },
+        {
+          "id": "o3",
+          "text": "Omnichannel agent."
+        },
+        {
+          "id": "o4",
+          "text": "Omnichannel supervisor instead of the representative role."
+        },
+        {
+          "id": "o5",
+          "text": "Customer Service Representative."
+        }
+      ],
+      "correctOptionIds": [
+        "o2",
+        "o3",
+        "o5"
+      ],
+      "optionExplanations": {
+        "o1": "The guidance says not to assign API access to representative/supervisor users.",
+        "o2": "Basic User is required for Contact Center users.",
+        "o3": "This supplies the representative task role.",
+        "o4": "The task is representative work, not replacing it with supervisory duties.",
+        "o5": "Working with cases requires this role."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n06"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q40",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.3.01"
+      ],
+      "conceptId": "representative-bookable-resource-readiness",
+      "prompt": "A new representative can sign in and open the permitted application. Standard task roles, queue membership, and the intended skill/capacity configuration have been checked, but the user has not completed unified-routing onboarding. Which user-level routing prerequisite should the administrator inspect next?",
+      "answer": "Configure the users bookable resource and routing associations.",
+      "explanation": "Application access and routing resource readiness are separate onboarding layers.",
+      "sourceIds": [
+        "exam-d1-s11"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:representative-bookable-resource-readiness",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Repeat application access grants and treat permitted UI access as complete routing onboarding."
+        },
+        {
+          "id": "o2",
+          "text": "Configure the users bookable resource and routing associations."
+        },
+        {
+          "id": "o3",
+          "text": "Grant an administrator role instead of completing the user routing-resource setup."
+        },
+        {
+          "id": "o4",
+          "text": "Copy another users queue memberships without checking this users bookable-resource configuration."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "Application access does not establish the required routing resource.",
+        "o2": "A bookable resource is required for unified-routing assignment.",
+        "o3": "Broad privileges do not replace the documented bookable-resource prerequisite.",
+        "o4": "Membership is already checked and does not establish this users resource."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n06"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q41",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.3.01"
+      ],
+      "conceptId": "representative-sign-in-presence",
+      "prompt": "Representatives have the correct queue, resource and skills configuration. The business wants them to sign in initially with a training presence before they deliberately become available. Which user setting controls that initial workspace status?",
+      "answer": "The representatives Default Presence.",
+      "explanation": "Use the user initial-presence setting rather than changing routing selection or workload reset behavior.",
+      "sourceIds": [
+        "exam-d1-s11"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:representative-sign-in-presence",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "The assignment method of the queue that receives the representatives first conversation."
+        },
+        {
+          "id": "o2",
+          "text": "The representatives current skill rating within the highest-priority queue."
+        },
+        {
+          "id": "o3",
+          "text": "The reset frequency on the capacity profile assigned to the representative."
+        },
+        {
+          "id": "o4",
+          "text": "The representatives Default Presence."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "The queue method ranks eligible representatives, not their initial sign-in status.",
+        "o2": "Proficiency expresses skill level rather than initial presence.",
+        "o3": "Reset frequency manages capacity consumption.",
+        "o4": "This sets the presence used at workspace sign-in."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n06"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q42",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.3.01"
+      ],
+      "conceptId": "representative-deactivated-skill-eligibility",
+      "prompt": "During a temporary reassignment, an administrator deactivates a representative skill rather than removing its record. A new work item requires that skill. What should the administrator expect while the skill remains deactivated?",
+      "answer": "Exclude that skill as a qualification while it is deactivated.",
+      "explanation": "A retained but deactivated skill is not an active qualification for matching required work.",
+      "sourceIds": [
+        "exam-d1-s11"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:representative-deactivated-skill-eligibility",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Exclude that skill as a qualification while it is deactivated."
+        },
+        {
+          "id": "o2",
+          "text": "Treat the saved skill rating as an active qualification until the user record is removed."
+        },
+        {
+          "id": "o3",
+          "text": "Continue using the inactive skill because its bookable-resource characteristic still exists."
+        },
+        {
+          "id": "o4",
+          "text": "Increase the skill rating automatically to compensate for the representatives temporary reassignment."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "The documented user-management behavior excludes the user for matching deactivated skill requirements.",
+        "o2": "The deactivated skill does not qualify the user merely because its rating record remains.",
+        "o3": "An existing characteristic record does not override deactivation.",
+        "o4": "Deactivation does not automatically change proficiency."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n06"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q43",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.3.03"
+      ],
+      "conceptId": "security-cumulative-role-audit",
+      "prompt": "A user retains a broad security role and receives a new custom role with narrower data privileges. The owner expects the new role to remove the broader access, but it remains. What should the access review conclude?",
+      "answer": "The broader assigned role still grants its cumulative permissions.",
+      "explanation": "Review the full role set when reducing access; adding a narrower grant does not subtract an existing broader grant.",
+      "sourceIds": [
+        "exam-d1-s15"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:security-cumulative-role-audit",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Let the newest role replace all older grants."
+        },
+        {
+          "id": "o2",
+          "text": "The narrow role restricts the broad role only after the user is mapped to an Agent persona."
+        },
+        {
+          "id": "o3",
+          "text": "The broader assigned role still grants its cumulative permissions."
+        },
+        {
+          "id": "o4",
+          "text": "A custom role automatically becomes a deny layer whenever its permissions are narrower."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "Role assignment order does not supply deny precedence.",
+        "o2": "Persona mapping does not make role combination subtractive.",
+        "o3": "Assigned security roles accumulate permissions.",
+        "o4": "A narrower grant does not become a deny layer."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n07"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q44",
+      "revision": 2,
+      "kind": "multiple",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.3.03"
+      ],
+      "conceptId": "custom-role-surface-access",
+      "prompt": "A copied custom representative role has reviewed privileges and is mapped to the Agent persona. The team has not configured access to user-interface surfaces. Which TWO remaining access areas must be configured separately? Choose TWO.",
+      "answer": "The allowed applications. The forms and dashboards the role must use.",
+      "explanation": "A functional custom role requires persona mapping plus explicit application, form and dashboard access.",
+      "sourceIds": [
+        "exam-d1-s12"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:custom-role-surface-access",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "The allowed applications."
+        },
+        {
+          "id": "o2",
+          "text": "Map the custom role to the Agent persona again and assume that automatically grants every app and form."
+        },
+        {
+          "id": "o3",
+          "text": "Expand record privileges only and assume application, form and dashboard access no longer need configuration."
+        },
+        {
+          "id": "o4",
+          "text": "The forms and dashboards the role must use."
+        },
+        {
+          "id": "o5",
+          "text": "Assign the role to more users before enabling any application, form or dashboard access."
+        }
+      ],
+      "correctOptionIds": [
+        "o1",
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "Application access must be enabled separately.",
+        "o2": "Persona mapping does not replace separate application and surface access configuration.",
+        "o3": "Table privileges are distinct from enabling the role for the required user-interface surfaces.",
+        "o4": "Forms and dashboards need their access configured.",
+        "o5": "More assignments do not fix missing surface access for the role."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n07"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q45",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.3.03"
+      ],
+      "conceptId": "custom-role-appropriate-baseline",
+      "prompt": "A service team wants a reduced custom role for temporary representatives. The role must retain the required Contact Center feature access while unnecessary privileges are reviewed. Which starting approach follows the documented custom-role guidance?",
+      "answer": "Copy an appropriate representative role, then review privileges.",
+      "explanation": "Use a task-appropriate role baseline and review minimum privileges rather than relying on persona mapping to repair an incomplete role.",
+      "sourceIds": [
+        "exam-d1-s12"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:custom-role-appropriate-baseline",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Use an empty role and let persona mapping fill its privileges."
+        },
+        {
+          "id": "o2",
+          "text": "Copy an appropriate representative role, then review privileges."
+        },
+        {
+          "id": "o3",
+          "text": "Copy an administrator role and retain every privilege."
+        },
+        {
+          "id": "o4",
+          "text": "Reuse an unrelated role without reviewing record access."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "Omitting minimum privileges can break required features.",
+        "o2": "The guidance recommends copying an appropriate existing role and customizing it.",
+        "o3": "Unneeded full administrative access conflicts with the stated role design.",
+        "o4": "An unrelated role may lack the task-specific minimum access levels."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n07"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q46",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.3.04"
+      ],
+      "conceptId": "capacity-default-change-preserves-overrides",
+      "prompt": "A shared capacity profile has a default work limit and selected representatives have explicit custom limits. The administrator changes only the profile default. Once the configuration has synchronized, which result should be expected?",
+      "answer": "Default users change; explicit custom limits stay effective.",
+      "explanation": "Separate profile-wide default edits from representative-specific overrides during rollout.",
+      "sourceIds": [
+        "exam-d1-s13"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:capacity-default-change-preserves-overrides",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Every custom limit is automatically cleared."
+        },
+        {
+          "id": "o2",
+          "text": "Only users handling conversations inherit the change."
+        },
+        {
+          "id": "o3",
+          "text": "The new default supersedes every custom limit after synchronization completes successfully."
+        },
+        {
+          "id": "o4",
+          "text": "Default users change; explicit custom limits stay effective."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "A default edit does not clear the overrides.",
+        "o2": "The documented distinction is custom versus default, not current conversation state.",
+        "o3": "Custom limits remain effective until reset.",
+        "o4": "The change affects default users while preserving explicit overrides."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n08"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q47",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.3.04"
+      ],
+      "conceptId": "capacity-lower-limit-existing-work",
+      "prompt": "A representative already holds more work than a newly lowered custom capacity-profile limit. The administrator expects the setting to protect future workload without disturbing those assignments. What is the documented effect?",
+      "answer": "Apply it to new work; keep existing assignments.",
+      "explanation": "A limit change controls new assignment eligibility; it is not an automatic redistribution action.",
+      "sourceIds": [
+        "exam-d1-s13"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:capacity-lower-limit-existing-work",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Return excess existing conversations to the queue as soon as the lowered setting synchronizes."
+        },
+        {
+          "id": "o2",
+          "text": "Reject the configuration edit whenever used capacity already exceeds the newly requested limit."
+        },
+        {
+          "id": "o3",
+          "text": "Apply it to new work; keep existing assignments."
+        },
+        {
+          "id": "o4",
+          "text": "Temporarily substitute the profile default for the custom limit until all existing conversations close."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "The setting does not redistribute current work.",
+        "o2": "The documentation describes applying the new limit to future assignments.",
+        "o3": "Existing assignments remain while new assignment uses the limit.",
+        "o4": "The custom limit is not temporarily replaced this way."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n08"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q48",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.3.04"
+      ],
+      "conceptId": "capacity-reset-frequency-recreation",
+      "prompt": "A profile was created with Immediate reset frequency. A revised operating model needs End of day reset. The administrator can edit its limit but cannot make this lifecycle change as an ordinary setting update. What should be planned?",
+      "answer": "Recreate the profile with the required reset frequency.",
+      "explanation": "Treat reset-frequency changes as profile recreation, with the affected user and workstream associations included in planning.",
+      "sourceIds": [
+        "exam-d1-s13"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:capacity-reset-frequency-recreation",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Recreate the profile with the required reset frequency."
+        },
+        {
+          "id": "o2",
+          "text": "Edit a custom limit to change reset behavior."
+        },
+        {
+          "id": "o3",
+          "text": "Keep the profile and change the workstream wrap-up time to implement an End of day reset."
+        },
+        {
+          "id": "o4",
+          "text": "Reassign users to the same profile and expect that association change to rewrite its reset frequency."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "Reset frequency is the documented setting that requires profile recreation.",
+        "o2": "Limit values do not change reset frequency.",
+        "o3": "Workstream wrap-up time does not change the profile reset frequency.",
+        "o4": "User association does not change an immutable reset-frequency setting."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n08"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q49",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.3.04"
+      ],
+      "conceptId": "capacity-end-of-day-open-work",
+      "prompt": "A daily capacity profile uses End of day reset. A representative finishes a shift with some conversations still open. What does the documented reset behavior mean for the next shift?",
+      "answer": "Reset consumption; open work does not count in the next shift limit.",
+      "explanation": "An End of day reset concerns capacity consumption, not closure or deletion of existing conversations.",
+      "sourceIds": [
+        "exam-d1-s13"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:capacity-end-of-day-open-work",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Close all open conversations automatically."
+        },
+        {
+          "id": "o2",
+          "text": "Reset consumption; open work does not count in the next shift limit."
+        },
+        {
+          "id": "o3",
+          "text": "Retain all used capacity until every open conversation from the earlier shift has closed."
+        },
+        {
+          "id": "o4",
+          "text": "Switch the profile to Immediate reset."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "Resetting consumption is not automatic conversation closure.",
+        "o2": "This is the documented End of day behavior.",
+        "o3": "This contradicts the described reset of consumption for the next shift.",
+        "o4": "The configured reset frequency does not change itself."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n08"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q50",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.3.04"
+      ],
+      "conceptId": "capacity-override-return-to-default",
+      "prompt": "A pilot representative has a custom capacity-profile limit. The business now wants the representative to inherit future profile-default changes again. Which TWO documented actions belong to the update process? Choose TWO.",
+      "answer": "Clear the Custom limit field and save. Ask the affected representative to refresh the browser so presence can update.",
+      "explanation": "Clear the override rather than copying its current default value, and complete the documented representative refresh step.",
+      "sourceIds": [
+        "exam-d1-s13"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:capacity-override-return-to-default",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Copy the current default into Custom limit and keep the explicit value so future defaults are inherited."
+        },
+        {
+          "id": "o2",
+          "text": "Clear the Custom limit field and save."
+        },
+        {
+          "id": "o3",
+          "text": "Ask the affected representative to refresh the browser so presence can update."
+        },
+        {
+          "id": "o4",
+          "text": "Change the default limit again while leaving the representatives custom limit populated."
+        },
+        {
+          "id": "o5",
+          "text": "Reenter the same custom limit and assume that a new save removes its override status."
+        }
+      ],
+      "correctOptionIds": [
+        "o2",
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "A populated field remains an override.",
+        "o2": "Clearing resets inheritance.",
+        "o3": "Refresh is part of the documented update process.",
+        "o4": "Another default edit does not clear the override.",
+        "o5": "Resaving the same explicit value leaves a custom override."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n08"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "ab250-d1-q51",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.3.04"
+      ],
+      "conceptId": "capacity-negative-manual-assignment-diagnosis",
+      "prompt": "A supervisor manually assigns an additional conversation when a representative is already at the configured capacity. The capacity display becomes negative. Which interpretation matches the documented behavior?",
+      "answer": "Manual or forced assignment can produce negative capacity.",
+      "explanation": "Distinguish manual/forced assignment from automatic eligibility before treating a negative capacity display as an automatic-routing failure.",
+      "sourceIds": [
+        "exam-d1-s13"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:capacity-negative-manual-assignment-diagnosis",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "The negative value proves that the representative has no capacity profile association at all."
+        },
+        {
+          "id": "o2",
+          "text": "The single manual assignment proves automatic capacity checks have been disabled for every queue."
+        },
+        {
+          "id": "o3",
+          "text": "The configured capacity value must be treated as an absolute limit on all manual assignments."
+        },
+        {
+          "id": "o4",
+          "text": "Manual or forced assignment can produce negative capacity."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "A negative value alone does not establish a missing profile.",
+        "o2": "This event does not prove an organization-wide automatic-routing defect.",
+        "o3": "Manual or forced assignments can exceed configured capacity; it is not an absolute prevention of all such assignments.",
+        "o4": "Manual or forced work can exceed capacity and display a negative balance."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n08"
+        }
+      ],
+      "status": "draft"
+    }
+  ],
+  "editorial": [
+    {
+      "id": "ab250-d1-q05",
+      "revision": 2,
+      "domainId": "deployment",
+      "conceptId": "connector-initial-load-completeness",
+      "objectiveIds": [
+        "D1.1.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s01",
+          "section": "Copy data",
+          "claim": "Treat historical loading separately from later event delivery. Pagination addresses the missing initial pages.",
+          "applicability": "Original scenario, scoped to the documented operation and prerequisites stated in the stem; source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Initial-load completeness; unlike q06, this diagnoses paging rather than subsequent change delivery. Strongest alternative: repairing webhooks leaves old records missing.",
+      "revisionReason": "Independent reviewer requested stronger adjacent alternatives and/or a less diagnostic stem; factual source claim retained within its documented scope."
+    },
+    {
+      "id": "ab250-d1-q06",
+      "revision": 2,
+      "domainId": "deployment",
+      "conceptId": "connector-change-delivery",
+      "objectiveIds": [
+        "D1.1.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s01",
+          "section": "Copy data; Add a connector using webhooks",
+          "claim": "Use incremental event delivery for ongoing changes; a complete initial load is a separate milestone.",
+          "applicability": "Original scenario, scoped to the documented operation and prerequisites stated in the stem; source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Change-event integration, not q05 historical paging. Strongest alternative: better pagination cannot deliver deletion notifications.",
+      "revisionReason": "Independent reviewer requested stronger adjacent alternatives and/or a less diagnostic stem; factual source claim retained within its documented scope."
+    },
+    {
+      "id": "ab250-d1-q07",
+      "revision": 2,
+      "domainId": "deployment",
+      "conceptId": "connector-record-provenance",
+      "objectiveIds": [
+        "D1.1.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s01",
+          "section": "Prerequisites",
+          "claim": "Keep both source-system identity and the source record reference in the documented account/contact columns.",
+          "applicability": "Original scenario, scoped to the documented operation and prerequisites stated in the stem; source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Identity collision and navigation decision; distinct from synchronization timing in q05–06. Strongest alternative: display-name matching loses source identity.",
+      "revisionReason": "Independent reviewer requested stronger adjacent alternatives and/or a less diagnostic stem; factual source claim retained within its documented scope."
+    },
+    {
+      "id": "ab250-d1-q08",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "connector-environment-alignment",
+      "objectiveIds": [
+        "D1.1.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s01",
+          "section": "Prerequisites",
+          "claim": "Check environment alignment before treating this cross-environment setup as a connector authentication defect.",
+          "applicability": "Original scenario, scoped to the documented operation and prerequisites stated in the stem; source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Environment boundary, not q05 paging/q06 trigger/q07 record identity. Strongest alternative: credential replacement does not correct selected environments."
+    },
+    {
+      "id": "ab250-d1-q09",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "salesforce-call-center-membership",
+      "objectiveIds": [
+        "D1.1.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s02",
+          "section": "Set up the call center in Salesforce",
+          "claim": "Validate the per-user Salesforce call-center association after the shared definition and layout are configured.",
+          "applicability": "Original scenario, scoped to the documented operation and prerequisites stated in the stem; source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "User-specific onboarding, unlike frozen pilot q01 adapter URL. Strongest alternative: shared utility configuration is already verified."
+    },
+    {
+      "id": "ab250-d1-q10",
+      "revision": 2,
+      "domainId": "deployment",
+      "conceptId": "salesforce-console-utility",
+      "objectiveIds": [
+        "D1.1.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s02",
+          "section": "Set up a softphone in Salesforce",
+          "claim": "Embedding includes application-level softphone setup as well as call-center configuration.",
+          "applicability": "Original scenario, scoped to the documented operation and prerequisites stated in the stem; source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Application utility surface, unlike q09 user membership and pilot q01 URL. Strongest alternative: reimporting the definition leaves the missing utility untouched.",
+      "revisionReason": "Independent reviewer requested stronger adjacent alternatives and/or a less diagnostic stem; factual source claim retained within its documented scope."
+    },
+    {
+      "id": "ab250-d1-q11",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "retained-provider-operational-ownership",
+      "objectiveIds": [
+        "D1.1.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s03",
+          "section": "Overview; Dataflow",
+          "claim": "Keep the documented architecture boundary: adding assistance does not transfer retained-provider routing and supervision duties.",
+          "applicability": "Original scenario, scoped to the documented operation and prerequisites stated in the stem; source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Only retained-provider architecture item; no third-party provisioning procedure inferred. Strongest alternative: replacing routing is a different architecture."
+    },
+    {
+      "id": "ab250-d1-q12",
+      "revision": 2,
+      "domainId": "deployment",
+      "conceptId": "embedded-salesforce-readiness",
+      "objectiveIds": [
+        "D1.1.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s02",
+          "section": "Prerequisites; Set up a softphone in Salesforce",
+          "claim": "Check the underlying contact-center service and the Salesforce softphone default, rather than treating a visible utility as full readiness.",
+          "applicability": "Original scenario, scoped to the documented operation and prerequisites stated in the stem; source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Cross-layer acceptance checklist; q09 and q10 isolate user and utility defects, while this excludes already-verified steps. Strongest alternative: broad Salesforce admin rights are unnecessary for every representative.",
+      "revisionReason": "Independent reviewer requested stronger adjacent alternatives and/or a less diagnostic stem; factual source claim retained within its documented scope."
+    },
+    {
+      "id": "ab250-d1-q13",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "workspace-session-context-navigation",
+      "objectiveIds": [
+        "D1.1.01"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s04",
+          "section": "Copilot Service workspace sessions and tabs",
+          "claim": "Sessions preserve interaction context; related customer records can open as tabs within the active session.",
+          "applicability": "Original scenario, scoped to the documented operation and prerequisites stated in the stem; source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Workspace context acceptance behavior, not a role or embedded adapter recall item. Strongest alternative: a new session would detach related record navigation from its existing interaction context."
+    },
+    {
+      "id": "ab250-d1-q14",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "simulation-keypad-acceptance-boundary",
+      "objectiveIds": [
+        "D1.1.05"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s05",
+          "section": "Things to consider",
+          "claim": "A supported inbound voice channel does not establish keypad coverage. Keep this preview limit explicit in the acceptance plan.",
+          "applicability": "Documented capabilities only; explicit preview qualification for simulation. Source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Journey coverage boundary; q15 concerns locating evidence, q16 destination addressing, q17 channel/direction/language scope. Strongest alternative: inbound voice scope alone cannot validate an unsupported keypad step."
+    },
+    {
+      "id": "ab250-d1-q15",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "simulation-evidence-location",
+      "objectiveIds": [
+        "D1.1.05"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s05",
+          "section": "Run a simulation",
+          "claim": "Use run metadata and conversation artifacts together; neither is a substitute for the other.",
+          "applicability": "Documented capabilities only; explicit preview qualification for simulation. Source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Evidence retrieval after a completed run, not sim eligibility. Strongest alternative: live monitoring does not replace the requested prompt/status history."
+    },
+    {
+      "id": "ab250-d1-q16",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "simulation-destination-number",
+      "objectiveIds": [
+        "D1.1.05"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s05",
+          "section": "Things to consider",
+          "claim": "Distinguish the receiving workstream number from the caller number supplied by the simulation service.",
+          "applicability": "Documented capabilities only; explicit preview qualification for simulation. Source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Addressing direction, not q14 feature support or q15 artifacts. Strongest alternative: a regional caller ID is not the destination to exercise."
+    },
+    {
+      "id": "ab250-d1-q17",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "simulation-supported-journey-selection",
+      "objectiveIds": [
+        "D1.1.05"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s05",
+          "section": "Overview; Things to consider",
+          "claim": "Select a supported journey before interpreting its run as validation evidence: the preview scope is English inbound voice.",
+          "applicability": "Documented capabilities only; explicit preview qualification for simulation. Source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Channel/direction/language eligibility across competing test journeys; q14 isolates DTMF and q16 distinguishes caller and destination numbers. Strongest alternative: spoken French still falls outside the published language scope."
+    },
+    {
+      "id": "ab250-d1-q18",
+      "revision": 2,
+      "domainId": "deployment",
+      "conceptId": "service-operations-mcp-diagnosis",
+      "objectiveIds": [
+        "D1.1.07"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s06",
+          "section": "Steps to access",
+          "claim": "Investigate the documented environment connection when supported retrieval and action requests fail together.",
+          "applicability": "Service Operations Agent configuration/access in Dynamics365 Contact Center; documented roles/billing/connection prerequisites and stated supported-operation boundary; exact section reviewed2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Connection diagnosis, not q19 monitoring setup or q20 unsupported operation. Strongest alternative: repairing queue data is premature when the agent cannot access environment information.",
+      "revisionReason": "Independent reviewer requested stronger adjacent alternatives and/or a less diagnostic stem; factual source claim retained within its documented scope."
+    },
+    {
+      "id": "ab250-d1-q19",
+      "revision": 2,
+      "domainId": "deployment",
+      "conceptId": "service-operations-troubleshooting-observability",
+      "objectiveIds": [
+        "D1.1.07"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s06",
+          "section": "Prerequisites",
+          "claim": "Monitoring provisioning and the Contact Center connection are separate prerequisites for this troubleshooting path.",
+          "applicability": "Service Operations Agent configuration/access in Dynamics365 Contact Center; documented roles/billing/connection prerequisites and stated supported-operation boundary; exact section reviewed2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Observability setup, unlike q18 operational MCP connection or routing tool limits. Strongest alternative: broad administrative access does not provide missing monitoring.",
+      "revisionReason": "Independent reviewer requested stronger adjacent alternatives and/or a less diagnostic stem; factual source claim retained within its documented scope."
+    },
+    {
+      "id": "ab250-d1-q20",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "service-operations-condition-authoring-boundary",
+      "objectiveIds": [
+        "D1.1.07"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s06",
+          "section": "Create and manage routing rules",
+          "claim": "Separate supported rule creation from unsupported condition authoring; use the manual configuration path for the latter.",
+          "applicability": "Service Operations Agent configuration/access in Dynamics365 Contact Center; documented roles/billing/connection prerequisites and stated supported-operation boundary; exact section reviewed2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Unsupported operation boundary; q18 is a supported-operation failure. Strongest alternative: privilege escalation does not change the documented tool contract."
+    },
+    {
+      "id": "ab250-d1-q21",
+      "revision": 3,
+      "domainId": "deployment",
+      "conceptId": "rollout-enabled-agent-prerequisite",
+      "objectiveIds": [
+        "D1.2.01"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s07",
+          "section": "Prerequisite; Create rollout plans",
+          "claim": "Rollout manager uses existing enabled agent configurations; it does not remove the enablement prerequisite.",
+          "applicability": "Rollout manager for enabled autonomous agents using existing configurations; prerequisite/plan action/agent-specific lifecycle only as stated; exact section reviewed2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Lifecycle entry prerequisite; q22 schedules a ready plan and q23 handles stopping plans. Strongest alternative: a future schedule cannot supply missing prerequisite configuration.",
+      "revisionReason": "Independent reviewer requested removal of the explicit missing-agent-activation diagnosis from the stem; the learner now chooses the supported setup/plan lifecycle order."
+    },
+    {
+      "id": "ab250-d1-q22",
+      "revision": 2,
+      "domainId": "deployment",
+      "conceptId": "rollout-scheduled-activation",
+      "objectiveIds": [
+        "D1.2.01"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s07",
+          "section": "Manage rollout plans",
+          "claim": "Use the plan lifecycle action that explicitly supports future automatic enablement.",
+          "applicability": "Rollout manager for enabled autonomous agents using existing configurations; prerequisite/plan action/agent-specific lifecycle only as stated; exact section reviewed2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Timed activation of an already-ready plan, not q21 readiness or q24 multi-agent scope. Strongest alternative: ordinary deactivation has no future activation instruction.",
+      "revisionReason": "Independent reviewer requested stronger adjacent alternatives and/or a less diagnostic stem; factual source claim retained within its documented scope."
+    },
+    {
+      "id": "ab250-d1-q23",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "rollout-stop-effects-by-agent",
+      "objectiveIds": [
+        "D1.2.01"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s07",
+          "section": "Considerations for rollout plans",
+          "claim": "Plan deactivation has agent-specific effects; verify the underlying settings or rules instead of assuming a universal stop behavior.",
+          "applicability": "Rollout manager for enabled autonomous agents using existing configurations; prerequisite/plan action/agent-specific lifecycle only as stated; exact section reviewed2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Stop lifecycle comparison; differs from q21 enabling, q22 scheduling and q24 plan composition. Strongest alternative: treating all underlying agent settings identically contradicts the documented distinction."
+    },
+    {
+      "id": "ab250-d1-q24",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "rollout-combined-scope",
+      "objectiveIds": [
+        "D1.2.01"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s07",
+          "section": "Create rollout plans; Considerations",
+          "claim": "Plan composition can span agents while their detailed settings remain in the documented administration surfaces.",
+          "applicability": "Rollout manager for enabled autonomous agents using existing configurations; prerequisite/plan action/agent-specific lifecycle only as stated; exact section reviewed2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Plan composition and configuration ownership, not enable/schedule/stop. Strongest alternative: copying settings creates the redundant control model the documented manager avoids."
+    },
+    {
+      "id": "ab250-d1-q25",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "alm-development-release-artifact",
+      "objectiveIds": [
+        "D1.2.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s08",
+          "section": "Managed vs. unmanaged solutions",
+          "claim": "Maintain an editable source configuration and distribute its managed export to target environments.",
+          "applicability": "The documented configuration migration or environment-copy operation specified in the stem, not autonomous migration. Source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Artifact design, not pilot schema/permission prerequisites or layer diagnostics. Strongest alternative: an unmanaged target import does not follow the recommended release model."
+    },
+    {
+      "id": "ab250-d1-q26",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "alm-release-preflight",
+      "objectiveIds": [
+        "D1.2.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s08",
+          "section": "Environment parity; Update of configuration and active layers",
+          "claim": "Check platform-solution parity and keep update ownership in managed releases.",
+          "applicability": "The documented configuration migration or environment-copy operation specified in the stem, not autonomous migration. Source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Release policy preflight; q25 chooses the initial artifact, q27 diagnoses an existing override. Strongest alternative: local target editing makes later source updates unreliable."
+    },
+    {
+      "id": "ab250-d1-q27",
+      "revision": 2,
+      "domainId": "deployment",
+      "conceptId": "alm-active-layer-precedence",
+      "objectiveIds": [
+        "D1.2.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s08",
+          "section": "Update of configuration and active layers",
+          "claim": "Successful import and effective runtime values can diverge when a target active customization remains above the managed layer.",
+          "applicability": "The documented configuration migration or environment-copy operation specified in the stem, not autonomous migration. Source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Behavioral cause after a known local edit; frozen pilot q03 asks which diagnostic view compares properties, not why an update is masked. Strongest alternative: import success does not prove managed-layer precedence.",
+      "revisionReason": "Independent reviewer requested stronger adjacent alternatives and/or a less diagnostic stem; factual source claim retained within its documented scope."
+    },
+    {
+      "id": "ab250-d1-q28",
+      "revision": 2,
+      "domainId": "deployment",
+      "conceptId": "alm-managed-configuration-removal",
+      "objectiveIds": [
+        "D1.2.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s08",
+          "section": "Deletion of managed configuration records",
+          "claim": "Managed ownership determines the documented removal operation. The solution impact assessment in the stem is essential to this cleanup decision.",
+          "applicability": "The documented configuration migration or environment-copy operation specified in the stem, not autonomous migration. Source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Managed removal, distinct from q25 packaging/q26 release/q27 override and pilot layer inspection. Strongest alternative: record-level deletion ignores managed ownership.",
+      "revisionReason": "Independent reviewer requested stronger adjacent alternatives and/or a less diagnostic stem; factual source claim retained within its documented scope."
+    },
+    {
+      "id": "ab250-d1-q29",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "channel-migration-excluded-dependencies",
+      "objectiveIds": [
+        "D1.2.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s09",
+          "section": "Prerequisites: Important; Channel configuration migration steps",
+          "claim": "Migration scope is a deployment boundary: channel configuration movement does not establish readiness of the excluded integrations and services.",
+          "applicability": "The documented configuration migration or environment-copy operation specified in the stem, not autonomous migration. Source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Scope allocation rather than pilot q04 schema/permissions. Strongest alternative: queues and profiles already belong to the documented work package."
+    },
+    {
+      "id": "ab250-d1-q30",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "channel-migration-dependency-order",
+      "objectiveIds": [
+        "D1.2.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s09",
+          "section": "Channel configuration migration steps",
+          "claim": "Import foundational routing configuration before channel workstreams and settings, then verify the assembled target.",
+          "applicability": "The documented configuration migration or environment-copy operation specified in the stem, not autonomous migration. Source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Ordering rather than pilot schema readiness or q29 exclusions. Strongest alternative: a completed role import does not establish workstream dependencies."
+    },
+    {
+      "id": "ab250-d1-q31",
+      "revision": 2,
+      "domainId": "deployment",
+      "conceptId": "channel-migration-user-associations",
+      "objectiveIds": [
+        "D1.2.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s09",
+          "section": "Verify your migration",
+          "claim": "Configuration import success leaves target user/resource associations as a separate verification responsibility.",
+          "applicability": "The documented configuration migration or environment-copy operation specified in the stem, not autonomous migration. Source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Post-import identity associations, not pilot pre-import permissions/schema or q30 import order. Strongest alternative: error-free rendering alone does not establish representative eligibility.",
+      "revisionReason": "Independent reviewer requested stronger adjacent alternatives and/or a less diagnostic stem; factual source claim retained within its documented scope."
+    },
+    {
+      "id": "ab250-d1-q32",
+      "revision": 2,
+      "domainId": "deployment",
+      "conceptId": "environment-minimal-copy-scope",
+      "objectiveIds": [
+        "D1.2.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s10",
+          "section": "Copy the environment from the source",
+          "claim": "Choose the copy scope based on data needs; minimal copy requires its documented channel preparation.",
+          "applicability": "The documented configuration migration or environment-copy operation specified in the stem, not autonomous migration. Source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Copy mode selection, not pilot restore readiness or the full-copy integration corrections in q33–36. Strongest alternative: full copy retains data the requirement excludes.",
+      "revisionReason": "Independent reviewer requested stronger adjacent alternatives and/or a less diagnostic stem; factual source claim retained within its documented scope."
+    },
+    {
+      "id": "ab250-d1-q33",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "copy-chat-and-record-routing",
+      "objectiveIds": [
+        "D1.2.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s10",
+          "section": "Configure the target environment; Chat channel",
+          "claim": "Website integration and record routing each need their own target action; a full Dataverse copy is not an acceptance test for either.",
+          "applicability": "The documented configuration migration or environment-copy operation specified in the stem, not autonomous migration. Source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Two explicitly scoped post-copy gaps; q34 isolates ACS, q35 Teams and q36 agents. Strongest alternative: similar workstream names do not redirect a source widget."
+    },
+    {
+      "id": "ab250-d1-q34",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "copy-acs-resource-isolation",
+      "objectiveIds": [
+        "D1.2.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s10",
+          "section": "Voice channel with Azure Communication Services",
+          "claim": "Isolate the target ACS integration while preserving the source. This concerns an existing copied configuration, not availability of new standalone ACS provisioning.",
+          "applicability": "The documented configuration migration or environment-copy operation specified in the stem, not autonomous migration. Source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "External voice resource isolation after copy, distinct from pilot restore and q33 website/record-routing configuration. Strongest alternative: matching Dataverse references do not allow shared external resource use."
+    },
+    {
+      "id": "ab250-d1-q35",
+      "revision": 2,
+      "domainId": "deployment",
+      "conceptId": "copy-teams-channel-cross-environment-link",
+      "objectiveIds": [
+        "D1.2.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s10",
+          "section": "Microsoft Teams channel",
+          "claim": "Review external associations after copying; copied messaging records can retain a source agent/application dependency.",
+          "applicability": "The documented configuration migration or environment-copy operation specified in the stem, not autonomous migration. Source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Teams messaging target independence; q34 is ACS voice and q36 agent publication. Strongest alternative: renaming a Dataverse account does not change its external integration.",
+      "revisionReason": "Independent reviewer requested stronger adjacent alternatives and/or a less diagnostic stem; factual source claim retained within its documented scope."
+    },
+    {
+      "id": "ab250-d1-q36",
+      "revision": 2,
+      "domainId": "deployment",
+      "conceptId": "copy-agent-validation-and-publication",
+      "objectiveIds": [
+        "D1.2.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s10",
+          "section": "Configure Copilot agents in the target environment",
+          "claim": "Validate the target agent dependencies, then publish and exercise its escalation path.",
+          "applicability": "The documented configuration migration or environment-copy operation specified in the stem, not autonomous migration. Source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Agent runtime readiness after copy, not q35 Teams channel recreation. Strongest alternative: copied configuration is not proof of the published target journey.",
+      "revisionReason": "Independent reviewer requested stronger adjacent alternatives and/or a less diagnostic stem; factual source claim retained within its documented scope."
+    },
+    {
+      "id": "ab250-d1-q37",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "environment-security-group-onboarding",
+      "objectiveIds": [
+        "D1.3.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s14",
+          "section": "Control user access; security groups",
+          "claim": "Separate environment admission from subsequent data permissions; an enabled licensed account can still be outside the intended group.",
+          "applicability": "Regular representative or configured capacity profile as specified; no universal numeric capacity or licensing claim. Source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Regular user admission, not q38 nested provisioning or q39 application task roles. Strongest alternative: creating a customer record does not onboard an account."
+    },
+    {
+      "id": "ab250-d1-q38",
+      "revision": 2,
+      "domainId": "deployment",
+      "conceptId": "nested-group-team-provisioning",
+      "objectiveIds": [
+        "D1.3.02"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s14",
+          "section": "Nested security groups",
+          "claim": "Nested group membership is not automatic role provisioning; use the documented group-team path for group-managed access.",
+          "applicability": "Regular representative or configured capacity profile as specified; no universal numeric capacity or licensing claim. Source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Nested membership versus explicit environment admission in q37. Strongest alternative: parent/child group structure alone does not supply Dataverse role grants.",
+      "revisionReason": "Independent reviewer requested stronger adjacent alternatives and/or a less diagnostic stem; factual source claim retained within its documented scope."
+    },
+    {
+      "id": "ab250-d1-q39",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "representative-case-role-set",
+      "objectiveIds": [
+        "D1.3.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s16",
+          "section": "Roles in Dynamics 365 Contact Center",
+          "claim": "Match required grants to both conversation handling and case work; a familiar representative role does not replace all account and case prerequisites.",
+          "applicability": "Regular representative or configured capacity profile as specified; no universal numeric capacity or licensing claim. Source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Task-specific combined role matrix, not q37 environment admission or q44 custom-role surfaces. Strongest alternative: the API role is not a representative substitute."
+    },
+    {
+      "id": "ab250-d1-q40",
+      "revision": 2,
+      "domainId": "deployment",
+      "conceptId": "representative-bookable-resource-readiness",
+      "objectiveIds": [
+        "D1.3.01"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s11",
+          "section": "Manage users using the classic experience",
+          "claim": "Application access and routing resource readiness are separate onboarding layers.",
+          "applicability": "Regular representative or configured capacity profile as specified; no universal numeric capacity or licensing claim. Source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Individual resource prerequisite, not q31 post-migration associations or q39 role matrix. Strongest alternative: broad privileges do not create the missing resource.",
+      "revisionReason": "Independent reviewer requested stronger adjacent alternatives and/or a less diagnostic stem; factual source claim retained within its documented scope."
+    },
+    {
+      "id": "ab250-d1-q41",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "representative-sign-in-presence",
+      "objectiveIds": [
+        "D1.3.01"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s11",
+          "section": "Manage users using the classic experience: Default Presence",
+          "claim": "Use the user initial-presence setting rather than changing routing selection or workload reset behavior.",
+          "applicability": "Regular representative or configured capacity profile as specified; no universal numeric capacity or licensing claim. Source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Sign-in behavior, not capacity availability or task access. Strongest alternative: queue assignment strategy cannot select the users initial presence."
+    },
+    {
+      "id": "ab250-d1-q42",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "representative-deactivated-skill-eligibility",
+      "objectiveIds": [
+        "D1.3.01"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s11",
+          "section": "Manage contact center users: Update skills",
+          "claim": "A retained but deactivated skill is not an active qualification for matching required work.",
+          "applicability": "Regular representative or configured capacity profile as specified; no universal numeric capacity or licensing claim. Source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Temporary user skill state, not D4 matching algorithm selection or q40 resource setup. Strongest alternative: keeping the record does not keep it eligible."
+    },
+    {
+      "id": "ab250-d1-q43",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "security-cumulative-role-audit",
+      "objectiveIds": [
+        "D1.3.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s15",
+          "section": "Security role considerations",
+          "claim": "Review the full role set when reducing access; adding a narrower grant does not subtract an existing broader grant.",
+          "applicability": "Regular representative or configured capacity profile as specified; no universal numeric capacity or licensing claim. Source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Combined-grant evaluation, not q44 access surfaces or q45 custom-role starting point. Strongest alternative: newest-role precedence is not the Dataverse role model."
+    },
+    {
+      "id": "ab250-d1-q44",
+      "revision": 2,
+      "domainId": "deployment",
+      "conceptId": "custom-role-surface-access",
+      "objectiveIds": [
+        "D1.3.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s12",
+          "section": "For custom security roles to be functional",
+          "claim": "A functional custom role requires persona mapping plus explicit application, form and dashboard access.",
+          "applicability": "Regular representative or configured capacity profile as specified; no universal numeric capacity or licensing claim. Source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Surface authorization after existing mapping, unlike q43 aggregate privileges or q45 initial role design. Strongest alternative: persona mapping alone does not grant these surfaces.",
+      "revisionReason": "Independent reviewer requested stronger adjacent alternatives and/or a less diagnostic stem; factual source claim retained within its documented scope."
+    },
+    {
+      "id": "ab250-d1-q45",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "custom-role-appropriate-baseline",
+      "objectiveIds": [
+        "D1.3.03"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s12",
+          "section": "Create custom security roles",
+          "claim": "Use a task-appropriate role baseline and review minimum privileges rather than relying on persona mapping to repair an incomplete role.",
+          "applicability": "Regular representative or configured capacity profile as specified; no universal numeric capacity or licensing claim. Source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Role design starting point before q44 surface access; not q43 cumulative assigned grants. Strongest alternative: a blank role with a persona can still lack functional minimum privileges."
+    },
+    {
+      "id": "ab250-d1-q46",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "capacity-default-change-preserves-overrides",
+      "objectiveIds": [
+        "D1.3.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s13",
+          "section": "How representative-specific limits work",
+          "claim": "Separate profile-wide default edits from representative-specific overrides during rollout.",
+          "applicability": "Regular representative or configured capacity profile as specified; no universal numeric capacity or licensing claim. Source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Effect of a later default edit, unlike pilot D4q04 establishing differentiated limits and blocking. Strongest alternative: changing a default is not resetting its overrides."
+    },
+    {
+      "id": "ab250-d1-q47",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "capacity-lower-limit-existing-work",
+      "objectiveIds": [
+        "D1.3.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s13",
+          "section": "How representative-specific limits work",
+          "claim": "A limit change controls new assignment eligibility; it is not an automatic redistribution action.",
+          "applicability": "Regular representative or configured capacity profile as specified; no universal numeric capacity or licensing claim. Source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Existing-work preservation, not q46 default precedence or D4pilot sizing/blocking. Strongest alternative: lowering a limit does not itself remove assigned conversations."
+    },
+    {
+      "id": "ab250-d1-q48",
+      "revision": 2,
+      "domainId": "deployment",
+      "conceptId": "capacity-reset-frequency-recreation",
+      "objectiveIds": [
+        "D1.3.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s13",
+          "section": "Create a capacity profile and assign to users",
+          "claim": "Treat reset-frequency changes as profile recreation, with the affected user and workstream associations included in planning.",
+          "applicability": "Regular representative or configured capacity profile as specified; no universal numeric capacity or licensing claim. Source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Profile lifecycle change, not limit precedence, reset runtime semantics or work redistribution. Strongest alternative: an ordinary limit edit cannot change reset frequency.",
+      "revisionReason": "Independent reviewer requested stronger adjacent alternatives and/or a less diagnostic stem; factual source claim retained within its documented scope."
+    },
+    {
+      "id": "ab250-d1-q49",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "capacity-end-of-day-open-work",
+      "objectiveIds": [
+        "D1.3.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s13",
+          "section": "Create a capacity profile: Reset frequency",
+          "claim": "An End of day reset concerns capacity consumption, not closure or deletion of existing conversations.",
+          "applicability": "Regular representative or configured capacity profile as specified; no universal numeric capacity or licensing claim. Source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Runtime reset semantics, unlike q48 changing configured frequency or q47 lowering a limit. Strongest alternative: retaining open conversations does not prevent the documented daily consumption reset."
+    },
+    {
+      "id": "ab250-d1-q50",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "capacity-override-return-to-default",
+      "objectiveIds": [
+        "D1.3.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s13",
+          "section": "Configure representative-specific work limits",
+          "claim": "Clear the override rather than copying its current default value, and complete the documented representative refresh step.",
+          "applicability": "Regular representative or configured capacity profile as specified; no universal numeric capacity or licensing claim. Source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Return to inheritance, distinct from q46 impact of editing a default with existing overrides. Strongest alternative: copying todays default preserves an override and fails the future-inheritance requirement."
+    },
+    {
+      "id": "ab250-d1-q51",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "capacity-negative-manual-assignment-diagnosis",
+      "objectiveIds": [
+        "D1.3.04"
+      ],
+      "level": "advanced",
+      "author": "/root/exam_deployment",
+      "authoredAt": "2026-11-03",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "exam-d1-s13",
+          "section": "Overview: manual and forced assignment",
+          "claim": "Distinguish manual/forced assignment from automatic eligibility before treating a negative capacity display as an automatic-routing failure.",
+          "applicability": "Regular representative or configured capacity profile as specified; no universal numeric capacity or licensing claim. Source opened and claim examined 2026-11-03."
+        }
+      ],
+      "duplicateCheck": "Assignment-origin diagnosis, unlike D4pilot automatic blocking and q47 preservation of existing work. Strongest alternative: negative capacity is not by itself proof that automatic capacity routing failed."
+    }
+  ]
+}

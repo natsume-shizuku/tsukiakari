@@ -1,0 +1,578 @@
+[
+  {
+    "id": "cc-d4-n03",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "47a7a98901c8b299e8a9aad006e41cdd683c23c08d407c6249791ed93e2bcc7b",
+    "rationale": "Queue design and staffing are presented as one workflow. Numeric queue priority is distinct from item priority.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-final-s01",
+        "section": "Create a queue; Queue prioritization; Fallback queues",
+        "supported": true,
+        "notes": "Queue types, membership, priority direction and standard assignment policies match the queue procedure."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-n04",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "b943872c175eceef3e2eb05563c4638484ea95fe9a51809098c5d292e4b30672",
+    "rationale": "Fallback, prequeue overflow, actual waiting and calendar configuration remain separate; channel-specific support is not generalized.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-final-s01",
+        "section": "Create a queue; Queue prioritization; Fallback queues",
+        "supported": true,
+        "notes": "Queue types, membership, priority direction and standard assignment policies match the queue procedure."
+      },
+      {
+        "sourceId": "cc-d4-final-s02",
+        "section": "Before queueing; When queued; Fallback queues",
+        "supported": true,
+        "notes": "Prequeue and queued conditions differ; fallback error/no-match path ignores overflow; channel-specific actions retained."
+      },
+      {
+        "sourceId": "cc-d4-final-s03",
+        "section": "Create record; Define holiday; Add hours to queue",
+        "supported": true,
+        "notes": "Timezone, daylight saving, holidays and schedule association verified; no hours means continuous availability."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-n05",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "ca731da5711265131f825678d12840fb8a9e7bdcc57cc0baa90a2404fbca8285",
+    "rationale": "Workstream creation, agent connection/escalation and editable classification templates are coherently connected.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-final-s04",
+        "section": "Create a workstream; Configure work distribution",
+        "supported": true,
+        "notes": "Creation fixes Push/Pick; voice Push only; capacity/presence and agent association verified."
+      },
+      {
+        "sourceId": "cc-d4-final-s05",
+        "section": "Create work classification; Logical skill rules",
+        "supported": true,
+        "notes": "Template linking versus editable copying and identical skill-rating-model requirement verified."
+      },
+      {
+        "sourceId": "cc-d4-final-s06",
+        "section": "Connect agent; Add engagement agent; Escalation",
+        "supported": true,
+        "notes": "Course explicitly places escalation topics in Studio, then workstream association and context-based classification."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-n06",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "0555831c2c0ab3118ad2dd8e255f9518b314444c569472b7b0787bc20cf4f3fe",
+    "rationale": "Skill taxonomy, rating alignment, model preparation, testing and retraining precede operational assignment; preview/region prerequisite retained.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-final-s05",
+        "section": "Create work classification; Logical skill rules",
+        "supported": true,
+        "notes": "Template linking versus editable copying and identical skill-rating-model requirement verified."
+      },
+      {
+        "sourceId": "cc-d4-final-s07",
+        "section": "Configuration steps; How skills are matched",
+        "supported": true,
+        "notes": "Skills setup includes proficiency, requirement attachment and assignment strategy; custom rules require explicit conditions."
+      },
+      {
+        "sourceId": "cc-d4-final-s08",
+        "section": "Prerequisite; Create/test/retrain models",
+        "supported": true,
+        "notes": "AI Builder category classification dependency, preview-model prerequisite, publication, tag matching and retraining verified."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-n07",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "3d89211f91406e27a6a0d7b8245e80a5263f73eb534884c7efa066ec5011d069",
+    "rationale": "Intent-driven preview and standard preferred-person routing are separated, including their different eligibility and fallback contracts.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-final-s09",
+        "section": "Prerequisites; How routing works; Considerations",
+        "supported": true,
+        "notes": "Preview explicitly scoped; upstream agent persists intent, routing consumes fields and does not determine live voice/chat intent."
+      },
+      {
+        "sourceId": "cc-d4-final-s10",
+        "section": "Prerequisites; Configure preferred representative; How routing works",
+        "supported": true,
+        "notes": "Standard preferred path checks allowed presence but bypasses skills/capacity/rules; Push, contact mapping and queue membership verified."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-n08",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "e648feff3ebd8738761f95db6ce811600342259354b3ff0aba6358076b01bbda",
+    "rationale": "Basic cases and unified records are distinguished; intake migration and record authorization prevent a misleading queue-only setup.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-final-s11",
+        "section": "Configure record routing; Create workstreams; Intake rules",
+        "supported": true,
+        "notes": "Record workstream and intake mapping verified; active basic routing requires intake after enabling unified routing; record permissions remain required."
+      },
+      {
+        "sourceId": "cc-d4-final-s12",
+        "section": "Create routing rulesets; Apply rulesets; Things to consider",
+        "supported": true,
+        "notes": "Basic case items evaluate in order to first match; activate to apply, deactivate before editing."
+      },
+      {
+        "sourceId": "cc-d4-final-s15",
+        "section": "Routing records; Conversation diagnostics",
+        "supported": true,
+        "notes": "FAQ confirms case-only basic routing, record-access boundary and deprecation of legacy routing diagnostics."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-n09",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "437df0330f0bb52ab9d3bdab2d2e8f92640e05e948862ba9724cb7a75c1ff456",
+    "rationale": "Observability prerequisites and stage-specific troubleshooting are supported; historical evidence is not promised retroactively.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-final-s13",
+        "section": "Prerequisites; Connection with Application Insights",
+        "supported": true,
+        "notes": "Managed environment and Azure/application permissions precede connection; per-case routing attempts have corresponding conversations."
+      },
+      {
+        "sourceId": "cc-d4-final-s14",
+        "section": "Assignment and routing; Assignment snapshot; Common metadata",
+        "supported": true,
+        "notes": "Stage event meanings and assignment snapshot attributes verified; assignment attempts differ from accepted work."
+      },
+      {
+        "sourceId": "cc-d4-final-s15",
+        "section": "Routing records; Conversation diagnostics",
+        "supported": true,
+        "notes": "FAQ confirms case-only basic routing, record-access boundary and deprecation of legacy routing diagnostics."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-c07",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "56edbf3b4cabda7315f4df5bfec2fa6aeee6db3985fc2fd1bfbb99afa44af719",
+    "rationale": "Messaging is the documented live-chat-compatible queue type.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-final-s01",
+        "section": "Create a queue; Queue prioritization; Fallback queues",
+        "supported": true,
+        "notes": "Queue types, membership, priority direction and standard assignment policies match the queue procedure."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-c08",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "3eb22924de507c6bc06e46ce9e6bd12bc92c1ab74499149bb9e9774993d5413e",
+    "rationale": "The source explicitly establishes smaller numeric queue priority as higher; no invented queue-order rule.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-final-s01",
+        "section": "Create a queue; Queue prioritization; Fallback queues",
+        "supported": true,
+        "notes": "Queue types, membership, priority direction and standard assignment policies match the queue procedure."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-c09",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "399df87bf589e3783e692bd47f40924d57270098cb18cc4467abd034cf201d55",
+    "rationale": "Highest capacity uniquely matches remaining-capacity policy; round robin, least active and proficiency order implement different policies.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-final-s01",
+        "section": "Create a queue; Queue prioritization; Fallback queues",
+        "supported": true,
+        "notes": "Queue types, membership, priority direction and standard assignment policies match the queue procedure."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-c10",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "be18f66cd035b56a175e1526fcfda6baa2b9876f4923794f3b298331211bdf99",
+    "rationale": "The fallback exception is explicit for missing queue matches and is not generalized to ordinary overflow.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-final-s02",
+        "section": "Before queueing; When queued; Fallback queues",
+        "supported": true,
+        "notes": "Prequeue and queued conditions differ; fallback error/no-match path ignores overflow; channel-specific actions retained."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-c11",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "6d9246eeaa470382313d65c6836076c556aa4a8eeb89404ecfe80f44dd310c4e",
+    "rationale": "Timezone-driven daylight saving is documented, distinct from manually changing recurrence or staff shift plans.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-final-s03",
+        "section": "Create record; Define holiday; Add hours to queue",
+        "supported": true,
+        "notes": "Timezone, daylight saving, holidays and schedule association verified; no hours means continuous availability."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-c12",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "7e89b16455b075126756c98f7c0f377bb519ccd5073b12001f032ec1d042b509",
+    "rationale": "A matched queue and arrival-time condition make prequeue out-of-hours handling the relevant control; fallback and elapsed waiting address different triggers.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-final-s02",
+        "section": "Before queueing; When queued; Fallback queues",
+        "supported": true,
+        "notes": "Prequeue and queued conditions differ; fallback error/no-match path ignores overflow; channel-specific actions retained."
+      },
+      {
+        "sourceId": "cc-d4-final-s03",
+        "section": "Create record; Define holiday; Add hours to queue",
+        "supported": true,
+        "notes": "Timezone, daylight saving, holidays and schedule association verified; no hours means continuous availability."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-c13",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "566aae0656b2559b68fdc42944f64f33640c110f8f0f1f46284ef6993c57d5cb",
+    "rationale": "The workstream creation setting is explicitly immutable and voice Push-only qualification is retained.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-final-s04",
+        "section": "Create a workstream; Configure work distribution",
+        "supported": true,
+        "notes": "Creation fixes Push/Pick; voice Push only; capacity/presence and agent association verified."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-c14",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "30ca8dbbd2b3119c69d493078f9575cfc403b03008c96ca541fbce1bc2e1d3cc",
+    "rationale": "Studio topics define escalation behavior; adding the agent to a workstream only associates the configured agent.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-final-s06",
+        "section": "Connect agent; Add engagement agent; Escalation",
+        "supported": true,
+        "notes": "Course explicitly places escalation topics in Studio, then workstream association and context-based classification."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-c15",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "763570950c0a804a537a5bd57ec1fcacc86c3c0692caadd49bb7d7e94cd1860c",
+    "rationale": "Copy from template enables local edits; linked template and assignment alternatives do not meet the local-definition requirement.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-final-s05",
+        "section": "Create work classification; Logical skill rules",
+        "supported": true,
+        "notes": "Template linking versus editable copying and identical skill-rating-model requirement verified."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-c16",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "c0ee364faad53aea54b75b53f2319d494151eaed91af862ef39767ae7df209e9",
+    "rationale": "The rule and representative must use the same rating model for this skill; the statement does not forbid different skills using normalized models.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-final-s05",
+        "section": "Create work classification; Logical skill rules",
+        "supported": true,
+        "notes": "Template linking versus editable copying and identical skill-rating-model requirement verified."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-c17",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "e0cb31e0c76168e53a0caa15b23f9043fbe953177f0a4c59196c41e94617a01f",
+    "rationale": "Custom AI Builder category classification is directly documented and regional/preview setup remains explicit.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-final-s08",
+        "section": "Prerequisite; Create/test/retrain models",
+        "supported": true,
+        "notes": "AI Builder category classification dependency, preview-model prerequisite, publication, tag matching and retraining verified."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-c18",
+    "revision": 2,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "826a02280a7896ce2ab3529d3f63d8e6d46f4e0cb39db727d1009f06926c3439",
+    "rationale": "Revision 2 no longer states the missing taxonomy link. Successful model output with no linked skills calls for available-skill/tag alignment; field order changes input, assignment and capacity operate downstream. Source Test the model directly supports key D.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-final-s08",
+        "section": "Prerequisite; Create/test/retrain models",
+        "supported": true,
+        "notes": "AI Builder category classification dependency, preview-model prerequisite, publication, tag matching and retraining verified."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-c19",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "afdcd04958acab3f74c7628578381bded45cc3aa36dd478af1428453ac5a29bb",
+    "rationale": "The preview article identifies the upstream Copilot agent, not unified routing itself, as live voice/chat intent determination.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-final-s09",
+        "section": "Prerequisites; How routing works; Considerations",
+        "supported": true,
+        "notes": "Preview explicitly scoped; upstream agent persists intent, routing consumes fields and does not determine live voice/chat intent."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-c20",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "9f09c19f88bbae4bda4280189787268d903329cf05028bc7744c2fe2dbda5bb7",
+    "rationale": "Standard preferred routing bypasses the listed ordinary checks while still requiring allowed presence; playbooks are not substituted.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-final-s10",
+        "section": "Prerequisites; Configure preferred representative; How routing works",
+        "supported": true,
+        "notes": "Standard preferred path checks allowed presence but bypasses skills/capacity/rules; Push, contact mapping and queue membership verified."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-c21",
+    "revision": 2,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "4f1f4f314f916b292ea200f7effb66ab2e99ea58d786ee67cfc263f6b71112be",
+    "rationale": "Revision 2 alternatives now challenge real eligibility boundaries. Allowed presence and queue membership remain required; skills/capacity/rules are skipped on standard preferred path, with no stated fallback-time exception. Key A remains unique.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-final-s10",
+        "section": "Prerequisites; Configure preferred representative; How routing works",
+        "supported": true,
+        "notes": "Standard preferred path checks allowed presence but bypasses skills/capacity/rules; Push, contact mapping and queue membership verified."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-c22",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "1d06e073b8a6f381705764293f2fb92ca80c5c13ed83fda15a1bc3305c45e30e",
+    "rationale": "Intake chooses workstream or active basic ruleset; downstream queue selection is a different stage.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-final-s11",
+        "section": "Configure record routing; Create workstreams; Intake rules",
+        "supported": true,
+        "notes": "Record workstream and intake mapping verified; active basic routing requires intake after enabling unified routing; record permissions remain required."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-c23",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "35727c335c73e80d1f26fa952d3cd55ee15da010493a5dacc473b87ddb87a77a",
+    "rationale": "Basic case rules stop at first matching top-to-bottom item; no unsupported general-table claim.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-final-s12",
+        "section": "Create routing rulesets; Apply rulesets; Things to consider",
+        "supported": true,
+        "notes": "Basic case items evaluate in order to first match; activate to apply, deactivate before editing."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-c24",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "7f275573268acd84e4d814b6e39155f0821ea7e12b5479468a5f0883d434470d",
+    "rationale": "After unified routing enablement, source explicitly requires intake mapping; old-rule activation or assignment policy alone cannot complete intake.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-final-s11",
+        "section": "Configure record routing; Create workstreams; Intake rules",
+        "supported": true,
+        "notes": "Record workstream and intake mapping verified; active basic routing requires intake after enabling unified routing; record permissions remain required."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-c25",
+    "revision": 2,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "da80d94ea3951eccaa1956c2af6f639dcbb666d05a10263e443a863e9fd94530",
+    "rationale": "Revision 2 replaces pilot-duplicate storage recall with per-attempt conversation identity for case rerouting. Reopened View case diagnostics explicitly links each routing attempt to its corresponding conversation; no duplicate of pilot log store remains.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-final-s13",
+        "section": "View case diagnostics",
+        "supported": true,
+        "notes": "Managed environment and Azure/application permissions precede connection; per-case routing attempts have corresponding conversations."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-c26",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "62431be66713310c158807e6b8e21b4c83be8a3db471346a60d06f912b1f6e89",
+    "rationale": "CSRAssignment records the automatic attempt, whereas RouteToQueue only establishes queue selection.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-final-s14",
+        "section": "Assignment and routing; Assignment snapshot; Common metadata",
+        "supported": true,
+        "notes": "Stage event meanings and assignment snapshot attributes verified; assignment attempts differ from accepted work."
+      }
+    ]
+  },
+  {
+    "id": "cc-d4-c27",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "517fa716c774b2cfced96fb87674aa209bbaad403fc6911014cb6f8bd71a17d2",
+    "rationale": "Correct queue arrival isolates assignment attempts and eligibility snapshots; other stage-only evidence cannot fully diagnose assignment.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d4-final-s14",
+        "section": "Assignment and routing; Assignment snapshot; Common metadata",
+        "supported": true,
+        "notes": "Stage event meanings and assignment snapshot attributes verified; assignment attempts differ from accepted work."
+      }
+    ]
+  }
+]

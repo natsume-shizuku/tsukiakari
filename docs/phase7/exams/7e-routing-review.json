@@ -1,0 +1,660 @@
+[
+  {
+    "id": "ab250-d4-q05",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "4ef32f7317793bbd99453bf7527379b2bbda2a36decdb3a0ed2455ae1cf2b6b3",
+    "rationale": "Queue destinations are channel-compatible: live chat selects Messaging, not Record. Assignment strategy, priority and hours do not change that type. The guide explicitly describes the picker boundary.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s01",
+        "section": "How work items are routed to queues",
+        "supported": true,
+        "notes": "Queue destinations are channel-compatible: live chat selects Messaging, not Record. Assignment strategy, priority and hours do not change that type. The guide explicitly describes the picker boundary."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q06",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "9ebed69b8ee3f738bee69c1c46cfa60d43318a1edb7521f21d4f176cc9aa6edb",
+    "rationale": "Smaller queue priority numbers win cross-queue competition. Within-queue item priority and Pick mode do not implement the requested cross-queue preference; both queue and assignment guides support the distinction.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s01",
+        "section": "Configure queue prioritization",
+        "supported": true,
+        "notes": "Smaller queue priority numbers win cross-queue competition. Within-queue item priority and Pick mode do not implement the requested cross-queue preference; both queue and assignment guides support the distinction."
+      },
+      {
+        "sourceId": "exam-d4-s16",
+        "section": "How unified routing prioritizes work items",
+        "supported": true,
+        "notes": "Smaller queue priority numbers win cross-queue competition. Within-queue item priority and Pick mode do not implement the requested cross-queue preference; both queue and assignment guides support the distinction."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q07",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "547cb38f1a2fbff58461810137ca5932fd000c5d924cbcfe54a834b7992ee838",
+    "rationale": "Equal-priority custom queues use alphabetical ordering, unlike equal-priority default FIFO. Distinct priorities implement a stable business preference without depending on names or internal item rules.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s16",
+        "section": "How unified routing prioritizes work items",
+        "supported": true,
+        "notes": "Equal-priority custom queues use alphabetical ordering, unlike equal-priority default FIFO. Distinct priorities implement a stable business preference without depending on names or internal item rules."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q08",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "1570846ce4dcf3f525cedf7759a0bc5f999423b4fc181a7caa4f8b5effffb98c",
+    "rationale": "Asynchronous FIFO uses last interaction, not original creation or record routed-time. Revised nearby alternatives distinguish returning/new categorization and Waiting from the actual timestamp comparison.",
+    "findings": [
+      "Resolved: revised draft independently rechecked after source, ambiguity or distinctness feedback."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s16",
+        "section": "How unified routing prioritizes work items",
+        "supported": true,
+        "notes": "Asynchronous FIFO uses last interaction, not original creation or record routed-time. Revised nearby alternatives distinguish returning/new categorization and Waiting from the actual timestamp comparison."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q09",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "f98a6190c4bc9df339d3e727b89355833ca739ca26c87d10bd8d4a454db78999",
+    "rationale": "With concurrent workload and eligibility controlled, least-active uses capacity-release time across voice and messaging. Revised alternatives test sign-in, queue-local assignment and initial membership signals used in other ordering contexts.",
+    "findings": [
+      "Resolved: revised draft independently rechecked after source, ambiguity or distinctness feedback."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s15",
+        "section": "Route to least-active representative",
+        "supported": true,
+        "notes": "With concurrent workload and eligibility controlled, least-active uses capacity-release time across voice and messaging. Revised alternatives test sign-in, queue-local assignment and initial membership signals used in other ordering contexts."
+      },
+      {
+        "sourceId": "exam-d4-s16",
+        "section": "Least active",
+        "supported": true,
+        "notes": "With concurrent workload and eligibility controlled, least-active uses capacity-release time across voice and messaging. Revised alternatives test sign-in, queue-local assignment and initial membership signals used in other ordering contexts."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q10",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "d505c3d1077c2a2ca38fe89afc33ea74dbea19e7586a0478aeb2b5d3c564a68f",
+    "rationale": "Verified destinations plus channel-specific closure/wait symptoms warrant checking actual queue membership. The revised stem no longer discloses that both queues are empty; capacity and timeout changes cannot staff a queue.",
+    "findings": [
+      "Resolved: revised draft independently rechecked after source, ambiguity or distinctness feedback."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s15",
+        "section": "General: queue with no representatives",
+        "supported": true,
+        "notes": "Verified destinations plus channel-specific closure/wait symptoms warrant checking actual queue membership. The revised stem no longer discloses that both queues are empty; capacity and timeout changes cannot staff a queue."
+      },
+      {
+        "sourceId": "exam-d4-s01",
+        "section": "Create a queue for unified routing",
+        "supported": true,
+        "notes": "Verified destinations plus channel-specific closure/wait symptoms warrant checking actual queue membership. The revised stem no longer discloses that both queues are empty; capacity and timeout changes cannot staff a queue."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q11",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "dffc2b781d11cf7c7eeebb7093d6f0880a99c7f43e95f2663d7f5d8f04e68ff3",
+    "rationale": "The queued wait condition and transfer-to-another-queue action are supported together for voice. Prequeue estimated average, fallback and incompatible Record destinations do not satisfy actual queued wait while retaining the caller.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s02",
+        "section": "Handle overflow when a work item is queued; Overflow condition and actions when queued",
+        "supported": true,
+        "notes": "The queued wait condition and transfer-to-another-queue action are supported together for voice. Prequeue estimated average, fallback and incompatible Record destinations do not satisfy actual queued wait while retaining the caller."
+      },
+      {
+        "sourceId": "exam-d4-s01",
+        "section": "How work items are routed to queues",
+        "supported": true,
+        "notes": "The queued wait condition and transfer-to-another-queue action are supported together for voice. Prequeue estimated average, fallback and incompatible Record destinations do not satisfy actual queued wait while retaining the caller."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q12",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "a39c8c316cdb5e8c4689e0fa7f01e61bb7ba68156a3513a3349e8c6b5b40dd7b",
+    "rationale": "Prequeue overflow checks occur once and are not repeated for overflow or supervisor transfer. Queued waiting is a separate later evaluation that may recur; revised alternatives preserve that boundary.",
+    "findings": [
+      "Resolved: revised draft independently rechecked after source, ambiguity or distinctness feedback."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s02",
+        "section": "Handle overflow before a work item is queued",
+        "supported": true,
+        "notes": "Prequeue overflow checks occur once and are not repeated for overflow or supervisor transfer. Queued waiting is a separate later evaluation that may recur; revised alternatives preserve that boundary."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q13",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "78da69488ae4d4b495b7db055d5ffcbbbf577e0a088c4f4a10d25414b7bb36f8",
+    "rationale": "Routing-error/no-match fallback overrides the fallback queue overflow settings. Ordinary matched-route hours priority and queued-wait changes do not remove that explicitly documented exception. Both cited guides were checked.",
+    "findings": [
+      "Resolved: revised draft independently rechecked after source, ambiguity or distinctness feedback."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s01",
+        "section": "How fallback queues work",
+        "supported": true,
+        "notes": "Routing-error/no-match fallback overrides the fallback queue overflow settings. Ordinary matched-route hours priority and queued-wait changes do not remove that explicitly documented exception. Both cited guides were checked."
+      },
+      {
+        "sourceId": "exam-d4-s02",
+        "section": "How overflow works when work item is routed to a fallback queue",
+        "supported": true,
+        "notes": "Routing-error/no-match fallback overrides the fallback queue overflow settings. Ordinary matched-route hours priority and queued-wait changes do not remove that explicitly documented exception. Both cited guides were checked."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q14",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "a59921d26e4c29521e4090df18505e5f73ae0bb6d0b091c3c5f5880e20c1798d",
+    "rationale": "Adding operating hours creates Assign to queue anyway as the default after-hours action. A calendar is not automatic closure; skill proficiency and voice Pick mode are not the applicable correction.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s02",
+        "section": "Handle overflow before a work item is queued",
+        "supported": true,
+        "notes": "Adding operating hours creates Assign to queue anyway as the default after-hours action. A calendar is not automatic closure; skill proficiency and voice Pick mode are not the applicable correction."
+      },
+      {
+        "sourceId": "exam-d4-s04",
+        "section": "Create a workstream",
+        "supported": true,
+        "notes": "Adding operating hours creates Assign to queue anyway as the default after-hours action. A calendar is not automatic closure; skill proficiency and voice Pick mode are not the applicable correction."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q15",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "1b1bb6ba165db5e93c6038d2ca697f2894929e2ade2c2568eaee885010a9e55f",
+    "rationale": "The selected timezone accounts for daylight saving and a Holiday entry preserves weekly recurrence. Fixed offsets, queue priority and deleting recurrence fail separate requirements.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s03",
+        "section": "Create a record to define operating hours; Define a holiday on the calendar",
+        "supported": true,
+        "notes": "The selected timezone accounts for daylight saving and a Holiday entry preserves weekly recurrence. Fixed offsets, queue priority and deleting recurrence fail separate requirements."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q16",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "90f03d2bbedf3a506b4b6e64a89ce3beacf9ab704f70ad469dc34a6139982950",
+    "rationale": "Calendar cannot be moved with ordinary export/import; target work hours need manual setup and queue association. A reference alone does not prove the target schedule exists. Revised deployment alternatives were checked.",
+    "findings": [
+      "Resolved: revised draft independently rechecked after source, ambiguity or distinctness feedback."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s03",
+        "section": "Limitation; Add operating hours to a queue",
+        "supported": true,
+        "notes": "Calendar cannot be moved with ordinary export/import; target work hours need manual setup and queue association. A reference alone does not prove the target schedule exists. Revised deployment alternatives were checked."
+      },
+      {
+        "sourceId": "exam-d4-s01",
+        "section": "Create a queue for unified routing",
+        "supported": true,
+        "notes": "Calendar cannot be moved with ordinary export/import; target work hours need manual setup and queue association. A reference alone does not prove the target schedule exists. Revised deployment alternatives were checked."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q17",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "3be8ea8288e52826d018e213abf2fcb24e88a7e7f457015cff7a7ae5f692e800",
+    "rationale": "Shared channels inherit one workstream routing/work-distribution policy. Separate workstreams provide independent allowed-presence policies. This replaces the duplicate Pick-to-Push question and is distinct from queue-type selection.",
+    "findings": [
+      "Resolved: revised draft independently rechecked after source, ambiguity or distinctness feedback."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s04",
+        "section": "Overview; Configure work distribution",
+        "supported": true,
+        "notes": "Shared channels inherit one workstream routing/work-distribution policy. Separate workstreams provide independent allowed-presence policies. This replaces the duplicate Pick-to-Push question and is distinct from queue-type selection."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q18",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "420f6b4577cd19099680ed8b6e5e36c01604c8d2fb7e1640f57d68e1abe08140",
+    "rationale": "Engagement setup requires connecting the Studio agent to omnichannel and associating it in the workstream Bot area. Smart-assist association, fallback and classification do not author or invoke the customer-facing engagement agent.",
+    "findings": [
+      "Resolved: revised draft independently rechecked after source, ambiguity or distinctness feedback."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s06",
+        "section": "Connect a Copilot Studio agent to omnichannel; Add the engagement agent; Context variables and classification",
+        "supported": true,
+        "notes": "Engagement setup requires connecting the Studio agent to omnichannel and associating it in the workstream Bot area. Smart-assist association, fallback and classification do not author or invoke the customer-facing engagement agent."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q19",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "867391bd954942e88d0747c27fd37cfcc4bf22b3425ef3745d1bc53326439638",
+    "rationale": "Within a classification ruleset the first matching rule runs and control moves to the next ruleset. Putting the exception first implements the requirement; queue assignment cannot change earlier classification order.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s05",
+        "section": "How classification rulesets work",
+        "supported": true,
+        "notes": "Within a classification ruleset the first matching rule runs and control moves to the next ruleset. Putting the exception first implements the requirement; queue assignment cannot change earlier classification order."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q20",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "62593677c2cfe70ea60ac5a4337bf161c0133d7de2481956552dcb69a46e2dd2",
+    "rationale": "Template rules are not editable from the linked workstream. Copy from template gives an editable local definition, preserving other workstreams that retain the central template.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s05",
+        "section": "Create work classification rulesets",
+        "supported": true,
+        "notes": "Template rules are not editable from the linked workstream. Copy from template gives an editable local definition, preserving other workstreams that retain the central template."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q21",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "b2d8de0d4a35bb8a54ff6b1f4a8b03f0a97aac6f99e358cb8e7dcd1e9d91e71d",
+    "rationale": "Rerouting appends new skills to existing requirements. A language skill does not automatically replace product skills, and queue priority does not remove attached requirements.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s05",
+        "section": "Create logical skill classification rulesets: note",
+        "supported": true,
+        "notes": "Rerouting appends new skills to existing requirements. A language skill does not automatically replace product skills, and queue priority does not remove attached requirements."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q22",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "9a7c0a08aeebb9854ba8e9de4b3754eb5a52df9c63f54ac478a2272ec2debbf7",
+    "rationale": "Email HTML should be converted to text for skill prediction, and corrected training records reviewed before retraining. Raw HTML, republishing unchanged labels and assuming automatic retraining do not repair those two known issues.",
+    "findings": [
+      "Resolved: revised draft independently rechecked after source, ambiguity or distinctness feedback."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s15",
+        "section": "Intelligent skill finder: email activities; right skills",
+        "supported": true,
+        "notes": "Email HTML should be converted to text for skill prediction, and corrected training records reviewed before retraining. Raw HTML, republishing unchanged labels and assuming automatic retraining do not repair those two known issues."
+      },
+      {
+        "sourceId": "exam-d4-s08",
+        "section": "Retrain the model iteratively",
+        "supported": true,
+        "notes": "Email HTML should be converted to text for skill prediction, and corrected training records reviewed before retraining. Raw HTML, republishing unchanged labels and assuming automatic retraining do not repair those two known issues."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q23",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "6ea5954aea6f144446841cea75af871a8c8cf2cadb4c3d103b4d2d628f3b02cb",
+    "rationale": "Classification and representative skill configuration must use the same rating model. Identical displayed numbers do not establish compatible scales, and queue priority or avoiding the skill does not fix metadata.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s05",
+        "section": "Create logical skill classification rulesets: note",
+        "supported": true,
+        "notes": "Classification and representative skill configuration must use the same rating model. Identical displayed numbers do not establish compatible scales, and queue priority or avoiding the skill does not fix metadata."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q24",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "58ab5ffe38b2bd10918d5494ba8f7632825e2fb57ac394829e37598e8013c11e",
+    "rationale": "The current skill-finder guide explicitly restricts model import/export to environments of the same type. Dependency imports, test republication and stable IDs do not negate that stated test-to-production limitation.",
+    "findings": [
+      "Resolved: revised draft independently rechecked after source, ambiguity or distinctness feedback."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s08",
+        "section": "Important: import skill finder models between environments",
+        "supported": true,
+        "notes": "The current skill-finder guide explicitly restricts model import/export to environments of the same type. Dependency imports, test republication and stable IDs do not negate that stated test-to-production limitation."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q25",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "eecbd2706c3aa4f8e75981a79c84ecedc38781eacdbb266f4cb3076010a89af7",
+    "rationale": "The current production-ready preview requires intent discovery/Customer Intent Agent and a properly associated upstream agent. Unified routing consumes persisted intent for live chat rather than inferring it from raw messages. Revised stem no longer supplies missing steps.",
+    "findings": [
+      "Resolved: revised draft independently rechecked after source, ambiguity or distinctness feedback."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s09",
+        "section": "Prerequisites; How intent-driven routing works",
+        "supported": true,
+        "notes": "The current production-ready preview requires intent discovery/Customer Intent Agent and a properly associated upstream agent. Unified routing consumes persisted intent for live chat rather than inferring it from raw messages. Revised stem no longer supplies missing steps."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q26",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "a4fcee3bec248ec5947b13aec9c8fb965981d3b78bdd227bc4c9856f84b23102",
+    "rationale": "Classification attaches specialist skills from persisted intent; route-to-queue chooses destinations separately. Legacy mappings and re-inferring live-chat intent are outside the current documented flow.",
+    "findings": [
+      "Resolved: revised draft independently rechecked after source, ambiguity or distinctness feedback."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s09",
+        "section": "Configure classification rules using intent; Use skill-based routing with intent; Considerations",
+        "supported": true,
+        "notes": "Classification attaches specialist skills from persisted intent; route-to-queue chooses destinations separately. Legacy mappings and re-inferring live-chat intent are outside the current documented flow."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q27",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "848508e0392ad0c8653a7eec1abae99105c1e4ccb4ed1db1ce870cd431b6d801",
+    "rationale": "An unmapped contact uses ordinary best-eligible queue assignment irrespective of the mapped-but-unavailable fallback. No implicit preferred mapping or global No one block is documented.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s10",
+        "section": "How routing to preferred representative works",
+        "supported": true,
+        "notes": "An unmapped contact uses ordinary best-eligible queue assignment irrespective of the mapped-but-unavailable fallback. No implicit preferred mapping or global No one block is documented."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q28",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "6895c6dd949f4fb8a61fa79cc8e3727864d4f1a0edb0c40fcd0991dd1e213806",
+    "rationale": "Preferred routing requires queue membership and allowed presence but skips ordinary skills, capacity and assignment-rule checks. Both chosen prerequisites and close alternative eligibility checks were independently verified.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s10",
+        "section": "Prerequisites; How routing to preferred representative works",
+        "supported": true,
+        "notes": "Preferred routing requires queue membership and allowed presence but skips ordinary skills, capacity and assignment-rule checks. Both chosen prerequisites and close alternative eligibility checks were independently verified."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q29",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "4b964e823b7a9b74cc3c5e26d516f061cebdd9b87100c96ad94920a61da012f9",
+    "rationale": "Next-best fallback supports live-chat continuity when all mapped people are unavailable. No one leaves work waiting; reordering unavailable people and ordinary assignment do not override that selected fallback.",
+    "findings": [
+      "Resolved: revised draft independently rechecked after source, ambiguity or distinctness feedback."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s10",
+        "section": "Configure preferred representative for contacts; How routing works",
+        "supported": true,
+        "notes": "Next-best fallback supports live-chat continuity when all mapped people are unavailable. No one leaves work waiting; reordering unavailable people and ordinary assignment do not override that selected fallback."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q30",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "d6e752ab6fbda23864559ab50d3141d0dbffd844bd8f62e6fb168e386af43c37",
+    "rationale": "Queue membership does not grant underlying case access. The record-routing guide describes stopping assignment and closing the conversation without that permission; intake or prediction changes cannot grant access.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s11",
+        "section": "Configure work distribution and advanced settings: note",
+        "supported": true,
+        "notes": "Queue membership does not grant underlying case access. The record-routing guide describes stopping assignment and closing the conversation without that permission; intake or prediction changes cannot grant access."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q31",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "bdbcbd4688f76cdb396e65c447ba7724d81a2b75a77e08c40897e2d678327109",
+    "rationale": "The Unified Interface basic-rule criteria guide supports only one related-entity hierarchy level even when the designer permits nesting. Grouping or unsupported lookup operators do not fix excessive depth. This replaces the duplicated general/exception ordering decision.",
+    "findings": [
+      "Resolved: revised draft independently rechecked after source, ambiguity or distinctness feedback."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s12",
+        "section": "Create routing rulesets to route cases: Unified Interface criteria limitations",
+        "supported": true,
+        "notes": "The Unified Interface basic-rule criteria guide supports only one related-entity hierarchy level even when the designer permits nesting. Grouping or unsupported lookup operators do not fix excessive depth. This replaces the duplicated general/exception ordering decision."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q32",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "796ad762b341154503a30d169ba1853c9d5ca480efa9c39193dffb56a528b12d",
+    "rationale": "Intake can map a case class to an active basic rule and another class to a Record workstream. After unified enablement an active basic rule alone is not the intake connection; Messaging and route-to-queue do not replace this selection.",
+    "findings": [
+      "Resolved: revised draft independently rechecked after source, ambiguity or distinctness feedback."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s11",
+        "section": "Configure unified routing for records; Create workstreams; Configure intake rules",
+        "supported": true,
+        "notes": "Intake can map a case class to an active basic rule and another class to a Record workstream. After unified enablement an active basic rule alone is not the intake connection; Messaging and route-to-queue do not replace this selection."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q33",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "4e64096745e5202168866c20244e400d4c523513e9b6c03802a325b31c9e1232",
+    "rationale": "The target same-ID active basic ruleset must be deactivated before solution import. Renaming, changing ownership or deactivating only the already-exported source does not perform that target lifecycle step.",
+    "findings": [
+      "Resolved: revised draft independently rechecked after source, ambiguity or distinctness feedback."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s12",
+        "section": "Create routing rulesets to route cases: note",
+        "supported": true,
+        "notes": "The target same-ID active basic ruleset must be deactivated before solution import. Renaming, changing ownership or deactivating only the already-exported source does not perform that target lifecycle step."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q34",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "21874998136486d0d9b0172dd250898eb06ea27b214f57501c3da92bed0f15d0",
+    "rationale": "Each case routing attempt has a corresponding conversation. Evidence after a fix must be correlated to the intended attempt, rather than mixing old events or inspecting only current configuration.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s13",
+        "section": "View case diagnostics",
+        "supported": true,
+        "notes": "Each case routing attempt has a corresponding conversation. Evidence after a fix must be correlated to the intended attempt, rather than mixing old events or inspecting only current configuration."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q35",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "b51563fd533ece01ddd20be17fee15cdc2e3a21c14f7d4d4b1951f337a7ac1f8",
+    "rationale": "AssignmentRuleset captures custom rule definitions and changes; CSRStatusandCapacityDetails records historical representative presence/capacity. Correlate both to the attempt, not current state, queue strategy alone or manual-assignment events.",
+    "findings": [
+      "Resolved: revised draft independently rechecked after source, ambiguity or distinctness feedback."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s14",
+        "section": "Assignment snapshot; AssignmentRuleset; CSRStatusandCapacityDetails",
+        "supported": true,
+        "notes": "AssignmentRuleset captures custom rule definitions and changes; CSRStatusandCapacityDetails records historical representative presence/capacity. Correlate both to the attempt, not current state, queue strategy alone or manual-assignment events."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d4-q36",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "fd56ccb7c45e5bcac2a1c784b74e44fc5baded775f252d8cde4ec8a66ac08ebc",
+    "rationale": "CSRAssignment is an attempted offer, CSRAccepted is acceptance and CSRNotificationTimeout indicates failure to accept. A later timeout does not establish route-to-queue failure or accepted work.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d4-s14",
+        "section": "Assignment and routing; Other non-channel specific events",
+        "supported": true,
+        "notes": "CSRAssignment is an attempted offer, CSRAccepted is acceptance and CSRNotificationTimeout indicates failure to accept. A later timeout does not establish route-to-queue failure or accepted work."
+      }
+    ]
+  }
+]

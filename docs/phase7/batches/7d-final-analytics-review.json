@@ -1,0 +1,488 @@
+[
+  {
+    "id": "cc-d6-n03",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "edefabace7968086fae0c6b6e1bec8b7f1a5987190dc8e810e53e726917833be",
+    "rationale": "Verified standalone action toggles, Open/unassigned assignment, active/waiting messaging transfer and elevated/AI restrictions; workspace controls do not establish a new supervisor app.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-final-s01",
+        "section": "Configure supervisor settings",
+        "supported": true,
+        "notes": "Opened complete supervisor settings procedure; four independent toggles and standalone applicability confirmed."
+      },
+      {
+        "sourceId": "cc-d6-final-s02",
+        "section": "Assign conversations; Transfer conversations; End conversations forcibly",
+        "supported": true,
+        "notes": "Opened assignment/transfer/closure sections; Open-unassigned, Active/Waiting messaging, elevated mode and AI endpoint restrictions confirmed."
+      },
+      {
+        "sourceId": "cc-d6-final-s03",
+        "section": "Configure user access to analytics and dashboards",
+        "supported": true,
+        "notes": "Opened report access table, underlying Read privileges and author/bookmark roles."
+      }
+    ]
+  },
+  {
+    "id": "cc-d6-n04",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "82507aad1e7fcd678b33f7145ba7ab759a357a5e776611ff7cc5d5c3c5afee47",
+    "rationale": "Verified criteria/plan/result separation, prerequisites and ready connection/flow/published-agent sequence; future closed-conversation plan uses Trigger.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-final-s04",
+        "section": "How quality evaluation works; Prerequisites; Roles and privileges; Configure connection references",
+        "supported": true,
+        "notes": "Opened criteria/plans/evaluations, quality roles/credits/AI/consent and all three readiness components."
+      },
+      {
+        "sourceId": "cc-d6-final-s05",
+        "section": "Create and activate evaluation plan for cases and closed conversations",
+        "supported": true,
+        "notes": "Opened conversation plan creation; future closure Trigger contrasted with Recurring and Once."
+      }
+    ]
+  },
+  {
+    "id": "cc-d6-n05",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "eca1bda5f694319a36c792aff3c0810c29ac61074a7f5d4aed2ce1ca2842e834",
+    "rationale": "Verified organization-wide publication and permanent Reset; visualization changes do not add missing business logic.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-final-s06",
+        "section": "Customize the display of analytics reports; Understand the out-of-the-box data model",
+        "supported": true,
+        "notes": "Opened standalone visual editing; organization publication, Save/Publish and irreversible Reset verified."
+      },
+      {
+        "sourceId": "cc-d6-final-s07",
+        "section": "Scenario-based use cases; How data model customization works",
+        "supported": true,
+        "notes": "Opened managed/customer model architecture; report copy maintenance and explicit exclusion of supervisor actions."
+      }
+    ]
+  },
+  {
+    "id": "cc-d6-n06",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "7bdde793cb7259dc8efa043e052e413a7c7211b9f30b771e9756ca705e8a55e1",
+    "rationale": "Verified explicit standalone scope, managed versus local model boundaries, customer publication/maintenance and absence of operational actions on customized reports.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-final-s07",
+        "section": "Scenario-based use cases; How data model customization works",
+        "supported": true,
+        "notes": "Opened managed/customer model architecture; report copy maintenance and explicit exclusion of supervisor actions."
+      },
+      {
+        "sourceId": "cc-d6-final-s08",
+        "section": "Prerequisites; Step 1; Step 3; Step 4; Enable automatic page refresh",
+        "supported": true,
+        "notes": "Opened customization enablement, Fabric workspaces, model/report permissions and embedding Step4 picker from Step1 workspace."
+      },
+      {
+        "sourceId": "cc-d6-final-s09",
+        "section": "Create a new report; Extend the out-of-the-box data model; Publish reports back to Dynamics 365",
+        "supported": true,
+        "notes": "Opened Desktop managed-model connection, new measures and local composite model/additional attributes/relationships procedure."
+      }
+    ]
+  },
+  {
+    "id": "cc-d6-n07",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "cf7c99ae4a1906a221ee22c2dbbe970d3be9c2ec0cb3809104fcad4f03445397",
+    "rationale": "Verified native workspace embedding, customized-app table content for state, configured workspace report picker and permissions.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-final-s08",
+        "section": "Prerequisites; Step 1; Step 3; Step 4; Enable automatic page refresh",
+        "supported": true,
+        "notes": "Opened customization enablement, Fabric workspaces, model/report permissions and embedding Step4 picker from Step1 workspace."
+      },
+      {
+        "sourceId": "cc-d6-final-s10",
+        "section": "Embed reports in Copilot Service workspace; Retain the report state across session tabs",
+        "supported": true,
+        "notes": "Opened full course unit, including built-in embedded reports and customized-app table content preserving report state."
+      }
+    ]
+  },
+  {
+    "id": "cc-d6-n08",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "a013660207eb06a4713e8b8583b4a9907d598a7a2d306be970c385b6a33b5f75",
+    "rationale": "Verified Managed environment ingestion prerequisites and distinct Dataverse authorization/identity/Monitoring Reader/app-setting setup for embedding.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-final-s11",
+        "section": "Prerequisites; Pricing",
+        "supported": true,
+        "notes": "Opened lifecycle telemetry purpose, Managed environment and Azure/Power Platform ingestion/query prerequisites."
+      },
+      {
+        "sourceId": "cc-d6-final-s12",
+        "section": "Prerequisites; Create a connection with Azure Application Insights",
+        "supported": true,
+        "notes": "Opened Power Platform diagnostics overview, managed-environment requirement and separate collection/export model."
+      },
+      {
+        "sourceId": "cc-d6-final-s13",
+        "section": "Update Application Insights ID in environment variable; Create and register an app; Assign Monitoring Reader role; Enable Debug tab",
+        "supported": true,
+        "notes": "Opened full instance-ID, federated app/managed identity, Monitoring Reader and default/environment Debug app-setting procedure."
+      }
+    ]
+  },
+  {
+    "id": "cc-d6-c07",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "f16258c871acd1cf8848f8d6cdc5411fec3a037f48bea2e52d7eb82b9e0818af",
+    "rationale": "Supervisor access page lists independent action switches, distinct from dashboard read access.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-final-s01",
+        "section": "Configure supervisor settings",
+        "supported": true,
+        "notes": "Opened complete supervisor settings procedure; four independent toggles and standalone applicability confirmed."
+      }
+    ]
+  },
+  {
+    "id": "cc-d6-c08",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "4ea3c838193a68ea9e171d6eb596360cd5d3de0601ee3ed35b222f51f87a5807",
+    "rationale": "Assign explicitly requires Open and unassigned.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-final-s02",
+        "section": "Assign conversations; Transfer conversations; End conversations forcibly",
+        "supported": true,
+        "notes": "Opened assignment/transfer/closure sections; Open-unassigned, Active/Waiting messaging, elevated mode and AI endpoint restrictions confirmed."
+      }
+    ]
+  },
+  {
+    "id": "cc-d6-c09",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "12d827552c172feae881dee7b9c14c1a46a55bac2c722fae034bf763692a75a9",
+    "rationale": "Active Live Chat uses Transfer; Assign targets Open/unassigned, Force Close ends it and filters cannot transfer.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-final-s02",
+        "section": "Assign conversations; Transfer conversations; End conversations forcibly",
+        "supported": true,
+        "notes": "Opened assignment/transfer/closure sections; Open-unassigned, Active/Waiting messaging, elevated mode and AI endpoint restrictions confirmed."
+      }
+    ]
+  },
+  {
+    "id": "cc-d6-c10",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "cda22e6f8bcce337d314eeccea21e805f3f58e0bc0978d0c978512bac2f6f17c",
+    "rationale": "Plan defines population, timing and criteria; criteria/results are not scheduling components.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-final-s04",
+        "section": "How quality evaluation works; Prerequisites; Roles and privileges; Configure connection references",
+        "supported": true,
+        "notes": "Opened criteria/plans/evaluations, quality roles/credits/AI/consent and all three readiness components."
+      }
+    ]
+  },
+  {
+    "id": "cc-d6-c11",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "42fb1e11e02a396bbcb4baba219232625a02f460c455a51ecfaf291a6fa8bedb",
+    "rationale": "Prerequisites explicitly list connection references, enabled flows and agent publication.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-final-s04",
+        "section": "How quality evaluation works; Prerequisites; Roles and privileges; Configure connection references",
+        "supported": true,
+        "notes": "Opened criteria/plans/evaluations, quality roles/credits/AI/consent and all three readiness components."
+      }
+    ]
+  },
+  {
+    "id": "cc-d6-c12",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "164d211842d823e3b16ed3cdfa4577b540afe6d0d18929844568cfffca708319",
+    "rationale": "Trigger with Closed conversations targets future eligible closures; Recurring/Once and criteria alone are different schedules.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-final-s05",
+        "section": "Create and activate evaluation plan for cases and closed conversations",
+        "supported": true,
+        "notes": "Opened conversation plan creation; future closure Trigger contrasted with Recurring and Once."
+      }
+    ]
+  },
+  {
+    "id": "cc-d6-c13",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "43c6ac509fb187799b5e82babe3626b441e6ab350bae2476728730f8b999f0f3",
+    "rationale": "Publication makes the customized standalone report visible organization-wide to its users, not a private bookmark.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-final-s06",
+        "section": "Customize the display of analytics reports; Understand the out-of-the-box data model",
+        "supported": true,
+        "notes": "Opened standalone visual editing; organization publication, Save/Publish and irreversible Reset verified."
+      }
+    ]
+  },
+  {
+    "id": "cc-d6-c14",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "870fb8aa8f1b3d458a2a6dd2aab0a9c358ba46d5a56dfbc923c53e2bc19542eb",
+    "rationale": "Reset permanently removes customizations; scope is now explicit.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-final-s06",
+        "section": "Customize the display of analytics reports; Understand the out-of-the-box data model",
+        "supported": true,
+        "notes": "Opened standalone visual editing; organization publication, Save/Publish and irreversible Reset verified."
+      }
+    ]
+  },
+  {
+    "id": "cc-d6-c15",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "4707b79d550314067244dc0909ae9fdb0380694050d0b491eace6c4fbc2b03d0",
+    "rationale": "Missing business logic requires a measure/model extension, not changing a title, visual type or bookmark.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-final-s07",
+        "section": "Scenario-based use cases; How data model customization works",
+        "supported": true,
+        "notes": "Opened managed/customer model architecture; report copy maintenance and explicit exclusion of supervisor actions."
+      }
+    ]
+  },
+  {
+    "id": "cc-d6-c16",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "16d80c9da59286f03055c24d7ad7205a4a3c984950fa057712d01f1851b07fa5",
+    "rationale": "Managed semantics remain service-controlled; local/customer extensions avoid unsupported managed edits.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-final-s07",
+        "section": "Scenario-based use cases; How data model customization works",
+        "supported": true,
+        "notes": "Opened managed/customer model architecture; report copy maintenance and explicit exclusion of supervisor actions."
+      }
+    ]
+  },
+  {
+    "id": "cc-d6-c17",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "8b0b763b8531235ca7474d4abd4162f57e09e362e641ee0e6bdb6af011557daf",
+    "rationale": "The data-model overview explicitly excludes assign/transfer/monitor/force-close on customized reports.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-final-s07",
+        "section": "Scenario-based use cases; How data model customization works",
+        "supported": true,
+        "notes": "Opened managed/customer model architecture; report copy maintenance and explicit exclusion of supervisor actions."
+      }
+    ]
+  },
+  {
+    "id": "cc-d6-c18",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "bba5045c6fcd3f5a67b0444df7d5a952d4948de0077140fa03c9035f67b34fbe",
+    "rationale": "Desktop instructions load additional data and create model relationships. Revised alternatives test absent attribute, disconnected table and unsupported managed edits.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-final-s09",
+        "section": "Create a new report; Extend the out-of-the-box data model; Publish reports back to Dynamics 365",
+        "supported": true,
+        "notes": "Opened Desktop managed-model connection, new measures and local composite model/additional attributes/relationships procedure."
+      }
+    ]
+  },
+  {
+    "id": "cc-d6-c19",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "a9b55198d8873d88ab670f0ca11426c89d5784a46e374454d2bb4585b2ff1ba9",
+    "rationale": "The course explicitly places standard dashboards within workspace navigation.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-final-s10",
+        "section": "Embed reports in Copilot Service workspace; Retain the report state across session tabs",
+        "supported": true,
+        "notes": "Opened full course unit, including built-in embedded reports and customized-app table content preserving report state."
+      }
+    ]
+  },
+  {
+    "id": "cc-d6-c20",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "bc9c23bcca724631ad1c678622a09079054262a68626eb638e903531849d709a",
+    "rationale": "Add report is populated from the customer workspace selected in Step1.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-final-s08",
+        "section": "Prerequisites; Step 1; Step 3; Step 4; Enable automatic page refresh",
+        "supported": true,
+        "notes": "Opened customization enablement, Fabric workspaces, model/report permissions and embedding Step4 picker from Step1 workspace."
+      }
+    ]
+  },
+  {
+    "id": "cc-d6-c21",
+    "revision": 3,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "50066f8e02ceaf2186aac862bc7d9f75ad3bc0475aaf4cb786a14b86407de9ad",
+    "rationale": "Configured report workspace is the documented picker source. Scope and explanation now match its actual alternatives.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-final-s08",
+        "section": "Prerequisites; Step 1; Step 3; Step 4; Enable automatic page refresh",
+        "supported": true,
+        "notes": "Opened customization enablement, Fabric workspaces, model/report permissions and embedding Step4 picker from Step1 workspace."
+      }
+    ]
+  },
+  {
+    "id": "cc-d6-c22",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "fdcb9f9b9cd2bafcb33a43c3c32991415363bb9c82b09bb77095c146094a192c",
+    "rationale": "The Diagnose setup explicitly assigns Monitoring Reader to its application.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-final-s13",
+        "section": "Update Application Insights ID in environment variable; Create and register an app; Assign Monitoring Reader role; Enable Debug tab",
+        "supported": true,
+        "notes": "Opened full instance-ID, federated app/managed identity, Monitoring Reader and default/environment Debug app-setting procedure."
+      }
+    ]
+  },
+  {
+    "id": "cc-d6-c23",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "07a5e435f86b4af06173ef708575eb98f72202b877a265c543110c7e9c45f9b8",
+    "rationale": "Default value and Setting environment value must both be Yes for this app setting.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-final-s13",
+        "section": "Update Application Insights ID in environment variable; Create and register an app; Assign Monitoring Reader role; Enable Debug tab",
+        "supported": true,
+        "notes": "Opened full instance-ID, federated app/managed identity, Monitoring Reader and default/environment Debug app-setting procedure."
+      }
+    ]
+  },
+  {
+    "id": "cc-d6-c24",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "c065a8fbc57a0dbb20fe2635b95a74dc4374fe477063eb7c57d318768df9d573",
+    "rationale": "The guide requires identity/read authorization plus display setting after ingestion; report authoring or supervisor toggles do not establish telemetry access.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d6-final-s13",
+        "section": "Update Application Insights ID in environment variable; Create and register an app; Assign Monitoring Reader role; Enable Debug tab",
+        "supported": true,
+        "notes": "Opened full instance-ID, federated app/managed identity, Monitoring Reader and default/environment Debug app-setting procedure."
+      }
+    ]
+  }
+]

@@ -1,0 +1,1579 @@
+{
+  "id": "ab250-original",
+  "version": "0.1.0",
+  "title": "AB-250 original questions — pilot",
+  "description": "24 independently reviewed original questions. Read-only pilot preview; full practice and exams unlock at 300 approved questions. Not Microsoft exam content.",
+  "fixture": false,
+  "domains": [
+    {
+      "id": "deployment",
+      "title": "Deploy Contact Center",
+      "weight": 17
+    },
+    {
+      "id": "channels",
+      "title": "Implement channels",
+      "weight": 32
+    },
+    {
+      "id": "agents-ai",
+      "title": "Configure agents and AI",
+      "weight": 12
+    },
+    {
+      "id": "work-distribution",
+      "title": "Configure work distribution",
+      "weight": 12
+    },
+    {
+      "id": "representative-experience",
+      "title": "Configure the representative experience",
+      "weight": 17
+    },
+    {
+      "id": "analytics",
+      "title": "Manage analytics",
+      "weight": 10
+    }
+  ],
+  "sources": [
+    {
+      "id": "cc-d1-s01",
+      "title": "Dynamics 365 Contact Center overview",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/implement/overview-contact-center"
+    },
+    {
+      "id": "cc-d1-s02",
+      "title": "Use Copilot Service workspace",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/ccw-overview"
+    },
+    {
+      "id": "cc-d1-s03",
+      "title": "Set up the embedded experience in Salesforce",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/set-up-embedded-experience"
+    },
+    {
+      "id": "cc-d1-s04",
+      "title": "Best practices for application lifecycle management",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/alm-best-practices"
+    },
+    {
+      "id": "cc-d1-s05",
+      "title": "Migrate configurations for channels using solutions",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/migrate-channel-config-using-solutions"
+    },
+    {
+      "id": "cc-d1-s06",
+      "title": "Manage Dynamics 365 Contact Center environments",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/implement/restore-environment"
+    },
+    {
+      "id": "cc-d2-s01",
+      "title": "Configure authentication settings",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-chat-auth-settings"
+    },
+    {
+      "id": "cc-d2-s02",
+      "title": "Identify customers automatically",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/record-identification-rule"
+    },
+    {
+      "id": "cc-d2-s03",
+      "title": "Configure a preconversation survey",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-pre-chat-survey"
+    },
+    {
+      "id": "cc-d2-s04",
+      "title": "Manage context variables",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/manage-context-variables"
+    },
+    {
+      "id": "cc-d2-s05",
+      "title": "Embed chat widget in your website or portal",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/embed-chat-widget-portal"
+    },
+    {
+      "id": "cc-d1-s07",
+      "title": "Solution layers",
+      "url": "https://learn.microsoft.com/en-us/power-apps/maker/data-platform/solution-layers"
+    },
+    {
+      "id": "cc-d2-s06",
+      "title": "Send custom context during live chat",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/send-context-starting-chat"
+    },
+    {
+      "id": "cc-d3-s01",
+      "title": "Configure Copilot features",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-copilot-features"
+    },
+    {
+      "id": "cc-d3-s02",
+      "title": "Enable Copilot case and conversation summaries",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/copilot-enable-summary"
+    },
+    {
+      "id": "cc-d3-s03",
+      "title": "Use Copilot to summarize conversations",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/copilot-summarize-conversations"
+    },
+    {
+      "id": "cc-d3-s04",
+      "title": "Configure Copilot features in the help pane",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/copilot-enable-help-pane"
+    },
+    {
+      "id": "cc-d3-s05",
+      "title": "Configure context variables for AI agents",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/context-variables-for-bot"
+    },
+    {
+      "id": "cc-d3-s06",
+      "title": "Work with global variables",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-variables-bot"
+    },
+    {
+      "id": "cc-d3-s07",
+      "title": "Work with variables",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-variables"
+    },
+    {
+      "id": "cc-d4-s01",
+      "title": "Overview of unified routing",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/overview-unified-routing"
+    },
+    {
+      "id": "cc-d4-s02",
+      "title": "Configure work classification rulesets",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-work-classification"
+    },
+    {
+      "id": "cc-d4-s03",
+      "title": "Understand skill matching in unified routing",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/set-up-skill-based-routing"
+    },
+    {
+      "id": "cc-d4-s04",
+      "title": "Create and manage capacity profiles",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/capacity-profiles"
+    },
+    {
+      "id": "cc-d4-s05",
+      "title": "Assignment methods in unified routing",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/assignment-methods"
+    },
+    {
+      "id": "cc-d4-s06",
+      "title": "Best practices for unified routing",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/unified-routing-best-practices"
+    },
+    {
+      "id": "cc-d5-s01",
+      "title": "Microsoft Learn: Manage session templates",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/session-templates"
+    },
+    {
+      "id": "cc-d5-s02",
+      "title": "Microsoft Learn: Manage application tab templates",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/application-tab-templates"
+    },
+    {
+      "id": "cc-d5-s03",
+      "title": "Microsoft Learn: Guide representatives with scripts",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/agent-scripts"
+    },
+    {
+      "id": "cc-d5-s04",
+      "title": "Microsoft Learn: Configure macros",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/macros"
+    },
+    {
+      "id": "cc-d5-s05",
+      "title": "Microsoft Learn: Create and manage workstreams",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-workstreams"
+    },
+    {
+      "id": "cc-d5-s06",
+      "title": "Microsoft Learn: Automation dictionary",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/automation-dictionary-keys"
+    },
+    {
+      "id": "cc-d5-s07",
+      "title": "Microsoft Learn: Productivity automation macros",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/macros-productivity-automation"
+    },
+    {
+      "id": "cc-d6-s01",
+      "title": "Microsoft Learn: Monitor voice calls",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/voice-channel-monitor-calls"
+    },
+    {
+      "id": "cc-d6-s02",
+      "title": "Microsoft Learn: Analytics access and dashboards",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-customer-service-analytics-insights-csh"
+    },
+    {
+      "id": "cc-d6-s03",
+      "title": "Microsoft Learn: Manage real-time analytics",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/enable-realtime-analytics-dashboard-administrator"
+    },
+    {
+      "id": "cc-d6-s04",
+      "title": "Microsoft Learn: Configure conversation diagnostics",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-conversation-diagnostics"
+    },
+    {
+      "id": "cc-d6-s05",
+      "title": "Microsoft Learn: Conversation diagnostics events",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/conversation-diagnostics-subscenarios"
+    },
+    {
+      "id": "cc-d6-s06",
+      "title": "Microsoft Learn: Diagnose contact center health",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/diagnose-dashboard"
+    }
+  ],
+  "questions": [
+    {
+      "id": "ab250-d1-q01",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.1.03"
+      ],
+      "conceptId": "salesforce-adapter-url",
+      "prompt": "A support team keeps Salesforce Service Console as its representative desktop. Omnichannel capabilities are provisioned, and the implementation administrator is importing the documented call-center definition. Which value belongs in its CTI Adapter URL?",
+      "answer": "The embedded conversation widget URL.",
+      "explanation": "The Salesforce call-center definition points to the representative widget.",
+      "sourceIds": [
+        "cc-d1-s03"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:salesforce-adapter-url",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "The customer-facing chat script."
+        },
+        {
+          "id": "o2",
+          "text": "The embedded conversation widget URL."
+        },
+        {
+          "id": "o3",
+          "text": "The public key endpoint for customer chat authentication."
+        },
+        {
+          "id": "o4",
+          "text": "The Dataverse Web API endpoint."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "That script serves the customer website.",
+        "o2": "This is the URL required by the Salesforce setup.",
+        "o3": "That endpoint verifies customer tokens, not the representative widget.",
+        "o4": "This is not the documented CTI adapter value."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n01"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "ab250-d1-q02",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.2.04"
+      ],
+      "conceptId": "post-restore-readiness",
+      "prompt": "A team restores a Contact Center environment from backup. The environment is available again, but the recovery checklist has not addressed omnichannel capabilities. Which follow-up belongs on that checklist?",
+      "answer": "Provision channels or enable unified routing again, as applicable.",
+      "explanation": "The environment recovery guidance explicitly calls for channel provisioning or unified-routing enablement after restoration. Solution imports and role assignments do not replace that service recovery step.",
+      "sourceIds": [
+        "cc-d1-s06"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:post-restore-readiness",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Reimport the channel configuration solution and treat that alone as recovery of the omnichannel service."
+        },
+        {
+          "id": "o2",
+          "text": "Reassign representative security roles and treat that alone as recovery of the omnichannel service."
+        },
+        {
+          "id": "o3",
+          "text": "Treat all omnichannel services as ready once the restore succeeds."
+        },
+        {
+          "id": "o4",
+          "text": "Provision channels or enable unified routing again, as applicable."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "Importing configuration does not satisfy the documented post-restore provisioning or enablement requirement.",
+        "o2": "Role assignment controls access; it does not perform the documented service recovery step.",
+        "o3": "A successful environment restore does not remove the stated follow-up requirement.",
+        "o4": "This is the required follow-up, with the applicable path determined by the environment."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n02"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "ab250-d1-q03",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.2.03"
+      ],
+      "conceptId": "solution-layer-inspection",
+      "prompt": "A release manager must explain why a Dataverse component behaves differently after several managed solutions and an unmanaged customization were installed. The manager needs to inspect which properties each solution changed before deciding on remediation. Which diagnostic view should be used?",
+      "answer": "See solution layers for the affected component.",
+      "explanation": "See solution layers shows the order of component changes and the properties changed by each layer. Import results, dependencies, and installed versions answer other deployment questions but do not provide that per-layer property comparison.",
+      "sourceIds": [
+        "cc-d1-s07"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:solution-layer-inspection",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "The component's See solution layers view."
+        },
+        {
+          "id": "o2",
+          "text": "The solution import job's success or failure log."
+        },
+        {
+          "id": "o3",
+          "text": "The component's solution dependency list."
+        },
+        {
+          "id": "o4",
+          "text": "The environment's list of installed solution versions."
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "This view exposes component layers and their changed and unchanged properties.",
+        "o2": "Import success or failure does not show which properties each installed layer changed.",
+        "o3": "Dependencies describe component relationships, not per-layer property differences.",
+        "o4": "A version inventory does not show the properties each layer changed."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n02"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "ab250-d1-q04",
+      "revision": 2,
+      "kind": "multiple",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.2.02",
+        "D1.2.03"
+      ],
+      "conceptId": "channel-migration-prerequisites",
+      "prompt": "A channel configuration migration references custom tables and columns. An operator will use solutions and the Configuration Migration tool to move it between environments. Which TWO preparation checks are explicitly required by the documented procedure?",
+      "answer": "Prepare the referenced schema in the destination and verify the operator's migration permissions.",
+      "explanation": "The documented prerequisites require both destination schema dependencies and appropriate migration privileges before migration. Source-style read/export permissions are insufficient at the destination; do not assume the channel configuration import creates every referenced custom dependency.",
+      "sourceIds": [
+        "cc-d1-s05"
+      ],
+      "tags": [
+        "domain:deployment",
+        "feature:channel-migration-prerequisites",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Create the referenced custom tables and columns in the destination first."
+        },
+        {
+          "id": "o2",
+          "text": "Give the operator export and read permissions in both environments, with no destination import or write privileges."
+        },
+        {
+          "id": "o3",
+          "text": "Verify source export/read and destination import/full table permissions."
+        },
+        {
+          "id": "o4",
+          "text": "Rely on the channel configuration import to prepare all referenced custom schema automatically."
+        }
+      ],
+      "correctOptionIds": [
+        "o1",
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "The referenced custom tables and columns must already exist in the target.",
+        "o2": "The destination requires import and full permissions for the migrated tables, not read/export alone.",
+        "o3": "This covers the documented source and destination privilege requirements.",
+        "o4": "The procedure requires referenced schema to be present before proceeding."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n02"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "ab250-d2-q01",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.08",
+        "D2.3.01"
+      ],
+      "conceptId": "anonymous-context-initialization",
+      "prompt": "An anonymous chat website must submit custom context when a new chat starts. Its developer currently invokes the Live Chat SDK as soon as the script tag is inserted, before the widget reports readiness. Which change follows the documented initialization sequence?",
+      "answer": "Wait for lcw:ready, register the context provider, then start the chat.",
+      "explanation": "The SDK readiness event must occur before its methods are invoked. Register the context provider after that event and before starting the chat.",
+      "sourceIds": [
+        "cc-d2-s06"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:anonymous-context-initialization",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Wait for lcw:ready, call startChat, and then register setContextProvider."
+        },
+        {
+          "id": "o2",
+          "text": "Register setContextProvider immediately after inserting the script, then wait for lcw:ready to startChat."
+        },
+        {
+          "id": "o3",
+          "text": "Handle lcw:ready, call setContextProvider, then startChat."
+        },
+        {
+          "id": "o4",
+          "text": "Wait only for DOMContentLoaded, register setContextProvider, and call startChat without waiting for lcw:ready."
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "The documented sequence registers the provider before starting the new chat.",
+        "o2": "Registering the provider is itself an SDK call and must wait for SDK readiness.",
+        "o3": "This follows readiness, provider registration, and chat start in the documented order.",
+        "o4": "Page DOM readiness is not the documented signal that the live-chat SDK is ready."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n02"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "ab250-d2-q02",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.02"
+      ],
+      "conceptId": "contact-phone-identification",
+      "prompt": "A chat survey asks for a phone number. The implementation uses the documented standard automatic customer identification mapping for contacts. The customer’s number is stored only in the contact's Home Phone field. Which change aligns with that standard contact mapping?",
+      "answer": "Populate the contact's Mobile Number field with the appropriate customer number.",
+      "explanation": "The standard Contact Phone mapping in the preconversation question table uses Mobile Number. Business Phone is the standard account mapping; the other contact fields do not become the standard contact mapping merely by holding a number.",
+      "sourceIds": [
+        "cc-d2-s02"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:contact-phone-identification",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Store it only in the contact's Business Phone field."
+        },
+        {
+          "id": "o2",
+          "text": "Store it in the contact's Mobile Number field."
+        },
+        {
+          "id": "o3",
+          "text": "Store it only in the contact's Home Phone field."
+        },
+        {
+          "id": "o4",
+          "text": "Store it only in a new custom contact phone column."
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "The documented preconversation contact mapping uses Mobile Number; the account mapping uses Business Phone.",
+        "o2": "This matches the specified standard contact mapping.",
+        "o3": "Home Phone is outside the stated standard contact mapping.",
+        "o4": "Adding a column alone does not make it the standard contact match field."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n01"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "ab250-d2-q03",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.04"
+      ],
+      "conceptId": "portal-widget-location",
+      "prompt": "An administrator has copied a chat instance's widget code and must install it on an existing Power Apps portal using the documented Portal Management approach. Where should the code go?",
+      "answer": "The Value (HTML) field of the Chat Widget Code content snippet.",
+      "explanation": "The documented Portal Management procedure uses the existing Chat Widget Code content snippet and stores the code in its Value (HTML) field. Authentication endpoints, snippet names, and unreferenced snippets do not implement that documented placement.",
+      "sourceIds": [
+        "cc-d2-s05"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:portal-widget-location",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "The Public key URL field of the chat authentication record."
+        },
+        {
+          "id": "o2",
+          "text": "The Name field of the Chat Widget Code content snippet."
+        },
+        {
+          "id": "o3",
+          "text": "A newly created content snippet with a different name, with no reference from the portal."
+        },
+        {
+          "id": "o4",
+          "text": "The Chat Widget Code content snippet's Value (HTML) field."
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "This field expects a token-verification endpoint, not the widget script.",
+        "o2": "The Name identifies the snippet; the documented script content belongs in Value (HTML).",
+        "o3": "Creating an unreferenced snippet does not install the widget through the documented Chat Widget Code integration.",
+        "o4": "This is the documented location for the widget snippet."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n02"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "ab250-d2-q04",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.06"
+      ],
+      "conceptId": "survey-consent-configuration",
+      "prompt": "A chat preconversation survey must request explicit consent using the built-in consent question type and make the response mandatory. Which TWO settings implement that requirement?",
+      "answer": "Use the User consent answer type and set Required to Yes.",
+      "explanation": "The documented consent configuration requires both selections. Choose two answers.",
+      "sourceIds": [
+        "cc-d2-s03"
+      ],
+      "tags": [
+        "domain:channels",
+        "feature:survey-consent-configuration",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Select User consent as the answer type."
+        },
+        {
+          "id": "o2",
+          "text": "Select Multiple lines as the answer type."
+        },
+        {
+          "id": "o3",
+          "text": "Set Required to No."
+        },
+        {
+          "id": "o4",
+          "text": "Set Required to Yes."
+        }
+      ],
+      "correctOptionIds": [
+        "o1",
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "This provides the built-in consent control.",
+        "o2": "Free text does not select the built-in consent control.",
+        "o3": "This contradicts the mandatory-response requirement.",
+        "o4": "Consent questions require this setting."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n02"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "ab250-d3-q01",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.1.02"
+      ],
+      "conceptId": "copilot-custom-role-diagnosis",
+      "prompt": "A standalone Contact Center pilot has Copilot enabled and the intended experience profile assigned. Representatives with the standard role can use it, but a custom-role group cannot. What should the administrator check next?",
+      "answer": "Check the custom role's required Copilot privileges.",
+      "explanation": "The working standard-role group and confirmed profile isolate the next check to the failing custom role's Copilot privileges.",
+      "sourceIds": [
+        "cc-d3-s01"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:troubleshoot"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Re-enable Copilot for the environment, without inspecting the custom role."
+        },
+        {
+          "id": "b",
+          "text": "Check the custom role's required Copilot privileges."
+        },
+        {
+          "id": "c",
+          "text": "Reassign the same experience profile that the scenario already confirms is correct."
+        },
+        {
+          "id": "d",
+          "text": "Enable recording of representative interactions with Copilot."
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "optionExplanations": {
+        "a": "Standard-role users already succeed, so repeating environment enablement does not address the role-specific difference.",
+        "b": "Custom security roles must include the documented Copilot privileges.",
+        "c": "The intended profile is already assigned; repeating that assignment does not check the missing permission layer.",
+        "d": "Interaction recording captures usage and feedback rather than granting the custom role access."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n01"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "ab250-d3-q02",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.1.01"
+      ],
+      "conceptId": "conversation-summary-join-trigger",
+      "prompt": "A standalone Contact Center team wants an automatic chat recap when a colleague joins a consultation, before the conversation ends. Which conversation-summary trigger meets that timing requirement?",
+      "answer": "When a representative joins the conversation",
+      "explanation": "Configure the join event rather than relying on end-of-conversation or manual generation.",
+      "sourceIds": [
+        "cc-d3-s02"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Only when the conversation ends"
+        },
+        {
+          "id": "b",
+          "text": "Only when a representative requests a summary"
+        },
+        {
+          "id": "c",
+          "text": "Only when the case closes"
+        },
+        {
+          "id": "d",
+          "text": "When a representative joins the conversation"
+        }
+      ],
+      "correctOptionIds": [
+        "d"
+      ],
+      "optionExplanations": {
+        "a": "This waits until the wrong event.",
+        "b": "This requires a manual request.",
+        "c": "The requirement concerns a live conversation, not case closure.",
+        "d": "The join trigger includes consultation and transfer scenarios."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n01"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "ab250-d3-q03",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.1.02",
+        "D3.1.03"
+      ],
+      "conceptId": "copilot-preset-knowledge-filter",
+      "prompt": "For Ask a question using the organization's knowledge base, an administrator needs the same fixed topic restriction applied in the background. It must not depend on the current record or be selectable by representatives. Which filter type fits?",
+      "answer": "Preset filter",
+      "explanation": "Use a preset filter for the fixed restriction; ensure matching knowledge content exists.",
+      "sourceIds": [
+        "cc-d3-s04"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Preset filter"
+        },
+        {
+          "id": "b",
+          "text": "Representative filter"
+        },
+        {
+          "id": "c",
+          "text": "Automated filter driven by current-record values"
+        },
+        {
+          "id": "d",
+          "text": "Enable the organization's knowledge base without defining filter conditions"
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "optionExplanations": {
+        "a": "Preset conditions apply the fixed restriction in the background.",
+        "b": "These expose filtering choices to representatives, contrary to the requirement.",
+        "c": "This uses current-record context, which the requirement excludes.",
+        "d": "Choosing a knowledge source alone does not define the requested topic restriction."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n01"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "ab250-d3-q04",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.02"
+      ],
+      "conceptId": "voice-external-variable-usage",
+      "prompt": "A Copilot Studio voice agent must accept serviceCategory from the native Contact Center integration and reuse it across topics. Its name and data type already match the external value. Which TWO Usage settings are required? Choose two.",
+      "answer": "Global (any topic can access) External sources can set values",
+      "explanation": "These settings provide scope and external initialization; they do not imply that IVR supports variable timeouts.",
+      "sourceIds": [
+        "cc-d3-s06"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Restrict the variable to its current topic"
+        },
+        {
+          "id": "b",
+          "text": "Global (any topic can access)"
+        },
+        {
+          "id": "c",
+          "text": "Prevent external sources from changing values"
+        },
+        {
+          "id": "d",
+          "text": "External sources can set values"
+        }
+      ],
+      "correctOptionIds": [
+        "b",
+        "d"
+      ],
+      "optionExplanations": {
+        "a": "Topic-only scope cannot meet the cross-topic requirement.",
+        "b": "Global scope allows other topics to use it.",
+        "c": "This contradicts receiving the external value.",
+        "d": "This permits the integration to supply the value."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n02"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "ab250-d4-q01",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.02"
+      ],
+      "conceptId": "routing-static-attribute-reuse",
+      "prompt": "Several routing rules repeat the same static VIP-customer check, adding work to repeated assignment cycles. The result is also needed for queue selection. Which design best follows Microsoft's guidance?",
+      "answer": "Derive a reusable attribute during work classification.",
+      "explanation": "Compute stable categorization once, then consume it in route-to-queue and prioritization rules.",
+      "sourceIds": [
+        "cc-d4-s06"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Repeat the full VIP check in every prioritization rule during each assignment cycle."
+        },
+        {
+          "id": "b",
+          "text": "Evaluate VIP status only in route-to-queue rules and leave downstream prioritization to repeat the full check."
+        },
+        {
+          "id": "c",
+          "text": "Derive a reusable attribute during work classification."
+        },
+        {
+          "id": "d",
+          "text": "Add the full VIP check to a custom assignment rule and rely on it to populate the earlier queue-selection decision."
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "optionExplanations": {
+        "a": "This preserves the repeated processing that the design should reduce.",
+        "b": "Queue-only evaluation does not provide the shared classification value needed downstream.",
+        "c": "Microsoft recommends classifying static values once and reusing the attribute in route-to-queue and prioritization rules.",
+        "d": "Assignment occurs after queue routing; it cannot supply that earlier decision, and repeating complex assignment logic does not follow the guidance."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n01"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "ab250-d4-q02",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.1.04",
+        "D4.2.04"
+      ],
+      "conceptId": "highest-capacity-exact-ordering",
+      "prompt": "A queue must assign work to the representative with the greatest available capacity among those satisfying every required skill and allowed presence. Which out-of-the-box configuration meets that requirement?",
+      "answer": "Highest capacity with Exact Match",
+      "explanation": "The required ranking and strict eligibility must both be configured.",
+      "sourceIds": [
+        "cc-d4-s05"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Highest capacity with Exact Match"
+        },
+        {
+          "id": "b",
+          "text": "Highest capacity with Closest Match"
+        },
+        {
+          "id": "c",
+          "text": "Advanced round robin with Exact Match"
+        },
+        {
+          "id": "d",
+          "text": "A custom alphabetical ordering"
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "optionExplanations": {
+        "a": "Exact Match filters eligibility before capacity ordering.",
+        "b": "Closest Match orders by skill closeness rather than available capacity.",
+        "c": "Round robin uses assignment order, not greatest available capacity.",
+        "d": "Alphabetical order does not satisfy the capacity ranking requirement."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n01"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "ab250-d4-q03",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.04"
+      ],
+      "conceptId": "custom-assignment-skill-condition",
+      "prompt": "A queue uses custom assignment rules that must be retained. The workstream's default is Exact Match, but the custom rules do not check skills. What change enforces the required skills without replacing those custom rules?",
+      "answer": "Add an explicit exact-skill condition to the custom assignment rules.",
+      "explanation": "The custom method overrides the workstream's default skill algorithm.",
+      "sourceIds": [
+        "cc-d4-s03"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Switch the workstream's default algorithm to Closest Match while leaving the custom rules unchanged."
+        },
+        {
+          "id": "b",
+          "text": "Attach required skills during classification but leave the custom assignment conditions unchanged."
+        },
+        {
+          "id": "c",
+          "text": "Order custom assignment candidates by available capacity without adding a skill condition."
+        },
+        {
+          "id": "d",
+          "text": "Add an explicit exact-skill condition to the custom assignment rules."
+        }
+      ],
+      "correctOptionIds": [
+        "d"
+      ],
+      "optionExplanations": {
+        "a": "Changing the workstream default does not add conditions to a custom assignment method.",
+        "b": "Attaching required skills describes the work, but custom assignment still needs a matching condition.",
+        "c": "Capacity ordering ranks candidates; it does not enforce the missing skill eligibility condition.",
+        "d": "Custom assignment needs its own skill conditions because it overrides the default skill algorithm."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n02"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "ab250-d4-q04",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.1.04",
+        "D1.3.04"
+      ],
+      "conceptId": "capacity-custom-limit-and-blocking",
+      "prompt": "A capacity profile defaults to three chats. Experienced representatives should handle six, while trainees retain three. Reaching the applicable limit must block further automatic work across other profiles too. Which TWO changes meet these requirements? Choose two.",
+      "answer": "Set a custom limit of six for experienced representatives Enable Assignment blocking on the profile",
+      "explanation": "Combine individual workload limits with profile-level assignment blocking.",
+      "sourceIds": [
+        "cc-d4-s04"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:configure"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Raise the default limit for everyone to six"
+        },
+        {
+          "id": "b",
+          "text": "Set a custom limit of six for experienced representatives"
+        },
+        {
+          "id": "c",
+          "text": "Enable Assignment blocking on the profile"
+        },
+        {
+          "id": "d",
+          "text": "Add a second nonblocking profile for trainees"
+        }
+      ],
+      "correctOptionIds": [
+        "b",
+        "c"
+      ],
+      "optionExplanations": {
+        "a": "That also raises the trainees' limit.",
+        "b": "Custom limits override the default for selected representatives.",
+        "c": "Blocking stops further automatic work when the applicable limit is met.",
+        "d": "Another nonblocking profile does not enforce the requested stop."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n02"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "ab250-d5-q01",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.1.02"
+      ],
+      "conceptId": "website-tab-embedding",
+      "prompt": "In standalone Contact Center, a service team's supplier portal opens normally in a browser but refuses to load in a Third-party website application tab. The URL is correct. What should you verify first?",
+      "answer": "Verify iframe compatibility.",
+      "explanation": "A valid URL is insufficient for this application-tab page type.",
+      "sourceIds": [
+        "cc-d5-s02"
+      ],
+      "tags": [
+        "domain:D5",
+        "topic:representative-workspace",
+        "feature:website-tab-embedding",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Whether making the website the anchor tab would bypass its embedding restrictions"
+        },
+        {
+          "id": "o2",
+          "text": "Whether the portal permits iframe hosting"
+        },
+        {
+          "id": "o3",
+          "text": "Whether the optional data parameter must be populated even for a complete fixed URL"
+        },
+        {
+          "id": "o4",
+          "text": "Whether the template title must exactly match the portal page title"
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "Anchor placement does not change the iframe compatibility requirement.",
+        "o2": "The Third-party website page type can host only iframe-compatible sites.",
+        "o3": "The data parameter is optional; a complete URL does not inherently require it.",
+        "o4": "The display title does not establish the target site's embedding policy."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n01"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "ab250-d5-q02",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.2.03"
+      ],
+      "conceptId": "autofill-target-focus",
+      "prompt": "A standalone workspace session contains two account forms. A macro's Autofill form fields action targets the account entity but changes the wrong account form. The intended form is open in another tab. What should the designer address?",
+      "answer": "Ensure the intended account form is focused.",
+      "explanation": "The entity type alone does not distinguish two open account forms.",
+      "sourceIds": [
+        "cc-d5-s07"
+      ],
+      "tags": [
+        "domain:D5",
+        "topic:representative-workspace",
+        "feature:autofill-target-focus",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Whether renaming the intended tab changes which account form Autofill targets"
+        },
+        {
+          "id": "o2",
+          "text": "Whether the account entity logical name alone identifies one of the two forms"
+        },
+        {
+          "id": "o3",
+          "text": "Whether the anchor record always overrides the focused form for Autofill"
+        },
+        {
+          "id": "o4",
+          "text": "Which account form is focused when Autofill runs"
+        }
+      ],
+      "correctOptionIds": [
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "Renaming the tab does not change the focused-form targeting rule.",
+        "o2": "Both forms have the same entity type, so that setting alone does not distinguish them.",
+        "o3": "Anchor context can supply values, but this action applies to the focused form of the specified type.",
+        "o4": "Focus selects the intended form when more than one form has the same entity type."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n02"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "ab250-d5-q03",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.2.02"
+      ],
+      "conceptId": "script-author-permission",
+      "prompt": "A standalone Contact Center administrator is assigning permissions to a specialist who will create representative scripts. Which documented productivity role supports that task?",
+      "answer": "Productivity tools administrator.",
+      "explanation": "Distinguish configuration access from using the resulting scripts.",
+      "sourceIds": [
+        "cc-d5-s03"
+      ],
+      "tags": [
+        "domain:D5",
+        "topic:representative-workspace",
+        "feature:script-author-permission",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Productivity tools administrator"
+        },
+        {
+          "id": "o2",
+          "text": "Productivity tools user"
+        },
+        {
+          "id": "o3",
+          "text": "Analytics Report Author"
+        },
+        {
+          "id": "o4",
+          "text": "Omnichannel Supervisor alone"
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "The scripts documentation lists this authoring role.",
+        "o2": "This supports representatives and supervisors using productivity tools.",
+        "o3": "This concerns report editing, not script authoring.",
+        "o4": "The scripts prerequisites separately specify the productivity authoring role."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n02"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "ab250-d5-q04",
+      "revision": 2,
+      "kind": "multiple",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.1.02",
+        "D5.1.04"
+      ],
+      "conceptId": "session-workstream-composition",
+      "prompt": "A custom session template and a valid application tab template already exist in standalone Contact Center. A chat workstream must use that session experience and open the additional application automatically. Which two configurations connect these existing components? Choose two.",
+      "answer": "Associate the application tab with the session template and the session template with the workstream.",
+      "explanation": "Both relationships are needed; creating the records alone does not connect them.",
+      "sourceIds": [
+        "cc-d5-s01",
+        "cc-d5-s05"
+      ],
+      "tags": [
+        "domain:D5",
+        "topic:representative-workspace",
+        "feature:session-workstream-composition",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Create a second unassociated copy of the application tab template"
+        },
+        {
+          "id": "o2",
+          "text": "Associate the application tab template with the session template"
+        },
+        {
+          "id": "o3",
+          "text": "Select only a representative notification template for the workstream"
+        },
+        {
+          "id": "o4",
+          "text": "Associate the session template with the chat workstream"
+        }
+      ],
+      "correctOptionIds": [
+        "o2",
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "Another record without an association still does not add the application to the session.",
+        "o2": "This association makes the additional tab part of the selected session.",
+        "o3": "Notification selection does not select the session template or its additional tabs.",
+        "o4": "This selects the intended session experience for conversations in that workstream."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n01"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "ab250-d6-q01",
+      "revision": 2,
+      "kind": "single",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.1.04"
+      ],
+      "conceptId": "supervisor-public-intervention",
+      "prompt": "An authorized supervisor is monitoring a standalone Contact Center voice call. The customer asks to speak directly with the supervisor while the representative remains involved. Which action fits this request?",
+      "answer": "Join the call.",
+      "explanation": "Monitoring, private coaching, and joining are different interventions.",
+      "sourceIds": [
+        "cc-d6-s01"
+      ],
+      "tags": [
+        "domain:D6",
+        "topic:supervision-analytics",
+        "feature:supervisor-public-intervention",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Continue sending private coaching messages"
+        },
+        {
+          "id": "o2",
+          "text": "Have the representative leave, then speak with the customer alone"
+        },
+        {
+          "id": "o3",
+          "text": "Join the call"
+        },
+        {
+          "id": "o4",
+          "text": "Continue monitoring without joining"
+        }
+      ],
+      "correctOptionIds": [
+        "o3"
+      ],
+      "optionExplanations": {
+        "o1": "Private coaching does not let the customer hear the supervisor.",
+        "o2": "Removing the representative fails the requirement that the representative remain involved.",
+        "o3": "Joining lets the supervisor speak in the existing call and notifies the representative.",
+        "o4": "Monitoring alone observes the call without making the supervisor a speaking participant."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n01"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "ab250-d6-q02",
+      "revision": 3,
+      "kind": "single",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.1.03"
+      ],
+      "conceptId": "custom-analytics-reader-data",
+      "prompt": "A custom security role has Read access to the Omnichannel real-time report table, but its users still lack the data access needed by the dashboard. Viewers must not receive report-editing permissions. What additional permission area should the administrator review?",
+      "answer": "Review the underlying analytics entities' Read privileges.",
+      "explanation": "Report-table access and the applicable data privileges must both be considered.",
+      "sourceIds": [
+        "cc-d6-s02"
+      ],
+      "tags": [
+        "domain:D6",
+        "topic:supervision-analytics",
+        "feature:custom-analytics-reader-data",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Grant Report Bookmark create and update privileges instead of reviewing data access"
+        },
+        {
+          "id": "o2",
+          "text": "Review Read privileges on the underlying entities used by the analytics"
+        },
+        {
+          "id": "o3",
+          "text": "Grant Analytics Report Author solely to address this read-only data-access gap"
+        },
+        {
+          "id": "o4",
+          "text": "Treat Read on the report table as sufficient and leave data privileges unchanged"
+        }
+      ],
+      "correctOptionIds": [
+        "o2"
+      ],
+      "optionExplanations": {
+        "o1": "Bookmark privileges manage saved report views; they do not replace the documented underlying-data checks.",
+        "o2": "Custom roles need applicable Read access for the report and the underlying analytics entities.",
+        "o3": "Analytics Report Author permits report editing, which the stated read-only requirement excludes. Review the custom role's underlying data Read privileges instead.",
+        "o4": "The documentation separately requires applicable underlying-entity Read privileges for custom roles."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n01"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "ab250-d6-q03",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.2.05"
+      ],
+      "conceptId": "queue-selection-event",
+      "prompt": "Conversation diagnostics is already configured. An engineer needs the event that records which queue unified routing selected, rather than the earlier classification of the work item. Which subscenario should the engineer inspect?",
+      "answer": "RouteToQueue.",
+      "explanation": "Select evidence for the routing stage under investigation.",
+      "sourceIds": [
+        "cc-d6-s05"
+      ],
+      "tags": [
+        "domain:D6",
+        "topic:supervision-analytics",
+        "feature:queue-selection-event",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "RouteToQueue"
+        },
+        {
+          "id": "o2",
+          "text": "Classification"
+        },
+        {
+          "id": "o3",
+          "text": "SupervisorJoin"
+        },
+        {
+          "id": "o4",
+          "text": "CSRNotificationTimeout"
+        }
+      ],
+      "correctOptionIds": [
+        "o1"
+      ],
+      "optionExplanations": {
+        "o1": "This records queue assignment by unified routing.",
+        "o2": "This concerns classification, not queue assignment.",
+        "o3": "This records a supervisor entering a conversation.",
+        "o4": "This concerns a representative not accepting an assignment notification."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n02"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "ab250-d6-q04",
+      "revision": 2,
+      "kind": "multiple",
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.2.05"
+      ],
+      "conceptId": "diagnostics-setup-prerequisites",
+      "prompt": "An operator will configure conversation diagnostics for a supported commercial environment. They already have Azure Contributor and Application Insights query access. The environment is unmanaged and the operator has neither Power Platform administrator nor System Administrator access. Which two prerequisite changes are needed? Choose two.",
+      "answer": "Use a Managed environment and provide the required administration access.",
+      "explanation": "Azure permissions alone do not satisfy the environment and Power Platform prerequisites.",
+      "sourceIds": [
+        "cc-d6-s04"
+      ],
+      "tags": [
+        "domain:D6",
+        "topic:supervision-analytics",
+        "feature:diagnostics-setup-prerequisites",
+        "task:configure",
+        "deployment:standalone"
+      ],
+      "options": [
+        {
+          "id": "o1",
+          "text": "Use a sandbox environment instead, while leaving it unmanaged"
+        },
+        {
+          "id": "o2",
+          "text": "Use a Managed environment"
+        },
+        {
+          "id": "o3",
+          "text": "Grant additional Azure permissions while leaving Power Platform administration access unchanged"
+        },
+        {
+          "id": "o4",
+          "text": "Arrange Power Platform administrator or System Administrator access for the export tasks"
+        }
+      ],
+      "correctOptionIds": [
+        "o2",
+        "o4"
+      ],
+      "optionExplanations": {
+        "o1": "Changing the environment type alone does not satisfy the explicitly stated Managed environment prerequisite.",
+        "o2": "The configuration prerequisites require a Managed environment.",
+        "o3": "More Azure permissions do not replace the separately required administration access in the scenario.",
+        "o4": "The documented export tasks require one of these administration roles."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n02"
+        }
+      ],
+      "status": "approved"
+    }
+  ]
+}

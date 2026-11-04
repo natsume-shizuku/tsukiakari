@@ -1,0 +1,264 @@
+[
+  {
+    "id": "cc-d1-c05",
+    "changes": {
+      "prompt": "A managed configuration update imports successfully into a target with matching installed solution versions. The imported package contains the intended change, but a record previously edited directly in the target still shows its old customization. What should you investigate?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "The target record's active customization layer."
+        },
+        {
+          "id": "o2",
+          "text": "A failed solution import that prevented the package from arriving."
+        },
+        {
+          "id": "o3",
+          "text": "Different installed solution versions between source and target."
+        },
+        {
+          "id": "o4",
+          "text": "A source change omitted from the exported package."
+        }
+      ],
+      "explanation": "Investigate the target-side active customization: it can take precedence over the incoming managed configuration. The scenario rules out a failed import, version mismatch, and an omitted source change."
+    },
+    "reason": "Replace unrelated alternatives with realistic ALM failure causes; constrain the scenario so only active layering remains supported."
+  },
+  {
+    "id": "cc-d1-c06",
+    "changes": {
+      "options": [
+        {
+          "id": "o1",
+          "text": "Verify only that the imported routing rulesets render without errors."
+        },
+        {
+          "id": "o2",
+          "text": "Associate only resource capacity-profile records, leaving skill characteristics unlinked."
+        },
+        {
+          "id": "o3",
+          "text": "Link or create the users, resources, and characteristics."
+        },
+        {
+          "id": "o4",
+          "text": "Reimport the skill definitions without checking their target resource associations."
+        }
+      ],
+      "explanation": "Ruleset rendering is one verification step, but skills and ratings also require user, bookable-resource, and characteristic associations. Capacity-profile associations address a separate configuration; reimporting definitions alone does not perform the required association check."
+    },
+    "reason": "Use plausible but incomplete migration checks rather than unrelated or destructive actions."
+  },
+  {
+    "id": "cc-d2-c06",
+    "changes": {
+      "options": [
+        {
+          "id": "o1",
+          "text": "Inspect only whether a preconversation survey displays the variable."
+        },
+        {
+          "id": "o2",
+          "text": "Inspect only the website custom-context provider code."
+        },
+        {
+          "id": "o3",
+          "text": "Inspect only the variable names used by the AI agent."
+        },
+        {
+          "id": "o4",
+          "text": "Whether classification or assignment rules reference it."
+        }
+      ],
+      "explanation": "Microsoft specifically requires checking unified-routing classification and assignment dependencies before a necessary update or deletion. Survey, website, or AI-agent checks can be useful, but none alone establishes that routing rules no longer depend on the variable."
+    },
+    "reason": "Use incomplete integration checks as distractors; each remains insufficient under the routing dependency requirement."
+  },
+  {
+    "id": "ab250-d1-q02",
+    "changes": {
+      "options": [
+        {
+          "id": "o1",
+          "text": "Reimport the channel configuration solution and treat that alone as recovery of the omnichannel service."
+        },
+        {
+          "id": "o2",
+          "text": "Reassign representative security roles and treat that alone as recovery of the omnichannel service."
+        },
+        {
+          "id": "o3",
+          "text": "Treat all omnichannel services as ready once the restore succeeds."
+        },
+        {
+          "id": "o4",
+          "text": "Provision channels or enable unified routing again, as applicable."
+        }
+      ],
+      "explanation": "The environment recovery guidance explicitly calls for channel provisioning or unified-routing enablement after restoration. Solution imports and role assignments do not replace that service recovery step.",
+      "optionExplanations": {
+        "o1": "Importing configuration does not satisfy the documented post-restore provisioning or enablement requirement.",
+        "o2": "Role assignment controls access; it does not perform the documented service recovery step.",
+        "o3": "A successful environment restore does not remove the stated follow-up requirement.",
+        "o4": "This is the required follow-up, with the applicable path determined by the environment."
+      }
+    },
+    "reason": "Replace dashboard/survey distractions with plausible but insufficient post-restore tasks."
+  },
+  {
+    "id": "ab250-d1-q03",
+    "changes": {
+      "options": [
+        {
+          "id": "o1",
+          "text": "The component's See solution layers view."
+        },
+        {
+          "id": "o2",
+          "text": "The solution import job's success or failure log."
+        },
+        {
+          "id": "o3",
+          "text": "The component's solution dependency list."
+        },
+        {
+          "id": "o4",
+          "text": "The environment's list of installed solution versions."
+        }
+      ],
+      "explanation": "See solution layers shows the order of component changes and the properties changed by each layer. Import results, dependencies, and installed versions answer other deployment questions but do not provide that per-layer property comparison.",
+      "optionExplanations": {
+        "o1": "This view exposes component layers and their changed and unchanged properties.",
+        "o2": "Import success or failure does not show which properties each installed layer changed.",
+        "o3": "Dependencies describe component relationships, not per-layer property differences.",
+        "o4": "A version inventory does not show the properties each layer changed."
+      }
+    },
+    "reason": "Use alternative ALM diagnostic views that answer different questions."
+  },
+  {
+    "id": "ab250-d1-q04",
+    "changes": {
+      "options": [
+        {
+          "id": "o1",
+          "text": "Create the referenced custom tables and columns in the destination first."
+        },
+        {
+          "id": "o2",
+          "text": "Give the operator export and read permissions in both environments, with no destination import or write privileges."
+        },
+        {
+          "id": "o3",
+          "text": "Verify source export/read and destination import/full table permissions."
+        },
+        {
+          "id": "o4",
+          "text": "Rely on the channel configuration import to prepare all referenced custom schema automatically."
+        }
+      ],
+      "explanation": "The documented prerequisites require both destination schema dependencies and appropriate migration privileges before migration. Source-style read/export permissions are insufficient at the destination; do not assume the channel configuration import creates every referenced custom dependency.",
+      "optionExplanations": {
+        "o1": "The referenced custom tables and columns must already exist in the target.",
+        "o2": "The destination requires import and full permissions for the migrated tables, not read/export alone.",
+        "o3": "This covers the documented source and destination privilege requirements.",
+        "o4": "The procedure requires referenced schema to be present before proceeding."
+      }
+    },
+    "reason": "Replace deleting lookup dependencies with a realistic automatic-dependency assumption."
+  },
+  {
+    "id": "ab250-d2-q01",
+    "changes": {
+      "options": [
+        {
+          "id": "o1",
+          "text": "Wait for lcw:ready, call startChat, and then register setContextProvider."
+        },
+        {
+          "id": "o2",
+          "text": "Register setContextProvider immediately after inserting the script, then wait for lcw:ready to startChat."
+        },
+        {
+          "id": "o3",
+          "text": "Handle lcw:ready, call setContextProvider, then startChat."
+        },
+        {
+          "id": "o4",
+          "text": "Wait only for DOMContentLoaded, register setContextProvider, and call startChat without waiting for lcw:ready."
+        }
+      ],
+      "explanation": "The SDK readiness event must occur before its methods are invoked. Register the context provider after that event and before starting the chat.",
+      "optionExplanations": {
+        "o1": "The documented sequence registers the provider before starting the new chat.",
+        "o2": "Registering the provider is itself an SDK call and must wait for SDK readiness.",
+        "o3": "This follows readiness, provider registration, and chat start in the documented order.",
+        "o4": "Page DOM readiness is not the documented signal that the live-chat SDK is ready."
+      }
+    },
+    "reason": "Use actual initialization-order mistakes, not page-title or post-conversation nonsense."
+  },
+  {
+    "id": "ab250-d2-q02",
+    "changes": {
+      "options": [
+        {
+          "id": "o1",
+          "text": "Store it only in the contact's Business Phone field."
+        },
+        {
+          "id": "o2",
+          "text": "Store it in the contact's Mobile Number field."
+        },
+        {
+          "id": "o3",
+          "text": "Store it only in the contact's Home Phone field."
+        },
+        {
+          "id": "o4",
+          "text": "Store it only in a new custom contact phone column."
+        }
+      ],
+      "explanation": "The standard Contact Phone mapping in the preconversation question table uses Mobile Number. Business Phone is the standard account mapping; the other contact fields do not become the standard contact mapping merely by holding a number.",
+      "optionExplanations": {
+        "o1": "The documented preconversation contact mapping uses Mobile Number; the account mapping uses Business Phone.",
+        "o2": "This matches the specified standard contact mapping.",
+        "o3": "Home Phone is outside the stated standard contact mapping.",
+        "o4": "Adding a column alone does not make it the standard contact match field."
+      }
+    },
+    "reason": "Test realistic confusion among contact/account phone fields; explicitly retain standard mapping scope."
+  },
+  {
+    "id": "ab250-d2-q03",
+    "changes": {
+      "options": [
+        {
+          "id": "o1",
+          "text": "The Public key URL field of the chat authentication record."
+        },
+        {
+          "id": "o2",
+          "text": "The Name field of the Chat Widget Code content snippet."
+        },
+        {
+          "id": "o3",
+          "text": "A newly created content snippet with a different name, with no reference from the portal."
+        },
+        {
+          "id": "o4",
+          "text": "The Chat Widget Code content snippet's Value (HTML) field."
+        }
+      ],
+      "explanation": "The documented Portal Management procedure uses the existing Chat Widget Code content snippet and stores the code in its Value (HTML) field. Authentication endpoints, snippet names, and unreferenced snippets do not implement that documented placement.",
+      "optionExplanations": {
+        "o1": "This field expects a token-verification endpoint, not the widget script.",
+        "o2": "The Name identifies the snippet; the documented script content belongs in Value (HTML).",
+        "o3": "Creating an unreferenced snippet does not install the widget through the documented Chat Widget Code integration.",
+        "o4": "This is the documented location for the widget snippet."
+      }
+    },
+    "reason": "Use portal configuration mistakes with an explicit integration distinction."
+  }
+]

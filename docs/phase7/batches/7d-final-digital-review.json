@@ -1,0 +1,612 @@
+[
+  {
+    "id": "cc-d2-n09",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "2324bddf82a7e76250da3568822f1e327ff76be48263156fa3ce3ee73c167811",
+    "rationale": "Queue eligibility, irreversible enabling, owner-default-queue caveat and case runtime validation form a supported record-routing workflow rather than merely successful creation.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaldigital-s01",
+        "section": "Enable a table for queues",
+        "notes": "Opened queue-enabled table procedure and notes: capability cannot be disabled after selection; owner-default-queue automatic movement prevents representative distribution.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-finaldigital-s02",
+        "section": "Prerequisites; Set up unified routing for records; Runtime experience",
+        "notes": "Opened records routing sequence and runtime check: resources, advanced queues, record enablement and workstream precede Save & Route on the case.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-n10",
+    "revision": 2,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "65dd62a377cca87bdc3ea417332eb8389dd3daa4e55e885104ca13ee80795672",
+    "rationale": "Integration surfaces are correctly separated. Current migration source scopes old ACS training to existing WhatsApp deployments and supplies long-term Twilio guidance; no universal regional eligibility is claimed.",
+    "findings": [
+      "Current revision independently rechecked after migration-scope, alternative quality and/or option-order corrections recorded in the revision log."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaldigital-s03",
+        "section": "Introduction; HTTP protocol; Authentication headers",
+        "notes": "Opened complete API overview: service-to-service REST/HTTPS/Entra; direct customer-device use is not recommended, native SDK/widgets are the client path.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-finaldigital-s04",
+        "section": "Prerequisites; Set up authentication; Set up webhook; Manage channels",
+        "notes": "Opened authentication, webhook, managed identity and channel record setup: confidential client, app/tenant/HTTPS webhook and messaging workstream association match.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-finaldigital-s05",
+        "section": "Integrate with mobile SDKs; Render using embedded code",
+        "notes": "Opened mobile SDK and WebView sections: native SDK recommended with interface/lifecycle and push support, authenticated persistent chat recommended, WebView limitations retained.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-finaldigital-s06",
+        "section": "Parameters; Notes",
+        "notes": "Opened startChat parameters and notes: customContext overrides setContextProvider; lcw:ready is required before SDK calls.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-finaldigital-s07",
+        "section": "Configure WhatsApp through Azure Communication Services; Message templates",
+        "notes": "Opened full course WhatsApp unit: ACS business channel, Event Grid callback/workstream and provider-approved templates are supported as existing-provider material, not new procurement advice.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-finaldigital-s19",
+        "section": "Understand the impact; Choose a messaging migration path",
+        "notes": "Opened current migration impact, messaging path and number considerations: existing ACS WhatsApp supported through September30,2028; long-term Twilio path, inventories, coverage and inbound/outbound testing match.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-n11",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "f2bdade7007bd6efc9877eef5aa3bbaf36d8cecd0ed9c7b7cce96be286acf762",
+    "rationale": "Closure channel/state, base presence and private consult versus completed transfer/reroute are independent mechanisms with accurate boundaries.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaldigital-s08",
+        "section": "Default time; Conversation in waiting; Close using Power Apps",
+        "notes": "Opened default-state table and Waiting guidance: ordinary Active chat has no default closure; Waiting timer only applies to listed persistent/asynchronous channels; scheduler and no manual status patch caveats match.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-finaldigital-s09",
+        "section": "Presence elements; Create custom presence",
+        "notes": "Opened base-status and custom presence configuration: Allowed Presences uses base states, while display text does not override routing meaning.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-finaldigital-s10",
+        "section": "Consult with representative or supervisor; Transfer conversations; Use reroute",
+        "notes": "Opened consult, transfer and reroute sections: separate consult pane and Add to chat action preserve private assistance; completed transfer and reroute remove the original representative.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-n12",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "6e00a49b424aaa44dda99c2a1d1f1a8d26ccad284d57f5eca40dc9fea10e89a5",
+    "rationale": "Masking direction/activation and async display scope match; manual text masking is not audio deletion. Attachments retain independent direction/provider/file controls.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaldigital-s11",
+        "section": "Automated data masking; Create a masking rule; Manual masking",
+        "notes": "Opened automated/manual masking and direction/voice caveats: Active regex rules plus direction, async customer UI-only display, retained audio unaffected by manual text masking.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-finaldigital-s12",
+        "section": "Enable file attachments; Configure file size limit and extensions",
+        "notes": "Opened attachment enablement and limit/extension guidance: separate customer/representative settings, provider limits and receiving representative access to existing files are supported.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-n13",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "bbd4e8384c3fa80ef8377c2fd0cc7f85d77013ddac978005cc1f5f1fba88866e",
+    "rationale": "Instance message overrides, exact placeholders and transcript omission match. Enhanced form selector uses the documented app/environment setting and publication, with Customer360 and performance scoped.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaldigital-s13",
+        "section": "How levels work together; Placeholders; Test automated messages",
+        "notes": "Opened message precedence, placeholder syntax, transcript exclusion and live-test checklist: instance overrides channel, exact names/missing empty values and no voice context placeholders match.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-finaldigital-s14",
+        "section": "Manage Active Conversation form settings; Display the form selector",
+        "notes": "Opened enhanced Active Conversation settings: Customer360, default hidden selector, setting definition/environment versus app override and publish/performance advice match.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-n14",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "c6e6129590c655245a432746080f18c75bc7aefad2048af17344b8258b021a7d",
+    "rationale": "Timeline activity setup and IRecordSource extension are separate from multisession CIF telephony. Export dependencies and client-secret boundary are explicit primary cautions.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaldigital-s15",
+        "section": "Add a timeline; Configure timeline; Record types to show",
+        "notes": "Opened timeline form setup and custom Activity-table section: Activity type required; makers configure the actual form and save/publish.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-finaldigital-s16",
+        "section": "Introduction; Known limitations; Develop a record source",
+        "notes": "Opened timeline connector interface, export limitations and secure development sections: IRecordSource JS, explicit resource export and untrusted JS/JSON without secrets are explicit.",
+        "supported": true
+      },
+      {
+        "sourceId": "cc-d2-finaldigital-s17",
+        "section": "Dynamics365 Channel Integration Framework2.0; Version comparison",
+        "notes": "Opened full CIF version comparison: CIF1 single-session, CIF2 telephony multisession and multiple telephony providers/templates match.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-n15",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "436ab0ef35f05a652c7a3fa20644adcc9775c640717227d926fac9b85f35e46f",
+    "rationale": "Survey creation is distinct from connection, publication and channel attachment. Stored variable prefix, supported topic and target-agent recreation are precise.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaldigital-s18",
+        "section": "Prerequisites; Verify Dataverse connection; Complete configuration; Things to consider; Enable digital survey",
+        "notes": "Opened survey setup, Dataverse connection, publishing/Ready, system-topic limits, MCS_ naming, digital-channel selection and copy warning: new target agents are recommended.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c25",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "18a1c61dd4c84cad6512ff6b7a31958e25dda5ef22ca53a3b079e3569cdbc29d",
+    "rationale": "Can be added to a queue is the table capability and the irreversible enablement caveat is directly documented.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaldigital-s01",
+        "section": "Enable a table for queues",
+        "notes": "Opened queue-enabled table procedure and notes: capability cannot be disabled after selection; owner-default-queue automatic movement prevents representative distribution.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c26",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "cccd69cb35b9dea07861d3096a2906d26361d40e5a987e10c6aae3fa4fc83fa1",
+    "rationale": "Save & Route is explicitly the case runtime test; saving alone does not prove the configured routing chain.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaldigital-s02",
+        "section": "Prerequisites; Set up unified routing for records; Runtime experience",
+        "notes": "Opened records routing sequence and runtime check: resources, advanced queues, record enablement and workstream precede Save & Route on the case.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c27",
+    "revision": 2,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "e3110259a69a499f35124bd7b313d38eb80404a5c044dee5d646c0a3fba85d78",
+    "rationale": "Owner-default-queue movement explicitly prevents automatic distribution. Advanced queue method, skills and fallback are adjacent routing checks but do not remove this table behavior. Revised alternatives rechecked.",
+    "findings": [
+      "Current revision independently rechecked after migration-scope, alternative quality and/or option-order corrections recorded in the revision log."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaldigital-s01",
+        "section": "Enable a table for queues",
+        "notes": "Opened queue-enabled table procedure and notes: capability cannot be disabled after selection; owner-default-queue automatic movement prevents representative distribution.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c28",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "5e3b39591d69fd07c15168d0286b8a5a61d7ab9ec8b0c11f43934c349252db9b",
+    "rationale": "Native mobile Messaging SDKs are recommended over limited WebView integration; the card preserves both the recommendation and alternative.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaldigital-s05",
+        "section": "Integrate with mobile SDKs; Render using embedded code",
+        "notes": "Opened mobile SDK and WebView sections: native SDK recommended with interface/lifecycle and push support, authenticated persistent chat recommended, WebView limitations retained.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c29",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "53bfbce23cc3d947897937d9a5d252267069e368302ad96bd54606e656900d62",
+    "rationale": "The custom channel registration connects Entra app, tenant and webhook; confidential authentication and workstream routing are necessary context.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaldigital-s04",
+        "section": "Prerequisites; Set up authentication; Set up webhook; Manage channels",
+        "notes": "Opened authentication, webhook, managed identity and channel record setup: confidential client, app/tenant/HTTPS webhook and messaging workstream association match.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c30",
+    "revision": 3,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "fb3d077da477bbe42bf2ab7991b77a13a68bc9dfcca557702e4fb9c20cac26a1",
+    "rationale": "startChat customContext explicitly overrides context-provider value. No registration-order merge, provider-priority exception or automatic list conversion is documented. Revision 3 options/explanation reread.",
+    "findings": [
+      "Current revision independently rechecked after migration-scope, alternative quality and/or option-order corrections recorded in the revision log."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaldigital-s06",
+        "section": "Parameters; Notes",
+        "notes": "Opened startChat parameters and notes: customContext overrides setContextProvider; lcw:ready is required before SDK calls.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c31",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "8f1ed818779354efc6849b6365130960464bc0ac8f9ff95e257c3bb6be65beca",
+    "rationale": "The Active chat row says no automatic closure. The answer does not apply Waiting inactivity or async defaults to ordinary live chat.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaldigital-s08",
+        "section": "Default time; Conversation in waiting; Close using Power Apps",
+        "notes": "Opened default-state table and Waiting guidance: ordinary Active chat has no default closure; Waiting timer only applies to listed persistent/asynchronous channels; scheduler and no manual status patch caveats match.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c32",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "297710149f1304c9b8767b6aeb828841a02ef20155fb5a862a178903f4c1b25a",
+    "rationale": "Mapped base presence controls Allowed Presences; display text cannot change that base routing meaning.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaldigital-s09",
+        "section": "Presence elements; Create custom presence",
+        "notes": "Opened base-status and custom presence configuration: Allowed Presences uses base states, while display text does not override routing meaning.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c33",
+    "revision": 2,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "43cb3d43906267f97d62020b80cffb352a25b42f972317eeeeac0ab95bbf8445",
+    "rationale": "Private consult with a separate pane uniquely meets responsibility and privacy requirements. Transfer/reroute relinquish the interaction; Add to chat joins the customer conversation. Revised alternatives rechecked.",
+    "findings": [
+      "Current revision independently rechecked after migration-scope, alternative quality and/or option-order corrections recorded in the revision log."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaldigital-s10",
+        "section": "Consult with representative or supervisor; Transfer conversations; Use reroute",
+        "notes": "Opened consult, transfer and reroute sections: separate consult pane and Add to chat action preserve private assistance; completed transfer and reroute remove the original representative.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c34",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "343881f9fcc8e9ceb795b3873291c978fc38c97210901bbcdec7dc03db441804",
+    "rationale": "Active regex rule and selected message direction are explicit; saving a regex without these does not activate masking.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaldigital-s11",
+        "section": "Automated data masking; Create a masking rule; Manual masking",
+        "notes": "Opened automated/manual masking and direction/voice caveats: Active regex rules plus direction, async customer UI-only display, retained audio unaffected by manual text masking.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c35",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "2b1fc1b6abfbaa4f0868d22e9aafee0e10d1f947d3a013dd77f3bd968f3651cf",
+    "rationale": "Representative and customer attachment directions are separate controls, with provider, extension and size conditions still applicable.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaldigital-s12",
+        "section": "Enable file attachments; Configure file size limit and extensions",
+        "notes": "Opened attachment enablement and limit/extension guidance: separate customer/representative settings, provider limits and receiving representative access to existing files are supported.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c36",
+    "revision": 2,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "2bec679e9c0364818f8effd48d89ccb001955d2a29f7c82b27b3cb050fed0ea5",
+    "rationale": "Async private-customer-data masking affects representative UI, not the sender original. Both-device live-chat behavior, representative-only capability and postclosure-only masking are distinct incorrect assumptions. Revision 2 matches.",
+    "findings": [
+      "Current revision independently rechecked after migration-scope, alternative quality and/or option-order corrections recorded in the revision log."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaldigital-s11",
+        "section": "Automated data masking; Create a masking rule; Manual masking",
+        "notes": "Opened automated/manual masking and direction/voice caveats: Active regex rules plus direction, async customer UI-only display, retained audio unaffected by manual text masking.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c37",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "6d52356f5b03cc88e8ad324c3df87d8757e3f02a3e47f2dd2c5ccca60ec88c4f",
+    "rationale": "A channel instance customization overrides the channel-wide setting; absence of a customization inherits the shared behavior.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaldigital-s13",
+        "section": "How levels work together; Placeholders; Test automated messages",
+        "notes": "Opened message precedence, placeholder syntax, transcript exclusion and live-test checklist: instance overrides channel, exact names/missing empty values and no voice context placeholders match.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c38",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "b35fb9388b5299c0a51e51f0ed337aec2d9d09f1671cd4e953c8b2bb973fd737",
+    "rationale": "Show Conversation form selector is the explicit setting with app-value precedence and publishing requirements.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaldigital-s14",
+        "section": "Manage Active Conversation form settings; Display the form selector",
+        "notes": "Opened enhanced Active Conversation settings: Customer360, default hidden selector, setting definition/environment versus app override and publish/performance advice match.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c39",
+    "revision": 2,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "70bfcb111ae4b1e5d2ef257dd66b3b462f28db3e83a8fd7515ad238e1eea3ad7",
+    "rationale": "A live instance event test verifies actual trigger and overridden text. Saved template inspection, disabling the instance override or isolated variable checking cannot validate both. Revision 2 follows the source checklist.",
+    "findings": [
+      "Current revision independently rechecked after migration-scope, alternative quality and/or option-order corrections recorded in the revision log."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaldigital-s13",
+        "section": "How levels work together; Placeholders; Test automated messages",
+        "notes": "Opened message precedence, placeholder syntax, transcript exclusion and live-test checklist: instance overrides channel, exact names/missing empty values and no voice context placeholders match.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c40",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "c55769dc78cf58d526f115719ea95a45f678651a3afb366eca938dfa968e61b9",
+    "rationale": "Timeline connector resources are not declared formal form dependencies and must be exported explicitly; direct limitation supports the recall.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaldigital-s16",
+        "section": "Introduction; Known limitations; Develop a record source",
+        "notes": "Opened timeline connector interface, export limitations and secure development sections: IRecordSource JS, explicit resource export and untrusted JS/JSON without secrets are explicit.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c41",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "f23589acdff8dcd9c0a2cb925d3f115024641b1aa0cb57533997804bad2d744e",
+    "rationale": "CIF2 is the specified multisession telephony version; CIF1 single-session and CIF2 multiple-provider/template support are accurately distinguished.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaldigital-s17",
+        "section": "Dynamics365 Channel Integration Framework2.0; Version comparison",
+        "notes": "Opened full CIF version comparison: CIF1 single-session, CIF2 telephony multisession and multiple telephony providers/templates match.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c42",
+    "revision": 2,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "0e604f0fc323cd3c4c70ad5a9f0c015797ea0677af111ffdc1d6f6598ba8031d",
+    "rationale": "IRecordSource and secure retrieval meet the timeline contract. Encoding client fragments or moving a token to JSON still exposes secrets; a Power Automate connector alone is not the timeline resource. Revision 2 removes the implausible constructor-secret alternative.",
+    "findings": [
+      "Current revision independently rechecked after migration-scope, alternative quality and/or option-order corrections recorded in the revision log."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaldigital-s16",
+        "section": "Introduction; Known limitations; Develop a record source",
+        "notes": "Opened timeline connector interface, export limitations and secure development sections: IRecordSource JS, explicit resource export and untrusted JS/JSON without secrets are explicit.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c43",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "bbf9bcffad3022a6b652505ebc0a3853c231592630e227e0ac9dcbe18ae1817d",
+    "rationale": "Customize/publish in Studio after establishing Dataverse connection is the documented sequence, producing Ready before channel selection.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaldigital-s18",
+        "section": "Prerequisites; Verify Dataverse connection; Complete configuration; Things to consider; Enable digital survey",
+        "notes": "Opened survey setup, Dataverse connection, publishing/Ready, system-topic limits, MCS_ naming, digital-channel selection and copy warning: new target agents are recommended.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c44",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "691ff01e2ccd69a90b75475c1659ffc2521d303c016196ee0db002a2d46797ab",
+    "rationale": "MCS_ is the required stored-question response prefix, independent of the UI label.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaldigital-s18",
+        "section": "Prerequisites; Verify Dataverse connection; Complete configuration; Things to consider; Enable digital survey",
+        "notes": "Opened survey setup, Dataverse connection, publishing/Ready, system-topic limits, MCS_ naming, digital-channel selection and copy warning: new target agents are recommended.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c45",
+    "revision": 2,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "ef67e6f81258e63bcce96c1f316280fe832a6607652d65bab3d00cfe1243128e",
+    "rationale": "The source explicitly recommends new survey agents after environment copy. Copied-agent republish, reselection or channel reimport are plausible deployment steps but do not follow that documented remedy.",
+    "findings": [
+      "Current revision independently rechecked after migration-scope, alternative quality and/or option-order corrections recorded in the revision log."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaldigital-s18",
+        "section": "Prerequisites; Verify Dataverse connection; Complete configuration; Things to consider; Enable digital survey",
+        "notes": "Opened survey setup, Dataverse connection, publishing/Ready, system-topic limits, MCS_ naming, digital-channel selection and copy warning: new target agents are recommended.",
+        "supported": true
+      }
+    ]
+  },
+  {
+    "id": "cc-d2-c88",
+    "revision": 1,
+    "reviewer": "/root/finish_deployment",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "31776df22960076933a6f7c43226f984fbd12d501454b396790fd4b932ebde31",
+    "rationale": "The custom table must be Activity type to appear as a timeline activity; this fills the timeline-objective card gap rather than repeating connector export or telephony concepts.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d2-finaldigital-s15",
+        "section": "Display a custom table in a timeline; Add the timeline component to a form",
+        "notes": "Opened timeline form setup and custom Activity-table section: Activity type required; makers configure the actual form and save/publish.",
+        "supported": true
+      }
+    ]
+  }
+]

@@ -1,0 +1,610 @@
+[
+  {
+    "id": "ab250-d6-q05",
+    "revision": 1,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "9200ced9ed481689423a5b47f65477b71417214adf61577988bbe76d5e95ebef",
+    "rationale": "The intervention policy requires the specific Monitor toggle while preserving withheld actions. Report reading, bookmarks and authoring do not define the intervention set.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d6-s01",
+        "supported": true,
+        "section": "Configure supervisor settings",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "The intervention policy requires the specific Monitor toggle while preserving withheld actions. Report reading, bookmarks and authoring do not define the intervention set. Primary body section checked; complete answer set and stated applicability challenged."
+      },
+      {
+        "sourceId": "exam-d6-s03",
+        "supported": true,
+        "section": "Configure user access to analytics and dashboards",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "The intervention policy requires the specific Monitor toggle while preserving withheld actions. Report reading, bookmarks and authoring do not define the intervention set. Primary body section checked; complete answer set and stated applicability challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d6-q06",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "abb411111d0534bac60cb3db53962264060738d46e9803fe9978ce757b1a3219",
+    "rationale": "After an acknowledged Active messaging transfer, the original representative can remain as consultant. Remaining participation alone does not diagnose failure; closure is not a prerequisite.",
+    "findings": [
+      "Resolved at revision2: Replaced an Open/unassigned assignment recall conversion with acknowledged transfer participant-role diagnosis. Final saved prompt, all choices, per-option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d6-s02",
+        "supported": true,
+        "section": "Transfer conversations; End conversations forcibly",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "After an acknowledged Active messaging transfer, the original representative can remain as consultant. Remaining participation alone does not diagnose failure; closure is not a prerequisite. Primary body section checked; complete answer set and stated applicability challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d6-q07",
+    "revision": 1,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "a5f439540a319393c6111ddf66645594e6ff0d452f00a571ada4b1a39a2b7697",
+    "rationale": "The permitted targets depend on channel and state after authorization and self-assignment checks. Digital Wrap-up and voice Active qualify; the other offered states do not.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d6-s02",
+        "supported": true,
+        "section": "Monitor and join conversations",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "The permitted targets depend on channel and state after authorization and self-assignment checks. Digital Wrap-up and voice Active qualify; the other offered states do not. Primary body section checked; complete answer set and stated applicability challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d6-q08",
+    "revision": 1,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "9342b3a683f53725e1926d4b9952a801921fd5ea5057dd5faed0ae466221512e",
+    "rationale": "A supported text transfer can become unsupported after elevation to voice or video. Changing report authorship, closing first or targeting an AI agent does not repair that boundary.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d6-s02",
+        "supported": true,
+        "section": "Transfer conversations",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "A supported text transfer can become unsupported after elevation to voice or video. Changing report authorship, closing first or targeting an AI agent does not repair that boundary. Primary body section checked; complete answer set and stated applicability challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d6-q09",
+    "revision": 1,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "b06c3556c90fb2b16faf1c831d02a70bbd5e21389b59fea9eb6c420e37703dbe",
+    "rationale": "Personal bookmark maintenance requires privileges on the bookmark artifact. Report authoring and source-data write permissions would grant unrelated capabilities.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d6-s03",
+        "supported": true,
+        "section": "Configure user access to analytics and dashboards: notes",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Personal bookmark maintenance requires privileges on the bookmark artifact. Report authoring and source-data write permissions would grant unrelated capabilities. Primary body section checked; complete answer set and stated applicability challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d6-q10",
+    "revision": 1,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "4e9d15c70ff079e163d1319eacb91215c3bd287231500727cb1620679abeacf6",
+    "rationale": "Evaluation execution and assignment align with Evaluator responsibilities. Manager and Administrator own broader design or configuration tasks; analytics authorship is a different permission area.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d6-s04",
+        "supported": true,
+        "section": "Roles and privileges",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Evaluation execution and assignment align with Evaluator responsibilities. Manager and Administrator own broader design or configuration tasks; analytics authorship is a different permission area. Primary body section checked; complete answer set and stated applicability challenged."
+      },
+      {
+        "sourceId": "exam-d6-s03",
+        "supported": true,
+        "section": "Configure user access to analytics and dashboards",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Evaluation execution and assignment align with Evaluator responsibilities. Manager and Administrator own broader design or configuration tasks; analytics authorship is a different permission area. Primary body section checked; complete answer set and stated applicability challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d6-q11",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "762987f35583b91624c9d76aed3106ec3e7d303f564cfc44cc5018e5154b6359",
+    "rationale": "Eligible records and an active plan do not establish integration readiness. Connection references and enabled flows are the appropriate prepublication checks; criteria and score changes do not verify execution dependencies.",
+    "findings": [
+      "Resolved at revision2: Removed the supplied connection/flow diagnosis and strengthened adjacent plan-versus-integration alternatives. Final saved prompt, all choices, per-option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d6-s04",
+        "supported": true,
+        "section": "How quality evaluation works; Configure connection references; Enable quality evaluation",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Eligible records and an active plan do not establish integration readiness. Connection references and enabled flows are the appropriate prepublication checks; criteria and score changes do not verify execution dependencies. Primary body section checked; complete answer set and stated applicability challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d6-q12",
+    "revision": 1,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "38f29edcac8d16e1f6f4bcb345efdb64d5ca218ba15bdf3830754b84613b35e3",
+    "rationale": "Mixed AI and human questions fit AI-assisted evaluation with a responsible user or team. Fully autonomous mode has a different question requirement.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d6-s05",
+        "supported": true,
+        "section": "Assign evaluation: Evaluation method notes",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Mixed AI and human questions fit AI-assisted evaluation with a responsible user or team. Fully autonomous mode has a different question requirement. Primary body section checked; complete answer set and stated applicability challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d6-q13",
+    "revision": 1,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "60346d6ed36915513e1138d0bee45795e93b7d8cb5fc3d4c0761837a0f130472",
+    "rationale": "Trigger results are checked as evaluations; recurring batch history is a different execution surface. Existing qualifying evaluations contradict the proposed failure diagnosis.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d6-s05",
+        "supported": true,
+        "section": "View run history for a plan",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Trigger results are checked as evaluations; recurring batch history is a different execution surface. Existing qualifying evaluations contradict the proposed failure diagnosis. Primary body section checked; complete answer set and stated applicability challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d6-q14",
+    "revision": 1,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "9679c6b3750dac906f80ae43ce701890a958e8410efe0c340e107c7b226c6a95",
+    "rationale": "The future-close event and IVR/Bot participant choice are both required. Once scheduling, whole-record scope and current-owner scope do not satisfy the combined requirement.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d6-s05",
+        "supported": true,
+        "section": "Create and activate evaluation plan; Assign evaluation: Participant evaluated",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "The future-close event and IVR/Bot participant choice are both required. Once scheduling, whole-record scope and current-owner scope do not satisfy the combined requirement. Primary body section checked; complete answer set and stated applicability challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d6-q15",
+    "revision": 1,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "4bae4415cabfae577bd077ff532d3c4f1f177802d0140ea68b8405313cfac81b",
+    "rationale": "The analytical meaning already exists, so changing the visual and existing fields is sufficient. Duplicating calculations or editing managed definitions adds no required meaning.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d6-s06",
+        "supported": true,
+        "section": "Customize the display of analytics reports",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "The analytical meaning already exists, so changing the visual and existing fields is sufficient. Duplicating calculations or editing managed definitions adds no required meaning. Primary body section checked; complete answer set and stated applicability challenged."
+      },
+      {
+        "sourceId": "exam-d6-s07",
+        "supported": true,
+        "section": "What is data model customization?",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "The analytical meaning already exists, so changing the visual and existing fields is sufficient. Duplicating calculations or editing managed definitions adds no required meaning. Primary body section checked; complete answer set and stated applicability challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d6-q16",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "ecf5d49713f9ceb3147ac13f885267bae5baf61f1aa698aa2545aca0763375d1",
+    "rationale": "A dense KPI page should be divided into linked pages while retaining access to the metrics. Tile dimensions, bookmarks and chart type do not implement the documented density remedy.",
+    "findings": [
+      "Resolved at revision2: Replaced repeated publication scope with a performance and complete-metric-access redesign. Final saved prompt, all choices, per-option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d6-s06",
+        "supported": true,
+        "section": "Customize the display of analytics reports: performance note",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "A dense KPI page should be divided into linked pages while retaining access to the metrics. Tile dimensions, bookmarks and chart type do not implement the documented density remedy. Primary body section checked; complete answer set and stated applicability challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d6-q17",
+    "revision": 1,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "3f551c25345b5f3b52a72c124d2a16eba5c8421a28089d3cf28cee42b761e067",
+    "rationale": "Resume editing preserves the published customization as the starting point. Reset discards it; filters and reprovisioning are different operations.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d6-s06",
+        "supported": true,
+        "section": "Customize the display of analytics reports",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Resume editing preserves the published customization as the starting point. Reset discards it; filters and reprovisioning are different operations. Primary body section checked; complete answer set and stated applicability challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d6-q18",
+    "revision": 1,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "c85095a94b16368a8258a8ed217da2ab5bdb006859272e78d46aa8a3bb366568",
+    "rationale": "The custom app report page wiring controls retained state across session navigation. Report bookmarks and refresh cadence are separate from the content-type and report-table configuration.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d6-s10",
+        "supported": true,
+        "section": "Retain the report state across session tabs",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "The custom app report page wiring controls retained state across session navigation. Report bookmarks and refresh cadence are separate from the content-type and report-table configuration. Primary body section checked; complete answer set and stated applicability challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d6-q19",
+    "revision": 1,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "94daad6484ef0d58a85b6d2e07257bb471cfeae2115422a0223e0df4f2dc317b",
+    "rationale": "Embedded consumption has documented tenant and workspace requirements beyond ordinary Power BI viewing. The guide specifies embedding eligibility and Member access, without requiring every consumer to author or administer.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d6-s08",
+        "supported": true,
+        "section": "Enable Power BI service features; Grant permissions to customized Power BI report",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Embedded consumption has documented tenant and workspace requirements beyond ordinary Power BI viewing. The guide specifies embedding eligibility and Member access, without requiring every consumer to author or administer. Primary body section checked; complete answer set and stated applicability challenged."
+      },
+      {
+        "sourceId": "exam-d6-s03",
+        "supported": true,
+        "section": "Configure user access: Analytics Report Author",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Embedded consumption has documented tenant and workspace requirements beyond ordinary Power BI viewing. The guide specifies embedding eligibility and Member access, without requiring every consumer to author or administer. Primary body section checked; complete answer set and stated applicability challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d6-q20",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "328ca23f307f41aaef6e245589c20185a10464d227c17c16bf02b645023d2005",
+    "rationale": "Shared navigation permits reordering without conferring modification ownership. The historical origin page remains the correct place to modify its entry; publishing a model does not move that boundary.",
+    "findings": [
+      "Resolved at revision2: Replaced unrelated permissions with the shared reorder versus origin-owned modification distinction. Final saved prompt, all choices, per-option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d6-s08",
+        "supported": true,
+        "section": "Step 4: Embed customized reports back to Dynamics 365",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Shared navigation permits reordering without conferring modification ownership. The historical origin page remains the correct place to modify its entry; publishing a model does not move that boundary. Primary body section checked; complete answer set and stated applicability challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d6-q21",
+    "revision": 1,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "6953df00bdb5d698b221f7bf8ce069c072be2dc6d30a147e7d4f66e0b5c04193",
+    "rationale": "The cost formula adds organizational meaning across handling and consultation, so a local measure preserves the standard model. A renamed visual or filter cannot define the requested calculation.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d6-s07",
+        "supported": true,
+        "section": "Scenario-based use cases; How customization helps",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "The cost formula adds organizational meaning across handling and consultation, so a local measure preserves the standard model. A renamed visual or filter cannot define the requested calculation. Primary body section checked; complete answer set and stated applicability challenged."
+      },
+      {
+        "sourceId": "exam-d6-s09",
+        "supported": true,
+        "section": "Add new metrics based on data available",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "The cost formula adds organizational meaning across handling and consultation, so a local measure preserves the standard model. A renamed visual or filter cannot define the requested calculation. Primary body section checked; complete answer set and stated applicability challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d6-q22",
+    "revision": 1,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "ef68346fe1d32cdad4ab1951234a5e9d62d560d6a19fe9aaca808bac6d6f3e49",
+    "rationale": "Managed-model updates and customer-report maintenance have different owners. The customer copy may need refresh and redeployment; the service does not replace it automatically.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d6-s07",
+        "supported": true,
+        "section": "Managed workspace; Customer workspace",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Managed-model updates and customer-report maintenance have different owners. The customer copy may need refresh and redeployment; the service does not replace it automatically. Primary body section checked; complete answer set and stated applicability challenged."
+      },
+      {
+        "sourceId": "exam-d6-s08",
+        "supported": true,
+        "section": "Step 4: custom reports note",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Managed-model updates and customer-report maintenance have different owners. The customer copy may need refresh and redeployment; the service does not replace it automatically. Primary body section checked; complete answer set and stated applicability challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d6-q23",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "61f13dfbe1b96978f82aef6b24bb8b87348ce830e852562a971f8328e5aaa9e3",
+    "rationale": "A useful custom-category breakdown requires both additional data and its relationships in a local extension. A filter or unrelated table does not supply that association, and the maintained dataset is read-only.",
+    "findings": [
+      "Resolved at revision2: Replaced visual-title distraction with filter versus data-relationship reasoning. Final saved prompt, all choices, per-option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d6-s09",
+        "supported": true,
+        "section": "Add new metrics based on dataset and external data",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "A useful custom-category breakdown requires both additional data and its relationships in a local extension. A filter or unrelated table does not supply that association, and the maintained dataset is read-only. Primary body section checked; complete answer set and stated applicability challenged."
+      },
+      {
+        "sourceId": "exam-d6-s07",
+        "supported": true,
+        "section": "Managed workspace",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "A useful custom-category breakdown requires both additional data and its relationships in a local extension. A filter or unrelated table does not supply that association, and the maintained dataset is read-only. Primary body section checked; complete answer set and stated applicability challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d6-q24",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "644e65c65b7f55cdb7bf0045d093d0eb09a581bc0d9c87137a92d2f4d7d50598",
+    "rationale": "An accessible hidden field is an unstable dependency under the guide. Local ownership does not insulate a reference from changes to its managed source.",
+    "findings": [
+      "Resolved at revision2: Replaced refresh-frequency distraction with local-extension dependency reasoning. Final saved prompt, all choices, per-option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d6-s09",
+        "supported": true,
+        "section": "Create a new report: note",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "An accessible hidden field is an unstable dependency under the guide. Local ownership does not insulate a reference from changes to its managed source. Primary body section checked; complete answer set and stated applicability challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d6-q25",
+    "revision": 1,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "ba1ceb781d798c5827e0570137e05bc0011177fc3655ed7123ad6f5e92a1dcc9",
+    "rationale": "Automatic non-assignment insights have a narrower supported-method scope than raw diagnostic records. Custom assignment evidence can be inspected without assuming the automatic dashboard supports it.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d6-s14",
+        "supported": true,
+        "section": "Things to keep in mind",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Automatic non-assignment insights have a narrower supported-method scope than raw diagnostic records. Custom assignment evidence can be inspected without assuming the automatic dashboard supports it. Primary body section checked; complete answer set and stated applicability challenged."
+      },
+      {
+        "sourceId": "exam-d6-s15",
+        "supported": true,
+        "section": "Assignment snapshot; AssignmentRuleset",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Automatic non-assignment insights have a narrower supported-method scope than raw diagnostic records. Custom assignment evidence can be inspected without assuming the automatic dashboard supports it. Primary body section checked; complete answer set and stated applicability challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d6-q26",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "1bcfb99aea9b9f6c0b8703b24f211f9919a870263893ee30da620045faa2436d",
+    "rationale": "The documented export limit is scoped to the source environment. Retargeting and changing the embedded read selector do not create a supported second parallel export.",
+    "findings": [
+      "Resolved at revision2: Replaced package naming with retargeting versus parallel export reasoning. Final saved prompt, all choices, per-option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d6-s12",
+        "supported": true,
+        "section": "Set up a connection with Azure Application Insights",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "The documented export limit is scoped to the source environment. Retargeting and changing the embedded read selector do not create a supported second parallel export. Primary body section checked; complete answer set and stated applicability challenged."
+      },
+      {
+        "sourceId": "exam-d6-s13",
+        "supported": true,
+        "section": "Update Application Insights ID in environment variable",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "The documented export limit is scoped to the source environment. Retargeting and changing the embedded read selector do not create a supported second parallel export. Primary body section checked; complete answer set and stated applicability challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d6-q27",
+    "revision": 1,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "e1f05643c4cd5fbb0d1f22c820900601a2bfca145e3eb409db6f08ef4d7c5fbb",
+    "rationale": "A short visibility gap must be evaluated against documented dashboard delay and event time range. Refreshing an unrelated report or assuming synchronous updates cannot establish ingestion failure.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d6-s14",
+        "supported": true,
+        "section": "Things to keep in mind",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "A short visibility gap must be evaluated against documented dashboard delay and event time range. Refreshing an unrelated report or assuming synchronous updates cannot establish ingestion failure. Primary body section checked; complete answer set and stated applicability challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d6-q28",
+    "revision": 1,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "51a37328f4f2926f633922cce519c8317a1774dfa14fbf9efbc7c4039eaec888",
+    "rationale": "The failed telemetry read request exposes credential configuration evidence. Successful ingestion and unrelated report permissions do not validate that embedded authorization path.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d6-s13",
+        "supported": true,
+        "section": "Fix federated identity credentials path",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "The failed telemetry read request exposes credential configuration evidence. Successful ingestion and unrelated report permissions do not validate that embedded authorization path. Primary body section checked; complete answer set and stated applicability challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d6-q29",
+    "revision": 1,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "3ed2a981fe4dd048fd5b15476b769f7c235dbb3cb677b779b8141013178b6489",
+    "rationale": "The registered application needs resource read authorization and its identity mapped for Dataverse. Extra human permissions and changing a working export do not configure that application path.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d6-s13",
+        "supported": true,
+        "section": "Create and register an app; Assign Monitoring Reader role; Update managed identity record",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "The registered application needs resource read authorization and its identity mapped for Dataverse. Extra human permissions and changing a working export do not configure that application path. Primary body section checked; complete answer set and stated applicability challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d6-q30",
+    "revision": 2,
+    "reviewer": "/root/exam_channels",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "23b8b000ee58e9d332963c37c623240a0575d7a90a7955af0a9bc22a7782af31",
+    "rationale": "Working ingestion and authentication isolate resource selection as the next check. Both environment-variable values must be compared with the intended telemetry instance before changing unrelated paths.",
+    "findings": [
+      "Resolved at revision2: Replaced Debug-setting recall with a post-migration authenticated read-target investigation. Final saved prompt, all choices, per-option explanations and editorial evidence independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d6-s13",
+        "supported": true,
+        "section": "Configure conversation diagnostics and connection; Update Application Insights ID in environment variable; Create and register an app; Enable Debug tab for Diagnose dashboard",
+        "accessedAt": "2026-11-03",
+        "claimReviewedAt": "2026-11-03",
+        "notes": "Working ingestion and authentication isolate resource selection as the next check. Both environment-variable values must be compared with the intended telemetry instance before changing unrelated paths. Primary body section checked; complete answer set and stated applicability challenged."
+      }
+    ]
+  }
+]

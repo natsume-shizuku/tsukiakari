@@ -1,0 +1,656 @@
+[
+  {
+    "id": "cc-d5-n03",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "e4b667f0849c31fda491f66570a015143f14aa49b78ea815fa0301a0b526d319",
+    "rationale": "Custom profile assignment and inbox configuration are coherent; appearance is not conflated with record permission.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s01",
+        "section": "Create experience profiles; Assign users, templates, configure productivity pane, channels",
+        "supported": true,
+        "notes": "Supplied defaults, custom assignment, templates, tools and channels verified; profile configuration is separate from feature data permissions."
+      },
+      {
+        "sourceId": "cc-d5-final-s02",
+        "section": "Configure custom views for the inbox; Advanced settings for conversations",
+        "supported": true,
+        "notes": "Custom-profile inbox views support simple/advanced criteria and Representative visibility; case scope is Customer Service only."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-n04",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "1c330a01895c63a005975f5f0bc41fd35d6d2705e725685957a636931e7ee383",
+    "rationale": "Tab existence validation, session type and notification timer semantics are separate configuration layers.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s03",
+        "section": "Entity record",
+        "supported": true,
+        "notes": "Entity record validateRecord=true prevents unmatched-ID create mode; standalone/Customer Service applicability retained."
+      },
+      {
+        "sourceId": "cc-d5-final-s04",
+        "section": "Create a session template",
+        "supported": true,
+        "notes": "Generic versus Entity template purpose and user-owned-table restriction verified; supplied templates require custom replacements."
+      },
+      {
+        "sourceId": "cc-d5-final-s05",
+        "section": "Create a notification template; Show timeout",
+        "supported": true,
+        "notes": "Show timeout affects display only; Countdown continues and notification expires regardless of visibility."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-n05",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "92593cf7fa6b282909ba37c5843ecae05cc155f5adb21bc023c7177487e1f93b",
+    "rationale": "Script display ordering and session-anchor versus current-tab macro targeting are supported; guidance does not itself execute data operations.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s06",
+        "section": "Create scripts; Script steps",
+        "supported": true,
+        "notes": "Script step Order and text/macro/script distinction verified; associate script with session template."
+      },
+      {
+        "sourceId": "cc-d5-final-s07",
+        "section": "Pass session context variables to macros; Predefined automation actions",
+        "supported": true,
+        "notes": "Anchor session context persists; focused additional tab exposes entityId/entityName; connector responsibilities distinguished."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-n06",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "a5600418b91f184666ac3481d34d3140ff7b924c9c6677113575e86026fa0c57",
+    "rationale": "Tool registration and profile enablement are both required; collaboration permission remains independent of record linkage.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s09",
+        "section": "Prerequisites; Configure a custom productivity tool; Enable the tool in an experience profile",
+        "supported": true,
+        "notes": "Publish custom page/PCF, register tool, enable in profile; automatic session binding is not promised."
+      },
+      {
+        "sourceId": "cc-d5-final-s10",
+        "section": "Enable or disable Teams chat; Add the Teams chat settings page for specific multisession users; Data security and privacy",
+        "supported": true,
+        "notes": "App-level Teams chat, multisession profile access and permissions are separate; connected chat does not grant record access."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-n07",
+    "revision": 2,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "410cb6299a8ed326f0ff58f296e53060feaff31164f555443480ac82286e1c5d",
+    "rationale": "Revision 2 visibly scopes record linking to standalone Contact Center/documented Customer Service workspace and excludes embedded. Opened new source19: Link to conversations explicitly gives that exception. Existing workspace checks and focused-session SDK relationship distinction remain supported.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s11",
+        "section": "Prerequisite; Session management; Tab management; Context management",
+        "supported": true,
+        "notes": "Session/tab creation checks and context methods plus role prerequisite verified."
+      },
+      {
+        "sourceId": "cc-d5-final-s12",
+        "section": "Methods",
+        "supported": true,
+        "notes": "Conversation ID and focused-session record-link operations match the representative SDK; widget SDK distinguished."
+      },
+      {
+        "sourceId": "cc-d5-final-s19",
+        "section": "Link to conversations",
+        "supported": true,
+        "notes": "Opened Nov 3: explicit embedded exclusion and case/account/contact linking statement independently verified; visible scope now matches source."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-n08",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "b4f421cf0d568a815b9cb7794e5abf12471aa123923cc0d86fd9541e43b04ecc",
+    "rationale": "Table enablement, search prerequisites and appropriate multisession surface are presented as a workflow rather than control placement alone.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s13",
+        "section": "Set up knowledge management; Prerequisites",
+        "supported": true,
+        "notes": "Knowledge table setup, portal article-number substitution and separate attachment sync verified; standalone/Customer Service scope retained."
+      },
+      {
+        "sourceId": "cc-d5-final-s14",
+        "section": "Prerequisites; Search the knowledge base in Copilot Service workspace",
+        "supported": true,
+        "notes": "Search prerequisites include Dataverse search, Quick Find Content and workspace side-pane/profile enablement."
+      },
+      {
+        "sourceId": "cc-d5-final-s15",
+        "section": "Scope note; Prerequisites",
+        "supported": true,
+        "notes": "Form procedure explicitly single-session or non-anchor auto-search; multisession uses side-pane search."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-n09",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "2b65060e04881a6c41400e4304167235f944e195ebba60656145f13c9e478235",
+    "rationale": "External discovery authorization and public portal link/attachment configuration are separate integrations.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s16",
+        "section": "Set up a search provider; Post-configuration representative experience",
+        "supported": true,
+        "notes": "Federated provider does not authorize source access; custom-role federated-table privileges remain needed."
+      },
+      {
+        "sourceId": "cc-d5-final-s13",
+        "section": "Configure knowledge base article URLs; Update knowledge article attachments for portal",
+        "supported": true,
+        "notes": "Knowledge table setup, portal article-number substitution and separate attachment sync verified; standalone/Customer Service scope retained."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-n10",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "4f4b02f565ae987ea86c93a8bc67da89c9b16882d716b2206b485c2cdde0f581",
+    "rationale": "Harvest configuration, trigger rules and publication approval are separated; generated material is not assumed safe for automatic external release.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s17",
+        "section": "Prerequisites; Enable real-time knowledge creation; Auto publish articles; Set default compliance state",
+        "supported": true,
+        "notes": "Creation trigger, rule filtering, compliance default, audience and publication governance verified; sensitive-data removal limitation preserved."
+      },
+      {
+        "sourceId": "cc-d5-final-s18",
+        "section": "Set up connection references for Customer Knowledge Management Agent",
+        "supported": true,
+        "notes": "Dataverse/Copilot Studio references, named harvesting flows and published CustomerServiceKnowledgeHarvest verified."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-c07",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "31a81ce56bd2af231878dc0e36a40e9e4e67eb6c06bef93a21c7fa80861fd630",
+    "rationale": "The guide documents supplied-default behavior when no custom assignment exists; wording asks the documented default case.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s01",
+        "section": "Create experience profiles; Assign users, templates, configure productivity pane, channels",
+        "supported": true,
+        "notes": "Supplied defaults, custom assignment, templates, tools and channels verified; profile configuration is separate from feature data permissions."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-c08",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "5325793a1bfc5e46c4664a9fd473d4562adfa4582a2a590e58de4652386c7886",
+    "rationale": "Advanced conversation condition builder is the documented extension beyond predefined filters.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s02",
+        "section": "Configure custom views for the inbox; Advanced settings for conversations",
+        "supported": true,
+        "notes": "Custom-profile inbox views support simple/advanced criteria and Representative visibility; case scope is Customer Service only."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-c09",
+    "revision": 2,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "0cbd11a2246cff15df102d1494c9a0b724f36f41f6cb4253e8952430a901d6aa",
+    "rationale": "Revision 2 removes Hide from the stem. Visibility controls exposing the same view; filters/record type change matching content and incoming-work tab setting changes navigation, so A uniquely meets unchanged-query requirement.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s02",
+        "section": "Configure custom views for the inbox; Advanced settings for conversations",
+        "supported": true,
+        "notes": "Custom-profile inbox views support simple/advanced criteria and Representative visibility; case scope is Customer Service only."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-c10",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "2c2d8918a94a887351b674bb171e24ab3718d424c2b19d1f761e0d47f29a4cf7",
+    "rationale": "validateRecord=true is the explicit guard against unmatched-ID create mode.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s03",
+        "section": "Entity record",
+        "supported": true,
+        "notes": "Entity record validateRecord=true prevents unmatched-ID create mode; standalone/Customer Service applicability retained."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-c11",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "14c618e972497a38a06fb9ddc09066315dfe881a0e4c6ecec1a5f4e907939dfc",
+    "rationale": "Generic is the documented channel-associable session type; Entity targets a user-owned table.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s04",
+        "section": "Create a session template",
+        "supported": true,
+        "notes": "Generic versus Entity template purpose and user-owned-table restriction verified; supplied templates require custom replacements."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-c12",
+    "revision": 2,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "40a40309c525812c7dbb8baed4c909352757d162764c1143003fe08b0c6d1078",
+    "rationale": "Revision 2 challenges timer pause, session-owned duration and disabled-expiry misconceptions. Show timeout is presentation only, with operative Countdown; C matches the source note.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s05",
+        "section": "Create a notification template; Show timeout",
+        "supported": true,
+        "notes": "Show timeout affects display only; Countdown continues and notification expires regardless of visibility."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-c13",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "90f06b6a880bbe67572f023c1b0137c58be63d2f64a03454bf11e9331cbfeb48",
+    "rationale": "Order is the actual script-step display field; concise recall supports setup without inventing behavior.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s06",
+        "section": "Create scripts; Script steps",
+        "supported": true,
+        "notes": "Script step Order and text/macro/script distinction verified; associate script with session template."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-c14",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "22789d25d595c4e6f364f0140680657fd37f20740fa5574b5b992c7732dfed41",
+    "rationale": "Additional tab identity does not overwrite anchor-derived macro context; current-tab access is separately supported.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s07",
+        "section": "Pass session context variables to macros; Predefined automation actions",
+        "supported": true,
+        "notes": "Anchor session context persists; focused additional tab exposes entityId/entityName; connector responsibilities distinguished."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-c15",
+    "revision": 2,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "d5eb92bd4c3a36707155b165883201ce886911326e9b9b737313d1f125c59f06",
+    "rationale": "Revision 2 compares actual anchor, customer, prior-session and focused-tab contexts. CurrentTab identity targets the currently focused account; other real contexts can identify valid but unintended records. B is supported.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s07",
+        "section": "Pass session context variables to macros; Predefined automation actions",
+        "supported": true,
+        "notes": "Anchor session context persists; focused additional tab exposes entityId/entityName; connector responsibilities distinguished."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-c16",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "121db3edc258fe0dade456ae34039ee9a28aa81ebce76f83956f4f0a2b916060",
+    "rationale": "Published/registered tool must be enabled in the intended profile before users see it.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s09",
+        "section": "Prerequisites; Configure a custom productivity tool; Enable the tool in an experience profile",
+        "supported": true,
+        "notes": "Publish custom page/PCF, register tool, enable in profile; automatic session binding is not promised."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-c17",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "6651b0e2d66f855e5687b9bdecbfaedfcc30ef9d8e79b6e47b8dbc417df837cd",
+    "rationale": "Connecting Teams chat to a record does not change record authorization.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s10",
+        "section": "Enable or disable Teams chat; Add the Teams chat settings page for specific multisession users; Data security and privacy",
+        "supported": true,
+        "notes": "App-level Teams chat, multisession profile access and permissions are separate; connected chat does not grant record access."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-c18",
+    "revision": 2,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "295d4e01185b24030ed5ead3580121536c71505c6dbdd92ee8651464995461cf",
+    "rationale": "Revision 2 narrows to custom-profile group after app-level success. Profile pane feature enablement supplies group-specific availability; global enablement, supported record types and suggestions are different controls. D remains supported.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s10",
+        "section": "Enable or disable Teams chat; Add the Teams chat settings page for specific multisession users; Data security and privacy",
+        "supported": true,
+        "notes": "App-level Teams chat, multisession profile access and permissions are separate; connected chat does not grant record access."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-c19",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "fe0b400a0ac2396e0c511c09db3bae57689b0649e7128186432c0e8604fa3353",
+    "rationale": "The API explicitly offers canCreateSession and canCreateTab as creation checks.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s11",
+        "section": "Prerequisite; Session management; Tab management; Context management",
+        "supported": true,
+        "notes": "Session/tab creation checks and context methods plus role prerequisite verified."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-c20",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "f2cb345fa45dec54e43b4d1f42af499499933574bf5039c6b69373d5dba83ddf",
+    "rationale": "getConversationId identifies ongoing conversation rather than the UI tab or session container.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s12",
+        "section": "Methods",
+        "supported": true,
+        "notes": "Conversation ID and focused-session record-link operations match the representative SDK; widget SDK distinguished."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-c21",
+    "revision": 2,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "e940a170222d83664eeda30e65af549d00c33162f52d916402a7b43ef6265fbb",
+    "rationale": "Revision 2 explicitly states standalone Contact Center. New source19 excludes embedded linking; method reference supports linkToConversation for the focused conversation. Tab create/refresh/focus operations remain navigation operations and cannot supply the separate association.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s11",
+        "section": "Prerequisite; Session management; Tab management; Context management",
+        "supported": true,
+        "notes": "Session/tab creation checks and context methods plus role prerequisite verified."
+      },
+      {
+        "sourceId": "cc-d5-final-s12",
+        "section": "Methods",
+        "supported": true,
+        "notes": "Conversation ID and focused-session record-link operations match the representative SDK; widget SDK distinguished."
+      },
+      {
+        "sourceId": "cc-d5-final-s19",
+        "section": "Link to conversations",
+        "supported": true,
+        "notes": "Opened Nov 3: explicit embedded exclusion and case/account/contact linking statement independently verified; visible scope now matches source."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-c22",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "12c4c92aceb8168a02fdf51df328c3b56c08bd40c17e76b3ea9ae49eb5625eee",
+    "rationale": "Knowledge record types are enabled at the documented admin center location; this is distinct from grounding or search provider setup.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s13",
+        "section": "Set up knowledge management; Prerequisites",
+        "supported": true,
+        "notes": "Knowledge table setup, portal article-number substitution and separate attachment sync verified; standalone/Customer Service scope retained."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-c23",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "06503e112f8ce02b34111f4eb4f9e50f2862c705dad4c2b1010978cda8b22589",
+    "rationale": "Content is explicitly listed in Quick Find search prerequisites despite being hidden in the UI.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s14",
+        "section": "Prerequisites; Search the knowledge base in Copilot Service workspace",
+        "supported": true,
+        "notes": "Search prerequisites include Dataverse search, Quick Find Content and workspace side-pane/profile enablement."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-c24",
+    "revision": 2,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "1513e0ecfe2121e52be742a079560ffa8437919aebfec2d553dc563fcd371484",
+    "rationale": "Revision 2 uses actual search surfaces rather than unrelated timer/timeline controls. Explicit scope note directs multisession to side-pane knowledge control; global search and form/additional-tab placement do not replace this recommendation. B is supported.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s15",
+        "section": "Scope note; Prerequisites",
+        "supported": true,
+        "notes": "Form procedure explicitly single-session or non-anchor auto-search; multisession uses side-pane search."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-c25",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "294fd32ab92019b17516c3abedb91361a385758a7f4b588df283246cd5cbf759",
+    "rationale": "External content permission precedes useful federated search; provider registration is not a grant.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s16",
+        "section": "Set up a search provider; Post-configuration representative experience",
+        "supported": true,
+        "notes": "Federated provider does not authorize source access; custom-role federated-table privileges remain needed."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-c26",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "f1b177eac4380e82b89cd1d518e9b4dce6b0914eef708ce2106239003e72f8ba",
+    "rationale": "kbnum resolves the article number in a configured public link; no GUID substitution claimed.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s13",
+        "section": "Configure knowledge base article URLs; Update knowledge article attachments for portal",
+        "supported": true,
+        "notes": "Knowledge table setup, portal article-number substitution and separate attachment sync verified; standalone/Customer Service scope retained."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-c27",
+    "revision": 2,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "06d25d20a4a1f1f77297df152b7f4d3c2bbdcb5cc0de5435de285f1367275aa3",
+    "rationale": "Revision 2 presents attachment absence without declaring the missing toggle. Portal link readiness does not prove attachment copying; separate Sync attachments option uniquely controls that task. C is supported.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s13",
+        "section": "Configure knowledge base article URLs; Update knowledge article attachments for portal",
+        "supported": true,
+        "notes": "Knowledge table setup, portal article-number substitution and separate attachment sync verified; standalone/Customer Service scope retained."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-c28",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "180dccd78e5ddf2fab4513a532f708ed12f4e56ed80ec88657b0fc65a77e9d30",
+    "rationale": "Manual setup requires service connection references, flows and agent publication, not a display-name-only configuration.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s18",
+        "section": "Set up connection references for Customer Knowledge Management Agent",
+        "supported": true,
+        "notes": "Dataverse/Copilot Studio references, named harvesting flows and published CustomerServiceKnowledgeHarvest verified."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-c29",
+    "revision": 1,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "1a35649e0d4cbe612e69959366743a14122575dbb8e9ddc841feb1a0622785ea",
+    "rationale": "Case resolution/conversation closure triggers configured real-time creation; comparison and rules still determine whether an article is needed.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s17",
+        "section": "Prerequisites; Enable real-time knowledge creation; Auto publish articles; Set default compliance state",
+        "supported": true,
+        "notes": "Creation trigger, rule filtering, compliance default, audience and publication governance verified; sensitive-data removal limitation preserved."
+      }
+    ]
+  },
+  {
+    "id": "cc-d5-c30",
+    "revision": 2,
+    "reviewer": "/root/finish_voice",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "2b35f05eb61034f9525a4b80a01f225cefacabf2e2e911923f2c46d8c5f73f8f",
+    "rationale": "Revision 2 compares compliance states and publication policy. Reopened compliance/review sections recommend Pending then reviewer compliance approval, and describe review when automatic publishing is disabled. D supplies intended human gate; Compliant/Noncompliant are not awaiting-review classification, and all-generated automatic publication is not the documented compliant-only control.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "cc-d5-final-s17",
+        "section": "Prerequisites; Enable real-time knowledge creation; Auto publish articles; Set default compliance state",
+        "supported": true,
+        "notes": "Creation trigger, rule filtering, compliance default, audience and publication governance verified; sensitive-data removal limitation preserved."
+      }
+    ]
+  }
+]

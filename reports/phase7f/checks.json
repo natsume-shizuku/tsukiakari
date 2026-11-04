@@ -1,0 +1,590 @@
+{
+  "completedAtUtc": "2026-11-04T00:59:24.964606+00:00",
+  "publication": "passed: 300 bank approvals, 235 study cards, 78 notes, frozen pilot retained",
+  "preservation": "10 accepted study/pilot/coverage artifacts byte-identical; bank compiler fingerprints pass",
+  "lint": "passed",
+  "unit": {
+    "status": "passed",
+    "tests": 327,
+    "files": 27,
+    "processTimezone": "UTC"
+  },
+  "build": {
+    "status": "passed",
+    "javascriptKB": 968.15,
+    "gzipKB": 256.31,
+    "separateBankKB": 701.12,
+    "separateBankGzipKB": 121.61
+  },
+  "browser": {
+    "status": "passed",
+    "tests": 128,
+    "origin": "http://localhost:4187",
+    "workers": 4
+  },
+  "visual": {
+    "themes": [
+      "dark",
+      "light"
+    ],
+    "widths": [
+      320,
+      768,
+      1440,
+      1920,
+      2560
+    ],
+    "screenshots": 20,
+    "status": "reviewed by lead and delegated QA; no clipping/overlap defects found"
+  },
+  "navigationAudits": [
+    {
+      "name": "study-mobile",
+      "performance": 98.0,
+      "accessibility": 100.0,
+      "bestPractices": 100.0,
+      "seo": 91.0
+    },
+    {
+      "name": "packs-mobile",
+      "performance": 98.0,
+      "accessibility": 100.0,
+      "bestPractices": 100.0,
+      "seo": 91.0
+    },
+    {
+      "name": "cards-mobile",
+      "performance": 94.0,
+      "accessibility": 100.0,
+      "bestPractices": 100.0,
+      "seo": 91.0
+    },
+    {
+      "name": "notes-mobile",
+      "performance": 98.0,
+      "accessibility": 100.0,
+      "bestPractices": 100.0,
+      "seo": 91.0
+    },
+    {
+      "name": "mistakes-mobile",
+      "performance": 98.0,
+      "accessibility": 100.0,
+      "bestPractices": 100.0,
+      "seo": 91.0
+    },
+    {
+      "name": "tests-mobile",
+      "performance": 98.0,
+      "accessibility": 100.0,
+      "bestPractices": 100.0,
+      "seo": 91.0
+    },
+    {
+      "name": "ab250-mobile",
+      "performance": 96.0,
+      "accessibility": 100.0,
+      "bestPractices": 100.0,
+      "seo": 91.0
+    },
+    {
+      "name": "statistics-mobile",
+      "performance": 97.0,
+      "accessibility": 100.0,
+      "bestPractices": 100.0,
+      "seo": 91.0
+    },
+    {
+      "name": "settings-mobile",
+      "performance": 98.0,
+      "accessibility": 100.0,
+      "bestPractices": 100.0,
+      "seo": 91.0
+    },
+    {
+      "name": "study-desktop",
+      "performance": 100.0,
+      "accessibility": 100.0,
+      "bestPractices": 100.0,
+      "seo": 91.0
+    },
+    {
+      "name": "packs-desktop",
+      "performance": 100.0,
+      "accessibility": 100.0,
+      "bestPractices": 100.0,
+      "seo": 91.0
+    },
+    {
+      "name": "cards-desktop",
+      "performance": 100.0,
+      "accessibility": 100.0,
+      "bestPractices": 100.0,
+      "seo": 91.0
+    },
+    {
+      "name": "notes-desktop",
+      "performance": 100.0,
+      "accessibility": 100.0,
+      "bestPractices": 100.0,
+      "seo": 91.0
+    },
+    {
+      "name": "mistakes-desktop",
+      "performance": 100.0,
+      "accessibility": 100.0,
+      "bestPractices": 100.0,
+      "seo": 91.0
+    },
+    {
+      "name": "tests-desktop",
+      "performance": 100.0,
+      "accessibility": 100.0,
+      "bestPractices": 100.0,
+      "seo": 91.0
+    },
+    {
+      "name": "ab250-desktop",
+      "performance": 100.0,
+      "accessibility": 100.0,
+      "bestPractices": 100.0,
+      "seo": 91.0
+    },
+    {
+      "name": "statistics-desktop",
+      "performance": 100.0,
+      "accessibility": 100.0,
+      "bestPractices": 100.0,
+      "seo": 91.0
+    },
+    {
+      "name": "settings-desktop",
+      "performance": 100.0,
+      "accessibility": 100.0,
+      "bestPractices": 100.0,
+      "seo": 91.0
+    }
+  ],
+  "populatedAudits": [
+    {
+      "theme": "dark",
+      "width": 1440,
+      "snapshots": [
+        {
+          "name": "Revealed flashcard",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Personal note editor",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Published note document",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Deployment rollout note",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Roles and personas note",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Chat configuration note",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Translation setup note",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "CRM synchronization note",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Record channel note",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Voice architecture note",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Outbound engagement note",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "AI assistance note",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Queue routing note",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Representative experience note",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Supervisor configuration note",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Saved flashcard topic summary",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "100-question practice with revealed answer",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Multiple-answer question",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Original AB-250 practice with sourced explanation",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Original multiple-answer explanation",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Question study resources",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Linked note from practice",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Original 100-question timed exam",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Original exam results dialog",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Original exam review with references",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Frozen exam domain outcomes",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Domain study resources",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Linked card inspector from exam",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Returned frozen exam review",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        }
+      ]
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "snapshots": [
+        {
+          "name": "Revealed flashcard",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Personal note editor",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Published note document",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Deployment rollout note",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Roles and personas note",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Chat configuration note",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Translation setup note",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "CRM synchronization note",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Record channel note",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Voice architecture note",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Outbound engagement note",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "AI assistance note",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Queue routing note",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Representative experience note",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Supervisor configuration note",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Saved flashcard topic summary",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "100-question practice with revealed answer",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Multiple-answer question",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Original AB-250 practice with sourced explanation",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Original multiple-answer explanation",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Question study resources",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Linked note from practice",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Original 100-question timed exam",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Original exam results dialog",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Original exam review with references",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Frozen exam domain outcomes",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Domain study resources",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Linked card inspector from exam",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        },
+        {
+          "name": "Returned frozen exam review",
+          "scores": {
+            "accessibility": 100,
+            "best-practices": 100
+          }
+        }
+      ]
+    }
+  ],
+  "phase7G": "unstarted",
+  "deployment": "none"
+}

@@ -1,0 +1,1513 @@
+{
+  "sources": [
+    {
+      "id": "cc-d2-finaldigital-s01",
+      "title": "Enable tables for queues in unified routing",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/enable-entities-for-queues"
+    },
+    {
+      "id": "cc-d2-finaldigital-s02",
+      "title": "How to set up unified routing",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/set-up-routing-process"
+    },
+    {
+      "id": "cc-d2-finaldigital-s03",
+      "title": "Overview of messaging APIs",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/extend/intro-messaging-apis"
+    },
+    {
+      "id": "cc-d2-finaldigital-s04",
+      "title": "Configure a custom messaging channel using messaging APIs",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/extend/configure-custom-messaging-channel"
+    },
+    {
+      "id": "cc-d2-finaldigital-s05",
+      "title": "Customize live chat widgets for mobile apps",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/render-live-chat-widget-mobile"
+    },
+    {
+      "id": "cc-d2-finaldigital-s06",
+      "title": "startChat API",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/reference/methods/startchat"
+    },
+    {
+      "id": "cc-d2-finaldigital-s07",
+      "title": "Configure digital channels - training",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-chat-digital-channels-contact-center/3-configure-digital-channels"
+    },
+    {
+      "id": "cc-d2-finaldigital-s08",
+      "title": "Close conversations automatically",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/auto-close-conversation-powerapps"
+    },
+    {
+      "id": "cc-d2-finaldigital-s09",
+      "title": "Configure and manage custom presence",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/presence-custom-presence"
+    },
+    {
+      "id": "cc-d2-finaldigital-s10",
+      "title": "View the communication panel for conversations",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/oc-conversation-control"
+    },
+    {
+      "id": "cc-d2-finaldigital-s11",
+      "title": "Create and manage data masking rules",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/data-masking-settings"
+    },
+    {
+      "id": "cc-d2-finaldigital-s12",
+      "title": "Enable file attachments",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/enable-file-attachments"
+    },
+    {
+      "id": "cc-d2-finaldigital-s13",
+      "title": "Configure automated messages",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-automated-message"
+    },
+    {
+      "id": "cc-d2-finaldigital-s14",
+      "title": "Manage enhanced Active Conversation settings",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/active-enh-conv-settings"
+    },
+    {
+      "id": "cc-d2-finaldigital-s15",
+      "title": "Set up the timeline control",
+      "url": "https://learn.microsoft.com/en-us/power-apps/maker/model-driven-apps/set-up-timeline-control"
+    },
+    {
+      "id": "cc-d2-finaldigital-s16",
+      "title": "Use custom connectors with the timeline control",
+      "url": "https://learn.microsoft.com/en-us/power-apps/maker/model-driven-apps/custom-connectors-timeline-control"
+    },
+    {
+      "id": "cc-d2-finaldigital-s17",
+      "title": "Choose between Channel Integration Framework 1.0 and 2.0",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/channel-integration-framework/choose-between-versions"
+    },
+    {
+      "id": "cc-d2-finaldigital-s18",
+      "title": "Configure feedback surveys using Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-surveys"
+    },
+    {
+      "id": "cc-d2-finaldigital-s19",
+      "title": "Plan migration from Azure Communication Services",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/migrate-from-azure-communication-services"
+    }
+  ],
+  "notes": [
+    {
+      "id": "cc-d2-n09",
+      "title": "Prepare records before expecting automatic assignment",
+      "body": "For record-based unified routing, enable the table for queues before configuring its routing. In table properties, select Can be added to a queue. Treat that as a design decision: the option cannot subsequently be disabled. Also inspect automatic movement into the owner's default queue; that option prevents automatic distribution to representatives.\n\nThen prepare the routing chain: enable unified routing, configure representative resources and advanced queues, enable the record for routing and create its record workstream. Use Save & Route on a test case to exercise the runtime path. Creating a record through an email rule and distributing that record are separate operations; validate the actual assignment, not merely successful record creation.",
+      "sourceIds": [
+        "cc-d2-finaldigital-s01",
+        "cc-d2-finaldigital-s02"
+      ]
+    },
+    {
+      "id": "cc-d2-n10",
+      "title": "Choose an integration surface before writing channel code",
+      "body": "Choose by where the integration runs. For mobile apps, Microsoft recommends the native iOS/Android Messaging SDKs, with authenticated persistent chat for returning users. The SDK provides a ready interface or lifecycle functions for a bespoke one, plus push-notification support. A WebView is an alternative with documented feature and performance limitations.\n\nFor a website widget, use the Live Chat Widget SDK. A startChat customContext argument takes precedence over a previously configured context provider. For a backend-owned custom channel, use Messaging APIs instead of invoking confidential-client REST calls directly from customer devices. Register the Entra app, tenant and HTTPS webhook, then connect the channel record to a messaging workstream and routing.\n\nFor an existing ACS-based WhatsApp deployment, channel registration, its Event Grid callback and workstream association are separate integration steps. Microsoft supports affected ACS configurations through September 30, 2028 and recommends WhatsApp through Twilio as the long-term path. Inventory templates and integrations before migration, obtain provider approval where required, and test inbound and outbound messaging. Verify provider coverage and number-migration requirements before procurement.",
+      "sourceIds": [
+        "cc-d2-finaldigital-s03",
+        "cc-d2-finaldigital-s04",
+        "cc-d2-finaldigital-s05",
+        "cc-d2-finaldigital-s06",
+        "cc-d2-finaldigital-s07",
+        "cc-d2-finaldigital-s19"
+      ]
+    },
+    {
+      "id": "cc-d2-n11",
+      "title": "Manage conversation state separately from representative availability",
+      "body": "Automatic closure depends on both channel and state. Ordinary live chat in Active has no default automatic closure. Waiting inactivity is configured on the workstream for persistent chat, SMS, social and Teams; it is not a universal timer for every live chat. Closure eligibility is evaluated by a scheduler, and conversation activity can recalculate the timer. Use supported settings rather than manually patching conversation state/status records.\n\nRepresentative availability is another layer. A custom presence has a base state and display text; Allowed Presences in the workstream uses the base state. Make the label agree with its routing meaning.\n\nDuring a conversation, consult when private assistance is needed. The primary representative must separately add a consultant to include them with the customer. Transfer hands the work item to another representative or queue and removes the original representative after completion. Where enabled, reroute returns the conversation to system routing instead of selecting a colleague directly.",
+      "sourceIds": [
+        "cc-d2-finaldigital-s08",
+        "cc-d2-finaldigital-s09",
+        "cc-d2-finaldigital-s10"
+      ]
+    },
+    {
+      "id": "cc-d2-n12",
+      "title": "Configure text protection and attachment permissions independently",
+      "body": "For automated text masking in chat and asynchronous messaging, define and test the regular expression, keep its rule Active and select the sender direction to which it applies. Test representative-originated and customer-originated messages separately. The customer-to-representative masking option hides async customer data in the representative UI; do not promise it hides the original on the sender's device. Manual masking is a distinct feature, and removing text from a voice transcript does not erase retained audio.\n\nAttachments have independent permissions for customers and representatives. Check the channel's supported file types, the configured size limit and blocked extensions as well as the direction toggle. A permission switch cannot expand the provider's format support. Files already attached to a transferred conversation remain accessible to the receiving representative.",
+      "sourceIds": [
+        "cc-d2-finaldigital-s11",
+        "cc-d2-finaldigital-s12"
+      ]
+    },
+    {
+      "id": "cc-d2-n13",
+      "title": "Test automated messages and the enhanced conversation form in their actual scope",
+      "body": "Automated messages respond to events, while quick replies are selected by a representative. Set the shared channel-level message first, then create instance-specific text only where an account or number needs an exception. An instance customization overrides that channel-level setting. For supported messaging contexts, use the exact context variable name in {$VariableName$}; missing variables produce an empty value. Context placeholders are not supported in voice messages. Verify messages during live conversations because they are not included in the customer chat transcript.\n\nThe enhanced Contact Center Active Conversation form provides the Customer 360 component. Customize the relevant account/contact card in Power Apps. The form selector for open/closed conversations is hidden by default; enabling Show Conversation form selector is a separate setting-definition change. App-specific values override the environment value. Save and publish customizations, and keep the initial form light by moving less-used controls to secondary tabs.",
+      "sourceIds": [
+        "cc-d2-finaldigital-s13",
+        "cc-d2-finaldigital-s14"
+      ]
+    },
+    {
+      "id": "cc-d2-n14",
+      "title": "Separate timeline extension from telephony integration",
+      "body": "Configure the timeline on the table form that representatives actually use. Choose the activities, notes and posts it should display, then save and publish. A custom activity table must use the Activity type to appear as an activity.\n\nFor another record source, a timeline custom connector is a JavaScript web resource implementing IRecordSource. This is not merely a Power Automate connector registration. Configure its resource and constructor on the timeline and keep client resources free of tokens and secrets. When moving the form in a solution, add those web resources explicitly: the configured references are not automatically exported as formal dependencies.\n\nFor third-party telephony in the multisession workspace, evaluate Channel Integration Framework 2.0 instead. CIF1 targets single-session apps; CIF2 hosts telephony providers and supports multisession templates and multiple providers. Timeline connectors supply record entries, whereas CIF connects a communication provider to the representative desktop.",
+      "sourceIds": [
+        "cc-d2-finaldigital-s15",
+        "cc-d2-finaldigital-s16",
+        "cc-d2-finaldigital-s17"
+      ]
+    },
+    {
+      "id": "cc-d2-n15",
+      "title": "Publish customer-feedback surveys before attaching them to channels",
+      "body": "Create a feedback survey from Customer settings in Copilot Service admin center. Copilot Studio and the channel must be in the same environment, and the administrator needs the Omnichannel administrator role. Check the Dataverse connection reference, customize the agent in Copilot Studio and publish it. Ready is different from merely having created the survey.\n\nAttach the published survey to the channel's post-conversation configuration, selecting Powered by Microsoft Copilot Studio for digital messaging. When extending the survey with stored questions, use response variable names beginning MCS_. Keep changes within the supported Conversation Start topic.\n\nAn environment copy is not a complete survey deployment: Microsoft recommends creating new survey agents in the target because copied agents do not work as expected. Test a real conversation ending and the resulting response record rather than relying only on a preview link.",
+      "sourceIds": [
+        "cc-d2-finaldigital-s18"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "cc-d2-c25",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "What table capability must be enabled before records from that table can participate in queue-based routing?",
+      "answer": "Can be added to a queue.",
+      "explanation": "Enable it in table properties. Once enabled, the documented setting cannot be disabled.",
+      "sourceIds": [
+        "cc-d2-finaldigital-s01"
+      ],
+      "noteIds": [
+        "cc-d2-n09"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:record-table-queue-capability",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c26",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "Which command on a test case exercises the documented record-routing runtime experience?",
+      "answer": "Save & Route.",
+      "explanation": "Prepare unified routing, queues, resources and the record workstream first; saving a record alone is not the complete routing test.",
+      "sourceIds": [
+        "cc-d2-finaldigital-s02"
+      ],
+      "noteIds": [
+        "cc-d2-n09"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:record-routing-runtime-check",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c27",
+      "revision": 2,
+      "topicId": "chat-digital",
+      "kind": "mcq",
+      "prompt": "A custom table supports queues and has a record workstream. New records move into the owner's default queue but are not automatically distributed to representatives. Which table option should be reviewed first?",
+      "answer": "Automatic movement to the owner's default queue.",
+      "explanation": "The table option explicitly prevents automatic distribution. Queue assignment methods, skills and fallback routing are subsequent checks; they do not remove this table-level behavior.",
+      "sourceIds": [
+        "cc-d2-finaldigital-s01"
+      ],
+      "noteIds": [
+        "cc-d2-n09"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:owner-default-queue-distribution",
+        "task:configure",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "b",
+          "text": "The default assignment method on the advanced queue."
+        },
+        {
+          "id": "a",
+          "text": "Automatic movement to the owner's default queue."
+        },
+        {
+          "id": "c",
+          "text": "The representative skills selected during classification."
+        },
+        {
+          "id": "d",
+          "text": "The fallback queue configured on the record workstream."
+        }
+      ],
+      "correctOptionId": "a"
+    },
+    {
+      "id": "cc-d2-c28",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "Which client integration does Microsoft recommend for a native iOS or Android messaging experience?",
+      "answer": "The Contact Center native mobile Messaging SDKs.",
+      "explanation": "They supply a configurable interface or lifecycle functions and push support; the web widget in a WebView is an alternative with limitations.",
+      "sourceIds": [
+        "cc-d2-finaldigital-s05"
+      ],
+      "noteIds": [
+        "cc-d2-n10"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:native-messaging-sdk-choice",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c29",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "What connection identities does the Messaging API custom channel registration associate?",
+      "answer": "The Microsoft Entra application, tenant and HTTPS webhook endpoint.",
+      "explanation": "Prepare confidential-client authentication, a secure event receiver and the messaging workstream/routing together.",
+      "sourceIds": [
+        "cc-d2-finaldigital-s04"
+      ],
+      "noteIds": [
+        "cc-d2-n10"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:messaging-api-registration",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c30",
+      "revision": 3,
+      "topicId": "chat-digital",
+      "kind": "mcq",
+      "prompt": "A website configures a context provider with a service tier, then starts a chat with a different value for that same tier in startChat customContext. Which value initializes that context?",
+      "answer": "The value supplied in startChat customContext.",
+      "explanation": "The method reference gives startChat customContext precedence. Registration order does not merge conflicting values, the provider does not always win, and the two values are not automatically converted into a list.",
+      "sourceIds": [
+        "cc-d2-finaldigital-s06"
+      ],
+      "noteIds": [
+        "cc-d2-n10"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:startchat-context-precedence",
+        "task:configure",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Merge the two context values by registration order."
+        },
+        {
+          "id": "c",
+          "text": "The context provider value, because it always takes precedence over method arguments."
+        },
+        {
+          "id": "d",
+          "text": "Both values are converted into a list under the same context key."
+        },
+        {
+          "id": "b",
+          "text": "The value supplied in startChat customContext."
+        }
+      ],
+      "correctOptionId": "b"
+    },
+    {
+      "id": "cc-d2-c31",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "Does the documented default automatically close ordinary live chat while its state is Active?",
+      "answer": "No. Active ordinary live chat has no default automatic closure.",
+      "explanation": "Do not apply the Waiting inactivity setting for persistent/asynchronous channels to every active chat.",
+      "sourceIds": [
+        "cc-d2-finaldigital-s08"
+      ],
+      "noteIds": [
+        "cc-d2-n11"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:active-chat-auto-close-boundary",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c32",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "Which part of a custom presence determines its meaning for workstream Allowed Presences?",
+      "answer": "Its mapped base presence.",
+      "explanation": "The display text is for representatives; a friendly label does not override the underlying routing state.",
+      "sourceIds": [
+        "cc-d2-finaldigital-s09"
+      ],
+      "noteIds": [
+        "cc-d2-n11"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:custom-presence-base-routing",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c33",
+      "revision": 2,
+      "topicId": "chat-digital",
+      "kind": "mcq",
+      "prompt": "A representative needs private guidance from a specialist but must remain responsible for the customer conversation. Which action fits?",
+      "answer": "Start a consult and keep the specialist separate from the customer chat.",
+      "explanation": "A consult supplies private assistance while the primary representative retains the conversation. Transfer or reroute changes ownership; adding the specialist to the customer chat does not meet the private-guidance requirement.",
+      "sourceIds": [
+        "cc-d2-finaldigital-s10"
+      ],
+      "noteIds": [
+        "cc-d2-n11"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:consult-versus-transfer",
+        "task:configure",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "c",
+          "text": "Start a consult and keep the specialist separate from the customer chat."
+        },
+        {
+          "id": "a",
+          "text": "Transfer the work item to the specialist."
+        },
+        {
+          "id": "b",
+          "text": "Reroute the conversation to unified routing."
+        },
+        {
+          "id": "d",
+          "text": "Add the specialist directly to the customer chat for the guidance."
+        }
+      ],
+      "correctOptionId": "c"
+    },
+    {
+      "id": "cc-d2-c34",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "What two rule-level checks are essential before expecting automated regex masking to run?",
+      "answer": "The rule is Active and selected for the required message direction.",
+      "explanation": "A saved pattern alone is insufficient; test matching input and the configured sender direction.",
+      "sourceIds": [
+        "cc-d2-finaldigital-s11"
+      ],
+      "noteIds": [
+        "cc-d2-n12"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:automated-mask-activation",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c35",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "Does allowing customers to send attachments automatically enable representatives to send attachments?",
+      "answer": "No. Configure the representative and customer directions separately.",
+      "explanation": "Also check supported types, blocked extensions and size limits for the channel.",
+      "sourceIds": [
+        "cc-d2-finaldigital-s12"
+      ],
+      "noteIds": [
+        "cc-d2-n12"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:attachment-direction-permissions",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c36",
+      "revision": 2,
+      "topicId": "chat-digital",
+      "kind": "mcq",
+      "prompt": "An asynchronous channel masks private customer data from the representative using the automated customer-data masking option. What display behavior should the administrator expect?",
+      "answer": "The data is masked in the representative UI; the sender's original display is not covered by that option.",
+      "explanation": "The documentation distinguishes async customer data from live chat behavior. It does not equate UI masking with removal from every external device.",
+      "sourceIds": [
+        "cc-d2-finaldigital-s11"
+      ],
+      "noteIds": [
+        "cc-d2-n12"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:async-mask-display-boundary",
+        "task:configure",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "The original is replaced in both the representative UI and the external sender application."
+        },
+        {
+          "id": "b",
+          "text": "Only representative-originated messages can be masked on asynchronous channels."
+        },
+        {
+          "id": "d",
+          "text": "The data is masked in the representative UI; the sender's original display is not covered by that option."
+        },
+        {
+          "id": "c",
+          "text": "Customer text is masked only in the stored transcript after closure."
+        }
+      ],
+      "correctOptionId": "d"
+    },
+    {
+      "id": "cc-d2-c37",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "Which automated-message level wins when one channel instance has custom text for a trigger?",
+      "answer": "The channel-instance customization.",
+      "explanation": "Without an instance customization the shared channel settings are inherited.",
+      "sourceIds": [
+        "cc-d2-finaldigital-s13"
+      ],
+      "noteIds": [
+        "cc-d2-n13"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:automated-message-instance-override",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c38",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "Which setting restores switching between open and closed conversations on the enhanced Active Conversation form?",
+      "answer": "Show Conversation form selector.",
+      "explanation": "Set the applicable environment or app value and publish; an app value overrides the environment value.",
+      "sourceIds": [
+        "cc-d2-finaldigital-s14"
+      ],
+      "noteIds": [
+        "cc-d2-n13"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:active-form-selector-setting",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c39",
+      "revision": 2,
+      "topicId": "chat-digital",
+      "kind": "mcq",
+      "prompt": "A channel instance has a custom automated greeting. A tester must verify its event trigger and the exact customer-visible text, but cannot find it in the downloaded customer transcript. Which validation follows the documented behavior?",
+      "answer": "Trigger the event in a live test conversation on that channel instance.",
+      "explanation": "Automated messages are not included in the downloaded customer transcript. Triggering the actual instance event verifies both delivery and the instance override; template inspection or testing a different configuration is insufficient.",
+      "sourceIds": [
+        "cc-d2-finaldigital-s13"
+      ],
+      "noteIds": [
+        "cc-d2-n13"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:automated-message-live-verification",
+        "task:configure",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "b",
+          "text": "Inspect only the saved parent-channel template without opening a conversation."
+        },
+        {
+          "id": "a",
+          "text": "Trigger the event in a live test conversation on that channel instance."
+        },
+        {
+          "id": "c",
+          "text": "Test the parent-channel default with the instance customization disabled."
+        },
+        {
+          "id": "d",
+          "text": "Check a template context variable without triggering its conversation event."
+        }
+      ],
+      "correctOptionId": "a"
+    },
+    {
+      "id": "cc-d2-c40",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "Does exporting a form automatically include its configured timeline-connector JavaScript web resources?",
+      "answer": "No. Add those web resources to the export explicitly.",
+      "explanation": "They are not formally declared as form dependencies; a working source form does not prove a complete solution package.",
+      "sourceIds": [
+        "cc-d2-finaldigital-s16"
+      ],
+      "noteIds": [
+        "cc-d2-n14"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:timeline-resource-export-dependency",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c41",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "Which Channel Integration Framework version targets third-party telephony in the multisession Copilot Service workspace?",
+      "answer": "Channel Integration Framework 2.0.",
+      "explanation": "Version1 targets single-session applications; version2 includes multisession templates and supports multiple telephony providers.",
+      "sourceIds": [
+        "cc-d2-finaldigital-s17"
+      ],
+      "noteIds": [
+        "cc-d2-n14"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:cif-version-selection",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c42",
+      "revision": 2,
+      "topicId": "chat-digital",
+      "kind": "mcq",
+      "prompt": "A timeline must display records from an external source in a model-driven form. A developer proposes embedding an access token in its JavaScript resource. Which design correction is appropriate?",
+      "answer": "Implement the timeline record-source interface and retrieve data securely without storing secrets in client resources.",
+      "explanation": "Timeline resources run in an untrusted client context. Encoding or reconstructing secrets in the client still exposes them. The connector must implement IRecordSource and obtain data securely; a flow connector alone is not that record-source contract.",
+      "sourceIds": [
+        "cc-d2-finaldigital-s16"
+      ],
+      "noteIds": [
+        "cc-d2-n14"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:timeline-client-secret-boundary",
+        "task:configure",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "b",
+          "text": "Implement the timeline record-source interface and retrieve data securely without storing secrets in client resources."
+        },
+        {
+          "id": "a",
+          "text": "Split the secret into encoded fragments and reconstruct it in the client web resource."
+        },
+        {
+          "id": "c",
+          "text": "Register a Power Automate connector and omit the timeline record-source resource."
+        },
+        {
+          "id": "d",
+          "text": "Store the token in the optional JSON web resource rather than JavaScript."
+        }
+      ],
+      "correctOptionId": "b"
+    },
+    {
+      "id": "cc-d2-c43",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "What must happen in Copilot Studio after creating a customer-feedback survey in the admin center?",
+      "answer": "Customize as needed and publish the survey agent.",
+      "explanation": "The Dataverse connection must be established; publishing changes its status to Ready before selecting it for a channel.",
+      "sourceIds": [
+        "cc-d2-finaldigital-s18"
+      ],
+      "noteIds": [
+        "cc-d2-n15"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:survey-agent-publication",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c44",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "What prefix is required for a new survey response variable whose answer should be stored in Dataverse?",
+      "answer": "MCS_.",
+      "explanation": "Use the documented prefix when adding a question to a survey agent; a UI label alone does not provide the storage naming contract.",
+      "sourceIds": [
+        "cc-d2-finaldigital-s18"
+      ],
+      "noteIds": [
+        "cc-d2-n15"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:survey-response-variable-prefix",
+        "task:configure",
+        "level:core"
+      ]
+    },
+    {
+      "id": "cc-d2-c45",
+      "revision": 2,
+      "topicId": "chat-digital",
+      "kind": "mcq",
+      "prompt": "A deployment copies an environment containing working Copilot Studio feedback surveys. Channel configuration is present in the target, but copied survey agents do not behave correctly. Which deployment follow-up follows the product guidance?",
+      "answer": "Create new survey agents in the target environment and configure them there.",
+      "explanation": "Microsoft recommends new target survey agents for this copy scenario. Updating only a copied agent, reselecting it or reimporting channel settings does not follow that documented remedy.",
+      "sourceIds": [
+        "cc-d2-finaldigital-s18"
+      ],
+      "noteIds": [
+        "cc-d2-n15"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:survey-environment-copy-boundary",
+        "task:configure",
+        "level:advanced"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Update connection references and republish only the copied survey agent."
+        },
+        {
+          "id": "b",
+          "text": "Reselect only the copied survey agent in the target post-conversation setting."
+        },
+        {
+          "id": "c",
+          "text": "Create new survey agents in the target environment and configure them there."
+        },
+        {
+          "id": "d",
+          "text": "Import the channel configuration again while retaining the copied survey agent."
+        }
+      ],
+      "correctOptionId": "c"
+    },
+    {
+      "id": "cc-d2-c88",
+      "revision": 1,
+      "topicId": "chat-digital",
+      "kind": "recall",
+      "prompt": "Which table type allows a custom table to appear as an activity in a model-driven timeline?",
+      "answer": "Activity.",
+      "explanation": "Choose Activity when creating the custom table. Configure the timeline on the intended form, then save and publish the form changes.",
+      "sourceIds": [
+        "cc-d2-finaldigital-s15"
+      ],
+      "noteIds": [
+        "cc-d2-n14"
+      ],
+      "tags": [
+        "topic:chat-digital",
+        "domain:channels",
+        "feature:timeline-custom-activity",
+        "task:configure",
+        "level:core"
+      ]
+    }
+  ],
+  "questions": [],
+  "editorial": [
+    {
+      "id": "cc-d2-n09",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "record-channel-preparation",
+      "objectiveIds": [
+        "D2.1.02"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaldigital-s01",
+          "section": "Enable a table for queues",
+          "claim": "A record table must allow queues; enabling cannot be undone. Automatic owner-default-queue movement prevents automatic representative distribution.",
+          "applicability": "Record-based unified routing, including custom tables."
+        },
+        {
+          "sourceId": "cc-d2-finaldigital-s02",
+          "section": "Prerequisites; Set up unified routing for records; Runtime experience",
+          "claim": "Prepare unified routing, human resources, advanced queues, the record and its workstream; Save & Route exercises case routing.",
+          "applicability": "Documented Customer Service record-routing setup, not automatic record creation."
+        }
+      ],
+      "duplicateCheck": "Compared pilot and7D1/7D2 content: teaches additional workflow/dependency decisions; existing authentication, identity matching, prechat collection and widget placement are not repeated as new cards."
+    },
+    {
+      "id": "cc-d2-c25",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "record-table-queue-capability",
+      "objectiveIds": [
+        "D2.1.02"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaldigital-s01",
+          "section": "Enable a table for queues",
+          "claim": "A record table must allow queues; enabling cannot be undone. Automatic owner-default-queue movement prevents automatic representative distribution.",
+          "applicability": "Record-based unified routing, including custom tables."
+        }
+      ],
+      "duplicateCheck": "Distinct tested decision within linked note. Recall defines a prerequisite or contract; application asks for a scoped diagnosis/design choice. Compared prior card prompts; no renamed-person/number duplicate."
+    },
+    {
+      "id": "cc-d2-c26",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "record-routing-runtime-check",
+      "objectiveIds": [
+        "D2.1.02"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaldigital-s02",
+          "section": "Prerequisites; Set up unified routing for records; Runtime experience",
+          "claim": "Prepare unified routing, human resources, advanced queues, the record and its workstream; Save & Route exercises case routing.",
+          "applicability": "Documented Customer Service record-routing setup, not automatic record creation."
+        }
+      ],
+      "duplicateCheck": "Distinct tested decision within linked note. Recall defines a prerequisite or contract; application asks for a scoped diagnosis/design choice. Compared prior card prompts; no renamed-person/number duplicate."
+    },
+    {
+      "id": "cc-d2-c27",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "owner-default-queue-distribution",
+      "objectiveIds": [
+        "D2.1.02"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaldigital-s01",
+          "section": "Enable a table for queues",
+          "claim": "A record table must allow queues; enabling cannot be undone. Automatic owner-default-queue movement prevents automatic representative distribution.",
+          "applicability": "Record-based unified routing, including custom tables."
+        }
+      ],
+      "duplicateCheck": "Distinct tested decision within linked note. Recall defines a prerequisite or contract; application asks for a scoped diagnosis/design choice. Compared prior card prompts; no renamed-person/number duplicate."
+    },
+    {
+      "id": "cc-d2-n10",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "digital-integration-surfaces",
+      "objectiveIds": [
+        "D2.1.03",
+        "D2.1.08",
+        "D2.1.10",
+        "D2.1.11"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaldigital-s03",
+          "section": "Introduction; HTTP protocol; Authentication headers",
+          "claim": "Messaging REST APIs are for service-to-service integrations and are not recommended directly from mobile or web user devices; clients should use native SDKs/widgets.",
+          "applicability": "Backend custom messaging integration, HTTPS and Entra access tokens."
+        },
+        {
+          "sourceId": "cc-d2-finaldigital-s04",
+          "section": "Prerequisites; Set up authentication; Set up webhook; Manage channels",
+          "claim": "Register confidential Entra client, tenant and HTTPS webhook in the channel record, then associate the custom channel with a messaging workstream and routing.",
+          "applicability": "Messaging API channel; not legacy Azure Bot Framework custom-channel configuration."
+        },
+        {
+          "sourceId": "cc-d2-finaldigital-s05",
+          "section": "Integrate with mobile SDKs; Render using embedded code",
+          "claim": "Native iOS/Android SDKs are recommended; provide interface/lifecycle/push support and recommend authenticated persistent chat. WebView has feature/performance limitations.",
+          "applicability": "Native application messaging versus embedded web widget; no roadmap availability inference."
+        },
+        {
+          "sourceId": "cc-d2-finaldigital-s06",
+          "section": "Parameters; Notes",
+          "claim": "startChat customContext takes precedence over setContextProvider values; SDK calls follow lcw:ready.",
+          "applicability": "Customer-facing Live Chat Widget SDK; not server-to-server REST APIs."
+        },
+        {
+          "sourceId": "cc-d2-finaldigital-s07",
+          "section": "Configure WhatsApp through Azure Communication Services; Message templates",
+          "claim": "The documented ACS WhatsApp flow connects a registered business channel and Event Grid callback to a WhatsApp workstream; templates require WhatsApp approval.",
+          "applicability": "Teaching sequence for the documented ACS provider, not a guarantee of regional eligibility."
+        },
+        {
+          "sourceId": "cc-d2-finaldigital-s19",
+          "section": "Understand the impact; Choose a messaging migration path",
+          "claim": "Affected ACS WhatsApp remains supported through September30,2028; Twilio is the recommended long-term WhatsApp path, with inventory, provider/coverage and end-to-end validation required.",
+          "applicability": "Existing ACS-backed WhatsApp compared with supported long-term provider choices, not retirement of Contact Center or Twilio."
+        }
+      ],
+      "duplicateCheck": "Compared pilot and7D1/7D2 content: teaches additional workflow/dependency decisions; existing authentication, identity matching, prechat collection and widget placement are not repeated as new cards."
+    },
+    {
+      "id": "cc-d2-c28",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "native-messaging-sdk-choice",
+      "objectiveIds": [
+        "D2.1.10"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaldigital-s05",
+          "section": "Integrate with mobile SDKs; Render using embedded code",
+          "claim": "Native iOS/Android SDKs are recommended; provide interface/lifecycle/push support and recommend authenticated persistent chat. WebView has feature/performance limitations.",
+          "applicability": "Native application messaging versus embedded web widget; no roadmap availability inference."
+        }
+      ],
+      "duplicateCheck": "Distinct tested decision within linked note. Recall defines a prerequisite or contract; application asks for a scoped diagnosis/design choice. Compared prior card prompts; no renamed-person/number duplicate."
+    },
+    {
+      "id": "cc-d2-c29",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "messaging-api-registration",
+      "objectiveIds": [
+        "D2.1.11"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaldigital-s04",
+          "section": "Prerequisites; Set up authentication; Set up webhook; Manage channels",
+          "claim": "Register confidential Entra client, tenant and HTTPS webhook in the channel record, then associate the custom channel with a messaging workstream and routing.",
+          "applicability": "Messaging API channel; not legacy Azure Bot Framework custom-channel configuration."
+        }
+      ],
+      "duplicateCheck": "Distinct tested decision within linked note. Recall defines a prerequisite or contract; application asks for a scoped diagnosis/design choice. Compared prior card prompts; no renamed-person/number duplicate."
+    },
+    {
+      "id": "cc-d2-c30",
+      "revision": 3,
+      "domainId": "channels",
+      "conceptId": "startchat-context-precedence",
+      "objectiveIds": [
+        "D2.1.08"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaldigital-s06",
+          "section": "Parameters; Notes",
+          "claim": "startChat customContext takes precedence over setContextProvider values; SDK calls follow lcw:ready.",
+          "applicability": "Customer-facing Live Chat Widget SDK; not server-to-server REST APIs."
+        }
+      ],
+      "duplicateCheck": "Distinct tested decision within linked note. Recall defines a prerequisite or contract; application asks for a scoped diagnosis/design choice. Compared prior card prompts; no renamed-person/number duplicate."
+    },
+    {
+      "id": "cc-d2-n11",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "conversation-lifecycle-and-presence",
+      "objectiveIds": [
+        "D2.3.03",
+        "D2.3.04",
+        "D2.3.06",
+        "D2.3.12"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaldigital-s08",
+          "section": "Default time; Conversation in waiting; Close using Power Apps",
+          "claim": "Closure depends on channel/state and scheduler; active ordinary chat is not automatically closed. Waiting inactivity applies only to listed asynchronous/persistent channels.",
+          "applicability": "Distinguish ordinary live chat from persistent/asynchronous conversations."
+        },
+        {
+          "sourceId": "cc-d2-finaldigital-s09",
+          "section": "Presence elements; Create custom presence",
+          "claim": "Custom presence maps to a base presence, and workstream Allowed Presences uses base states.",
+          "applicability": "Representative work distribution, not just display text."
+        },
+        {
+          "sourceId": "cc-d2-finaldigital-s10",
+          "section": "Consult with representative or supervisor; Transfer conversations; Use reroute",
+          "claim": "Consultation provides assistance; adding a consultant to the customer chat is a separate action. Completed transfer removes original representative. Reroute hands work back to the system.",
+          "applicability": "Conversation controls; transfer-to-representatives and reroute require administrator enablement."
+        }
+      ],
+      "duplicateCheck": "Compared pilot and7D1/7D2 content: teaches additional workflow/dependency decisions; existing authentication, identity matching, prechat collection and widget placement are not repeated as new cards."
+    },
+    {
+      "id": "cc-d2-c31",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "active-chat-auto-close-boundary",
+      "objectiveIds": [
+        "D2.3.03"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaldigital-s08",
+          "section": "Default time; Conversation in waiting; Close using Power Apps",
+          "claim": "Closure depends on channel/state and scheduler; active ordinary chat is not automatically closed. Waiting inactivity applies only to listed asynchronous/persistent channels.",
+          "applicability": "Distinguish ordinary live chat from persistent/asynchronous conversations."
+        }
+      ],
+      "duplicateCheck": "Distinct tested decision within linked note. Recall defines a prerequisite or contract; application asks for a scoped diagnosis/design choice. Compared prior card prompts; no renamed-person/number duplicate."
+    },
+    {
+      "id": "cc-d2-c32",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "custom-presence-base-routing",
+      "objectiveIds": [
+        "D2.3.06"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaldigital-s09",
+          "section": "Presence elements; Create custom presence",
+          "claim": "Custom presence maps to a base presence, and workstream Allowed Presences uses base states.",
+          "applicability": "Representative work distribution, not just display text."
+        }
+      ],
+      "duplicateCheck": "Distinct tested decision within linked note. Recall defines a prerequisite or contract; application asks for a scoped diagnosis/design choice. Compared prior card prompts; no renamed-person/number duplicate."
+    },
+    {
+      "id": "cc-d2-c33",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "consult-versus-transfer",
+      "objectiveIds": [
+        "D2.3.04",
+        "D2.3.12"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaldigital-s10",
+          "section": "Consult with representative or supervisor; Transfer conversations; Use reroute",
+          "claim": "Consultation provides assistance; adding a consultant to the customer chat is a separate action. Completed transfer removes original representative. Reroute hands work back to the system.",
+          "applicability": "Conversation controls; transfer-to-representatives and reroute require administrator enablement."
+        }
+      ],
+      "duplicateCheck": "Distinct tested decision within linked note. Recall defines a prerequisite or contract; application asks for a scoped diagnosis/design choice. Compared prior card prompts; no renamed-person/number duplicate."
+    },
+    {
+      "id": "cc-d2-n12",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "message-protection-and-files",
+      "objectiveIds": [
+        "D2.3.05",
+        "D2.3.14"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaldigital-s11",
+          "section": "Automated data masking; Create a masking rule; Manual masking",
+          "claim": "Automated regex rules must be active and selected for the required sender direction. For async customer messages only representative UI is masked. Manual masking does not erase retained audio.",
+          "applicability": "Automated chat/async text masking and distinct manual masking scope."
+        },
+        {
+          "sourceId": "cc-d2-finaldigital-s12",
+          "section": "Enable file attachments; Configure file size limit and extensions",
+          "claim": "Enable customer and representative attachment directions separately; size and blocked extensions are additional controls and provider limits still matter. Transferred conversations retain attachment access.",
+          "applicability": "Messaging attachments in channels that support the file type; not unrestricted file support."
+        }
+      ],
+      "duplicateCheck": "Compared pilot and7D1/7D2 content: teaches additional workflow/dependency decisions; existing authentication, identity matching, prechat collection and widget placement are not repeated as new cards."
+    },
+    {
+      "id": "cc-d2-c34",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "automated-mask-activation",
+      "objectiveIds": [
+        "D2.3.05"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaldigital-s11",
+          "section": "Automated data masking; Create a masking rule; Manual masking",
+          "claim": "Automated regex rules must be active and selected for the required sender direction. For async customer messages only representative UI is masked. Manual masking does not erase retained audio.",
+          "applicability": "Automated chat/async text masking and distinct manual masking scope."
+        }
+      ],
+      "duplicateCheck": "Distinct tested decision within linked note. Recall defines a prerequisite or contract; application asks for a scoped diagnosis/design choice. Compared prior card prompts; no renamed-person/number duplicate."
+    },
+    {
+      "id": "cc-d2-c35",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "attachment-direction-permissions",
+      "objectiveIds": [
+        "D2.3.14"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaldigital-s12",
+          "section": "Enable file attachments; Configure file size limit and extensions",
+          "claim": "Enable customer and representative attachment directions separately; size and blocked extensions are additional controls and provider limits still matter. Transferred conversations retain attachment access.",
+          "applicability": "Messaging attachments in channels that support the file type; not unrestricted file support."
+        }
+      ],
+      "duplicateCheck": "Distinct tested decision within linked note. Recall defines a prerequisite or contract; application asks for a scoped diagnosis/design choice. Compared prior card prompts; no renamed-person/number duplicate."
+    },
+    {
+      "id": "cc-d2-c36",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "async-mask-display-boundary",
+      "objectiveIds": [
+        "D2.3.05"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaldigital-s11",
+          "section": "Automated data masking; Create a masking rule; Manual masking",
+          "claim": "Automated regex rules must be active and selected for the required sender direction. For async customer messages only representative UI is masked. Manual masking does not erase retained audio.",
+          "applicability": "Automated chat/async text masking and distinct manual masking scope."
+        }
+      ],
+      "duplicateCheck": "Distinct tested decision within linked note. Recall defines a prerequisite or contract; application asks for a scoped diagnosis/design choice. Compared prior card prompts; no renamed-person/number duplicate."
+    },
+    {
+      "id": "cc-d2-n13",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "automated-messages-and-active-form",
+      "objectiveIds": [
+        "D2.3.01",
+        "D2.3.07",
+        "D2.3.08"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaldigital-s13",
+          "section": "How levels work together; Placeholders; Test automated messages",
+          "claim": "Instance custom messages override channel-level settings. Context placeholders require exact configured names and are unsupported in voice. Automated messages do not appear in customer chat transcript.",
+          "applicability": "Event-triggered messages, distinct from representative-selected quick replies."
+        },
+        {
+          "sourceId": "cc-d2-finaldigital-s14",
+          "section": "Manage Active Conversation form settings; Display the form selector",
+          "claim": "Enhanced form defaults to Customer360 and hides the form selector. Show Conversation form selector setting can be enabled, with app values overriding environment values; publish changes.",
+          "applicability": "Contact Center enhanced form, without importing Customer Service-only case-card behavior."
+        }
+      ],
+      "duplicateCheck": "Compared pilot and7D1/7D2 content: teaches additional workflow/dependency decisions; existing authentication, identity matching, prechat collection and widget placement are not repeated as new cards."
+    },
+    {
+      "id": "cc-d2-c37",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "automated-message-instance-override",
+      "objectiveIds": [
+        "D2.3.07"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaldigital-s13",
+          "section": "How levels work together; Placeholders; Test automated messages",
+          "claim": "Instance custom messages override channel-level settings. Context placeholders require exact configured names and are unsupported in voice. Automated messages do not appear in customer chat transcript.",
+          "applicability": "Event-triggered messages, distinct from representative-selected quick replies."
+        }
+      ],
+      "duplicateCheck": "Distinct tested decision within linked note. Recall defines a prerequisite or contract; application asks for a scoped diagnosis/design choice. Compared prior card prompts; no renamed-person/number duplicate."
+    },
+    {
+      "id": "cc-d2-c38",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "active-form-selector-setting",
+      "objectiveIds": [
+        "D2.3.08"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaldigital-s14",
+          "section": "Manage Active Conversation form settings; Display the form selector",
+          "claim": "Enhanced form defaults to Customer360 and hides the form selector. Show Conversation form selector setting can be enabled, with app values overriding environment values; publish changes.",
+          "applicability": "Contact Center enhanced form, without importing Customer Service-only case-card behavior."
+        }
+      ],
+      "duplicateCheck": "Distinct tested decision within linked note. Recall defines a prerequisite or contract; application asks for a scoped diagnosis/design choice. Compared prior card prompts; no renamed-person/number duplicate."
+    },
+    {
+      "id": "cc-d2-c39",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "automated-message-live-verification",
+      "objectiveIds": [
+        "D2.3.07"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaldigital-s13",
+          "section": "How levels work together; Placeholders; Test automated messages",
+          "claim": "Instance custom messages override channel-level settings. Context placeholders require exact configured names and are unsupported in voice. Automated messages do not appear in customer chat transcript.",
+          "applicability": "Event-triggered messages, distinct from representative-selected quick replies."
+        }
+      ],
+      "duplicateCheck": "Distinct tested decision within linked note. Recall defines a prerequisite or contract; application asks for a scoped diagnosis/design choice. Compared prior card prompts; no renamed-person/number duplicate."
+    },
+    {
+      "id": "cc-d2-n14",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "timeline-and-cif-extension",
+      "objectiveIds": [
+        "D2.3.09",
+        "D2.3.10",
+        "D2.3.11"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaldigital-s15",
+          "section": "Add a timeline; Configure timeline; Record types to show",
+          "claim": "Timeline is a table-form component; makers choose activities/notes/posts and save/publish configuration. Custom activity tables require Activity type.",
+          "applicability": "Model-driven table forms; specific supported records depend on installed applications."
+        },
+        {
+          "sourceId": "cc-d2-finaldigital-s16",
+          "section": "Introduction; Known limitations; Develop a record source",
+          "claim": "Timeline connectors are JavaScript IRecordSource web resources. Form export does not automatically export them; add dependencies manually and never embed secrets in client resources.",
+          "applicability": "Unified Interface single/multisession forms; not Power Automate connector registration."
+        },
+        {
+          "sourceId": "cc-d2-finaldigital-s17",
+          "section": "Dynamics365 Channel Integration Framework2.0; Version comparison",
+          "claim": "CIF2 integrates telephony providers in multisession workspace; CIF1 targets single-session applications. CIF2 supports multiple telephony providers.",
+          "applicability": "Third-party telephony panel integration, not a custom messaging transport."
+        }
+      ],
+      "duplicateCheck": "Compared pilot and7D1/7D2 content: teaches additional workflow/dependency decisions; existing authentication, identity matching, prechat collection and widget placement are not repeated as new cards."
+    },
+    {
+      "id": "cc-d2-c40",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "timeline-resource-export-dependency",
+      "objectiveIds": [
+        "D2.3.10"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaldigital-s16",
+          "section": "Introduction; Known limitations; Develop a record source",
+          "claim": "Timeline connectors are JavaScript IRecordSource web resources. Form export does not automatically export them; add dependencies manually and never embed secrets in client resources.",
+          "applicability": "Unified Interface single/multisession forms; not Power Automate connector registration."
+        }
+      ],
+      "duplicateCheck": "Distinct tested decision within linked note. Recall defines a prerequisite or contract; application asks for a scoped diagnosis/design choice. Compared prior card prompts; no renamed-person/number duplicate."
+    },
+    {
+      "id": "cc-d2-c41",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "cif-version-selection",
+      "objectiveIds": [
+        "D2.3.11"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaldigital-s17",
+          "section": "Dynamics365 Channel Integration Framework2.0; Version comparison",
+          "claim": "CIF2 integrates telephony providers in multisession workspace; CIF1 targets single-session applications. CIF2 supports multiple telephony providers.",
+          "applicability": "Third-party telephony panel integration, not a custom messaging transport."
+        }
+      ],
+      "duplicateCheck": "Distinct tested decision within linked note. Recall defines a prerequisite or contract; application asks for a scoped diagnosis/design choice. Compared prior card prompts; no renamed-person/number duplicate."
+    },
+    {
+      "id": "cc-d2-c42",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "timeline-client-secret-boundary",
+      "objectiveIds": [
+        "D2.3.10"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaldigital-s16",
+          "section": "Introduction; Known limitations; Develop a record source",
+          "claim": "Timeline connectors are JavaScript IRecordSource web resources. Form export does not automatically export them; add dependencies manually and never embed secrets in client resources.",
+          "applicability": "Unified Interface single/multisession forms; not Power Automate connector registration."
+        }
+      ],
+      "duplicateCheck": "Distinct tested decision within linked note. Recall defines a prerequisite or contract; application asks for a scoped diagnosis/design choice. Compared prior card prompts; no renamed-person/number duplicate."
+    },
+    {
+      "id": "cc-d2-n15",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "feedback-survey-publish-and-deploy",
+      "objectiveIds": [
+        "D2.3.13"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaldigital-s18",
+          "section": "Prerequisites; Verify Dataverse connection; Complete configuration; Things to consider; Enable digital survey",
+          "claim": "Create survey in admin center in same environment, verify Dataverse connection, customize/publish in Studio, then select published survey on channel. Added stored response variables start MCS_. Copied survey agents need recreation.",
+          "applicability": "Copilot Studio customer-feedback surveys, not Customer Voice or representative call-quality feedback."
+        }
+      ],
+      "duplicateCheck": "Compared pilot and7D1/7D2 content: teaches additional workflow/dependency decisions; existing authentication, identity matching, prechat collection and widget placement are not repeated as new cards."
+    },
+    {
+      "id": "cc-d2-c43",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "survey-agent-publication",
+      "objectiveIds": [
+        "D2.3.13"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaldigital-s18",
+          "section": "Prerequisites; Verify Dataverse connection; Complete configuration; Things to consider; Enable digital survey",
+          "claim": "Create survey in admin center in same environment, verify Dataverse connection, customize/publish in Studio, then select published survey on channel. Added stored response variables start MCS_. Copied survey agents need recreation.",
+          "applicability": "Copilot Studio customer-feedback surveys, not Customer Voice or representative call-quality feedback."
+        }
+      ],
+      "duplicateCheck": "Distinct tested decision within linked note. Recall defines a prerequisite or contract; application asks for a scoped diagnosis/design choice. Compared prior card prompts; no renamed-person/number duplicate."
+    },
+    {
+      "id": "cc-d2-c44",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "survey-response-variable-prefix",
+      "objectiveIds": [
+        "D2.3.13"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaldigital-s18",
+          "section": "Prerequisites; Verify Dataverse connection; Complete configuration; Things to consider; Enable digital survey",
+          "claim": "Create survey in admin center in same environment, verify Dataverse connection, customize/publish in Studio, then select published survey on channel. Added stored response variables start MCS_. Copied survey agents need recreation.",
+          "applicability": "Copilot Studio customer-feedback surveys, not Customer Voice or representative call-quality feedback."
+        }
+      ],
+      "duplicateCheck": "Distinct tested decision within linked note. Recall defines a prerequisite or contract; application asks for a scoped diagnosis/design choice. Compared prior card prompts; no renamed-person/number duplicate."
+    },
+    {
+      "id": "cc-d2-c45",
+      "revision": 2,
+      "domainId": "channels",
+      "conceptId": "survey-environment-copy-boundary",
+      "objectiveIds": [
+        "D2.3.13"
+      ],
+      "level": "advanced",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaldigital-s18",
+          "section": "Prerequisites; Verify Dataverse connection; Complete configuration; Things to consider; Enable digital survey",
+          "claim": "Create survey in admin center in same environment, verify Dataverse connection, customize/publish in Studio, then select published survey on channel. Added stored response variables start MCS_. Copied survey agents need recreation.",
+          "applicability": "Copilot Studio customer-feedback surveys, not Customer Voice or representative call-quality feedback."
+        }
+      ],
+      "duplicateCheck": "Distinct tested decision within linked note. Recall defines a prerequisite or contract; application asks for a scoped diagnosis/design choice. Compared prior card prompts; no renamed-person/number duplicate."
+    },
+    {
+      "id": "cc-d2-c88",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "timeline-custom-activity",
+      "objectiveIds": [
+        "D2.3.09"
+      ],
+      "level": "core",
+      "author": "/root/finish_digital",
+      "authoredAt": "2026-11-02",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "cc-d2-finaldigital-s15",
+          "section": "Display a custom table in a timeline; Add the timeline component to a form",
+          "claim": "Use Activity type for a custom activity table, configure its form timeline and save/publish changes.",
+          "applicability": "Model-driven table-form timeline; not an arbitrary standard table row source."
+        }
+      ],
+      "duplicateCheck": "Adds basic timeline configuration decision; existing connector cards test interface/export/security instead."
+    }
+  ]
+}

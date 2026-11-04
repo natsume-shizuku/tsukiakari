@@ -1,0 +1,55 @@
+{
+  "questions": 300,
+  "single": 225,
+  "multiple": 75,
+  "nearDuplicateThreshold": 0.55,
+  "nearDuplicatePairs": [],
+  "domainCounts": [
+    {
+      "id": "deployment",
+      "count": 51
+    },
+    {
+      "id": "channels",
+      "count": 96
+    },
+    {
+      "id": "agents-ai",
+      "count": 36
+    },
+    {
+      "id": "work-distribution",
+      "count": 36
+    },
+    {
+      "id": "representative-experience",
+      "count": 51
+    },
+    {
+      "id": "analytics",
+      "count": 30
+    }
+  ],
+  "singleAnswerPositions": [
+    {
+      "position": 1,
+      "count": 58
+    },
+    {
+      "position": 2,
+      "count": 56
+    },
+    {
+      "position": 3,
+      "count": 53
+    },
+    {
+      "position": 4,
+      "count": 58
+    },
+    {
+      "position": 5,
+      "count": 0
+    }
+  ]
+}

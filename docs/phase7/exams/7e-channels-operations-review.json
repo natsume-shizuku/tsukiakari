@@ -1,0 +1,576 @@
+[
+  {
+    "id": "ab250-d2-q67",
+    "revision": 2,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "7c84467ecf4b5f65982adeb78583acc1111f586ee5b4dcbdaa6960fad4dc1091",
+    "rationale": "File/API Contact Center intake is separate from Customer Insights journey authoring; Journeys is required only for that selected authoring route.",
+    "findings": [
+      "Resolved: Replace preconversation-survey distractor with a credible intake/dependency alternative. Final revision2 question, all options/explanations and applicability independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-operations-s01",
+        "section": "Prerequisites; Set up proactive engagement",
+        "supported": true,
+        "notes": "File/API Contact Center intake is separate from Customer Insights journey authoring; Journeys is required only for that selected authoring route. Exact primary section checked2026-11-03; final full answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q68",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "9e48c8a0360d4eb53bae6c5449d1135d0dbbf68ed9f682bf08eaddafee0a5d02",
+    "rationale": "Higher-priority proactive configurations sharing queue/skills process first; same-priority configurations use round robin, separately from per-record call order.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-operations-s02",
+        "section": "Dialing modes: Priority",
+        "supported": true,
+        "notes": "Higher-priority proactive configurations sharing queue/skills process first; same-priority configurations use round robin, separately from per-record call order. Exact primary section checked2026-11-03; final full answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q69",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "d6608956be349b7e60a61e087c67e6fc3f918aadb2923645a7752fad9cf068da",
+    "rationale": "Engagement-level multiple display numbers and Rule-based contact-attribute conditions provide deterministic selection. Automated rotation is pseudo-random and dialer labels do not select the origin.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-operations-s02",
+        "section": "Display number configuration",
+        "supported": true,
+        "notes": "Engagement-level multiple display numbers and Rule-based contact-attribute conditions provide deterministic selection. Automated rotation is pseudo-random and dialer labels do not select the origin. Exact primary section checked2026-11-03; final full answer set challenged."
+      },
+      {
+        "sourceId": "exam-d2-operations-s15",
+        "section": "Create outbound profiles: Number label",
+        "supported": true,
+        "notes": "Engagement-level multiple display numbers and Rule-based contact-attribute conditions provide deterministic selection. Automated rotation is pseudo-random and dialer labels do not select the origin. Exact primary section checked2026-11-03; final full answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q70",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "c8273db12856196dec2ff4cd5799002a765f60f09f80f43e530b44bdf70c4e27",
+    "rationale": "The systemic retry outcomes are fixed; a business disposition must use Not right party for retry selection. Do not contact is opt-out, not retry.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-operations-s02",
+        "section": "Reattempts",
+        "supported": true,
+        "notes": "The systemic retry outcomes are fixed; a business disposition must use Not right party for retry selection. Do not contact is opt-out, not retry. Exact primary section checked2026-11-03; final full answer set challenged."
+      },
+      {
+        "sourceId": "exam-d2-operations-s05",
+        "section": "Automatic opt-out",
+        "supported": true,
+        "notes": "The systemic retry outcomes are fixed; a business disposition must use Not right party for retry selection. Do not contact is opt-out, not retry. Exact primary section checked2026-11-03; final full answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q71",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "be595adfe609507b118588420229d81305aee28079eb994475ecf38ec655445c",
+    "rationale": "Configure quiet hours for every selected phone type and separately reorder voice phone-type preference; timezone does not replace that order.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-operations-s02",
+        "section": "Frequency limits: Schedule",
+        "supported": true,
+        "notes": "Configure quiet hours for every selected phone type and separately reorder voice phone-type preference; timezone does not replace that order. Exact primary section checked2026-11-03; final full answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q72",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "8e646a3bc9fc243a1a2051c107c76cd83b7c9a2e83defd40eb94a99988e8b892",
+    "rationale": "The default 24-hour delivery window begins at the earliest future scheduled date when supplied, rather than expiring from upload time.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-operations-s01",
+        "section": "Set up proactive engagement: Delivery window note",
+        "supported": true,
+        "notes": "The default 24-hour delivery window begins at the earliest future scheduled date when supplied, rather than expiring from upload time. Exact primary section checked2026-11-03; final full answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q73",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "1f08b4c2bfa31769b26bdfb5ce9d1bf6fd7977407d4b56f7380530a00b93124c",
+    "rationale": "Voice uses Voice consent records; file/API intake still checks eligibility. PES transactional implicit opt-in is not evidence of legally required customer consent.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-operations-s05",
+        "section": "Channel support; How consent is enforced; PES compliance profile note",
+        "supported": true,
+        "notes": "Voice uses Voice consent records; file/API intake still checks eligibility. PES transactional implicit opt-in is not evidence of legally required customer consent. Exact primary section checked2026-11-03; final full answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q74",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "07d2ad40eb4029ddcc8ae5fa4d107652b97e8be187caf3f9307752c71ee80cb5",
+    "rationale": "The dial-mode page explicitly states progressive fallback below ten available representatives and later predictive resumption; this is a service-outreach scenario.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-operations-s03",
+        "section": "Predictive: Minimum available representatives note",
+        "supported": true,
+        "notes": "The dial-mode page explicitly states progressive fallback below ten available representatives and later predictive resumption; this is a service-outreach scenario. Exact primary section checked2026-11-03; final full answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q75",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "95daf86e387770686b997c73c63fac00c506eda4d66f80fbc33775a6228c3f33",
+    "rationale": "AI-led progressive validates with AI after answer; representative-led reserves the representative before dialing. Preview manual dialing is a different mode.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-operations-s03",
+        "section": "Progressive",
+        "supported": true,
+        "notes": "AI-led progressive validates with AI after answer; representative-led reserves the representative before dialing. Preview manual dialing is a different mode. Exact primary section checked2026-11-03; final full answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q76",
+    "revision": 2,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "92736c93babb6ee3311c860360c696ed94b313051b685c32d1ce45d2e17aa8e6",
+    "rationale": "Representative-led progressive/predictive abandonment thresholds pause the engagement and require manual intervention to restart; this is not predictive availability fallback.",
+    "findings": [
+      "Resolved: Replace dashboard-label/reporting-only alternatives with adjacent pacing/threshold/manual-resume distinctions. Final revision2 question, all options/explanations and applicability independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-operations-s02",
+        "section": "Dialing modes: Representative-led Use rules",
+        "supported": true,
+        "notes": "Representative-led progressive/predictive abandonment thresholds pause the engagement and require manual intervention to restart; this is not predictive availability fallback. Exact primary section checked2026-11-03; final full answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q77",
+    "revision": 2,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "a497ce9cda55f6e11161b884aa1383a7358d89a793ca8d64a504705b44a67e42",
+    "rationale": "The dashboard scopes data using engagement, QueueName, timezone and business-unit filters. Align population before interpreting pending-count differences.",
+    "findings": [
+      "Resolved: Replace talk-time/in-progress comparisons with partial queue/timezone/business-unit filtering alternatives. Final revision2 question, all options/explanations and applicability independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-operations-s04",
+        "section": "Proactive Engagement dashboard: Introduction",
+        "supported": true,
+        "notes": "The dashboard scopes data using engagement, QueueName, timezone and business-unit filters. Align population before interpreting pending-count differences. Exact primary section checked2026-11-03; final full answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q78",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "252924b21abe5691b8e279d15c3ea23f707b579119cb43eae4078273e6555a48",
+    "rationale": "Abandonment includes a customer connection ending before a representative is added; its denominator is total attempted deliveries rather than only completed deliveries.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-operations-s04",
+        "section": "Use proactive engagement metrics: Abandoned rate %",
+        "supported": true,
+        "notes": "Abandonment includes a customer connection ending before a representative is added; its denominator is total attempted deliveries rather than only completed deliveries. Exact primary section checked2026-11-03; final full answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q79",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "4de8ffec09cc64d49e193457e2bf74a4b1508f75cb6f636d37a8bc6551a62ce7",
+    "rationale": "The preview WEM app combines Forecaster forecast/capacity permissions with Scheduler shift/publication permissions, without granting broad Administrator.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-operations-s12",
+        "section": "Choose a role; Privileges by capability",
+        "supported": true,
+        "notes": "The preview WEM app combines Forecaster forecast/capacity permissions with Scheduler shift/publication permissions, without granting broad Administrator. Exact primary section checked2026-11-03; final full answer set challenged."
+      },
+      {
+        "sourceId": "exam-d2-operations-s06",
+        "section": "Relationship to Copilot Service workspace",
+        "supported": true,
+        "notes": "The preview WEM app combines Forecaster forecast/capacity permissions with Scheduler shift/publication permissions, without granting broad Administrator. Exact primary section checked2026-11-03; final full answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q80",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "a89d386d531487cd520730039eb13314de97faaadfa8e0320caf9e42ed5935f9",
+    "rationale": "Shrinkage models scheduled unavailable time; occupancy models handling/after-work share of logged-in time. Response-time and concurrency settings are different.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-operations-s07",
+        "section": "Service objective settings",
+        "supported": true,
+        "notes": "Shrinkage models scheduled unavailable time; occupancy models handling/after-work share of logged-in time. Response-time and concurrency settings are different. Exact primary section checked2026-11-03; final full answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q81",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "98fd91e40fab245e945ba382200c076d3f5008e98356efd49fda8a5951300c7c",
+    "rationale": "Different channel service-level targets use separate planning groups; a queue/channel pair cannot be duplicated across groups to inflate demand.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-operations-s07",
+        "section": "Configure service objectives: Note",
+        "supported": true,
+        "notes": "Different channel service-level targets use separate planning groups; a queue/channel pair cannot be duplicated across groups to inflate demand. Exact primary section checked2026-11-03; final full answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q82",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "91c0388259badf32d2136720295fed62b3c22103fed49bf704dbcea9253d82e3",
+    "rationale": "Data source, forecast type, interval and forecast entity are defining immutable settings; editable dates/names/seasonality do not convert source type.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-operations-s08",
+        "section": "Edit the scenario",
+        "supported": true,
+        "notes": "Data source, forecast type, interval and forecast entity are defining immutable settings; editable dates/names/seasonality do not convert source type. Exact primary section checked2026-11-03; final full answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q83",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "3167a7d0ff560bc5f872ca666670c591349e7a940d03ab4663476381cf971b9b",
+    "rationale": "Create New Snapshot with Auto refresh off starts a background job, updates capacity-planning default and retains selectable/revertible prior output.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-operations-s08",
+        "section": "Create a new snapshot",
+        "supported": true,
+        "notes": "Create New Snapshot with Auto refresh off starts a background job, updates capacity-planning default and retains selectable/revertible prior output. Exact primary section checked2026-11-03; final full answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q84",
+    "revision": 2,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "152c25de9cfe7296d2d2a976151eb62ebd261d7accda41c173d62b3c5e6950ac",
+    "rationale": "Saving a scheduled scenario does not run it immediately; Draft before the first scheduled run is expected and job history records execution.",
+    "findings": [
+      "Resolved: Replace immutable-entity forced-run alternative with credible schedule/snapshot/history execution-state alternatives. Final revision2 question, all options/explanations and applicability independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-operations-s08",
+        "section": "Create a forecast scenario: Note; View job history",
+        "supported": true,
+        "notes": "Saving a scheduled scenario does not run it immediately; Draft before the first scheduled run is expected and job history records execution. Exact primary section checked2026-11-03; final full answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q85",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "3a6c788dc0775dd66a66fa6d06c9d8ede3b621fbea0ec0c519f5f26e43d374ed",
+    "rationale": "The selected capacity plan provides interval staffing while the activity itinerary defines work/training/break structure; raw volume alone is not that complete plan.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-operations-s09",
+        "section": "Create a shift plan: Capacity plan; Shift activities; Activity Itinerary",
+        "supported": true,
+        "notes": "The selected capacity plan provides interval staffing while the activity itinerary defines work/training/break structure; raw volume alone is not that complete plan. Exact primary section checked2026-11-03; final full answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q86",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "ac1c9e347ee4afd6f039a973c1667f16d7bc74c716089e55ebefb1e708340b4d",
+    "rationale": "The schedule-board filters combine selected skill/queue criteria as an intersection; display filtering does not create queue membership.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-operations-s10",
+        "section": "Filter representatives",
+        "supported": true,
+        "notes": "The schedule-board filters combine selected skill/queue criteria as an intersection; display filtering does not create queue membership. Exact primary section checked2026-11-03; final full answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q87",
+    "revision": 2,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "2425c542500c8e5209e1dfae2082d41436938f3c05a2e86d5f7ff0bb8613684c",
+    "rationale": "Paid hours count only activities marked Paid in admin-center activity configuration; scheduled duration and presentation are distinct.",
+    "findings": [
+      "Resolved: Replace activity color/name payment claims with nearby activity Paid/duration/scheduled/view interpretations. Final revision2 question, all options/explanations and applicability independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-operations-s10",
+        "section": "View daily paid hours and scheduled hours",
+        "supported": true,
+        "notes": "Paid hours count only activities marked Paid in admin-center activity configuration; scheduled duration and presentation are distinct. Exact primary section checked2026-11-03; final full answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q88",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "9afc111dbbbe749b01d8eca832751b61699791262a1894f1c2df16e8c7abe4b9",
+    "rationale": "The ad-hoc activity flow supports start/duration/timezone and recurrence including weekday, without rebuilding the shared shift template.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-operations-s10",
+        "section": "Add ad-hoc activities",
+        "supported": true,
+        "notes": "The ad-hoc activity flow supports start/duration/timezone and recurrence including weekday, without rebuilding the shared shift template. Exact primary section checked2026-11-03; final full answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q89",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "b94070214d3f0821f91f0ac681ebb6e48920cf9242fdc7a52f2812bdefd1b83c",
+    "rationale": "Import authoritative external schedules into Dynamics calendars and export current presence/activity/status for external adherence; planned and actual data differ.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-operations-s11",
+        "section": "Integration architecture; Schedule synchronization; Real-time adherence reporting",
+        "supported": true,
+        "notes": "Import authoritative external schedules into Dynamics calendars and export current presence/activity/status for external adherence; planned and actual data differ. Exact primary section checked2026-11-03; final full answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q90",
+    "revision": 2,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "429aca1d999cef58e1ed23d4371401e7622517ab2da900bc241362b73557a933",
+    "rationale": "The external WFM integration unit recommends Entra application registration with OAuth 2.0 client credentials for automated service-to-service Dataverse access.",
+    "findings": [
+      "Resolved: Replace no-auth IDs/browser replay/customer-chat JWT with credible app/delegated/manual connection authentication alternatives. Final revision2 question, all options/explanations and applicability independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-operations-s11",
+        "section": "Design considerations: Authentication",
+        "supported": true,
+        "notes": "The external WFM integration unit recommends Entra application registration with OAuth 2.0 client credentials for automated service-to-service Dataverse access. Exact primary section checked2026-11-03; final full answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q91",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "9e3d2d8ef990d8a7699b6cae3d43d860e44f25a9c04a50bffbb7a7592844f448",
+    "rationale": "Greeting agent association on the workstream avoids engaging the routing engine before greeting; changing a queue alone does not establish that placement.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-operations-s13",
+        "section": "Best practices: Greeting agent",
+        "supported": true,
+        "notes": "Greeting agent association on the workstream avoids engaging the routing engine before greeting; changing a queue alone does not establish that placement. Exact primary section checked2026-11-03; final full answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q92",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "cb587bf9c5af4a0d2dfe2d3387ff527c0d0176d91e59398c56ed5ecbcdb58b31",
+    "rationale": "The best-practice page recommends Dataverse connector for internal data and HTTP for external sources, noting that flows can pause the agent.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-operations-s13",
+        "section": "Best practices: Data access",
+        "supported": true,
+        "notes": "The best-practice page recommends Dataverse connector for internal data and HTTP for external sources, noting that flows can pause the agent. Exact primary section checked2026-11-03; final full answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q93",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "514d5ca2343c577042bb74249799022fc41a5b35dcd45b1c63bb87eb891151ef",
+    "rationale": "The documented 28 KB digital-message limit includes metadata and complex activity/card payload, so 25 KB content plus 5 KB metadata exceeds it.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-operations-s13",
+        "section": "Best practices: Message size",
+        "supported": true,
+        "notes": "The documented 28 KB digital-message limit includes metadata and complex activity/card payload, so 25 KB content plus 5 KB metadata exceeds it. Exact primary section checked2026-11-03; final full answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q94",
+    "revision": 1,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "045aeb4218f8edf1e3e50ad1b62590223bcca0f9a53a16834605823632023b43",
+    "rationale": "Long/stateful interactions can exceed useful retention windows; explicit resets or topic boundaries improve predictability rather than relying on indefinite free-form context.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-operations-s14",
+        "section": "Context retention boundaries",
+        "supported": true,
+        "notes": "Long/stateful interactions can exceed useful retention windows; explicit resets or topic boundaries improve predictability rather than relying on indefinite free-form context. Exact primary section checked2026-11-03; final full answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q95",
+    "revision": 2,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "36135402d7a6943e1977c561ab25451712b25cac996d9a7c962cd43a9ded8f3b",
+    "rationale": "The transparency note recommends static content for cached/optimized first turns and avoiding dynamic references that introduce latency/privacy/caching risk.",
+    "findings": [
+      "Resolved: Replace blatant privacy guarantees with plausible static-versus-dynamic first-turn/cache placement alternatives. Final revision2 question, all options/explanations and applicability independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-operations-s14",
+        "section": "Best practices: Latency-sensitive messages",
+        "supported": true,
+        "notes": "The transparency note recommends static content for cached/optimized first turns and avoiding dynamic references that introduce latency/privacy/caching risk. Exact primary section checked2026-11-03; final full answer set challenged."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d2-q96",
+    "revision": 2,
+    "reviewer": "/root/exam_ai_routing",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "9df989f04a96d390867f18946f2e085077328bf34bb965b8cf1b275069355988",
+    "rationale": "Evaluate speed, accuracy, completeness and conversational stability under intended conditions; low latency alone does not establish task completion or production fitness.",
+    "findings": [
+      "Resolved: Replace fastest-only/removed-tests/guarantees with adjacent tuning/evaluation-metric alternatives. Final revision2 question, all options/explanations and applicability independently reread."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d2-operations-s14",
+        "section": "Evaluating and integrating real-time agents for your use",
+        "supported": true,
+        "notes": "Evaluate speed, accuracy, completeness and conversational stability under intended conditions; low latency alone does not establish task completion or production fitness. Exact primary section checked2026-11-03; final full answer set challenged."
+      }
+    ]
+  }
+]

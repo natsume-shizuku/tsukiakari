@@ -1,0 +1,119 @@
+[
+  {
+    "id": "cc-d2-c27",
+    "revision": 2,
+    "changedBy": "/root",
+    "date": "2026-11-02",
+    "reason": "Replaced unrelated or implausible alternatives with nearby configuration and behavior choices; independent review required.",
+    "finalDisposition": {
+      "status": "independently-approved",
+      "revision": 2,
+      "reviewer": "/root/finish_deployment",
+      "reviewedAt": "2026-11-03"
+    }
+  },
+  {
+    "id": "cc-d2-c30",
+    "revision": 2,
+    "changedBy": "/root",
+    "date": "2026-11-02",
+    "reason": "Replaced unrelated or implausible alternatives with nearby configuration and behavior choices; independent review required.",
+    "finalDisposition": {
+      "status": "independently-approved",
+      "revision": 3,
+      "reviewer": "/root/finish_deployment",
+      "reviewedAt": "2026-11-03"
+    }
+  },
+  {
+    "id": "cc-d2-c33",
+    "revision": 2,
+    "changedBy": "/root",
+    "date": "2026-11-02",
+    "reason": "Replaced unrelated or implausible alternatives with nearby configuration and behavior choices; independent review required.",
+    "finalDisposition": {
+      "status": "independently-approved",
+      "revision": 2,
+      "reviewer": "/root/finish_deployment",
+      "reviewedAt": "2026-11-03"
+    }
+  },
+  {
+    "id": "cc-d2-c36",
+    "revision": 2,
+    "changedBy": "/root",
+    "date": "2026-11-02",
+    "reason": "Replaced unrelated or implausible alternatives with nearby configuration and behavior choices; independent review required.",
+    "finalDisposition": {
+      "status": "independently-approved",
+      "revision": 2,
+      "reviewer": "/root/finish_deployment",
+      "reviewedAt": "2026-11-03"
+    }
+  },
+  {
+    "id": "cc-d2-c39",
+    "revision": 2,
+    "changedBy": "/root",
+    "date": "2026-11-02",
+    "reason": "Replaced unrelated or implausible alternatives with nearby configuration and behavior choices; independent review required.",
+    "finalDisposition": {
+      "status": "independently-approved",
+      "revision": 2,
+      "reviewer": "/root/finish_deployment",
+      "reviewedAt": "2026-11-03"
+    }
+  },
+  {
+    "id": "cc-d2-c45",
+    "revision": 2,
+    "changedBy": "/root",
+    "date": "2026-11-02",
+    "reason": "Replaced unrelated or implausible alternatives with nearby configuration and behavior choices; independent review required.",
+    "finalDisposition": {
+      "status": "independently-approved",
+      "revision": 2,
+      "reviewer": "/root/finish_deployment",
+      "reviewedAt": "2026-11-03"
+    }
+  },
+  {
+    "id": "cc-d2-n10",
+    "revision": 2,
+    "changedBy": "/root",
+    "date": "2026-11-03",
+    "reason": "Scope ACS WhatsApp as existing integration and cite current migration boundary; avoid presenting legacy provider setup as new-deployment advice. Independent source review required.",
+    "finalDisposition": {
+      "status": "independently-approved",
+      "revision": 2,
+      "reviewer": "/root/finish_deployment",
+      "reviewedAt": "2026-11-03"
+    }
+  },
+  {
+    "id": "cc-d2-c42",
+    "revision": 2,
+    "changedBy": "/root",
+    "date": "2026-11-03",
+    "reason": "Resolve final independent distractor finding and align explanation.",
+    "finalDisposition": {
+      "status": "independently-approved",
+      "revision": 2,
+      "reviewer": "/root/finish_deployment",
+      "reviewedAt": "2026-11-03"
+    }
+  },
+  {
+    "id": "cc-d2-c30",
+    "revision": 3,
+    "changedBy": "/root",
+    "date": "2026-11-03",
+    "reason": "Resolve final independent distractor finding and align explanation.",
+    "finalDisposition": {
+      "status": "independently-approved",
+      "revision": 3,
+      "reviewer": "/root/finish_deployment",
+      "reviewedAt": "2026-11-03"
+    }
+  }
+]

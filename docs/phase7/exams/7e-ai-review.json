@@ -1,0 +1,620 @@
+[
+  {
+    "id": "ab250-d3-q05",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "9240f007915f68991aa79482882493f2a2c7d85a900d62d5780418dbf835aacb",
+    "rationale": "Email exclusions remove automated-message noise without deleting audit records. Sender/text controls are documented for Customer Service case summaries; changing summary triggers does not address noisy inputs.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s02",
+        "section": "Enable case summaries",
+        "supported": true,
+        "notes": "Email exclusions remove automated-message noise without deleting audit records. Sender/text controls are documented for Customer Service case summaries; changing summary triggers does not address noisy inputs."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q06",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "fcc38674d9f617192d40b91a142c8b6b7cee35eb5e56efb5f26ad74b7c773be0",
+    "rationale": "The revised cross-environment symptoms require diagnosing the case-management dependency. The user guide explicitly requires case management for Create case; format, knowledge and join timing do not supply it.",
+    "findings": [
+      "Resolved: author revised disclosed diagnosis or weak distractors; exact revision2 independently rechecked."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s20",
+        "section": "View a summary for an open conversation",
+        "supported": true,
+        "notes": "The revised cross-environment symptoms require diagnosing the case-management dependency. The user guide explicitly requires case management for Create case; format, knowledge and join timing do not supply it."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q07",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "e01c4c164fb90e919ff843eecde0372463b72a1d2d1c1299dd2d18c27c208efa",
+    "rationale": "Automatic current-record knowledge rules differ from preset and representative-selected filters. The supported field types and record-specific scope support the product-field decision.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s01",
+        "section": "Automated filters",
+        "supported": true,
+        "notes": "Automatic current-record knowledge rules differ from preset and representative-selected filters. The supported field types and record-specific scope support the product-field decision."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q08",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "b022da6f75445ad0edfeff82cdf4514ffc00a3463fc85853216f6ae43b79688e",
+    "rationale": "Published state and matching UI-language tag are both required. Latest-version and knowledge-management prerequisites were checked; localization and publication are not interchangeable.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s01",
+        "section": "Knowledge sources; Features supported with different knowledge sources",
+        "supported": true,
+        "notes": "Published state and matching UI-language tag are both required. Latest-version and knowledge-management prerequisites were checked; localization and publication are not interchangeable."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q09",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "3db3dafb738f709cadb55efbb985d8bf183b367c0ff245839e21e1252802eba9",
+    "rationale": "The current production-ready preview tries the linked Studio agent before configured knowledge fallback when no confident response is available. Basic rephrase, summary and translation priority does not reverse this scenario.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s03",
+        "section": "Understand how Copilot extensibility works",
+        "supported": true,
+        "notes": "The current production-ready preview tries the linked Studio agent before configured knowledge fallback when no confident response is available. Basic rephrase, summary and translation priority does not reverse this scenario."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q10",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "ea5e296f3b7e6200da34eab4c66e485f89f32985601cf02e9b37869760836635",
+    "rationale": "Tools and authored topics are supported extension points. The managed model, instructions and msdyn_ topics cannot be changed. Both selected changes and preview scope match the guide.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s03",
+        "section": "Type of Copilot Studio extensibility; Limitations and restrictions",
+        "supported": true,
+        "notes": "Tools and authored topics are supported extension points. The managed model, instructions and msdyn_ topics cannot be changed. Both selected changes and preview scope match the guide."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q11",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "a2c357f888b521c2394095f7577ee4595a38afa78b3f3566bba17e276f2c816d",
+    "rationale": "Custom context supplies the current entity field and describes its use to the orchestrator. A tool description or general knowledge alone cannot supply a per-record value; repeated typing fails the requirement. Revised alternatives checked.",
+    "findings": [
+      "Resolved: author revised disclosed diagnosis or weak distractors; exact revision2 independently rechecked."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s03",
+        "section": "Custom context; How to add context",
+        "supported": true,
+        "notes": "Custom context supplies the current entity field and describes its use to the orchestrator. A tool description or general knowledge alone cannot supply a per-record value; repeated typing fails the requirement. Revised alternatives checked."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q12",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "8f1fecfe2497feb5deeaf3cf3f3ebee90e9a2cb97faef2157a6273381fc37054",
+    "rationale": "Conversation throughput excludes voice and email. Time filters and completed populations are already aligned, leaving the channel population as the supported diagnosis. Revised adjacent metric alternatives checked.",
+    "findings": [
+      "Resolved: author revised disclosed diagnosis or weak distractors; exact revision2 independently rechecked."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s04",
+        "section": "Productivity: Conversations",
+        "supported": true,
+        "notes": "Conversation throughput excludes voice and email. Time filters and completed populations are already aligned, leaving the channel population as the supported diagnosis. Revised adjacent metric alternatives checked."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q13",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "c6776a8db012cc8a1d39c14c1d795d214a8cadf4600b3b8d9d47d60417718929",
+    "rationale": "Daily active users counts unique representatives rather than responses. Duration and timezone must align for comparison. The selected pair and alternatives match the report definitions.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s04",
+        "section": "Filter and interpret the report; Usage; Productivity: Conversations",
+        "supported": true,
+        "notes": "Daily active users counts unique representatives rather than responses. Duration and timezone must align for comparison. The selected pair and alternatives match the report definitions."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q14",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "e73c781d9bebce4578d6aab95119b5ca46d3a5d4bb16a980ec81928ad3284fd8",
+    "rationale": "The administration and development guides require custom Azure Bot Service integration and explicitly exclude Copilot agents as smart-assist agents. Customer-facing integration and retired built-ins are distinct.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s05",
+        "section": "Prerequisites; Important note",
+        "supported": true,
+        "notes": "The administration and development guides require custom Azure Bot Service integration and explicitly exclude Copilot agents as smart-assist agents. Customer-facing integration and retired built-ins are distinct."
+      },
+      {
+        "sourceId": "exam-d3-s06",
+        "section": "Prerequisites; Important",
+        "supported": true,
+        "notes": "The administration and development guides require custom Azure Bot Service integration and explicitly exclude Copilot agents as smart-assist agents. Customer-facing integration and retired built-ins are distinct."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q15",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "e1231a26d7babbdf0311f6eb72862fc0e8d4e69f9f90753a08e52653058b8dc1",
+    "rationale": "The working integration and new-workstream difference point to Smart assist bots association. Customer-facing Bot registration, queue membership and an already-enabled pane do not replace that association.",
+    "findings": [
+      "Resolved: author revised disclosed diagnosis or weak distractors; exact revision2 independently rechecked."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s05",
+        "section": "Create an agent user; Add a smart assist agent to a workstream",
+        "supported": true,
+        "notes": "The working integration and new-workstream difference point to Smart assist bots association. Customer-facing Bot registration, queue membership and an already-enabled pane do not replace that association."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q16",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "699d6bd074b0147121bffe178e78fbd9aa4ac86b98433f9a67a1b122491e5a9c",
+    "rationale": "Entity Records Channel is explicitly excluded despite SMS support. Pick/Push, permissions and productivity-pane enablement cannot override this scope. Revised adjacent alternatives checked.",
+    "findings": [
+      "Resolved: author revised disclosed diagnosis or weak distractors; exact revision2 independently rechecked."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s05",
+        "section": "Smart assist overview; Important note",
+        "supported": true,
+        "notes": "Entity Records Channel is explicitly excluded despite SMS support. Pick/Push, permissions and productivity-pane enablement cannot override this scope. Revised adjacent alternatives checked."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q17",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "5dc85f51a807a7432b0d1f6d5fb0a4b3bd619487e36c93271390259beca26b21",
+    "rationale": "Enable voice changes authoring capability, not the Telephony channel. Published topics, default modality and recognition tuning do not establish a callable connection.",
+    "findings": [
+      "Resolved: author revised disclosed diagnosis or weak distractors; exact revision2 independently rechecked."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s07",
+        "section": "Turn on basic voice",
+        "supported": true,
+        "notes": "Enable voice changes authoring capability, not the Telephony channel. Published topics, default modality and recognition tuning do not establish a callable connection."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q18",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "5de08d9e47f6ec1fc9651f5f6d80503bba01d80fa6b2d9d75d576f1a940f7f13",
+    "rationale": "The context schema separates RecordId from PrimaryDisplayValue and conversation identity. The downstream scalar GUID must be extracted from the contact structure rather than renamed or supplied as an object.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s19",
+        "section": "Parse JSON object to extract record ID",
+        "supported": true,
+        "notes": "The context schema separates RecordId from PrimaryDisplayValue and conversation identity. The downstream scalar GUID must be extracted from the contact structure rather than renamed or supplied as an object."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q19",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "ccf957583eb702ea9b846535b5bad151612688a28df51883c260cf25c55cc2f3",
+    "rationale": "Hybrid topics return explicitly declared outputs as structured key-value pairs. The revised input-only and conversational-context alternatives do not establish that return contract.",
+    "findings": [
+      "Resolved: author revised disclosed diagnosis or weak distractors; exact revision2 independently rechecked."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s12",
+        "section": "Pass variables between topics and the language model",
+        "supported": true,
+        "notes": "Hybrid topics return explicitly declared outputs as structured key-value pairs. The revised input-only and conversational-context alternatives do not establish that return contract."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q20",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "355f48c612e836fe3886d757ab837edc5f564ed3309272fbb4ec7baeebce2b2a",
+    "rationale": "Sensitive marking protects platform transcripts and logs, not deliberate external persistence or custom instrumentation. Fixing the external logging path addresses the boundary; scope and UI hiding do not sanitize it.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s09",
+        "section": "Limitations and scope",
+        "supported": true,
+        "notes": "Sensitive marking protects platform transcripts and logs, not deliberate external persistence or custom instrumentation. Fixing the external logging path addresses the boundary; scope and UI hiding do not sanitize it."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q21",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "209ba1903fd46e02c9ebc3dbc2bf8310abad7bb1dae3fab86e3abf26db1e7e26",
+    "rationale": "The production-ready preview independently configures Consult and Bridged transfer. Recording off with active transcription satisfies consultation text audit, and both capture modes off satisfies transfer policy. Consent does not configure phase overrides.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s18",
+        "section": "Set up secure consult with and transfer to external contacts (preview)",
+        "supported": true,
+        "notes": "The production-ready preview independently configures Consult and Bridged transfer. Recording off with active transcription satisfies consultation text audit, and both capture modes off satisfies transfer policy. Consent does not configure phase overrides."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q22",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "bbf5b7081bd8d1a57b138752e1451c8319a8e5740ad8939f738e40769995bead",
+    "rationale": "The consent feature is restricted to inbound workstreams with an associated voice-enabled agent. Publication, generic inbound setup and voice font cannot extend support to outbound calls.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s10",
+        "section": "Prerequisites",
+        "supported": true,
+        "notes": "The consent feature is restricted to inbound workstreams with an associated voice-enabled agent. Publication, generic inbound setup and voice font cannot extend support to outbound calls."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q23",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "d3417baab5b19a5a08bc291401179bd35d823fc96dca5d4bd077036fd89dd35c",
+    "rationale": "The sample YAML uses true on silence and must be tailored to policy. Affirmative consent requires an adapted and tested no-input branch, not toggle assumptions or a delayed prompt.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s10",
+        "section": "Configure user consent topic for existing agents; Workstream setting",
+        "supported": true,
+        "notes": "The sample YAML uses true on silence and must be tailored to policy. Affirmative consent requires an adapted and tested no-input branch, not toggle assumptions or a delayed prompt."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q24",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "09d444061a5671fc439073fdc4671e1b8173b3af31f861365121853ac4b626f7",
+    "rationale": "Incoming X-header parsing requires a matching schema with lowercase x- prefix. The new runtime value isolates a stale parse contract; variable scope and outgoing metadata do not fix it.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s11",
+        "section": "Incoming X-header requirements; Define JSON schema; Runtime behavior",
+        "supported": true,
+        "notes": "Incoming X-header parsing requires a matching schema with lowercase x- prefix. The new runtime value isolates a stale parse contract; variable scope and outgoing metadata do not fix it."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q25",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "106bf1fcdbfd97bea86d322172704614edda3c2dbeb02d3e6f3c49ecfe9230b9",
+    "rationale": "Direct Routing is required and external-number outgoing X-header values can use variables. The Basic UUI property is static; representative transfer is not the external-number mechanism. Both source contracts checked.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s11",
+        "section": "Prerequisites; Outgoing X-header requirements; Configure X-headers",
+        "supported": true,
+        "notes": "Direct Routing is required and external-number outgoing X-header values can use variables. The Basic UUI property is static; representative transfer is not the external-number mechanism. Both source contracts checked."
+      },
+      {
+        "sourceId": "exam-d3-s07",
+        "section": "Transfer a call to a representative or external phone number",
+        "supported": true,
+        "notes": "Direct Routing is required and external-number outgoing X-header values can use variables. The Basic UUI property is static; representative transfer is not the external-number mechanism. Both source contracts checked."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q26",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "89df4fb07d69dd80b3d32f551104dfd43617080d951318fb7333794843e34d74",
+    "rationale": "The fixed UUI text uses permitted characters, isolating Direct Routing egress. PSTN UUI egress and formulas are unsupported; spaces or caller-name values do not repair the transfer contract.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s07",
+        "section": "Transfer a call to a representative or external phone number",
+        "supported": true,
+        "notes": "The fixed UUI text uses permitted characters, isolating Direct Routing egress. PSTN UUI egress and formulas are unsupported; spaces or caller-name values do not repair the transfer contract."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q27",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "adc22660cce277b929afb5d36b2f679a28033667345fee32347fe2acb0d898e7",
+    "rationale": "Real-time type selection is one-time, requiring a separate new Basic agent. Revised authoring-toggle, orchestration and copied-topic alternatives cannot reverse that lifecycle restriction.",
+    "findings": [
+      "Resolved: author revised disclosed diagnosis or weak distractors; exact revision2 independently rechecked."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s12",
+        "section": "Set up and enable real-time agents",
+        "supported": true,
+        "notes": "Real-time type selection is one-time, requiring a separate new Basic agent. Revised authoring-toggle, orchestration and copied-topic alternatives cannot reverse that lifecycle restriction."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q28",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "1454be46a6ecba61332003641f1de8fac757c5963c16b96bd38a8138ae2dff96",
+    "rationale": "The current guide recommends GPT-5-Chat preview with Neural TTS for custom voices at a latency cost. Native real-time voices have limited customization. Region checks and preview acceptance are explicit.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s12",
+        "section": "Set up and enable real-time agents; GPT-5-Chat and text LLM agents",
+        "supported": true,
+        "notes": "The current guide recommends GPT-5-Chat preview with Neural TTS for custom voices at a latency cost. Native real-time voices have limited customization. Region checks and preview acceptance are explicit."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q29",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "2aa62c7da0341bf2efea165f5ce1d5afa70077937ab7fe8487db9edfcb7d4b0b",
+    "rationale": "No-input silence detection differs from end-of-turn VAD and is disabled by default. Reprompt configuration is required; user-inactive timeout is digital-only in the current trigger table. Revised adjacent controls checked.",
+    "findings": [
+      "Resolved: author revised disclosed diagnosis or weak distractors; exact revision2 independently rechecked."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s12",
+        "section": "Speech sensitivity; Silence detection; System trigger support",
+        "supported": true,
+        "notes": "No-input silence detection differs from end-of-turn VAD and is disabled by default. Reprompt configuration is required; user-inactive timeout is digital-only in the current trigger table. Revised adjacent controls checked."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q30",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "95dfde6382025443d9f6b3afdcaf5e8cb715346d2d12e1a4972d40be44fd85bc",
+    "rationale": "Numeric test text matches option order; /DTMFKey tests the assigned signal. Reordering, labels or reassignment without changing input method do not validate the keypad mapping.",
+    "findings": [
+      "Resolved: author revised disclosed diagnosis or weak distractors; exact revision2 independently rechecked."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s08",
+        "section": "Important note before Enable DTMF support",
+        "supported": true,
+        "notes": "Numeric test text matches option order; /DTMFKey tests the assigned signal. Reordering, labels or reassignment without changing input method do not validate the keypad mapping."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q31",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "7ddc018804da9955337edcb6c49d72ea7a3e5c899d99f4dcc1712843200053e3",
+    "rationale": "A fixed six-digit response excludes # from its count. The termination key signals completion; global triggers accept single keys and unspecified length does not enforce six digits.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s08",
+        "section": "Multi-digit DTMF input; Agent-level DTMF recognition",
+        "supported": true,
+        "notes": "A fixed six-digit response excludes # from its count. The termination key signals completion; global triggers accept single keys and unspecified length does not enforce six digits."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q32",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "73b746c43fee05f1465d1932434d8b19ec6871de5c1bc882c53bfeeffeadc8d8",
+    "rationale": "An announcement does not hand off. Transfer conversation initiates escalation to the connected engagement hub, with an optional private message. Ending the call or retrieving a policy does not transfer it.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s14",
+        "section": "Configure the Escalate system topic; Explicit triggers",
+        "supported": true,
+        "notes": "An announcement does not hand off. Transfer conversation initiates escalation to the connected engagement hub, with an optional private message. Ending the call or retrieving a policy does not transfer it."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q33",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "702b250b54830315c3e852004d84136b00f38b38bfb7fa26d38165ddf6ce0007",
+    "rationale": "The current real-time trigger table lists both Unknown Topic and AI response generated as unsupported. The four alternatives form mutually exclusive assessments within the stated table scope.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s12",
+        "section": "System trigger support",
+        "supported": true,
+        "notes": "The current real-time trigger table lists both Unknown Topic and AI response generated as unsupported. The four alternatives form mutually exclusive assessments within the stated table scope."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q34",
+    "revision": 1,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "6ba018c1024976c2dd6185dfa84293a76e34fab5a2fed23a4f23a94d833b7d79",
+    "rationale": "Generated multilingual responses do not localize authored deterministic messages. Both guides require translated topic strings and testing the secondary-language path; browser locale is not translation maintenance.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s12",
+        "section": "Multilingual support",
+        "supported": true,
+        "notes": "Generated multilingual responses do not localize authored deterministic messages. Both guides require translated topic strings and testing the secondary-language path; browser locale is not translation maintenance."
+      },
+      {
+        "sourceId": "exam-d3-s15",
+        "section": "Manage localization; Test a multilingual agent",
+        "supported": true,
+        "notes": "Generated multilingual responses do not localize authored deterministic messages. Both guides require translated topic strings and testing the secondary-language path; browser locale is not translation maintenance."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q35",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "ba6927d1bc0ae8e1d3d32cf7525dbb5d976a369f3d1f56579237387b6eaa1766",
+    "rationale": "Primary-region speech recognition changes require republishing, with possible TTS/workstream review. The revised symptom-based stem no longer discloses the missing step. Localization edits do not verify deployment.",
+    "findings": [
+      "Resolved: author revised disclosed diagnosis or weak distractors; exact revision2 independently rechecked."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s16",
+        "section": "Change the region for an agent's primary language",
+        "supported": true,
+        "notes": "Primary-region speech recognition changes require republishing, with possible TTS/workstream review. The revised symptom-based stem no longer discloses the missing step. Localization edits do not verify deployment."
+      }
+    ]
+  },
+  {
+    "id": "ab250-d3-q36",
+    "revision": 2,
+    "reviewer": "/root",
+    "reviewedAt": "2026-11-03",
+    "decision": "approved",
+    "fingerprint": "b620cb61b5af3e5b3e7780d27cf233cc9c19171b53ebfd951de327fd458090a5",
+    "rationale": "User.Language changes the session language immediately, preferably after the Question node. A stored preference, translated menu or maker UI locale does not perform that switch. Both actions and revised distractors checked.",
+    "findings": [
+      "Resolved: author revised disclosed diagnosis or weak distractors; exact revision2 independently rechecked."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "exam-d3-s15",
+        "section": "Make an agent switch to another language; Test a multilingual agent",
+        "supported": true,
+        "notes": "User.Language changes the session language immediately, preferably after the Question node. A stored preference, translated menu or maker UI locale does not perform that switch. Both actions and revised distractors checked."
+      }
+    ]
+  }
+]
