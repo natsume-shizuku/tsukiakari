@@ -4,7 +4,7 @@ A quiet place for daily learning. Tsukiakari is a small-group study website with
 
 The first subject is **Dynamics 365 Contact Center** and the **AB-250** certification.
 
-> **Status:** Phases 1–6 and 7A–7E are accepted. [Phase 7F](docs/PHASE_7F.md) is implemented and awaiting review. Phase 7G, the final integrated acceptance, has not started. Nothing is deployed. [AGENTS.md](AGENTS.md) holds the current gate.
+> **Status:** Phases 1–6 and 7A–7F are accepted. [Phase 7G](docs/PHASE_7G.md), the final integrated acceptance, is complete and awaiting final review. Nothing is deployed. [AGENTS.md](AGENTS.md) holds the current gate.
 
 ## What it does
 
@@ -113,7 +113,7 @@ Git stores every file byte for byte (see [.gitattributes](.gitattributes)), beca
 | [docs/SCHEDULING.md](docs/SCHEDULING.md) | Review and scheduling rules |
 | [docs/BACKUP_FORMAT.md](docs/BACKUP_FORMAT.md) | JSON backup formats and compatibility |
 | [CONTENT_AUTHORING.md](CONTENT_AUTHORING.md) | Authoring and publishing content |
-| [docs/PHASE_7.md](docs/PHASE_7.md), [docs/PHASE_7F.md](docs/PHASE_7F.md) | Current phase plan and latest report |
+| [docs/PHASE_7.md](docs/PHASE_7.md), [docs/PHASE_7G.md](docs/PHASE_7G.md) | Current phase plan and latest report |
 | [docs/PLAN.md](docs/PLAN.md) | Original specification, partly superseded by later decisions |
 | [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) | Dependency notices |
 

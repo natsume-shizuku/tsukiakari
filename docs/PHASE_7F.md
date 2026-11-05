@@ -1,6 +1,6 @@
 # Phase 7F: learning feedback and reference links
 
-**Ready for Phase 7F review.** Implemented 2026-11-04 after the user accepted 7E. This stage connects flashcard topic feedback and separate test-domain results to the current teaching material. Phase 7G remains unstarted; stop for 7F review. No commit, push or deployment is authorized.
+**Accepted by the user on 2026-11-04.** Implemented 2026-11-04 after the user accepted 7E. The rest of this report is the record as submitted for review. This stage connects flashcard topic feedback and separate test-domain results to the current teaching material. Phase 7G remains unstarted; stop for 7F review. No commit, push or deployment is authorized.
 
 ## Learner experience
 

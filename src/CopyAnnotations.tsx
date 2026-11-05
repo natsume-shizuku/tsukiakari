@@ -24,13 +24,13 @@ export function CopyAnnotations({ desk, copy, onDirtyChange, onSaved, onDiscard 
   }, [dirty]);
   const save = async (event: React.FormEvent) => {
     event.preventDefault();
-    const values = tags.split(',').map(tag => tag.trim()).filter(Boolean).filter((tag, index, all) => all.findIndex(other => other.toLocaleLowerCase('en') === tag.toLocaleLowerCase('en')) === index);
-    if (values.length + (copy.tags.includes('leech') && !values.some(tag => tag.toLocaleLowerCase('en') === 'leech') ? 1 : 0) > 30 || values.some(tag => tag.length > 60)) {
+    const values = tags.split(',').map(tag => tag.trim()).filter(tag => tag && tag.toLocaleLowerCase('en') !== 'leech').filter((tag, index, all) => all.findIndex(other => other.toLocaleLowerCase('en') === tag.toLocaleLowerCase('en')) === index);
+    if (values.length + (copy.tags.includes('leech') ? 1 : 0) > 30 || values.some(tag => tag.length > 60)) {
       setError('Use up to 30 tags, with at most 60 characters per tag.'); return;
     }
     setError(''); setSaved('');
     const success = await desk.mutate(() => saveCopyAnnotations(copy.id, { personalNote: note, tags: values }), 'Personal notes and tags saved.');
-    if (success) { setNote(note.trim()); setTags(values.filter(tag => copy.tags.includes('leech') ? tag.toLocaleLowerCase('en') !== 'leech' : tag !== 'leech').join(', ')); setSaved('Saved.'); onDirtyChange?.(false); onSaved?.(); }
+    if (success) { setNote(note.trim()); setTags(values.join(', ')); setSaved('Saved.'); onDirtyChange?.(false); onSaved?.(); }
   };
   return <form className="copy-annotations" onSubmit={event => void save(event)}>
     <h3>Personal notes and tags</h3>

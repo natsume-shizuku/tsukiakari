@@ -9,10 +9,10 @@
 - **D:/Coding/d365-pa-study-desk is the OLD application.** Do not work there, copy its code/design/content, or mutate its learner data.
 - The environment sometimes starts in the old directory and supplies its AGENTS.md. Explicitly set the new repository as working directory and read **D:/Coding/tsukiakari/AGENTS.md**. The projects have different contracts and content.
 - The user requested a fresh project, repository, design, theme and implementation. The old site was based on the user's brother's interview study site; that is background, not a template to reuse.
-- **Phases 1–6 and 7A–7E are accepted. Phase 7F is implemented and ready for user review. Phase 7G is unstarted.**
-- This documentation request does **not** accept 7F or authorize 7G. Continue requested 7F corrections, then let the user decide whether to advance.
-- No Git commit, push or deployment is authorized. Keep the repository private.
-- Git remote lookup resolves the repository above, but status has returned “this operation must be run in a work tree.” Do not claim a clean tree or known branch. Investigate configuration before separately authorized Git work; do not reset/reinitialize the repository to hide the error.
+- **Phases 1–6 and 7A–7F are accepted. Phase 7G is implemented and awaiting the user's final Phase 7 acceptance.** See docs/PHASE_7G.md, which supersedes the 7F status and test counts below.
+- This document does **not** accept Phase 7. Continue requested 7G corrections, then let the user decide.
+- Each commit or push needs explicit user authorization, and no deployment is authorized. Keep the repository private.
+- Git was resolved on 2026-11-04. Git for Windows is installed, and `main` tracks `origin/main`. The earlier “must be run in a work tree” error came from Git being absent, not from the repository. `.gitattributes` stores files byte for byte, and `reports/` tracks only compact per-phase results.
 - The new repository is outside this session's default writable roots. Writes/builds/browser processes have used the execution tool's escalation mechanism. That is an environment permission boundary, not a reason to move the project into the old repository.
 
 ### Latest verified state
@@ -288,7 +288,7 @@ User removed unnecessary “Revealing locks your response.” copy and Clear ans
 
 Default **120 minutes**, adjustable before explicit start. No per-question reveal. Save selections and an absolute deadline. Time continues through sleep/navigation/browser closure. Expiry finalizes while active or on reopen, including from another page.
 
-Show answers submits/hides form and displays results dialog (e.g. 0/100, 0%). Review exam shows frozen read-only answers. Denominator includes skipped. Failed finalization remains locked and offers retry; no late answers.
+Show answers submits/hides form and displays results dialog (e.g. 0/100, 0%). Review exam shows frozen read-only answers. Denominator includes skipped. Failed finalization remains locked and offers retry; no late answers. An exam ending away from its attempt shows a transient “Exam time ended” notice with See results on every page; it stores nothing and is not an attempt history.
 
 ### Lifecycle, failures and results
 
@@ -460,8 +460,8 @@ Read CONTENT_AUTHORING.md and docs/phase7/REVIEW_PROCESS.md.
 | 7C | Pilot: 12 notes, 36 study cards, 24 test questions, six domains, independent review | Accepted; docs/PHASE_7C.md |
 | 7D | Source-first topic batches; final 235 cards/78 notes, v0.4.0 | Accepted; docs/PHASE_7D.md |
 | 7E | 300 independently approved original questions, bank v1.0.0 | Accepted 2026-11-03; docs/PHASE_7E.md |
-| 7F | Topic feedback, frozen domain results, exact note/card resources and return navigation | **Ready for review**; docs/PHASE_7F.md |
-| 7G | Final integrated content/migration/scoring/accessibility/browser/Lighthouse acceptance | **Unstarted; needs approval after 7F** |
+| 7F | Topic feedback, frozen domain results, exact note/card resources and return navigation | Accepted 2026-11-04; docs/PHASE_7F.md |
+| 7G | Final integrated content/migration/scoring/accessibility/browser/Lighthouse acceptance | **Ready for final acceptance**; docs/PHASE_7G.md |
 
 7D included early deployment/user administration and chat/digital batches, then eight remaining bundles. User authorized completing all remaining 7D on 2026-11-02, overriding intermediate 7D batch gates only. It did not waive 7F/7G reviews. Old batch/pilot counts are historical.
 
@@ -656,7 +656,7 @@ Original chat screenshots were clipboard PNGs under C:/Users/Kevin/AppData/Local
 
 ## 16. Open decisions and exclusions
 
-- **Now pending:** 7F user review/acceptance, then 7G authorization.
+- **Now pending:** the user's final Phase 7 acceptance of 7G, then any hosting decision.
 - Hosting, deployment, crawler policy and actual small-group access controls remain undecided.
 - No auth/account/cloud-sync/CMS project authorized.
 - Matching/drag-drop and FSRS optimization deferred.
@@ -665,7 +665,7 @@ Original chat screenshots were clipboard PNGs under C:/Users/Kevin/AppData/Local
 - Mentioned dump not incorporated; current bank is original sourced practice.
 - ZIP/Anki interoperability not required.
 - Do not ask user to personally fact-check every question.
-- Git configuration issue remains if future Git work authorized.
+- Known 7G limits are listed in docs/PHASE_7G.md, including no real-device testing and 104 items reviewed by the lead.
 - This documentation request changes no app behavior or phase approval.
 
 ## 17. Next-agent checklist and continuation prompt
@@ -673,7 +673,7 @@ Original chat screenshots were clipboard PNGs under C:/Users/Kevin/AppData/Local
 Before editing:
 
 - Confirm correct repository, read its AGENTS.md, inspect current implementation and local instructions.
-- Establish what user is approving now; handoff is not 7F acceptance.
+- Establish what user is approving now; handoff is not Phase 7 acceptance.
 - Preserve learner data, IDs/revisions, source gaps, snapshots and approval evidence.
 - Read owning implementation and a nearby meaningful test.
 - Delegate bounded ownership; lead integrates.
@@ -684,6 +684,6 @@ Before editing:
 
 Suggested message to paste with this file:
 
-> Read the attached Tsukiakari handoff and D:/Coding/tsukiakari/AGENTS.md. The correct project is D:/Coding/tsukiakari, not d365-pa-study-desk. Preserve the fresh design, learner data and approved content. Phases 1–6 and 7A–7E are accepted; 7F is implemented and awaiting my review, and 7G is unstarted. Use multiple agents with bounded ownership, protect my preview and run required tests/Lighthouse for changes. Do not commit, push or deploy. First summarize the current gate and continue only the work I authorize next.
+> Read the attached Tsukiakari handoff and D:/Coding/tsukiakari/AGENTS.md. The correct project is D:/Coding/tsukiakari, not d365-pa-study-desk. Preserve the fresh design, learner data and approved content. Phases 1–6 and 7A–7F are accepted; 7G is implemented and awaiting my final acceptance. Use multiple agents with bounded ownership, protect my preview and run required tests/Lighthouse for changes. Do not commit, push or deploy. First summarize the current gate and continue only the work I authorize next.
 
 If the other agent cannot access this local repository, provide source/project files as well as this handoff. The Markdown is context, not implementation. Learner data is not in Git: transfer personal study history only through a deliberate full JSON export/import. Do not send private backups merely to provide coding context.

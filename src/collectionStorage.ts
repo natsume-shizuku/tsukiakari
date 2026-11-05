@@ -92,7 +92,9 @@ export async function saveCopyAnnotations(copyId: string, input: { personalNote:
     const workspace = await readForMutation(db);
     const copy = workspace.copies.find(item => item.id === copyId);
     if (!copy) throw new Error('This learning copy no longer exists. No changes were saved.');
-    const protectedTags = copy.tags.includes('leech') ? [...tags.filter(tag => tag.toLocaleLowerCase('en') !== 'leech'), 'leech'] : tags;
+    // Only review history can create the system tag; typed text must never gain its protection.
+    const personalTags = tags.filter(tag => tag.toLocaleLowerCase('en') !== 'leech');
+    const protectedTags = copy.tags.includes('leech') ? [...personalTags, 'leech'] : personalTags;
     if (protectedTags.length > 30) throw new Error('Use up to 30 tags, including the protected leech tag.');
     const changed = learningCopySchema.parse({ ...copy, personalNote: parsed.personalNote.trim(), tags: protectedTags });
     if (changed.personalNote === copy.personalNote && JSON.stringify(changed.tags) === JSON.stringify(copy.tags)) return;

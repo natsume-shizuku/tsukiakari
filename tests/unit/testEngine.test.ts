@@ -57,6 +57,9 @@ describe('weighted selection and shared exposure', () => {
     expect([...allocateDomainQuotas(bank.domains, 100).values()]).toEqual([17, 32, 12, 12, 17, 10]);
     expect([...allocateDomainQuotas(bank.domains, 50).values()]).toEqual([9, 16, 6, 6, 8, 5]);
     expect([...allocateDomainQuotas(bank.domains, 51).values()]).toEqual([9, 16, 6, 6, 9, 5]);
+    const ties: [number, number[]][] = [[60, [11, 19, 7, 7, 10, 6]], [70, [12, 23, 8, 8, 12, 7]], [95, [16, 31, 11, 11, 16, 10]], [120, [21, 39, 14, 14, 20, 12]], [140, [24, 45, 17, 17, 23, 14]], [160, [28, 51, 19, 19, 27, 16]], [205, [35, 66, 25, 24, 35, 20]], [230, [39, 74, 28, 27, 39, 23]], [280, [48, 90, 34, 33, 47, 28]]];
+    for (const [count, quotas] of ties) expect([...allocateDomainQuotas(bank.domains, count).values()]).toEqual(quotas);
+    for (let count = 50; count <= 300; count++) expect([...allocateDomainQuotas(bank.domains, count).values()].reduce((sum, quota) => sum + quota, 0)).toBe(count);
     expect(() => allocateDomainQuotas([{ id: 'a', title: 'A', weight: 99 }], 50)).toThrow();
   });
   it('prioritizes unseen questions within domain quotas across three 100-question exams', () => {

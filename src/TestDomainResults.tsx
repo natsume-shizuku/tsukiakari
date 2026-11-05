@@ -8,7 +8,7 @@ function LearningResources({ refs, title, unlinkedQuestions = 0 }: { refs: Canon
   const id = useId();
   const resources = getLearningResources(refs, studyPacks);
   return <details className="test-learning-resources">
-    <summary>{title}<span className="quiet-label">{resources.notes.length} notes · {resources.cards.length} related cards</span></summary>
+    <summary>{title}<span className="quiet-label">{resources.notes.length} {resources.notes.length === 1 ? 'note' : 'notes'} · {resources.cards.length} related {resources.cards.length === 1 ? 'card' : 'cards'}</span></summary>
     <div className="test-learning-body">
       <p className="fine-print">Current study material linked from the references saved with these questions. Browsing does not count as a review.</p>
       {!refs.length && <p>No study-note links were saved with these questions. Recorded answers and sources are still available.</p>}

@@ -27,6 +27,29 @@ async function answer(deckId: string) {
 }
 const dump = () => Promise.all(db.tables.map(table => table.toArray()));
 
+describe('Phase 7G collection corrections', () => {
+  it('never gives a typed leech tag system protection, and keeps a real one', async () => {
+    await setup();
+    const copy = (await db.copies.toArray())[0];
+    await saveCopyAnnotations(copy.id, { personalNote: '', tags: ['leech', 'Leech', 'mine'] }, db);
+    expect((await db.copies.get(copy.id))?.tags).toEqual(['mine']);
+    await saveCopyAnnotations(copy.id, { personalNote: '', tags: [] }, db);
+    expect((await db.copies.get(copy.id))?.tags).toEqual([]);
+    await db.copies.update(copy.id, { tags: ['leech'] });
+    await saveCopyAnnotations(copy.id, { personalNote: '', tags: ['mine'] }, db);
+    expect((await db.copies.get(copy.id))?.tags).toEqual(['mine', 'leech']);
+  });
+  it('re-adding a removed card keeps its suspension', async () => {
+    const deck = await setup();
+    const copy = (await db.copies.toArray())[0];
+    await db.copies.update(copy.id, { suspended: true });
+    await removeCardsFromDeck(deck.id, [copy.id], db);
+    await addCardsToDeck(deck.id, fixturePack, [copy.cardId], db);
+    expect(await db.copies.get(copy.id)).toMatchObject({ suspended: true });
+    expect((await db.copies.get(copy.id))?.removed).toBeFalsy();
+  });
+});
+
 describe('Phase 3 collection transactions', () => {
   it('accepts old records without flags and renames without changing a revealed review', async () => {
     const deck = await setup();

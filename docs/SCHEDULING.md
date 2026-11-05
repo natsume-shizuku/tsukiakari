@@ -6,7 +6,7 @@ Each deck has its own daily allowances: 20 new introductions and 9999 Review-sta
 
 A study day begins at 05:00 in the saved collection timezone. The timezone is captured on the first successful learner mutation; travel or a device timezone change does not silently change it. At 04:00 activity belongs to the preceding study day. No server or nightly job is needed: the queue is computed from saved records and the current time whenever viewed or advanced. Refreshing a page does not replenish a quota.
 
-Due learning/relearning steps take priority, then due Review cards, then new cards. Steps already underway remain available with either daily limit set to zero. Overdue reviews remain due. Suspended cards are excluded. Each deck's copy of a published card is independent.
+Due learning/relearning steps take priority, then due Review cards, then new cards. Steps already underway remain available with either daily limit set to zero. Overdue reviews remain due. Suspended cards are excluded. Each deck's copy of a published card is independent. Daily limits are allowances, not queue positions: the card on screen stays ratable while its allowance lasts, even if a re-added or unsuspended card now sorts ahead of it. That rating uses the same allowance, so limits are never exceeded.
 
 ## FSRS policy
 

@@ -46,6 +46,9 @@ function App() {
   const [route, setRoute] = useState(readRoute);
   const [feedback, setFeedback] = useState('');
   const [restoreEpoch, setRestoreEpoch] = useState(0);
+  // Held here rather than in feedback so the link survives navigation until it is used.
+  const [endedExamId, setEndedExamId] = useState<string | null>(null);
+  const onExamExpired = useCallback((attemptId: string) => { setFeedback(''); setEndedExamId(attemptId); }, []);
   const feedbackScope = useRef(0);
   const now = useStudyClock();
   const mainRef = useRef<HTMLElement>(null);
@@ -85,6 +88,7 @@ function App() {
     if (route.view !== 'review' && !document.querySelector('dialog[open]')) mainRef.current?.focus({ preventScroll: true });
   }, [route.page, route.section, route.view, route.deckId]);
   useEffect(() => { if (desk.error && !document.querySelector('dialog[open]')) errorRef.current?.focus(); }, [desk.error]);
+  useEffect(() => { if (route.attemptId === endedExamId) setEndedExamId(null); }, [route.attemptId, endedExamId]);
   useEffect(() => {
     if (!workspace) return;
     document.documentElement.dataset.theme = workspace.preferences.theme;
@@ -111,11 +115,12 @@ function App() {
       <div className="sidebar-bottom"><a className="settings-link" href="#settings" aria-current={route.page === 'settings' ? 'page' : undefined}><span aria-hidden="true">⚙</span> Settings</a><span className={'save-status ' + (desk.error || access === 'unavailable' ? 'warning' : access === 'writer' && !busy ? 'ready' : '')} role="status"><span className="status-dot" aria-hidden="true"/>{status}</span><p>One small step,<br/>then another.</p></div>
     </aside>
     <div className="workspace">
-      {workspace && <TestDeadlineMonitor key={restoreEpoch} desk={desk}/> }
+      {workspace && <TestDeadlineMonitor key={restoreEpoch} desk={desk} onExpired={onExamExpired}/> }
       <main id="main-content" ref={mainRef} tabIndex={-1} className={route.view === 'review' ? 'review-page' : route.page === 'library' ? 'library-wide' + ((route.section === 'cards' || route.section === 'mistakes') ? ' card-browser-page' : '') : route.page === 'tests' ? 'tests-page' : undefined}>
         {access === 'readonly' && <div className="notice"><strong>This is a read-only tab.</strong><p>Another Tsukiakari tab is saving changes. Close that tab, then reload this one to make changes.</p><button className="button secondary" onClick={() => window.location.reload()}>Reload this tab</button></div>}
         {desk.error && <div ref={errorRef} className="notice error" role="alert" tabIndex={-1}><strong>Storage needs attention</strong><p>{desk.error}</p></div>}
         {route.page !== 'library' && route.page !== 'tests' && <div className={route.view === 'review' ? 'sr-only' : 'mutation-feedback-slot'}>{feedback && <div className="mutation-feedback"><p role="status" aria-live="polite">{feedback}</p>{route.view !== 'review' && <button className="button secondary" aria-label="Dismiss confirmation" onClick={() => setFeedback('')}>Dismiss</button>}</div>}</div>}
+        {endedExamId && route.view !== 'review' && <div className="notice exam-ended-notice" role="status"><p>Exam time ended. Your saved answers have been scored.</p><div className="test-actions"><a className="button primary" href={'#tests?attempt=' + encodeURIComponent(endedExamId)}>See results</a><button className="button secondary" aria-label="Dismiss exam notice" onClick={() => setEndedExamId(null)}>Dismiss</button></div></div>}
         {!workspace ? <EmptyPanel title={access === 'loading' ? 'Opening your study space' : 'Your collection is unavailable'}><p>{access === 'loading' ? 'Checking browser storage before making any changes.' : 'Resolve the storage issue above and reload to continue safely.'}</p></EmptyPanel> : <>
           {route.page === 'study' && route.view !== 'review' && <Study desk={desk} now={now} onStart={deck => void beginStudy(deck)}/>}
           {route.page === 'study' && route.view === 'deck' && <DeckManage desk={desk} deckId={route.deckId} onDirtyChange={setDirty}/>}
@@ -130,7 +135,7 @@ function App() {
             <PageHeader eyebrow="Make it comfortable" title="Settings">Preferences for your study space.</PageHeader>
             <section className="panel settings-panel"><div><h2>Appearance</h2><p className="muted">Choose a theme or follow your device.</p></div><div className="field"><label htmlFor="theme">Appearance</label><select id="theme" value={workspace.preferences.theme} onChange={event => void changeTheme(event.target.value as Theme)} disabled={!canWrite}><option value="system">System</option><option value="dark">Dark</option><option value="light">Light</option></select></div></section>
             <section className="panel settings-location"><h2>Deck scheduling settings</h2><p className="muted">Each deck manages its own daily allowances, steps, retention, and leech action. Open Manage on a deck to change them.</p><a className="text-link" href="#study">Go to your decks →</a></section>
-            <DataTransfer desk={desk} onRestore={() => setRestoreEpoch(value => value + 1)}/>
+            <DataTransfer desk={desk} onRestore={() => { setEndedExamId(null); setRestoreEpoch(value => value + 1); }}/>
             <section className="panel settings-location"><div><h2>Your study day</h2><p>Starts at {String(workspace.preferences.dayStartsAtHour).padStart(2, '0')}:00 in {workspace.preferences.timeZone}. Before this boundary, activity belongs to the previous study day.</p></div></section>
           </>}
         </>}

@@ -4,6 +4,7 @@ import 'fake-indexeddb/auto';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { fixturePack } from '../../src/content/fixtures';
 import { defaultPreferences, type DeckSettings, type ReviewSession, type SchedulerState } from '../../src/domain';
+import { removeCardsFromDeck } from '../../src/collectionStorage';
 import { getDeckQueue, initialState } from '../../src/scheduling';
 import { addCardsToDeck, createDatabase, createDeck, loadWorkspace, savePreferences, type TsukiakariDatabase } from '../../src/storage';
 import {
@@ -170,6 +171,64 @@ describe('atomic review persistence', () => {
     const before = await dump();
     await expect(submitReview({ turnId: session.turnId, rating: 'right', durationMs: 1 }, now, db)).rejects.toThrow(/daily limits/);
     expect(await dump()).toEqual(before);
+  });
+
+  describe('when a card returns ahead of the one on screen', () => {
+    async function lastAllowance(settings: Partial<DeckSettings> = { newCardsPerDay: 1 }) {
+      const deck = await deckWith(recallIds.slice(0, 2), settings);
+      const queued = getDeckQueue(await loadWorkspace(db), deck.id, now);
+      const older = (await db.copies.get(queued.newIds[0]))!;
+      const newer = (await db.copies.toArray()).find(copy => copy.id !== older.id)!;
+      return { deck, older, newer };
+    }
+    async function rated(turnId: string) {
+      await submitReview({ turnId, rating: 'right', durationMs: 1 }, now, db);
+      return (await db.reviewLogs.toArray()).filter(log => !log.undone).map(log => log.copyId);
+    }
+
+    it('still rates it after an older card is re-added on the last new allowance', async () => {
+      const { deck, older, newer } = await lastAllowance();
+      await removeCardsFromDeck(deck.id, [older.id], db);
+      const session = await startReview(deck.id, now, db);
+      expect(session.copyId).toBe(newer.id);
+      await reveal(session);
+      await addCardsToDeck(deck.id, fixturePack, [older.cardId], db);
+      expect(await rated(session.turnId)).toEqual([newer.id]);
+      expect(getDeckQueue(await loadWorkspace(db), deck.id, now)).toMatchObject({ newUsed: 1, newRemaining: 0, newIds: [] });
+    });
+
+    it('still rates it after an older card is unsuspended on the last new allowance', async () => {
+      const { deck, older, newer } = await lastAllowance();
+      await setCopySuspended(older.id, true, now, db);
+      const session = await startReview(deck.id, now, db);
+      await reveal(session);
+      await setCopySuspended(older.id, false, now, db);
+      expect(await rated(session.turnId)).toEqual([newer.id]);
+    });
+
+    it('still rates a turn restored by undo after an older card is re-added', async () => {
+      const { deck, older, newer } = await lastAllowance();
+      await removeCardsFromDeck(deck.id, [older.id], db);
+      const session = await startReview(deck.id, now, db);
+      await reveal(session);
+      await submitReview({ turnId: session.turnId, rating: 'again', durationMs: 1 }, now, db);
+      await addCardsToDeck(deck.id, fixturePack, [older.cardId], db);
+      const restored = await undoLastReview(now, db);
+      expect(restored.copyId).toBe(newer.id);
+      expect(await rated(restored.turnId)).toEqual([newer.id]);
+    });
+
+    it('still rates a review card when an earlier-due card returns on the last review allowance', async () => {
+      const { deck, older, newer } = await lastAllowance({ newCardsPerDay: 2, maximumReviewsPerDay: 1 });
+      await db.schedulerStates.bulkPut([{ ...mature(older.id), dueAt: now - 2 * day }, mature(newer.id)]);
+      await setCopySuspended(older.id, true, now, db);
+      const session = await startReview(deck.id, now, db);
+      expect(session.copyId).toBe(newer.id);
+      await reveal(session);
+      await setCopySuspended(older.id, false, now, db);
+      expect(await rated(session.turnId)).toEqual([newer.id]);
+      expect(getDeckQueue(await loadWorkspace(db), deck.id, now)).toMatchObject({ reviewsUsed: 1, reviewRemaining: 0, reviewIds: [] });
+    });
   });
 
   it('restores new state, quota and the revealed turn with a new command token on undo', async () => {

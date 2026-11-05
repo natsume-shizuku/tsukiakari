@@ -106,6 +106,20 @@ describe('JSON portability', () => {
     expect(w.copies.find(copy => copy.deckId === fresh.id)?.packId).toBe('not-installed');
     expect(getDeckQueue(w, fresh.id, now).orderedIds).toEqual([]);
   });
+  it('leaves everything unchanged when a deck or settings import fails part-way', async () => {
+    const { deck, workspace } = await seed();
+    const deckFile = createDeckBackup(workspace, deck.id, now), settingsFile = createSettingsBackup(workspace, now);
+    settingsFile.decks[0].settings.newCardsPerDay = 7;
+    const fail = () => { throw new Error('Simulated import write'); };
+    db.copies.hook('creating', fail);
+    await expect(importBackup(deckFile, db)).rejects.toThrow(/import write/);
+    db.copies.hook('creating').unsubscribe(fail);
+    expect(await loadWorkspace(db)).toEqual(workspace);
+    db.decks.hook('updating', fail);
+    await expect(importBackup(settingsFile, db)).rejects.toThrow(/import write/);
+    db.decks.hook('updating').unsubscribe(fail);
+    expect(await loadWorkspace(db)).toEqual(workspace);
+  });
   it('settings imports preserve progress and test data, ignore unknown deck IDs and invalidate changed-deck undo/session', async () => {
     const { deck, workspace } = await seed();
     const b = createSettingsBackup(workspace, now);

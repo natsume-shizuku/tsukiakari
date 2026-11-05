@@ -47,8 +47,10 @@ export function allocateDomainQuotas(domains: QuestionBank['domains'], count: nu
     throw new Error('Domain quotas require a positive count and weights totaling 100 percent.');
   }
   const rows = domains.map((domain, index) => {
-    const raw = count * domain.weight / 100;
-    return { id: domain.id, count: Math.floor(raw), remainder: raw - Math.floor(raw), index };
+    // Whole-number units keep equal remainders equal, so ties follow domain order.
+    const units = Math.round(count * domain.weight * 1e6);
+    const remainder = units % 1e8;
+    return { id: domain.id, count: (units - remainder) / 1e8, remainder, index };
   });
   const remaining = count - rows.reduce((sum, row) => sum + row.count, 0);
   const ordered = [...rows].sort((a, b) => b.remainder - a.remainder || a.index - b.index);

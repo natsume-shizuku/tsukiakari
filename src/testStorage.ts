@@ -63,13 +63,14 @@ export async function expireTestAttempts(db = database, now = Date.now()): Promi
 }
 
 /** Discard only an unfinished attempt after the caller has confirmed abandonment. */
-export async function abandonTestAttempt(id: string, db = database): Promise<void> {
+export async function abandonTestAttempt(id: string, db = database, now = Date.now()): Promise<void> {
   idSchema.parse(id);
   await db.transaction('rw', db.tables, async () => {
     const { testAttempts, testExposures } = await loadWorkspace(db);
     const attempt = testAttempts.find(item => item.id === id);
     if (!attempt) throw new Error('The test attempt was not found. No data was changed.');
     if (attempt.completedAt !== null) throw new Error('A completed test cannot be abandoned. Its results have not been changed.');
+    if (testHasExpired(attempt, now)) throw new Error('This exam has reached its time limit, so it cannot be abandoned. Its saved answers will be scored.');
     await db.testExposures.bulkPut(collectTestExposures([attempt], testExposures));
     await db.testAttempts.delete(id);
   });

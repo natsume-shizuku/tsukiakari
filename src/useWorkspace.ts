@@ -84,7 +84,8 @@ export function useWorkspace() {
       return true;
     } catch (cause) {
       if (mounted.current) {
-        if (saved) setAccess('unavailable');
+        // Clear the lock flag at once: access only updates on the next render.
+        if (saved) { ownsLock.current = false; setAccess('unavailable'); }
         setError(saved
           ? 'The save completed, but the updated collection could not be read. Reload to see the current state. Your data has not been reset.'
           : `The change could not be saved. Your previous data is unchanged. ${cause instanceof Error ? cause.message : 'Please try again.'}`);

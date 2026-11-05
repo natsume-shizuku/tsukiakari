@@ -119,4 +119,4 @@ The three partial-depth rows have useful sourced notes/cards and are included in
 
 ## Review boundary
 
-The lead and agents own detailed claim verification and independent review. Present the final 7D collection, explicit gaps and integrated results for the user's learning-experience review. Integrated checks passed; see [Phase 7D](../PHASE_7D.md). Phase 7E has not started: the original 300-question bank remains separate work, and the unchanged 24-question pilot stays a read-only preview.
+The lead and agents own detailed claim verification and independent review. Present the final 7D collection, explicit gaps and integrated results for the user's learning-experience review. Integrated checks passed; see [Phase 7D](../PHASE_7D.md). The separate 300-question original bank was completed in [Phase 7E](../PHASE_7E.md), and it contains the unchanged 24 pilot questions. `objective-coverage.csv` is frozen at its accepted baseline, so its question column still lists only those pilot questions; [the exam coverage file](exams/coverage.json) maps all 300.

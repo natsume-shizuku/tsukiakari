@@ -153,6 +153,16 @@ describe('transactional test persistence', () => {
     await expect(abandonTestAttempt('missing', db)).rejects.toThrow(/not found/);
     expect(await loadWorkspace(db)).toEqual(before);
   });
+  it('refuses to abandon an expired exam so its saved answers can still be scored', async () => {
+    const attempt = await startTest(testFixturePack, { ...options, mode: 'exam' }, db, now);
+    await saveTestAnswer(attempt.id, attempt.questions[0].card.id, attempt.questions[0].card.correctOptionIds, db, now + 1);
+    const before = await loadWorkspace(db);
+    await expect(abandonTestAttempt(attempt.id, db, attempt.deadlineAt! + 1)).rejects.toThrow(/time limit/);
+    expect(await loadWorkspace(db)).toEqual(before);
+    const [scored] = await expireTestAttempts(db, attempt.deadlineAt! + 1);
+    expect(scored.id).toBe(attempt.id);
+    expect(scored.result?.correct).toBe(1);
+  });
   it('keeps the unfinished attempt after a failed abandonment and permits retry', async () => {
     const attempt = await startTest(testFixturePack, options, db, now);
     await saveTestAnswer(attempt.id, attempt.questions[0].card.id, attempt.questions[0].card.correctOptionIds, db, now + 1);

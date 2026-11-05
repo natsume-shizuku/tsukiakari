@@ -105,7 +105,14 @@ function stableCopyOrder(a: LearningCopy, b: LearningCopy): number {
   return a.createdAt - b.createdAt || a.id.localeCompare(b.id, 'en');
 }
 
-export function getDeckQueue(workspace: WorkspaceSnapshot, deckId: string, now: number): DeckQueue {
+/** The limit is an allowance, not a position: a pinned turn stays eligible if a card returns ahead of it. */
+function withinAllowance(ids: string[], remaining: number, pinnedCopyId?: string): string[] {
+  const allowed = ids.slice(0, remaining);
+  if (pinnedCopyId && remaining > 0 && ids.includes(pinnedCopyId) && !allowed.includes(pinnedCopyId)) allowed[allowed.length - 1] = pinnedCopyId;
+  return allowed;
+}
+
+export function getDeckQueue(workspace: WorkspaceSnapshot, deckId: string, now: number, pinnedCopyId?: string): DeckQueue {
   assertTimestamp(now);
   const deck = workspace.decks.find(candidate => candidate.id === deckId);
   if (!deck) throw new Error('The selected deck no longer exists.');
@@ -136,8 +143,8 @@ export function getDeckQueue(workspace: WorkspaceSnapshot, deckId: string, now: 
   const dueOrder = (a: LearningCopy, b: LearningCopy) =>
     statesById.get(a.id)!.dueAt! - statesById.get(b.id)!.dueAt! || stableCopyOrder(a, b);
   const learningIds = learning.sort(dueOrder).map(copy => copy.id);
-  const reviewIds = review.sort(dueOrder).slice(0, reviewRemaining).map(copy => copy.id);
-  const newIds = fresh.sort(stableCopyOrder).slice(0, newRemaining).map(copy => copy.id);
+  const reviewIds = withinAllowance(review.sort(dueOrder).map(copy => copy.id), reviewRemaining, pinnedCopyId);
+  const newIds = withinAllowance(fresh.sort(stableCopyOrder).map(copy => copy.id), newRemaining, pinnedCopyId);
   return {
     learningIds, reviewIds, newIds, orderedIds: [...learningIds, ...reviewIds, ...newIds],
     nextDueAt, newUsed, reviewsUsed, newRemaining: deck.archived ? 0 : newRemaining, reviewRemaining: deck.archived ? 0 : reviewRemaining,

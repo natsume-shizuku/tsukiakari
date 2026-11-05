@@ -126,7 +126,7 @@ export async function submitReview(input: ReviewSubmission, now = Date.now(), db
     checkClock(now, session);
     if (!session.revealed) throw new Error('Reveal the answer before rating this card.');
     if (card.kind === 'mcq' && submission.rating === 'right' && session.selectedOptionId !== card.correctOptionId) throw new Error('An incorrect multiple-choice answer must be rated Again.');
-    if (!getDeckQueue(workspace, deck.id, now).orderedIds.includes(copy.id)) throw new Error('This card is not currently eligible under this deck’s daily limits. No review was saved.');
+    if (!getDeckQueue(workspace, deck.id, now, copy.id).orderedIds.includes(copy.id)) throw new Error('This card is not currently eligible under this deck’s daily limits. No review was saved.');
     const before = workspace.schedulerStates.find(state => state.copyId === copy.id) ?? initialState(copy.id);
     const after = schedulerStateSchema.parse(scheduleReview(before, submission.rating, deck.settings, now, workspace.preferences));
     const qualifyingLeech = before.state === 'review' && submission.rating === 'again' && after.lapses >= deck.settings.leechThreshold;

@@ -1,6 +1,6 @@
 # Phase 7: sourced learning and certification practice
 
-Started 2026-10-28 after Phase 6 acceptance. 7A through 7E are accepted. The user authorized 7F with “start next” on 2026-11-03. Flashcard topic summaries and separate frozen test-domain results linked to current study resources are ready for review. Typecheck, 327 unit tests, 128 browser tests, build and Lighthouse pass. See the [7F report](PHASE_7F.md). Stop for 7F review before 7G; 7G remains unstarted. The accepted 235-card/78-note study collection, 300-question original bank and frozen 24-question pilot objects are unchanged. Earlier reports retain historical inventories.
+Started 2026-10-28 after Phase 6 acceptance. 7A through 7F are accepted. The user accepted [7F](PHASE_7F.md) and authorized 7G on 2026-11-04. [7G](PHASE_7G.md), the final integrated acceptance, is ready and stops for the user's final Phase 7 acceptance. The accepted 235-card/78-note study collection, 300-question original bank and frozen 24-question pilot objects are unchanged. Earlier reports retain historical inventories.
 
 ## Learner outcome
 

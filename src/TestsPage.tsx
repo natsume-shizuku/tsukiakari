@@ -21,14 +21,17 @@ function useNow(ticking: boolean) {
   return Math.max(now, Date.now());
 }
 /** Mounted above routes so exam deadlines also finalize while browsing elsewhere. */
-export function TestDeadlineMonitor({ desk }: { desk: Desk }) {
+export function TestDeadlineMonitor({ desk, onExpired }: { desk: Desk; onExpired: (attemptId: string) => void }) {
   const active = desk.workspace?.testAttempts.find(attempt => attempt.completedAt === null);
   const now = useNow(active?.deadlineAt != null);
   const attempted = useRef(new Set<string>());
   useEffect(() => {
     if (!active || active.deadlineAt === null || active.deadlineAt > now || !desk.canWrite || attempted.current.has(active.id)) return;
-    void desk.mutate(() => { attempted.current.add(active.id); return expireTestAttempts(); }, 'Exam time ended. Your saved answers have been scored.');
-  }, [active, now, desk.canWrite, desk.mutate]);
+    let ended: TestAttempt[] = [];
+    void desk.mutate(async () => { attempted.current.add(active.id); ended = await expireTestAttempts(); }, 'Exam time ended.').then(saved => {
+      if (saved && ended.length) onExpired(ended[0].id);
+    });
+  }, [active, now, desk.canWrite, desk.mutate, onExpired]);
   return null;
 }
 function attemptTitle(attempt: TestAttempt) { return attempt.bankTitle ?? attempt.bankId; }
@@ -229,7 +232,7 @@ function AttemptReader({ desk, attempt, onDirtyChange, onSetup, onAbandon, onRet
   const answered = attempt.responses.filter(item => item.selectedOptionIds.length > 0).length;
   const reviewExam = () => { setReviewingExam(true); const query = new URLSearchParams({attempt:attempt.id,review:'1'}); window.history.replaceState(null,'','#tests?' + query.toString()); requestAnimationFrame(() => heading.current?.focus()); };
   return <section className="tests-page test-attempt">
-    <header className="test-attempt-heading"><div><p className="eyebrow">{attempt.fixture ? 'Engineering preview · ' : ''}{attempt.mode === 'exam' ? 'Exam Mode' : 'Practice Mode'}</p><h1 ref={heading} tabIndex={-1}>{attemptTitle(attempt)}</h1></div><div className="test-actions"><button className="button secondary" onClick={leave}>Back to Tests</button>{!completed && <button className="button secondary" disabled={!desk.canWrite} onClick={onAbandon}>Abandon test</button>}</div></header>
+    <header className="test-attempt-heading"><div><p className="eyebrow">{attempt.fixture ? 'Engineering preview · ' : ''}{attempt.mode === 'exam' ? 'Exam Mode' : 'Practice Mode'}</p><h1 ref={heading} tabIndex={-1}>{attemptTitle(attempt)}</h1></div><div className="test-actions"><button className="button secondary" onClick={leave}>Back to Tests</button>{!completed && <button className="button secondary" disabled={!desk.canWrite || expired} onClick={onAbandon}>Abandon test</button>}</div></header>
     {attempt.fixture && <p className="test-fixture-notice">Sample questions for trying the test tools. These results are marked as engineering preview data.</p>}
     <div className="test-session-bar"><span role="status" aria-live="polite">{answered} of {attempt.questions.length} answered{completed ? ' · Completed' : ''}</span>{attempt.deadlineAt !== null && !completed && <strong className={expired ? 'test-time-ended' : ''} aria-label="Time remaining">{expired ? 'Time ended' : timeText(attempt.deadlineAt - now)}</strong>}<span className="fine-print">{completed ? new Date(attempt.completedAt!).toLocaleString() : 'Selections save automatically'}</span></div>
     {expired && <div className="notice error" role="alert"><p>Time has ended. Responses are locked. Only answers saved before the deadline count.</p><button className="button secondary" disabled={!desk.canWrite} onClick={() => { void finish(); }}>Retry finalization</button></div>}
