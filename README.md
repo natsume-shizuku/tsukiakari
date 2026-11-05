@@ -10,7 +10,7 @@ The first subject is **Dynamics 365 Contact Center** and the **AB-250** certific
 
 - **Study:** build personal decks from whole packs or individual cards, then review with Again and Right. Scheduling uses FSRS-6 through ts-fsrs, and every setting and daily allowance is per deck.
 - **Library:** browse packs and cards, read sourced notes, keep personal notes and tags per deck, and revisit flashcard Mistakes.
-- **Tests:** take practice tests with optional answer reveal, or timed exams with a saved deadline. Results are broken down by domain and link to related notes and cards.
+- **Tests:** take practice tests with optional answer reveal, or timed exams with a saved deadline, five questions at a time with page buttons and flags for review. Results are broken down by domain and link to related notes and cards.
 - **Statistics:** see daily reviews and active time, a yearly heatmap, streaks and per-topic flashcard feedback.
 - **Settings:** set the theme and study-day start, and move data between browsers with JSON export and import.
 
@@ -71,7 +71,7 @@ The material maps to 117 of 119 tracked objectives. That shows reviewed evidence
 
 To add or change content, follow [CONTENT_AUTHORING.md](CONTENT_AUTHORING.md) and the [review process](docs/phase7/REVIEW_PROCESS.md). Published files under `src/content/published/` are generated, so don't edit them by hand. Changes to tested meaning need a new revision and independent re-review.
 
-Engineering fixtures, such as the arithmetic test bank, exist to exercise the software. They are clearly labelled and aren't study material.
+Engineering fixtures, such as the arithmetic test bank, exist to exercise the software and aren't study material. Learners don't see them: to browse them, set `localStorage['tsukiakari.showFixtures'] = 'on'` and reload. Browser tests set this for you, and fixture cards already saved in a deck keep working without it.
 
 ## Data and privacy
 

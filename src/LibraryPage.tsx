@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type PointerEvent } from 'react';
 import type { LearningCopy, CanonicalCardRef, CanonicalNoteRef } from './domain';
 import type { useWorkspace } from './useWorkspace';
-import { studyCurations, studyPacks, canonicalCards, cardCurations, matchesCurationCard, findPublishedCard } from './content/catalog';
+import { studyCurations, studyPacks, canonicalCards, browsableCards, visibleCurations, cardCurations, matchesCurationCard, findPublishedCard } from './content/catalog';
 import { questionBankManifests } from './content/questionBanks';
 import { addSelectionToDeck, removeCardsFromDeck } from './collectionStorage';
 import { setCopySuspended } from './reviewStorage';
@@ -130,7 +130,11 @@ export function Library({ desk, section, initialCopyId, initialDeckId, initialCa
     document.body.style.overflow = 'hidden';
     return () => { document.body.style.overflow = previous; };
   }, [Boolean(detail)]);
-  const allCards = useMemo(() => canonicalCards, []);
+  // Fixture cards a learner already saved stay browsable; the rest are hidden.
+  const allCards = useMemo(() => {
+    const owned = canonicalCards.filter(({ pack, card }) => pack.fixture && !browsableCards.some(item => item.pack.id === pack.id && item.card.id === card.id) && workspace.copies.some(copy => !copy.removed && copy.packId === pack.id && copy.cardId === card.id));
+    return owned.length ? [...owned, ...browsableCards] : browsableCards;
+  }, [workspace.copies]);
   const topicScope: string[] | null = topicId ? JSON.parse(topicId) : null;
   const canonicalTopicScope = topicScope?.[0] === '@canonical' ? topicScope : null;
   const states = new Map(workspace.schedulerStates.map(state => [state.copyId, state]));
@@ -210,7 +214,7 @@ export function Library({ desk, section, initialCopyId, initialDeckId, initialCa
     }
   };
   const missing = activeCopies.filter(copy => !findPublishedCard(copy));
-  const topics = studyCurations.filter(pack => !packId || pack.id === packId).flatMap(pack => pack.topics.map(topic => ({ ...topic, packId: pack.id, packTitle: pack.title })));
+  const topics = visibleCurations.filter(pack => !packId || pack.id === packId).flatMap(pack => pack.topics.map(topic => ({ ...topic, packId: pack.id, packTitle: pack.title })));
   const mistakes = getMistakes(workspace).filter(row => {
     if (!activeCopies.some(copy => copy.id === row.copy.id) || mistakeDeck && row.copy.deckId !== mistakeDeck) return false;
     if (mistakeStatus === 'suspended' && !row.copy.suspended || mistakeStatus === 'active' && row.copy.suspended || mistakeStatus === 'leech' && !row.leech || mistakeStatus === 'again' && row.lastRating !== 'again' || mistakeStatus === 'right' && row.lastRating !== 'right') return false;
@@ -238,7 +242,7 @@ export function Library({ desk, section, initialCopyId, initialDeckId, initialCa
   const destinationPanel = <section className="library-destination panel library-pack-destination" role="region" aria-label="Study pack destination">
       {destinationControl}
       {destinationDeck && <a className="text-link library-manage-link" href={'#study/deck/' + encodeURIComponent(destinationDeck.id)} title={'Manage ' + destinationDeck.name}>Manage deck ↗</a>}
-      <span className="quiet-label library-result-count">{studyCurations.length} available packs</span>
+      <span className="quiet-label library-result-count">{visibleCurations.length} available packs</span>
       {!activeDecks.length && <a className="text-link" href="#study">Create your first deck ↗</a>}
       <div className="library-operation-feedback" role="status" aria-live="polite">{feedback}</div>
       {desk.error && <p className="library-operation-error">{desk.error}</p>}
@@ -263,7 +267,7 @@ export function Library({ desk, section, initialCopyId, initialDeckId, initialCa
     {section === 'packs' && destinationPanel}
     {section === 'packs' && <>
       <h2 className="sr-only">Study packs</h2>
-      <div className="library-pack-list">{studyCurations.map(pack => {
+      <div className="library-pack-list">{visibleCurations.map(pack => {
         const membership = activeCopies.filter(copy => copy.deckId === destinationDeck?.id && pack.cards.some(ref => ref.packId === copy.packId && ref.cardId === copy.cardId));
         const complete = pack.cards.every(ref => membership.some(copy => copy.packId === ref.packId && copy.cardId === ref.cardId));
         return <section className="panel library-pack" key={pack.id} aria-label={pack.title}><div>{pack.fixture && <span className="fixture-badge">Engineering fixture · not a study pack</span>}<h2>{pack.title}</h2><p className="muted">{pack.description}</p><p className="fine-print">{pack.cards.length} cards · {pack.notes.length} reference notes · {pack.questionBankIds.length ? 'Shared question bank' : 'No exam pool'}</p>{pack.questionBankIds.map(bankId => <p key={bankId}><a className="text-link" href={'#tests?bank=' + encodeURIComponent(bankId)}>Open {questionBankManifests.find(bank => bank.id === bankId)?.title ?? 'question bank'} ↗</a></p>)}{destinationDeck && <p className="library-membership">{membership.length} of {pack.cards.length} cards in {destinationDeck.name}</p>}</div><button className="button secondary" disabled={!desk.canWrite || !destinationDeck || complete} onClick={() => void add(pack.cards.map(({ packId, cardId }) => ({ packId, cardId })))}>{complete ? 'All pack cards added' : 'Add entire pack'}</button></section>;
@@ -282,7 +286,7 @@ export function Library({ desk, section, initialCopyId, initialDeckId, initialCa
       </div>
       <div id="card-advanced-filters" className="library-filters panel card-advanced-filters" hidden={!filtersOpen}>
 
-        <div><label htmlFor="card-pack">Study pack</label><select id="card-pack" value={packId} onChange={event => changeCardFilter(() => { setPackId(event.target.value); setTopicId(''); })}><option value="">All packs</option>{packId && !studyCurations.some(p => p.id === packId) && <option value={packId}>Unavailable study pack</option>}{studyCurations.map(pack => <option key={pack.id} value={pack.id}>{pack.title}</option>)}</select></div>
+        <div><label htmlFor="card-pack">Study pack</label><select id="card-pack" value={packId} onChange={event => changeCardFilter(() => { setPackId(event.target.value); setTopicId(''); })}><option value="">All packs</option>{packId && !studyCurations.some(p => p.id === packId) && <option value={packId}>Unavailable study pack</option>}{visibleCurations.map(pack => <option key={pack.id} value={pack.id}>{pack.title}</option>)}</select></div>
         <div><label htmlFor="card-topic">Topic</label><select id="card-topic" value={topicId} onChange={event => changeCardFilter(() => setTopicId(event.target.value))}><option value="">All topics</option>{canonicalTopicScope && <option value={topicId}>{studyPacks.find(p => p.id === canonicalTopicScope[1])?.topics.find(t => t.id === canonicalTopicScope[2])?.title ?? 'Unavailable topic'} · Published topic</option>}{topicId && !canonicalTopicScope && !topics.some(t => JSON.stringify([t.packId,t.id]) === topicId) && <option value={topicId}>Unavailable topic</option>}{topics.map(topic => <option value={JSON.stringify([topic.packId, topic.id])} key={JSON.stringify([topic.packId, topic.id])}>{topic.title}{!packId ? ' · ' + topic.packTitle : ''}</option>)}</select></div>
         <div><label htmlFor="card-kind">Card type</label><select id="card-kind" value={kind} onChange={event => changeCardFilter(() => setKind(event.target.value))}><option value="">All types</option><option value="recall">Recall</option><option value="mcq">Multiple choice</option></select></div>
         <div><label htmlFor="card-deck">Deck filter</label><select id="card-deck" value={deckId} onChange={event => changeCardFilter(() => setDeckId(event.target.value))}><option value="">All published cards</option>{activeDecks.map(deck => <option key={deck.id} value={deck.id}>{deck.name}</option>)}</select></div>

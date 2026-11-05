@@ -1,6 +1,7 @@
 import { useId, useMemo, useState } from 'react';
 import type { WorkspaceSnapshot } from './domain';
-import { studyCurations } from './content/catalog';
+import { studyCurations, visibleCurations } from './content/catalog';
+import { fixturesVisible } from './content/fixtureVisibility';
 import { getTopicStatistics, type TopicPeriod } from './topicInsights';
 import './topic-statistics.css';
 
@@ -11,12 +12,13 @@ export function TopicStatistics({ workspace, now, deckId }: { workspace: Workspa
   const [order, setOrder] = useState('topic');
   const selectedCuration = studyCurations.find(item => item.id === curationId);
   const summary = useMemo(() => getTopicStatistics(workspace, now, { period, deckId: deckId || undefined, curationId: selectedCuration?.id }), [workspace, now, period, deckId, selectedCuration?.id]);
-  const rows = useMemo(() => order === 'again' ? [...summary.rows].sort((a, b) => (b.againRate ?? -1) - (a.againRate ?? -1) || b.reviews - a.reviews || a.title.localeCompare(b.title)) : [...summary.rows].sort((a, b) => Number(a.fixture) - Number(b.fixture)), [summary, order]);
+  const shown = useMemo(() => fixturesVisible ? summary.rows : summary.rows.filter(row => !row.fixture || row.reviews > 0), [summary.rows]);
+  const rows = useMemo(() => order === 'again' ? [...shown].sort((a, b) => (b.againRate ?? -1) - (a.againRate ?? -1) || b.reviews - a.reviews || a.title.localeCompare(b.title)) : [...shown].sort((a, b) => Number(a.fixture) - Number(b.fixture)), [shown, order]);
   return <section className="panel topic-statistics" aria-labelledby={id + '-heading'}>
     <header className="topic-statistics-heading"><div><h2 id={id + '-heading'}>Flashcard topics</h2><p className="fine-print">See which topics prompted Again, alongside the number of reviews behind each rate.</p></div>
       <div className="topic-statistics-controls">
         <div><label htmlFor={id + '-period'}>Topic period</label><select id={id + '-period'} value={period} onChange={event => setPeriod(event.target.value as TopicPeriod)}><option value="30">Past 30 study days</option><option value="all">All time</option></select></div>
-        <div><label htmlFor={id + '-pack'}>Topic study pack</label><select id={id + '-pack'} value={selectedCuration?.id ?? ''} onChange={event => setCurationId(event.target.value)}><option value="">All study material</option>{studyCurations.map(pack => <option key={pack.id} value={pack.id}>{pack.title}{pack.fixture ? ' · Engineering fixture' : ''}</option>)}</select></div>
+        <div><label htmlFor={id + '-pack'}>Topic study pack</label><select id={id + '-pack'} value={selectedCuration?.id ?? ''} onChange={event => setCurationId(event.target.value)}><option value="">All study material</option>{visibleCurations.map(pack => <option key={pack.id} value={pack.id}>{pack.title}{pack.fixture ? ' · Engineering fixture' : ''}</option>)}</select></div>
         <div><label htmlFor={id + '-order'}>Topic order</label><select id={id + '-order'} value={order} onChange={event => setOrder(event.target.value)}><option value="topic">Topic order</option><option value="again">Higher Again rate first</option></select></div>
       </div>
     </header>

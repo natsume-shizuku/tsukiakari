@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import type { WorkspaceSnapshot } from './domain';
+import { timeZoneLabel, type WorkspaceSnapshot } from './domain';
 import { addStudyDays, getStudyDay, studyDayAsUtcNoon } from './studyDay';
 import { formatActiveTime, getStatistics, type DayActivity } from './statistics';
 import './statistics.css';
@@ -29,7 +29,7 @@ export function StatisticsPage({ workspace, now = Date.now() }: { workspace: Wor
   const changeYear = (nextYear: number) => { setChosenYear(nextYear); setChosenDate(nextYear === currentYear ? today : `${nextYear}-12-31`); };
   return <section className="statistics-page">
     <header className="page-header"><p className="eyebrow">See your rhythm</p><h1>Statistics</h1><p>Small sessions add up over time.</p></header>
-    <div className="statistics-scope"><div><label htmlFor="statistics-deck">Deck</label><select id="statistics-deck" value={deckId} onChange={event => setDeckId(event.target.value)}><option value="">All decks</option>{workspace.decks.map(deck => <option key={deck.id} value={deck.id}>{deck.name}{deck.archived ? ' · Archived' : ''}</option>)}</select></div><p className="fine-print">Study days begin at {String(workspace.preferences.dayStartsAtHour).padStart(2, '0')}:00 in {workspace.preferences.timeZone}. Repeated reviews count separately.</p></div>
+    <div className="statistics-scope"><div><label htmlFor="statistics-deck">Deck</label><select id="statistics-deck" value={deckId} onChange={event => setDeckId(event.target.value)}><option value="">All decks</option>{workspace.decks.map(deck => <option key={deck.id} value={deck.id}>{deck.name}{deck.archived ? ' · Archived' : ''}</option>)}</select></div><p className="fine-print">Study days begin at {String(workspace.preferences.dayStartsAtHour).padStart(2, '0')}:00 in {timeZoneLabel(workspace.preferences.timeZone)}. Repeated reviews count separately.</p></div>
     <div className="statistics-metrics" aria-label="Study totals">
       <section className="panel"><h2>Today</h2><strong>{stats.todayActivity.reviews.toLocaleString()}</strong><p>reviews · {dateLabel(today)}</p></section>
       <section className="panel"><h2>Today's active time</h2><strong>{formatActiveTime(stats.todayActivity.durationMs)}</strong><p>{(stats.todayActivity.averageMs / 1000).toFixed(1)}s per review</p></section>

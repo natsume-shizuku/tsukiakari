@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import type { WorkspaceSnapshot, ReviewSession } from './domain';
+import { timeZoneLabel, type WorkspaceSnapshot, type ReviewSession } from './domain';
 import { findPublishedCard } from './content/catalog';
 import { getDeckQueue, initialState, scheduleReview } from './scheduling';
 import { skipUnavailableReview, refreshReview, revealReview, setCopySuspended, submitReview, undoLastReview } from './reviewStorage';
@@ -81,7 +81,7 @@ export function StudyReview({ desk, now, paused, onPause, onResume, onDirtyChang
     return <section className="panel review-waiting" aria-label="Review session">
       <p className="eyebrow">{deck.name}</p><h2>{queue.orderedIds.length ? 'Cards are ready to review' : 'Nothing due right now'}</h2>
       <p className="muted">{queue.nextDueAt ? 'Next scheduled card: ' + new Intl.DateTimeFormat(undefined, { timeZone: workspace.preferences.timeZone, dateStyle: 'medium', timeStyle: 'short' }).format(queue.nextDueAt) + '.' : 'New cards and reviews will become available as their daily allowances and schedules permit.'}</p>
-      <p className="fine-print">Learning steps can return during this session. Daily allowances reset at {workspace.preferences.dayStartsAtHour} a.m. in {workspace.preferences.timeZone}.</p>
+      <p className="fine-print">Learning steps can return during this session. Daily allowances reset at {workspace.preferences.dayStartsAtHour} a.m. in {timeZoneLabel(workspace.preferences.timeZone)}.</p>
       <div className="review-tools"><button className="button" disabled={!canWrite} onClick={() => void mutate(() => refreshReview(session.turnId), 'Due cards checked.')}>Check due cards</button><button className="button secondary" disabled={!canWrite || !undoable} onClick={() => void undo()}>Undo last review</button><button className="button secondary" onClick={onPause}>Pause review</button></div>
     </section>;
   }

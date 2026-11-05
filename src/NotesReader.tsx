@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { LearningCopy, PublishedCard, Source, StudyPack, CanonicalNoteRef } from './domain';
 import type { useWorkspace } from './useWorkspace';
-import { findPublishedCard, canonicalNotes, studyCurations, cardCurations, noteCurations, matchesCurationCard } from './content/catalog';
+import { findPublishedCard, canonicalNotes, browsableNotes, visibleCurations, cardCurations, noteCurations, matchesCurationCard } from './content/catalog';
 import { CopyAnnotations } from './CopyAnnotations';
 import './notes-reader.css';
 
@@ -56,7 +56,7 @@ export function NotesReader({ desk, initialNoteRef, onOpenCard, onDirtyChange }:
     const decks = workspace.decks.filter(deck => !deck.archived);
     const copies = workspace.copies.filter(copy => !copy.removed && decks.some(deck => deck.id === copy.deckId));
     const all: ReaderNote[] = [
-      ...canonicalNotes.filter(({ pack, note }) => (!packId || noteCurations({ packId: pack.id, noteId: note.id }).some(curation => curation.id === packId)) &&
+      ...browsableNotes.filter(({ pack, note }) => (!packId || noteCurations({ packId: pack.id, noteId: note.id }).some(curation => curation.id === packId)) &&
         (!deckId || pack.cards.some(card => card.noteIds.includes(note.id) &&
           (!packId || matchesCurationCard({ packId: pack.id, cardId: card.id }, packId)) &&
           copies.some(copy => copy.deckId === deckId && copy.packId === pack.id && copy.cardId === card.id))))
@@ -176,7 +176,7 @@ export function NotesReader({ desk, initialNoteRef, onOpenCard, onDirtyChange }:
         <span className="quiet-label notes-result-count" role="status">{!selected && saveFeedback ? saveFeedback : `${notes.length} matching ${notes.length === 1 ? 'note' : 'notes'}`}</span>
       </div>
       <div id="notes-advanced-filters" className="notes-filters" hidden={!filtersOpen}>
-        <div><label htmlFor="notes-pack">Notes study pack</label><select id="notes-pack" value={packId} onChange={event => changeFilter(() => setPackId(event.target.value))}><option value="">All packs</option>{studyCurations.map(pack => <option value={pack.id} key={pack.id}>{pack.title}</option>)}</select></div>
+        <div><label htmlFor="notes-pack">Notes study pack</label><select id="notes-pack" value={packId} onChange={event => changeFilter(() => setPackId(event.target.value))}><option value="">All packs</option>{visibleCurations.map(pack => <option value={pack.id} key={pack.id}>{pack.title}</option>)}</select></div>
         <div><label htmlFor="notes-deck">Notes deck</label><select id="notes-deck" value={deckId} onChange={event => changeFilter(() => setDeckId(event.target.value))}><option value="">All decks</option>{activeDecks.map(deck => <option value={deck.id} key={deck.id}>{deck.name}</option>)}</select></div>
         <div><label htmlFor="notes-kind">Note type</label><select id="notes-kind" value={kind} onChange={event => changeFilter(() => setKind(event.target.value))}><option value="">All notes</option><option value="published">Published references</option><option value="personal">Personal notes</option></select></div>
       </div>

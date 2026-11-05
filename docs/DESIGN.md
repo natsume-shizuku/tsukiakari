@@ -20,6 +20,8 @@ The interface is a quiet study workspace. Preserve the approved midnight/gold da
 ## Interaction
 
 - Keep 44px touch controls, visible keyboard focus, labelled inputs, and the skip-to-content link.
+- A link opens its page at the top; Back and Forward keep the browser's restored position.
+- Tests in progress show five questions per page, with Finish in the sticky session bar and a page navigator beside the questions, or below them on narrow screens.
 - Normal click selects one card; Ctrl-click extends selection. Selection and saved-answer changes are immediate, without color animation.
 - Limit hover treatment to pointer devices. Reduced motion disables transitions and animations.
 - Use concise question/note titles as accessible control names; expose deck, status and note type as descriptions.

@@ -28,7 +28,7 @@ async function start(page: Page, mode: 'practice' | 'exam' = 'practice', count =
   await page.getByLabel('Test mode', { exact: true }).selectOption(mode);
   await page.getByLabel('Number of questions', { exact: true }).fill(String(count));
   await page.getByRole('button', { name: mode === 'exam' ? 'Start exam' : 'Start practice', exact: true }).click();
-  await expect(page.locator('.test-question')).toHaveCount(count);
+  await expect(page.locator('.test-session-bar')).toContainText(`of ${count} answered`);
   return activeAttempt(page);
 }
 async function expectSaved(page: Page, cardId: string, values: string[]) {
@@ -37,8 +37,13 @@ async function expectSaved(page: Page, cardId: string, values: string[]) {
     return [...attempt.responses.find(response => response.cardId === cardId)!.selectedOptionIds].sort();
   }).toEqual([...values].sort());
 }
+async function openQuestion(page: Page, index: number) {
+  const button = page.locator(`.test-nav-button[data-page="${Math.floor(index / 5)}"]`);
+  if (!await button.getAttribute('aria-current')) await button.click();
+  return page.locator(`.test-question[data-index="${index}"]`);
+}
 async function chooseOption(page: Page, index: number, optionId: string) {
-  const input = page.locator('.test-question').nth(index).locator('input');
+  const input = (await openQuestion(page, index)).locator('input');
   const position = await input.evaluateAll((inputs, id) => inputs.findIndex(item => (item as HTMLInputElement).value === id), optionId);
   expect(position).toBeGreaterThanOrEqual(0);
   await input.nth(position).check();
@@ -74,23 +79,25 @@ test('curation bank links preselect the bank and unavailable banks remain explic
   expect(await rows(page, 'testAttempts')).toEqual([]);
 });
 
-test('practice explains domains smaller than the minimum and does not reduce requested counts', async ({ page }) => {
+test('practice starts small domains and never reduces a typed count', async ({ page }) => {
   await ready(page);
   await page.getByLabel('Question bank', { exact: true }).selectOption('developer-test-fixture');
   await expect(page.getByText(/300 available questions/)).toBeVisible();
   const domain = page.getByLabel('Practice domain', { exact: true });
+  await page.getByLabel('Number of questions', { exact: true }).fill('100');
   await domain.selectOption({ index: 3 });
   await expect(page.getByText(/36 available questions/)).toBeVisible();
-  await expect(page.getByText(/This domain has fewer than 50/)).toBeVisible();
-  await expect(page.getByRole('button', { name: 'Start practice', exact: true })).toBeDisabled();
+  await expect(page.getByLabel('Number of questions', { exact: true })).toHaveValue('36');
+  await expect(page.getByRole('button', { name: 'Start practice', exact: true })).toBeEnabled();
   await domain.selectOption({ index: 1 });
   await expect(page.getByText(/51 available questions/)).toBeVisible();
+  await page.getByLabel('Number of questions', { exact: true }).fill('52');
   await page.getByRole('button', { name: 'Start practice', exact: true }).click();
   await expect(page.getByRole('alert')).toContainText('The question count is never reduced automatically');
   expect(await rows(page, 'testAttempts')).toEqual([]);
   await page.getByLabel('Number of questions', { exact: true }).fill('50');
   await page.getByRole('button', { name: 'Start practice', exact: true }).click();
-  await expect(page.locator('.test-question')).toHaveCount(50);
+  await expect(page.locator('.test-session-bar')).toContainText(`of ${50} answered`);
   const attempt = await activeAttempt(page);
   expect(new Set(attempt.questions.map(question => question.card.domainId)).size).toBe(1);
 });
@@ -102,7 +109,7 @@ test('multiple answers retain failed drafts, persist on reload, and require the 
   expect(indices.length).toBeGreaterThanOrEqual(2);
   const index = indices[0];
   const card = attempt.questions[index].card;
-  const panel = page.locator('.test-question').nth(index);
+  const panel = await openQuestion(page, index);
   await expect(panel.getByText('Choose 2 answers.', { exact: false })).toBeVisible();
   await page.evaluate(() => {
     const put = IDBObjectStore.prototype.put;
@@ -115,7 +122,7 @@ test('multiple answers retain failed drafts, persist on reload, and require the 
   await chooseOption(page, index, card.correctOptionIds[0]);
   await expect(panel.getByRole('alert')).toHaveText('This selection is not saved.');
   expect((await activeAttempt(page)).responses.find(response => response.cardId === card.id)!.selectedOptionIds).toEqual([]);
-  await expect(page.getByRole('button', { name: 'Show answers', exact: true })).toBeDisabled();
+  await expect(page.getByRole('button', { name: 'Finish test', exact: true })).toBeDisabled();
   await panel.getByRole('button', { name: 'Retry saving answer', exact: true }).click();
   await expectSaved(page, card.id, [card.correctOptionIds[0]]);
   await chooseOption(page, index, card.correctOptionIds[1]);
@@ -130,11 +137,11 @@ test('multiple answers retain failed drafts, persist on reload, and require the 
   const partial = attempt.questions[partialIndex].card;
   await chooseOption(page, partialIndex, partial.correctOptionIds[0]);
   await expectSaved(page, partial.id, [partial.correctOptionIds[0]]);
-  const partialPanel = page.locator('.test-question').nth(partialIndex);
+  const partialPanel = await openQuestion(page, partialIndex);
   await partialPanel.getByRole('button', { name: 'Reveal answer', exact: true }).click();
   await expect(partialPanel.getByText('Incorrect · Response locked after reveal', { exact: true })).toBeVisible();
   page.once('dialog', dialog => dialog.accept());
-  await page.getByRole('button', { name: 'Show answers', exact: true }).click();
+  await page.getByRole('button', { name: 'Finish test', exact: true }).click();
   await expect(page.getByRole('region', { name: 'Test score' })).toContainText('1 correct · 1 wrong · 98 skipped');
   expect(await rows(page, 'reviewLogs')).toEqual([]);
 });

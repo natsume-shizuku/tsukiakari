@@ -28,13 +28,13 @@ describe('published original AB-250 bank',()=>{
    expect(attempt.fixture).toBe(false);expect(attempt.deadlineAt).toBe(now+120*60000);
   }
  });
- it('keeps the 50-question floor and exposes only sufficiently populated practice domains',()=>{
+ it('keeps the exam floor and makes every practice domain startable',()=>{
   for(const d of bank.domains){
    const count=bank.questions.filter(q=>q.domainId===d.id).length;
-   if(count>=50)expect(eligibleTestQuestions(bank,false,d.id)).toHaveLength(count);
-   else expect(()=>eligibleTestQuestions(bank,false,d.id)).toThrow(/at least 50/);
+   expect(eligibleTestQuestions(bank,false,d.id)).toHaveLength(count);
+   expect(createTestAttempt(bank,{...options,count,domainId:d.id},[],now).questions).toHaveLength(count);
   }
-  expect(()=>createTestAttempt(bank,{...options,count:49},[],now)).toThrow();
+  expect(()=>createTestAttempt(bank,{...options,mode:'exam',count:49},[],now)).toThrow(/at least 50/);
  });
  it.each(['practice','exam'] as const)('prefers unseen questions across repeated %s attempts using the shared bank identity',mode=>{
   const one=createTestAttempt(bank,{...options,mode},[],now,()=>0.37);

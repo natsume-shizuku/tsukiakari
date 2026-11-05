@@ -1,5 +1,6 @@
 import type { QuestionBank } from '../domain';
 import { validateQuestionBank, validateQuestionBankReferences } from '../questionBankValidation';
+import { fixturesVisible } from './fixtureVisibility';
 import fixtureUrl from './engineering-question-bank.json?url';
 import ab250Url from './published/ab250-bank.json?url';
 import ab250Manifest from './published/bank-manifest.json';
@@ -16,6 +17,7 @@ export const questionBankManifests: QuestionBankManifest[] = [{
     id: 'fixture-domain-' + (index + 1), title: 'Fixture domain ' + (index + 1), weight,
   })),
 }, ab250Manifest];
+export const visibleBankManifests = fixturesVisible ? questionBankManifests : questionBankManifests.filter(bank => !bank.fixture);
 const assets: Record<string, string> = { 'developer-test-fixture': fixtureUrl, 'ab250-original': ab250Url };
 const pending = new Map<string, Promise<QuestionBank>>();
 

@@ -9,7 +9,7 @@ async function startTest(page: Page) {
   await page.getByLabel('Question bank', { exact: true }).selectOption('developer-test-fixture');
   await page.getByLabel('Number of questions', { exact: true }).fill('50');
   await page.getByRole('button', { name: 'Start practice', exact: true }).click();
-  await expect(page.locator('.test-question')).toHaveCount(50);
+  await expect(page.locator('.test-session-bar')).toContainText(`of ${50} answered`);
 }
 
 test('test confirmations stay on Tests and ordinary confirmations disappear when leaving their page', async ({ page }) => {
@@ -49,7 +49,6 @@ for (const width of [320, 1440]) {
     const lastQuestion = (await page.locator('.test-question').last().boundingBox())!;
     const longFooter = (await footer.boundingBox())!;
     expect(longFooter.y).toBeGreaterThan(lastQuestion.y + lastQuestion.height);
-    expect(longFooter.y).toBeGreaterThan(1600);
     await footer.scrollIntoViewIfNeeded();
     await expect(footer).toBeInViewport();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);

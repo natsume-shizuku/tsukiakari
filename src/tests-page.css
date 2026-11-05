@@ -40,15 +40,13 @@
 .test-answer a { display: inline-block; min-height: 44px; padding: 10px 0; }
 .test-pending-answer { padding-top: 14px; }
 .test-pending-answer p { width: 100%; margin: 0; }
-.test-finish { margin-top: 28px; padding: 20px 0; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-.test-finish p { margin: 0; }
 .test-results-dialog { color: var(--text); background: var(--panel); border: 1px solid var(--line); border-radius: 14px; width: min(520px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); overflow: auto; padding: 28px; }
 .test-results-dialog::backdrop { background: color-mix(in srgb, var(--bg) 80%, transparent); }
 .test-result-total { font-size: 2.2rem; color: var(--accent); font-weight: 600; margin: 24px 0; }
 @media (max-width: 1100px) { .test-setup-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 600px) {
   .test-setup-fields { grid-template-columns: minmax(0, 1fr); }
-  .test-resume, .test-attempt-heading, .test-finish { align-items: stretch; flex-direction: column; }
+  .test-resume, .test-attempt-heading { align-items: stretch; flex-direction: column; }
   .test-question.panel { padding: 16px 12px; }
   .test-option { padding: 12px 10px; }
   .test-option-result { display: block; margin: 5px 0 0; }
@@ -62,3 +60,28 @@
 .test-option-explanations dt { font-weight: 600; font-size: .88rem; }
 .test-option-explanations dd { margin: 5px 0 0; line-height: 1.6; }
 .test-bank-error p { margin-top: 0; }
+/* Pages of questions: the navigator sits beside them, then below them on narrow screens. */
+.test-focus { display: grid; grid-template-columns: minmax(0, 1fr) 244px; gap: 24px; align-items: start; }
+.test-focus .test-question { scroll-margin-top: 88px; }
+.test-focus-main { min-width: 0; }
+.test-question-title:focus { outline: none; }
+.test-move { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; margin-top: 16px; }
+.test-question-actions .button[aria-pressed='true'] { border-color: var(--accent); color: var(--accent); }
+.test-navigator { position: sticky; top: 88px; max-height: calc(100vh - 112px); overflow-y: auto; padding: 14px; border: 1px solid var(--line); border-radius: 12px; }
+.test-nav-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 6px; }
+.test-nav-button { position: relative; display: grid; width: 100%; min-height: 52px; padding: 6px 4px; border: 1px solid var(--line); border-radius: 8px; background: transparent; color: var(--text); font: inherit; font-variant-numeric: tabular-nums; cursor: pointer; }
+.test-nav-button.is-answered { background: var(--panel-soft); font-weight: 700; }
+.test-nav-button small { font-size: .74rem; color: var(--muted); font-weight: 400; }
+.test-nav-button.is-flagged::after { content: ''; position: absolute; top: 5px; right: 5px; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+.test-nav-button[aria-current] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); color: var(--accent); }
+.test-navigator .test-nav-legend { margin: 0 0 10px; }
+.test-nav-next { width: 100%; margin-bottom: 12px; }
+@media (max-width: 900px) {
+  .test-focus { grid-template-columns: minmax(0, 1fr); }
+  .test-navigator { position: static; max-height: none; overflow: visible; }
+}
+/* The bar is taller on phones, so a question must stop lower to stay clear of it. */
+@media (max-width: 600px) {
+  .test-focus .test-question { scroll-margin-top: 128px; }
+  .test-session-bar:has(.test-finish-button) > .fine-print { display: none; }
+}

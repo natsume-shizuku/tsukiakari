@@ -148,18 +148,21 @@ export const testExposureSchema = z.strictObject({
 }).superRefine((exposure, ctx) => {
   if (exposure.id !== JSON.stringify([exposure.bankId, exposure.questionId])) ctx.addIssue({ code: 'custom', message: 'Exposure identity must match its bank and question.' });
 });
+/** Exams keep a floor; practice may be any size the selection can fill. */
+export const MINIMUM_EXAM_QUESTIONS = 50;
 export const testAttemptSchema = z.strictObject({
   id: idSchema, bankId: idSchema, mode: z.enum(['practice', 'exam']), startedAt: timestamp,
   bankTitle: text.optional(), bankVersion: text.optional(), fixture: z.boolean().optional(), retryOf: idSchema.optional(),
   durationMinutes: z.number().int().min(1).max(1440).optional(),
   deadlineAt: timestamp.nullable(), completedAt: timestamp.nullable(),
-  questions: z.array(z.strictObject({ bankId: idSchema, card: examQuestionSchema, sources: z.array(sourceSchema).min(1), domainTitle: text })).min(50),
+  questions: z.array(z.strictObject({ bankId: idSchema, card: examQuestionSchema, sources: z.array(sourceSchema).min(1), domainTitle: text })).min(1),
   responses: z.array(z.strictObject({ cardId: idSchema, selectedOptionIds: identifiers, revealed: z.boolean() })),
   result: z.strictObject({ correct: count, wrong: count, skipped: count }).nullable(),
 }).superRefine((attempt, ctx) => {
   const issue = (message: string) => ctx.addIssue({ code: 'custom', message });
   if (!unique(attempt.questions.map(question => question.card.id))) issue('Test questions must be unique.');
   if (attempt.retryOf === attempt.id) issue('A retry cannot refer to itself.');
+  if (attempt.mode === 'exam' && attempt.questions.length < MINIMUM_EXAM_QUESTIONS) issue(`Exams need at least ${MINIMUM_EXAM_QUESTIONS} questions.`);
   for (const question of attempt.questions) {
     if (question.bankId !== attempt.bankId) issue('Every test question must belong to the selected bank.');
     if (!unique(question.sources.map(source => source.id)) || question.card.sourceIds.some(id => !question.sources.some(source => source.id === id))) issue('Snapshot sources must be unique and include every question reference.');

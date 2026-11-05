@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import type { Deck, Theme } from './domain';
+import { timeZoneLabel, type Deck, type Theme } from './domain';
 import { savePreferences } from './storage';
 import { useWorkspace } from './useWorkspace';
 import { startReview, refreshReview } from './reviewStorage';
@@ -82,10 +82,27 @@ function App() {
     window.addEventListener('hashchange', onHash);
     return () => window.removeEventListener('hashchange', onHash);
   }, []);
+  // Links open a page at its top. Back and Forward keep the browser's restored position.
+  const followedLink = useRef(false);
+  const previousView = useRef(route.view);
+  useEffect(() => {
+    const onClick = (event: MouseEvent) => {
+      if (!(event.target instanceof Element) || !event.target.closest('a[href^="#"]')) return;
+      followedLink.current = true;
+      window.setTimeout(() => { followedLink.current = false; }, 500);
+    };
+    document.addEventListener('click', onClick, true);
+    return () => document.removeEventListener('click', onClick, true);
+  }, []);
   useEffect(() => {
     const title = route.view === 'review' ? 'Review' : route.view === 'deck' ? 'Manage deck' : route.page === 'settings' ? 'Settings' : pages.find(page => page.id === route.page)?.label;
     document.title = title + ' · 月明かり';
     if (route.view !== 'review' && !document.querySelector('dialog[open]')) mainRef.current?.focus({ preventScroll: true });
+    // Deck management opens over Study, so the page behind it keeps its place.
+    const overlayChange = route.view === 'deck' || previousView.current === 'deck';
+    previousView.current = route.view;
+    if (followedLink.current && !overlayChange) window.scrollTo({ top: 0 });
+    followedLink.current = false;
   }, [route.page, route.section, route.view, route.deckId]);
   useEffect(() => { if (desk.error && !document.querySelector('dialog[open]')) errorRef.current?.focus(); }, [desk.error]);
   useEffect(() => { if (route.attemptId === endedExamId) setEndedExamId(null); }, [route.attemptId, endedExamId]);
@@ -136,7 +153,7 @@ function App() {
             <section className="panel settings-panel"><div><h2>Appearance</h2><p className="muted">Choose a theme or follow your device.</p></div><div className="field"><label htmlFor="theme">Appearance</label><select id="theme" value={workspace.preferences.theme} onChange={event => void changeTheme(event.target.value as Theme)} disabled={!canWrite}><option value="system">System</option><option value="dark">Dark</option><option value="light">Light</option></select></div></section>
             <section className="panel settings-location"><h2>Deck scheduling settings</h2><p className="muted">Each deck manages its own daily allowances, steps, retention, and leech action. Open Manage on a deck to change them.</p><a className="text-link" href="#study">Go to your decks →</a></section>
             <DataTransfer desk={desk} onRestore={() => { setEndedExamId(null); setRestoreEpoch(value => value + 1); }}/>
-            <section className="panel settings-location"><div><h2>Your study day</h2><p>Starts at {String(workspace.preferences.dayStartsAtHour).padStart(2, '0')}:00 in {workspace.preferences.timeZone}. Before this boundary, activity belongs to the previous study day.</p></div></section>
+            <section className="panel settings-location"><div><h2>Your study day</h2><p>Starts at {String(workspace.preferences.dayStartsAtHour).padStart(2, '0')}:00 in {timeZoneLabel(workspace.preferences.timeZone)}. Before this boundary, activity belongs to the previous study day.</p></div></section>
           </>}
         </>}
         {access !== 'loading' && <div className="page-footer-container"><footer className="page-footer"><span lang="ja">月明かり</span><span>Your progress stays in this browser.</span><a href="./third-party-notices.txt" target="_blank" rel="noreferrer">Third-party notices ↗</a></footer></div>}

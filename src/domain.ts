@@ -87,6 +87,28 @@ export const DEFAULT_DECK_SETTINGS: Readonly<DeckSettings> = Object.freeze({
   desiredRetention: 0.9, leechThreshold: 10, leechAction: 'suspend',
 });
 export function newDeckSettings(): DeckSettings { return structuredClone(DEFAULT_DECK_SETTINGS); }
+function isUsableTimeZone(value: unknown): value is string {
+  if (typeof value !== 'string' || value.trim().length === 0) return false;
+  try { new Intl.DateTimeFormat('en', { timeZone: value }); return true; } catch { return false; }
+}
+/** Browsers cannot name a host zone their time data doesn't include, so fall back to the offset they report. */
+export function detectTimeZone(now = new Date()): string {
+  const named: unknown = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  if (isUsableTimeZone(named)) return named;
+  const minutes = now.getTimezoneOffset();
+  if (minutes === 0) return 'UTC';
+  const behindUtc = minutes > 0;
+  const hours = Math.abs(minutes) / 60;
+  if (Number.isInteger(hours) && hours <= (behindUtc ? 12 : 14)) return `Etc/GMT${behindUtc ? '+' : '-'}${hours}`;
+  const clock = [Math.floor(hours), Math.abs(minutes) % 60].map(part => String(part).padStart(2, '0')).join(':');
+  const offset = `${behindUtc ? '-' : '+'}${clock}`;
+  return isUsableTimeZone(offset) ? offset : 'UTC';
+}
+/** Etc/GMT names use the reverse of the usual sign, so show them as UTC offsets. */
+export function timeZoneLabel(timeZone: string): string {
+  const fixed = /^Etc\/GMT([+-])(\d{1,2})$/.exec(timeZone);
+  return fixed ? `UTC${fixed[1] === '+' ? '-' : '+'}${fixed[2].padStart(2, '0')}:00` : timeZone;
+}
 export function defaultPreferences(): Preferences {
-  return { id: 'preferences', theme: 'system', timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone, dayStartsAtHour: 5 };
+  return { id: 'preferences', theme: 'system', timeZone: detectTimeZone(), dayStartsAtHour: 5 };
 }

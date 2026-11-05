@@ -136,7 +136,7 @@ Manage header: deck name/count, Close and Settings/Cards navigation. **No Study/
 
 Published curated packs with descriptions/counts/references and a destination deck. Add a whole pack or browse cards. Overlapping packs must not duplicate canonical cards in the same deck. Show success only after persistence; counts and “already added” state should be clear.
 
-Engineering fixtures are labelled previews and separate from real content.
+Engineering fixtures are labelled previews and separate from real content. They stay in the catalog so saved cards resolve, but Library, Notes, Statistics and Tests hide them unless `localStorage['tsukiakari.showFixtures']` is `on`. Playwright sets this flag in `playwright.config.ts`.
 
 ### Library → Card browser
 
@@ -262,14 +262,15 @@ Changed deck settings affect future answers without rewriting saved due dates, e
 ### Selection
 
 - Select one **bank** per attempt.
-- Default 100 questions, minimum 50.
+- Practice defaults to 20 questions and exams to 100. Exams need at least 50; practice can use any count from 1 up to the selection.
+- Attempts show five questions per page (`QUESTIONS_PER_PAGE` in `src/TestsPage.tsx`) with range buttons, Next unanswered and Next flagged. Position and flags are per-browser `localStorage`, not part of the saved attempt or backups. Completed attempts list every question.
 - No duplicate questions within an attempt.
 - Fresh attempts prefer unseen, then least recently seen.
 - Do not silently reduce count or pad by repetition.
 - Finite banks cannot promise endless non-repetition.
 - Retry uses the same frozen questions with fresh responses.
-- Practice domain filtering requires at least 50 eligible questions.
-- Current individual-domain maxima: Deployment 51, Channels 96, Representative experience 51. Smaller domains cannot independently start a 50-question attempt.
+- Choosing a practice domain smaller than the count lowers the visible count field to match before start. A typed count that is too large is an error, never reduced.
+- Current individual-domain maxima: Deployment 51, Channels 96, Representative experience 51.
 - Exam allocation: approved internal **17/32/12/12/17/10**, largest-remainder rounding, stable domain-order ties. A 50-question exam uses **9/16/6/6/8/5**. Internal shares are not exact-real-exam predictions.
 
 ### Formats

@@ -1,13 +1,13 @@
 import { z } from 'zod';
 import type { ExamQuestion, QuestionBank, TestAttempt, TestExposure } from './domain';
-import { testAttemptSchema, testExposureSchema } from './validation';
+import { MINIMUM_EXAM_QUESTIONS, testAttemptSchema, testExposureSchema } from './validation';
 import { validateQuestionBank } from './questionBankValidation';
 
 export interface TestOptions {
   mode: 'practice' | 'exam'; count: number; durationMinutes: number; fixturePreview?: boolean; domainId?: string;
 }
 const optionsSchema = z.strictObject({
-  mode: z.enum(['practice', 'exam']), count: z.number().int().min(50),
+  mode: z.enum(['practice', 'exam']), count: z.number().int().min(1),
   durationMinutes: z.number().int().min(1).max(1440), fixturePreview: z.boolean().optional(),
   domainId: z.string().min(1).optional(),
 });
@@ -23,7 +23,7 @@ export function eligibleTestQuestions(input: QuestionBank, fixturePreview = fals
   }
   if (domainId && !bank.domains.some(domain => domain.id === domainId)) throw new Error('Choose a domain from this question bank.');
   const questions = bank.questions.filter(question => question.status === 'approved' && (!domainId || question.domainId === domainId));
-  if (questions.length < 50) throw new Error('This selection needs at least 50 approved questions to start a test.');
+  if (!questions.length) throw new Error('This selection has no approved questions.');
   return questions;
 }
 
@@ -63,6 +63,7 @@ export function createTestAttempt(input: QuestionBank, inputOptions: TestOptions
   timeSchema.parse(now);
   const options = optionsSchema.parse(inputOptions);
   if (options.mode === 'exam' && options.domainId) throw new Error('Timed exams cover all bank domains. Use Practice Mode to select one domain.');
+  if (options.mode === 'exam' && options.count < MINIMUM_EXAM_QUESTIONS) throw new Error(`Exams need at least ${MINIMUM_EXAM_QUESTIONS} questions.`);
   const bank = validateQuestionBank(input);
   const candidates = eligibleTestQuestions(bank, options.fixturePreview, options.domainId);
   if (options.count > candidates.length) throw new Error('The requested count exceeds the available unique questions. Choose a smaller count.');

@@ -16,7 +16,7 @@ describe('independent question-bank eligibility and snapshots', () => {
   it('requires explicit engineering preview, and at least 300 approved real questions', () => {
     expect(() => eligibleTestQuestions(bank)).toThrow(/published question bank/);
     expect(eligibleTestQuestions(bank, true)).toHaveLength(300);
-    expect(() => eligibleTestQuestions({ ...bank, questions: bank.questions.slice(0, 49) }, true)).toThrow(/at least 50/);
+    expect(eligibleTestQuestions({ ...bank, questions: bank.questions.slice(0, 49) }, true)).toHaveLength(49);
     const published = { ...bank, fixture: false };
     expect(eligibleTestQuestions(published)).toHaveLength(300);
     expect(() => eligibleTestQuestions(published, true)).toThrow(/Engineering preview/);
@@ -24,7 +24,7 @@ describe('independent question-bank eligibility and snapshots', () => {
     const draft = structuredClone(published); draft.questions[0].status = 'draft';
     expect(() => eligibleTestQuestions(draft)).toThrow(/300 approved/);
   });
-  it.each([0, 49, 50.5, 301])('rejects invalid or unavailable count %s without reducing it', count => {
+  it.each([0, 50.5, 301])('rejects invalid or unavailable count %s without reducing it', count => {
     expect(() => createTestAttempt(bank, { ...options, count }, [], start)).toThrow();
   });
   it.each([0, 1.5, 1441])('rejects invalid duration %s', durationMinutes => {
@@ -43,10 +43,22 @@ describe('independent question-bank eligibility and snapshots', () => {
     expect(first.sources[0].title).not.toBe('Changed');
     expect(first.card.answer).not.toBe('Changed'); expect(first.domainTitle).not.toBe('Changed');
   });
+  it('lets practice use any size the selection can fill, while exams keep their floor', () => {
+    expect(createTestAttempt(bank, { ...options, count: 1 }, [], start).questions).toHaveLength(1);
+    const small = createTestAttempt(bank, { ...options, count: 36, domainId: 'fixture-domain-3' }, [], start);
+    expect(small.questions).toHaveLength(36);
+    expect(retryAttempt(completeTestAttempt(small, start + 1), start + 2).questions).toHaveLength(36);
+    expect(() => createTestAttempt(bank, { ...options, count: 0 }, [], start)).toThrow();
+    expect(() => createTestAttempt(bank, { ...options, mode: 'exam', count: 49 }, [], start)).toThrow(/at least 50/);
+    expect(createTestAttempt(bank, { ...options, mode: 'exam', count: 50 }, [], start).questions).toHaveLength(50);
+    const exam = createTestAttempt(bank, { ...options, mode: 'exam', count: 50 }, [], start);
+    const short = { ...exam, questions: exam.questions.slice(0, 49), responses: exam.responses.slice(0, 49) };
+    expect(() => testAttemptSchema.parse(short)).toThrow(/at least 50/);
+  });
   it('filters practice domains without silently accepting undersized or unknown selections', () => {
     const filtered = createTestAttempt(bank, { ...options, domainId: 'fixture-domain-1' }, [], start);
     expect(filtered.questions.every(question => question.card.domainId === 'fixture-domain-1')).toBe(true);
-    expect(() => createTestAttempt(bank, { ...options, domainId: 'fixture-domain-3' }, [], start)).toThrow(/at least 50/);
+    expect(() => createTestAttempt(bank, { ...options, domainId: 'fixture-domain-3' }, [], start)).toThrow(/exceeds the available/);
     expect(() => createTestAttempt(bank, { ...options, domainId: 'unknown' }, [], start)).toThrow(/domain/);
     expect(() => createTestAttempt(bank, { ...options, mode: 'exam', domainId: 'fixture-domain-1' }, [], start)).toThrow(/all bank domains/);
   });

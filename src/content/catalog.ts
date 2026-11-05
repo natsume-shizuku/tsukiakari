@@ -2,6 +2,7 @@ import type { LearningCopy, StudyCuration } from '../domain';
 import { fixturePack } from './fixtures';
 import { collectionFixturePack } from './collectionFixtures';
 import { createCurationRegistry } from './curations';
+import { fixturesVisible } from './fixtureVisibility';
 import { questionBankManifests } from './questionBanks';
 import { validatePack } from '../validation';
 import publishedPackData from './published/study-pack.json';
@@ -40,6 +41,10 @@ export const noteCurations = curationRegistry.noteCurations;
 export const matchesCurationCard = curationRegistry.matchesCurationCard;
 export const canonicalCards = curationRegistry.allCards;
 export const canonicalNotes = curationRegistry.allNotes;
+/** What learners browse. Saved cards still resolve through the canonical lists above. */
+export const visibleCurations = fixturesVisible ? studyCurations : studyCurations.filter(curation => !curation.fixture);
+export const browsableCards = fixturesVisible ? canonicalCards : canonicalCards.filter(({ pack }) => !pack.fixture);
+export const browsableNotes = fixturesVisible ? canonicalNotes : canonicalNotes.filter(({ pack }) => !pack.fixture);
 
 /** Accept only canonical identity, never a visible curation ID substituted for ownership. */
 export function findPublishedCard(copy: Pick<LearningCopy, 'packId' | 'cardId'>) {

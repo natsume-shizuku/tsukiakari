@@ -62,11 +62,13 @@ async function startTest(page: Page, mode: 'practice' | 'exam', count: number) {
   await page.getByLabel('Test mode', { exact: true }).selectOption(mode);
   await page.getByLabel('Number of questions', { exact: true }).fill(String(count));
   await page.getByRole('button', { name: mode === 'practice' ? 'Start practice' : 'Start exam', exact: true }).click();
-  await expect(page.locator('.test-question')).toHaveCount(count);
+  await expect(page.locator('.test-session-bar')).toContainText(`of ${count} answered`);
   return (await rows<TestAttempt>(page, 'testAttempts')).find(attempt => attempt.completedAt === null)!;
 }
 async function chooseAnswer(page: Page, attempt: TestAttempt, index: number, ids: string[]) {
-  const panel = page.locator('.test-question').nth(index);
+  const button = page.locator(`.test-nav-button[data-page="${Math.floor(index / 5)}"]`);
+  if (!await button.getAttribute('aria-current')) await button.click();
+  const panel = page.locator(`.test-question[data-index="${index}"]`);
   for (const id of ids) await panel.locator('input[value="' + id + '"]').check();
   await expect.poll(async () => {
     const saved = (await rows<TestAttempt>(page, 'testAttempts')).find(item => item.id === attempt.id)!;
@@ -75,7 +77,7 @@ async function chooseAnswer(page: Page, attempt: TestAttempt, index: number, ids
 }
 async function finish(page: Page) {
   page.once('dialog', dialog => dialog.accept());
-  await page.getByRole('button', { name: 'Show answers', exact: true }).click();
+  await page.getByRole('button', { name: 'Finish test', exact: true }).click();
 }
 async function downloadBackup(page: Page, label: string) {
   const pending = page.waitForEvent('download');
@@ -230,7 +232,7 @@ test('an exam that ends away from the test still offers its results', async ({ p
   await page.getByLabel('Number of questions', { exact: true }).fill('50');
   await page.getByLabel('Time limit (minutes)', { exact: true }).fill('1');
   await page.getByRole('button', { name: 'Start exam', exact: true }).click();
-  await expect(page.locator('.test-question')).toHaveCount(50);
+  await expect(page.locator('.test-session-bar')).toContainText(`of ${50} answered`);
   const notice = page.locator('.exam-ended-notice');
   await nav(page, 'Library');
   await page.clock.fastForward(61_000);
@@ -261,7 +263,7 @@ test('an exam that ended while the site was closed offers its results on reopeni
   await page.getByLabel('Number of questions', { exact: true }).fill('50');
   await page.getByLabel('Time limit (minutes)', { exact: true }).fill('1');
   await page.getByRole('button', { name: 'Start exam', exact: true }).click();
-  await expect(page.locator('.test-question')).toHaveCount(50);
+  await expect(page.locator('.test-session-bar')).toContainText(`of ${50} answered`);
   await page.goto('about:blank');
   await page.clock.fastForward(61_000);
   await ready(page, '/#study');
@@ -280,6 +282,24 @@ test('a read-only tab exports what is saved now, not what it first loaded', asyn
   const backup = JSON.parse((await downloadBackup(second, 'Export full backup')).toString('utf8')) as Backup;
   if (backup.kind !== 'full') throw new Error('Expected a full backup');
   expect(backup.workspace.decks.map(item => item.id)).toEqual([deck.id]);
+});
+
+test('a browser that cannot name its time zone can still create a deck', async ({ page }) => {
+  await page.addInitScript(() => {
+    const resolvedOptions = Intl.DateTimeFormat.prototype.resolvedOptions;
+    Intl.DateTimeFormat.prototype.resolvedOptions = function () {
+      const options: Partial<Intl.ResolvedDateTimeFormatOptions> = resolvedOptions.call(this);
+      delete options.timeZone;
+      return options as Intl.ResolvedDateTimeFormatOptions;
+    };
+    Date.prototype.getTimezoneOffset = () => 420;
+  });
+  await ready(page);
+  await createDeck(page, 'No named zone');
+  await expect(page.getByText('could not be saved')).toHaveCount(0);
+  expect((await rows<{ timeZone: string }>(page, 'preferences'))[0].timeZone).toBe('Etc/GMT+7');
+  await nav(page, 'Statistics');
+  await expect(page.getByText('Study days begin at 05:00 in UTC-07:00.')).toBeVisible();
 });
 
 test('a crafted review link never exposes an unfinished exam', async ({ page }) => {

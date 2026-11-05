@@ -1,8 +1,9 @@
 import 'fake-indexeddb/auto';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { fixturePack } from '../../src/content/fixtures';
-import { defaultPreferences, type LearningCopy, type SchedulerState } from '../../src/domain';
+import { defaultPreferences, detectTimeZone, timeZoneLabel, type LearningCopy, type SchedulerState } from '../../src/domain';
 import { addCardsToDeck, createDatabase, createDeck, loadWorkspace, savePreferences, type TsukiakariDatabase } from '../../src/storage';
+import { getStudyDay, studyDayStart } from '../../src/studyDay';
 
 let db: TsukiakariDatabase;
 beforeEach(() => { db = createDatabase(`tsukiakari-unit-${crypto.randomUUID()}`); });
@@ -133,6 +134,36 @@ describe('normalized local storage', () => {
     resolvedOptions.mockReturnValue({ ...originalOptions, timeZone: 'Asia/Tokyo' });
     await createDeck('Second', db);
     expect((await loadWorkspace(db)).preferences.timeZone).toBe('America/Denver');
+  });
+  describe('when the browser cannot name the device time zone', () => {
+    const reportTimeZone = (timeZone: string | undefined, offsetMinutes: number) => {
+      const options = Intl.DateTimeFormat().resolvedOptions();
+      vi.spyOn(Intl.DateTimeFormat.prototype, 'resolvedOptions').mockReturnValue({ ...options, timeZone: timeZone as string });
+      vi.spyOn(Date.prototype, 'getTimezoneOffset').mockReturnValue(offsetMinutes);
+    };
+    afterEach(() => { vi.restoreAllMocks(); });
+    it('still creates a deck, saving the reported offset as a valid zone', async () => {
+      reportTimeZone(undefined, 420);
+      await createDeck('Unnamed zone', db);
+      const { decks, preferences } = await loadWorkspace(db);
+      expect(decks).toHaveLength(1);
+      expect(preferences.timeZone).toBe('Etc/GMT+7');
+      expect(getStudyDay(Date.parse('2026-11-05T11:59:00Z'), preferences)).toBe('2026-11-04');
+      expect(getStudyDay(Date.parse('2026-11-05T12:00:00Z'), preferences)).toBe('2026-11-05');
+      expect(studyDayStart('2026-11-05', preferences)).toBe(Date.parse('2026-11-05T12:00:00Z'));
+    });
+    it.each([
+      [undefined, 420, 'Etc/GMT+7'], [undefined, -540, 'Etc/GMT-9'], [undefined, -840, 'Etc/GMT-14'], [undefined, 0, 'UTC'],
+      [undefined, -330, '+05:30'], [undefined, 210, '-03:30'], ['Etc/Unknown', 360, 'Etc/GMT+6'], ['', 360, 'Etc/GMT+6'], ['America/Denver', 360, 'America/Denver'],
+    ])('detects %s at offset %i as %s', (name, offset, expected) => {
+      reportTimeZone(name, offset);
+      expect(detectTimeZone()).toBe(expected);
+    });
+    it('labels fixed zones with the usual UTC sign', () => {
+      expect(timeZoneLabel('Etc/GMT+7')).toBe('UTC-07:00');
+      expect(timeZoneLabel('Etc/GMT-9')).toBe('UTC+09:00');
+      expect(timeZoneLabel('America/Denver')).toBe('America/Denver');
+    });
   });
   it('saves missing preferences atomically when cards are added to an existing deck', async () => {
     const deck = await createDeck('Deck', db);

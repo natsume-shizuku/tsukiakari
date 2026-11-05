@@ -146,7 +146,7 @@ test('expiry invalidates a stale safety backup and imported expired exams finali
   await page.getByLabel('Question bank',{exact:true}).selectOption('developer-test-fixture');
   await page.getByLabel('Test mode',{exact:true}).selectOption('exam');await page.getByLabel('Number of questions',{exact:true}).fill('50');
   await page.getByLabel('Time limit (minutes)',{exact:true}).fill('1');await page.getByRole('button',{name:'Start exam',exact:true}).click();
-  await expect(page.locator('.test-question')).toHaveCount(50);await nav(page,'Settings');const original=await full(page);
+  await expect(page.locator('.test-session-bar')).toContainText(`of ${50} answered`);await nav(page,'Settings');const original=await full(page);
   await chooseFile(page,original);await safety(page);await expect(page.getByRole('button',{name:'Replace collection',exact:true})).toBeEnabled();
   await page.clock.fastForward(61000);
   await expect(page.getByRole('button',{name:'Replace collection',exact:true})).toBeDisabled();
