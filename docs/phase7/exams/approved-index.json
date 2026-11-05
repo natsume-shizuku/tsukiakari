@@ -2759,17 +2759,17 @@
   },
   {
     "id": "ab250-d4-q06",
-    "revision": 1,
+    "revision": 2,
     "domainId": "work-distribution",
     "conceptId": "cross-queue-business-priority",
     "objectiveIds": [
       "D4.1.02"
     ],
     "kind": "single",
-    "author": "/root/exam_ai_routing",
-    "reviewer": "/root",
-    "reviewedAt": "2026-11-03",
-    "fingerprint": "9ebed69b8ee3f738bee69c1c46cfa60d43318a1edb7521f21d4f176cc9aa6edb"
+    "author": "claude-session/laughing-jackson-096603",
+    "reviewer": "claude-subagent/7g-revision-review",
+    "reviewedAt": "2026-11-05",
+    "fingerprint": "d22dc3d719c59f5dadb3c2b123b857d80de295ed36c00193528774759c5a3710"
   },
   {
     "id": "ab250-d4-q07",

@@ -123,6 +123,7 @@ function DeckManager({ desk, deck, onDirtyChange }: { desk: Desk; deck: Deck; on
     setSelected(ids);
     setMobileDetail(ids.length === 1);
   };
+  const [selectSeveral, setSelectSeveral] = useState(false);
   const selectCard = (id: string, additive: boolean) => {
     select(additive ? selectedIds.includes(id) ? selectedIds.filter(selectedId => selectedId !== id) : [...selectedIds, id] : [id]);
   };
@@ -163,15 +164,15 @@ function DeckManager({ desk, deck, onDirtyChange }: { desk: Desk; deck: Deck; on
     <div id="manage-cards-panel" className={'manage-cards-panel' + (mobileDetail && selectedCopy && !deck.archived ? ' manage-reading' : '')} role="tabpanel" aria-labelledby="manage-cards-tab" hidden={tab !== 'cards'}>
       <section className="panel membership-panel" aria-labelledby="deck-cards-title"><div className="membership-controls"><div className="section-heading"><h2 id="deck-cards-title">Cards in this deck</h2><span className="quiet-label">{copies.length} cards</span></div>
         <label htmlFor="deck-card-search">Search deck cards</label><input ref={searchInput} id="deck-card-search" type="search" value={search} onChange={event => setSearch(event.target.value)} placeholder="Search questions, answers, or personal notes"/>
-        <p className="fine-print membership-help">Click a card to select it. Hold Ctrl while clicking to add or remove cards from your selection. Removing preserves progress and notes.</p>
-        {!!copies.length && <div className="membership-toolbar"><button type="button" className="button secondary" disabled={!matching.length || desk.busy} onClick={() => select(Array.from(new Set([...selectedIds, ...matching.map(copy => copy.id)])))}>Select all matching cards</button><button type="button" className="button secondary" disabled={!selectedIds.length || desk.busy} onClick={() => select([])}>Clear selection</button><span className="quiet-label">{selectedIds.length} selected{selectedIds.some(id => !matching.some(copy => copy.id === id)) && ' (including cards outside this search)'}</span>{selectedCopy && !deck.archived && <button type="button" className="button secondary manage-open-detail" onClick={() => setMobileDetail(true)}>View selected card</button>}{selectedIds.length > 1 && <button className="button secondary" disabled={!canEdit || detailDirty} onClick={() => void remove()}>Remove selected cards</button>}</div>}
+        <p className="fine-print membership-help">Click a card to select it. Hold Ctrl while clicking, or turn on Select several, to add or remove cards from your selection. Removing preserves progress and notes.</p>
+        {!!copies.length && <div className="membership-toolbar"><button type="button" className="button secondary multi-select-toggle" aria-pressed={selectSeveral} onClick={() => setSelectSeveral(value => !value)}>Select several</button><button type="button" className="button secondary" disabled={!matching.length || desk.busy} onClick={() => select(Array.from(new Set([...selectedIds, ...matching.map(copy => copy.id)])))}>Select all matching cards</button><button type="button" className="button secondary" disabled={!selectedIds.length || desk.busy} onClick={() => select([])}>Clear selection</button><span className="quiet-label">{selectedIds.length} selected{selectedIds.some(id => !matching.some(copy => copy.id === id)) && ' (including cards outside this search)'}</span>{selectedCopy && !deck.archived && <button type="button" className="button secondary manage-open-detail" onClick={() => setMobileDetail(true)}>View selected card</button>}{selectedIds.length > 1 && <button className="button secondary" disabled={!canEdit || detailDirty} onClick={() => void remove()}>Remove selected cards</button>}</div>}
         <p className="fine-print membership-count" role="status">{matching.length} of {copies.length} cards match this search</p></div>
         <div className={'deck-cards-workspace' + (selectedCopy && !deck.archived ? ' has-detail' : '')}>
           {matching.length ? <div ref={listRef} className="membership-scroll" role="region" aria-label="Deck card list" tabIndex={0}><ul className="membership-list">{matching.map(copy => {
             const published = findPublishedCard(copy);
             const state = workspace.schedulerStates.find(item => item.copyId === copy.id);
             const prompt = published?.card.prompt ?? 'Published card unavailable';
-            return <li key={copy.id}><button type="button" className="membership-select-row" aria-describedby={'membership-meta-' + copy.id} aria-label={'Select card: ' + prompt} aria-pressed={selectedIds.includes(copy.id)} disabled={desk.busy} onClick={event => selectCard(copy.id, event.ctrlKey)} onKeyDown={event => {
+            return <li key={copy.id}><button type="button" className="membership-select-row" aria-describedby={'membership-meta-' + copy.id} aria-label={'Select card: ' + prompt} aria-pressed={selectedIds.includes(copy.id)} disabled={desk.busy} onClick={event => selectCard(copy.id, event.ctrlKey || selectSeveral)} onKeyDown={event => {
               if (event.ctrlKey && (event.key === ' ' || event.key === 'Enter')) {
                 event.preventDefault();
                 if (!event.repeat) selectCard(copy.id, true);

@@ -27,3 +27,8 @@
 .data-transfer > .notice { margin-top: 20px; margin-bottom: 0; }
 @media (max-width: 1000px) { .transfer-export-grid { grid-template-columns: 1fr; } .transfer-export-grid > section + section { border-top: 1px solid var(--line); padding-top: 20px; } }
 @media (max-width: 600px) { .transfer-preview { padding: 14px; } .transfer-counts { grid-template-columns: repeat(2, minmax(0, 1fr)); } .transfer-actions { flex-direction: column; } .transfer-actions > button { width: 100%; } }
+.transfer-drive { margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--line); }
+.transfer-drive h3 { margin-top: 0; }
+.transfer-drive { padding-bottom: 24px; }
+.transfer-drive > p:not(.fine-print):not(.notice) { color: var(--muted); font-size: .9rem; }
+.transfer-drive .notice { margin: 12px 0 16px; }

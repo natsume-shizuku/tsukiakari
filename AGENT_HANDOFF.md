@@ -666,7 +666,7 @@ Original chat screenshots were clipboard PNGs under C:/Users/Kevin/AppData/Local
 - Mentioned dump not incorporated; current bank is original sourced practice.
 - ZIP/Anki interoperability not required.
 - Do not ask user to personally fact-check every question.
-- Known 7G limits are listed in docs/PHASE_7G.md, including no real-device testing and 104 items reviewed by the lead.
+- Known 7G limits are listed in docs/PHASE_7G.md, including no real-device testing. The 104 lead-reviewed items have since had a separate re-review, and two moved to revision 2.
 - This documentation request changes no app behavior or phase approval.
 
 ## 17. Next-agent checklist and continuation prompt

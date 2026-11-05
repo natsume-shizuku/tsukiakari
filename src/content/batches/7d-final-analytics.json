@@ -117,7 +117,7 @@
     {
       "id": "cc-d6-n08",
       "title": "Distinguish collecting diagnostic events from displaying them in Dynamics",
-      "body": "Configure the Managed environment's conversation diagnostics and Application Insights export with the documented Azure and Power Platform permissions. Ingestion and query access are separate responsibilities. Verify that lifecycle events reach the intended instance before diagnosing a workspace display problem; event telemetry complements conversation recordings and transcripts rather than replacing them.\n\nThe Diagnose Debug experience needs additional setup. Supply the Application Insights ID in its Dataverse environment variable, register the application and federated credentials, update the managed identity information, and grant the app Monitoring Reader access. Enable the Application Insights Dashboard app setting at both default and environment-value levels. Then validate the embedded Debug tab. Successful export alone does not establish Dataverse's authorization to read and display that telemetry.",
+      "body": "Configure the Managed environment's conversation diagnostics and Application Insights export with the documented Azure and Power Platform permissions. Ingestion and query access are separate responsibilities. Verify that lifecycle events reach the intended instance before diagnosing a workspace display problem.\n\nReading that telemetry back into Dynamics needs additional setup. The Configure conversation diagnostics article, a Customer Service page that the Contact Center Enable Diagnose dashboard guide links to, describes guided setup in Copilot Service admin center. You confirm the Application Insights resource is connected and enter its ID. Guided setup creates the required app and federated identity credential and sets the environment variable. You then confirm the app's Application Insights Read permission, granting admin consent if needed, assign it the Monitoring Reader role and run Test connection, which validates that the service can read telemetry.\n\nThe Enable Diagnose dashboard guide separately documents its own steps: update the Application Insights ID in the environment variable, register an app with federated credentials, assign Monitoring Reader and update the managed identity record. It also sets the Enable Application Insights Dashboard app setting to Yes in both Default value and Setting environment value. Neither page says how the two routes relate, and the Configure conversation diagnostics article does not mention that setting, so confirm it before validating the Debug tab. Successful export alone does not establish Dataverse's authorization to read and display that telemetry.",
       "sourceIds": [
         "cc-d6-final-s11",
         "cc-d6-final-s12",
@@ -1128,7 +1128,7 @@
     },
     {
       "id": "cc-d6-n08",
-      "revision": 1,
+      "revision": 2,
       "domainId": "analytics",
       "conceptId": "diagnostic-export-versus-embedding",
       "objectiveIds": [
@@ -1136,27 +1136,27 @@
         "D6.2.06"
       ],
       "level": "core",
-      "author": "/root/finish_voice",
-      "authoredAt": "2026-11-02",
+      "author": "claude-session/laughing-jackson-096603",
+      "authoredAt": "2026-11-05",
       "status": "source-reviewed",
       "evidence": [
         {
           "sourceId": "cc-d6-final-s11",
-          "section": "Prerequisites; Pricing",
-          "claim": "Managed-environment diagnostics requires setup/export/query permissions and incurs ingestion charges; lifecycle events can be combined into custom dashboards.",
-          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+          "section": "Introduction; Prerequisites; Pricing; Set up a connection with Azure Application Insights",
+          "claim": "Managed-environment diagnostics requires setup/export/query permissions and incurs ingestion charges; lifecycle events can be combined into custom dashboards. Guided setup in Copilot Service admin center has the admin confirm the connected resource and enter its ID; it creates the required app and federated identity credential and sets the environment variable; the admin then verifies Application Insights Read, grants admin consent if needed, assigns Monitoring Reader and runs Test connection.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available. Guided setup is documented on this Customer Service article, which the Contact Center Enable Diagnose dashboard guide links to, and the note attributes it to that article."
         },
         {
           "sourceId": "cc-d6-final-s12",
-          "section": "Prerequisites; Create a connection with Azure Application Insights",
-          "claim": "Power Platform data export creates the diagnostics connection for the chosen Managed environment and Azure resource; it is distinct from embedding Debug.",
+          "section": "Prerequisites; Set up a connection with Azure Application Insights",
+          "claim": "Power Platform data export creates the diagnostics connection for the chosen Managed environment and Azure resource.",
           "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
         },
         {
           "sourceId": "cc-d6-final-s13",
-          "section": "Update Application Insights ID in environment variable; Create and register an app; Assign Monitoring Reader role; Enable Debug tab",
-          "claim": "Embedding telemetry requires environment App Insights ID, registered/federated app, managed identity update and Monitoring Reader permission; enable Application Insights Dashboard app setting at default/environment levels.",
-          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available."
+          "section": "Update Application Insights ID in environment variable; Create and register an app; Assign Monitoring Reader role; Update managed identity record; Enable Debug tab",
+          "claim": "The Enable Diagnose dashboard guide uses the environment App Insights ID, a registered/federated app, a managed identity update and Monitoring Reader permission, and enables the Application Insights Dashboard app setting at default/environment levels.",
+          "applicability": "Contact Center standalone analytics unless the item explicitly names the broader Azure/Power Platform setup. Case analytics is Customer Service only; email evaluation preview is not taught as generally available. This is the only cited page naming the managed identity record and the app setting, and neither it nor the guided setup article says how the two routes relate."
         }
       ],
       "duplicateCheck": "Extends pilot D6 supervisor-role/private-coaching and basic log-destination material with configuration, lifecycle or reporting-layer decisions. No copied pilot prompt or exam item; compare related foundation/application siblings for distinctness."

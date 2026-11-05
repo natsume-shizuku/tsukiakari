@@ -12030,14 +12030,14 @@
     },
     {
       "id": "ab250-d4-q06",
-      "revision": 1,
+      "revision": 2,
       "kind": "single",
       "domainId": "work-distribution",
       "objectiveIds": [
         "D4.1.02"
       ],
       "conceptId": "cross-queue-business-priority",
-      "prompt": "The same eligible representatives serve urgent and routine queues. Routine work is being considered ahead of urgent work because its queue has priority 1 and the urgent queue has priority 4. The team wants urgent work considered first across the queues. What is the targeted change?",
+      "prompt": "The same eligible representatives serve urgent and routine queues. Routine work is being considered ahead of urgent work because its queue has priority 2 and the urgent queue has priority 4. The team wants urgent work considered first across the queues. What is the targeted change?",
       "answer": "Assign the urgent queue a smaller priority number than the routine queue.",
       "explanation": "Configure the queue-level competition policy separately from prioritizing items inside one queue.",
       "sourceIds": [
@@ -12074,7 +12074,7 @@
         "a": "Within-queue ranking does not implement the requested cross-queue policy.",
         "b": "Smaller numbers give the queue higher cross-queue priority.",
         "c": "That moves the priority in the wrong direction.",
-        "d": "Distribution mode does not implement this automatic cross-queue priority correction."
+        "d": "A pick-based method stops automatic assignment and leaves the priorities unchanged, so it does not put urgent work first."
       },
       "relatedNotes": [
         {

@@ -3,21 +3,21 @@
 This is a fresh, independent project. Never copy code, content, designs, or learner data from d365-pa-study-desk.
 
 ## Approval gates
-Phase 6 and 7A through 7F were accepted; the user accepted 7F and authorized 7G on 2026-11-04. Phase 7G is implemented and ready for the user's final Phase 7 acceptance: see docs/PHASE_7G.md and reports/phase7g/checks.json. New corrections stay in 7G; stop for that acceptance and do not deploy. The accepted 235 cards, 78 notes, 300 original questions and frozen pilot objects are preserved. Do not commit, push or deploy without explicit authorization. Preserve content and persistence contracts, published identities/revisions and exact review fingerprints. Known source gaps remain explicit in docs/phase7/source-gaps.json. Agents own detailed factual verification; the user reviews learning usefulness and experience.
+Phase 6 and 7A through 7F were accepted; the user accepted 7F and authorized 7G on 2026-11-04. Phase 7G is implemented and ready for the user's final Phase 7 acceptance: see docs/PHASE_7G.md and reports/phase7g/checks.json. New corrections stay in 7G; stop for that acceptance and do not deploy. The accepted 235 cards, 78 notes, 300 original questions and frozen pilot objects are preserved; `ab250-d4-q06` and `cc-d6-n08` moved to revision 2 with the user's authorization on 2026-11-05. Do not commit, push or deploy without explicit authorization. Preserve content and persistence contracts, published identities/revisions and exact review fingerprints. Known source gaps remain explicit in docs/phase7/source-gaps.json. Agents own detailed factual verification; the user reviews learning usefulness and experience.
 Use delegated agents with bounded file ownership. The lead integrates shared contracts and reviews changes.
 
 ## Product invariants
 - User manages published content through this repository.
 - Learning copies are independent per deck. Unique membership is deckId + packId + cardId.
 - All scheduling settings and daily allowances are per deck.
-- No accounts, cloud sync, telemetry, offline/PWA features, or Anki interoperability.
+- No site accounts, servers holding learner data, automatic cloud sync, telemetry, offline/PWA features, or Anki interoperability. The one exception is the optional, learner-started Google Drive backup, limited to the `drive.appdata` scope.
 - Test results never affect flashcard schedules, Mistakes, or leeches.
 - Future exports use JSON. Historical test answers need snapshots.
 - Keep fixture content clearly marked and out of future real packs.
 - Never alter the existing website or browser storage on ports 4173, 4174, or 5173.
 - Use ports 5186 (development), 4186 (preview), and 4187 (isolated browser tests).
 - Never silently reset failed or corrupt storage. Writes must be transactional and single-writer.
-- Do not deploy or advance phases without approval. Keep repository private.
+- Do not deploy or advance phases without approval. Keep the repository private until the owner chooses to make it public.
 - Maintain responsive 320px layouts, keyboard access, focus, reduced motion, and 44px targets.
 
 ## Checks

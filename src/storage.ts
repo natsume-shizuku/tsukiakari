@@ -126,6 +126,17 @@ export async function addCardsToDeck(deckId: string, inputPack: StudyPack, cardI
   });
 }
 
+/** Same policy as a settings import: a new day boundary ends the review and clears undo, never rewriting history. */
+export async function saveStudyDay(change: Pick<Preferences, 'timeZone' | 'dayStartsAtHour'>, db = database): Promise<void> {
+  await db.transaction('rw', db.preferences, db.reviewLogs, db.reviewSessions, async () => {
+    const current = preferencesSchema.parse(await db.preferences.get('preferences') ?? defaultPreferences());
+    const next = preferencesSchema.parse({ ...current, ...change });
+    if (next.timeZone === current.timeZone && next.dayStartsAtHour === current.dayStartsAtHour) return;
+    await db.preferences.put(next);
+    await db.reviewSessions.clear();
+    await db.reviewLogs.filter(log => log.undoable).modify({ undoable: false });
+  });
+}
 export async function savePreferences(preferences: Preferences, db = database): Promise<void> {
   const validated = preferencesSchema.parse(preferences);
   await db.transaction('rw', db.preferences, async () => { await db.preferences.put(validated); });

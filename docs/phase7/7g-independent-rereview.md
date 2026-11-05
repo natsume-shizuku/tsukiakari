@@ -32,6 +32,16 @@ Each needs a new revision and independent approval, with the user's authorizatio
 - **What still holds:** [Enable Diagnose dashboard](https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/enable-diagnose-dashboard), dated 2026-05-06, still documents the manual path, Monitoring Reader and the app setting. Nothing in the note is directly contradicted.
 - **Suggested fix:** present the guided setup as the current route and the manual steps as documented detail, then remove or source the recordings sentence.
 
+## Resolution on 2026-11-05
+
+The user authorized both revisions on 2026-11-05. A separate agent reviewed the exact final text of each one, opening every cited page, and required corrections before it approved them.
+
+- **`ab250-d4-q06`, revision 2:** the routine queue now starts at priority 2. Review also replaced option explanation d, because the cited page treats Pick as an assignment method, not a distribution mode. The options and key are unchanged.
+- **`cc-d6-n08`, revision 2:** the note now describes guided setup and attributes it to its Customer Service article, keeps the Enable Diagnose dashboard guide's own steps, and drops the recordings sentence. Neither page says how the two routes relate, and the note says so.
+- **Dependants:** `cc-d6-c22`, `c23`, `c24` and `ab250-d6-q26` to `q30` were reread against the new note, with no conflicts and no changes.
+
+The author and reviewer were different agents, but the author session also integrated the result, so these two items had no separate lead. Neither revision was tested in a live environment.
+
 ## Watch items, no revision needed
 
 - **`cc-d6-c22`, `c23`, `c24`:** these cite only the older Diagnose page and stay correct against it. Reread them if `cc-d6-n08` is revised, because the two pages don't say whether guided setup also covers the Debug app setting.

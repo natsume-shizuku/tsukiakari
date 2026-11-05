@@ -18,7 +18,7 @@ type Desk = ReturnType<typeof useWorkspace>;
 type Section = 'packs' | 'cards' | 'notes' | 'mistakes';
 type CardRef = CardDetailRef;
 const keyFor = (ref: CardRef) => JSON.stringify([ref.packId, ref.cardId]);
-const formatDate = (at: number | null) => at === null ? 'Not scheduled' : new Date(at).toLocaleString();
+const formatDate = (at: number | null) => at === null ? 'Not scheduled' : new Date(at).toLocaleString('en');
 export function Library({ desk, section, initialCopyId, initialDeckId, initialCardRef, initialNoteRef, initialTopic, onDirtyChange }: { desk: Desk; section: Section; initialCopyId?: string; initialDeckId?: string; initialCardRef?: CanonicalCardRef; initialNoteRef?: CanonicalNoteRef; initialTopic?: {ownerId?: string; curationId?: string; topicId: string}; onDirtyChange?: (dirty: boolean) => void }) {
   const workspace = desk.workspace!;
   const activeDecks = workspace.decks.filter(deck => !deck.archived);
@@ -34,6 +34,7 @@ export function Library({ desk, section, initialCopyId, initialDeckId, initialCa
   const [destination, setDestination] = useState(initialDeckId ?? '');
   const [selected, setSelected] = useState<Set<string>>(() => new Set());
   const [selectedMistakes, setSelectedMistakes] = useState<Set<string>>(() => new Set());
+  const [selectSeveral, setSelectSeveral] = useState(false);
   const [feedback, setFeedback] = useState('');
   const [resourceNotice, setResourceNotice] = useState('');
   const resourceNoticeRef = useRef<HTMLParagraphElement>(null);
@@ -241,13 +242,14 @@ export function Library({ desk, section, initialCopyId, initialDeckId, initialCa
   const destinationControl = <div className="library-destination-control"><label htmlFor="library-destination">Destination deck</label><select id="library-destination" value={destinationDeck?.id ?? ''} disabled={!activeDecks.length || desk.busy} onChange={event => changeSelection(() => { setDestination(event.target.value); setFeedback(''); })}>{activeDecks.length ? activeDecks.map(deck => <option value={deck.id} key={deck.id}>{deck.name}</option>) : <option value="">Create a deck first</option>}</select></div>;
   const destinationPanel = <section className="library-destination panel library-pack-destination" role="region" aria-label="Study pack destination">
       {destinationControl}
-      {destinationDeck && <a className="text-link library-manage-link" href={'#study/deck/' + encodeURIComponent(destinationDeck.id)} title={'Manage ' + destinationDeck.name}>Manage deck ↗</a>}
+      {destinationDeck && <a className="text-link library-manage-link" href={'#study/deck/' + encodeURIComponent(destinationDeck.id)} title={'Manage ' + destinationDeck.name}>Manage deck</a>}
       <span className="quiet-label library-result-count">{visibleCurations.length} available packs</span>
-      {!activeDecks.length && <a className="text-link" href="#study">Create your first deck ↗</a>}
+      {!activeDecks.length && <a className="text-link" href="#study">Create your first deck</a>}
       <div className="library-operation-feedback" role="status" aria-live="polite">{feedback}</div>
       {desk.error && <p className="library-operation-error">{desk.error}</p>}
     </section>;
-  const cardSelectionControls = <section className="library-destination panel card-browser-toolbar" role="region" aria-label="Card selection controls">
+  const selectSeveralToggle = <button type="button" className="button secondary multi-select-toggle" aria-pressed={selectSeveral} onClick={() => setSelectSeveral(value => !value)}>Select several</button>;
+  const cardSelectionControls = <section className="library-destination panel card-browser-toolbar" role="region" aria-label="Card selection controls">{selectSeveralToggle}
       <div className="library-actions library-bulk-actions">
         <span className="fine-print library-selection-count">{selectedRefs.length} selected</span>
         <button className="button secondary" aria-label={'Select all ' + filtered.length + ' matching cards'} disabled={!filtered.length} onClick={() => changeSelection(() => setSelected(previous => new Set([...previous, ...filtered.map(({ pack, card }) => keyFor({ packId: pack.id, cardId: card.id }))])))}>Select all</button>
@@ -270,7 +272,7 @@ export function Library({ desk, section, initialCopyId, initialDeckId, initialCa
       <div className="library-pack-list">{visibleCurations.map(pack => {
         const membership = activeCopies.filter(copy => copy.deckId === destinationDeck?.id && pack.cards.some(ref => ref.packId === copy.packId && ref.cardId === copy.cardId));
         const complete = pack.cards.every(ref => membership.some(copy => copy.packId === ref.packId && copy.cardId === ref.cardId));
-        return <section className="panel library-pack" key={pack.id} aria-label={pack.title}><div>{pack.fixture && <span className="fixture-badge">Engineering fixture · not a study pack</span>}<h2>{pack.title}</h2><p className="muted">{pack.description}</p><p className="fine-print">{pack.cards.length} cards · {pack.notes.length} reference notes · {pack.questionBankIds.length ? 'Shared question bank' : 'No exam pool'}</p>{pack.questionBankIds.map(bankId => <p key={bankId}><a className="text-link" href={'#tests?bank=' + encodeURIComponent(bankId)}>Open {questionBankManifests.find(bank => bank.id === bankId)?.title ?? 'question bank'} ↗</a></p>)}{destinationDeck && <p className="library-membership">{membership.length} of {pack.cards.length} cards in {destinationDeck.name}</p>}</div><button className="button secondary" disabled={!desk.canWrite || !destinationDeck || complete} onClick={() => void add(pack.cards.map(({ packId, cardId }) => ({ packId, cardId })))}>{complete ? 'All pack cards added' : 'Add entire pack'}</button></section>;
+        return <section className="panel library-pack" key={pack.id} aria-label={pack.title}><div>{pack.fixture && <span className="fixture-badge">Engineering fixture · not a study pack</span>}<h2>{pack.title}</h2><p className="muted">{pack.description}</p><p className="fine-print">{pack.cards.length} cards · {pack.notes.length} reference notes · {pack.questionBankIds.length ? 'Shared question bank' : 'No exam pool'}</p>{pack.questionBankIds.map(bankId => <p key={bankId}><a className="text-link" href={'#tests?bank=' + encodeURIComponent(bankId)}>Open {questionBankManifests.find(bank => bank.id === bankId)?.title ?? 'question bank'}</a></p>)}{destinationDeck && <p className="library-membership">{membership.length} of {pack.cards.length} cards in {destinationDeck.name}</p>}</div><button className="button secondary" disabled={!desk.canWrite || !destinationDeck || complete} onClick={() => void add(pack.cards.map(({ packId, cardId }) => ({ packId, cardId })))}>{complete ? 'All pack cards added' : 'Add entire pack'}</button></section>;
       })}</div>
     </>}
 
@@ -282,7 +284,7 @@ export function Library({ desk, section, initialCopyId, initialDeckId, initialCa
         <button className="button secondary card-filter-toggle" aria-expanded={filtersOpen} aria-controls="card-advanced-filters" onClick={() => setFiltersOpen(value => !value)}>Filters{filterCount ? ' (' + filterCount + ')' : ''}<span aria-hidden="true">{filtersOpen ? '−' : '+'}</span></button>
         {filterCount > 0 && <button className="button secondary" onClick={() => changeCardFilter(() => { setPackId(''); setTopicId(''); setKind(''); setDeckId(''); setStatus(''); setTag(''); })}>Reset filters</button>}
         <span className="quiet-label library-result-count">{filtered.length} matching cards</span>
-        {!activeDecks.length && <a className="text-link library-create-deck" href="#study">Create your first deck ↗</a>}
+        {!activeDecks.length && <a className="text-link library-create-deck" href="#study">Create your first deck</a>}
       </div>
       <div id="card-advanced-filters" className="library-filters panel card-advanced-filters" hidden={!filtersOpen}>
 
@@ -301,7 +303,7 @@ export function Library({ desk, section, initialCopyId, initialDeckId, initialCa
           const member = membershipFor(ref);
           const inDestination = member && !member.removed;
           return <article className={'library-row' + (selected.has(keyFor(ref)) ? ' is-selected' : '')} key={keyFor(ref)}>
-            <button className="library-card-open" aria-pressed={selected.has(keyFor(ref))} aria-describedby={'card-meta-' + encodeURIComponent(keyFor(ref)) + ' card-badges-' + encodeURIComponent(keyFor(ref)) + (destinationDeck ? ' card-membership-' + encodeURIComponent(keyFor(ref)) : '')} aria-label={'Select card: ' + card.prompt} onClick={event => selectCard(ref, event.currentTarget, event.ctrlKey)}>
+            <button className="library-card-open" aria-pressed={selected.has(keyFor(ref))} aria-describedby={'card-meta-' + encodeURIComponent(keyFor(ref)) + ' card-badges-' + encodeURIComponent(keyFor(ref)) + (destinationDeck ? ' card-membership-' + encodeURIComponent(keyFor(ref)) : '')} aria-label={'Select card: ' + card.prompt} onClick={event => selectCard(ref, event.currentTarget, event.ctrlKey || selectSeveral)}>
               <strong>{card.prompt}</strong><span id={'card-meta-' + encodeURIComponent(keyFor(ref))} className="quiet-label">{pack.title} · {pack.topics.find(topic => topic.id === card.topicId)?.title} · {copies.length} deck {copies.length === 1 ? 'copy' : 'copies'}</span>
               {cardCurations(ref).some(curation => curation.id !== pack.id) && <span className="quiet-label">Also in: {cardCurations(ref).filter(curation => curation.id !== pack.id).map(curation => curation.title).join(' · ')}</span>}
               <CardBadges id={'card-badges-' + encodeURIComponent(keyFor(ref))} card={card} copies={copies} decks={activeDecks} states={states}/>
@@ -331,14 +333,14 @@ export function Library({ desk, section, initialCopyId, initialDeckId, initialCa
           <button className="button secondary" aria-label={'Select all ' + mistakes.length + ' mistakes'} disabled={!mistakes.length} onClick={() => changeSelection(() => setSelectedMistakes(new Set(mistakes.map(row => row.copy.id))))}>Select all</button>
           <button className="button secondary" aria-label="Suspend selected cards" disabled={!desk.canWrite || !selectedMistakeRows.some(row => !row.copy.suspended)} onClick={() => void suspendMistakes(true)}>Suspend</button>
           <button className="button secondary" aria-label="Unsuspend selected cards" disabled={!desk.canWrite || !selectedMistakeRows.some(row => row.copy.suspended)} onClick={() => void suspendMistakes(false)}>Resume</button>
-          <button className="button secondary" disabled={!selectedMistakes.size || desk.busy} onClick={clearSelection}>Clear selection</button>
+          {selectSeveralToggle}<button className="button secondary" disabled={!selectedMistakes.size || desk.busy} onClick={clearSelection}>Clear selection</button>
         </div>
         <div className="library-operation-feedback" role="status" aria-live="polite" title={feedback}>{feedback}</div>
         {desk.error && <p className="library-operation-error">{desk.error}</p>}
       </section>
       <div className={'library-browser-workspace card-browser-workspace' + (singleMistake ? ' has-inspector' : '')}>
         <div ref={mistakeList} className="library-rows library-scroll-list" role="region" aria-label="Mistake list" tabIndex={0}>{mistakes.map(row => <article className={'library-mistake library-row' + (selectedMistakes.has(row.copy.id) ? ' is-selected' : '')} key={row.copy.id}>
-          <button className="library-card-open" aria-pressed={selectedMistakes.has(row.copy.id)} aria-label={'Select mistake: ' + (findPublishedCard(row.copy)?.card.prompt ?? 'Unavailable card')} onClick={event => selectMistake(row.copy.id, event.currentTarget, event.ctrlKey)}>
+          <button className="library-card-open" aria-pressed={selectedMistakes.has(row.copy.id)} aria-label={'Select mistake: ' + (findPublishedCard(row.copy)?.card.prompt ?? 'Unavailable card')} onClick={event => selectMistake(row.copy.id, event.currentTarget, event.ctrlKey || selectSeveral)}>
             <span className="eyebrow">{activeDecks.find(deck => deck.id === row.copy.deckId)?.name}</span>
             <strong>{findPublishedCard(row.copy)?.card.prompt ?? 'Unavailable card'}</strong>
             <span className="quiet-label">{row.againCount} Again {row.againCount === 1 ? 'review' : 'reviews'} · {row.lapses} review lapses</span>

@@ -73,3 +73,7 @@ main.card-browser-page { padding-bottom: 16px; }
   .library-page .library-pack-destination > .library-destination-control { flex-basis: 100%; }
   .card-browser-page .library-selection-count { flex-basis: 100%; }
 }
+@media (max-width: 600px) {
+  main.library-wide .page-header { margin-bottom: 10px; }
+  main.library-wide .page-header > p:last-child { display: none; }
+}

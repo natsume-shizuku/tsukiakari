@@ -1,20 +1,20 @@
 {
-  "completedAtUtc": "2026-11-05T00:29:58.1411819Z",
+  "completedAtUtc": "2026-11-05T23:15:14.186Z",
   "lint": "passed",
   "unit": {
     "status": "passed",
-    "tests": 335,
-    "files": 27,
-    "processTimezone": "UTC"
+    "tests": 361,
+    "files": 29,
+    "processTimezone": "host default; the earlier TZ=UTC workaround was not needed"
   },
   "build": "passed, including all content approval and publication gates",
   "browser": {
     "status": "passed",
-    "tests": 135,
+    "tests": 166,
     "origin": "http://localhost:4187",
     "workers": 4
   },
-  "freshClone": "not rerun in 7G; last verified on the baseline commit",
+  "freshClone": "clean export of the staged tree on 2026-11-05: npm ci, lint, 361 unit tests, build and 166 browser tests passed",
   "navigationAudits": [
     {
       "name": "study-mobile",
@@ -39,14 +39,14 @@
     },
     {
       "name": "notes-mobile",
-      "performance": 98.0,
+      "performance": 100.0,
       "accessibility": 100.0,
       "bestPractices": 100.0,
       "seo": 91.0
     },
     {
       "name": "mistakes-mobile",
-      "performance": 98.0,
+      "performance": 100.0,
       "accessibility": 100.0,
       "bestPractices": 100.0,
       "seo": 91.0
@@ -60,7 +60,7 @@
     },
     {
       "name": "ab250-mobile",
-      "performance": 96.0,
+      "performance": 95.0,
       "accessibility": 100.0,
       "bestPractices": 100.0,
       "seo": 91.0
@@ -447,7 +447,7 @@
       ]
     }
   ],
-  "lighthouseNote": "Lighthouse ran before a one-string pluralization fix in test results; lint, unit, build and browser checks ran after it.",
+  "lighthouseNote": "Lighthouse ran on the final build. Its journey script was first updated for paged tests, hidden fixtures and the renamed Finish test button.",
   "preservation": "12 accepted artifacts byte-identical; see preservation-result.json",
   "phase7G": "ready for final acceptance",
   "deployment": "none"

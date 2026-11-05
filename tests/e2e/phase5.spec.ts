@@ -114,6 +114,7 @@ test('statistics count saved flashcard reviews and undo removes the activity',as
   const today=page.locator('.statistics-metrics section').filter({has:page.getByRole('heading',{name:'Today',exact:true})});
   await expect(today.locator('strong')).toHaveText('1');await expect(page.locator('.statistics-year-summary')).toContainText('1 days');
   await expect(page.getByRole('region',{name:'Yearly study heatmap',exact:true})).toBeVisible();
+  await page.locator('.statistics-heatmap rect.is-selected').hover();await expect(page.locator('.statistics-tip')).toContainText('1 review ·');
   const originalDate=await page.getByLabel('Inspect date',{exact:true}).inputValue();
   await page.getByRole('button',{name:'Previous study day',exact:true}).click();
   await expect(page.getByLabel('Inspect date',{exact:true})).not.toHaveValue(originalDate);

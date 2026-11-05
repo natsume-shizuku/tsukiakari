@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { timeZoneLabel, type Deck, type Theme } from './domain';
+import type { Deck, Theme } from './domain';
 import { savePreferences } from './storage';
 import { useWorkspace } from './useWorkspace';
 import { startReview, refreshReview } from './reviewStorage';
@@ -9,6 +9,7 @@ import { DeckManage } from './DeckManage';
 import { Library } from './LibraryPage';
 import { StatisticsPage } from './StatisticsPage';
 import { DataTransfer } from './DataTransfer';
+import { StudyDaySettings } from './StudyDaySettings';
 import { TestsPage, TestDeadlineMonitor } from './TestsPage';
 
 type Page = 'study' | 'library' | 'tests' | 'statistics' | 'settings';
@@ -128,7 +129,7 @@ function App() {
     <aside className="sidebar">
       <a className="brand" href="#study" aria-label="月明かり · Tsukiakari home"><Moon small/><span><span className="brand-jp" lang="ja">月明かり</span><span className="brand-en">TSUKIAKARI</span></span></a>
       <p className="sidebar-label">Your study space</p>
-      <nav className="primary-nav" aria-label="Main navigation">{pages.map(page => <a key={page.id} href={'#' + page.id} aria-current={route.page === page.id ? 'page' : undefined}><span className="nav-mark" aria-hidden="true">{page.mark}</span><span>{page.label}</span><span className="nav-arrow" aria-hidden="true">↗</span></a>)}</nav>
+      <nav className="primary-nav" aria-label="Main navigation">{pages.map(page => <a key={page.id} href={'#' + page.id} aria-current={route.page === page.id ? 'page' : undefined}><span className="nav-mark" aria-hidden="true">{page.mark}</span><span>{page.label}</span></a>)}</nav>
       <div className="sidebar-bottom"><a className="settings-link" href="#settings" aria-current={route.page === 'settings' ? 'page' : undefined}><span aria-hidden="true">⚙</span> Settings</a><span className={'save-status ' + (desk.error || access === 'unavailable' ? 'warning' : access === 'writer' && !busy ? 'ready' : '')} role="status"><span className="status-dot" aria-hidden="true"/>{status}</span><p>One small step,<br/>then another.</p></div>
     </aside>
     <div className="workspace">
@@ -153,7 +154,7 @@ function App() {
             <section className="panel settings-panel"><div><h2>Appearance</h2><p className="muted">Choose a theme or follow your device.</p></div><div className="field"><label htmlFor="theme">Appearance</label><select id="theme" value={workspace.preferences.theme} onChange={event => void changeTheme(event.target.value as Theme)} disabled={!canWrite}><option value="system">System</option><option value="dark">Dark</option><option value="light">Light</option></select></div></section>
             <section className="panel settings-location"><h2>Deck scheduling settings</h2><p className="muted">Each deck manages its own daily allowances, steps, retention, and leech action. Open Manage on a deck to change them.</p><a className="text-link" href="#study">Go to your decks →</a></section>
             <DataTransfer desk={desk} onRestore={() => { setEndedExamId(null); setRestoreEpoch(value => value + 1); }}/>
-            <section className="panel settings-location"><div><h2>Your study day</h2><p>Starts at {String(workspace.preferences.dayStartsAtHour).padStart(2, '0')}:00 in {timeZoneLabel(workspace.preferences.timeZone)}. Before this boundary, activity belongs to the previous study day.</p></div></section>
+            <StudyDaySettings key={workspace.preferences.timeZone + workspace.preferences.dayStartsAtHour} desk={desk} preferences={workspace.preferences}/>
           </>}
         </>}
         {access !== 'loading' && <div className="page-footer-container"><footer className="page-footer"><span lang="ja">月明かり</span><span>Your progress stays in this browser.</span><a href="./third-party-notices.txt" target="_blank" rel="noreferrer">Third-party notices ↗</a></footer></div>}

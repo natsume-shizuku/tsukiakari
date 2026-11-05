@@ -36,3 +36,8 @@ Full backups retain testExposures, one latest timestamp per bank/question, inclu
 The browser database upgrades from schema 1 to 2 transactionally. Invalid legacy attempts or multiple unfinished tests reject the upgrade, leaving the original database version, records, and indexes intact. Full replacement includes the exposure table in the same rollback-protected transaction. Deck selection and settings exports do not contain test exposure.
 
 Curated pack views resolve to permanent canonical packId/cardId references before export. Adding the same card from two curated views does not create duplicate membership. Neither curated views nor downloadable banks are embedded as installed content in a learner backup.
+## Google Drive backup
+
+Save to Drive writes the normal full backup to `tsukiakari-backup.json` in the hidden `appDataFolder`, using only the `drive.appdata` scope. Each save replaces that one file. Restore feeds the file through the same validation, preview and safety download as a local import, so a damaged or unsupported file changes nothing.
+
+Each browser remembers in `localStorage` which Drive copy it last saved or restored. If Drive holds any other copy, Save warns before replacing it, which protects a good backup from a new or out-of-date device. There is no merging or automatic sync.

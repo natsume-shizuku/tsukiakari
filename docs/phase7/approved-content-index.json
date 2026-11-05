@@ -4541,7 +4541,7 @@
   },
   {
     "id": "cc-d6-n08",
-    "revision": 1,
+    "revision": 2,
     "domainId": "analytics",
     "conceptId": "diagnostic-export-versus-embedding",
     "objectiveIds": [
@@ -4549,10 +4549,10 @@
       "D6.2.06"
     ],
     "level": "core",
-    "author": "/root/finish_voice",
-    "reviewer": "/root",
-    "reviewedAt": "2026-11-03",
-    "fingerprint": "a013660207eb06a4713e8b8583b4a9907d598a7a2d306be970c385b6a33b5f75"
+    "author": "claude-session/laughing-jackson-096603",
+    "reviewer": "claude-subagent/7g-revision-review",
+    "reviewedAt": "2026-11-05",
+    "fingerprint": "01720f9dcd95da69208c33a1dce7a5dea5194acb5855f95903b42b1f99858142"
   },
   {
     "id": "cc-d6-c07",

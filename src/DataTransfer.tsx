@@ -5,6 +5,8 @@ import { findPublishedCard } from './content/catalog';
 import { createDeckBackup, createFullBackup, createSettingsBackup, parseBackup, type Backup } from './portability';
 import { importBackup } from './portabilityStorage';
 import { loadWorkspace } from './storage';
+import { markDriveCopySeen } from './driveBackup';
+import { DriveBackupPanel } from './DriveBackupPanel';
 import './data-transfer.css';
 
 type Desk = ReturnType<typeof useWorkspace>;
@@ -38,6 +40,9 @@ export function DataTransfer({ desk, onRestore }: { desk: Desk; onRestore?: () =
   const previewHeading = useRef<HTMLHeadingElement>(null);
   const fileInput = useRef<HTMLInputElement>(null);
   const heading = useRef<HTMLHeadingElement>(null);
+  // Set while the preview holds a Drive copy, so only a completed restore counts as seen.
+  const driveCopy = useRef<string | null>(null);
+  const [driveRefresh, setDriveRefresh] = useState(0);
   useEffect(() => () => { readVersion.current += 1; }, []);
   useEffect(() => { setSafetyConfirmed(false); }, [workspace]);
   useEffect(() => { if (candidate) previewHeading.current?.focus(); }, [candidate]);
@@ -57,6 +62,7 @@ export function DataTransfer({ desk, onRestore }: { desk: Desk; onRestore?: () =
   };
   const readFile = async (file: File | undefined) => {
     const version = ++readVersion.current;
+    driveCopy.current = null;
     setCandidate(null); setSafetyWorkspace(null); setSafetyConfirmed(false); setError(''); setNotice(''); setFileName(file?.name ?? '');
     if (!file) { setReading(false); return; }
     if (file.size > maximumBytes) { setReading(false); setError('This file is larger than 100 MB. Choose a smaller Tsukiakari JSON export. Your data has not changed.'); return; }
@@ -70,6 +76,16 @@ export function DataTransfer({ desk, onRestore }: { desk: Desk; onRestore?: () =
       if (version === readVersion.current) setError('This file cannot be imported. Your data has not changed. ' + failureText(cause));
     } finally { if (version === readVersion.current) setReading(false); }
   };
+  const createBackupJson = async () => {
+    const source = desk.canWrite ? workspace : await loadWorkspace();
+    const json = JSON.stringify(createFullBackup(source), null, 2);
+    if (new Blob([json]).size > maximumBytes) throw new Error('This backup exceeds the supported 100 MB limit.');
+    return json;
+  };
+  const previewDriveBackup = (json: string, modifiedTime: string) => {
+    void readFile(new File([json], 'Google Drive backup.json', { type: 'application/json' }));
+    driveCopy.current = modifiedTime;
+  };
   const apply = async () => {
     if (!candidate || !desk.canWrite || reading) return;
     if (candidate.kind === 'full') {
@@ -79,6 +95,7 @@ export function DataTransfer({ desk, onRestore }: { desk: Desk; onRestore?: () =
     const importing = candidate;
     const saved = await desk.mutate(() => importBackup(importing), 'JSON import completed.');
     if (!saved) return;
+    if (driveCopy.current) { markDriveCopySeen(driveCopy.current); driveCopy.current = null; setDriveRefresh(value => value + 1); }
     if (importing.kind === 'full') {
       try { sessionStorage.removeItem('tsukiakari-active-time'); } catch { /* Saved review durations are in the imported database. */ }
       onRestore?.();
@@ -96,8 +113,9 @@ export function DataTransfer({ desk, onRestore }: { desk: Desk; onRestore?: () =
       <section aria-labelledby="settings-export-title"><h3 id="settings-export-title">Settings</h3><p>Appearance, study-day preferences, and each deck’s scheduling settings. Deck settings apply only to matching deck identities.</p><button className="button secondary" disabled={desk.busy} onClick={() => { void exportJson('settings'); }}>Export settings</button></section>
       <section aria-labelledby="deck-export-title"><h3 id="deck-export-title">Deck selection</h3><p>Card references and deck settings. Importing creates a fresh deck with no personal notes or progress. Published content is supplied by the website.</p><label htmlFor="transfer-deck">Deck to export</label><select id="transfer-deck" value={selectedDeck?.id ?? ''} onChange={event => setDeckId(event.target.value)} disabled={desk.busy}><option value="">Choose a deck</option>{workspace.decks.map(deck => <option key={deck.id} value={deck.id}>{deck.name}{deck.archived ? ' (archived)' : ''}</option>)}</select><button className="button secondary" disabled={desk.busy || !selectedDeck} onClick={() => { void exportJson('deck'); }}>Export deck selection</button></section>
     </div>
+    <DriveBackupPanel canSave={!desk.busy} canRestore={desk.canWrite && !desk.busy} createBackupJson={createBackupJson} onPreview={previewDriveBackup} refresh={driveRefresh}/>
     <section className="transfer-import" aria-labelledby="import-json-title"><h3 id="import-json-title">Import JSON</h3><p>Choose an export to validate and preview it before making changes. Full backups replace the current collection; deck selections add a fresh deck.</p><label htmlFor="transfer-file">JSON file (up to 100 MB)</label><input id="transfer-file" ref={fileInput} type="file" accept=".json,application/json" disabled={!desk.canWrite} onChange={event => { const file = event.target.files?.[0]; event.target.value = ''; void readFile(file); }}/>{!desk.canWrite && !desk.busy && <p className="fine-print">Importing requires the writable browser tab. You can still export the saved data shown here.</p>}{reading && <p role="status">Reading and validating the file…</p>}{fileName && <p className="fine-print transfer-file-name">Selected file: {fileName}</p>}
-      {candidate && <section className="transfer-preview" aria-labelledby="transfer-preview-title"><h4 id="transfer-preview-title" ref={previewHeading} tabIndex={-1}>Import preview</h4><p className="fine-print">Exported {new Date(candidate.exportedAt).toLocaleString()}</p><ImportSummary backup={candidate} workspace={workspace}/>
+      {candidate && <section className="transfer-preview" aria-labelledby="transfer-preview-title"><h4 id="transfer-preview-title" ref={previewHeading} tabIndex={-1}>Import preview</h4><p className="fine-print">Exported {new Date(candidate.exportedAt).toLocaleString('en')}</p><ImportSummary backup={candidate} workspace={workspace}/>
         {candidate.kind === 'full' && <div className="transfer-safety"><h4>Save your current data first</h4><p>Download a current backup before replacing this collection. If the collection changes, download a fresh backup before continuing.</p><button className="button secondary" disabled={!desk.canWrite} onClick={() => { void exportJson('full', true); }}>Download current backup</button><label className="transfer-check"><input type="checkbox" checked={currentSafety && safetyConfirmed} disabled={!currentSafety || !desk.canWrite} onChange={event => setSafetyConfirmed(event.target.checked)}/><span>I have saved the current backup file.</span></label></div>}
         <div className="transfer-actions"><button className="button primary" disabled={!desk.canWrite || reading || (candidate.kind === 'full' && (!currentSafety || !safetyConfirmed))} onClick={() => { void apply(); }}>{candidate.kind === 'full' ? 'Replace collection' : candidate.kind === 'deck' ? 'Import as new deck' : 'Import settings'}</button><button className="button secondary" disabled={desk.busy} onClick={() => { readVersion.current += 1; setCandidate(null); setFileName(''); setSafetyWorkspace(null); setSafetyConfirmed(false); setError(''); setNotice(''); requestAnimationFrame(() => fileInput.current?.focus()); }}>Cancel import</button></div>
       </section>}

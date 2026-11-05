@@ -15,7 +15,8 @@ export function CardBadges({ card, copies, decks, states, id }: {
     if (!entry.origins.includes(origin)) entry.origins.push(origin);
     tags.set(key, entry);
   };
-  card.tags.forEach(tag => addTag(tag, 'Published tag'));
+  // Prefixed tags like topic:deployment drive filters; the row already names the topic.
+  card.tags.filter(tag => !tag.includes(':')).forEach(tag => addTag(tag, 'Published tag'));
   copies.forEach(copy => copy.tags.forEach(tag => addTag(tag, 'Tag in ' + deckNames([copy]))));
   return <span className="card-badges" id={id}>
     <span className="card-badge badge-type" title="Card type">{card.kind === 'mcq' ? 'Multiple choice' : 'Recall'}</span>

@@ -10,7 +10,7 @@ import './card-inspector.css';
 export type CardDetailRef = { packId: string; cardId: string; copyId?: string };
 type InspectorTab = 'answer' | 'notes' | 'history';
 const tabs: { id: InspectorTab; label: string }[] = [{ id: 'answer', label: 'Answer' }, { id: 'notes', label: 'My notes' }, { id: 'history', label: 'History' }];
-const formatDate = (at: number | null) => at === null ? 'Not scheduled' : new Date(at).toLocaleString();
+const formatDate = (at: number | null) => at === null ? 'Not scheduled' : new Date(at).toLocaleString('en');
 function Sources({ sources }: { sources: Source[] }) {
   return <ul className="source-links">{sources.map(source => <li key={source.id}><a href={source.url} target="_blank" rel="noreferrer">{source.title} ↗</a></li>)}</ul>;
 }

@@ -1,10 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { MINIMUM_EXAM_QUESTIONS } from './validation';
+import { questionOutcome } from './testEngine';
 import type { ReactNode } from 'react';
 import type { QuestionBank, TestAttempt, TestQuestionSnapshot } from './domain';
 import type { useWorkspace } from './useWorkspace';
 import { questionBankManifests, visibleBankManifests, loadQuestionBank } from './content/questionBanks';
-import { abandonTestAttempt, expireTestAttempts, finishTestAttempt, revealTestAnswer, retryTestAttempt, saveTestAnswer, startTest } from './testStorage';
+import { abandonTestAttempt, expireTestAttempts, finishTestAttempt, revealTestAnswer, retryMissedQuestions, retryTestAttempt, saveTestAnswer, startTest } from './testStorage';
 import './tests-page.css';
 import { TestDomainResults, QuestionLearningResources } from './TestDomainResults';
 
@@ -125,9 +126,9 @@ export function TestsPage({ desk, onDirtyChange, initialBankId, initialAttemptId
       if (saved && created) openAttempt(created.id);
     } finally { setStarting(false); }
   };
-  const retry = async (attempt: TestAttempt) => {
+  const retry = async (attempt: TestAttempt, missedOnly = false) => {
     let created: TestAttempt | undefined;
-    const saved = await desk.mutate(async () => { created = await retryTestAttempt(attempt.id); }, 'A fresh attempt with the same questions has started.');
+    const saved = await desk.mutate(async () => { created = await (missedOnly ? retryMissedQuestions : retryTestAttempt)(attempt.id); }, missedOnly ? 'A practice test with the questions you missed has started.' : 'A fresh attempt with the same questions has started.');
     if (saved && created) openAttempt(created.id);
   };
   const goSetup = () => { setSelectedId(null); window.location.hash = '#tests' + (bankId ? '?bank=' + encodeURIComponent(bankId) : ''); requestAnimationFrame(() => heading.current?.focus()); };
@@ -136,7 +137,7 @@ export function TestsPage({ desk, onDirtyChange, initialBankId, initialAttemptId
     const saved = await desk.mutate(() => abandonTestAttempt(attempt.id), 'Test abandoned.');
     if (saved) { setSetupNotice('Test abandoned. You can start a new test.'); goSetup(); }
   };
-  if (selected) return <AttemptReader key={selected.id} desk={desk} attempt={selected} onDirtyChange={onDirtyChange} onSetup={goSetup} onAbandon={() => { void abandon(selected); }} onRetry={() => { void retry(selected); }} hasOtherActive={Boolean(active && active.id !== selected.id)}/>;
+  if (selected) return <AttemptReader key={selected.id} desk={desk} attempt={selected} onDirtyChange={onDirtyChange} onSetup={goSetup} onAbandon={() => { void abandon(selected); }} onRetry={() => { void retry(selected); }} onRetryMissed={() => { void retry(selected, true); }} hasOtherActive={Boolean(active && active.id !== selected.id)}/>;
   if (previewing && currentBank) return <PilotQuestionPreview bank={currentBank} onClose={() => { setPreviewing(false); requestAnimationFrame(() => previewButton.current?.focus()); }}/>;
   return <section className="tests-page">
     <header className="page-header"><p className="eyebrow">Put it into practice</p><h1 ref={heading} tabIndex={-1}>Tests</h1><p>Practice at your pace or take a timed exam. Test results stay separate from flashcard study.</p></header>
@@ -178,7 +179,7 @@ function PilotQuestionPreview({ bank, onClose }: { bank: QuestionBank; onClose: 
   </section>;
 }
 
-function AttemptReader({ desk, attempt, onDirtyChange, onSetup, onAbandon, onRetry, hasOtherActive }: { desk: Desk; attempt: TestAttempt; onDirtyChange?: (dirty: boolean) => void; onSetup: () => void; onAbandon: () => void; onRetry: () => void; hasOtherActive: boolean }) {
+function AttemptReader({ desk, attempt, onDirtyChange, onSetup, onAbandon, onRetry, onRetryMissed, hasOtherActive }: { desk: Desk; attempt: TestAttempt; onDirtyChange?: (dirty: boolean) => void; onSetup: () => void; onAbandon: () => void; onRetry: () => void; onRetryMissed: () => void; hasOtherActive: boolean }) {
   const now = useNow(attempt.completedAt === null && attempt.deadlineAt !== null);
   const completed = attempt.completedAt !== null;
   const expired = !completed && attempt.deadlineAt !== null && attempt.deadlineAt <= now;
@@ -188,6 +189,7 @@ function AttemptReader({ desk, attempt, onDirtyChange, onSetup, onAbandon, onRet
   const [answerSaving, setAnswerSaving] = useState(false);
   const answerInFlight = useRef(false);
   const [progress, setProgress] = useState(() => loadProgress(attempt));
+  const [resultFilter, setResultFilter] = useState<ResultFilter>('all');
   const position = progress.position;
   const pending = Object.keys(drafts).length > 0 && !completed;
   const heading = useRef<HTMLHeadingElement>(null);
@@ -274,14 +276,20 @@ function AttemptReader({ desk, attempt, onDirtyChange, onSetup, onAbandon, onRet
   return <section className="tests-page test-attempt">
     <header className="test-attempt-heading"><div><p className="eyebrow">{attempt.fixture ? 'Engineering preview · ' : ''}{attempt.mode === 'exam' ? 'Exam Mode' : 'Practice Mode'}</p><h1 ref={heading} tabIndex={-1}>{attemptTitle(attempt)}</h1></div><div className="test-actions"><button className="button secondary" onClick={leave}>Back to Tests</button>{!completed && <button className="button secondary" disabled={!desk.canWrite || expired} onClick={onAbandon}>Abandon test</button>}</div></header>
     {attempt.fixture && <p className="test-fixture-notice">Sample questions for trying the test tools. These results are marked as engineering preview data.</p>}
-    <div className="test-session-bar"><span role="status" aria-live="polite">{answered} of {attempt.questions.length} answered{completed ? ' · Completed' : ''}</span>{attempt.deadlineAt !== null && !completed && <strong className={expired ? 'test-time-ended' : ''} aria-label="Time remaining">{expired ? 'Time ended' : timeText(attempt.deadlineAt - now)}</strong>}<span className="fine-print">{completed ? new Date(attempt.completedAt!).toLocaleString() : 'Selections save automatically'}</span>{!completed && <button className="button primary test-finish-button" disabled={!desk.canWrite || pending || expired} onClick={() => { void finish(); }}>Finish test</button>}</div>
+    <div className="test-session-bar"><span role="status" aria-live="polite">{answered} of {attempt.questions.length} answered{completed ? ' · Completed' : ''}</span>{attempt.deadlineAt !== null && !completed && <strong className={expired ? 'test-time-ended' : ''} aria-label="Time remaining">{expired ? 'Time ended' : timeText(attempt.deadlineAt - now)}</strong>}<span className="fine-print">{completed ? new Date(attempt.completedAt!).toLocaleString('en') : 'Selections save automatically'}</span>{!completed && <button className="button primary test-finish-button" disabled={!desk.canWrite || pending || expired} onClick={() => { void finish(); }}>Finish test</button>}</div>
     {expired && <div className="notice error" role="alert"><p>Time has ended. Responses are locked. Only answers saved before the deadline count.</p><button className="button secondary" disabled={!desk.canWrite} onClick={() => { void finish(); }}>Retry finalization</button></div>}
     {pending && !desk.busy && !answerSaving && <div className="notice error" role="status"><p>An answer has not been saved. Retry or discard the pending answer before finishing.</p><button className="button secondary" onClick={() => { const cardId = Object.keys(drafts)[0]; goTo(attempt.questions.findIndex(question => question.card.id === cardId)); requestAnimationFrame(() => document.getElementById("test-pending-" + cardId)?.querySelector<HTMLButtonElement>("button")?.focus({ preventScroll: true })); }}>Go to unsaved answer</button></div>}
     {answerNotice && <p className="notice error" role="alert">{answerNotice}</p>}
     {completed && Object.keys(drafts).length > 0 && <p className="notice error">An unsaved answer was not included. The results below use saved responses only.</p>}
-    {completed && attempt.result && <section className="panel test-score" aria-label="Test score"><strong>{attempt.result.correct}/{attempt.questions.length} ({percent(attempt)}%)</strong><span>{attempt.result.correct} correct · {attempt.result.wrong} wrong · {attempt.result.skipped} skipped</span>{attempt.mode === 'practice' && <span className="fine-print">{attempt.responses.filter(item => item.revealed).length} answers revealed during practice</span>}<div className="test-actions"><button className="button primary" disabled={!desk.canWrite || hasOtherActive} onClick={onRetry}>Retry same questions</button><button className="button secondary" onClick={leave}>New test</button>{attempt.mode === 'exam' && !reviewingExam && <button className="button secondary" onClick={reviewExam}>Review exam</button>}</div></section>}
+    {completed && attempt.result && <section className="panel test-score" aria-label="Test score"><strong>{attempt.result.correct}/{attempt.questions.length} ({percent(attempt)}%)</strong><span>{attempt.result.correct} correct · {attempt.result.wrong} wrong · {attempt.result.skipped} skipped</span>{attempt.mode === 'practice' && <span className="fine-print">{plural(attempt.responses.filter(item => item.revealed).length, 'answer')} revealed during practice</span>}<div className="test-actions">{attempt.result.wrong + attempt.result.skipped > 0 && <button className="button primary" disabled={!desk.canWrite || hasOtherActive} onClick={onRetryMissed}>Retry missed ({attempt.result.wrong + attempt.result.skipped})</button>}<button className="button secondary" disabled={!desk.canWrite || hasOtherActive} onClick={onRetry}>Retry same questions</button><button className="button secondary" onClick={leave}>New test</button>{attempt.mode === 'exam' && !reviewingExam && <button className="button secondary" onClick={reviewExam}>Review exam</button>}</div></section>}
     {completed && !showExamResult && <TestDomainResults attempt={attempt}/>}
-    {!showExamResult && completed && <div className="test-questions">{attempt.questions.map(renderQuestion)}</div>}
+    {!showExamResult && completed && <>
+      <div className="test-result-filter" role="group" aria-label="Show questions">{resultFilters.map(([value, label]) => {
+        const size = value === 'all' ? attempt.questions.length : attempt.questions.filter(question => questionOutcome(attempt, question) === value).length;
+        return <button key={value} className="button secondary" aria-pressed={resultFilter === value} disabled={!size} onClick={() => setResultFilter(value)}>{label} ({size})</button>;
+      })}</div>
+      <div className="test-questions">{attempt.questions.flatMap((question, index) => resultFilter === 'all' || questionOutcome(attempt, question) === resultFilter ? [renderQuestion(question, index)] : [])}</div>
+    </>}
     {!completed && <div className="test-focus">
       <div className="test-focus-main">
         <div className="test-questions">{attempt.questions.slice(pageStart, pageStart + QUESTIONS_PER_PAGE).map((question, offset) => renderQuestion(question, pageStart + offset))}</div>
@@ -317,6 +325,9 @@ function centerCurrentButton() {
   const column = navigator.getBoundingClientRect();
   navigator.scrollTop += target.top - column.top - (column.height - target.height) / 2;
 }
+type ResultFilter = 'all' | 'wrong' | 'skipped';
+const resultFilters: [ResultFilter, string][] = [['all', 'All'], ['wrong', 'Wrong'], ['skipped', 'Skipped']];
+const plural = (count: number, noun: string) => `${count} ${noun}${count === 1 ? '' : 's'}`;
 /** A test in progress shows this many questions per page. Change it here to resize every page. */
 const QUESTIONS_PER_PAGE = 5;
 interface AttemptProgress { position: number; flagged: string[]; }
@@ -372,7 +383,9 @@ function Question({ question, number, total, selectedOptionIds, revealed, disabl
     {!revealed && practice && <div className="test-question-actions"><button className="button secondary" disabled={revealDisabled} aria-disabled={revealDisabled || saving} onClick={() => { if (!saving) onReveal(); }}>Reveal answer</button></div>}
     {children}
     {revealed && <div id={'test-answer-' + card.id} tabIndex={-1} className="test-answer"><p className="test-answer-status">{preview ? 'Answer preview' : selectedOptionIds.length ? (correct ? 'Correct' : 'Incorrect') : 'Skipped'}{!completed ? ' · Response locked after reveal' : ''}</p><h3>Answer</h3><p>{card.answer}</p><p>{card.explanation}</p>{multiple && <p className="fine-print">All correct options are required for one point. Partial selections receive no points.</p>}
-      {card.options.some(option => card.optionExplanations[option.id]) && <><h3>Why these choices?</h3><dl className="test-option-explanations">{card.options.map((option, index) => card.optionExplanations[option.id] ? <div key={option.id}><dt>{String.fromCharCode(65 + index)}. {option.text}</dt><dd>{card.optionExplanations[option.id]}</dd></div> : null)}</dl></>}
+      {card.options.some(option => card.optionExplanations[option.id]) && (completed && !preview
+        ? <details className="test-why"><summary>Why these choices?</summary><dl className="test-option-explanations">{card.options.map((option, index) => card.optionExplanations[option.id] ? <div key={option.id}><dt>{String.fromCharCode(65 + index)}. {option.text}</dt><dd>{card.optionExplanations[option.id]}</dd></div> : null)}</dl></details>
+        : <><h3>Why these choices?</h3><dl className="test-option-explanations">{card.options.map((option, index) => card.optionExplanations[option.id] ? <div key={option.id}><dt>{String.fromCharCode(65 + index)}. {option.text}</dt><dd>{card.optionExplanations[option.id]}</dd></div> : null)}</dl></>)}
       <QuestionLearningResources question={question}/>
       <h3>References</h3><ul>{question.sources.map(source => <li key={source.id}><a href={source.url} target="_blank" rel="noreferrer">{source.title} ↗</a></li>)}</ul>
     </div>}

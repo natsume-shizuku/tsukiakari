@@ -80,7 +80,7 @@ export function StudyReview({ desk, now, paused, onPause, onResume, onDirtyChang
     const queue = getDeckQueue(workspace, deck.id, now);
     return <section className="panel review-waiting" aria-label="Review session">
       <p className="eyebrow">{deck.name}</p><h2>{queue.orderedIds.length ? 'Cards are ready to review' : 'Nothing due right now'}</h2>
-      <p className="muted">{queue.nextDueAt ? 'Next scheduled card: ' + new Intl.DateTimeFormat(undefined, { timeZone: workspace.preferences.timeZone, dateStyle: 'medium', timeStyle: 'short' }).format(queue.nextDueAt) + '.' : 'New cards and reviews will become available as their daily allowances and schedules permit.'}</p>
+      <p className="muted">{queue.nextDueAt ? 'Next scheduled card: ' + new Intl.DateTimeFormat('en', { timeZone: workspace.preferences.timeZone, dateStyle: 'medium', timeStyle: 'short' }).format(queue.nextDueAt) + '.' : 'New cards and reviews will become available as their daily allowances and schedules permit.'}</p>
       <p className="fine-print">Learning steps can return during this session. Daily allowances reset at {workspace.preferences.dayStartsAtHour} a.m. in {timeZoneLabel(workspace.preferences.timeZone)}.</p>
       <div className="review-tools"><button className="button" disabled={!canWrite} onClick={() => void mutate(() => refreshReview(session.turnId), 'Due cards checked.')}>Check due cards</button><button className="button secondary" disabled={!canWrite || !undoable} onClick={() => void undo()}>Undo last review</button><button className="button secondary" onClick={onPause}>Pause review</button></div>
     </section>;
@@ -120,7 +120,7 @@ function ReviewCard({ desk, workspace, session, now, undoable, undo, onPause, on
   };
   const rate = async (rating: 'again' | 'right') => {
     if (!canWrite || notesDirty || !session.revealed || (wrong && rating === 'right')) return;
-    await mutate(() => submitReview({ turnId: session.turnId, rating, durationMs: duration() }), rating === 'again' ? 'Again saved. Your next card is ready.' : 'Right saved. Your next card is ready.');
+    await mutate(() => submitReview({ turnId: session.turnId, rating, durationMs: duration() }), rating === 'again' ? 'Again saved.' : 'Right saved.');
   };
   const preview = (rating: 'again' | 'right') => {
     try { return dueLabel(scheduleReview(before, rating, deck.settings, now, workspace.preferences).dueAt, now); }
@@ -144,8 +144,8 @@ function ReviewCard({ desk, workspace, session, now, undoable, undo, onPause, on
     <header className="review-heading"><div><p className="eyebrow">{deck.name} · {before.state}</p><span className="fixture-badge">{pack.fixture ? 'Engineering fixture' : pack.title}</span>{copy.tags.includes('leech') && <span className="leech-badge">Leech</span>}</div><button className="button secondary" onClick={onPause}>Pause review</button></header>
     <div className="review-queue" aria-label="Available cards"><span>{queue.learningIds.length} learning due</span><span>{queue.reviewIds.length} reviews due</span><span>{queue.newIds.length} new available</span></div>
     <div className="review-content">
-      <p className="quiet-label">{card.kind === 'mcq' ? 'Multiple choice' : 'Recall'} · Revision {card.revision}</p>
-      <h2 className="review-question">{card.prompt}</h2>
+      <p className="quiet-label">{card.kind === 'mcq' ? 'Multiple choice' : 'Recall'}</p>
+      <h2 className={'review-question' + (card.prompt.length > 100 ? ' is-long' : '')}>{card.prompt}</h2>
       {card.options && <div className="review-options" role="radiogroup" aria-label="Answer choices">{card.options.map((option, index) => <button key={option.id} type="button" role="radio" aria-checked={chosen === option.id} className={'review-option' + (session.revealed && option.id === card.correctOptionId ? ' correct' : '') + (session.revealed && chosen === option.id && wrong ? ' incorrect' : '')} disabled={!canWrite || session.revealed} onClick={() => { setSelected(option.id); panel.current?.focus({ preventScroll: true }); }}><span className="option-letter">{String.fromCharCode(65 + index)}</span><span>{option.text}{session.revealed && option.id === card.correctOptionId && <strong className="option-result">Correct answer</strong>}{session.revealed && chosen === option.id && wrong && <strong className="option-result">Your answer</strong>}</span></button>)}</div>}
       {card.kind === 'mcq' && <label className="guessed-control"><input type="checkbox" checked={wasGuessed} disabled={!canWrite || session.revealed} onChange={event => { setGuessed(event.target.checked); panel.current?.focus({ preventScroll: true }); }}/>I guessed this answer</label>}
       {session.revealed && <div className="review-answer" data-testid="revealed-answer"><p className="eyebrow">Answer</p><p className="answer">{card.answer}</p><p>{card.explanation}</p>{card.kind === 'mcq' && <p className={wrong ? 'answer-feedback incorrect-text' : 'answer-feedback'}>{wrong ? 'This answer needs another look. Choose Again to relearn it.' : wasGuessed ? 'Correct, but guessed. Choose Again if you want another look.' : 'Correct. Choose Right when you are ready.'}</p>}

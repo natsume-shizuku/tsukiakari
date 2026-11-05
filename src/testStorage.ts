@@ -1,6 +1,6 @@
 import type { QuestionBank, TestAttempt } from './domain';
 import { database, loadWorkspace, type TsukiakariDatabase } from './storage';
-import { answerTestAttempt, completeTestAttempt, createTestAttempt, revealTestAttempt, retryAttempt, testHasExpired, type TestOptions } from './testEngine';
+import { answerTestAttempt, completeTestAttempt, createTestAttempt, revealTestAttempt, retryAttempt, retryMissedAttempt, testHasExpired, type TestOptions } from './testEngine';
 import { idSchema, testAttemptSchema } from './validation';
 import { collectTestExposures } from './testMigration';
 
@@ -39,14 +39,16 @@ export function revealTestAnswer(id: string, cardId: string, db = database, now 
 export function finishTestAttempt(id: string, db = database, now = Date.now()): Promise<TestAttempt> {
   return updateAttempt(id, attempt => completeTestAttempt(attempt, now), db);
 }
-export async function retryTestAttempt(id: string, db = database, now = Date.now()): Promise<TestAttempt> {
+export const retryTestAttempt = (id: string, db = database, now = Date.now()) => startRetry(id, retryAttempt, db, now);
+export const retryMissedQuestions = (id: string, db = database, now = Date.now()) => startRetry(id, retryMissedAttempt, db, now);
+async function startRetry(id: string, build: (attempt: TestAttempt, now: number) => TestAttempt, db: TsukiakariDatabase, now: number): Promise<TestAttempt> {
   idSchema.parse(id);
   return db.transaction('rw', db.tables, async () => {
     const { testAttempts, testExposures } = await loadWorkspace(db);
     ensureNoActive(testAttempts);
     const previous = testAttempts.find(attempt => attempt.id === id);
     if (!previous) throw new Error('The test attempt was not found. No data was changed.');
-    const next = retryAttempt(previous, now);
+    const next = build(previous, now);
     await db.testAttempts.add(next);
     await db.testExposures.bulkPut(collectTestExposures([next], testExposures));
     return structuredClone(next);

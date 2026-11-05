@@ -133,31 +133,35 @@
   },
   {
     "id": "cc-d6-n08",
-    "revision": 1,
-    "reviewer": "/root",
-    "reviewedAt": "2026-11-03",
+    "revision": 2,
+    "reviewer": "claude-subagent/7g-revision-review",
+    "reviewedAt": "2026-11-05",
     "decision": "approved",
-    "fingerprint": "a013660207eb06a4713e8b8583b4a9907d598a7a2d306be970c385b6a33b5f75",
-    "rationale": "Verified Managed environment ingestion prerequisites and distinct Dataverse authorization/identity/Monitoring Reader/app-setting setup for embedding.",
-    "findings": [],
+    "fingerprint": "01720f9dcd95da69208c33a1dce7a5dea5194acb5855f95903b42b1f99858142",
+    "rationale": "Every sentence and evidence record matches the three cited pages. Guided setup is attributed to its Customer Service article, the Enable Diagnose dashboard guide keeps its own steps, and the note states that neither page says how the two routes relate.",
+    "findings": [
+      "Revision 1 predated the guided setup on its cited page, and its sentence about recordings and transcripts had no source. Both are resolved.",
+      "Review required attributing guided setup to its article, not calling the Diagnose guide a manual version of it, and listing its steps in page order. This exact text was then rechecked.",
+      "cc-d6-c22, c23, c24 and ab250-d6-q26 to q30 were reread against this revision with no conflicts."
+    ],
     "sourceChecks": [
       {
         "sourceId": "cc-d6-final-s11",
-        "section": "Prerequisites; Pricing",
+        "section": "Introduction; Prerequisites; Pricing; Set up a connection with Azure Application Insights",
         "supported": true,
-        "notes": "Opened lifecycle telemetry purpose, Managed environment and Azure/Power Platform ingestion/query prerequisites."
+        "notes": "Reopened on 2026-11-05: the guided sequence, its attribution and the existing prerequisite claims match the page dated 2026-10-20."
       },
       {
         "sourceId": "cc-d6-final-s12",
-        "section": "Prerequisites; Create a connection with Azure Application Insights",
+        "section": "Prerequisites; Set up a connection with Azure Application Insights",
         "supported": true,
-        "notes": "Opened Power Platform diagnostics overview, managed-environment requirement and separate collection/export model."
+        "notes": "Reopened on 2026-11-05: supports the data export connection only, and the page does not mention Debug."
       },
       {
         "sourceId": "cc-d6-final-s13",
-        "section": "Update Application Insights ID in environment variable; Create and register an app; Assign Monitoring Reader role; Enable Debug tab",
+        "section": "Update Application Insights ID in environment variable; Create and register an app; Assign Monitoring Reader role; Update managed identity record; Enable Debug tab",
         "supported": true,
-        "notes": "Opened full instance-ID, federated app/managed identity, Monitoring Reader and default/environment Debug app-setting procedure."
+        "notes": "Reopened on 2026-11-05: steps and their order match the page dated 2026-05-06, and the app setting is confirmed."
       }
     ]
   },

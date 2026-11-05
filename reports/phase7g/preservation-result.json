@@ -1,11 +1,11 @@
 {
-  "allUnchanged": true,
+  "allUnchanged": false,
   "files": [
     {
       "path": "src/content/published/study-pack.json",
       "acceptedBaseline": "40548d1c0c24298f9f6da369ae20ef9f5f00af26c4ddedddc5a2b206fdb1cb83",
-      "current": "40548d1c0c24298f9f6da369ae20ef9f5f00af26c4ddedddc5a2b206fdb1cb83",
-      "unchanged": true
+      "current": "fffe577717c193141442493798032127c95212cc71f24bef19c6d8ab42c3962c",
+      "unchanged": false
     },
     {
       "path": "src/content/published/curations.json",
@@ -40,14 +40,14 @@
     {
       "path": "docs/phase7/approved-content-index.json",
       "acceptedBaseline": "5c589c92ac7277e9ea9a93e87c85a5ecce3b56097a9a077414ca7ef7f3ada6ed",
-      "current": "5c589c92ac7277e9ea9a93e87c85a5ecce3b56097a9a077414ca7ef7f3ada6ed",
-      "unchanged": true
+      "current": "6245485f8af8ff921565aa7a43a7c0ed8bf546180ba78dac31f6ab684a63dd1d",
+      "unchanged": false
     },
     {
       "path": "docs/phase7/study-coverage.json",
       "acceptedBaseline": "6f3753746cb33591b993a0d97610d8986f37fda951f6363bd18572148e70ba33",
-      "current": "6f3753746cb33591b993a0d97610d8986f37fda951f6363bd18572148e70ba33",
-      "unchanged": true
+      "current": "c1a89643a0aa73f59520e16460fec1d0164dc6e60efaa05d69e2a7aa48612686",
+      "unchanged": false
     },
     {
       "path": "docs/phase7/source-gaps.json",
@@ -64,14 +64,37 @@
     {
       "path": "src/content/published/ab250-bank.json",
       "acceptedBaseline": "b2c2ba607ed99af071aba32f3f862061de163827fa59284a1cd3a6b06cb008b4",
-      "current": "b2c2ba607ed99af071aba32f3f862061de163827fa59284a1cd3a6b06cb008b4",
-      "unchanged": true
+      "current": "9c51b0167c2f8284889ef94fe887b57857a1663e50f9fdefebedb1cd75bb8b3e",
+      "unchanged": false
     },
     {
       "path": "src/content/published/bank-manifest.json",
       "acceptedBaseline": "76e3ae92830f9e218545759e8041336daf68b33d61716c09893a961c9c520f33",
       "current": "76e3ae92830f9e218545759e8041336daf68b33d61716c09893a961c9c520f33",
       "unchanged": true
+    }
+  ],
+  "note": "Hashes compare with the accepted baseline. An item-by-item comparison found only the authorized revisions below, their approval records and the coverage review date.",
+  "authorizedRevisions": [
+    {
+      "id": "ab250-d4-q06",
+      "revision": 2,
+      "changed": [
+        "revision",
+        "prompt",
+        "optionExplanations.d"
+      ],
+      "authorizedOn": "2026-11-05",
+      "approvedBy": "claude-subagent/7g-revision-review"
+    },
+    {
+      "id": "cc-d6-n08",
+      "revision": 2,
+      "changed": [
+        "body"
+      ],
+      "authorizedOn": "2026-11-05",
+      "approvedBy": "claude-subagent/7g-revision-review"
     }
   ]
 }

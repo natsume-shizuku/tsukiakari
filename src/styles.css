@@ -357,3 +357,17 @@ textarea { font: inherit; color: var(--text); background: var(--bg); border: 1px
 }
 
 @media (max-width: 899px) { main { padding-inline: 16px; } }
+/* Long scenarios read better as left-aligned text, and options need the room. */
+.review-question.is-long { font-size: clamp(1.02rem, 1.4vw, 1.2rem); font-weight: 600; line-height: 1.6; text-align: left; margin: 8px 0 16px; }
+@media (min-width: 761px) {
+  .review-actions { display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, auto); gap: 4px 12px; align-items: center; padding: 12px 26px; }
+  .review-actions > .fine-print { grid-column: 1 / -1; }
+  .review-actions > .review-tools { grid-column: 2; grid-row: 1; flex-wrap: nowrap; }
+  .review-actions > .review-shortcuts { grid-column: 1 / -1; margin: 4px 0 0; }
+}
+@media (hover: none) { .review-shortcuts { display: none; } }
+@media (max-width: 600px) { .review-actions { padding: 10px 16px; } .review-tools { margin-top: 8px; } }
+.study-day-settings { display: grid; gap: 12px; }
+.study-day-fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+.study-day-settings > .button { justify-self: start; }
+button[aria-pressed='true'].multi-select-toggle { border-color: var(--accent); color: var(--accent); }

@@ -10,11 +10,24 @@ The first subject is **Dynamics 365 Contact Center** and the **AB-250** certific
 
 - **Study:** build personal decks from whole packs or individual cards, then review with Again and Right. Scheduling uses FSRS-6 through ts-fsrs, and every setting and daily allowance is per deck.
 - **Library:** browse packs and cards, read sourced notes, keep personal notes and tags per deck, and revisit flashcard Mistakes.
-- **Tests:** take practice tests with optional answer reveal, or timed exams with a saved deadline, five questions at a time with page buttons and flags for review. Results are broken down by domain and link to related notes and cards.
+- **Tests:** take practice tests with optional answer reveal, or timed exams with a saved deadline, five questions at a time with page buttons and flags for review. Finished tests can be filtered to wrong or skipped questions, and Retry missed starts a practice test of just those. Results are broken down by domain and link to related notes and cards.
 - **Statistics:** see daily reviews and active time, a yearly heatmap, streaks and per-topic flashcard feedback.
-- **Settings:** set the theme and study-day start, and move data between browsers with JSON export and import.
+- **Settings:** set the theme and study-day start, and move data between browsers with JSON export and import or an optional Google Drive backup.
 
 Test results never affect flashcard schedules, Mistakes, leeches or review statistics.
+
+## Optional Google Drive backup
+
+Learners can save their full backup to a hidden app folder in their own Google Drive and restore it on another device. The browser talks to Google directly, so there is no server, tokens stay in memory, and the site owner never sees the data. Saving only happens when someone clicks it. Until a client ID is configured, Settings shows this as a Coming soon placeholder and nothing contacts Google.
+
+To turn it on:
+
+1. In [Google Cloud Console](https://console.cloud.google.com/), create a project and enable the Google Drive API.
+2. Set up the consent screen and add the `https://www.googleapis.com/auth/drive.appdata` scope.
+3. Create an OAuth client of type **Web application**, and add the site's origin under **Authorized JavaScript origins**, such as `https://natsume-shizuku.github.io`.
+4. Copy `.env.example` to `.env` and set `VITE_GOOGLE_CLIENT_ID`. The client ID is public, not a secret.
+
+To try a client ID without rebuilding, set `localStorage['tsukiakari.driveClientId']` and reload.
 
 ## Run it locally
 

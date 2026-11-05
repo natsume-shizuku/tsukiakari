@@ -103,13 +103,16 @@ export function createTestAttempt(input: QuestionBank, inputOptions: TestOptions
   });
 }
 
+export function questionOutcome(attempt: TestAttempt, question: TestAttempt['questions'][number]): 'correct' | 'wrong' | 'skipped' {
+  const selected = attempt.responses.find(response => response.cardId === question.card.id)?.selectedOptionIds ?? [];
+  if (!selected.length) return 'skipped';
+  return selected.length === question.card.correctOptionIds.length && selected.every(id => question.card.correctOptionIds.includes(id)) ? 'correct' : 'wrong';
+}
+
 export function scoreTestAttempt(attempt: TestAttempt): NonNullable<TestAttempt['result']> {
   const result = { correct: 0, wrong: 0, skipped: 0 };
   for (const question of attempt.questions) {
-    const selected = attempt.responses.find(response => response.cardId === question.card.id)?.selectedOptionIds ?? [];
-    if (!selected.length) result.skipped++;
-    else if (selected.length === question.card.correctOptionIds.length && selected.every(id => question.card.correctOptionIds.includes(id))) result.correct++;
-    else result.wrong++;
+    result[questionOutcome(attempt, question)]++;
   }
   return result;
 }
@@ -150,6 +153,14 @@ export function revealTestAttempt(input: TestAttempt, cardId: string, now = Date
   if (!response) throw new Error('This question is not part of the test.');
   response.revealed = true;
   return testAttemptSchema.parse(attempt);
+}
+/** Wrong and skipped questions return as untimed practice, because a shorter set is not an exam. */
+export function retryMissedAttempt(input: TestAttempt, now = Date.now()): TestAttempt {
+  const original = testAttemptSchema.parse(input);
+  const questions = original.questions.filter(question => questionOutcome(original, question) !== 'correct');
+  if (!questions.length) throw new Error('Every question was correct, so there is nothing to retry.');
+  return testAttemptSchema.parse({ ...retryAttempt({ ...original, mode: 'practice', deadlineAt: null }, now), questions, deadlineAt: null,
+    responses: questions.map(question => ({ cardId: question.card.id, selectedOptionIds: [], revealed: false })) });
 }
 export function retryAttempt(input: TestAttempt, now = Date.now()): TestAttempt {
   timeSchema.parse(now);

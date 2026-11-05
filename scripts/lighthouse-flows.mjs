@@ -11,6 +11,14 @@ const puppeteer = require('puppeteer-core');
 const launcher = require('chrome-launcher');
 const freePort = () => new Promise((resolve,reject)=>{const server=net.createServer();server.once('error',reject);server.listen(0,'127.0.0.1',()=>{const port=server.address().port;server.close(()=>resolve(port));});});
 const {startFlow} = await import(pathToFileURL(path.join(lighthousePath,'core/index.js')).href);
+// Tests show five questions a page, so a multiple-answer question may be further on.
+const unrevealedMultiple = async page => {
+  for (;;) {
+    const found = page.locator('.test-question:not(:has(.test-answer))').filter({has:page.getByRole('checkbox')}).first();
+    if (await found.count()) return found;
+    await page.getByRole('button',{name:'Next page',exact:true}).click();
+  }
+};
 const chromePath = path.join(process.env['ProgramFiles(x86)'], 'Microsoft/Edge/Application/msedge.exe');
 await fs.mkdir('reports/lighthouse',{recursive:true});
 for (const [theme,width] of [['dark',1440],['light',390]]) {
@@ -18,6 +26,8 @@ for (const [theme,width] of [['dark',1440],['light',390]]) {
   const browser=await puppeteer.connect({browserURL:'http://127.0.0.1:'+chrome.port});
   try {
     const auditPage=await browser.newPage();
+    // These flows exercise the engineering fixtures, which learners only see behind this flag.
+    await auditPage.evaluateOnNewDocument(()=>localStorage.setItem('tsukiakari.showFixtures','on'));
     await auditPage.goto('http://localhost:4187/');
     const driver=await chromium.connectOverCDP(browser.wsEndpoint());
     const page=driver.contexts()[0].pages().find(item=>item.url().startsWith('http://localhost:4187/'));
@@ -73,13 +83,13 @@ for (const [theme,width] of [['dark',1440],['light',390]]) {
     await page.getByRole('link',{name:'Tests',exact:true}).click();
     await page.getByLabel('Question bank',{exact:true}).selectOption('developer-test-fixture');
     await page.getByRole('button',{name:'Start practice',exact:true}).click();
-    await expect(page.locator('.test-question')).toHaveCount(100);
+    await expect(page.locator('.test-question')).toHaveCount(5);
     await page.locator('.test-question').first().locator('input[type=radio], input[type=checkbox]').first().check();
     await expect(page.locator('.save-status')).toContainText('Saved in this browser');
     await page.locator('.test-question').first().getByRole('button',{name:'Reveal answer',exact:true}).click();
     await expect(page.locator('.test-answer').first()).toBeVisible();
     await capture('100-question practice with revealed answer');
-    const multiple = page.locator('.test-question:not(:has(.test-answer))').filter({has:page.getByRole('checkbox')}).first();
+    const multiple = await unrevealedMultiple(page);
     await multiple.scrollIntoViewIfNeeded();
     await multiple.getByRole('checkbox').first().check();
     await expect(page.locator('.save-status')).toContainText('Saved in this browser');
@@ -90,11 +100,11 @@ for (const [theme,width] of [['dark',1440],['light',390]]) {
     await page.getByLabel('Question bank',{exact:true}).selectOption('ab250-original');
     await expect(page.getByText(/300 available questions/)).toBeVisible();
     await page.getByRole('button',{name:'Start practice',exact:true}).click();
-    await expect(page.locator('.test-question')).toHaveCount(100);
+    await expect(page.locator('.test-question')).toHaveCount(5);
     await page.locator('.test-question').first().getByRole('button',{name:'Reveal answer',exact:true}).click();
     await expect(page.locator('.test-answer').first()).toBeVisible();
     await capture('Original AB-250 practice with sourced explanation');
-    const realMultipleTitleId=await page.locator('.test-question:not(:has(.test-answer))').filter({has:page.getByRole('checkbox')}).first().getByRole('heading',{level:2}).getAttribute('id');
+    const realMultipleTitleId=await (await unrevealedMultiple(page)).getByRole('heading',{level:2}).getAttribute('id');
     if(!realMultipleTitleId)throw new Error('Missing stable question title');
     // Keep the same question after reveal removes it from the unrevealed candidate set.
     const realMultiple=page.locator('.test-question').filter({has:page.locator('[id="'+realMultipleTitleId+'"]')});
@@ -110,15 +120,15 @@ for (const [theme,width] of [['dark',1440],['light',390]]) {
     await expect(page.getByRole('region',{name:'Note reader',exact:true})).toBeVisible();
     await capture('Linked note from practice');
     await page.goBack();
-    await expect(page.locator('.test-question')).toHaveCount(100);
+    await expect(page.locator('.test-question')).toHaveCount(5);
     page.once('dialog',dialog=>dialog.accept());
     await page.getByRole('button',{name:'Abandon test',exact:true}).click();
     await page.getByLabel('Test mode',{exact:true}).selectOption('exam');
     await page.getByRole('button',{name:'Start exam',exact:true}).click();
-    await expect(page.locator('.test-question')).toHaveCount(100);
+    await expect(page.locator('.test-question')).toHaveCount(5);
     await capture('Original 100-question timed exam');
     page.once('dialog',dialog=>dialog.accept());
-    await page.getByRole('button',{name:'Show answers',exact:true}).click();
+    await page.getByRole('button',{name:'Finish test',exact:true}).click();
     const resultDialog=page.getByRole('dialog',{name:'Test results',exact:true});
     await expect(resultDialog).toBeVisible();
     await capture('Original exam results dialog');

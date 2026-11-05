@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, type MouseEvent as ReactMouseEvent } from 'react';
 import { timeZoneLabel, type WorkspaceSnapshot } from './domain';
 import { addStudyDays, getStudyDay, studyDayAsUtcNoon } from './studyDay';
 import { formatActiveTime, getStatistics, type DayActivity } from './statistics';
@@ -6,10 +6,51 @@ import './statistics.css';
 import { TopicStatistics } from './TopicStatistics';
 
 function dateLabel(date: string) {
-  return new Intl.DateTimeFormat(undefined, { dateStyle: 'long', timeZone: 'UTC' }).format(studyDayAsUtcNoon(date));
+  return new Intl.DateTimeFormat('en', { dateStyle: 'long', timeZone: 'UTC' }).format(studyDayAsUtcNoon(date));
 }
 function level(reviews: number) { return reviews === 0 ? 0 : reviews < 10 ? 1 : reviews < 30 ? 2 : reviews < 60 ? 3 : 4; }
-function dayLabel(day: DayActivity) { return `${dateLabel(day.date)}: ${day.reviews} reviews, ${formatActiveTime(day.durationMs)} active time`; }
+
+type CalendarDay = DayActivity & { future: boolean };
+/** Keeps the date beside the first and last weeks instead of past the edge of the chart. */
+const tipInset = 80;
+function dayDetail(day: CalendarDay) {
+  if (day.future) return 'Future study day';
+  return `${day.reviews} ${day.reviews === 1 ? 'review' : 'reviews'} · ${formatActiveTime(day.durationMs)} active time`;
+}
+
+/** Each day shows its date on hover or tap, so the grid needs no axis labels. Keyboard users have the date controls below it. */
+function StudyHeatmap({ days, year, studiedDays, reviews, selectedDate }: { days: CalendarDay[]; year: number; studiedDays: number; reviews: number; selectedDate: string }) {
+  const figure = useRef<HTMLElement>(null);
+  const [tip, setTip] = useState<{ index: number; left: number; top: number } | null>(null);
+  const tipDay = tip && days[tip.index];
+  const firstWeekday = new Date(studyDayAsUtcNoon(days[0].date)).getUTCDay();
+  const weeks = Math.ceil((firstWeekday + days.length) / 7);
+  useEffect(() => {
+    if (!tip) return;
+    const dismiss = (event: PointerEvent) => { if (!(event.target as Element).closest('rect[data-index]')) setTip(null); };
+    document.addEventListener('pointerdown', dismiss);
+    return () => document.removeEventListener('pointerdown', dismiss);
+  }, [tip]);
+  const showTip = (event: ReactMouseEvent<SVGSVGElement>) => {
+    const cell = (event.target as Element).closest<SVGRectElement>('rect[data-index]');
+    const box = figure.current?.getBoundingClientRect();
+    if (!cell || !box) return;
+    const rect = cell.getBoundingClientRect();
+    const center = rect.left + rect.width / 2 - box.left;
+    setTip({ index: Number(cell.dataset.index), left: Math.max(tipInset, Math.min(center, box.width - tipInset)), top: rect.top - box.top });
+  };
+  return <figure className="statistics-heatmap" ref={figure}>
+    {tip && tipDay && <div className="statistics-tip" aria-hidden="true" style={{ left: tip.left, top: tip.top }}><strong>{dateLabel(tipDay.date)}</strong><span>{dayDetail(tipDay)}</span></div>}
+    <div className="statistics-heatmap-scroll" role="region" aria-label="Yearly study heatmap" tabIndex={0} onScroll={() => setTip(null)}>
+      <svg viewBox={`-2 -2 ${weeks * 16 + 1} 113`} role="img" aria-labelledby="statistics-chart-title statistics-chart-description" onPointerOver={showTip} onPointerLeave={() => setTip(null)} onClick={showTip}>
+        <title id="statistics-chart-title">{year} study activity</title>
+        <desc id="statistics-chart-description">{studiedDays} study days and {reviews} reviews. Stronger color indicates more reviews. Use the date controls below for daily totals.</desc>
+        {days.map((day, index) => { const column = Math.floor((firstWeekday + index) / 7); const row = (firstWeekday + index) % 7; return <rect key={day.date} data-index={index} x={column * 16} y={row * 16} width="13" height="13" rx="2" className={`statistics-cell level-${level(day.reviews)}${day.future ? ' is-future' : ''}${day.date === selectedDate ? ' is-selected' : ''}`}/>; })}
+      </svg>
+    </div>
+    <figcaption><span>Hover over or tap a day to see its date and totals.</span><span className="statistics-legend">Fewer{[0, 1, 2, 3, 4].map(value => <span key={value} aria-hidden="true" className={`statistics-cell level-${value}`}/>)}More</span></figcaption>
+  </figure>;
+}
 
 export function StatisticsPage({ workspace, now = Date.now() }: { workspace: WorkspaceSnapshot; now?: number }) {
   const today = getStudyDay(now, workspace.preferences);
@@ -23,9 +64,6 @@ export function StatisticsPage({ workspace, now = Date.now() }: { workspace: Wor
   const selectedDay = stats.days.find(day => day.date === selectedDate) ?? stats.days[0];
   const firstDate = stats.days[0].date;
   const lastDate = year === currentYear ? today : stats.days[stats.days.length - 1].date;
-  const firstWeekday = new Date(studyDayAsUtcNoon(firstDate)).getUTCDay();
-  const weeks = Math.ceil((firstWeekday + stats.days.length) / 7);
-  const chartWidth = 34 + weeks * 16;
   const changeYear = (nextYear: number) => { setChosenYear(nextYear); setChosenDate(nextYear === currentYear ? today : `${nextYear}-12-31`); };
   return <section className="statistics-page">
     <header className="page-header"><p className="eyebrow">See your rhythm</p><h1>Statistics</h1><p>Small sessions add up over time.</p></header>
@@ -38,10 +76,7 @@ export function StatisticsPage({ workspace, now = Date.now() }: { workspace: Wor
     </div>
     <section className="panel statistics-calendar" aria-labelledby="statistics-calendar-title">
       <div className="statistics-calendar-heading"><div><h2 id="statistics-calendar-title">Study activity · {year}</h2><p className="fine-print">{stats.yearActivity.reviews.toLocaleString()} reviews · {formatActiveTime(stats.yearActivity.durationMs)} active time</p></div><div className="statistics-year-controls"><button className="button secondary" aria-label="Previous year" disabled={year <= stats.earliestYear} onClick={() => changeYear(year - 1)}>←</button><button className="button secondary" disabled={year === currentYear} onClick={() => changeYear(currentYear)}>This year</button><button className="button secondary" aria-label="Next year" disabled={year >= currentYear} onClick={() => changeYear(year + 1)}>→</button></div></div>
-      <figure className="statistics-heatmap"><div className="statistics-heatmap-scroll" role="region" aria-label="Yearly study heatmap" tabIndex={0}><svg viewBox={`0 0 ${chartWidth} 146`} role="img" aria-labelledby="statistics-chart-title statistics-chart-description"><title id="statistics-chart-title">{year} study activity</title><desc id="statistics-chart-description">{stats.studiedDays} study days and {stats.yearActivity.reviews} reviews. Stronger color indicates more reviews. Use the date controls below for daily totals.</desc>
-        {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day, index) => index % 2 === 1 && <text key={day} x="0" y={38 + index * 16} className="statistics-chart-label">{day}</text>)}
-        {stats.days.map((day, index) => { const column = Math.floor((firstWeekday + index) / 7); const row = (firstWeekday + index) % 7; return <g key={day.date}>{day.date.endsWith('-01') && <text x={34 + column * 16} y="14" className="statistics-chart-label">{new Intl.DateTimeFormat(undefined, { month: 'short', timeZone: 'UTC' }).format(studyDayAsUtcNoon(day.date))}</text>}<rect x={34 + column * 16} y={26 + row * 16} width="13" height="13" rx="2" className={`statistics-cell level-${level(day.reviews)}${day.future ? ' is-future' : ''}${day.date === selectedDate ? ' is-selected' : ''}`}><title>{day.future ? `${dateLabel(day.date)}: future study day` : dayLabel(day)}</title></rect></g>; })}
-      </svg></div><figcaption><span>Choose a date below to inspect daily totals.</span><span className="statistics-legend">Fewer{[0, 1, 2, 3, 4].map(value => <span key={value} aria-hidden="true" className={`statistics-cell level-${value}`}/>)}More</span></figcaption></figure>
+      <StudyHeatmap days={stats.days} year={year} studiedDays={stats.studiedDays} reviews={stats.yearActivity.reviews} selectedDate={selectedDate}/>
       <div className="statistics-day-reader"><div className="statistics-date-controls"><button className="button secondary" aria-label="Previous study day" disabled={selectedDate <= firstDate} onClick={() => setChosenDate(addStudyDays(selectedDate, -1))}>←</button><div><label htmlFor="statistics-date">Inspect date</label><input id="statistics-date" type="date" value={selectedDate} min={firstDate} max={lastDate} onChange={event => { if (event.target.value >= firstDate && event.target.value <= lastDate) setChosenDate(event.target.value); }}/></div><button className="button secondary" aria-label="Next study day" disabled={selectedDate >= lastDate} onClick={() => setChosenDate(addStudyDays(selectedDate, 1))}>→</button></div><div aria-live="polite" aria-atomic="true"><h3>{dateLabel(selectedDay.date)}</h3><p>{selectedDay.reviews} reviews · {formatActiveTime(selectedDay.durationMs)} active time</p><p className="fine-print">{selectedDay.right} Right · {selectedDay.again} Again</p></div></div>
       <dl className="statistics-year-summary"><div><dt>Daily average</dt><dd>{stats.dailyAverage.toFixed(1)} reviews</dd></div><div><dt>Days studied</dt><dd>{stats.studiedPercentage.toFixed(1)}% <span>({stats.studiedDays}/{stats.elapsedDays})</span></dd></div><div><dt>Current streak</dt><dd>{stats.currentStreak} days</dd></div><div><dt>Longest streak</dt><dd>{stats.longestStreak} days</dd></div></dl>
       <p className="fine-print">Yearly averages include every elapsed day from January 1{year === currentYear ? ' through today' : ' through December 31'}, including days without reviews. Streaks use all retained study history; today's streak stays active if you studied yesterday.</p>
