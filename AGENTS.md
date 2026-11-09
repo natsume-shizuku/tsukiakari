@@ -17,7 +17,7 @@ Use delegated agents with bounded file ownership. The lead integrates shared con
 - Never alter the existing website or browser storage on ports 4173, 4174, or 5173.
 - Use ports 5186 (development), 4186 (preview), and 4187 (isolated browser tests).
 - Never silently reset failed or corrupt storage. Writes must be transactional and single-writer.
-- Do not deploy or advance phases without approval. Keep the repository private until the owner chooses to make it public.
+- Do not deploy or advance phases without approval. Keep the repository private until the owner chooses to make it public. On 2026-11-09 the owner authorized deployment to GitHub Pages through .github/workflows/deploy-pages.yml, which publishes main on every push.
 - Maintain responsive 320px layouts, keyboard access, focus, reduced motion, and 44px targets.
 
 ## Checks
