@@ -1308,6 +1308,66 @@
     "fingerprint": "0c218b868286e7ae092e637ba10609d48cde6eed27a295a47642320537704eec"
   },
   {
+    "id": "sim-d5-q01",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "app-tab-page-type-by-hosted-content",
+    "objectiveIds": [
+      "D5.1.02"
+    ],
+    "kind": "match",
+    "groupId": null,
+    "author": "experience-author",
+    "reviewer": "codex-experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "50ade7e937b2bd5e6c2b4db4c23dfabffd20b41474f86cd55dcf03386a7e1241"
+  },
+  {
+    "id": "sim-d5-q02",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "macro-main-action-by-target-and-commit",
+    "objectiveIds": [
+      "D5.2.03"
+    ],
+    "kind": "match",
+    "groupId": null,
+    "author": "experience-author",
+    "reviewer": "codex-experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "722c48cca9cdb6dbb3a961dee86d04fd0c0db3d33c2d4059c1da7f2d235ef515"
+  },
+  {
+    "id": "sim-d5-q03",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "inbox-custom-record-card-and-mailbox-view",
+    "objectiveIds": [
+      "D5.1.03"
+    ],
+    "kind": "match",
+    "groupId": null,
+    "author": "experience-author",
+    "reviewer": "codex-experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "1423b077a23f0a023ae3c3945ee2a5aa358a8c2194ffacb6391bfcdb75b22bde"
+  },
+  {
+    "id": "sim-d5-q04",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "teams-connected-chat-rights-join-and-updates",
+    "objectiveIds": [
+      "D5.2.04"
+    ],
+    "kind": "match",
+    "groupId": null,
+    "author": "experience-author",
+    "reviewer": "codex-experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "bb26de3663057a37490ce2d48e27ab0845002f018e7d0b0b65aaa1b23b8503ec"
+  },
+  {
     "id": "sim-d5-q05",
     "revision": 1,
     "domainId": "representative-experience",
@@ -1321,6 +1381,21 @@
     "reviewer": "experience-reviewer",
     "reviewedAt": "2026-11-09",
     "fingerprint": "b8f0e564dc6f4a12f652e89efb096a5a8c29a1bf30dc89b97988a2d721682d22"
+  },
+  {
+    "id": "sim-d5-q06",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "custom-default-profile-switch-effects",
+    "objectiveIds": [
+      "D5.1.01"
+    ],
+    "kind": "hotspot",
+    "groupId": null,
+    "author": "experience-author",
+    "reviewer": "codex-experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "4c23b641d0d646ef9a29bb11ba73fad7c9ed9b6330ab668fe658cb918b7aad44"
   },
   {
     "id": "sim-d5-q07",
@@ -1411,6 +1486,21 @@
     "reviewer": "experience-reviewer",
     "reviewedAt": "2026-11-09",
     "fingerprint": "f48981622e61ebbfbb5814bc5cc3603606ba070b15071a628c9ca549a22641d7"
+  },
+  {
+    "id": "sim-d5-q13",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "record-type-autosearch-field-and-email-recipient",
+    "objectiveIds": [
+      "D5.3.03"
+    ],
+    "kind": "multiple",
+    "groupId": null,
+    "author": "experience-author",
+    "reviewer": "codex-experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "d0125fd76091cf60b274e7dd7f79595f3e0fa35fcfb46aa258bb1a1f8a20473d"
   },
   {
     "id": "sim-d5-q14",
@@ -1522,6 +1612,22 @@
     "fingerprint": "31f02945500aa1de1f5c44e4038473f91958baf25dab567b1b72a3df6c722159"
   },
   {
+    "id": "sim-d34-q03",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "voice-sensitive-variable-boundaries",
+    "objectiveIds": [
+      "D3.2.03",
+      "D3.2.02"
+    ],
+    "kind": "hotspot",
+    "groupId": null,
+    "author": "ai-distribution-author",
+    "reviewer": "codex-ai-distribution-reviewer / rereview-2",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "187a32befbc1f17ff570789385475b1600271cf0a10e33eb97493506fd72af10"
+  },
+  {
     "id": "sim-d34-q04",
     "revision": 1,
     "domainId": "agents-ai",
@@ -1567,6 +1673,21 @@
     "fingerprint": "374489027d13daf96665675de6b99c0043954d026e212246c1e6a170cb06c5c0"
   },
   {
+    "id": "sim-d34-q07",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "copilot-report-copy-versus-rating",
+    "objectiveIds": [
+      "D3.1.05"
+    ],
+    "kind": "single",
+    "groupId": null,
+    "author": "ai-distribution-author",
+    "reviewer": "codex-ai-distribution-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "f19517a9ad6d112ccb6d999e7f77e59eb94d87f52d22dec74844fd590dd6fc12"
+  },
+  {
     "id": "sim-d34-q08",
     "revision": 1,
     "domainId": "agents-ai",
@@ -1581,6 +1702,22 @@
     "reviewer": "ai-distribution-reviewer",
     "reviewedAt": "2026-11-09",
     "fingerprint": "90157ecd03bf4e8dab860de82caa62393a4fad5471257ae178e82e195b733d56"
+  },
+  {
+    "id": "sim-d34-q09",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "custom-assignment-component-selection",
+    "objectiveIds": [
+      "D4.1.04",
+      "D4.1.02"
+    ],
+    "kind": "match",
+    "groupId": null,
+    "author": "ai-distribution-author",
+    "reviewer": "codex-ai-distribution-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "ce66edf110ba7bcdee0e547079af82583b6854e5b2e2bfa169906109f95b5050"
   },
   {
     "id": "sim-d34-q10",
@@ -1598,6 +1735,22 @@
     "reviewer": "ai-distribution-reviewer",
     "reviewedAt": "2026-11-09",
     "fingerprint": "3610286c46191dc495e4b464e70fc849802c1c9de190a76405d8e716f27aafd9"
+  },
+  {
+    "id": "sim-d34-q11",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "exact-versus-closest-skill-outcomes",
+    "objectiveIds": [
+      "D4.2.04",
+      "D4.1.04"
+    ],
+    "kind": "hotspot",
+    "groupId": null,
+    "author": "ai-distribution-author",
+    "reviewer": "codex-ai-distribution-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "94cbcc1e43380ca882c1dbc6c74cc54004d8248fcd5c4a73f82b5c6cc2a50d8c"
   },
   {
     "id": "sim-d34-q12",
@@ -1632,6 +1785,22 @@
     "fingerprint": "030ae6abb084bead13dce5d2081875bf382590bed90f012a8646791035334426"
   },
   {
+    "id": "sim-d34-q14",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "returning-async-chat-same-csr-limit",
+    "objectiveIds": [
+      "D4.2.07",
+      "D4.2.01"
+    ],
+    "kind": "single",
+    "groupId": null,
+    "author": "ai-distribution-author",
+    "reviewer": "codex-ai-distribution-reviewer / rereview-3",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "e387aee822d36eb4a914152b01cc2c24a3e037e0075d6cc211eb7dcbb51d4c55"
+  },
+  {
     "id": "sim-d34-q15",
     "revision": 1,
     "domainId": "work-distribution",
@@ -1661,5 +1830,142 @@
     "reviewer": "ai-distribution-reviewer",
     "reviewedAt": "2026-11-09",
     "fingerprint": "62510c605c30486e68e5ff579d56b708b4c82cbf66a07dd9dec04692449ab17e"
+  },
+  {
+    "id": "sim-c-q01",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "queue-workstream-data-import-settings",
+    "objectiveIds": [
+      "D1.2.02",
+      "D1.2.03"
+    ],
+    "kind": "match",
+    "groupId": "sim-case-c",
+    "author": "case-c-author",
+    "reviewer": "codex-case-c-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "b9f43ad4fdc85b0a79977879e19e7451dbd63582b8e5c07bc0cc4986ab30e394"
+  },
+  {
+    "id": "sim-c-q02",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "copied-sandbox-acs-reconnection-sequence",
+    "objectiveIds": [
+      "D1.2.04"
+    ],
+    "kind": "order",
+    "groupId": "sim-case-c",
+    "author": "case-c-author",
+    "reviewer": "codex-case-c-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "07398b0fff06ab7902bd99e314727ca9fb6093fa1a793463c0848e1d2927c8fd"
+  },
+  {
+    "id": "sim-c-q03",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "agent-and-survey-solution-import-fixes",
+    "objectiveIds": [
+      "D1.2.03"
+    ],
+    "kind": "match",
+    "groupId": "sim-case-c",
+    "author": "case-c-author",
+    "reviewer": "codex-case-c-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "649bb530f8b0d410e263d8d2ffe08353d50e3a83677a8975114d3b85051eede6"
+  },
+  {
+    "id": "sim-c-q04",
+    "revision": 1,
+    "domainId": "deployment",
+    "conceptId": "pipeline-run-only-access",
+    "objectiveIds": [
+      "D1.2.03"
+    ],
+    "kind": "multiple",
+    "groupId": "sim-case-c",
+    "author": "case-c-author",
+    "reviewer": "codex-case-c-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "5765306f4c4fd475ba6df2f5942d409beba91374dbc073d793fd699338e8a00f"
+  },
+  {
+    "id": "sim-c-q05",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "imported-profile-rank-and-default-conflicts",
+    "objectiveIds": [
+      "D5.1.01"
+    ],
+    "kind": "match",
+    "groupId": "sim-case-c",
+    "author": "case-c-author",
+    "reviewer": "codex-case-c-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "b2466785e7978af2541fa599f07496bf9c5be7c40b5af716792aeb9dc9ca2563"
+  },
+  {
+    "id": "sim-c-q06",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "copilot-access-by-profile-features-and-role",
+    "objectiveIds": [
+      "D5.1.01"
+    ],
+    "kind": "hotspot",
+    "groupId": "sim-case-c",
+    "author": "case-c-author",
+    "reviewer": "codex-case-c-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "0aed691138d38a8ae838404d19b971ba00b5ad473f1b6a39ce6c69c086583cfc"
+  },
+  {
+    "id": "sim-c-q07",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "copilot-report-ended-conversations-only",
+    "objectiveIds": [
+      "D3.1.05"
+    ],
+    "kind": "single",
+    "groupId": "sim-case-c",
+    "author": "case-c-author",
+    "reviewer": "codex-case-c-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "c9f8ba8331e6074a49afff70221e64116790610e53462852b49d87061ca8c32f"
+  },
+  {
+    "id": "sim-c-q08",
+    "revision": 1,
+    "domainId": "analytics",
+    "conceptId": "custom-report-workspace-and-site-map-release",
+    "objectiveIds": [
+      "D6.2.03",
+      "D6.2.04"
+    ],
+    "kind": "match",
+    "groupId": "sim-case-c",
+    "author": "case-c-author",
+    "reviewer": "codex-case-c-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "f7f625c2cfc53f208741af7976cb5516d991df7365d722220821f7fde80c35c3"
+  },
+  {
+    "id": "sim-c-q09",
+    "revision": 1,
+    "domainId": "analytics",
+    "conceptId": "visual-customization-export-import-rules",
+    "objectiveIds": [
+      "D6.2.01"
+    ],
+    "kind": "hotspot",
+    "groupId": "sim-case-c",
+    "author": "case-c-author",
+    "reviewer": "codex-case-c-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "19c477d8d10463872af9db0dbb54eb53a5de19f3aaa2c6f28d916f845cc62a8f"
   }
 ]

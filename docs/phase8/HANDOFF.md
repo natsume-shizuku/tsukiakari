@@ -1,92 +1,65 @@
-# Phase 8D handoff: finishing the AB-250 simulator bank
+# Phase 8D continuation handoff
 
-Written 2026-11-09 for an agent that picks up this work, such as Codex running on this folder. Read `AGENTS.md` first. It is binding.
+Updated 2026-11-09 after the owner asked Codex to review the pending unpublished questions and test. Read `AGENTS.md` first. The correct repository is `D:/Coding/tsukiakari`.
 
-## Where it stands
+## Current state
 
-The target is 128 original questions. The owner chose to keep all 128 rather than ship fewer.
+**All 128 original simulator questions are independently approved**, stamped and compiled locally as a **1.0.0 release candidate**. All nine batches are in `src/content/simulator/manifest.json`; `release` is true and no batch is partial. The bank was already registered in `src/content/questionBanks.ts`.
 
-- **Live preview: 108.** On 2026-11-09 the owner asked to publish the approved questions early. The site at https://natsume-shizuku.github.io/tsukiakari/ now offers **AB-250 — Exam Simulator** as preview version 0.9.0, with exams of 50 to 81 questions.
-  - Complete batches: 8c-pilot, 8d-analytics, 8d-case-b, 8d-deployment, 8d-channels-voice and 8d-channels-digital, 85 questions in all.
-  - Approved part of each unfinished batch: 12 from 8d-experience and 11 from 8d-ai-distribution. Both carry `"partial": true` in `src/content/simulator/manifest.json`, so the compiler publishes only their approved questions and the sources those cite. A partial batch may never split a case study or series.
-- **Not published: 20.** That is the 11 questions sent back for fixes and the 9 in case study C. Every one is written and passes the draft structure check.
+This task did not commit, push or deploy. The prior handoff recorded the deployed 108-question version 0.9.0 preview; the local candidate has not been deployed by this continuation. Every push to main deploys through `.github/workflows/deploy-pages.yml`, so do not push without a new explicit owner request.
 
-| Batch file (`src/content/simulator/`) | Questions | State at handoff (2026-11-09) | Next step |
-|---|---|---|---|
-| `8d-ai-distribution.json` | 16 | 11 approved and stamped. q03, q07, q09, q11 and q14 have been fixed to the ledger and need re-review. q07 was fully rewritten, and q14 is now a single-answer question. | Re-review the five |
-| `8d-experience.json` | 18 | 12 approved and stamped. q01, q02, q03, q04, q06 and q13 have been fixed to the ledger and need re-review. The editor also added one sentence of its own to q01's evidence claim. | Re-review the six |
-| `8d-case-c.json` | 9 | Written. Its first review was stopped before any ledger was written, so there is no review file yet. | Full first review, then the loop |
+| Previously unfinished batch | Reviewed in this continuation | Outcome |
+|---|---|---|
+| `8d-ai-distribution` | q03, q07, q09, q11, q14 | 16/16 approved; q03 and q14 corrected and independently re-reviewed |
+| `8d-experience` | q01, q02, q03, q04, q06, q13 | 18/18 approved; no further edits needed |
+| `8d-case-c` | All nine questions | 9/9 approved; q07 corrected and independently re-reviewed |
 
-Each review ledger is `docs/phase8/reviews/<batch>-review.json`. Every approved fingerprint matches its bundle. All Claude agents were stopped at handoff, so nothing else is writing these files.
+The ledgers are `docs/phase8/reviews/<batch>-review.json`. All original 108 approval entries and fingerprints were preserved, as were the 108 published question objects, their source objects and case/series exhibits. The accepted study collection and original 300-question bank remain byte-identical. Evidence is in `reports/phase8/preservation-result.json`.
 
-When you re-review a fixed question, update only its entry: write a new reviewer name, reviewedAt, decision, rationale, findings and sourceChecks, and remove the old fingerprint before you stamp.
+## What changed during review
 
-**Format mix:** two conversions moved the bank off the plan. Voice q01 went from match to single, and AI distribution q14 from multiple to single. The experience batch took an extra match to make up for q01. The expected release mix is match 32, order 7, hotspot 34, multiple 26, single 21, series 8, which is inside the compiler's 3-point tolerance. Use those counts in the unit test below.
+- `sim-d34-q03`: state classic orchestration, Application Insights logging and Copilot Studio transcript scope; avoid a whole-call redaction guarantee and account for the sensitive first-question timing limitation. One new Microsoft Learn source was registered without modifying frozen source objects.
+- `sim-d34-q14`: use capacity-occupying conversations and conditional next-best fallback; remove absolute “only if” wording that contradicted the no-alternative caveat. Add the existing capacity-profile source to support the distractor explanation.
+- `sim-c-q07`: remove the exact metric-name clue from the correct option, retaining the case-dependent ended-conversation decision.
 
-## Rules that cannot bend
+Answer keys did not change. Unpublished revisions stayed at 1. Seventeen of the 20 pending questions passed directly; three required corrections. Reviewers and editor were separate agents. Every cited Microsoft Learn page was opened by the assigned reviewer, all 32 authoring checks applied, and changed questions independently re-reviewed as new text. Reviewers edited ledgers only; the lead editor changed bundles and integrated.
 
-1. **Never touch the exam dump.** Do not open, search for or ask for it. Never use brain dumps, practice-exam sites or community answer keys. Evidence comes from `learn.microsoft.com` only, and only from pages you actually opened.
-2. **Separate the roles.** Author, editor and reviewer must be separate agents or sessions. A reviewer never edits a bundle, and an editor never edits a ledger.
-3. **Approval is tied to exact content.** Any change to an approved question, including its editorial entry or the sources it cites, voids its fingerprint, and the compiler then rejects the batch. Do not touch approved questions.
-4. **Bounded files.** Edit only the file your task names. Never edit `src/content/published/` by hand, or `dist/`.
-5. **Repository rules.** Do not commit, push or deploy without the owner's explicit say-so. Leave ports 4173, 4174 and 5173 alone.
-6. **Live questions are frozen.** The 108 published questions are live, so treat them like the accepted banks: do not edit them. If one really must change, raise its `revision`, have it re-reviewed, and record why in `docs/PHASE_8.md`. Questions not yet published stay at revision 1.
-7. **Every push to `main` deploys the site.** `.github/workflows/deploy-pages.yml` runs the tests and the build, then publishes. Only push when the owner asks, and only with all checks green.
+## Counts and tests
 
-## The loop for each batch
+- Formats: match 32, order 7, hotspot 34, multiple 26, single 21, series 8.
+- Domains in manifest order: 22, 41, 15, 15, 22, 13.
+- Case studies: **8, 9 and 9**, because pilot q01 stays standalone. Two series of four. Do not change frozen questions to satisfy the older three-times-nine instruction.
+- `node scripts/compile-simulator-bank.mjs --write` and `--check`: passed, 128 questions/128 approvals/five groups; no unresolved automated near-duplicate pairs.
+- Draft checks for the three reviewed batches: passed.
+- `npm run lint`: passed.
+- `npm test`: 410 tests in 33 files passed.
+- `npm run build`: passed with existing large-chunk and ineffective-dynamic-import advisories.
+- `npm run test:e2e -- --workers=4`: 193 Edge tests passed on isolated port 4187.
 
-1. **Review**, by an independent reviewer. Read `docs/phase8/AUTHORING_BRIEF.md`, including all 32 numbered checks, then `docs/phase7/REVIEW_PROCESS.md` and `src/domain.ts`. Open every cited page. For each question, try to break it: argue for the strongest alternative, test every match row against every token, and look for leaks (checks 11, 16–19 and 21–32). Write one ledger entry per question in the format the existing ledgers use, with a reviewer name different from the author's. Use `"approved"` or `"needs-revision"`, and give an exact, apply-without-judgment fix for each finding. Then run:
-   `node scripts/compile-simulator-bank.mjs --stamp <batchId>`
-2. **Fix**, by an editor. Apply each `needs-revision` fix exactly as written. Keep explanations, option explanations and evidence notes in step with the new text, and leave no source unused. Then run:
-   `node scripts/compile-simulator-bank.mjs --draft-check src/content/simulator/<batch>.json`
-   Confirm that no approved fingerprint changed.
-3. **Re-review**, by a reviewer. Check only the revised questions, as new text, because fixes often create new leaks (check 32). Stamp what passes.
-4. Repeat until every question in the batch is approved.
+`tests/unit/simulatorBank.test.ts` pins the allocation and groups, assembles 50/75/100/maximum questions across seeds and creates sourced timed attempts. The maximum is at least 100. `tests/e2e/phase8-real-bank.spec.ts` covers the real bank without fixture preference at 320px/50 questions and desktop/100 questions, including flags, hidden answers, source/group snapshots, reload preservation and unchanged flashcard tables. Screenshots are local under `test-results/phase8d-real-50.png` and `phase8d-real-100.png`.
 
-The experience so far: no review has found a wrong answer key. 30–70% of each batch came back for leaks, ambiguity or unsupported sentences, usually needing one or two fix rounds.
+Current records: `docs/PHASE_8.md`, `docs/phase8/QUALITY_REPORT_8D.md`, `reports/phase8/checks.json`. Machine counts and content approval metadata are generated by the compiler.
 
-## Publishing more as batches finish
+## Remaining release check and gate
 
-When a partial batch has every question approved, remove its `"partial": true`. For case study C, add a new manifest entry once all 9 are approved: a case study can't be published in part. Then run `node scripts/compile-simulator-bank.mjs --write` and `--check`, and `npm test`. The app picks up the new count from `src/content/published/simulator-manifest.json`, because the bank is already registered in `src/content/questionBanks.ts`.
+**The owner or Claude must run the final dump-similarity check locally on the full 128-question candidate.** It must flag zero. Codex and the review agents did not open, search for or access the dump. The previous 123-item scan is historical evidence and does not satisfy this final check. Follow the existing script's local instructions; do not give the dump or its text to authoring/review agents.
 
-## Final release, once all 128 are approved
+After that result is recorded, present the 8D quality report for the owner's review. **Stop at 8D. Stage 8E is not authorized.** Broad Lighthouse acceptance, fresh-clone installation, real-device and screen-reader checks remain deferred to 8E. Passing the current tests and setting the candidate version do not imply acceptance or deployment readiness.
 
-1. Make sure no batch in the manifest is still marked `"partial"`.
-2. Set `"release": true` and `"releaseVersion": "1.0.0"` in that manifest. The compiler then refuses partial batches and holds the format and domain mix within 3 points of the blueprint.
-3. Run `node scripts/compile-simulator-bank.mjs --write`, then `--check`.
-4. The bank is already registered in the app. Nothing changes in `src/content/questionBanks.ts`.
-5. Extend `tests/unit/simulatorBank.test.ts`, which already checks the published bank, assembly at 50 and at the largest size, and partial batches. Pin the release counts:
-   - 128 approved questions
-   - formats: match 32, order 7, hotspot 34, multiple 26, single 21, series 8 (check against the compiled bank)
-   - domains, in manifest order: 22, 41, 15, 15, 22, 13
-   - three case studies of 9 questions, and two series of 4
-   - assembly at 50, 75 and 100 questions across many seeds: unique questions, domains within one of quota, groups kept whole
-   - `maxBlueprintCount` is at least 100
-   - an exam attempt can be created
-6. **The owner or Claude runs the dump similarity check locally.** No other agent runs it: `node scripts/check-dump-similarity.mjs "<path to dump pdf>"`. It must flag 0. It reports IDs and scores only.
-7. Update `docs/PHASE_8.md`:
-   - Replace `VERIFICATION_PLACEHOLDER` with real results.
-   - Record the lead decisions: analytics q04, q06 and q09 stay approved under check 12; case B q05 stays as written; pilot q01 moved to standalone; voice q01 changed from match to single.
-   - Record the open findings: objective D6.1.05 may now be unblockable (a new real-time streaming page dated 2026-11-02); accepted `ab250-d6-q10` may need re-review over a Quality Evaluator role conflict; D2.2.07 stays partial-depth.
-8. Update `reports/phase8/checks.json`. Then run `npm run lint`, `npm test`, `npm run build` and `npm run test:e2e` (port 4187), and record any check that could not run.
-9. Write the 8D quality report for the owner, with representative examples of each format. **Stop there.** Stage 8E is not authorized.
+Open findings retained from Claude's handoff: D6.1.05 may now be unblockable following a new real-time streaming page dated 2026-11-02; accepted `ab250-d6-q10` may need a separate Quality Evaluator role-conflict re-review; D2.2.07 remains partial-depth. No source-gap status or accepted original-bank question was changed here.
 
-## Checks at handoff
+## Rules for any follow-up corrections
 
-- `node scripts/compile-simulator-bank.mjs --check`: 108 questions, 108 independent approvals, 4 groups.
-- `npm run lint` passed. `npm test`: 406 tests passed. `npm run build` passed. `npm run test:e2e`: 191 passed.
-- Last dump similarity run (2026-11-08): 123 items, 0 flagged. Highest scores: phrase 0.125, stem words 0.155, options 0.111. It must be rerun on the final bank.
-- `docs/phase8/AUTHORING_BRIEF.md` now has 32 numbered checks, added as reviews turned up new leak patterns. Add new ones there.
+1. Never access/search for the dump or use practice-exam sites/community answer keys. Factual evidence comes from opened `learn.microsoft.com` pages only.
+2. Keep author, editor and reviewer separate. Give each task bounded file ownership; reviewers never edit bundles and editors never edit ledgers.
+3. Preserve exact approvals. Changes to a question, editorial record, cited source object or group exhibit invalidate fingerprints; re-review exact changed content rather than restamping blindly. The original 108 live questions remain frozen and require a revision increase and independent review for a meaning change.
+4. Use all **32** checks in `docs/phase8/AUTHORING_BRIEF.md`, plus the evidence standards in `docs/phase7/REVIEW_PROCESS.md` and `src/domain.ts`. Phase 8 per-selection simulator scoring supersedes Phase 7's exact-set rule for this bank; original-bank scoring stays unchanged.
+5. Review loops: independent ledger findings with exact fixes; editor applies them and runs draft validation; reviewer reopens evidence, checks the fix as new text and stamps approvals. Never hand-edit generated `src/content/published/` or `dist/`.
+6. Preserve user data and ports 4173/4174/5173/5186. Use isolated 4187 for browser tests. No commit, push, deployment or phase advance without explicit authorization.
 
-## Engine changes made for the preview
+The earlier preview engine changes remain: up to 12 fresh assembly draws, a maximum sampled across 20 seeds, and partial-batch support that cannot split groups. This continuation changed no engine/storage contract. Read `docs/PHASE_8.md` for the retained lead decisions and `docs/phase8/EXAM_BLUEPRINT.md` for format mechanics.
 
-- `assembleBlueprintExam` now tries up to 12 fresh draws before refusing. With a smaller pool, a single draw could fail when the chosen case study left a domain short, about 1 in 9 times at 50 questions. Nothing is substituted.
-- `maxBlueprintCount` now reports a count only if 20 seeded draws all succeed, so setup never offers a size that fails at random. It reports 81 for the 108-question preview.
-- The compiler and `scripts/simulator-review-utils.mjs` support `"partial": true` batches through `approvedPart`. A release refuses them.
-- Record these in `docs/PHASE_8.md` with the final results, along with the q14 change from multiple to single and the owner's 2026-11-09 decisions to deploy and to publish the preview.
 
-## Reference
+## Publication authorization, 2026-11-09
 
-- Blueprint and format mechanics: `docs/phase8/EXAM_BLUEPRINT.md`
-- Phase plan and gates: `docs/PHASE_8.md`
-- Fingerprint check for one batch: `scratchpad/fp_check.mjs <batchId>` in the Claude session's scratchpad. It is not in the repo, so to repeat it, compare `simulatorFingerprint` from `scripts/simulator-review-utils.mjs` against each approved ledger entry.
+After the pending similarity scan was disclosed, the owner requested publication of all 128 questions and a push to the repository. This authorizes committing the reviewed changes and pushing main, which triggers GitHub Pages deployment. The final owner/Claude similarity scan remains unrun and explicitly open; this publication request does not record a passing scan or advance Stage 8E. The preceding no-commit/no-deployment statements describe the completed review task before this subsequent authorization.

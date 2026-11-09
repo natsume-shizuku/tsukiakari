@@ -1,6 +1,6 @@
 {
   "id": "ab250-simulator",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "title": "AB-250 — Exam Simulator",
   "description": "Original practice in exam-style formats, assembled fresh for each test. This is independent practice material, not Microsoft exam content.",
   "fixture": false,
@@ -181,6 +181,56 @@
       "id": "sim-cb-s29",
       "title": "Key concepts - Publish and deploy your agent",
       "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-fundamentals-publish-channels"
+    },
+    {
+      "id": "sim-cc-s01",
+      "title": "Connect to Azure Communication Services",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-acs-resource"
+    },
+    {
+      "id": "sim-cc-s02",
+      "title": "Connect using an existing Azure resource",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-connect-existing-resource"
+    },
+    {
+      "id": "sim-cc-s03",
+      "title": "Sync from Azure Communication Services",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-sync-from-acs"
+    },
+    {
+      "id": "sim-cc-s04",
+      "title": "Export and import agents using solutions",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-solutions-import-export"
+    },
+    {
+      "id": "sim-cc-s05",
+      "title": "Migrate Copilot Studio survey agents configurations",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/migrate-survey-agents"
+    },
+    {
+      "id": "sim-cc-s06",
+      "title": "View and edit managed properties in solutions",
+      "url": "https://learn.microsoft.com/en-us/power-platform/alm/managed-properties-alm"
+    },
+    {
+      "id": "sim-cc-s07",
+      "title": "Configure pipelines using a custom host",
+      "url": "https://learn.microsoft.com/en-us/power-platform/alm/custom-host-pipelines"
+    },
+    {
+      "id": "sim-cc-s08",
+      "title": "FAQs about adding users to experience profile",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/faq-agent-experience-profile"
+    },
+    {
+      "id": "sim-cc-s09",
+      "title": "Export and import visual customizations",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/export-import-visual-customization"
+    },
+    {
+      "id": "sim-cc-s10",
+      "title": "ALM for analytics on data model customizations",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/guidance/resources/analytics-alm-custom-reports"
     },
     {
       "id": "sim-d1-s01",
@@ -688,6 +738,11 @@
       "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-dtmf"
     },
     {
+      "id": "sim-d34-s02",
+      "title": "Remove sensitive data",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-sensitive-data"
+    },
+    {
       "id": "sim-d34-s03",
       "title": "Consent-based recording",
       "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-consent-based-record"
@@ -701,6 +756,21 @@
       "id": "sim-d34-s05",
       "title": "Variables overview",
       "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-variables-about"
+    },
+    {
+      "id": "sim-d34-s06",
+      "title": "View Copilot analytics report",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/copilot-analytics-report"
+    },
+    {
+      "id": "sim-d34-s07",
+      "title": "Understand how skill match algorithm works in unified routing",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/set-up-skill-based-routing"
+    },
+    {
+      "id": "sim-d34-s08",
+      "title": "Configure routing to preferred or previously engaged representatives in Dynamics 365 Contact Center",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-preferred-agent"
     },
     {
       "id": "sim-d34-s09",
@@ -726,6 +796,11 @@
       "id": "sim-d34-s13",
       "title": "Use system topics",
       "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-system-topics"
+    },
+    {
+      "id": "sim-d34-s14",
+      "title": "Configure sensitive variable masking for voice agents",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/agent-sensitive-data-masking"
     },
     {
       "id": "sim-d4-s01",
@@ -798,6 +873,16 @@
       "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/search-knowledge-articles-csh"
     },
     {
+      "id": "sim-d5-s07",
+      "title": "Configure knowledge search control on app side pane for entity records",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-knowledge-search-control-productivity-pane"
+    },
+    {
+      "id": "sim-d5-s08",
+      "title": "Configure Microsoft Teams chats",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-teams-chat"
+    },
+    {
       "id": "sim-d5-s09",
       "title": "Manage custom productivity tools for service representatives",
       "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/manage-custom-productivity-tools"
@@ -831,6 +916,11 @@
       "id": "sim-d5-s15",
       "title": "Create and manage data masking rules",
       "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/data-masking-settings"
+    },
+    {
+      "id": "sim-d5-s16",
+      "title": "Add the Knowledge Base Search control to Dynamics 365 Customer Service forms",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/add-knowledge-base-search-control-forms"
     },
     {
       "id": "sim-d5-s17",
@@ -7556,6 +7646,362 @@
       "status": "approved"
     },
     {
+      "id": "sim-d5-q01",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.1.02"
+      ],
+      "conceptId": "app-tab-page-type-by-hosted-content",
+      "prompt": "Copperleaf Insurance runs Dynamics 365 Contact Center standalone. In Copilot Service workspace, claim sessions open the case as the anchor tab. The workspace designer is creating four custom application tab templates and will add them to the claim session template as additional tabs.\n\nYou need to choose the page type for each template.\n\nWhich page type should you choose for each template?",
+      "answer": "Knowledge base search page: Web resource. Relevance search on the case title: Search. New task form: Entity record. Policy records through a view: Entity list.",
+      "explanation": "Each page type hosts a different kind of page, and two of the rows don't follow the obvious name. Customer Service's own knowledge base search page is hosted as a web resource: the out-of-the-box Knowledge Search template uses the Web Resource application type, and Microsoft's page-type example for a knowledge base search page is Web resource. The Search page type is the entity search, where searchType 0 selects relevance search and searchText can take a slug such as {anchor.title}. Entity record opens an existing record or a form to create one, and its data parameter prefills the new form. Entity list displays an entity view, which viewId selects.",
+      "sourceIds": [
+        "sim-cb-s08"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "task:apply",
+        "feature:application-tab-templates"
+      ],
+      "optionExplanations": {
+        "a": "Correct for the task form. Entity record displays an existing record or opens a form to create a record, and its data parameter prefills values such as the subject. It doesn't run a search or show a view.",
+        "b": "Correct for the policy records. Entity list displays an entity view, and its viewId parameter selects the view. It doesn't open a single form.",
+        "c": "Correct for the relevance search. The Search page type uses searchType 0 for relevance search, and searchText can take {anchor.title}. It isn't how Customer Service hosts its knowledge base search page, which is a web resource.",
+        "d": "Correct for the knowledge base search page. The out-of-the-box Knowledge Search template uses the Web Resource application type. A web resource tab opens the file that webresourceName names, and it doesn't take the searchType, searchText or viewId parameters.",
+        "e": "Fails on every row. Third-party website hosts an external site that's compatible with iframe hosting. All four tabs show pages from inside the app.",
+        "f": "Fails on every row. Custom hosts a Power Apps custom page that's available in the app. None of the four tabs is a custom page."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n01"
+        }
+      ],
+      "status": "approved",
+      "kind": "match",
+      "tray": "Page types",
+      "table": {
+        "title": "Claim session tabs",
+        "rowHeading": "Tab content",
+        "answerHeading": "Page type"
+      },
+      "tokens": [
+        {
+          "id": "a",
+          "text": "Entity record"
+        },
+        {
+          "id": "b",
+          "text": "Entity list"
+        },
+        {
+          "id": "c",
+          "text": "Search"
+        },
+        {
+          "id": "d",
+          "text": "Web resource"
+        },
+        {
+          "id": "e",
+          "text": "Third-party website"
+        },
+        {
+          "id": "f",
+          "text": "Custom"
+        }
+      ],
+      "rows": [
+        {
+          "id": "r1",
+          "label": "The knowledge base search page that Customer Service provides",
+          "correctTokenId": "d"
+        },
+        {
+          "id": "r2",
+          "label": "A Dataverse relevance search on the case title, run when the session starts",
+          "correctTokenId": "c"
+        },
+        {
+          "id": "r3",
+          "label": "A new task form, not yet saved, with its subject filled in from the case number",
+          "correctTokenId": "a"
+        },
+        {
+          "id": "r4",
+          "label": "Policy records, shown through the team's Active policies view",
+          "correctTokenId": "b"
+        }
+      ]
+    },
+    {
+      "id": "sim-d5-q02",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.2.03"
+      ],
+      "conceptId": "macro-main-action-by-target-and-commit",
+      "prompt": "Ferrow Valley Water runs Dynamics 365 Contact Center standalone. In Copilot Service workspace, case sessions open the case as the anchor tab. A macro designer is building four macros from productivity automation actions, and each macro needs one action that does its main work.\n\nYou need to choose the main action for each macro.\n\nWhich action should you use for each macro?",
+      "answer": "Case priority: Update an existing record. Fields on the focused task form: Autofill form fields. New task form: Open a new form to create a record. Copy of another case: Clone input record.",
+      "explanation": "The actions differ in what they act on and whether they save. Update an existing record takes an entity logical name and record ID and changes the record as a back-end operation, so the new priority is saved without a form save. Autofill form fields works on the form in the focused tab and doesn't save the values until the form autosaves, which leaves the representative to check them. Open a new form to create a record opens the task and can set Regarding by passing the record ID, type and name as separate attributes. Clone input record copies the fields of a record identified by its ID and logical name without saving it, while Clone current record copies only the record open in the current tab.",
+      "sourceIds": [
+        "sim-d5-s01"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "task:apply",
+        "feature:macros"
+      ],
+      "optionExplanations": {
+        "a": "Correct for the case priority. It needs the entity logical name and record ID, and it updates the record as a back-end operation, so the change is saved without a form save. It can't fill a new task that has no record ID yet.",
+        "b": "Correct for the focused task form. It applies to the form in the focused tab with the same entity type and doesn't save the values until the form autosaves, so on row 1 it would change the case form without saving the priority.",
+        "c": "Fails on every row. It clones the record that's open in the current tab. Row 4 copies another case that the macro knows only by its ID, and no other row copies a record.",
+        "d": "Correct for the copy of another case. It clones the record given by Entity record ID and Entity logical name and doesn't save the copy. It doesn't change or create other records.",
+        "e": "Correct for the new task. It opens a form to create a record, and a lookup such as Regarding is set by passing the related record's ID, type and name as separate attributes. It doesn't change an existing account.",
+        "f": "Fails on every row. It saves a record once its mandatory fields are filled, so it follows another action rather than doing the main work."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n02"
+        }
+      ],
+      "status": "approved",
+      "kind": "match",
+      "tray": "Actions",
+      "table": {
+        "title": "Macro design",
+        "rowHeading": "Macro purpose",
+        "answerHeading": "Action"
+      },
+      "tokens": [
+        {
+          "id": "a",
+          "text": "Update an existing record"
+        },
+        {
+          "id": "b",
+          "text": "Autofill form fields"
+        },
+        {
+          "id": "c",
+          "text": "Clone current record"
+        },
+        {
+          "id": "d",
+          "text": "Clone input record"
+        },
+        {
+          "id": "e",
+          "text": "Open a new form to create a record"
+        },
+        {
+          "id": "f",
+          "text": "Save the record"
+        }
+      ],
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Change the priority of the case open in the focused tab, with the new value saved by that action alone",
+          "correctTokenId": "a"
+        },
+        {
+          "id": "r2",
+          "label": "Fill in fields on a new task form in the focused tab, for the representative to check before saving",
+          "correctTokenId": "b"
+        },
+        {
+          "id": "r3",
+          "label": "Start a new task form with Regarding set to the case",
+          "correctTokenId": "e"
+        },
+        {
+          "id": "r4",
+          "label": "Copy another case, known only by its ID, into a new form that isn't saved yet",
+          "correctTokenId": "d"
+        }
+      ]
+    },
+    {
+      "id": "sim-d5-q03",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.1.03"
+      ],
+      "conceptId": "inbox-custom-record-card-and-mailbox-view",
+      "prompt": "Greystoke Home Warranty runs Dynamics 365 Contact Center standalone. Claims representatives use a custom experience profile with the inbox turned on. Claims are stored in a custom Warranty claim table, and customers send claim emails to claims@greystokewarranty.com.\n\nYou need to configure the profile's inbox to meet three requirements.\n\nWhat should you configure for each requirement?",
+      "answer": "Warranty claim records: add the record type on the Inbox record types tab. Card content: edit the record type's card attributes on the same tab. Claims address view: add a custom view that uses the Emails in a shared mailbox setting.",
+      "explanation": "By default the inbox supports tables such as case, email, conversation and voicemail, and a custom table is brought in by adding it on the Inbox record types tab. The same tab is where you select a record type and add attributes to control what its cards display. For email, the Emails in a shared mailbox simple setting shows emails sent to an address that the admin specifies, using the To field only. Emails sent to me depends on the signed-in user being a recipient, and Emails assigned to me depends on the email's Owner or Worked by field.",
+      "sourceIds": [
+        "sim-cb-s13",
+        "sim-cb-s14"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "task:apply",
+        "feature:inbox"
+      ],
+      "optionExplanations": {
+        "a": "Correct for the warranty claim records. Bringing your own entity into the inbox is done on the Inbox record types tab with + Add. It doesn't choose what the cards display.",
+        "b": "Correct for the card content. Selecting the record type on the Inbox record types tab opens Edit record type, where you add or rearrange the attributes that the card displays.",
+        "c": "Correct for the claims address view. This simple setting shows emails sent to an address that the admin specifies, using the To field and not Cc or Bcc.",
+        "d": "Fails. This setting shows emails where the signed-in user is listed in To, Cc or Bcc. It doesn't target the claims address.",
+        "e": "Fails. This setting shows emails whose Owner or Worked by field is the current user. It doesn't target the claims address.",
+        "f": "Fails. Custom sort changes the order of items in a view. It doesn't add a table to the inbox or change what a card shows."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n03"
+        }
+      ],
+      "status": "approved",
+      "kind": "match",
+      "tray": "Configurations",
+      "table": {
+        "title": "Claims inbox",
+        "rowHeading": "Requirement",
+        "answerHeading": "Configuration"
+      },
+      "tokens": [
+        {
+          "id": "a",
+          "text": "On the Inbox record types tab, add the record type"
+        },
+        {
+          "id": "b",
+          "text": "On the Inbox record types tab, edit the record type's card attributes"
+        },
+        {
+          "id": "c",
+          "text": "Add a custom view that uses the Emails in a shared mailbox setting"
+        },
+        {
+          "id": "d",
+          "text": "Add a custom view that uses the Emails sent to me setting"
+        },
+        {
+          "id": "e",
+          "text": "Add a custom view that uses the Emails assigned to me setting"
+        },
+        {
+          "id": "f",
+          "text": "In the view's Sort section, add the attributes"
+        }
+      ],
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Warranty claim records can be shown in the inbox",
+          "correctTokenId": "a"
+        },
+        {
+          "id": "r2",
+          "label": "Each warranty claim card shows the product and the claim amount",
+          "correctTokenId": "b"
+        },
+        {
+          "id": "r3",
+          "label": "A view lists emails that have the claims address in the To field",
+          "correctTokenId": "c"
+        }
+      ]
+    },
+    {
+      "id": "sim-d5-q04",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.2.04"
+      ],
+      "conceptId": "teams-connected-chat-rights-join-and-updates",
+      "prompt": "Brindle Lane Pharmacy runs Dynamics 365 Contact Center standalone, with Teams chat turned on for Copilot Service workspace. Representatives connect Teams chats to cases, and they can edit the cases they take over. Representatives and quality leads use custom security roles, and none of those roles includes the Disconnect Teams chat from Dynamics 365 record privilege. For every record type, the disconnect, Join chat and key-update settings are currently off.\n\nYou need to meet four requirements without giving anyone rights that a requirement doesn't need.\n\nWhat should you configure for each requirement?",
+      "answer": "Quality leads: grant the disconnect privilege in their role. Case owners: turn on Record owner can disconnect chats for cases. Representatives taking over a case: turn on Join chat for cases. Status changes: turn on Receive notification on key updates for cases.",
+      "explanation": "Disconnect rights come in two scopes. A security role privilege lets every user with that role disconnect chats connected to any record type, which fits the quality leads. The two toggles work per record type: Record owner can disconnect chats covers chats on records the user owns, including chats a colleague connected, and Chat connector can disconnect chat covers only chats the user connected. Join chat lets users view and join connected chats on records they have write access to, such as a case they've taken over. The timeline sync preview shows only who connected each chat and who sent the last message, so reading the whole chat still depends on joining it. Receive notification on key updates sends updates to the chat when selected fields change, and Status is among the preconfigured case attributes.",
+      "sourceIds": [
+        "sim-d5-s08"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "task:apply",
+        "feature:teams-chat"
+      ],
+      "optionExplanations": {
+        "a": "Correct for case owners. Record owners can disconnect any chats connected to a record they own, and the setting is assigned per record type. The privilege would also cover every other record and record type, which the requirement doesn't need.",
+        "b": "Fails. This lets the user who connected a chat disconnect it. The owner on row 2 didn't connect those chats, and it doesn't give quality leads rights over every chat.",
+        "c": "Correct for quality leads. With this privilege in a role, all users with that role can disconnect chats connected to any record type. The per-record-type toggles can't give that reach.",
+        "d": "Correct for a representative who takes over a case. Join chat lets users view and join connected chats on records they have write access to, and joining shows the full chat exchange. It's set per record type.",
+        "e": "Correct for status changes. It sends updates to all chat participants when a selected field on the connected record changes. For cases, Priority, Status and Status Reason are preconfigured.",
+        "f": "Fails on every row. This preview setting shows each connected chat on the record's timeline, with who connected it and who sent the last message. Reading the full exchange still needs Join chat, and the setting doesn't send field updates or grant disconnect rights."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n06"
+        }
+      ],
+      "status": "approved",
+      "kind": "match",
+      "tray": "Settings",
+      "table": {
+        "title": "Teams collaboration",
+        "rowHeading": "Requirement",
+        "answerHeading": "Setting"
+      },
+      "tokens": [
+        {
+          "id": "a",
+          "text": "Turn on Record owner can disconnect chats for the Case record type"
+        },
+        {
+          "id": "b",
+          "text": "Turn on Chat connector can disconnect chat for the Case record type"
+        },
+        {
+          "id": "c",
+          "text": "Grant the Disconnect Teams chat from Dynamics 365 record privilege in the quality leads' role"
+        },
+        {
+          "id": "d",
+          "text": "Turn on Join chat for the Case record type"
+        },
+        {
+          "id": "e",
+          "text": "Turn on Receive notification on key updates for the Case record type"
+        },
+        {
+          "id": "f",
+          "text": "Turn on Sync Teams chats with records (Preview)"
+        }
+      ],
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Quality leads can disconnect any connected chat, on any record type",
+          "correctTokenId": "c"
+        },
+        {
+          "id": "r2",
+          "label": "A case's owner can disconnect chats that colleagues connected to that case",
+          "correctTokenId": "a"
+        },
+        {
+          "id": "r3",
+          "label": "A representative who takes over a case can read the full message history of the chats already connected to it",
+          "correctTokenId": "d"
+        },
+        {
+          "id": "r4",
+          "label": "Chat participants are told automatically when a case's status changes",
+          "correctTokenId": "e"
+        }
+      ]
+    },
+    {
       "id": "sim-d5-q05",
       "revision": 1,
       "domainId": "representative-experience",
@@ -7622,6 +8068,109 @@
         "d",
         "c",
         "a"
+      ]
+    },
+    {
+      "id": "sim-d5-q06",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.1.01"
+      ],
+      "conceptId": "custom-default-profile-switch-effects",
+      "prompt": "Calder Rail runs Dynamics 365 Contact Center standalone. Its experience profiles are:\n- Legacy Desk: a custom profile that's currently the default\n- Frontline: a custom profile with rank 2, mapped to the Rail CSR security role\n- Specialists: a custom profile with Mia Okafor and Ravi Shah added in its Users section\n\nThe administrator wants Frontline to become the default profile instead of Legacy Desk.\n\nYou need to plan the change.\n\nWhat should you expect for each item?",
+      "answer": "Legacy Desk: remove its default status first. Rail CSR mapping: removed. Mia Okafor: keeps Specialists.",
+      "explanation": "Only one profile can be the default. To change it, you use Remove Default on the current default and then set the new profile as the default. When a custom profile becomes the default, its existing security roles are removed and roles can no longer be assigned to it, so Frontline stops being a role-mapped profile. A custom default doesn't apply to users who are assigned specific custom profiles, so Mia keeps Specialists. The out-of-the-box profile is assigned only when there's no custom default and no role-mapped profile.",
+      "sourceIds": [
+        "sim-cb-s12"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "task:evaluate",
+        "feature:experience-profiles"
+      ],
+      "optionExplanations": {
+        "r1a": "Correct. You can't set multiple profiles as the default. To change it, Microsoft says to use Remove Default and then set the alternative profile as the default.",
+        "r1b": "Fails. You can't set multiple profiles as the default, and Microsoft's procedure for changing it is to use Remove Default on the current default and then set the alternative profile.",
+        "r1c": "Fails. You can't set multiple profiles as the default, and rank decides between role-mapped profiles, not between defaults.",
+        "r2a": "Correct. When a custom profile is set as the default, its existing security roles are removed, and you can no longer assign security roles to it.",
+        "r2b": "Fails. Setting a custom profile as the default removes its existing security roles, so the mapping and its rank don't stay.",
+        "r2c": "Fails. The security roles themselves are removed, not just the rank.",
+        "r3a": "Correct. A custom default profile isn't applicable to users who are assigned specific custom experience profiles, so her direct assignment still applies.",
+        "r3b": "Fails. The default covers users without a more specific assignment. Mia is assigned to Specialists directly.",
+        "r3c": "Fails. The out-of-the-box profile applies only when there's no custom default and no role-mapped profile. Here a custom default exists, and Mia also has a direct assignment."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n03"
+        }
+      ],
+      "status": "approved",
+      "kind": "hotspot",
+      "table": {
+        "title": "Default profile change",
+        "rowHeading": "Item",
+        "answerHeading": "Expected behavior"
+      },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Making Frontline the default while Legacy Desk is still the default",
+          "options": [
+            {
+              "id": "r1a",
+              "text": "Legacy Desk's default has to be removed first"
+            },
+            {
+              "id": "r1b",
+              "text": "Legacy Desk's default is removed automatically"
+            },
+            {
+              "id": "r1c",
+              "text": "Both become defaults, and rank decides"
+            }
+          ],
+          "correctOptionId": "r1a"
+        },
+        {
+          "id": "r2",
+          "label": "Frontline's Rail CSR mapping after Frontline becomes the default",
+          "options": [
+            {
+              "id": "r2a",
+              "text": "It's removed"
+            },
+            {
+              "id": "r2b",
+              "text": "It stays, with rank 2"
+            },
+            {
+              "id": "r2c",
+              "text": "It stays, without a rank"
+            }
+          ],
+          "correctOptionId": "r2a"
+        },
+        {
+          "id": "r3",
+          "label": "Mia Okafor after Frontline becomes the default",
+          "options": [
+            {
+              "id": "r3a",
+              "text": "She keeps Specialists"
+            },
+            {
+              "id": "r3b",
+              "text": "She moves to Frontline"
+            },
+            {
+              "id": "r3c",
+              "text": "She gets an out-of-the-box default profile"
+            }
+          ],
+          "correctOptionId": "r3a"
+        }
       ]
     },
     {
@@ -8154,6 +8703,68 @@
       "status": "approved"
     },
     {
+      "id": "sim-d5-q13",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.3.03"
+      ],
+      "conceptId": "record-type-autosearch-field-and-email-recipient",
+      "prompt": "Tarrant Marine Insurance runs Dynamics 365 Contact Center standalone. Representatives handle a custom Marine claim table in Copilot Service workspace, and Marine claim has been added as a knowledge record type. The table includes these columns:\n- Claim summary: multiple lines of text\n- Policyholder: lookup to Contact\n- Assigned surveyor: lookup to User\n\nRequirements:\n- When a representative opens a claim, knowledge search on the app side pane runs automatically on the claim summary.\n- Representatives can link an article to the claim and email the article's URL, with a person named on the claim filled in as the recipient.\n\nYou need to edit the Marine claim record type's knowledge settings.\n\nWhich two settings should you configure? Each correct answer presents part of the solution.",
+      "answer": "Turn on automatic search using Claim summary, and select Link article and email URL with Policyholder as the default email recipient.",
+      "explanation": "In the record type's Knowledge settings dialog, Automatic search runs a search when the record opens, using the field you pick in Provide search results using. The Actions checkboxes decide what representatives can do with an article. Link article and email URL associates the article with the record and shares its URL by email, while Link article and send article content shares the article's contents. The default email recipient is available only for Customer or Lookup columns that point to an account or contact, so Policyholder qualifies and Assigned surveyor doesn't.",
+      "sourceIds": [
+        "sim-d5-s07",
+        "sim-d5-s16"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "task:apply",
+        "feature:knowledge-record-types"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Turn on automatic search, and provide search results using Claim summary."
+        },
+        {
+          "id": "b",
+          "text": "Select Link article and email URL, and set Policyholder as the default email recipient."
+        },
+        {
+          "id": "c",
+          "text": "Select Link article and email URL, and set Assigned surveyor as the default email recipient."
+        },
+        {
+          "id": "d",
+          "text": "Select Link article and send article content, and set Policyholder as the default email recipient."
+        },
+        {
+          "id": "e",
+          "text": "Turn on automatic search, and provide search results using Policyholder."
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "optionExplanations": {
+        "a": "Correct, and part of the solution. Turning on automatic search with Claim summary as the field runs the search on that column when a claim opens.",
+        "b": "Correct, and part of the solution. This action links the article and shares its URL by email, and Policyholder is a lookup to Contact, which the recipient setting supports.",
+        "c": "Fails. The default email recipient is available only for Customer or Lookup columns that point to an account or contact. Assigned surveyor points to User.",
+        "d": "Fails. This action emails the article's contents. The requirement is to email its URL.",
+        "e": "Fails. Automatic search would run on the policyholder rather than on the claim summary that the requirement names."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n08"
+        }
+      ],
+      "status": "approved"
+    },
+    {
       "id": "sim-d5-q14",
       "revision": 1,
       "kind": "multiple",
@@ -8679,6 +9290,126 @@
       ]
     },
     {
+      "id": "sim-d34-q03",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.03",
+        "D3.2.02"
+      ],
+      "conceptId": "voice-sensitive-variable-boundaries",
+      "prompt": "Marlow Credit Union has a voice agent in Copilot Studio that's connected to Dynamics 365 Contact Center. Its voice flow uses classic orchestration, and Application Insights Log sensitive properties is off. This review covers Copilot Studio agent transcripts and standard logs. Before go-live, the security team reviewed three items:\n- The telephony system sends a member token in a SIP X-header when each call starts. The token must stay out of Copilot Studio transcripts and telemetry, and routing logic still needs it.\n- A Question node in the Verify Card topic collects a card number into a variable that has Sensitive data turned on. This collection occurs after a nonsensitive first question. The Take Payment topic needs the same value, which must stay out of Copilot Studio transcripts and standard logs.\n- A tester entered a PIN in the Test your agent panel. The PIN appears unredacted under DialogTracing in the ConversationTranscript record.\n\nYou need to decide how to handle each item.\n\nWhat should you do for each item?",
+      "answer": "Member token: create a matching global variable in Conversation Start with External sources can set value and Sensitive data on. Card number: turn on Sensitive data on the Verify Card output and the Take Payment input. Test-panel PIN: treat it as expected test behavior.",
+      "explanation": "A context variable that arrives through a SIP X-header is marked sensitive on a global variable in the Conversation Start system topic, with both External sources can set value and Sensitive data turned on. Its value is then kept out of transcripts and telemetry but stays in memory for routing. To pass a sensitive value between topics, Microsoft's example turns on Sensitive data for the variable on Topic A's output and Topic B's input, which keeps it out of transcripts and logs. Values received back from Power Automate or written explicitly to Dataverse aren't redacted. Finally, transcripts from the Test your agent panel contain unredacted values under DialogTracing by design, so makers can confirm their redaction rules before production. These controls do not guarantee masking in Contact Center whole-call transcripts or external data stores.",
+      "sourceIds": [
+        "sim-d34-s02",
+        "sim-d34-s05",
+        "sim-d34-s14"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:sensitive-data"
+      ],
+      "optionExplanations": {
+        "r1a": "Correct. Microsoft marks a context variable as sensitive by defining a global variable on the Conversation Start system topic with External sources can set value and Sensitive data turned on. The name must match the calling system exactly.",
+        "r1b": "Fails. isDisplayable controls whether a Live Chat context variable is visible to representatives, and Microsoft says it isn't configurable per conversation for voice channels. It doesn't keep the token out of transcripts.",
+        "r1c": "Fails. Log sensitive properties controls whether variables already marked as sensitive are written to Application Insights. The token isn't marked sensitive, and the setting doesn't govern transcripts.",
+        "r1d": "Fails. Without Sensitive data, the token isn't redacted from transcripts and telemetry. Turning it on doesn't block routing, because Microsoft says a sensitive context variable remains in memory for routing, orchestration and passing between topics.",
+        "r2a": "Correct. Variables marked as Sensitive data on topic input and output parameters aren't written to transcripts or platform logs, stay in memory and can be passed between topics. This is Microsoft's Topic A output and Topic B input example.",
+        "r2b": "Fails. Passing a sensitive value to Power Automate is supported, but Microsoft lists receiving sensitive data from Power Automate as not supported, so the returned value isn't redacted.",
+        "r2c": "Fails. Microsoft lists writing sensitive data to Dataverse explicitly as not supported, says data isn't redacted, and advises avoiding it.",
+        "r2d": "Fails. Environment variables are read-only in Copilot Studio, so a topic can't save the card number into one.",
+        "r3a": "Correct. Microsoft says transcripts stored in the ConversationTranscript table from the Test your agent panel contain unredacted values under DialogTracing, that this is expected, and that it helps makers confirm redaction before production.",
+        "r3b": "Fails. Log sensitive properties governs Application Insights logging, and turning it on is what logs sensitive values. The test-panel transcript stays unredacted by design whatever this setting is.",
+        "r3c": "Fails. The unredacted value is expected test-panel behavior, not a sign that the setting hasn't been published. Republishing doesn't change what the test panel stores."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n07"
+        },
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n02"
+        }
+      ],
+      "status": "approved",
+      "kind": "hotspot",
+      "table": {
+        "title": "Sensitive data handling",
+        "rowHeading": "Item",
+        "answerHeading": "Action"
+      },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Member token from the SIP X-header",
+          "options": [
+            {
+              "id": "r1a",
+              "text": "In Conversation Start, create a matching global variable with External sources can set value and Sensitive data on"
+            },
+            {
+              "id": "r1b",
+              "text": "In the voice workstream, add a context variable with the token's exact name, and set isDisplayable to false for it"
+            },
+            {
+              "id": "r1c",
+              "text": "In the agent's Application Insights settings, keep Log sensitive properties turned off so that the token isn't logged"
+            },
+            {
+              "id": "r1d",
+              "text": "In Conversation Start, create a matching global variable with External sources can set value on, and leave Sensitive data off so that routing can read it"
+            }
+          ],
+          "correctOptionId": "r1a"
+        },
+        {
+          "id": "r2",
+          "label": "Card number needed by Take Payment",
+          "options": [
+            {
+              "id": "r2a",
+              "text": "Turn on Sensitive data for the variable on the Verify Card output and on the Take Payment input"
+            },
+            {
+              "id": "r2b",
+              "text": "Send the number to a Power Automate flow with the sensitive flag on, and use its returned value in Take Payment"
+            },
+            {
+              "id": "r2c",
+              "text": "Write the number to a Dataverse column in Verify Card, and read the column back in Take Payment"
+            },
+            {
+              "id": "r2d",
+              "text": "Save the number in a Secret environment variable in Verify Card, and read that variable in Take Payment"
+            }
+          ],
+          "correctOptionId": "r2a"
+        },
+        {
+          "id": "r3",
+          "label": "Unredacted PIN in a test-panel transcript",
+          "options": [
+            {
+              "id": "r3a",
+              "text": "Treat it as expected behavior that lets makers confirm their redaction before production"
+            },
+            {
+              "id": "r3b",
+              "text": "Turn off Log sensitive properties, and then repeat the test in the Test your agent panel"
+            },
+            {
+              "id": "r3c",
+              "text": "Republish the agent, because Sensitive data takes effect only after the agent is published"
+            }
+          ],
+          "correctOptionId": "r3a"
+        }
+      ]
+    },
+    {
       "id": "sim-d34-q04",
       "revision": 1,
       "domainId": "agents-ai",
@@ -8911,6 +9642,61 @@
       "status": "approved"
     },
     {
+      "id": "sim-d34-q07",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.1.05"
+      ],
+      "conceptId": "copilot-report-copy-versus-rating",
+      "prompt": "Lindqvist Freight runs Dynamics 365 Contact Center standalone, and Copilot analytics is enabled. Last month's Copilot analytics report shows 25 percent for Percentage of Copilot AI responses used. A manager concludes that representatives found the other 75 percent of the responses wrong.\n\nYou need to tell the manager what the 25 percent measures.\n\nWhat does the 25 percent measure?",
+      "answer": "The share of Copilot responses from which representatives copied text.",
+      "explanation": "In the Copilot analytics report, Number of responses used is the number of times text from a Copilot response was copied, and Percentage of Copilot AI responses used is the percentage of responses that were copied. So the 25 percent is a copy rate, and a response that wasn't copied wasn't necessarily judged wrong. Representatives' judgments are counted separately by Agent ratings in the Satisfaction section, the number of times representatives rated a Copilot response positively or negatively.",
+      "sourceIds": [
+        "sim-d34-s06"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:evaluate",
+        "feature:copilot-analytics"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "The share of Copilot responses from which representatives copied text"
+        },
+        {
+          "id": "b",
+          "text": "The share of Copilot responses that representatives rated positively"
+        },
+        {
+          "id": "c",
+          "text": "The share of Copilot responses that representatives sent to customers"
+        },
+        {
+          "id": "d",
+          "text": "The share of engaged conversations in which representatives used Copilot"
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "optionExplanations": {
+        "a": "Correct. The report defines Percentage of Copilot AI responses used as the percentage of responses that were copied.",
+        "b": "Fails. Ratings are a separate metric, Agent ratings, which counts how many times representatives rated a Copilot response positively or negatively.",
+        "c": "Fails. The report counts a response as used when text from it was copied, not when it was sent to a customer.",
+        "d": "Fails. That is Percentage of conversations using Copilot AI, the percentage of engaged conversations that used Copilot. It counts conversations, not responses."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n04"
+        }
+      ],
+      "status": "approved"
+    },
+    {
       "id": "sim-d34-q08",
       "revision": 1,
       "kind": "single",
@@ -8966,6 +9752,103 @@
         }
       ],
       "status": "approved"
+    },
+    {
+      "id": "sim-d34-q09",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.1.04",
+        "D4.1.02"
+      ],
+      "conceptId": "custom-assignment-component-selection",
+      "prompt": "Larkspur Hotels routes guest chats to one messaging queue, Guest Care. The queue uses a custom assignment method whose rulesets are being designed, and every chat must stay in Guest Care.\n\nYou need to choose the component that meets each requirement.\n\nWhich component should you use for each requirement?",
+      "answer": "Elite or Standard ruleset: a selection criteria rule. Cancelled stays first: a prioritization rule. Region comparison: an assignment rule condition that uses dynamic match. Nearest proficiency: the Order by setting of an assignment rule.",
+      "explanation": "A custom assignment method has two kinds of ruleset. A prioritization ruleset orders the work in the queue: each prioritization rule is a priority bucket, so the first rule's matching items are offered first. Assignment rulesets select and sort representatives. When there's more than one assignment ruleset, selection criteria decide which one runs, and the default ruleset runs if no criterion is met. In an assignment rule, a dynamic match compares a System User attribute with a value on the conversation, which avoids one static rule per value. If several representatives match, the Order by setting sorts them, and ordering by proficiency with Nearest proficiency gives the closest skill match. Route-to-queue and classification rules act before the queue, so they can't choose an assignment ruleset or sort representatives, and the order of waiting work in a custom assignment method comes from its prioritization rules.",
+      "sourceIds": [
+        "sim-cb-s22",
+        "sim-d4-s05",
+        "sim-d34-s07"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:custom-assignment"
+      ],
+      "optionExplanations": {
+        "a": "Correct for the Elite and Standard requirement. Selection criteria determine which assignment ruleset runs when a method has more than one.",
+        "b": "Correct for cancelled stays. Each prioritization rule creates a priority bucket, and items in the first matching bucket are assigned before the rest.",
+        "c": "Correct for the region comparison. With dynamic match, the left side is the System User attribute and the right side is the conversation value, which Microsoft says avoids maintaining a static rule for each combination.",
+        "d": "Correct for nearest proficiency. Order by sorts the representatives who meet a rule's conditions, and Proficiency with Nearest proficiency gives the closest match.",
+        "e": "Fails on every row. Route-to-queue rules choose the queue, and every chat already stays in Guest Care. They don't choose an assignment ruleset or order the work.",
+        "f": "Fails on every row. Classification rules run before queue selection and set attributes on the work item, such as skills. They don't choose the assignment ruleset or sort representatives, and in a custom assignment method the order of waiting work comes from its prioritization rules."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n03"
+        },
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n02"
+        }
+      ],
+      "status": "approved",
+      "kind": "match",
+      "tray": "Components",
+      "table": {
+        "title": "Guest Care assignment design",
+        "rowHeading": "Requirement",
+        "answerHeading": "Component"
+      },
+      "tokens": [
+        {
+          "id": "a",
+          "text": "A selection criteria rule"
+        },
+        {
+          "id": "b",
+          "text": "A prioritization rule"
+        },
+        {
+          "id": "c",
+          "text": "An assignment rule condition that uses dynamic match"
+        },
+        {
+          "id": "d",
+          "text": "The Order by setting of an assignment rule"
+        },
+        {
+          "id": "e",
+          "text": "A route-to-queue rule"
+        },
+        {
+          "id": "f",
+          "text": "A work classification rule"
+        }
+      ],
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Chats from Elite members use the Elite assignment ruleset, and all other chats use the Standard assignment ruleset",
+          "correctTokenId": "a"
+        },
+        {
+          "id": "r2",
+          "label": "Chats about cancelled stays are offered before every other chat that's waiting in Guest Care",
+          "correctTokenId": "b"
+        },
+        {
+          "id": "r3",
+          "label": "Each CSR's Home region is compared with the guest's region on the chat, without one rule per region",
+          "correctTokenId": "c"
+        },
+        {
+          "id": "r4",
+          "label": "When several CSRs meet a rule's conditions, the chat goes to the one whose proficiency is nearest to what's required",
+          "correctTokenId": "d"
+        }
+      ]
     },
     {
       "id": "sim-d34-q10",
@@ -9059,6 +9942,116 @@
           "id": "r4",
           "label": "Chats from customers who chose Spanish in the pre-chat survey get the Spanish skill",
           "correctTokenId": "b"
+        }
+      ]
+    },
+    {
+      "id": "sim-d34-q11",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.04",
+        "D4.1.04"
+      ],
+      "conceptId": "exact-versus-closest-skill-outcomes",
+      "prompt": "Copperleaf Appliances routes repair chats through a messaging workstream to the Repairs queue, which uses the Highest capacity assignment method. A work classification rule attaches two skills to each chat: Dishwashers at proficiency 3 and Spanish at proficiency 3. All skills use the same rating model.\n\nThree CSRs in Repairs have an allowed presence and enough capacity for a chat:\n- Anika: Dishwashers 3, Spanish 3, available capacity 40\n- Bruno: Dishwashers 5, Spanish 4, available capacity 90\n- Chiara: Dishwashers 5, Spanish 2, available capacity 120\n\nYou need to predict the outcome of each workstream setting.\n\nWhat is the outcome of each setting?",
+      "answer": "Exact Match: Bruno. Closest Match: Anika. Closest Match with no skilled CSR: the chat might be assigned to that CSR.",
+      "explanation": "Exact Match keeps only representatives whose rating is greater than or equal to the required value for every skill, then orders them by the queue's assignment method. Chiara's Spanish 2 is below 3, so Anika and Bruno remain, and Highest capacity picks Bruno. Closest Match doesn't filter on skills. It filters on presence and capacity, then orders representatives by closest match and not by available capacity. Microsoft describes that order as closeness to the required skill and proficiency, with exact qualified representatives on top, and achieves closest match in custom assignment by ordering on Proficiency with Nearest Proficient. Anika matches both required proficiencies exactly, so she comes before Bruno, who is above both, and Chiara, who is above on Dishwashers and below on Spanish. The assignment method ranks representatives only when they have the same skill score. With Closest Match, Microsoft says that if no representative has any of the required skills, the conversation might be assigned to a representative without them. Under Exact Match it would stay in the queue instead.",
+      "sourceIds": [
+        "sim-d34-s07",
+        "sim-d4-s05",
+        "sim-d4-s07"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:evaluate",
+        "feature:skill-based-routing"
+      ],
+      "optionExplanations": {
+        "r1a": "Fails. Anika meets every required proficiency, but Bruno also does and has more available capacity, and Highest capacity orders the filtered representatives by capacity.",
+        "r1b": "Correct. Exact Match leaves Anika and Bruno, because both meet or exceed proficiency 3 for both skills, and Highest capacity picks Bruno with 90.",
+        "r1c": "Fails. Chiara has the most capacity, but her Spanish 2 is below the required 3, so Exact Match filters her out.",
+        "r2a": "Correct. Closest Match orders by closeness to the required skills and proficiency, not by available capacity, and Anika matches both skills exactly.",
+        "r2b": "Fails. Bruno is above the required proficiency on both skills, and Microsoft puts exact qualified representatives on top. His higher capacity would count only against a representative with the same skill score.",
+        "r2c": "Fails. Chiara has the most capacity, but she's overqualified on one skill and under on the other, so she isn't the closest match.",
+        "r3a": "Correct. Microsoft says that with Closest Match, if no representative is available with any of the required skills, the conversation might be assigned to a representative without them.",
+        "r3b": "Fails. Staying unassigned is the Exact Match behavior when no one has all the required skills. Closest Match doesn't filter out representatives by skill.",
+        "r3c": "Fails. The fallback queue is used for classification errors, route-to-queue errors or no matching rule. Skill matching happens during assignment in the chosen queue."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n02"
+        },
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n06"
+        }
+      ],
+      "status": "approved",
+      "kind": "hotspot",
+      "table": {
+        "title": "Skill matching outcomes",
+        "rowHeading": "Workstream setting",
+        "answerHeading": "Outcome"
+      },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Default skill matching algorithm is Exact Match",
+          "options": [
+            {
+              "id": "r1a",
+              "text": "The chat is assigned to Anika"
+            },
+            {
+              "id": "r1b",
+              "text": "The chat is assigned to Bruno"
+            },
+            {
+              "id": "r1c",
+              "text": "The chat is assigned to Chiara"
+            }
+          ],
+          "correctOptionId": "r1b"
+        },
+        {
+          "id": "r2",
+          "label": "Default skill matching algorithm is Closest Match",
+          "options": [
+            {
+              "id": "r2a",
+              "text": "The chat is assigned to Anika"
+            },
+            {
+              "id": "r2b",
+              "text": "The chat is assigned to Bruno"
+            },
+            {
+              "id": "r2c",
+              "text": "The chat is assigned to Chiara"
+            }
+          ],
+          "correctOptionId": "r2a"
+        },
+        {
+          "id": "r3",
+          "label": "Closest Match, and later the only CSR in Repairs with an allowed presence and capacity has neither skill",
+          "options": [
+            {
+              "id": "r3a",
+              "text": "The chat might be assigned to that CSR"
+            },
+            {
+              "id": "r3b",
+              "text": "The chat stays unassigned in Repairs"
+            },
+            {
+              "id": "r3c",
+              "text": "The chat goes to the workstream's fallback queue"
+            }
+          ],
+          "correctOptionId": "r3a"
         }
       ]
     },
@@ -9287,6 +10280,66 @@
       ]
     },
     {
+      "id": "sim-d34-q14",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.07",
+        "D4.2.01"
+      ],
+      "conceptId": "returning-async-chat-same-csr-limit",
+      "prompt": "Greenhaven Insurance handles claims over SMS through a push messaging workstream in Dynamics 365 Contact Center. Representative affinity is turned on for the workstream, and its notification template has Autoassign work items set to Yes. Microsoft labels Autoassign work items a preview setting, and Greenhaven has accepted the preview terms. Conversation orchestration is set up, and each CSR's conversation limit has been set in Enhanced user management.\n\nToday, when a customer replies to a waiting SMS conversation, it goes back to the CSR who handled it. Managers want to apply a presence check and a workload check before reconnecting the chat to that CSR. The workload check must compare capacity-occupying conversations across all channels with the CSR's conversation limit, which can exceed their capacity. If either check fails and another eligible CSR is available, the next best CSR in the queue should get it.\n\nYou need to configure this behavior.\n\nWhat should you do?",
+      "answer": "Publish a Keep the same expert for async chats playbook with the presences, the active conversation limit and the next best expert fallback.",
+      "explanation": "Representative affinity already reconnects a returning asynchronous conversation with the CSR who handled it, regardless of that CSR's capacity and presence, as long as the notification template's Autoassign work items is Yes. The Keep the same expert for async chats playbook adds the checks managers want, and its prerequisite is that representative affinity is enabled for the workstream. It checks the configured presences and compares the CSR's capacity-occupying conversations across all channels with their active conversation limit, reconnecting even when the limit exceeds the capacity profile. If the CSR fails a check, it assigns the next best expert or keeps the chat unassigned, as configured. New conversations are still governed by capacity profiles. Waiting asynchronous conversations consume no capacity while unassigned and count only when reinitiated. If no other suitable CSR is available, Microsoft notes that the chat might still return to the original CSR.",
+      "sourceIds": [
+        "sim-d34-s08",
+        "sim-d4-s07",
+        "sim-cb-s27",
+        "sim-cb-s09",
+        "sim-d1-s13"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:conversation-orchestration"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Publish a Keep the same expert for async chats playbook with the presences, active conversation limit and next best fallback"
+        },
+        {
+          "id": "b",
+          "text": "Publish an Assign to a previous or preferred expert playbook that checks presence and a 30-day recency window, with next best fallback"
+        },
+        {
+          "id": "c",
+          "text": "Set each CSR's work item limit in the SMS capacity profile equal to their conversation limit, and turn on Assignment blocking"
+        },
+        {
+          "id": "d",
+          "text": "Map each customer's contact to their last CSR in Preferred representative routing, with the next best representative fallback"
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "optionExplanations": {
+        "a": "Correct. This playbook applies to queues where representative affinity is enabled. For a returning asynchronous chat, it checks the configured presences and the CSR's active conversation limit across all channels, even when the limit exceeds the capacity profile, and uses the next-best fallback when another eligible expert is available.",
+        "b": "Fails. This playbook runs when a conversation is routed to a queue and checks presence, queue membership and a recency window of up to 30 days. It doesn't check the active conversation limit.",
+        "c": "Fails. Representative affinity reassigns a returning conversation regardless of the CSR's capacity and presence, and managers want a limit that can be higher than capacity. Assignment blocking only stops automatic assignment of new work items once the work item limit is met.",
+        "d": "Fails. Preferred representative routing assigns a contact to representatives you map in the matrix and skips the capacity check. It doesn't follow the CSR who last handled the conversation or check a conversation limit."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n07"
+        }
+      ],
+      "status": "approved"
+    },
+    {
       "id": "sim-d34-q15",
       "revision": 1,
       "kind": "multiple",
@@ -9416,6 +10469,738 @@
         }
       ],
       "status": "approved"
+    },
+    {
+      "id": "sim-c-q01",
+      "revision": 1,
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.2.02",
+        "D1.2.03"
+      ],
+      "conceptId": "queue-workstream-data-import-settings",
+      "prompt": "You need to resolve Issue 1 and meet Requirement 5 and Requirement 6.\n\nWhat should you do for each item?",
+      "answer": "Issue 1: create Rush Seats in an import that keeps Queue type, and update Refunds in one without it. Requirement 5: for the workstream table, keep only the key columns, and select Do not update existing records. Requirement 6: leave out the Decision rule set, Assignment configuration and Assignment configuration step tables.",
+      "explanation": "Solutions carry the workstream records, and the Configuration Migration tool carries the data that solutions don't. Each item turns on one of Microsoft's import rules. Microsoft says that an import of queue records must either create records or update them, and must not mix the two. The Queue type field stays in the schema when every record is new and comes out when every record is an update. Rush Seats is new and Refunds already exists, so they need separate imports. For the workstream table, Microsoft says to add only the key columns and select Do not update existing records, which stops the data import from updating records that came in through a solution. Every Box Office queue uses an out-of-the-box assignment method and none has an overflow condition, so Microsoft's instruction to skip the decision rule set and assignment configuration tables applies. The Operating Hour table stays, because Rush Seats has an operating hours record. Only its calendar item has to be set after the import.",
+      "sourceIds": [
+        "sim-d1-s09",
+        "sim-d1-s02"
+      ],
+      "tags": [
+        "domain:deployment",
+        "task:apply",
+        "feature:configuration-migration-tool"
+      ],
+      "optionExplanations": {
+        "a": "Not used. Do not update existing records would stop the Refunds changes from being applied, and Microsoft says not to mix creating and updating queue records in one import.",
+        "b": "Correct for Requirement 5. Microsoft gives this setting for the workstream table so that the data import doesn't update records that a solution brought in.",
+        "c": "Not used. Rush Seats has an operating hours record, and the Operating Hour table is part of the queue migration. Microsoft says that only the calendar item can't be migrated and is set after the import.",
+        "d": "Correct for Issue 1. Each queue import must either create or update records, and the Queue type field is kept for an all-new import and removed for an all-update import.",
+        "e": "Not used. Microsoft gives this setting for the Decision contract table in the queue migration. It doesn't apply to the workstream table, so workstream records could still be updated.",
+        "f": "Correct for Requirement 6. Microsoft says to skip these three tables when queues use out-of-the-box assignment methods, and no Box Office queue has an overflow condition that would need a decision ruleset."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n11"
+        },
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n02"
+        }
+      ],
+      "status": "approved",
+      "groupId": "sim-case-c",
+      "kind": "match",
+      "tray": "Actions",
+      "table": {
+        "title": "Configuration data import",
+        "rowHeading": "Item",
+        "answerHeading": "Action"
+      },
+      "tokens": [
+        {
+          "id": "a",
+          "text": "Import both queues together, and select Do not update existing records for the queue table"
+        },
+        {
+          "id": "b",
+          "text": "For the workstream table, keep only the key columns, and select Do not update existing records"
+        },
+        {
+          "id": "c",
+          "text": "Leave out the Operating Hour table, and set each queue's calendar item by hand after the import"
+        },
+        {
+          "id": "d",
+          "text": "Create Rush Seats in an import that keeps Queue type, and update Refunds in one without it"
+        },
+        {
+          "id": "e",
+          "text": "For the Decision contract table only, select Do not update existing records and compare on its key"
+        },
+        {
+          "id": "f",
+          "text": "Leave out the Decision rule set, Assignment configuration and Assignment configuration step tables"
+        }
+      ],
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Issue 1",
+          "correctTokenId": "d"
+        },
+        {
+          "id": "r2",
+          "label": "Requirement 5",
+          "correctTokenId": "b"
+        },
+        {
+          "id": "r3",
+          "label": "Requirement 6",
+          "correctTokenId": "f"
+        }
+      ]
+    },
+    {
+      "id": "sim-c-q02",
+      "revision": 1,
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.2.04"
+      ],
+      "conceptId": "copied-sandbox-acs-reconnection-sequence",
+      "prompt": "You need to resolve Issue 2.\n\nWhich four actions should you perform, and in what order?",
+      "answer": "Disconnect the Azure Communication Services resource in UAT, connect UAT by using the existing acs-castlemere-uat resource, sync the phone numbers from Azure on the Phone numbers page, and then select the test number in the voice settings of the copied Box Office Voice workstream.",
+      "explanation": "A full copy brings the voice channel and its Azure Communication Services resource into the target. Microsoft says that one resource can be used in one environment only, so the copied link to acs-castlemere-prod has to be disconnected in UAT. From there, each step needs the one before it. The Get started button that connects an existing resource appears only after a disconnection. Microsoft says that a connection to a resource must come before you can acquire numbers. Sync from Azure imports numbers that were bought through Azure Communication Services, and the test number belongs to acs-castlemere-uat, so the sync can't bring it in until that resource is connected. A voice workstream can only be given a number that's on the Phone numbers page. The exhibits decide two of the choices: acs-castlemere-uat already exists, and its test number was bought in the Azure portal, so you connect the existing resource and sync instead of creating a resource or buying a number.",
+      "sourceIds": [
+        "sim-d1-s10",
+        "sim-d2v-s04",
+        "sim-cc-s02",
+        "sim-cc-s01",
+        "sim-cc-s03",
+        "sim-d2-s04",
+        "sim-d2-s01"
+      ],
+      "tags": [
+        "domain:deployment",
+        "task:apply",
+        "feature:environment-copy-voice"
+      ],
+      "optionExplanations": {
+        "a": "Not used. The technical requirements say that UAT tests use the test number that was bought for acs-castlemere-uat, so a new number isn't needed.",
+        "b": "Correct, and fourth. Only numbers on the Phone numbers page can be selected for a voice workstream, and editing the voice settings is how a number is reconnected to the voice channel.",
+        "c": "Correct, and second. The Get started button for an existing resource appears only after the current resource is disconnected, and the technical requirements name acs-castlemere-uat.",
+        "d": "Correct, and first. Microsoft says to disconnect the copied resource in the target, because one resource can be used in one environment only.",
+        "e": "Correct, and third. Sync from Azure imports numbers that were bought through Azure Communication Services, and the test number is on acs-castlemere-uat, which must be connected first.",
+        "f": "Not used. acs-castlemere-uat already exists, and the technical requirements say that UAT tests must use it."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n12"
+        }
+      ],
+      "status": "approved",
+      "groupId": "sim-case-c",
+      "kind": "order",
+      "tray": "Actions",
+      "tokens": [
+        {
+          "id": "a",
+          "text": "Acquire a new phone number in Copilot Service admin center."
+        },
+        {
+          "id": "b",
+          "text": "Select the test number in the voice settings of the copied Box Office Voice workstream."
+        },
+        {
+          "id": "c",
+          "text": "Connect UAT by using the existing acs-castlemere-uat resource."
+        },
+        {
+          "id": "d",
+          "text": "Disconnect the Azure Communication Services resource in UAT."
+        },
+        {
+          "id": "e",
+          "text": "Sync the phone numbers from Azure on the Phone numbers page."
+        },
+        {
+          "id": "f",
+          "text": "Connect UAT by using a new Azure resource."
+        }
+      ],
+      "correctOrder": [
+        "d",
+        "c",
+        "e",
+        "b"
+      ]
+    },
+    {
+      "id": "sim-c-q03",
+      "revision": 1,
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.2.03"
+      ],
+      "conceptId": "agent-and-survey-solution-import-fixes",
+      "prompt": "You need to resolve Issue 3 and Issue 4.\n\nWhat should you do for each issue?",
+      "answer": "Issue 3: import the Venue Connectors solution first, and then import the Seat Finder solution. Issue 4: connect the connection references to Dataverse in Power Apps, and then publish the agent.",
+      "explanation": "Both agents move in solutions, and each issue is a different import dependency. Seat Finder calls the Venue Seating API through a custom connector that's in its own solution. Microsoft says that custom connectors must be imported first, and then the connection reference with the agent solution, so Venue Connectors has to reach UAT before Seat Finder. Encore Survey imported, but a connection is environment-specific and doesn't travel with the solution. Microsoft's survey agent migration steps say to check in Power Apps that the imported connection references are connected to Dataverse, add the connection if it's missing, and then save and publish the agents. Setting a connection in UAT fits the technical requirements, which leave connections to each environment.",
+      "sourceIds": [
+        "sim-cc-s04",
+        "sim-cc-s05",
+        "sim-cc-s06"
+      ],
+      "tags": [
+        "domain:deployment",
+        "task:apply",
+        "feature:agent-solution-alm"
+      ],
+      "optionExplanations": {
+        "a": "Not used. Managed properties are set in the development environment and can't be changed after a managed import. They control customization, not the Dataverse connection.",
+        "b": "Correct for Issue 3. Microsoft says to import custom connectors first, then the connection reference with the agent solution.",
+        "c": "Not used. Seat Finder is a managed solution in UAT, and the technical requirements keep changes to managed components in their source environment. Microsoft's order is to import the connector before the agent solution.",
+        "d": "Correct for Issue 4. Microsoft's survey agent steps say to make sure the connection references are connected to Dataverse, add the connection if it's missing, and then save and publish the agents.",
+        "e": "Not used. Copilot Studio can't export a managed solution, and Seat Finder is managed in UAT. Exporting again wouldn't bring in the missing connector either.",
+        "f": "Not used. Add required objects is used on the agent in the source solution before export. It doesn't connect a connection reference in the target."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n02"
+        }
+      ],
+      "status": "approved",
+      "groupId": "sim-case-c",
+      "kind": "match",
+      "tray": "Actions",
+      "table": {
+        "title": "Agent solution imports",
+        "rowHeading": "Issue",
+        "answerHeading": "Action"
+      },
+      "tokens": [
+        {
+          "id": "a",
+          "text": "In UAT, turn on Allow customizations for the Conversation Start topic of Encore Survey"
+        },
+        {
+          "id": "b",
+          "text": "Import the Venue Connectors solution first, and then import the Seat Finder solution"
+        },
+        {
+          "id": "c",
+          "text": "In UAT, add the custom connector to the Seat Finder solution, and import the solution again"
+        },
+        {
+          "id": "d",
+          "text": "Connect the connection references to Dataverse in Power Apps, and then publish the agent"
+        },
+        {
+          "id": "e",
+          "text": "In UAT, export the Seat Finder solution as a managed solution, and import it again"
+        },
+        {
+          "id": "f",
+          "text": "In UAT, use Add required objects on Encore Survey, and then publish the agent"
+        }
+      ],
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Issue 3",
+          "correctTokenId": "b"
+        },
+        {
+          "id": "r2",
+          "label": "Issue 4",
+          "correctTokenId": "d"
+        }
+      ]
+    },
+    {
+      "id": "sim-c-q04",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "deployment",
+      "objectiveIds": [
+        "D1.2.03"
+      ],
+      "conceptId": "pipeline-run-only-access",
+      "prompt": "You need to meet Requirement 1.\n\nWhich two actions should you perform? Each correct answer presents part of the solution.",
+      "answer": "Assign the release managers the Deployment Pipeline User role in Castlemere Hub, and share the Box Office pipeline record with them.",
+      "explanation": "Pipeline security is managed in the host environment, which is Castlemere Hub. Microsoft's steps for letting people run a pipeline are to assign the Deployment Pipeline User role in the host and to share the pipeline record with them, where Read is enough to view and run it. That role runs pipelines that are shared with the user and doesn't grant access to create, edit or delete them, so it gives the release managers nothing beyond what Requirement 1 allows. They also need privileges to export from Castlemere Dev and import to UAT and Production. Microsoft says the System Customizer role has those by default, and they hold it in all three.",
+      "sourceIds": [
+        "sim-cc-s07"
+      ],
+      "tags": [
+        "domain:deployment",
+        "task:apply",
+        "feature:power-platform-pipelines"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Assign the release managers the Deployment Pipeline User role in Castlemere Hub."
+        },
+        {
+          "id": "b",
+          "text": "Share the Box Office pipeline record with the release managers."
+        },
+        {
+          "id": "c",
+          "text": "Assign the release managers the Deployment Pipeline Administrator role in Castlemere Hub."
+        },
+        {
+          "id": "d",
+          "text": "Install the Power Platform Pipelines app in Castlemere Dev."
+        },
+        {
+          "id": "e",
+          "text": "Assign the release managers the Deployment Pipeline User role in Castlemere Production."
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "optionExplanations": {
+        "a": "Correct, and part of the solution. The Deployment Pipeline User role is assigned in the host and lets users run pipelines that are shared with them.",
+        "b": "Correct, and part of the solution. Microsoft says to share the pipeline record with the makers, and Read is enough to view and run it.",
+        "c": "Fails. Deployment Pipeline Administrator has full control over all pipeline configuration, which is more than Requirement 1 allows.",
+        "d": "Fails. Microsoft says the pipelines app is installed only in the host, not in the development or target environments.",
+        "e": "Fails. The pipeline roles come with the pipelines app and are assigned in the host environment, and Castlemere Production is a target."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n02"
+        }
+      ],
+      "status": "approved",
+      "groupId": "sim-case-c"
+    },
+    {
+      "id": "sim-c-q05",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.1.01"
+      ],
+      "conceptId": "imported-profile-rank-and-default-conflicts",
+      "prompt": "You need to resolve Issue 5 and Issue 6.\n\nWhat should you do for each issue?",
+      "answer": "Issue 5: in Castlemere Dev, set Box Office Desk to rank 1, and import Box Office Core again. Issue 6: in Members Dev, remove the default status from Friends Standard, and import Friends Membership again.",
+      "explanation": "Experience profiles move between environments in solutions, and a profile imported from a managed solution can't be edited. Copilot Service admin center doesn't let you give two profiles the same rank or mark two as default, but profiles imported from different environments can arrive that way. Microsoft recommends resolving the conflict in the source environments and then importing the profiles. Requirement 2 says that CSRs with both roles get Box Office Desk, and the profile with the higher rank wins, so Box Office Desk moves to rank 1 in Castlemere Dev. Requirement 3 keeps Castlemere Standard as the default, so Friends Standard loses its default status in Members Dev.",
+      "sourceIds": [
+        "sim-cc-s08",
+        "sim-cb-s12",
+        "sim-d1-s01"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "task:apply",
+        "feature:experience-profiles"
+      ],
+      "optionExplanations": {
+        "a": "Not used. Both profiles came from managed solutions, so they can't be edited in UAT, and the technical requirements keep changes in the source environment.",
+        "b": "Correct for Issue 6. Microsoft recommends fixing multiple defaults in the source environment and importing again, and Requirement 3 keeps Castlemere Standard as the default.",
+        "c": "Not used. Records that a managed solution imported can't be deleted in the target. Removing them means deleting the managed solution, which would take Friends Desk with it.",
+        "d": "Not used. Both profiles would still have rank 2, and Friends-only CSRs would also match Box Office Desk.",
+        "e": "Correct for Issue 5. Users with several mapped roles get the profile with the higher rank, and rank 1 outranks rank 2. The change is made where the profile was built.",
+        "f": "Not used. Friends Standard came from a managed solution, so it can't be edited in UAT."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n03"
+        }
+      ],
+      "status": "approved",
+      "groupId": "sim-case-c",
+      "kind": "match",
+      "tray": "Actions",
+      "table": {
+        "title": "Experience profile conflicts",
+        "rowHeading": "Issue",
+        "answerHeading": "Action"
+      },
+      "tokens": [
+        {
+          "id": "a",
+          "text": "In UAT, change the ranks of both profiles by using Set rank and roles"
+        },
+        {
+          "id": "b",
+          "text": "In Members Dev, remove the default status from Friends Standard, and import Friends Membership again"
+        },
+        {
+          "id": "c",
+          "text": "In UAT, delete Friends Standard, and keep the rest of Friends Membership"
+        },
+        {
+          "id": "d",
+          "text": "In Castlemere Dev, map Box Office Desk to the Friends Agent role too, and import Box Office Core again"
+        },
+        {
+          "id": "e",
+          "text": "In Castlemere Dev, set Box Office Desk to rank 1, and import Box Office Core again"
+        },
+        {
+          "id": "f",
+          "text": "In UAT, select Remove Default for Friends Standard"
+        }
+      ],
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Issue 5",
+          "correctTokenId": "e"
+        },
+        {
+          "id": "r2",
+          "label": "Issue 6",
+          "correctTokenId": "b"
+        }
+      ]
+    },
+    {
+      "id": "sim-c-q06",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.1.01"
+      ],
+      "conceptId": "copilot-access-by-profile-features-and-role",
+      "prompt": "You need to resolve Issue 7 and Issue 8, and meet Requirement 4.\n\nWhat should you do for each issue?",
+      "answer": "Issue 7: in Members Dev, turn on Copilot for questions and emails in Friends Desk, select only Ask a question and Live conversation summary, and import it again. Issue 8: in Castlemere Dev, add the Copilot privileges that Microsoft lists to Voucher Agent, and import Box Office Core again.",
+      "explanation": "Two layers decide whether a CSR can use Copilot: the experience profile and the security role. Users on the out-of-the-box profiles get Copilot by default, but a custom profile shows only the features that are turned on in it. Friends Desk has only Knowledge search, so it needs Copilot for questions and emails on its productivity pane, with just the two features from Requirement 4 selected in Copilot AI features. It's managed in UAT, so the change is made in Members Dev. Selecting features per profile also leaves Box Office Desk as it is. Gift voucher CSRs already get Castlemere Standard with every feature, so their profile isn't the problem. Microsoft says that by default only users with the Customer Service Representative role can use Copilot, and that custom roles need the Copilot privileges it lists. Voucher Agent is their only role and lives in Box Office Core.",
+      "sourceIds": [
+        "sim-cb-s25",
+        "sim-cb-s23",
+        "sim-cc-s08",
+        "sim-cb-s12"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "task:apply",
+        "feature:copilot-profile-access"
+      ],
+      "optionExplanations": {
+        "r1a": "Correct. A custom profile gets Copilot when Copilot for questions and emails is turned on in its productivity pane, and Copilot AI features limits which features its users get. Friends Desk is managed in UAT, so the change starts in Members Dev.",
+        "r1b": "Fails. The opt-in is already done in UAT, where Box Office Desk CSRs use Ask a question. Friends Desk still has Copilot turned off, and features for a profile are chosen in the profile.",
+        "r1c": "Fails. Friends CSRs already hold the Customer Service Representative role. The missing piece is Copilot in Friends Desk's productivity pane.",
+        "r2a": "Correct. Microsoft says that only the Customer Service Representative role can use Copilot by default and lists the privileges that custom roles need. Voucher Agent is a managed component, so the change starts in Castlemere Dev.",
+        "r2b": "Fails. A default profile can't keep security roles, and a profile mapping doesn't grant Copilot privileges.",
+        "r2c": "Fails. Castlemere Standard already has every Copilot AI feature selected. The CSRs' role is what's missing."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n03"
+        },
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n01"
+        }
+      ],
+      "status": "approved",
+      "groupId": "sim-case-c",
+      "kind": "hotspot",
+      "table": {
+        "title": "Copilot access",
+        "rowHeading": "Issue",
+        "answerHeading": "Action"
+      },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Issue 7",
+          "options": [
+            {
+              "id": "r1a",
+              "text": "In Members Dev, turn on Copilot for questions and emails in Friends Desk, select only Ask a question and Live conversation summary, and import it again"
+            },
+            {
+              "id": "r1b",
+              "text": "In UAT, opt in again on the Copilot for questions and emails page, and then turn on Ask a question and Live conversation summary there"
+            },
+            {
+              "id": "r1c",
+              "text": "In UAT, assign the Customer Service Representative role to the Friends CSRs, so that the Copilot features become available to them"
+            }
+          ],
+          "correctOptionId": "r1a"
+        },
+        {
+          "id": "r2",
+          "label": "Issue 8",
+          "options": [
+            {
+              "id": "r2a",
+              "text": "In Castlemere Dev, add the Copilot privileges that Microsoft lists to Voucher Agent, and import Box Office Core again"
+            },
+            {
+              "id": "r2b",
+              "text": "In Castlemere Dev, map Castlemere Standard to the Voucher Agent role, and import Box Office Core again"
+            },
+            {
+              "id": "r2c",
+              "text": "In Castlemere Dev, select every feature in Castlemere Standard's Copilot AI features, and import Box Office Core again"
+            }
+          ],
+          "correctOptionId": "r2a"
+        }
+      ]
+    },
+    {
+      "id": "sim-c-q07",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.1.05"
+      ],
+      "conceptId": "copilot-report-ended-conversations-only",
+      "prompt": "You need to explain Issue 9 to the supervisor.\n\nWhich statement explains the figure?",
+      "answer": "The figure counts only conversations that have ended.",
+      "explanation": "The supervisor compares a conversation count with chats that are still active at 11:00. Microsoft defines Number of conversations using Copilot AI as engaged conversations that used Copilot and lists only conversations that have ended. The active chats therefore do not belong in that count while they remain active. Excluding email and voice does not explain this Ticket Chat comparison. Copied responses and unique representatives are different measures, not the conversation count the supervisor selected.",
+      "sourceIds": [
+        "sim-d34-s06"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:analyze",
+        "feature:copilot-analytics"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "The figure excludes conversations on the email and voice channels."
+        },
+        {
+          "id": "b",
+          "text": "The figure counts only responses whose text a CSR copied."
+        },
+        {
+          "id": "c",
+          "text": "The figure counts only conversations that have ended."
+        },
+        {
+          "id": "d",
+          "text": "The figure counts each CSR once, however often that CSR uses Copilot."
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "optionExplanations": {
+        "a": "Incorrect. Excluding email and voice does not explain the difference for Ticket Chat, which is live chat.",
+        "b": "Incorrect. Counting copied text defines Number of responses used, not the selected conversation metric.",
+        "c": "Correct. This metric includes ended conversations, while the comparison is with active chats.",
+        "d": "Incorrect. Daily active users counts unique representatives, not conversations."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n04"
+        }
+      ],
+      "status": "approved",
+      "groupId": "sim-case-c"
+    },
+    {
+      "id": "sim-c-q08",
+      "revision": 1,
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.2.03",
+        "D6.2.04"
+      ],
+      "conceptId": "custom-report-workspace-and-site-map-release",
+      "prompt": "You need to resolve Issue 10 and Issue 11.\n\nWhat should you do for each issue?",
+      "answer": "Issue 10: update the site map entry's workspace ID and report ID to the production copy. Issue 11: deploy the report to Castlemere Analytics Prod with a Power BI deployment pipeline.",
+      "explanation": "A custom report has two parts that move separately. The report lives in a Power BI workspace, and Microsoft's ALM guidance says that Power BI reports can move across environments by using Power BI deployment pipelines. Its site map entry is a Dataverse row in msdyn_dataanalyticsreport, which moves with the Configuration Migration tool. That row holds the Power BI workspace ID and report ID, and Microsoft says that after the migration you must update those references. Season Sales was moved and nothing else was changed, so its entry still names the UAT workspace and report. Rush Seats Monitor isn't in the production workspace yet, so the report has to be deployed before its entry can point at it.",
+      "sourceIds": [
+        "sim-cc-s10",
+        "sim-d6-s14",
+        "sim-cc-s09",
+        "sim-d1-s12"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:custom-report-alm"
+      ],
+      "optionExplanations": {
+        "a": "Not used. The Add report list shows only reports in the production workspace, which Rush Seats Monitor isn't in yet. For Season Sales, the technical requirements say that site map entries move with the Configuration Migration tool.",
+        "b": "Not used. Microsoft recommends not exporting msdyn_analytics, because it holds organization-specific configuration data.",
+        "c": "Correct for Issue 10. The migrated row still holds UAT's workspace and report IDs, and Microsoft says to update both references after the migration.",
+        "d": "Not used. Export and import in Edit mode moves visual customizations of the out-of-the-box analytics reports, not custom reports in a Power BI workspace.",
+        "e": "Correct for Issue 11. Microsoft's guidance moves Power BI reports across environments with Power BI deployment pipelines, and the entry can follow once the report is there."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n06"
+        }
+      ],
+      "status": "approved",
+      "groupId": "sim-case-c",
+      "kind": "match",
+      "tray": "Actions",
+      "table": {
+        "title": "Custom report release",
+        "rowHeading": "Issue",
+        "answerHeading": "Action"
+      },
+      "tokens": [
+        {
+          "id": "a",
+          "text": "Select Add report on Production's data model customization page, and choose the report"
+        },
+        {
+          "id": "b",
+          "text": "Include the msdyn_analytics table in the Configuration Migration tool export"
+        },
+        {
+          "id": "c",
+          "text": "Update the site map entry's workspace ID and report ID to the production copy"
+        },
+        {
+          "id": "d",
+          "text": "Export the report from Edit mode in UAT, and import the file in Production"
+        },
+        {
+          "id": "e",
+          "text": "Deploy the report to Castlemere Analytics Prod with a Power BI deployment pipeline"
+        }
+      ],
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Issue 10",
+          "correctTokenId": "c"
+        },
+        {
+          "id": "r2",
+          "label": "Issue 11",
+          "correctTokenId": "e"
+        }
+      ]
+    },
+    {
+      "id": "sim-c-q09",
+      "revision": 1,
+      "domainId": "analytics",
+      "objectiveIds": [
+        "D6.2.01"
+      ],
+      "conceptId": "visual-customization-export-import-rules",
+      "prompt": "You need to resolve Issue 12, Issue 13 and Issue 14.\n\nWhat should you choose for each issue?",
+      "answer": "Issue 12: publish the changes in UAT, and then export and import the customization. Issue 13: the import replaces them with the imported customization. Issue 14: import it once Production is at the same or a higher version than UAT.",
+      "explanation": "Visual customizations of the out-of-the-box reports move between organizations with Export and Import, or with the matching APIs. Three rules decide these issues. The export and import APIs handle published customizations only, so a change that's only saved stays behind until someone publishes it. On import, Microsoft says that existing customizations are replaced, so production's October changes don't survive the API import. Microsoft also says that the target must be at the same or a higher version than the source, because importing a newer report into an older organization might not work. UAT runs a newer version than Production until November 21.",
+      "sourceIds": [
+        "sim-cc-s09",
+        "sim-d6-s09",
+        "sim-d1-s12"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:visual-customization-export"
+      ],
+      "optionExplanations": {
+        "r1a": "Fails. Export covers published customizations only, so it would carry UAT's last published version without the saved changes.",
+        "r1b": "Correct. Publishing turns the saved changes into the published customization, which is the only kind that can be exported and imported.",
+        "r1c": "Fails. Microsoft recommends not exporting msdyn_analytics, because it holds organization-specific configuration data. Visual customizations move with Export and Import.",
+        "r2a": "Correct. Microsoft says that the import replaces existing customizations, and the technical requirements say that the import uses the API.",
+        "r2b": "Fails. Only published customizations are imported, and Microsoft says the import replaces existing customizations rather than keeping them.",
+        "r2c": "Fails. Microsoft says the import replaces existing customizations. Reset would only remove production's changes for good.",
+        "r2d": "Fails. Microsoft describes replacement of existing customizations, not a merge.",
+        "r3a": "Fails. UAT is newer than Production this week, and Microsoft says that importing a newer report into an older organization might not work.",
+        "r3b": "Correct. Microsoft requires the target to be at the same or a higher version than the source, which Production reaches on November 21.",
+        "r3c": "Fails. Reset permanently removes the report's customizations, and the version mismatch would still be there."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n05"
+        }
+      ],
+      "status": "approved",
+      "groupId": "sim-case-c",
+      "kind": "hotspot",
+      "table": {
+        "title": "Report customization release",
+        "rowHeading": "Issue",
+        "answerHeading": "Choice"
+      },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Issue 12",
+          "options": [
+            {
+              "id": "r1a",
+              "text": "Export the customization from UAT now, and import it into Production"
+            },
+            {
+              "id": "r1b",
+              "text": "Publish the changes in UAT, and then export and import the customization"
+            },
+            {
+              "id": "r1c",
+              "text": "Move the msdyn_analytics records to Production with the Configuration Migration tool"
+            }
+          ],
+          "correctOptionId": "r1b"
+        },
+        {
+          "id": "r2",
+          "label": "Issue 13",
+          "options": [
+            {
+              "id": "r2a",
+              "text": "The import replaces them with the imported customization"
+            },
+            {
+              "id": "r2b",
+              "text": "The import keeps them, and saves the imported changes as a draft"
+            },
+            {
+              "id": "r2c",
+              "text": "The import fails until they're reset in Production"
+            },
+            {
+              "id": "r2d",
+              "text": "The import merges the imported pages with them"
+            }
+          ],
+          "correctOptionId": "r2a"
+        },
+        {
+          "id": "r3",
+          "label": "Issue 14",
+          "options": [
+            {
+              "id": "r3a",
+              "text": "Import it this week"
+            },
+            {
+              "id": "r3b",
+              "text": "Import it once Production is at the same or a higher version than UAT"
+            },
+            {
+              "id": "r3c",
+              "text": "Import it this week, and select Reset in Production if it doesn't render"
+            }
+          ],
+          "correctOptionId": "r3b"
+        }
+      ]
     }
   ],
   "groups": [
@@ -9504,6 +11289,38 @@
           "id": "scenario",
           "title": "Scenario",
           "body": "Ashlake Campgrounds runs 38 campgrounds across the US Midwest. It uses Dynamics 365 Contact Center in standalone mode, and its environment is in the North America region. CSRs answer chats in Copilot Service workspace, in English.\n\nSite rules, pet rules and cancellation terms are in the Camp Rules Handbook, a set of PDF files in a SharePoint Online library. The library isn't on the public web. All CSRs have Read permission on it, and Restricted SharePoint Search isn't in use.\n\nCopilot is enabled, and Copilot help pane - Ask a Question is selected in Copilot settings. The CSRs' experience profile has Ask a question turned on. Knowledge management is configured, but the knowledge base doesn't contain the handbook content. A Microsoft Copilot Studio license is available, and Ashlake accepts production-ready preview features.\n\nGoal: A CSR must be able to type a question in Ask a question in the Copilot help pane and get an answer that's based on the handbook content.\n\nYou need to meet the goal."
+        }
+      ]
+    },
+    {
+      "id": "sim-case-c",
+      "kind": "case-study",
+      "title": "Castlemere Theatres",
+      "exhibits": [
+        {
+          "id": "background",
+          "title": "Background",
+          "body": "Castlemere Theatres runs nine theatres in Ontario and Quebec. Its Box Office sells tickets and gift vouchers, handles refunds, and looks after Castlemere Friends, the membership scheme.\n\nAbout 90 customer service representatives (CSRs) in Toronto and Montréal answer the Box Office line and Ticket Chat, the web chat on the ticketing site. A team of 15 Friends CSRs handles membership, and seasonal gift voucher CSRs join from November to January.\n\nCastlemere has used Dynamics 365 Contact Center in standalone mode for two years, and CSRs work in Copilot Service workspace. The Curtain Up program is putting the contact center on a controlled release process before the winter season goes on sale, and adding reporting that shows how the Box Office performs."
+        },
+        {
+          "id": "current",
+          "title": "Current environment",
+          "body": "Environments and releases\n- Castlemere Dev and Members Dev are sandboxes. The Box Office team builds in Castlemere Dev, in an unmanaged solution named Box Office Core. A project team built the Friends Membership solution in Members Dev.\n- Castlemere UAT is a sandbox that was created at the start of October as a full copy of Castlemere Production. UAT and Production are managed environments. All environments are in the North America region.\n- UAT runs a newer version of Dynamics 365 Contact Center than Production. Production is scheduled to reach the same version on November 21.\n- Solutions leave the development environments as managed solutions and are imported into UAT and then Production. Box Office Core release 4 and Friends Membership are in UAT now. Production has Box Office Core release 3 and doesn't have Friends Membership.\n- Configuration data that solutions don't carry moves with the Configuration Migration tool.\n- Castlemere Hub is a production environment that hosts Power Platform pipelines. The Box Office pipeline there links Castlemere Dev, with stages for UAT and Production. Release managers hold the System Customizer role in Castlemere Dev, UAT and Production, and no role in Castlemere Hub.\n\nRelease 4 configuration data\n- Release 4 adds the Rush Seats queue, which has an operating hours record, and changes the existing Refunds queue. Both are messaging queues for Ticket Chat.\n- Every Box Office queue uses an out-of-the-box assignment method, and none has an overflow condition.\n- The Ticket Chat workstream and its chat widget are in Box Office Core. Ticket Chat is live chat.\n\nVoice\n- The Box Office line is a voice channel through Azure Communication Services, on the acs-castlemere-prod resource. Castlemere plans to move voice to Teams Phone extensibility in 2027.\n- acs-castlemere-uat is a second Azure Communication Services resource in the same tenant. A test number was bought for it in the Azure portal in August, and inbound calling is enabled on that number.\n\nCopilot Studio agents\n- Seat Finder answers Ticket Chat customers first. It calls the Venue Seating API through a custom connector, which is in a separate solution in Castlemere Dev named Venue Connectors. The Seat Finder solution holds the agent and its connection reference.\n- Encore Survey is the Copilot Studio survey agent that sends a feedback survey after Ticket Chat conversations. It's in a solution of its own.\n\nExperience profiles and Copilot\n- Box Office Desk is a custom profile in Box Office Core. It has rank 2 and is mapped to the Box Office Agent role. Its productivity pane has Copilot for questions and emails, Agent scripts and Knowledge search turned on.\n- Castlemere Standard is a custom profile in Box Office Core, set as the default. Its productivity pane has Copilot for questions and emails turned on, with every Copilot AI feature selected.\n- Friends Desk is a custom profile in Friends Membership. It has rank 2 and is mapped to the Friends Agent role. Its productivity pane has Knowledge search turned on.\n- Friends Standard is a custom profile in Friends Membership. The project team set it as the default in Members Dev for testing.\n- Box Office and Friends CSRs hold the Customer Service Representative role, plus Box Office Agent, Friends Agent or both.\n- Gift voucher CSRs hold only Voucher Agent, a custom security role in Box Office Core. It grants access to the voucher tables, workstreams and queues. No profile is mapped to Voucher Agent.\n- Copilot for questions and emails and Summaries are opted in and turned on in UAT and Production. Box Office Desk CSRs use Ask a question in UAT.\n- Copilot analytics is turned on in Production. CSRs use Copilot in Ticket Chat conversations.\n\nAnalytics\n- Omnichannel historical analytics and Omnichannel real-time analytics are turned on in UAT and Production. Historical and real-time data model customization are turned on in both, and each environment has its own customer workspace: Castlemere Analytics UAT and Castlemere Analytics Prod.\n- Season Sales, a historical report, and Rush Seats Monitor, a real-time report, are custom reports that the analytics team built in Power BI Desktop and published to Castlemere Analytics UAT. Both are on UAT's Customized reports site map.\n- Supervisors and the release team hold the Analytics Report Author role in UAT and Production."
+        },
+        {
+          "id": "business",
+          "title": "Business requirements",
+          "body": "Requirement 1: Release managers must be able to run the Box Office pipeline from Castlemere Dev. They must get no more pipeline access than that.\n\nRequirement 2: CSRs who hold both Box Office Agent and Friends Agent must get Box Office Desk.\n\nRequirement 3: Castlemere Standard must be the only default profile.\n\nRequirement 4: Friends CSRs must be able to use Ask a question and Live conversation summary in Copilot. They must not be offered Write an email. Box Office CSRs keep every Copilot feature they have today.\n\nRequirement 5: The Configuration Migration tool import must leave the workstream records as Box Office Core imported them.\n\nRequirement 6: The queue schema must hold only the tables that the Box Office queues need."
+        },
+        {
+          "id": "technical",
+          "title": "Technical requirements",
+          "body": "- Stay on Dynamics 365 Contact Center in standalone mode.\n- Don't change managed components directly in UAT or Production. Changes to them start in their source environment. Connections and other environment-specific values are set in each environment.\n- Voice tests in UAT must use acs-castlemere-uat and its test number. Production must keep acs-castlemere-prod. The Azure team owns Event Grid subscriptions and will add UAT's when the voice setup in Copilot Service admin center is done.\n- Site map entries for custom reports move with the Configuration Migration tool, so that their names and order match UAT.\n- Visual customizations of the out-of-the-box analytics reports move with the export and import APIs, as part of the scripted release."
+        },
+        {
+          "id": "issues",
+          "title": "Issues",
+          "body": "Issue 1: The first queue import into UAT used one data file that held the new Rush Seats queue and the changes to the Refunds queue. The queue records didn't import correctly.\n\nIssue 2: In UAT, Manage Azure Communication Services still shows acs-castlemere-prod, and the copied Box Office Voice workstream still lists the production number.\n\nIssue 3: The import of the Seat Finder solution into UAT fails. The downloaded log file reports a missing component that Seat Finder needs to call the Venue Seating API.\n\nIssue 4: Encore Survey was imported into UAT, and Copilot Service admin center shows it as Ready, but no surveys reach customers after Ticket Chat conversations. In Power Apps, its connection references show no connection.\n\nIssue 5: In UAT, Box Office Desk and Friends Desk both have rank 2.\n\nIssue 6: In UAT, Castlemere Standard and Friends Standard are both marked as default.\n\nIssue 7: Friends CSRs in UAT can't see Copilot in the productivity pane.\n\nIssue 8: In Production, gift voucher CSRs can't use Copilot, although Castlemere Standard has Copilot for questions and emails turned on.\n\nIssue 9: At 11:00 on the first morning of the winter on-sale, a supervisor compared Production's Copilot analytics report, with Duration set to the current day, with the Ongoing conversation report. About 140 Ticket Chat conversations were active, and CSRs were using Copilot in most of them, but Number of conversations using Copilot AI showed 35.\n\nIssue 10: Last week, Season Sales was deployed to Castlemere Analytics Prod, and its site map entry was moved to Production with the Configuration Migration tool. Nothing else was changed. Season Sales appears in Production's Customized reports, but supervisors who open it don't get the report from Castlemere Analytics Prod.\n\nIssue 11: Rush Seats Monitor is ready for Production. So far it's only in Castlemere Analytics UAT. Its site map entry will move after the report is in the production workspace.\n\nIssue 12: UAT supervisors changed the Queue page of Omnichannel historical analytics and selected Save. Nobody has selected Publish yet. The changes must reach Production.\n\nIssue 13: On October 20, Production supervisors published their own changes to the Queue page. The Box Office manager asks what the import will do to them.\n\nIssue 14: The release team plans to import the Queue page customization into Production this week."
         }
       ]
     }

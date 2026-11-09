@@ -1,27 +1,137 @@
 {
-  "stage": "8B",
-  "completedAtUtc": "2026-11-06T01:56:30Z",
+  "stage": "8D",
+  "completedAtUtc": "2026-11-09T21:26:56.226Z",
+  "status": "reviews and local checks passed; reserved similarity check pending; 8E not authorized",
+  "candidate": {
+    "bankId": "ab250-simulator",
+    "version": "1.0.0",
+    "questions": 128,
+    "approvals": 128,
+    "formats": {
+      "hotspot": 34,
+      "order": 7,
+      "match": 32,
+      "multiple": 26,
+      "single": 21,
+      "series": 8
+    },
+    "domains": {
+      "channels": 41,
+      "agents-ai": 15,
+      "work-distribution": 15,
+      "deployment": 22,
+      "analytics": 13,
+      "representative-experience": 22
+    },
+    "groups": [
+      {
+        "id": "sim-case-a",
+        "kind": "case-study",
+        "questions": 8
+      },
+      {
+        "id": "sim-series-a",
+        "kind": "series",
+        "questions": 4
+      },
+      {
+        "id": "sim-case-b",
+        "kind": "case-study",
+        "questions": 9
+      },
+      {
+        "id": "sim-series-b",
+        "kind": "series",
+        "questions": 4
+      },
+      {
+        "id": "sim-case-c",
+        "kind": "case-study",
+        "questions": 9
+      }
+    ],
+    "partialBatches": 0,
+    "deployedThisTask": false
+  },
+  "review": {
+    "pendingReviewed": 20,
+    "directlyApproved": 17,
+    "correctedThenApproved": [
+      "sim-d34-q03",
+      "sim-d34-q14",
+      "sim-c-q07"
+    ],
+    "answerKeysChanged": 0,
+    "reviewers": [
+      "codex-ai-distribution-reviewer",
+      "codex-experience-reviewer",
+      "codex-case-c-reviewer"
+    ],
+    "evidence": "Every cited Microsoft Learn page opened by the assigned independent reviewer; all 32 checks applied"
+  },
+  "compiler": "--write and --check passed;128 independent approvals;5 groups;0 automated near-duplicate pairs",
+  "draftChecks": "All three reviewed batches passed",
   "lint": "passed",
   "unit": {
     "status": "passed",
-    "tests": 382,
-    "files": 30
+    "tests": 410,
+    "files": 33
   },
-  "build": "passed, including all content approval and publication gates",
+  "build": {
+    "status": "passed",
+    "warnings": [
+      "Existing large-chunk advisory",
+      "Existing ineffective dynamic import for content/catalog.ts"
+    ]
+  },
   "browser": {
     "status": "passed",
-    "tests": 162,
-    "origin": "http://localhost:4187",
+    "tests": 193,
     "workers": 4,
-    "simulatorSuite": "26 tests, also passed three consecutive repeats",
-    "intermittent": "notes-redesign inline save and phase4 abandon focus each failed once at 8 workers straight after a heavy run, then passed 8 of 8 alone, 18 of 18 in their specs, and in the final full run. Neither test covers simulator code, but the cause was not proven."
+    "origin": "http://localhost:4187",
+    "command": "npm run test:e2e -- --workers=4",
+    "newCoverage": "Real-bank 50-question exam at 320px and 100-question desktop exam; hidden fixtures/answers,whole groups,sourced snapshots,flags,reload preservation and flashcard isolation"
   },
-  "acceptedContent": "No changes under src/content/published, pilot, exams or batches, or docs/phase7",
-  "dumpScan": "No dump text, watermark or personal email in changed or new files",
+  "preservation": {
+    "checkedAtUtc": "2026-11-09T21:26:56.225Z",
+    "originalApprovalsPreserved": 108,
+    "originalPublishedQuestionsUnchanged": 108,
+    "originalPublishedSourcesAndGroupsUnchanged": true,
+    "totalApprovedFingerprintsVerified": 128,
+    "frozenFiles": [
+      {
+        "file": "src/content/published/study-pack.json",
+        "sha256": "fffe577717c193141442493798032127c95212cc71f24bef19c6d8ab42c3962c",
+        "byteIdentical": true
+      },
+      {
+        "file": "src/content/published/ab250-bank.json",
+        "sha256": "9c51b0167c2f8284889ef94fe887b57857a1663e50f9fdefebedb1cd75bb8b3e",
+        "byteIdentical": true
+      }
+    ]
+  },
   "notRun": [
-    "Lighthouse, scheduled for 8E",
-    "Fresh clone install, scheduled for 8E",
-    "Real phone or tablet; touch was exercised through Edge touch emulation only",
-    "Screen reader; announcements were written but not heard with one"
-  ]
+    "Final 128-question dump-similarity check: reserved to owner or Claude; no dump accessed"
+  ],
+  "deferredTo8E": [
+    "Broad Lighthouse acceptance",
+    "Fresh clone installation",
+    "Real phone/tablet",
+    "Screen-reader listening"
+  ],
+  "openFindings": [
+    "D6.1.05 potential new source remains unassessed",
+    "Accepted ab250-d6-q10 role-conflict re-review remains separate",
+    "D2.2.07 remains partial-depth"
+  ],
+  "qualityReport": "docs/phase8/QUALITY_REPORT_8D.md",
+  "commitPushDeploy": "None",
+  "publicationAuthorization": {
+    "date": "2026-11-09",
+    "request": "Publish all 128 questions and push the repository",
+    "scope": "Commit reviewed changes; push main; GitHub Pages deployment",
+    "similarityScan": "Still unrun and open; owner/Claude only",
+    "stage8E": "Not advanced"
+  }
 }

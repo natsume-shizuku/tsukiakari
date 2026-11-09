@@ -58,33 +58,38 @@
   {
     "id": "sim-d34-q03",
     "revision": 1,
-    "reviewer": "ai-distribution-reviewer",
+    "reviewer": "codex-ai-distribution-reviewer / rereview-2",
     "reviewedAt": "2026-11-09",
-    "decision": "needs-revision",
-    "rationale": "Rows 2 and 3 stand, and row 1's answer is right: a matching Conversation Start global variable with External sources can set value and Sensitive data on keeps a context variable out of transcripts and telemetry while it remains in memory for routing. The defect is r1d. It is rejected only by the Copilot Studio row saying variable-management actions that assign sensitivity without a Question node aren't supported. The Contact Center page Configure sensitive variable masking for voice agents (dated 2025-10-15) lists Flag variables as sensitive as Yes and tells makers to create a variable in Copilot Studio or a Question node and turn on Sensitive data, so the two pages disagree on exactly the step r1d describes. The Work with global variables page also documents a dedicated topic with a Set variable value node as the pattern for variables set by external sources, so r1d reads as a documented route. The evidence note says no option depends on directly flagging a variable, but r1d does. The fix replaces r1d with a decoy that fails for an undisputed reason and tests the wrong belief the stem raises, that a sensitive value can't be used for routing.",
-    "findings": [
-      "Check 5. r1d and its explanation rest on a row that the Contact Center masking page contradicts. Fix: replace the text of option r1d with: In Conversation Start, create a matching global variable with External sources can set value on, and leave Sensitive data off so that routing can read it. Replace optionExplanations.r1d with: Fails. Without Sensitive data, the token isn't redacted from transcripts and telemetry. Turning it on doesn't block routing, because Microsoft says a sensitive context variable remains in memory for routing, orchestration and passing between topics.",
-      "Check 5. The explanation states the contested row as fact. Fix: in explanation, replace Values received back from Power Automate, written explicitly to Dataverse, or set through variable-management actions aren't redacted. with Values received back from Power Automate or written explicitly to Dataverse aren't redacted.",
-      "Check 13. The third evidence entry (sim-d34-s02, Supported actions tables and Turn on Application Insights logging) is inaccurate. Fix: in its claim, delete the sentence Variable management and other variable-management actions that assign sensitivity without a Question node: not supported, data isn't redacted. Replace its applicability with: Same page. The Contact Center masking page lists Flag variables as sensitive as Yes, which conflicts with this page's Not supported rows for flagging and for variable-management actions, so no option or explanation depends on either row. r1d fails because the token is left unmarked, and the first evidence entry says a sensitive context variable remains in memory for routing."
-    ],
+    "decision": "approved",
+    "rationale": "Re-reviewed the edited question as new text against all 32 checks, including all eleven row alternatives. Classic orchestration, logging off, transcript scope and collection after the first question now make the answer applicable. Those setup qualifications do not name the required context-variable action or topic-parameter action. The Application Insights alternatives still fail on the transcript requirement; flow-return, Dataverse and environment-variable alternatives remain documented failures. Test-panel tracing is still a distinct knowledge decision. Reopened all three cited Learn pages, including the new timing-limitation source; editorial claims and applicability are aligned. No key, format or revision change.",
+    "findings": [],
     "sourceChecks": [
       {
         "sourceId": "sim-d34-s02",
         "supported": true,
-        "section": "Mark context variables as sensitive; What the Sensitive data setting does and doesn't do; Protect data in variables; Pass sensitive variables between topics; Supported actions; Test sensitive data redaction",
-        "accessedAt": "2026-11-07",
-        "claimReviewedAt": "2026-11-07",
-        "notes": "r1a, r1b, r1c, all of row 2 and row 3 confirmed. Flag variables as sensitive and Variable Management rows say Not supported, which the Contact Center masking page (agent-sensitive-data-masking, opened 2026-11-07) contradicts with Flag variables as sensitive: Yes. Page dated 2026-09-24."
+        "section": "Sensitive context variables; Topic inputs and outputs; Supported actions; Test redaction; Logging",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Reopened and checked the complete decision and scope: context redaction, topic parameters, runtime availability, flow/Dataverse boundaries and expected test tracing. Explicit classic orchestration and logging assumptions resolve prior defects."
       },
       {
         "sourceId": "sim-d34-s05",
         "supported": true,
         "section": "Variable scopes; Environment variables",
-        "accessedAt": "2026-11-07",
-        "claimReviewedAt": "2026-11-07",
-        "notes": "Environment variables are read-only in Copilot Studio, so r2d fails. Page dated 2026-11-06."
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Reopened: read-only environment variables reject r2d."
+      },
+      {
+        "sourceId": "sim-d34-s14",
+        "supported": true,
+        "section": "Opening note; Key considerations",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Reopened: initial sensitive-question response can escape redaction; collecting after a nonsensitive first question addresses the stated timing limitation."
       }
-    ]
+    ],
+    "fingerprint": "187a32befbc1f17ff570789385475b1600271cf0a10e33eb97493506fd72af10"
   },
   {
     "id": "sim-d34-q04",
@@ -165,23 +170,22 @@
   {
     "id": "sim-d34-q07",
     "revision": 1,
-    "reviewer": "ai-distribution-reviewer",
+    "reviewer": "codex-ai-distribution-reviewer",
     "reviewedAt": "2026-11-09",
-    "decision": "needs-revision",
-    "rationale": "The facts are right: the report defines a used response as one whose text was copied, and Agent ratings counts positive or negative ratings. The defect is a leak. The goal asks for the metric that shows how representatives judged responses, and Agent ratings is the only option whose name describes judging, so anyone can answer without knowing the report. The stem also rules out Number of responses used by saying the manager misread it, which leaves nothing to weigh. Asking what the 25 percent measures keeps the lesson and makes the copy definition the deciding fact, with ratings and sending as real traps.",
-    "findings": [
-      "Checks 11 and 22 leak: the goal's judged matches only Agent ratings. Fix: replace prompt with: Lindqvist Freight runs Dynamics 365 Contact Center standalone, and Copilot analytics is enabled. Last month's Copilot analytics report shows 25 percent for Percentage of Copilot AI responses used. A manager concludes that representatives found the other 75 percent of the responses wrong.\\n\\nYou need to tell the manager what the 25 percent measures.\\n\\nWhat does the 25 percent measure? Replace options with a: The share of Copilot responses from which representatives copied text; b: The share of Copilot responses that representatives rated positively; c: The share of Copilot responses that representatives sent to customers; d: The share of engaged conversations in which representatives used Copilot. Delete option e. Keep correctOptionIds [a]. Replace answer with: The share of Copilot responses from which representatives copied text. Replace explanation with: In the Copilot analytics report, Number of responses used is the number of times text from a Copilot response was copied, and Percentage of Copilot AI responses used is the percentage of responses that were copied. So the 25 percent is a copy rate, and a response that wasn't copied wasn't necessarily judged wrong. Representatives' judgments are counted separately by Agent ratings in the Satisfaction section, the number of times representatives rated a Copilot response positively or negatively. Replace optionExplanations with a: Correct. The report defines Percentage of Copilot AI responses used as the percentage of responses that were copied. b: Fails. Ratings are a separate metric, Agent ratings, which counts how many times representatives rated a Copilot response positively or negatively. c: Fails. The report counts a response as used when text from it was copied, not when it was sent to a customer. d: Fails. That is Percentage of conversations using Copilot AI, the percentage of engaged conversations that used Copilot. It counts conversations, not responses. The evidence entry stays as it is."
-    ],
+    "decision": "approved",
+    "rationale": "Independent review of the rewritten question passes all 32 checks. The manager's inference presents a believable wrong belief without supplying the copy definition. Copying, positive ratings, sending to customers and engaged-conversation usage remain distinct and grammatically parallel. The strongest alternative is positive ratings, but the Satisfaction measure is separate. The correct option is not conspicuously longer. Standalone scope and enabled analytics are explicit. Compared with accepted ab250-d3-q12 and q13: this tests the copy-based response metric, not throughput exclusions or adoption-comparison alignment.",
+    "findings": [],
     "sourceChecks": [
       {
         "sourceId": "sim-d34-s06",
         "supported": true,
-        "section": "Prerequisites; Filter and interpret the report: Usage, Productivity: Conversations, Satisfaction",
-        "accessedAt": "2026-11-07",
-        "claimReviewedAt": "2026-11-07",
-        "notes": "All metric definitions confirmed; standalone Yes, embedded No; administrator enables Copilot analytics. Page dated 2026-08-27."
+        "section": "Availability; Prerequisites; Usage; Productivity: Conversations; Satisfaction",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Opened the actual metric table: used-response percentage measures copied responses. Ratings and conversation adoption are separate metrics. The page supports standalone availability and enabling analytics."
       }
-    ]
+    ],
+    "fingerprint": "f19517a9ad6d112ccb6d999e7f77e59eb94d87f52d22dec74844fd590dd6fc12"
   },
   {
     "id": "sim-d34-q08",
@@ -214,40 +218,38 @@
   {
     "id": "sim-d34-q09",
     "revision": 1,
-    "reviewer": "ai-distribution-reviewer",
+    "reviewer": "codex-ai-distribution-reviewer",
     "reviewedAt": "2026-11-09",
-    "decision": "needs-revision",
-    "rationale": "The matching holds. I tested all 24 row and token pairs. Selection criteria choose among assignment rulesets, with the default ruleset when none is met. Each prioritization rule is a priority bucket. Dynamic match compares a System User attribute with a conversation value and avoids a static rule for each combination. Order by sorts several matching CSRs, and Proficiency with Nearest Proficient is Microsoft's closest-match ordering. Check 21: the classification token is a real mis-pick for rows 1 and 2. The defect is one overbroad claim. The explanation and token f's explanation say classification rules can't order work in the queue, but the assignment methods page says classification rules can set the initial or base priority score that dynamic prioritization sorts by, which q10 in this batch teaches.",
-    "findings": [
-      "False statement, and it contradicts sim-d34-q10. Fix: replace optionExplanations.f with: Fails on every row. Classification rules run before queue selection and set attributes on the work item, such as skills. They don't choose the assignment ruleset or sort representatives, and in a custom assignment method the order of waiting work comes from its prioritization rules.",
-      "Same claim in the explanation. Fix: replace Route-to-queue and classification rules act before the queue, so they can't choose rulesets or order work inside Guest Care. with Route-to-queue and classification rules act before the queue, so they can't choose an assignment ruleset or sort representatives, and the order of waiting work in a custom assignment method comes from its prioritization rules."
-    ],
+    "decision": "approved",
+    "rationale": "The repaired explanation and classification-token rejection no longer deny that classification can set a base priority score. Tested all 24 row/token pairings: row 1 requires choosing between assignment rulesets (a); row 2 orders waiting work (b); row 3 compares a representative value with a conversation value without per-value static rules (c); row 4 ranks eligible representatives by closeness (d). Prioritization cannot select representatives, conditions cannot sort them, and neither route-to-queue nor classification performs those assignment-stage decisions. Selection criteria do not order work. Dynamic matching is a knowledge distinction rather than a literal shared row/token name. The question remains distinct from accepted custom-skill-condition and cross-queue-priority questions. No answer-key changes needed.",
+    "findings": [],
     "sourceChecks": [
       {
         "sourceId": "sim-cb-s22",
         "supported": true,
         "section": "Create an assignment method and configure rules; Configure selection criteria",
-        "accessedAt": "2026-11-07",
-        "claimReviewedAt": "2026-11-07",
-        "notes": "Prioritization and assignment rulesets, Order by attributes including Proficiency, selection criteria with default ruleset. Page dated 2026-09-11."
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Confirmed ruleset selection and default fallback; assignment rules separately contain conditions and Order by."
       },
       {
         "sourceId": "sim-d4-s05",
         "supported": true,
-        "section": "How prioritization rulesets work; How assignment rulesets work; How dynamic prioritization works",
-        "accessedAt": "2026-11-07",
-        "claimReviewedAt": "2026-11-07",
-        "notes": "Buckets, dynamic match, Order by confirmed. Priority score section says the initial or base score can be set using classification rules. Page dated 2026-10-30."
+        "section": "How prioritization rulesets work; How assignment rulesets work; Priority score system",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Confirmed priority buckets, dynamic comparison of user/conversation attributes, representative sorting, and classification setting an initial priority score. The revised explanation respects that distinction."
       },
       {
         "sourceId": "sim-d34-s07",
         "supported": true,
-        "section": "Closest Match, custom assignment",
-        "accessedAt": "2026-11-07",
-        "claimReviewedAt": "2026-11-07",
-        "notes": "Order by > Proficiency > All skills or skill type > Nearest Proficient. Page dated 2026-05-07."
+        "section": "Closest Match; Custom assignment",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Confirmed proficiency-based nearest ordering for custom assignment; this does not require changing the workstream default algorithm."
       }
-    ]
+    ],
+    "fingerprint": "ce66edf110ba7bcdee0e547079af82583b6854e5b2e2bfa169906109f95b5050"
   },
   {
     "id": "sim-d34-q10",
@@ -304,41 +306,38 @@
   {
     "id": "sim-d34-q11",
     "revision": 1,
-    "reviewer": "ai-distribution-reviewer",
+    "reviewer": "codex-ai-distribution-reviewer",
     "reviewedAt": "2026-11-09",
-    "decision": "needs-revision",
-    "rationale": "All three answers are right. Exact Match keeps Anika and Bruno, and Highest capacity picks Bruno. For Closest Match, Highest capacity orders by closest match and not by available capacity. The skill-match page orders by closeness to the required skill and proficiency, and its custom-assignment equivalent, Order by Proficiency with Nearest Proficient, ranks the exact-proficiency representative first in Microsoft's table. Anika is the only CSR at zero distance on both skills, so the strongest alternative, Bruno by capacity, needs equal skill scores, which they don't have. Row 3 quotes Microsoft's might. The defects are wording. The explanation calls Chiara overqualified, though her Spanish is below the requirement. And Microsoft's exact, over and under example counts skills, not proficiency, so the explanation, r2b and the evidence present an inference as Microsoft's ordering rule (checks 13 and 24).",
-    "findings": [
-      "False statement. Fix: in explanation, replace Closest Match doesn't filter on skills. It filters on presence and capacity, then orders by closeness to the required skills and proficiency rather than by available capacity, so Anika, an exact match, comes before overqualified Bruno and Chiara. Capacity breaks a tie only when skill scores are equal. with Closest Match doesn't filter on skills. It filters on presence and capacity, then orders representatives by closest match and not by available capacity. Microsoft describes that order as closeness to the required skill and proficiency, with exact qualified representatives on top, and achieves closest match in custom assignment by ordering on Proficiency with Nearest Proficient. Anika matches both required proficiencies exactly, so she comes before Bruno, who is above both, and Chiara, who is above on Dishwashers and below on Spanish. The assignment method ranks representatives only when they have the same skill score.",
-      "Check 24. Fix: replace optionExplanations.r2b with: Fails. Bruno is above the required proficiency on both skills, and Microsoft puts exact qualified representatives on top. His higher capacity would count only against a representative with the same skill score.",
-      "Check 13. Fix: in the first evidence entry (sim-d34-s07), append to applicability: Microsoft's exact, over and under example counts skills, and all three CSRs here have both skills, so row 2 rests on closeness to the required proficiency; the custom-assignment table ranks the exact-proficiency representative first under Nearest Proficient."
-    ],
+    "decision": "approved",
+    "rationale": "The repaired rationale separates skill ranking from capacity instead of claiming capacity universally breaks every tie. Exact Match admits Anika and Bruno, then Highest capacity selects Bruno; Chiara fails Spanish. Closest Match selects Anika's exact required proficiencies before capacity ranking, so neither a more-capable nor a partly underqualified candidate wins. Row 3 accurately uses a possibility rather than guaranteeing assignment. Checked every row option and the fallback-queue rejection, including the linked Learn fallback-queue section. The question tests outcome prediction and the contrast between algorithms, distinct from accepted ab250-d4-q02's configuration choice. Same rating model, out-of-box method, presence and capacity assumptions are explicit. All 32 checks pass.",
+    "findings": [],
     "sourceChecks": [
       {
         "sourceId": "sim-d34-s07",
         "supported": true,
-        "section": "Exact match; Closest Match",
-        "accessedAt": "2026-11-07",
-        "claimReviewedAt": "2026-11-07",
-        "notes": "Exact match filters ratings >= required; Closest Match orders by closeness to required skill and proficiency (example by skill count); might be assigned to a representative without any required skills; same skill score ranked by assignment method; Nearest Proficient table ranks Carlos (exact) first. Page dated 2026-05-07."
+        "section": "Exact match; Closest Match; Nearest Proficient examples",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Confirmed minimum-proficiency filtering, closest ranking, same-score assignment-method tie handling and the possible unskilled assignment. The numerical example supports nearest proficiency ahead of higher proficiency."
       },
       {
         "sourceId": "sim-d4-s05",
         "supported": true,
-        "section": "Types of assignment methods: Highest capacity",
-        "accessedAt": "2026-11-07",
-        "claimReviewedAt": "2026-11-07",
-        "notes": "Exact Match orders filtered representatives by available capacity; Closest Match orders by closest match and not available capacity. Page dated 2026-10-30."
+        "section": "Highest capacity",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Confirmed Exact Match filters then ranks by capacity; Closest Match ranks eligible representatives by closest match instead of available capacity."
       },
       {
         "sourceId": "sim-d4-s07",
         "supported": true,
-        "section": "Configure work distribution",
-        "accessedAt": "2026-11-07",
-        "claimReviewedAt": "2026-11-07",
-        "notes": "Default skill matching algorithm: Exact Match, Closest Match or None. Page dated 2026-05-08."
+        "section": "Configure work distribution; linked How fallback queues work",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Confirmed workstream algorithm settings. Opened the linked queues-omnichannel page: fallback concerns classification/routing errors or unmatched routing rules, not an absence of skill matches in the selected queue."
       }
-    ]
+    ],
+    "fingerprint": "94cbcc1e43380ca882c1dbc6c74cc54004d8248fcd5c4a73f82b5c6cc2a50d8c"
   },
   {
     "id": "sim-d34-q12",
@@ -391,48 +390,54 @@
   {
     "id": "sim-d34-q14",
     "revision": 1,
-    "reviewer": "ai-distribution-reviewer",
+    "reviewer": "codex-ai-distribution-reviewer / rereview-3",
     "reviewedAt": "2026-11-09",
-    "decision": "needs-revision",
-    "rationale": "The answer pair is right under the stated settings, and every distractor fails for a documented reason. The defects are leaks and an unstated preview dependency. Option a is the only option that changes the setting the stem names as No, and the notification template sentence clears a's only caveat and names affinity (checks 26, 27 and 32). Option b alone repeats the stem's Available or Busy (check 22), so word matching finds both answers. The template sentence also hides a dependency: the workstreams page says that if auto assign work items is no in the notification template, the system overrides representative affinity, and the notification templates page says Autoassign work items defaults to No and is in preview. The stem doesn't state that preview status (checks 6 and 32). Stating affinity as already on also removes the conflict over the SMS default, and it leaves one decision, the playbook, so the fix turns this into a single-answer question.",
-    "findings": [
-      "Checks 22, 26, 27 and 32 leak, and an unstated preview setting. Fix: change kind to single. Replace prompt with: Greenhaven Insurance handles claims over SMS through a push messaging workstream in Dynamics 365 Contact Center. Representative affinity is turned on for the workstream, and its notification template has Autoassign work items set to Yes. Microsoft labels Autoassign work items a preview setting, and Greenhaven has accepted the preview terms. Conversation orchestration is set up, and each CSR's conversation limit has been set in Enhanced user management.\\n\\nToday, when a customer replies to a waiting SMS conversation, it goes back to the CSR who handled it. Managers want it to go back to that CSR only if the CSR is in a presence the managers choose and has fewer conversations open across all channels than their limit, which can be higher than their capacity. Otherwise, the next best CSR in the queue should get it.\\n\\nYou need to configure this behavior.\\n\\nWhat should you do? Replace options with a: Publish a Keep the same expert for async chats playbook with the presences, active conversation limit and next best fallback; b: Publish an Assign to a previous or preferred expert playbook that checks presence and a 30-day recency window, with next best fallback; c: Set each CSR's work item limit in the SMS capacity profile equal to their conversation limit, and turn on Assignment blocking; d: Map each customer's contact to their last CSR in Preferred representative routing, with the next best representative fallback. Delete option e. Set correctOptionIds to [a]. Replace answer with: Publish a Keep the same expert for async chats playbook with the presences, the active conversation limit and the next best expert fallback. Replace explanation with: Representative affinity already reconnects a returning asynchronous conversation with the CSR who handled it, regardless of that CSR's capacity and presence, as long as the notification template's Autoassign work items is Yes. The Keep the same expert for async chats playbook adds the checks managers want, and its prerequisite is that representative affinity is enabled for the workstream. It checks the configured presences and compares the CSR's capacity-occupying conversations across all channels with their active conversation limit, reconnecting even when the limit exceeds the capacity profile. If the CSR fails a check, it assigns the next best expert or keeps the chat unassigned, as configured. New conversations are still governed by capacity profiles. Replace optionExplanations with a: Correct. This playbook applies to queues where representative affinity is enabled. For a returning asynchronous chat, it checks the configured presences and the CSR's active conversation limit across all channels, even when the limit exceeds the capacity profile, and otherwise assigns the next best expert in the queue. b: Fails. This playbook runs when a conversation is routed to a queue and checks presence, queue membership and a recency window of up to 30 days. It doesn't check the active conversation limit. c: Fails. Representative affinity reassigns a returning conversation regardless of the CSR's capacity and presence, and managers want a limit that can be higher than capacity. Assignment blocking only stops automatic assignment of new work items once the work item limit is met. d: Fails. Preferred representative routing assigns a contact to representatives you map in the matrix and skips the capacity check. It doesn't follow the CSR who last handled the conversation or check a conversation limit.",
-      "Sources and evidence for the rewrite. Fix: add sim-cb-s09 to sourceIds and add this source to the bundle's sources array, reusing the existing registration: { id sim-cb-s09, title Manage notification settings and templates, url https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/notification-templates }. In the second evidence entry (sim-d34-s08, preferred routing), change Used to reject options c and e. to Used to reject options b and d. Replace the third evidence entry's (sim-d4-s07) claim with: Representative affinity reassigns a conversation moving from waiting to active to the representative who handled it, regardless of the representative's capacity and presence. It applies to push distribution only, and if auto assign work items is set to no in the notification template, the system overrides the affinity setting. Replace its applicability with: Workstreams, page dated 2026-05-08. The page says affinity is on by default for SMS but also tells administrators to set the toggle to Yes, so the stem states only that affinity is on, and no option changes it. Add an evidence entry: sourceId sim-cb-s09, section Create a notification template, claim Autoassign work items: set to Yes to automatically assign the incoming conversation; the default value is No; this setting is in preview. applicability Notification templates, page dated 2026-05-04. The stem states that the setting is Yes and that the preview terms are accepted."
-    ],
+    "decision": "approved",
+    "rationale": "Final revised text passes all 32 checks. The goal requests two checks and conditions the next-best outcome on an eligible alternative; it no longer promises absolute prevention of original-CSR reconnection. Capacity-occupying count and the no-alternative caveat are consistent across prompt, explanation and evidence. The setup establishes dependencies without leaving a prerequisite as an answer option. Both playbook options share publication and fallback wording, capacity appears in the profile alternative, and last-CSR continuity appears in the mapping alternative, so the correct choice depends on the documented mechanism and limit scope. Correct option a is not the longest; every distractor has a supported failure. All five cited Learn pages were reopened during this re-review cycle, with the changed fallback requirement checked again in the final pass. Revision 1 retained.",
+    "findings": [],
     "sourceChecks": [
       {
         "sourceId": "sim-d34-s08",
         "supported": true,
-        "section": "Keep the same expert for returning asynchronous chats with active conversation limit and presence status checks; Assign to a previously engaged or preferred expert; How routing to preferred representative works",
-        "accessedAt": "2026-11-07",
-        "claimReviewedAt": "2026-11-07",
-        "notes": "Playbook prerequisite, presence and limit checks across all channels, fallback options, capacity profiles govern new conversations. Previous-expert playbook checks presence, queue membership and recency up to 30 days. Preferred routing skips capacity. Page dated 2026-10-30."
+        "section": "Active conversation limit; Presence checks; Fallback; Previous/preferred expert criteria",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Reopened the final revised requirement against presence, capacity-occupying count and fallback scope. The remaining absolute has been removed; the explanation preserves the no-alternative possibility. Previous/preferred routing remains a distinct mechanism."
       },
       {
         "sourceId": "sim-d4-s07",
         "supported": true,
-        "section": "Configure work distribution; Representative affinity",
-        "accessedAt": "2026-11-07",
-        "claimReviewedAt": "2026-11-07",
-        "notes": "Affinity on by default for SMS yet toggle Yes recommended; reassigns regardless of capacity and presence; push only; auto assign work items No overrides affinity. Page dated 2026-05-08."
+        "section": "Representative affinity",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Reopened: affinity, notification override and push scope match the explicit setup."
       },
       {
         "sourceId": "sim-cb-s27",
         "supported": true,
         "section": "Manage contact center users: Update conversation limit",
-        "accessedAt": "2026-11-07",
-        "claimReviewedAt": "2026-11-07",
-        "notes": "Limit 1 to 100; raise above capacity to strengthen affinity. Page dated 2026-10-23."
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Reopened: representative-level limit configuration and above-capacity guidance confirmed."
       },
       {
         "sourceId": "sim-cb-s09",
         "supported": true,
         "section": "Create a notification template",
-        "accessedAt": "2026-11-07",
-        "claimReviewedAt": "2026-11-07",
-        "notes": "Autoassign work items: default No, in preview. Not yet cited by this question; added by the fix. Page dated 2026-05-04."
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Reopened: default No and preview status confirmed; setup explicitly chooses Yes."
+      },
+      {
+        "sourceId": "sim-d1-s13",
+        "supported": true,
+        "section": "Create a capacity profile: Assignment blocking",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Reopened: blocks automatic new-work assignment at the work-item limit; this supports rejecting option c as a returning-conversation-limit implementation."
       }
-    ]
+    ],
+    "fingerprint": "e387aee822d36eb4a914152b01cc2c24a3e037e0075d6cc211eb7dcbb51d4c55"
   },
   {
     "id": "sim-d34-q15",

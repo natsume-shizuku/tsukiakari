@@ -155,7 +155,7 @@ You did not write this batch, and that is the point. Open the sources yourself a
 - Is the full answer unambiguous? Argue for the strongest alternative. If it holds up, the question fails.
 - Does every distractor really fail under the stated conditions, and is each explanation true?
 - For `order`, is every neighbouring pair a documented dependency? Look for a Microsoft page showing the reverse.
-- Do the seven checks above hold?
+- Do all 32 numbered checks above hold?
 - For a case study, does the answer truly depend on the case, and do the exhibits contradict anything?
 - Is it distinct from other questions in the batch and from the accepted bank?
 

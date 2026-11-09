@@ -654,26 +654,26 @@
       "options": [
         {
           "id": "a",
-          "text": "Total conversations leaves out the conversations on the email and voice channels."
+          "text": "The figure excludes conversations on the email and voice channels."
         },
         {
           "id": "b",
-          "text": "Number of responses used counts only the Copilot responses whose text a CSR copied."
+          "text": "The figure counts only responses whose text a CSR copied."
         },
         {
           "id": "c",
-          "text": "Number of conversations using Copilot AI counts only conversations that have ended."
+          "text": "The figure counts only conversations that have ended."
         },
         {
           "id": "d",
-          "text": "Daily active users counts each CSR only once, however often the CSR uses Copilot."
+          "text": "The figure counts each CSR once, however often that CSR uses Copilot."
         }
       ],
       "correctOptionIds": [
         "c"
       ],
-      "answer": "Number of conversations using Copilot AI counts only conversations that have ended.",
-      "explanation": "Each statement is true of a metric in the Copilot analytics report, so the case decides which one explains Issue 9. The supervisor is comparing a count of conversations that used Copilot with conversations that are still active at 11:00. Microsoft defines Number of conversations using Copilot AI as the engaged conversations that used Copilot, and says that it lists only conversations that have ended. The 140 active chats aren't counted until they end, so the report shows only the day's finished conversations. The other statements describe different metrics. Ticket Chat is a chat channel, so leaving out email and voice changes nothing here, and copied responses and daily active users don't count conversations at all.",
+      "answer": "The figure counts only conversations that have ended.",
+      "explanation": "The supervisor compares a conversation count with chats that are still active at 11:00. Microsoft defines Number of conversations using Copilot AI as engaged conversations that used Copilot and lists only conversations that have ended. The active chats therefore do not belong in that count while they remain active. Excluding email and voice does not explain this Ticket Chat comparison. Copied responses and unique representatives are different measures, not the conversation count the supervisor selected.",
       "sourceIds": [
         "sim-d34-s06"
       ],
@@ -683,10 +683,10 @@
         "feature:copilot-analytics"
       ],
       "optionExplanations": {
-        "a": "Incorrect. This is true of Total conversations, but every conversation in Issue 9 is on Ticket Chat, so no email or voice conversation is missing.",
-        "b": "Incorrect. This is true of Number of responses used, but that metric counts responses, not conversations, so it can't explain a conversation count.",
-        "c": "Correct. Microsoft says that this metric lists only conversations that have ended, and most of the chats in Issue 9 were still active.",
-        "d": "Incorrect. This is true of Daily active users, which counts CSRs, not conversations."
+        "a": "Incorrect. Excluding email and voice does not explain the difference for Ticket Chat, which is live chat.",
+        "b": "Incorrect. Counting copied text defines Number of responses used, not the selected conversation metric.",
+        "c": "Correct. This metric includes ended conversations, while the comparison is with active chats.",
+        "d": "Incorrect. Daily active users counts unique representatives, not conversations."
       },
       "relatedNotes": [
         {

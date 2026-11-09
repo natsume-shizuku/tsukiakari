@@ -134,6 +134,11 @@
       "id": "sim-d34-s13",
       "title": "Use system topics",
       "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-system-topics"
+    },
+    {
+      "id": "sim-d34-s14",
+      "title": "Configure sensitive variable masking for voice agents",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/agent-sensitive-data-masking"
     }
   ],
   "groups": [],
@@ -322,12 +327,13 @@
         "D3.2.02"
       ],
       "conceptId": "voice-sensitive-variable-boundaries",
-      "prompt": "Marlow Credit Union has a voice agent in Copilot Studio that's connected to Dynamics 365 Contact Center. Before go-live, the security team reviewed three items:\n- The telephony system sends a member token in a SIP X-header when each call starts. The token must stay out of transcripts and telemetry, and routing logic still needs it.\n- A Question node in the Verify Card topic collects a card number into a variable that has Sensitive data turned on. The Take Payment topic needs the same value, which must stay out of transcripts and platform logs.\n- A tester entered a PIN in the Test your agent panel. The PIN appears unredacted under DialogTracing in the ConversationTranscript record.\n\nYou need to decide how to handle each item.\n\nWhat should you do for each item?",
+      "prompt": "Marlow Credit Union has a voice agent in Copilot Studio that's connected to Dynamics 365 Contact Center. Its voice flow uses classic orchestration, and Application Insights Log sensitive properties is off. This review covers Copilot Studio agent transcripts and standard logs. Before go-live, the security team reviewed three items:\n- The telephony system sends a member token in a SIP X-header when each call starts. The token must stay out of Copilot Studio transcripts and telemetry, and routing logic still needs it.\n- A Question node in the Verify Card topic collects a card number into a variable that has Sensitive data turned on. This collection occurs after a nonsensitive first question. The Take Payment topic needs the same value, which must stay out of Copilot Studio transcripts and standard logs.\n- A tester entered a PIN in the Test your agent panel. The PIN appears unredacted under DialogTracing in the ConversationTranscript record.\n\nYou need to decide how to handle each item.\n\nWhat should you do for each item?",
       "answer": "Member token: create a matching global variable in Conversation Start with External sources can set value and Sensitive data on. Card number: turn on Sensitive data on the Verify Card output and the Take Payment input. Test-panel PIN: treat it as expected test behavior.",
-      "explanation": "A context variable that arrives through a SIP X-header is marked sensitive on a global variable in the Conversation Start system topic, with both External sources can set value and Sensitive data turned on. Its value is then kept out of transcripts and telemetry but stays in memory for routing. To pass a sensitive value between topics, Microsoft's example turns on Sensitive data for the variable on Topic A's output and Topic B's input, which keeps it out of transcripts and logs. Values received back from Power Automate or written explicitly to Dataverse aren't redacted. Finally, transcripts from the Test your agent panel contain unredacted values under DialogTracing by design, so makers can confirm their redaction rules before production.",
+      "explanation": "A context variable that arrives through a SIP X-header is marked sensitive on a global variable in the Conversation Start system topic, with both External sources can set value and Sensitive data turned on. Its value is then kept out of transcripts and telemetry but stays in memory for routing. To pass a sensitive value between topics, Microsoft's example turns on Sensitive data for the variable on Topic A's output and Topic B's input, which keeps it out of transcripts and logs. Values received back from Power Automate or written explicitly to Dataverse aren't redacted. Finally, transcripts from the Test your agent panel contain unredacted values under DialogTracing by design, so makers can confirm their redaction rules before production. These controls do not guarantee masking in Contact Center whole-call transcripts or external data stores.",
       "sourceIds": [
         "sim-d34-s02",
-        "sim-d34-s05"
+        "sim-d34-s05",
+        "sim-d34-s14"
       ],
       "tags": [
         "domain:agents-ai",
@@ -1311,14 +1317,15 @@
         "D4.2.01"
       ],
       "conceptId": "returning-async-chat-same-csr-limit",
-      "prompt": "Greenhaven Insurance handles claims over SMS through a push messaging workstream in Dynamics 365 Contact Center. Representative affinity is turned on for the workstream, and its notification template has Autoassign work items set to Yes. Microsoft labels Autoassign work items a preview setting, and Greenhaven has accepted the preview terms. Conversation orchestration is set up, and each CSR's conversation limit has been set in Enhanced user management.\n\nToday, when a customer replies to a waiting SMS conversation, it goes back to the CSR who handled it. Managers want it to go back to that CSR only if the CSR is in a presence the managers choose and has fewer conversations open across all channels than their limit, which can be higher than their capacity. Otherwise, the next best CSR in the queue should get it.\n\nYou need to configure this behavior.\n\nWhat should you do?",
+      "prompt": "Greenhaven Insurance handles claims over SMS through a push messaging workstream in Dynamics 365 Contact Center. Representative affinity is turned on for the workstream, and its notification template has Autoassign work items set to Yes. Microsoft labels Autoassign work items a preview setting, and Greenhaven has accepted the preview terms. Conversation orchestration is set up, and each CSR's conversation limit has been set in Enhanced user management.\n\nToday, when a customer replies to a waiting SMS conversation, it goes back to the CSR who handled it. Managers want to apply a presence check and a workload check before reconnecting the chat to that CSR. The workload check must compare capacity-occupying conversations across all channels with the CSR's conversation limit, which can exceed their capacity. If either check fails and another eligible CSR is available, the next best CSR in the queue should get it.\n\nYou need to configure this behavior.\n\nWhat should you do?",
       "answer": "Publish a Keep the same expert for async chats playbook with the presences, the active conversation limit and the next best expert fallback.",
-      "explanation": "Representative affinity already reconnects a returning asynchronous conversation with the CSR who handled it, regardless of that CSR's capacity and presence, as long as the notification template's Autoassign work items is Yes. The Keep the same expert for async chats playbook adds the checks managers want, and its prerequisite is that representative affinity is enabled for the workstream. It checks the configured presences and compares the CSR's capacity-occupying conversations across all channels with their active conversation limit, reconnecting even when the limit exceeds the capacity profile. If the CSR fails a check, it assigns the next best expert or keeps the chat unassigned, as configured. New conversations are still governed by capacity profiles.",
+      "explanation": "Representative affinity already reconnects a returning asynchronous conversation with the CSR who handled it, regardless of that CSR's capacity and presence, as long as the notification template's Autoassign work items is Yes. The Keep the same expert for async chats playbook adds the checks managers want, and its prerequisite is that representative affinity is enabled for the workstream. It checks the configured presences and compares the CSR's capacity-occupying conversations across all channels with their active conversation limit, reconnecting even when the limit exceeds the capacity profile. If the CSR fails a check, it assigns the next best expert or keeps the chat unassigned, as configured. New conversations are still governed by capacity profiles. Waiting asynchronous conversations consume no capacity while unassigned and count only when reinitiated. If no other suitable CSR is available, Microsoft notes that the chat might still return to the original CSR.",
       "sourceIds": [
         "sim-d34-s08",
         "sim-d4-s07",
         "sim-cb-s27",
-        "sim-cb-s09"
+        "sim-cb-s09",
+        "sim-d1-s13"
       ],
       "tags": [
         "domain:work-distribution",
@@ -1326,7 +1333,7 @@
         "feature:conversation-orchestration"
       ],
       "optionExplanations": {
-        "a": "Correct. This playbook applies to queues where representative affinity is enabled. For a returning asynchronous chat, it checks the configured presences and the CSR's active conversation limit across all channels, even when the limit exceeds the capacity profile, and otherwise assigns the next best expert in the queue.",
+        "a": "Correct. This playbook applies to queues where representative affinity is enabled. For a returning asynchronous chat, it checks the configured presences and the CSR's active conversation limit across all channels, even when the limit exceeds the capacity profile, and uses the next-best fallback when another eligible expert is available.",
         "b": "Fails. This playbook runs when a conversation is routed to a queue and checks presence, queue membership and a recency window of up to 30 days. It doesn't check the active conversation limit.",
         "c": "Fails. Representative affinity reassigns a returning conversation regardless of the CSR's capacity and presence, and managers want a limit that can be higher than capacity. Assignment blocking only stops automatic assignment of new work items once the work item limit is met.",
         "d": "Fails. Preferred representative routing assigns a contact to representatives you map in the matrix and skips the capacity check. It doesn't follow the CSR who last handled the conversation or check a conversation limit."
@@ -1569,19 +1576,19 @@
           "sourceId": "sim-d34-s02",
           "section": "Mark context variables as sensitive; Voice: pass the context through SIP X-headers; What the Sensitive data setting does and doesn't do for context variables",
           "claim": "For context variables passed from Live Chat or a voice channel, define a global variable on the Conversation Start system topic and turn on both External sources can set value and Sensitive data. The value isn't written to transcripts or telemetry and remains in memory for routing. For voice, isDisplayable isn't configurable per conversation; it controls whether an agent can see a Live Chat context variable.",
-          "applicability": "Copilot Studio voice-enabled agents and Live Chat context, page dated 2026-09-24, opened 2026-11-07."
+          "applicability": "Copilot Studio voice-enabled agents and Live Chat context, page dated 2026-09-24, opened 2026-11-07. Scoped here to Copilot Studio transcripts and standard logs with classic orchestration and Log sensitive properties off; this does not claim whole-call transcript redaction."
         },
         {
           "sourceId": "sim-d34-s02",
           "section": "Protect data in variables and Pass sensitive variables between topics",
           "claim": "Values in variables explicitly marked as Sensitive data on topic input and output parameters aren't written to conversation transcripts or platform logs, remain in memory and can be passed between topics. Example: Topic A output paymentCardNumber with Sensitive data On, Topic B input paymentCardNumber with Sensitive data On.",
-          "applicability": "Same page. The stem says the card number is collected by a Question node into a sensitive variable, which the page says transcript redaction depends on."
+          "applicability": "Same page. The stem says the card number is collected by a Question node into a sensitive variable, which the page says transcript redaction depends on. Collection occurs after a nonsensitive first question to avoid the documented initial-question redaction timing limitation."
         },
         {
           "sourceId": "sim-d34-s02",
           "section": "Supported actions tables and Turn on Application Insights logging",
           "claim": "Power Automate, receive sensitive data: not supported. Write sensitive data to Dataverse explicitly: not supported, avoid. Log sensitive properties controls whether variables marked as sensitive are logged to Application Insights and should be kept off.",
-          "applicability": "Same page. The Contact Center masking page lists Flag variables as sensitive as Yes, which conflicts with this page's Not supported rows for flagging and for variable-management actions, so no option or explanation depends on either row. r1d fails because the token is left unmarked, and the first evidence entry says a sensitive context variable remains in memory for routing."
+          "applicability": "Same page. The Contact Center masking page lists Flag variables as sensitive as Yes, which conflicts with this page's Not supported rows for flagging and for variable-management actions, so no option or explanation depends on either row. r1d fails because the token is left unmarked, and the first evidence entry says a sensitive context variable remains in memory for routing. Generative orchestration is listed as unsupported for redaction, so this scenario explicitly uses classic orchestration."
         },
         {
           "sourceId": "sim-d34-s02",
@@ -1594,6 +1601,12 @@
           "section": "Variables overview: scopes and Environment variables",
           "claim": "Environment variables are created in Power Platform and are read-only in Copilot Studio; agent authors can't modify them.",
           "applicability": "Copilot Studio, page dated 2026-11-06, opened 2026-11-07. Used to reject r2d."
+        },
+        {
+          "sourceId": "sim-d34-s14",
+          "section": "Opening note; Key considerations",
+          "claim": "A sensitive response to the voice agent's first question might not be redacted because of an initial timing issue; subsequent sensitive responses are redacted.",
+          "applicability": "Copilot Studio voice agent connected to Contact Center. Opened and claim reviewed 2026-11-09. The scenario collects the card number after a nonsensitive first question."
         }
       ],
       "duplicateCheck": "Compared with ab250-d3-q20 (a tool writes a raw PIN to an external log) and sim-d2d-q14, which mentions isDisplayable for Live Chat. A search for DialogTracing and Log sensitive found nothing. No question tests marking SIP context as sensitive, passing a sensitive value between topics, or the test-panel transcript behavior."
@@ -1944,8 +1957,8 @@
         {
           "sourceId": "sim-d34-s08",
           "section": "Keep the same expert for returning asynchronous chats with active conversation limit and presence status checks",
-          "claim": "The Keep the same expert for async chats playbook applies to queues where representative affinity is enabled; its prerequisite is that representative affinity is enabled for the workstream. When a customer reinitiates a waiting asynchronous conversation, the system checks the configured presences and compares the representative's capacity-occupying conversations across all channels with their active conversation limit, reconnecting even when the limit exceeds the capacity profile. Otherwise it assigns the next best expert or keeps the chat unassigned, as configured. New conversations are governed by capacity profiles.",
-          "applicability": "Messaging queues in Contact Center embedded, standalone and Customer Service, page dated 2026-10-30, opened 2026-11-07."
+          "claim": "The Keep the same expert for async chats playbook applies to queues where representative affinity is enabled; its prerequisite is that representative affinity is enabled for the workstream. When a customer reinitiates a waiting asynchronous conversation, the system checks the configured presences and compares the representative's capacity-occupying conversations across all channels with their active conversation limit, reconnecting even when the limit exceeds the capacity profile. Otherwise it assigns the next best expert or keeps the chat unassigned, as configured. New conversations are governed by capacity profiles. Waiting asynchronous conversations consume no capacity while unassigned and count when reinitiated; if no other suitable representative is available, the chat might still return to the original representative.",
+          "applicability": "Messaging queues in Contact Center embedded, standalone and Customer Service, page dated 2026-10-30, opened 2026-11-07. The requirement counts capacity-occupying conversations and conditions the next-best outcome on another eligible representative being available."
         },
         {
           "sourceId": "sim-d34-s08",
@@ -1970,6 +1983,12 @@
           "section": "Create a notification template",
           "claim": "Autoassign work items: set to Yes to automatically assign the incoming conversation; the default value is No; this setting is in preview.",
           "applicability": "Notification templates, page dated 2026-05-04. The stem states that the setting is Yes and that the preview terms are accepted."
+        },
+        {
+          "sourceId": "sim-d1-s13",
+          "section": "Create a capacity profile: Assignment blocking",
+          "claim": "When the work item limit is met, Assignment blocking prevents automatic assignment of new work items even if other capacity is available.",
+          "applicability": "Capacity profiles. Opened and claim reviewed 2026-11-09. Supports option c's explanation; it does not implement the returning-conversation limit check."
         }
       ],
       "duplicateCheck": "Compared with ab250-d4-q27, q28 and q29 (preferred representative routing), sim-d2d-q12 (an active timeout rule moves a conversation to waiting) and sim-b-q01 (persistent chat continuity). A search for active conversation limit and same expert found nothing."

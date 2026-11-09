@@ -1,0 +1,19 @@
+{
+  "checkedAtUtc": "2026-11-09T21:26:56.225Z",
+  "originalApprovalsPreserved": 108,
+  "originalPublishedQuestionsUnchanged": 108,
+  "originalPublishedSourcesAndGroupsUnchanged": true,
+  "totalApprovedFingerprintsVerified": 128,
+  "frozenFiles": [
+    {
+      "file": "src/content/published/study-pack.json",
+      "sha256": "fffe577717c193141442493798032127c95212cc71f24bef19c6d8ab42c3962c",
+      "byteIdentical": true
+    },
+    {
+      "file": "src/content/published/ab250-bank.json",
+      "sha256": "9c51b0167c2f8284889ef94fe887b57857a1663e50f9fdefebedb1cd75bb8b3e",
+      "byteIdentical": true
+    }
+  ]
+}

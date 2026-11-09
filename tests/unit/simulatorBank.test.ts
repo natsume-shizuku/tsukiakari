@@ -4,6 +4,8 @@ import { validateQuestionBank, validateQuestionBankReferences } from '../../src/
 import { validatePack } from '../../src/validation';
 import { assembleBlueprintExam, maxBlueprintCount } from '../../src/examAssembly';
 import { allocateDomainQuotas } from '../../src/testSelection';
+import { createTestAttempt } from '../../src/testEngine';
+import { questionFormat } from '../../src/testGrading';
 import { questionBankManifests, visibleBankManifests } from '../../src/content/questionBanks';
 import packData from '../../src/content/published/study-pack.json';
 import bankManifest from '../../src/content/published/simulator-manifest.json';
@@ -28,17 +30,51 @@ describe('published AB-250 simulator bank', () => {
     expect(questionBankManifests.some(item => item.id === bank.id)).toBe(true);
     expect(visibleBankManifests.some(item => item.id === bank.id)).toBe(true);
   });
-  it('builds exams of at least 50 questions with domains on quota and groups whole', () => {
+  it('retains the reviewed 128-question allocation and the pilot standalone decision', () => {
+    expect(bank.questions).toHaveLength(128);
+    const formats: Record<string, number> = {};
+    for (const question of bank.questions) {
+      const format = questionFormat(question, bank.groups);
+      formats[format] = (formats[format] ?? 0) + 1;
+    }
+    expect(formats).toEqual({ match: 32, order: 7, hotspot: 34, multiple: 26, single: 21, series: 8 });
+    expect(bank.domains.map(domain => bank.questions.filter(question => question.domainId === domain.id).length)).toEqual([22, 41, 15, 15, 22, 13]);
+    const cases = bank.groups!.filter(group => group.kind === 'case-study');
+    expect(cases.map(group => [group.id, bank.questions.filter(question => question.groupId === group.id).length])).toEqual([
+      ['sim-case-a', 8], ['sim-case-b', 9], ['sim-case-c', 9],
+    ]);
+    expect(bank.questions.find(question => question.id === 'sim-p-q01')?.groupId).toBeUndefined();
+    const series = bank.groups!.filter(group => group.kind === 'series');
+    expect(series).toHaveLength(2);
+    for (const group of series) expect(bank.questions.filter(question => question.groupId === group.id)).toHaveLength(4);
+    expect(source.batches.every((batch: { partial?: boolean }) => !batch.partial)).toBe(true);
+  });
+  it('builds exams at 50, 75, 100 and the maximum with domains on quota and groups whole', () => {
     const largest = maxBlueprintCount(bank);
-    expect(largest).toBeGreaterThanOrEqual(50);
-    for (const count of [50, largest]) {
+    expect(largest).toBeGreaterThanOrEqual(100);
+    for (const count of new Set([50, 75, 100, largest])) {
       const quotas = allocateDomainQuotas(bank.domains, count);
       for (let seed = 0; seed < 60; seed++) {
         const exam = assembleBlueprintExam(bank, count, new Map(), seeded(seed));
+        expect(exam.questions).toHaveLength(count);
         expect(new Set(exam.questions.map(question => question.id)).size).toBe(count);
         for (const domain of bank.domains) expect(Math.abs(exam.questions.filter(question => question.domainId === domain.id).length - quotas.get(domain.id)!)).toBeLessThanOrEqual(1);
         for (const group of exam.groups) expect(exam.questions.filter(question => question.groupId === group.id)).toHaveLength(bank.questions.filter(question => question.groupId === group.id).length);
       }
+    }
+  });
+  it.each([50, 75, 100])('creates a sourced timed attempt of %i questions with frozen section membership', count => {
+    const now = 1_800_000_000_000;
+    const attempt = createTestAttempt(bank, { mode: 'exam', count, durationMinutes: 120 }, [], now, seeded(count));
+    expect(attempt.bankId).toBe('ab250-simulator');
+    expect(attempt.fixture).toBe(false);
+    expect(attempt.scoring).toBe('per-selection');
+    expect(attempt.deadlineAt).toBe(now + 120 * 60_000);
+    expect(attempt.questions).toHaveLength(count);
+    expect(attempt.questions.every(question => question.sources.length > 0 && question.card.relatedNotes.length > 0)).toBe(true);
+    expect(attempt.delivery!.sections.flatMap(section => section.cardIds)).toEqual(attempt.questions.map(question => question.card.id));
+    for (const group of attempt.groups!) {
+      expect(attempt.questions.filter(question => question.card.groupId === group.id)).toHaveLength(bank.questions.filter(question => question.groupId === group.id).length);
     }
   });
 });

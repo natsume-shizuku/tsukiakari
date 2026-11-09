@@ -1,0 +1,334 @@
+[
+  {
+    "id": "sim-c-q01",
+    "revision": 1,
+    "reviewer": "codex-case-c-reviewer",
+    "reviewedAt": "2026-11-09",
+    "decision": "approved",
+    "rationale": "Approved after all 32 checks and all 18 row/token pairings. Channel guidance explicitly links the record-queue rules, so the messaging scope is supported. Mixed new/existing queues require separate imports; workstream protection and minimal standard-assignment schema are different decisions. Decision-contract settings do not protect the workstream; omitting Operating Hour is not equivalent to setting its calendar. Case supplies queue age, assignment type, overflow absence and workstream preservation. Names alone do not reveal Queue type handling. Distinct from the earlier migration-path and dependency-sequence items.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d1-s09",
+        "supported": true,
+        "section": "Record queues: import settings, Important and Operating Hour",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Confirmed separate creation/update runs, Queue type schema handling, standard-assignment table exclusions and post-import calendar setup."
+      },
+      {
+        "sourceId": "sim-d1-s02",
+        "supported": true,
+        "section": "Migrate configuration for queues; channel workstreams step 4",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Channel queues explicitly use the linked record-queue procedure. Workstream imports retain keys and suppress updates."
+      }
+    ],
+    "fingerprint": "b9f43ad4fdc85b0a79977879e19e7451dbd63582b8e5c07bc0cc4986ab30e394"
+  },
+  {
+    "id": "sim-c-q02",
+    "revision": 1,
+    "reviewer": "codex-case-c-reviewer",
+    "reviewedAt": "2026-11-09",
+    "decision": "approved",
+    "rationale": "Approved after testing every adjacent dependency and both decoys. Disconnect clears the copied source association; existing-resource connection is then available; sync needs the specified resource and supplies its number; workstream selection needs that listed number. The connect/sync dependency is an evidence-disclosed inference, not a numbered-list assumption. Existing test resource/number and source isolation in the case reject new-resource/new-number actions. No contrary order is supported by the opened connection, sync, copy or inbound guidance. Distinct from the older question that merely replaces copied ACS references.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d1-s10",
+        "supported": true,
+        "section": "Voice channel with Azure Communication Services",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Full-copy target must disconnect the copied ACS reference and use its own resource and number."
+      },
+      {
+        "sourceId": "sim-d2v-s04",
+        "supported": true,
+        "section": "Opening; Important; Disconnect procedure",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Disconnect precedes reconnection, removes listed numbers, and a voice-setting edit can reconnect a number. Production resource subscriptions must remain intact."
+      },
+      {
+        "sourceId": "sim-cc-s02",
+        "supported": true,
+        "section": "Prerequisites; Connect existing resource",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "For this already-connected target, disconnect is prerequisite to the existing-resource connection path. Same-tenant resource supported."
+      },
+      {
+        "sourceId": "sim-cc-s01",
+        "supported": true,
+        "section": "Opening; Important",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "ACS connection is prerequisite to acquiring numbers. One resource should map to one instance."
+      },
+      {
+        "sourceId": "sim-cc-s03",
+        "supported": true,
+        "section": "Sync procedure",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Sync brings previously acquired resource numbers onto the Phone numbers page. Connection-before-sync is an explicitly disclosed dependency inference."
+      },
+      {
+        "sourceId": "sim-d2-s04",
+        "supported": true,
+        "section": "Prerequisites; Configure voice; Add phone number",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "A selectable workstream number needs inbound calling enabled and no other association. Existing workstream voice settings permit selection."
+      },
+      {
+        "sourceId": "sim-d2-s01",
+        "supported": true,
+        "section": "Retirement schedule; Plan for phone numbers",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Existing ACS resources remain supported during the transition; scenario uses existing resources."
+      }
+    ],
+    "fingerprint": "07398b0fff06ab7902bd99e314727ca9fb6093fa1a793463c0848e1d2927c8fd"
+  },
+  {
+    "id": "sim-c-q03",
+    "revision": 1,
+    "reviewer": "codex-case-c-reviewer",
+    "reviewedAt": "2026-11-09",
+    "decision": "approved",
+    "rationale": "Approved after all 12 row/token pairings. The case supplies the separately packaged connector and the target survey connection failure. Connector-first dependency and post-import Dataverse connection repair address different issues. Managed-target edits, managed export, topic managed-property changes and Add required objects do not fix those failures. The strongest alternative, adding the connector in the source, is not the offered target edit. Evidence and explanations agree; dependency order adds substance beyond name matching. Distinct from agent validation after a full environment copy.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-cc-s04",
+        "supported": true,
+        "section": "Custom connectors; Things to know; Add components; Import",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Connector import must precede agent connection reference import. Managed solutions cannot be exported; required objects are added before source export."
+      },
+      {
+        "sourceId": "sim-cc-s05",
+        "supported": true,
+        "section": "Migrate survey configuration steps 4-11",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Confirmed source topic managed property, target Ready check, target Dataverse connection and final save/publish."
+      },
+      {
+        "sourceId": "sim-cc-s06",
+        "supported": true,
+        "section": "Opening managed-property paragraphs",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Properties are set in the source unmanaged layer and cannot be changed in a managed target except through original-publisher updates."
+      }
+    ],
+    "fingerprint": "649bb530f8b0d410e263d8d2ffe08353d50e3a83677a8975114d3b85051eede6"
+  },
+  {
+    "id": "sim-c-q04",
+    "revision": 1,
+    "reviewer": "codex-case-c-reviewer",
+    "reviewedAt": "2026-11-09",
+    "decision": "approved",
+    "rationale": "Approved after checking all five choices and the strongest wrong pair: Administrator plus sharing would permit runs but violate minimum pipeline access. User role in the host plus record sharing supplies the required rights; existing source/target System Customizer is given in the case. Target role assignment and developer app installation do not supply host security. Count does not expose the answer because the overprivileged pair remains a plausible two-action alternative. Phase 8 per-selection scoring applies. Distinct from general solution packaging.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-cc-s07",
+        "supported": true,
+        "section": "Grant access; Share pipelines; Prerequisites",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Host User role plus pipeline record Read sharing permits runs without configuration control. Existing System Customizer supplies source/target solution privileges."
+      }
+    ],
+    "fingerprint": "5765306f4c4fd475ba6df2f5942d409beba91374dbc073d793fd699338e8a00f"
+  },
+  {
+    "id": "sim-c-q05",
+    "revision": 1,
+    "reviewer": "codex-case-c-reviewer",
+    "reviewedAt": "2026-11-09",
+    "decision": "approved",
+    "rationale": "Approved after all 12 row/token pairings. Managed-target profile edits fail; resolving ranks/defaults in their two source environments and reimporting matches the FAQ. Source rank 1 gives Box Office Desk precedence for dual-role users; adding another role mapping keeps the rank collision. Source Remove Default preserves the required sole default. Generic target deletion would remove the owning managed solution, not just the profile. Case supplies source ownership, imported status, duplicate ranks/defaults and desired precedence. Distinct from profile selection inside one environment.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-cc-s08",
+        "supported": true,
+        "section": "Managed profiles; Duplicate ranks; Multiple defaults",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Managed imported profiles cannot be edited. Cross-environment rank/default collisions are resolved in their source environments and reimported."
+      },
+      {
+        "sourceId": "sim-cb-s12",
+        "supported": true,
+        "section": "Map roles; Switch defaults; Manage users",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Rank 1 wins over 2. Defaults cannot retain role mappings. A custom default covers users without specific assignments."
+      },
+      {
+        "sourceId": "sim-d1-s01",
+        "supported": true,
+        "section": "Deletion of managed configuration records",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Target-managed configuration records cannot be deleted individually; remove their owning solution."
+      }
+    ],
+    "fingerprint": "b2466785e7978af2541fa599f07496bf9c5be7c40b5af716792aeb9dc9ca2563"
+  },
+  {
+    "id": "sim-c-q06",
+    "revision": 1,
+    "reviewer": "codex-case-c-reviewer",
+    "reviewedAt": "2026-11-09",
+    "decision": "approved",
+    "rationale": "Approved after checking every hotspot alternative. Profile-specific Copilot enablement with the two selected features repairs Friends Desk while preserving Box Office features; target opt-in and the CSR role already exist. Voucher Agent needs the documented privileges, while its default profile already enables every feature; default-role mapping is unavailable and grants no privileges anyway. The case separates profile configuration from security and identifies the proper source environments. Correct options are comparable in length to decoys. Distinct from pane setup in custom apps and simple profile assignment.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-cb-s25",
+        "supported": true,
+        "section": "Make Copilot available; Assign roles and privileges",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Confirmed profile-specific feature selection, required opt-in and additional Copilot privileges for custom security roles."
+      },
+      {
+        "sourceId": "sim-cb-s23",
+        "supported": true,
+        "section": "Productivity pane; Enable Copilot features",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Productivity tools are enabled individually within the assigned custom profile. Supplied profiles have separate default behavior."
+      },
+      {
+        "sourceId": "sim-cc-s08",
+        "supported": true,
+        "section": "Managed profiles; Duplicate ranks; Multiple defaults",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Managed imported profiles cannot be edited. Cross-environment rank/default collisions are resolved in their source environments and reimported."
+      },
+      {
+        "sourceId": "sim-cb-s12",
+        "supported": true,
+        "section": "Map roles; Switch defaults; Manage users",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Rank 1 wins over 2. Defaults cannot retain role mappings. A custom default covers users without specific assignments."
+      }
+    ],
+    "fingerprint": "0aed691138d38a8ae838404d19b971ba00b5ad473f1b6a39ce6c69c086583cfc"
+  },
+  {
+    "id": "sim-c-q07",
+    "revision": 1,
+    "reviewer": "codex-case-c-reviewer",
+    "reviewedAt": "2026-11-09",
+    "decision": "approved",
+    "rationale": "Approved on independent re-review of the revised text against all 32 checks. Reopened the sole cited Learn page and reconfirmed its exact metric definitions. All options now refer neutrally to the figure, so the metric-label match is gone and c is shorter than the decoys. Case-dependent facts identify live Ticket Chat, active conversations, the selected conversation metric and enabled standalone analytics. Excluding email/voice does not explain a live-chat gap; response copies and unique CSRs measure different units. The strongest alternative, copied-response counts, is explicitly a different metric. The explanation makes no unsupported claim about report refresh timing or when every ended conversation appears. Evidence notes remain accurate. Distinct from the existing channel-exclusion, adoption-comparison and copied-response/rating items.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d34-s06",
+        "supported": true,
+        "section": "Usage; Productivity: Conversations; Feature availability",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Reopened for this revision. Ended engaged conversations differ from copied responses and unique daily representatives; email/voice exclusion does not account for the stated live-chat comparison."
+      }
+    ],
+    "fingerprint": "c9f8ba8331e6074a49afff70221e64116790610e53462852b49d87061ca8c32f"
+  },
+  {
+    "id": "sim-c-q08",
+    "revision": 1,
+    "reviewer": "codex-case-c-reviewer",
+    "reviewedAt": "2026-11-09",
+    "decision": "approved",
+    "rationale": "Approved after all 10 row/token pairings. Existing report deployment with stale migrated IDs differs from an artifact not yet present in the production workspace. Add report cannot select the absent artifact, and the case requires migration of navigation metadata. Visual customization export addresses another report category. Pipeline deployment is a supported route, not claimed as the only possible route. Legacy Customer Service ALM guidance is explicitly qualified and corroborated by the current standalone workspace/navigation model. Distinct from navigation-origin ownership and model provisioning.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-cc-s10",
+        "supported": true,
+        "section": "Overview; Migrating report configuration",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Power BI artifact deployment and Dataverse navigation migration are separate. Migrated report records need target workspace/report references. Customer Service applicability is qualified by the current standalone model-customization source."
+      },
+      {
+        "sourceId": "sim-d6-s14",
+        "supported": true,
+        "section": "Select workspace; Embed reports",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Customer-workspace reports populate Add report. Historical and real-time customization share navigation."
+      },
+      {
+        "sourceId": "sim-cc-s09",
+        "supported": true,
+        "section": "Note; Prerequisites; Import API",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Only published visual customizations migrate; target version must not be lower. API import replaces existing customization."
+      },
+      {
+        "sourceId": "sim-d1-s12",
+        "supported": true,
+        "section": "Note",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "msdyn_analytics contains environment-specific configuration and should not be exported."
+      }
+    ],
+    "fingerprint": "f7f625c2cfc53f208741af7976cb5516d991df7365d722220821f7fde80c35c3"
+  },
+  {
+    "id": "sim-c-q09",
+    "revision": 1,
+    "reviewer": "codex-case-c-reviewer",
+    "reviewedAt": "2026-11-09",
+    "decision": "approved",
+    "rationale": "Approved after all ten hotspot choices and publication/version state were checked. Case supplies draft state, existing target customization, API route and version mismatch. Publish is needed before export; import replaces target customizations; version parity is required before production import. Reset neither makes drafts exportable nor repairs version mismatch. Three rows concern distinct release decisions; the publication row is not a claim that immediate lower-version import is valid. Distinct from Resume editing and single-organization customization.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-cc-s09",
+        "supported": true,
+        "section": "Note; Prerequisites; Import API",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Only published visual customizations migrate; target version must not be lower. API import replaces existing customization."
+      },
+      {
+        "sourceId": "sim-d6-s09",
+        "supported": true,
+        "section": "Customize display; Reset",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Save precedes Publish; Reset permanently removes customization."
+      },
+      {
+        "sourceId": "sim-d1-s12",
+        "supported": true,
+        "section": "Note",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "msdyn_analytics contains environment-specific configuration and should not be exported."
+      }
+    ],
+    "fingerprint": "19c477d8d10463872af9db0dbb54eb53a5de19f3aaa2c6f28d916f845cc62a8f"
+  }
+]

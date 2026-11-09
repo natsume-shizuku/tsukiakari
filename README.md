@@ -4,7 +4,7 @@ A quiet place for daily learning. Tsukiakari is a small-group study website with
 
 The first subject is **Dynamics 365 Contact Center** and the **AB-250** certification.
 
-> **Status:** Phases 1–6 and 7A–7G are accepted. [Phase 8](docs/PHASE_8.md), the AB-250 exam simulator, is in progress. Nothing is deployed. [AGENTS.md](AGENTS.md) holds the current gate.
+> **Status:** Phases 1–6 and 7A–7G are accepted. [Phase 8](docs/PHASE_8.md), the AB-250 exam simulator, is at Stage 8D with all 128 questions independently approved. GitHub Pages deployment is enabled; the final owner/Claude similarity check remains open. [AGENTS.md](AGENTS.md) holds the current gate.
 
 ## What it does
 
@@ -79,6 +79,8 @@ These packs are views of one canonical collection of 235 cards and 78 notes, so 
 
 **AB-250 — Original Practice** is a separate bank of 300 original questions (225 single-answer, 75 multiple-answer) covering all six exam domains. Every answer has Microsoft references and an explanation for each choice. These are original practice questions, not real exam items.
 
+**AB-250 — Exam Simulator** is a separate bank of 128 independently reviewed original questions, including matching, ordering, dropdown answer areas, multiple choice, three case studies and two one-way Yes/No series. Exams are assembled with domain and format quotas; simulator points are awarded per selection. This bank does not change the 300-question Original Practice bank. The final owner/Claude similarity scan remains an open release check; see the [8D quality report](docs/phase8/QUALITY_REPORT_8D.md).
+
 The material maps to 117 of 119 tracked objectives. That shows reviewed evidence, not mastery or a passing guarantee. The remaining gaps are listed in the [gap register](docs/phase7/source-gaps.json) and explained in the [coverage notes](docs/phase7/COVERAGE.md).
 
 To add or change content, follow [CONTENT_AUTHORING.md](CONTENT_AUTHORING.md) and the [review process](docs/phase7/REVIEW_PROCESS.md). Published files under `src/content/published/` are generated, so don't edit them by hand. Changes to tested meaning need a new revision and independent re-review.
@@ -100,7 +102,7 @@ See [BACKUP_FORMAT.md](docs/BACKUP_FORMAT.md) for the file format.
 
 ## Hosting
 
-No hosting is set up, and access control is undecided. GitHub Pages is one possible destination, but a private repository doesn't make a deployed site private.
+GitHub Pages publishes main through `.github/workflows/deploy-pages.yml`. The site is at [natsume-shizuku.github.io/tsukiakari](https://natsume-shizuku.github.io/tsukiakari/). Access control remains undecided; a private repository does not make the deployed website private.
 
 ## Project layout
 

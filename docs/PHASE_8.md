@@ -1,6 +1,8 @@
 # Phase 8: AB-250 exam simulator
 
-Started 2026-11-05, when the user accepted Phase 7G and authorized this work. Nothing is committed or deployed without a further explicit request.
+Started 2026-11-05, when the user accepted Phase 7G and authorized this work. The owner authorized GitHub Pages deployment and the 108-question preview on 2026-11-09. Every push to main now deploys through `.github/workflows/deploy-pages.yml`; no commit, push or deployment was made during the Codex 8D continuation.
+
+**Current stage: 8D.** All 128 original simulator questions are independently approved and compiled locally as a 1.0.0 release candidate. Final dump-similarity verification remains with the owner or Claude. Stage 8E is not authorized. See [the 8D quality report](phase8/QUALITY_REPORT_8D.md) and [continuation handoff](phase8/HANDOFF.md).
 
 ## Why
 
@@ -37,7 +39,7 @@ The dump's page images confirmed the layouts read from OCR: hotspot rows are tru
 
 ## 8B result
 
-**Waiting at the gate.** Formats, assembly and delivery are built and running on the marked `simulator-test-fixture` bank of 128 generated questions. No real simulator content exists yet.
+**Historical 8B checkpoint.** Formats, assembly and delivery were built on the marked `simulator-test-fixture` bank of 128 generated questions. Real simulator content was added in 8C/8D; the current result appears below.
 
 - Formats: match, order and hotspot, added as union members so the accepted 300 questions and all saved attempts validate unchanged.
 - Dragging: mouse, a touch press-and-hold, and keyboard, through `@dnd-kit/core` 6.3.1, loaded only when a simulator test opens. Every drag also has a select-then-place path.
@@ -49,8 +51,40 @@ Two problems were found by running it for real. dnd-kit's default auto-scroll mo
 
 ### Verification
 
-VERIFICATION_PLACEHOLDER
+8D continuation, 2026-11-09: `npm run lint` passed; `npm test` passed 410 tests in 33 files; `npm run build` passed, including all content approval gates. `npm run test:e2e -- --workers=4`: 193 Edge tests passed on isolated port 4187. Current machine-readable evidence: `reports/phase8/checks.json`. The build retains the existing large-chunk and ineffective dynamic-import advisories.
 
-### At the gate
+### Historical 8B preview instructions
 
 Choose **Exam simulator preview** on the Tests page. It is listed on the development server on port 5186. Production builds hide it unless the `tsukiakari.showFixtures` developer setting is on. Try each format in Practice Mode, then Exam Mode for the section locks. The questions are everyday fixtures, so judge how the formats feel, not the content.
+
+
+## 8D result and review decisions
+
+The bank contains 128 original questions, 128 independent approvals and five whole groups. The continuation reviewed the 20 questions that were unpublished at handoff: five AI/distribution re-reviews, six representative-experience re-reviews and the nine-question Castlemere case study. Seventeen passed directly; three needed editorial corrections and independent re-review. No answer key changed during this continuation.
+
+- `sim-d34-q03`: state classic orchestration, Application Insights logging and Copilot Studio transcript scope; avoid promising whole-call transcript masking; account for the documented first-question timing limitation.
+- `sim-d34-q14`: count capacity-occupying conversations and qualify next-best fallback when no suitable alternative exists. The absolute “only if” wording was removed in a second re-review round.
+- `sim-c-q07`: remove the exact metric label from the correct option so the exhibit and metric definition must decide the answer.
+
+The previous lead decisions remain in force: analytics q04, q06 and q09 stay approved under check 12; case B q05 stays as written; pilot q01 is standalone; voice q01 changed from match to single. The earlier AI/distribution q14 conversion from multiple to single is retained. These decisions yield match 32, order 7, hotspot 34, multiple 26, single 21 and series 8. Domain counts are 22/41/15/15/22/13. The case studies contain **8, 9 and 9** questions, because pilot q01 moved out; both series contain four. The older three-times-nine test instruction was corrected without changing frozen content.
+
+All original 108 approval entries and fingerprints were preserved. The accepted 235-card/78-note study collection and 300-question original bank remain byte-identical. The independent reviewers changed only their assigned ledgers; the lead editor applied exact findings to the three unpublished questions and integrated the generated outputs.
+
+### Preview engine changes retained
+
+The earlier preview work made `assembleBlueprintExam` try up to 12 fresh draws before refusing, without substituting questions. `maxBlueprintCount` tests 20 seeded draws for each offered maximum; that is a sampled reliability check, not proof that every possible draw succeeds. Partial preview batches use `approvedPart`, which cannot split a case study or series; a release refuses partial batches. The full local candidate has no partial batches. This continuation changes no runtime engine or storage contract.
+
+### Open findings and acceptance boundary
+
+- D6.1.05 may now be unblockable following the real-time streaming page noted in the prior handoff, dated 2026-11-02. This continuation did not reopen that coverage decision or change the source-gap register.
+- Accepted `ab250-d6-q10` may need a separate re-review over a Quality Evaluator role conflict. It was not changed here.
+- D2.2.07 remains partial-depth.
+- The final 128-question dump-similarity check must be run locally by the owner or Claude and flag zero. Codex and the review agents did not access the dump; the earlier scan is historical evidence only.
+- Stage 8E, fresh-clone installation, broad Lighthouse acceptance, real-device testing and screen-reader listening remain outside this continuation. New isolated browser coverage exercises the real bank at 320px and desktop, with reload snapshots and unchanged flashcard tables.
+
+The current 1.0.0 artifacts are a **local release candidate**, not a declaration of 8E acceptance or deployment readiness. Stop for the 8D quality gate after the reserved similarity result is supplied.
+
+
+## Publication authorization, 2026-11-09
+
+After the pending similarity scan was disclosed, the owner requested publication of all 128 questions and a push to the repository. This authorizes committing the reviewed changes and pushing main, which triggers GitHub Pages deployment. The final owner/Claude similarity scan remains unrun and explicitly open; this publication request does not record a passing scan or advance Stage 8E. The preceding no-commit/no-deployment statements describe the completed review task before this subsequent authorization.

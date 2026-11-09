@@ -2,94 +2,90 @@
   {
     "id": "sim-d5-q01",
     "revision": 1,
-    "reviewer": "experience-reviewer",
+    "reviewer": "codex-experience-reviewer",
     "reviewedAt": "2026-11-09",
-    "decision": "needs-revision",
-    "rationale": "The matching holds. I tested all 24 row and token pairs. The knowledge base search page is hosted as a web resource: the out-of-the-box Knowledge Search template has application type Web Resource, and the create-template example pairs a knowledge base search page with Web resource. Search takes searchType 0 for relevance search and a searchText slug such as {anchor.title}. Entity record opens a create form, and its data parameter prefills the subject, as in the page's {anchor.ticketnumber} example. Entity list displays a view selected by viewId. Third-party website and Custom fit no row. Check 21 passes, because row 1 turns on a fact the names mislead about: the natural pick for a search page is Search. Dashboard is a page type that isn't a token, and it fits no row. The defect is one false sentence in an option explanation.",
-    "findings": [
-      "False statement in option d's explanation. \"A web resource tab doesn't run a Dataverse relevance search or display an entity view\" is contradicted by row 1 itself: the knowledge base search web resource runs knowledge searches, and Learn sets no such limit on web resources. Fix: replace that sentence with \"A web resource tab opens the file that webresourceName names, and it doesn't take the searchType, searchText or viewId parameters.\""
-    ],
+    "decision": "approved",
+    "rationale": "Re-reviewed the revised question, explanations and editorial evidence against the cited page. All 24 row/token pairings have one supported answer. Search is the strongest alternative for row 1, but the supplied knowledge-search page uses Web Resource; the other rows use their documented page-type parameters. The replacement explanation and added evidence sentence accurately describe template parameters without claiming that arbitrary web-resource code cannot perform searches. Check 21 is met by the misleading Search name. No answer-length or stem-elimination tell; distinct from the accepted iframe, dashboard and existing-record validation questions.",
+    "findings": [],
     "sourceChecks": [
       {
         "sourceId": "sim-cb-s08",
         "supported": true,
-        "section": "Create application tab templates; Page types (Entity list, Entity record, Search, Third-party website, Web resource, Custom); Out-of-the-box application tab templates",
-        "accessedAt": "2026-11-07",
-        "claimReviewedAt": "2026-11-07",
-        "notes": "Page dated 2026-06-17, standalone only. Example row: Page type Web resource, description \"used to display a knowledge base search page\". Knowledge Search template: Web Resource. Search: searchType 0 relevance, 1 categorized; searchText takes {anchor.title}. Entity record create mode has data with a subject built from {anchor.ticketnumber}. Web resource parameters are only webresourceName and data. The createTab reference (sim-d5-s13) also opens msdyn_omnichannel_kbsearch with msdyn_kbsearchpagehost.html, which agrees."
+        "section": "Create application tab templates; Page types; Out-of-the-box application tab templates",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Confirmed the Knowledge Search template type, entity search values, create-form data, entity-view selection, website/custom-page scope, and the web-resource parameter table. Standalone applicability is explicit."
       }
-    ]
+    ],
+    "fingerprint": "50ade7e937b2bd5e6c2b4db4c23dfabffd20b41474f86cd55dcf03386a7e1241"
   },
   {
     "id": "sim-d5-q02",
     "revision": 1,
-    "reviewer": "experience-reviewer",
+    "reviewer": "codex-experience-reviewer",
     "reviewedAt": "2026-11-09",
-    "decision": "needs-revision",
-    "rationale": "All four rows are right, and I tested every row against every token. Row 4 avoids the page's parent and child conflict: it relies only on Clone input record taking Entity record ID and Entity logical name and not saving, against Clone current record cloning the record open in the current tab. Save the record and Clone current record fit no row. The defect is check 21.",
-    "findings": [
-      "Check 21. Every row maps to the token whose name describes it: change a field on an existing record to Update an existing record, fill in fields to Autofill form fields, start a new form to Open a new form to create a record, and copy another case by its ID to Clone input record rather than Clone current record. No row turns on a fact the names don't give. Fix: make row 1 turn on the save behaviour. Row r1 label: \"Change the priority of the case open in the focused tab, with the new value saved by that action alone\" (correctTokenId stays a). Answer: replace \"Related account: Update an existing record.\" with \"Case priority: Update an existing record.\" Explanation: replace \"so it suits an account that isn't open.\" with \"so the new priority is saved without a form save.\" Option a explanation: \"Correct for the case priority. It needs the entity logical name and record ID, and it updates the record as a back-end operation, so the change is saved without a form save. It can't fill a new task that has no record ID yet.\" Option b explanation: \"Correct for the focused task form. It applies to the form in the focused tab with the same entity type and doesn't save the values until the form autosaves, so on row 1 it would change the case form without saving the priority.\" Option c explanation: \"Fails on every row. It clones the record that's open in the current tab. Row 4 copies another case that the macro knows only by its ID, and no other row copies a record.\" After the fix, the names point row 1 at Autofill form fields, because the case form is in focus, or at Save the record, because of the word saved. Only the documented facts that Autofill doesn't save until the form autosaves and that Update an existing record writes as a back-end operation settle it, and no other token becomes valid on any row."
-    ],
+    "decision": "approved",
+    "rationale": "Re-reviewed all text and evidence. All 24 row/token pairings stand. The revised first row requires the persisted update, so focused-form Autofill is a plausible alternative that fails the single-action save requirement. Save alone supplies no changed priority. The remaining rows distinguish form population, form creation and cloning an identified noncurrent record. Clone current record cannot supply row 4. The misleading row 1 naming now meets check 21. The evidence discloses the contradictory clone parent/child examples and does not rely on them. Distinct from accepted focus, lookup-input and mandatory-field questions.",
+    "findings": [],
     "sourceChecks": [
       {
         "sourceId": "sim-d5-s01",
         "supported": true,
         "section": "Open a new form to create a record; Autofill form fields; Update an existing record; Clone current record; Clone input record; Save the record",
-        "accessedAt": "2026-11-07",
-        "claimReviewedAt": "2026-11-07",
-        "notes": "Page dated 2025-05-07, standalone only. Lookups need ID, type and name as separate attributes. Autofill doesn't save until the form triggers autosave and applies to the form in the focused tab with the same entity type. Update needs entity logical name and record ID and performs a back-end operation that doesn't refresh the tab. Clone current record clones the record open in the current tab; Clone input record takes record ID and logical name; neither saves. The clone examples contradict themselves on parent and child, which the rows avoid."
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Confirmed update persistence through the documented back-end action and priority example, Autofill autosave behavior, separate lookup inputs, clone identity/save contracts, and mandatory fields. Standalone scope is explicit."
       }
-    ]
+    ],
+    "fingerprint": "722c48cca9cdb6dbb3a961dee86d04fd0c0db3d33c2d4059c1da7f2d235ef515"
   },
   {
     "id": "sim-d5-q03",
     "revision": 1,
-    "reviewer": "experience-reviewer",
+    "reviewer": "codex-experience-reviewer",
     "reviewedAt": "2026-11-09",
-    "decision": "needs-revision",
-    "rationale": "Rows 1 to 3 are right. Bring your own entity is + Add on the Inbox record types tab, card attributes are edited by selecting the record type on the same tab, and Emails in a shared mailbox shows emails sent to an admin-specified address in the To field only. The stem states a custom profile, which inbox settings need. Check 21 passes on row 3, which needs the definitions of the email settings. The defect is token e.",
-    "findings": [
-      "Checks 5 and 9. Token e is rejected only because Advanced settings are \"documented for the conversation record type\". The same page's custom view procedure says that for each record type you choose Simple or Advanced, and that Advanced builds your own conditions when the simple filters don't cover the scenario, so a learner can reasonably believe an Advanced email view could filter on the To field. Fix: token e text: \"Add a custom view that uses the Emails assigned to me setting\". Option e explanation: \"Fails. This setting shows emails whose Owner or Worked by field is the current user. It doesn't target the claims address.\" In the explanation, replace \"and Advanced settings are documented for the conversation record type.\" with \"and Emails assigned to me depends on the email's Owner or Worked by field.\" In the sim-cb-s14 evidence claim, add: \"Emails assigned to me shows emails whose Owner or Worked by field is the current user.\" In duplicateCheck, replace \"Sort and Advanced settings appear only as distractors.\" with \"Sort and Emails assigned to me appear only as distractors.\" The new token is a simple setting listed for Email on both pages, it fits no row, and it keeps tokens c, d and e parallel."
-    ],
+    "decision": "approved",
+    "rationale": "Re-reviewed the revised token and synchronized evidence. All 18 row/token pairings stand. Shared mailbox versus sent-to-me is resolved by the documented address and recipient rules, so row 3 requires more than matching configuration names. Assigned-to-me is now rejected by a documented ownership condition rather than an assumed limit on Advanced settings. Sorting cannot change card contents or enable a record type. The custom profile prerequisite is stated. Distinct from accepted view visibility, sorting and voice questions and case B incoming-work configuration.",
+    "findings": [],
     "sourceChecks": [
       {
         "sourceId": "sim-cb-s13",
         "supported": true,
-        "section": "Introduction; Configure custom views for the inbox; Simple settings; Advanced settings for conversations; Configure custom sort; Bring your own entity to the inbox; Custom card configuration",
-        "accessedAt": "2026-11-07",
-        "claimReviewedAt": "2026-11-07",
-        "notes": "Page dated 2026-10-29. Inbox settings only for custom profiles. + Add on the Inbox record types tab brings in a record type; selecting it opens Edit record type with attributes. Email simple settings include Emails sent to me, Emails assigned to me and Emails in a shared mailbox. Step 6 of custom views offers Simple or Advanced for each record type; the Advanced section itself covers conversations only. That gap is the finding."
+        "section": "Introduction; Configure custom views for the inbox; Simple settings; Configure custom sort in the inbox; Bring your own entity to the inbox; Custom card configuration",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Confirmed custom-profile scope, record-type addition, card attributes, email simple filters and sorting. The evidence accurately distinguishes the general Advanced procedure from its conversation-specific section."
       },
       {
         "sourceId": "sim-cb-s14",
         "supported": true,
-        "section": "Inbox filters",
-        "accessedAt": "2026-11-07",
-        "claimReviewedAt": "2026-11-07",
-        "notes": "Page dated 2026-05-28. Emails in a shared mailbox: admin-specified address, To field only, not Cc or Bcc. Emails sent to me: user in To, Cc or Bcc. Emails assigned to me: Owner or Worked by is the current user."
+        "section": "Inbox filters: Email",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Confirmed shared-mailbox filtering targets the configured address in To only, sent-to-me uses the current user as recipient, and assigned-to-me uses Owner or Worked by."
       }
-    ]
+    ],
+    "fingerprint": "1423b077a23f0a023ae3c3945ee2a5aa358a8c2194ffacb6391bfcdb75b22bde"
   },
   {
     "id": "sim-d5-q04",
     "revision": 1,
-    "reviewer": "experience-reviewer",
+    "reviewer": "codex-experience-reviewer",
     "reviewedAt": "2026-11-09",
-    "decision": "needs-revision",
-    "rationale": "All four rows are right, and I tested every row against every token. The role privilege lets everyone with the role disconnect chats on any record type. Record owner can disconnect chats covers chats on owned records, including ones a colleague connected. Join chat needs write access, which the stem states. Status is preconfigured for case key updates. The stem's default sentence covers every toggle option, so under check 32 it marks none. The defect is check 21.",
-    "findings": [
-      "Check 21. Each row maps to the token whose name describes it: quality leads to the one token that names the quality leads' role, a case's owner to Record owner can disconnect chats, entering connected chats to Join chat, and being told about a status change to Receive notification on key updates. No row turns on a fact the names don't give. Fix: make row 3 turn on the documented limit of the timeline sync preview. Row r3 label: \"A representative who takes over a case can read the full message history of the chats already connected to it\" (correctTokenId stays d). In the explanation, after the sentence ending \"such as a case they've taken over.\", add: \"The timeline sync preview shows only who connected each chat and who sent the last message, so reading the whole chat still depends on joining it.\" Option d explanation: \"Correct for a representative who takes over a case. Join chat lets users view and join connected chats on records they have write access to, and joining shows the full chat exchange. It's set per record type.\" Option f explanation: \"Fails on every row. This preview setting shows each connected chat on the record's timeline, with who connected it and who sent the last message. Reading the full exchange still needs Join chat, and the setting doesn't send field updates or grant disconnect rights.\" In the sim-d5-s08 evidence claim, add: \"The timeline entry shows who connected the chat and when, and the last person to send a message and when.\" After the fix, the names point row 3 at the sync setting, and only the documented split between the timeline entry and joining settles it."
-    ],
+    "decision": "approved",
+    "rationale": "Re-reviewed all revised text and the 24 row/token pairings. Global-role and owner-only disconnect scopes differ; the least-privilege requirement rules out granting the global privilege for case owners. Custom-role and disabled-setting assumptions address defaults. The strongest row 3 alternative is timeline sync, whose entry is metadata; full exchange access still needs joining. This supplies the fact missing from token names under check 21. Key-update notifications address the final row. No dependency on enabling the preview, and no duplication of accepted introduction-note or chat-connection questions.",
+    "findings": [],
     "sourceChecks": [
       {
         "sourceId": "sim-d5-s08",
         "supported": true,
-        "section": "Assign disconnect chat rights to specific users; Assign disconnect chat rights for security roles; How user rights work together; Configure the ability for users to join chats; Keep chat participants informed when fields are updated; View Teams chats on a connected record's timeline (preview)",
-        "accessedAt": "2026-11-07",
-        "claimReviewedAt": "2026-11-07",
-        "notes": "Page dated 2026-07-31, standalone only. Owner and connector toggles are per record type and on by default for new organizations; the role privilege covers any record type; OC admin, supervisor and agent have it by default. Join chat works on records with write access and is on by default for case. Key updates: Priority, Status, Status Reason preconfigured for Case. Sync preview shows who connected the chat and the last sender; with Join chat on, the new representative can join to review the full chat exchange."
+        "section": "Assign disconnect chat rights to specific users; Assign disconnect chat rights for security roles; How user rights work together for disconnecting chats; Configure the ability for users to join chats; Keep chat participants informed when fields are updated; Configure the ability for representatives to view Teams chats on a connected record timeline (preview)",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Confirmed disconnect scopes/defaults, write-access prerequisite, Case Join default, preconfigured Status attribute, and timeline metadata versus joined full exchange. Standalone applicability is explicit."
       }
-    ]
+    ],
+    "fingerprint": "bb26de3663057a37490ce2d48e27ab0845002f018e7d0b0b65aaa1b23b8503ec"
   },
   {
     "id": "sim-d5-q05",
@@ -114,23 +110,22 @@
   {
     "id": "sim-d5-q06",
     "revision": 1,
-    "reviewer": "experience-reviewer",
+    "reviewer": "codex-experience-reviewer",
     "reviewedAt": "2026-11-09",
-    "decision": "needs-revision",
-    "rationale": "Rows 2 and 3 hold: setting a custom profile as the default removes its existing security roles, and a custom default doesn't apply to users assigned specific custom profiles. On row 1 I applied checks 4, 5 and 9. Learn doesn't describe what Set as default does while another default exists, but it says you can't set multiple profiles as the default and that to change the default you use Remove Default and then set the alternative profile. I treat that procedure as a documented requirement, so the automatic swap fails for a documented reason rather than for silence. Check 5: the FAQ agrees that admin center can't produce two defaults, and its exception for imported profiles doesn't apply here. Check 4 holds, because the row asks what the change requires, not which default to pick. Distinct from sim-c-q05, which fixes two defaults created by an import. The defect is the wording of row 1.",
-    "findings": [
-      "Check 23. Row 1's answer heading is Expected behavior, and the correct option is the only one written as an instruction (\"Remove Default from Legacy Desk first\"), while both distractors describe outcomes, which marks it. Fix: r1a text: \"Legacy Desk's default has to be removed first\". r1b text: \"Legacy Desk's default is removed automatically\". r1c unchanged. r1b explanation: \"Fails. You can't set multiple profiles as the default, and Microsoft's procedure for changing it is to use Remove Default on the current default and then set the alternative profile.\""
-    ],
+    "decision": "approved",
+    "rationale": "Re-reviewed the reworded outcomes, answer and editorial evidence. The three first-row choices are parallel expected behaviors. Automatic replacement is the strongest alternative but contradicts the documented switch procedure. The second row follows removal of the new default profile security roles; retaining only rank does not preserve that mapping. Mia has an explicit custom-profile assignment, so the custom default does not displace it. All nine choices were checked, with no new leakage. Distinct from accepted default-profile customization and assignment lookup questions and case B mechanism selection.",
+    "findings": [],
     "sourceChecks": [
       {
         "sourceId": "sim-cb-s12",
         "supported": true,
         "section": "Set a custom experience profile as default; Switch default profiles; Map security roles to experience profiles; Manage users assigned to experience profiles",
-        "accessedAt": "2026-11-07",
-        "claimReviewedAt": "2026-11-07",
-        "notes": "Page dated 2026-05-27. Custom default not applicable to users assigned specific custom profiles. \"You can't set multiple profiles as the default profile. If you must change the default profile, use Remove Default...and then set an alternative profile.\" Setting a custom default: no more role assignment, existing security roles removed. Out-of-the-box profile only when no custom default and no role mapping. I also opened the FAQ about adding users to experience profiles (2026-05-28): multiple defaults only arise from imports."
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Confirmed Remove Default before replacement, removal of existing security roles upon defaulting, and the exception for explicitly assigned custom profiles. The fallback and applicability statements match the cited page."
       }
-    ]
+    ],
+    "fingerprint": "4c23b641d0d646ef9a29bb11ba73fad7c9ed9b6330ab668fe658cb918b7aad44"
   },
   {
     "id": "sim-d5-q07",
@@ -311,31 +306,30 @@
   {
     "id": "sim-d5-q13",
     "revision": 1,
-    "reviewer": "experience-reviewer",
+    "reviewer": "codex-experience-reviewer",
     "reviewedAt": "2026-11-09",
-    "decision": "needs-revision",
-    "rationale": "The answer is right. Automatic search uses the field chosen in Provide search results using, Link article and email URL shares the URL while Link article and send article content shares the contents, and the default email recipient is available only for Customer or Lookup columns pointing to Account or Contact. The defect is that the stem's wording answers it.",
-    "findings": [
-      "Checks 16 and 22. The requirements clear every distractor by wording alone. \"Runs automatically on the claim summary\" rejects e, \"email the article's URL\" rejects d, and \"with the policyholder filled in as the recipient\" rejects c, so a and b are the only options whose words match, and the documented recipient rule is never needed. Fix: in the second requirement, replace \"with the policyholder filled in as the recipient\" with \"with a person named on the claim filled in as the recipient\". No other change is needed, because the option c explanation already rejects Assigned surveyor for pointing to User. After the fix, b and c both match the wording, and only the documented recipient rule separates them. The believable wrong rule that any person lookup works names a with either b or c, so the count gives nothing away."
-    ],
+    "decision": "approved",
+    "rationale": "Re-reviewed the softened recipient requirement, every choice and both evidence records. A plus B is the only supported pair. Both B and C now satisfy the surface wording; the Account/Contact recipient restriction separates them, so the count and stem no longer solve the item. A plus C is a believable two-choice error. The content-sharing action fails the URL requirement; the alternative search field fails the summary requirement. Form-control evidence is used only to clarify shared action names and field types, preserving the side-pane configuration scope. Distinct from accepted record-type enablement, pane setup and non-anchor-tab scope questions.",
+    "findings": [],
     "sourceChecks": [
       {
         "sourceId": "sim-d5-s07",
         "supported": true,
-        "section": "Add record types for which you want to turn on knowledge management; Configure knowledge search control on the app side pane",
-        "accessedAt": "2026-11-07",
-        "claimReviewedAt": "2026-11-07",
-        "notes": "Page dated 2026-06-26, standalone only. Knowledge settings dialog: Turn on automatic search, Provide search results using; Actions Link / unlink article, Copy URL, Link article and email URL, Link article and send article content; Email recipient available only to Customer or Lookup attribute type and Account or Contact lookup entity. App side pane only in Copilot Service workspace."
+        "section": "Configure knowledge search control on the app side pane",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Confirmed the record-type dialog, Automatic search field selection, four actions, Account/Contact recipient restriction and workspace applicability."
       },
       {
         "sourceId": "sim-d5-s16",
         "supported": true,
-        "section": "Power Apps experience: properties table",
-        "accessedAt": "2026-11-07",
-        "claimReviewedAt": "2026-11-07",
-        "notes": "Page dated 2026-07-29. Link article and email URL shares the URL by email; Link article and send article content shares the contents. Automatic search fields can be text, multi-line text or lookup. This page's form-control recipient list is broader (fields enabled for email), but it covers the form control for single-session apps; the stem uses the side pane, whose dialog has the narrower rule."
+        "section": "Power Apps experience: Automatic search, Actions, Select default email recipient",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Confirmed text/multiline/lookup search fields, URL versus content actions and recipient prepopulation; retained the page restriction to single-session or non-anchor-form use."
       }
-    ]
+    ],
+    "fingerprint": "d0125fd76091cf60b274e7dd7f79595f3e0fa35fcfb46aa258bb1a1f8a20473d"
   },
   {
     "id": "sim-d5-q14",
