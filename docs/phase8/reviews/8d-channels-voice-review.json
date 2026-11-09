@@ -1,0 +1,582 @@
+[
+  {
+    "id": "sim-d2v-q01",
+    "revision": 1,
+    "reviewer": "channels-voice-reviewer",
+    "reviewedAt": "2026-11-07",
+    "decision": "approved",
+    "rationale": "Stands after revision, and the symmetric pair is gone. Option d is now strictly weaker than c: the same two start calls plus a callback. So under check 31, a test-wise reader drops d, while c survives as the two-call belief. Option b fails on plain English, because it starts no recording. That leaves a against c, which turns on the documented fact that startRecording includes automatic transcription, so check 21 holds. The requirement for as few method calls as possible is what rules out c and d, so check 9 holds, and it doesn't name a wrong action (check 25). Check 12: the correct option is the shortest. d's extra clause is the deliberate weaker decoy that check 31 asks for, not a wording tell. Option d fails on its extra calls alone, so nothing depends on when the callback fires. The editor's added evidence claim quotes the callback description exactly, and the applicability note is accurate. I reopened the page today, and it's unchanged. Distinct from every banked question: none covers voice module methods.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2v-s16",
+        "supported": true,
+        "section": "Introduction; Available methods",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Reopened today, last updated 2026-07-21. Confirmed startRecording with automatic transcription, startTranscription without full recording, and onRecordingOperationCompleted invoking a callback when the recording operation completes. Both evidence entries are accurate."
+      }
+    ],
+    "fingerprint": "7364989f4107449f0223c863ec620490a0d4f9643fee47789b3739d2ad6b1064"
+  },
+  {
+    "id": "sim-d2v-q02",
+    "revision": 1,
+    "reviewer": "channels-voice-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands. I tested all 12 row and token pairs and each row has one answer. Row 1: only CCaaS_CreateProactiveDelivery supports account calling, with up to five voice contacts. Bulk doesn't support account calling, Simple takes one recipient, and the voice API takes one destination. Row 2: only Bulk is built for many records in one request, and 12,000 is within its roughly 15,000. CCaaS_CreateProactiveDelivery is capped at five. Row 3: Simple is the flattened API that Microsoft says is best suited to Power Automate, and the others need a JSON array or are excluded. The strongest alternative is CCaaS_CreateProactiveVoiceDelivery for the voice household. It fails because the stem excludes first-generation APIs and Microsoft labels this one first-generation. It also has no contact chain field. This isn't a name leak like q01: Bulk and Simple read from their names, but row 1 turns on a fact the names mislead about, because the token with Voice in its name is the wrong one. All four pages carry the same chooser list, so there's no conflict. The stem covers the consent responsibility each page states. The evidence notes are accurate. Distinct from every banked question: none names these delivery APIs.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2v-s10",
+        "supported": true,
+        "section": "Introduction; Request body properties; Validation rules",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed most versatile, supports account calling, Voice supports up to five contacts for contact chaining, and Contacts is a string containing a JSON array. Page dated 2026-10-14."
+      },
+      {
+        "sourceId": "sim-d2v-s11",
+        "supported": true,
+        "section": "Introduction",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed approximately 15,000 records in a single request, and no account calling. The page also documents a V2 bulk action, which isn't a token and doesn't affect any row."
+      },
+      {
+        "sourceId": "sim-d2v-s12",
+        "supported": true,
+        "section": "Introduction; Request parameters",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed a single delivery with flattened contact attributes for one recipient, no complex JSON nesting, and best suited to surfaces like Power Automate."
+      },
+      {
+        "sourceId": "sim-d2v-s13",
+        "supported": true,
+        "section": "Introduction; Request headers",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed first-generation voice API, still supported, with migration to CCaaS_CreateProactiveDelivery advised. It takes one DestinationPhoneNumber and has no reattempts."
+      }
+    ],
+    "fingerprint": "e94036ecceab62274dc4975fdcfdd1dfe7b2782fcdd0bb7354b85c8a7bbedce0"
+  },
+  {
+    "id": "sim-d2v-q03",
+    "revision": 1,
+    "reviewer": "channels-voice-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands. I tested all 12 row and token pairs and each row has one answer. Row 1: Copilot is the documented mode for announcements an IVR agent can handle, with up to 500 concurrent calls. Progressive and predictive both add a representative. Row 2: only Preview gives review time, and Manual start is available on the Teams Phone Extensibility numbers the stem states. Row 3 is the author's weak spot, and it holds. The conflict is real: the dial modes article says progressive places one call per available representative, while the voice configuration page gives AI agent-led progressive a Maximum calls per representative of up to five. The row doesn't depend on that ratio. It turns on calls starting before representatives become available, and Microsoft uses that language for predictive only. Even at five calls per representative, progressive dials for representatives who are available now, so it isn't a second answer. The explanation avoids the ratio, and it does not run ahead of them reads as timing, in line with option c, so check 5 holds. The modes are self-named, but this isn't q01's leak, because progressive against predictive is a concept the learner must know. The stem's service-only scope and legal clearance take the terms of service and TCPA notes out of the decision. About 40 representatives clears the 10-representative minimum. The evidence notes are accurate. Distinct from ab250-d2-q74, q75 and q76, which test behavior inside a chosen mode.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2v-s08",
+        "supported": true,
+        "section": "Important note; Copilot; Progressive; Predictive; Preview",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed Copilot for announcements and notifications, escalation if necessary, predictive initiating calls before representatives become available, the 10-representative minimum with progressive fallback, preview prioritizing customer experience, and timer and early media on Teams Phone Extensibility only. Page dated 2026-06-05."
+      },
+      {
+        "sourceId": "sim-d2v-s09",
+        "supported": true,
+        "section": "Dialing modes",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed the four mode summaries, Manual preview, timer and delayed start on Teams Phone Extensibility only, Maximum calls per representative up to five for AI agent-led progressive, and 500 concurrent calls for Copilot. Page dated 2026-10-14."
+      }
+    ],
+    "fingerprint": "8bcd53ddc5674764a62e8a642e9711c606089a00e2a7f66a52fb9839f57ccd49"
+  },
+  {
+    "id": "sim-d2v-q04",
+    "revision": 1,
+    "reviewer": "channels-voice-reviewer",
+    "reviewedAt": "2026-11-07",
+    "decision": "approved",
+    "rationale": "Stands after revision, and the finding is resolved. Token d now uses Microsoft's exact phrase, the default scoped outbound profile, and the stem no longer claims anything about first-run profiles, so row 4 holds whichever profile Microsoft means. I reopened the outbound calling page today, and the sentence is unchanged. I tested all 20 row and token pairs. Row 1: only the workstream Behaviors tab governs queue-routed calls. Row 2: the pharmacist's own inbound profile. Row 3: the Refills outbound profile. The default scoped token fails there, because Refills has its own profile. Row 4: the outbound profile token fails because outbound profiles can't list personal numbers, and personal number calls always apply the default scoped outbound profile, which holds the setting under Outbound behaviors. Token e fails on every row. Check 21: rows 1 to 3 follow from the names, but row 4 turns on a fact the names mislead about, because the outbound profile token is the natural pick. Tokens are reusable, so that pick is a real trap and not a count tell. Check 22: personal number appears in no token. Check 24 now holds. The evidence notes are accurate. Distinct from the banked capture and profile questions, which test labels, prerequisites and forwarding.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2-s09",
+        "supported": true,
+        "section": "Enable call recording and transcription for voice",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed the workstream path: Voice settings, Behaviors tab, Transcription and recording section. Supports row 1."
+      },
+      {
+        "sourceId": "sim-d2v-s01",
+        "supported": true,
+        "section": "Create inbound profiles; Create outbound profiles",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed Transcription and recording under Inbound behaviors and Outbound behaviors, and that the outbound number list excludes numbers used as personal numbers. Supports rows 2 and 3 and the token c trap. The evidence entry no longer cites Default profiles."
+      },
+      {
+        "sourceId": "sim-d2v-s02",
+        "supported": true,
+        "section": "Assign personal phone numbers to representatives",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Reopened today, dated 2026-05-08. The note still says personal service representative phone number calls always apply the default scoped outbound profile. Token d and option d's explanation now use that exact wording, and no equivalence with another profile is claimed."
+      },
+      {
+        "sourceId": "sim-d2-s06",
+        "supported": true,
+        "section": "Introduction",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Reopened today. The page configures the call quality survey, automatic un-hold, DTMF broadcast and secure external contact settings. Its capture setting is an override for consult and bridged transfer, so token e fails on every row."
+      }
+    ],
+    "fingerprint": "02bbaf9782961de10f391541ac0ee5c9f80a92310d1cf7c00eeac2399f135c05"
+  },
+  {
+    "id": "sim-d2v-q05",
+    "revision": 1,
+    "reviewer": "channels-voice-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands. Each neighbouring pair is a real dependency. c before e: the page says to select the toggle after provisioning completes. e before a: the queue step selects a callback profile, and a profile becomes available for queue configuration only once the first one is saved. I looked for the reverse order. Configure direct callback shows the classic overflow action with no profile, and the note that the first profile applies automatically to queues already using direct callback could only reverse the choice of action. Token a also selects a profile, and the stem says the queue has no overflow action, so neither page reverses it. The author's weak spot holds: merging the toggle and first profile is what check 1 asks for. The page lists the toggle first but also says the feature can't be enabled until a profile exists, so neither order can be proved. Distractors fail for documented reasons. Token b: Microsoft warns against editing the agent that takes the alternative number, and the release plan separates that prebuilt agent from your own verification agent. Token d: the fallback queue's overflow settings are ignored for work routed there, and the requirement concerns Boiler Repairs. The stem states each prerequisite and the irreversibility. Status is confirmed: the plan shows general availability on Aug 24, 2026 with a release mark, and the configuration page has no preview label. The evidence notes are accurate. Distinct: neither bank has a question on direct callback or callback profiles.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2v-s06",
+        "supported": true,
+        "section": "Prerequisites; Enable customer-first direct callback; Create callback profiles; Use callback profile in overflow action",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed steps 2 to 6, the irreversible setting, the automatic first profile, the warning about editing the alternative number agent, the AI agent selection in the profile, and the two-step queue configuration. Page dated 2026-09-18."
+      },
+      {
+        "sourceId": "sim-d4-s01",
+        "supported": true,
+        "section": "How overflow works when work item is routed to a fallback queue",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed the system ignores the fallback queue's overflow settings for work routed there because of errors or no matching rule."
+      },
+      {
+        "sourceId": "sim-d2v-s07",
+        "supported": true,
+        "section": "Feature table; Feature details",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed general availability on Aug 24, 2026 with a release mark. The page is archived as of October 2026 and shows no reversing sequence. The cited URL now resolves to the previous-versions path on learn.microsoft.com."
+      }
+    ],
+    "fingerprint": "d290f82529a8c53582ef3bd59b41c8312ba81dc1d2b83314dd82a552651367db"
+  },
+  {
+    "id": "sim-d2v-q06",
+    "revision": 1,
+    "reviewer": "channels-voice-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands. Each row has one answer. Row 1: timer and delayed start are Teams Phone Extensibility only, and on Azure Communication Services preview calls start automatically after acceptance, so a countdown can't exist there. Row 2 is Microsoft's own example: a customer calls an Azure Communication Services number, and a callback from a Teams number isn't initiated and the request closes. The row applies only to customers who phoned Retail Banking, so Either fails. Row 3: for an outbound workstream, Azure Communication Services supports Direct Routing numbers only, and Teams Phone supports Operator Connect. I challenged whether that limit reaches beyond outbound workstreams, and the row is scoped to one, so the note applies directly. Either is never correct, but each row has to be reasoned on its own, so that isn't a tell. The evidence notes are accurate. Distinct from sbc-domain-coexistence-phased-migration, operator-connect-portability-review and q03 in this batch, which uses the same timer fact to choose a mode, not a platform.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2v-s08",
+        "supported": true,
+        "section": "Preview",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed timer and early media audio for preview calls on Teams Phone Extensibility numbers only."
+      },
+      {
+        "sourceId": "sim-d2v-s09",
+        "supported": true,
+        "section": "Dialing modes; Set up an outbound workstream",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed the countdown that starts on acceptance, automatic start on Azure Communication Services, and the note on number types in step 3 of the outbound workstream setup."
+      },
+      {
+        "sourceId": "sim-d2v-s06",
+        "supported": true,
+        "section": "Create callback profiles, Dialing page",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed the same phone platform requirement and its example. The system doesn't initiate the callback and closes the request."
+      }
+    ],
+    "fingerprint": "4728bc6b96e9cc12a5295adc30db95a6264866ad2075e0fd54e01aa2e05fe571"
+  },
+  {
+    "id": "sim-d2v-q07",
+    "revision": 1,
+    "reviewer": "channels-voice-reviewer",
+    "reviewedAt": "2026-11-07",
+    "decision": "approved",
+    "rationale": "Stands after revision, and the leak is resolved. All three rows now offer the same four options. r3d is No Hold setting applies, which is shorter than Follow workstream settings, and the row 3 label no longer says the representative leaves. I tested all 12 row and option pairs. Row 1: only Customer on hold keeps the member out and can't be lifted. Follow workstream settings falls back to an ordinary consult, where the primary representative removes the hold manually. Row 2: only Agent on hold holds the representatives. Row 3: Hold applies to consult only, so no Hold value fits a bridged transfer. The r1d and r2d explanations are true: those rows are consults, so a Hold setting applies. Check 21: rows 1 and 2 follow fairly closely from the option names, but row 3 and the lock in row 1 turn on documented facts the names don't give. Check 12: no correct option is the longest. Status: I reopened the Voice call experiences page today, and it still says production-ready preview. The stem says so, and no row depends on status. The evidence notes are accurate. Distinct from ab250-d2-q60, q61 and ab250-d3-q21.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2-s06",
+        "supported": true,
+        "section": "Set up secure consult with and transfer to external contacts (preview)",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Reopened today, dated 2026-07-28. Hold is applicable to consult only, with Customer on hold, Agent on hold and Follow workstream settings. Representatives can't remove either lock, and all representatives are held. The section is still labeled production-ready preview."
+      },
+      {
+        "sourceId": "sim-d2-s05",
+        "supported": true,
+        "section": "Use consult to collaborate with other representatives or supervisors; Consult with external contacts and transfer a call securely (preview)",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed the secure settings prerequisites, and that the primary representative must manually remove the customer from hold in an ordinary consult."
+      },
+      {
+        "sourceId": "sim-d2v-s25",
+        "supported": true,
+        "section": "Feature table; Feature details",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed public preview on Mar 16, 2026 with a release mark, general availability Sep 2026 without one, and the archive notice. The evidence note is accurate."
+      }
+    ],
+    "fingerprint": "673b4c7a31ada09a3cee717a0320eae4fa8e1040fe57b0940c0057635010dcdd"
+  },
+  {
+    "id": "sim-d2v-q08",
+    "revision": 1,
+    "reviewer": "channels-voice-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands. I reworked every row from the current rules. The gap is February 1 through 6, which is six days. Required history is gap plus duration, 36 days, the baseline is 30 days, and the grace period is half the duration rounded up, 15 days. Bookings: 40 meets 36, so it's normal, and the page says the grace period applies only when history falls short. Refunds: 33 is short of 36, the gap of 6 is within 15, and 33 meets 30, so reduced confidence. Group Travel: 28 is short of 36 and below 30, so it's skipped, and the page's examples confirm a skip when one condition fails. Every option explanation matches. The strongest alternative is that the 33-day queue is skipped because it's under 36, but the two grace conditions are stated exactly, and both are met. I confirmed the conflict the evidence note describes: this page says short-term scenarios support up to 84 days, and the forecasting overview says 42. At 30 days the question avoids it, and it states no maximum. The stem says history is in calendar days, matching the page. The evidence notes are accurate. Distinct from ab250-d2-q82 and q84, which test defining settings and Draft status.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2v-s18",
+        "supported": true,
+        "section": "How forecast dates affect the data requirement; Minimum historical data; When history is insufficient; Short-term examples",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed the gap definition, calendar day counting, gap plus duration, duration as baseline, the two grace conditions, rounding, and the skip rule. Page dated 2026-10-19. The 42-day figure in the note is on the Overview of forecasting page, which I also opened."
+      }
+    ],
+    "fingerprint": "3dd13f4f02b1ef60bbc64164725072c6af6cd55b882e2cb9a6dcb306bc83914a"
+  },
+  {
+    "id": "sim-d2v-q09",
+    "revision": 1,
+    "reviewer": "channels-voice-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands. Row 1: the DeliveryTaskId cancels pending and future attempts for the task that manages the contact chain, and no further attempts are made. Row 2 is the author's weak spot, and it holds. Microsoft says the DeliveryId is used to cancel that delivery, and the voice configuration page sets the two side by side: use the delivery ID to cancel an individual delivery, and the delivery task ID to cancel all pending and future attempts in a contact chain. The row asks only for the narrower tool. No learner-facing text claims what later reattempts do, and the r1b explanation stays within that documented contrast. Row 3: a policy filters by state, cancels queued calls, and Execute policy until keeps matching contacts from new calls. Suspend is thinly documented, but r3b fails for a documented reason. The API's only scoping fields are the engagement configuration ID and, for cancel operations, the DeliveryId, so it can't target one state, and the stem says the engagement serves the whole country and other calls must stay in place. r3c fails because cancelling existing tasks stops nothing new. The stem covers the prerequisite that deliveries come from CCaaS_CreateProactiveDelivery, and that both IDs are stored. The evidence notes are accurate. Distinct: neither bank has a question on delivery cancellation or cancellation policies.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2v-s09",
+        "supported": true,
+        "section": "Configure voice call cancellation and suppression",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed the filter fields in AND conditions, Execute policy until, queued calls only, and the note that contrasts the individual delivery with all attempts in a contact chain."
+      },
+      {
+        "sourceId": "sim-d2v-s10",
+        "supported": true,
+        "section": "Response properties",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed DeliveryId as the first individual dial or message delivery, used to cancel that delivery, and DeliveryTaskId as the task that manages the contact chain and all reattempts."
+      },
+      {
+        "sourceId": "sim-d2v-s14",
+        "supported": true,
+        "section": "Introduction; Prerequisites; Request parameters",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed all pending and future attempts for a contact or account, no further attempts, and the delivery task created by CCaaS_CreateProactiveDelivery."
+      },
+      {
+        "sourceId": "sim-d2v-s15",
+        "supported": true,
+        "section": "Request parameters; Sample request",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed Suspend, Resume and Cancel, DeliveryId for cancel operations, and the optional engagement configuration ID, with a sample that targets a configuration. There's no state or location parameter. The page doesn't describe Suspend further, as the evidence note says."
+      }
+    ],
+    "fingerprint": "a6b1301511251e1b4cbe7d7c9a08e9333185548bf273e39a772086e27e754c00"
+  },
+  {
+    "id": "sim-d2v-q10",
+    "revision": 1,
+    "reviewer": "channels-voice-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands. Options a, b and c are three of the listed requirements for representative-led progressive and predictive over direct routing, and the page says these requirements let the SBC handle the call-transfer scenarios those modes rely on, which is the stem's wording of the goal. The strongest alternative is d. The list ends RFC 3325 with and other applicable direct routing SIP requirements, so I checked whether REFER could fall under that. Microsoft ties the REFER-TO conversion to one condition, a Direct Routing customer with Use bridged transfers not selected, and the stem selects it on every workstream, so d fails for a documented reason. Option e fails because certificates can chain to any supported root. Count test under check 14: two believable wrong rules each name exactly three options. Transfer signaling only gives a, b and d. Pinning the issuing root gives a, b and e. The count doesn't give the answer away. The stem names no SBC vendor, so the Oracle steps don't apply. The evidence notes are accurate. Distinct from sim-p-q03, where REFER-TO is correct because bridging is cleared. Here the opposite setting makes it wrong, so the two test different decisions.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2v-s09",
+        "supported": true,
+        "section": "Requirements for direct routing",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed RFC 3891 Replaces including Require: replaces, called essential for mid-call transfer flows, RFC 3325 handling for P-Asserted-Identity with Privacy ID, and all supported root CAs because certificates can chain to any one of them."
+      },
+      {
+        "sourceId": "sim-d2-s04",
+        "supported": true,
+        "section": "Transfer calls to external numbers and Teams users, Enhanced voice note",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed the REFER-TO note and its condition: a Direct Routing customer with the Use bridged transfers checkbox not selected. The SBC converts the request to an INVITE and sends it back to sip.pstnhub.microsoft.com."
+      }
+    ],
+    "fingerprint": "a567aee272a70acac6d0239552b805f2c3b1457f987b5c7c7f63a1695e269d51"
+  },
+  {
+    "id": "sim-d2v-q11",
+    "revision": 1,
+    "reviewer": "channels-voice-reviewer",
+    "reviewedAt": "2026-11-07",
+    "decision": "approved",
+    "rationale": "Stands after revision, and the leak is resolved. The stem no longer states the diagnosis. It gives only the symptom, so the learner has to know that survey responses are kept only through the Call Survey diagnostic setting in Azure Monitor. Check 22: survey appears in four options, and diagnostic setting no longer appears in the stem, so word matching doesn't pick the pair. Check 14: the believable wrong rule that only a Log Analytics workspace supports analysis names a and c, exactly two. Option a has two near twins, b and c, so the twin heuristic doesn't settle it either. Check 21: the destination choice turns on a fact the names don't give, that a storage account is also a supported destination. Each distractor fails for a documented reason. I reopened the Voice call experiences page today, and the storage statement is unchanged. The evidence notes are accurate. Distinct from ab250-d2-q59.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2-s06",
+        "supported": true,
+        "section": "Enable representative call quality surveys; Store and view survey data",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Reopened today. You must enable the Call Survey Logs diagnostic setting to send survey data to a Log Analytics workspace, Event Hubs or an Azure storage account, or it isn't stored and can be lost. Set survey duration only sets how long the survey appears."
+      },
+      {
+        "sourceId": "sim-d2v-s22",
+        "supported": true,
+        "section": "Prerequisites; How do I store logs?",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed selecting Call Survey under the diagnostic setting, and that data isn't stored retroactively."
+      },
+      {
+        "sourceId": "sim-d2v-s24",
+        "supported": true,
+        "section": "Introduction; Choose Destinations",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed per-resource diagnostic settings, Call Summary and Call Diagnostic logs as other log types, and the three destinations."
+      }
+    ],
+    "fingerprint": "15db68e99eb1878a94f0feb3b9fd8979d5be0409e6af5ed8652ed463b972ca87"
+  },
+  {
+    "id": "sim-d2v-q12",
+    "revision": 1,
+    "reviewer": "channels-voice-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands. The Release phone numbers section requires exactly these three actions: remove the number from any associated workstreams or outbound profiles, and disable a number assigned as a personal number before trying the release again. The stem gives each number the matching use. Option d fails for a documented reason: features can't be removed once granted, and calling plans can't be changed after a number is connected to a workstream. Option e fails because disconnecting releases all numbers on the resource, and Saltash keeps others. Count test under check 14: the believable wrong rule that clearing Make calls takes a number off its outbound profile names a, c and d, exactly three, so the count doesn't settle it. Option c is the only remaining action on Harbour Desk, which makes it easy to reach, but the choice between b and d still needs the documented rule. The evidence notes are accurate. Distinct: no banked question covers releasing a number.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2v-s03",
+        "supported": true,
+        "section": "Edit phone numbers; Release phone numbers",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed the release prerequisites, the personal number step, that a release deletes the number from Dynamics 365, and that features can't be removed once granted. Page dated 2026-06-17."
+      },
+      {
+        "sourceId": "sim-d2v-s04",
+        "supported": true,
+        "section": "Introduction, Important note",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed all phone numbers associated with a resource are released when it's disconnected, and that Release phone numbers is the route for one or more numbers."
+      }
+    ],
+    "fingerprint": "76fa8813fd244ee3f5a45204734b63dea7097595ef25b5e5b7579159d2d3ea22"
+  },
+  {
+    "id": "sim-d2v-q13",
+    "revision": 1,
+    "reviewer": "channels-voice-reviewer",
+    "reviewedAt": "2026-11-07",
+    "decision": "approved",
+    "rationale": "Stands after revision, and the check 21 finding is resolved. Options a and d are now parallel twins that differ only in whether Auto refresh is on. The file type names can't separate them, and Learn says Auto refresh isn't available with an external data source, so a against d needs the documented fact. Check 31: the twins don't cancel out. The difference isn't a reordering of the same steps but a setting with a documented answer. They contradict each other, so exactly one can be right, and with c and e still rejected, a reader can't settle which without knowing the rule. Check 14: the believable wrong rule of turning Auto refresh on so the scenario runs names b and d, exactly two. Check 17: off doesn't read as the safe choice, and on looks more complete, so the lure points the wrong way. Check 12: a is one character longer than its twin, which can't act as a tell. Checks 25 to 27: the stem neither names a wrong action nor clears one option's caveat. Check 29: a's run after creation is consistent with the state model. Learn says an External scenario's output can be linked to a capacity plan and that Create New Snapshot is unavailable only when Auto refresh is on. a claims only that the plan follows the first run. I reopened the forecast scenarios and external data pages today. The editor's added sim-d2v-s18 claim and section are accurate, and the revised sim-d2v-s19 note, Explains the override distractor, is right, because the old option d is gone. Distinct from ab250-d2-q82, q84 and q89, and from q08 in this batch.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2v-s19",
+        "supported": true,
+        "section": "Prerequisites; File types; File templates; Validate an uploaded file; Use external data in a forecast scenario; Use external data in a capacity plan",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Reopened today, page dated 2026-11-03. Confirmed the three file types and their consumers, each template's columns, that the override template has no volume column, that validation runs against the selected type, and that External historical data output can be linked to a capacity plan. All three evidence entries are accurate."
+      },
+      {
+        "sourceId": "sim-d2v-s18",
+        "supported": true,
+        "section": "Create a forecast scenario, Historical data; Forecast refresh schedule; Create a new snapshot",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Reopened today, dated 2026-10-19. Data source is Internal or External, with upload through Manage External Data. Auto refresh isn't available with an external data source, a saved scenario stays in Draft until its first scheduled run, and Create New Snapshot is unavailable only when Auto refresh is on. The evidence entry is accurate."
+      },
+      {
+        "sourceId": "sim-d2v-s20",
+        "supported": true,
+        "section": "Prerequisites; Select an input method",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed a scenario must have completed at least one forecast run before a capacity plan uses it, and the external forecast file route."
+      }
+    ],
+    "fingerprint": "47e6dbd2d810451f8cb0222795029be456c5559b07b74b69a516cfc53312e873"
+  },
+  {
+    "id": "sim-d2v-q14",
+    "revision": 1,
+    "reviewer": "channels-voice-reviewer",
+    "reviewedAt": "2026-11-07",
+    "decision": "approved",
+    "rationale": "Stands after revision, and the check 16 finding is resolved. The stem no longer clears the distractors by plain logic, and both requirements now decide. SIP context rules out a and d, the 2028 date rules out b and d, and only c meets both. On your question about option c: the two statements together do support isn't affected by the retirement as worded. I reopened the migration page today. Choose a voice migration path says customers using ACS voice must migrate to Microsoft Teams Phone extensibility, and lists Teams Direct Routing as a target configuration. That makes Teams Direct Routing a Teams Phone extensibility configuration. Understand the impact says the retirement doesn't affect voice configurations that already use Teams Phone extensibility, and the FAQ applies the same rule to Operator Connect. The option's wording follows Microsoft's own, so check 24 holds. I reopened the deployment approaches page today. Both sim-d2v-s17 evidence entries quote it accurately, and its calling plan heading covers both Teams Calling Plan and ACS Direct Offer, as the applicability note says. Check 21: the option names show who runs the PSTN side but not the retirement date, so b against c needs the documented fact. Check 22: SIP appears in no option. Check 23: the options form two parallel pairs. Check 12: the correct option is the shortest. Distinct from ab250-d2-q41, ab250-d2-q39 and sbc-domain-coexistence-phased-migration.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2v-s17",
+        "supported": true,
+        "section": "Bring your own telephony: Azure Communication Services-based direct routing or Teams direct routing; Microsoft calling plan numbers with Azure Communication Services direct offer or Teams calling plan",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Reopened today, dated 2026-05-19. Bring your own telephony preserves SIP context and is best for SIP context-dependent workflows such as blind transfers and handoffs to non-Microsoft systems, with the SBC responsibility boundary. For calling plan numbers, SIP context might be stripped by PSTN carriers outside the Microsoft network. Both evidence entries are accurate."
+      },
+      {
+        "sourceId": "sim-d2-s01",
+        "supported": true,
+        "section": "Understand the impact; Choose a voice migration path; Frequently asked questions",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Reopened today, dated 2026-09-23. The retirement affects voice through ACS Direct Offer or Direct Routing, supported through September 30, 2028, and doesn't affect configurations that already use Teams Phone extensibility. ACS voice customers must migrate to Teams Phone extensibility, with Teams Direct Routing as a target configuration. The evidence entry is accurate."
+      }
+    ],
+    "fingerprint": "c36b3c0858edf442bb16f238312c04a774ae75e295aaa1bf130c1f76e62b501d"
+  },
+  {
+    "id": "sim-d2v-q15",
+    "revision": 1,
+    "reviewer": "channels-voice-reviewer",
+    "reviewedAt": "2026-11-07",
+    "decision": "approved",
+    "rationale": "Stands after revision, and the check 19 leak is resolved. memberTier and visitReason now appear in options a, b and c, so the names no longer mark the answer, and the correct option is shorter than b. Check 22: User-to-User appears in a and b, and workstream appears in b, c and d, so word matching doesn't single out c. Check 23: b and c are worded in parallel. The answer is unchanged and right. Variable names must match the header parameter names exactly, and plain text pairs are a supported format. Option b is a strong decoy, and every option explanation is true. The evidence notes are accurate. Distinct from ab250-d2-q45 and q46.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2v-s05",
+        "supported": true,
+        "section": "Set up contextual call transfer using Azure direct routing; closing note",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed the topology, plain text and hex formats, context variables whose names match the header parameters exactly, automatic conversion for routing and representatives, and that IVR call records and transcriptions aren't available to representatives."
+      }
+    ],
+    "fingerprint": "6431d683b289bab3f70888111517865166721d651f087da0ba6ab1a250e9effd"
+  },
+  {
+    "id": "sim-d2v-q16",
+    "revision": 1,
+    "reviewer": "channels-voice-reviewer",
+    "reviewedAt": "2026-11-07",
+    "decision": "approved",
+    "rationale": "Stands after revision, and the check 22 leak is resolved. Direct now appears in options b and d, so the stem's word no longer marks the answer, and option d's explanation still holds. The other stem words are spread across options too: inbound profile appears in b and c, and queue appears in a and d. Check 19: both playbook options use the stem's feature. Check 21: option d's rule-specific overflow and option c's call forwarding are real lures that need product knowledge to reject. Check 12: b isn't the longest. Checks 25 to 27: the scoping requirement names no option's action, and the availability sentence covers both playbook options equally. Check 30: the answer depends on no unstated setting, and a representative on another call counts as unavailable in Microsoft's own example. Earlier today I reopened Manage overflow, the conversation orchestration page and the outbound calling page. The direct inbound template, its scopes, conditions and actions, the queue playbook decoy, and the call forwarding behavior all match, and neither overflow page carries a preview label. The stem states availability, and the archived plan's unmarked general availability doesn't decide the answer. Distinct from sim-p-q08 and the banked inbound profile questions.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d4-s01",
+        "supported": true,
+        "section": "Use natural language playbooks to configure overflow actions for work items in queue; Use natural language playbooks to configure overflow actions for direct inward dialed calls",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Reopened today, dated 2026-10-30, with no preview label. Confirmed the queue playbook scope and conditions, and the direct inbound template's three scopes, three conditions and actions. Also confirmed save and publish, and the example where a representative on another call counts as not available."
+      },
+      {
+        "sourceId": "sim-d4-s03",
+        "supported": true,
+        "section": "Supported scenarios; Understand playbooks; Create a playbook",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Reopened today, dated 2026-10-30, with no preview label. Confirmed the two overflow handling templates and what each covers, that playbooks apply to queues, and that a playbook saves as a draft and activates on Publish."
+      },
+      {
+        "sourceId": "sim-d2v-s01",
+        "supported": true,
+        "section": "Introduction",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed inbound profiles enable direct inward dialing, and that direct inward dialing doesn't use unified routing."
+      },
+      {
+        "sourceId": "sim-d2v-s02",
+        "supported": true,
+        "section": "Enable call forwarding for personal phone numbers",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Reopened today. A call is forwarded to the PSTN number only on DND or offline and a missed call, and it's sent to voicemail on Available, Away or Busy when the representative rejects or misses it."
+      },
+      {
+        "sourceId": "sim-d2v-s23",
+        "supported": true,
+        "section": "Feature table; Feature details",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed public preview on Jun 30, 2026 with a release mark, general availability Oct 2026 without one, and the archive notice. The evidence note correctly says general availability isn't confirmed."
+      }
+    ],
+    "fingerprint": "21aa6d229ae307a995624e178a50cbfaef42407c1b04e6437beeb4d481825bcc"
+  },
+  {
+    "id": "sim-d2v-q17",
+    "revision": 1,
+    "reviewer": "channels-voice-reviewer",
+    "reviewedAt": "2026-11-07",
+    "decision": "approved",
+    "rationale": "Stands after revision, and the leak is resolved. The stem now states the goal, not the diagnosis, and option c is a compliant decoy that uses the same capture vocabulary as d. I reopened the Voice call experiences page today. The external contact Transcription & recording setting applies to consult and bridged transfer, and Follow workstream settings inherits the workstream configuration, so c fails for a documented reason whatever its preview status. The new sim-d2-s06 evidence entry is accurate. Check 22: capture wording appears in c and d, and web resource appears in b, so no stem word picks out only the answer. Check 16: the stem no longer clears any distractor, and the global endpoint clause went with the old option. Check 12: d isn't the longest. The answer is unique: only d adds capture, and Microsoft says call recording and transcription are needed to display translated voice transcripts. Transcription alone isn't offered, so the gap on that point doesn't matter. Distinct from ab250-d2-q54 and ab250-d2-q16. It's also distinct from sim-d2d-q07 in the digital batch, where the detection setting and the global endpoint are the answers. Here detection is only a distractor and the endpoint is gone.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2-s09",
+        "supported": true,
+        "section": "Prerequisites; Enable call recording and transcription for voice; Enable real-time translation of calls",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed you must enable call recording, transcription and real-time translation to view translated voice transcripts, the prerequisites the stem summarizes, and the Behaviors tab options with Start setting."
+      },
+      {
+        "sourceId": "sim-d2v-s21",
+        "supported": true,
+        "section": "Prerequisites; Enable score-based language detection",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed call recording and transcription are required for translated voice call transcripts to be displayed, and what enableLanguageDetectionWithHistoryMessages does. The evidence entry no longer cites the endpoint."
+      },
+      {
+        "sourceId": "sim-d2-s04",
+        "supported": true,
+        "section": "Add a phone number to the workstream and configure language settings",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed more languages can be added to a voice channel, each with its own settings."
+      },
+      {
+        "sourceId": "sim-d2-s06",
+        "supported": true,
+        "section": "Set up secure consult with and transfer to external contacts (preview)",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Reopened today, dated 2026-07-28. Transcription & recording is chosen for Consult and Bridged transfer per external contact, and Follow workstream settings inherits the workstream configuration. The section is a production-ready preview, and the decoy fails whatever its status."
+      }
+    ],
+    "fingerprint": "8df725b204ff7f755a2379792e118dda886f4c9a14b5b2155ee9903609d1b775"
+  }
+]

@@ -1,6 +1,6 @@
 import type { QuestionBank, TestAttempt } from './domain';
 import { database, loadWorkspace, type TsukiakariDatabase } from './storage';
-import { answerTestAttempt, completeTestAttempt, createTestAttempt, revealTestAttempt, retryAttempt, retryMissedAttempt, testHasExpired, type TestOptions } from './testEngine';
+import { advanceSeriesQuestion, answerTestAttempt, completeTestAttempt, createTestAttempt, flagTestQuestion, leaveTestSection, moveTestPosition, placeTestAnswer, revealTestAttempt, retryAttempt, retryMissedAttempt, testHasExpired, type TestOptions } from './testEngine';
 import { idSchema, testAttemptSchema } from './validation';
 import { collectTestExposures } from './testMigration';
 
@@ -32,6 +32,21 @@ async function updateAttempt(id: string, transform: (attempt: TestAttempt) => Te
 }
 export function saveTestAnswer(id: string, cardId: string, optionIds: string[], db = database, now = Date.now()): Promise<TestAttempt> {
   return updateAttempt(id, attempt => answerTestAttempt(attempt, cardId, optionIds, now), db);
+}
+export function savePlacedAnswer(id: string, cardId: string, placements: Record<string, string>, db = database, now = Date.now()): Promise<TestAttempt> {
+  return updateAttempt(id, attempt => placeTestAnswer(attempt, cardId, placements, now), db);
+}
+export function saveTestPosition(id: string, position: number, db = database, now = Date.now()): Promise<TestAttempt> {
+  return updateAttempt(id, attempt => moveTestPosition(attempt, position, now), db);
+}
+export function saveTestFlag(id: string, cardId: string, flagged: boolean, db = database, now = Date.now()): Promise<TestAttempt> {
+  return updateAttempt(id, attempt => flagTestQuestion(attempt, cardId, flagged, now), db);
+}
+export function closeTestSection(id: string, db = database, now = Date.now()): Promise<TestAttempt> {
+  return updateAttempt(id, attempt => leaveTestSection(attempt, now), db);
+}
+export function closeSeriesQuestion(id: string, db = database, now = Date.now()): Promise<TestAttempt> {
+  return updateAttempt(id, attempt => advanceSeriesQuestion(attempt, now), db);
 }
 export function revealTestAnswer(id: string, cardId: string, db = database, now = Date.now()): Promise<TestAttempt> {
   return updateAttempt(id, attempt => revealTestAttempt(attempt, cardId, now), db);

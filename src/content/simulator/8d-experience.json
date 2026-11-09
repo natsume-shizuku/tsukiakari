@@ -1,0 +1,1097 @@
+{
+  "sources": [
+    { "id": "sim-cb-s03", "title": "Use automation dictionary to pass parameter keys", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/automation-dictionary-keys" },
+    { "id": "sim-cb-s07", "title": "Manage session templates", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/session-templates" },
+    { "id": "sim-cb-s08", "title": "Manage application tab templates", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/application-tab-templates" },
+    { "id": "sim-cb-s09", "title": "Manage notification settings and templates", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/notification-templates" },
+    { "id": "sim-cb-s10", "title": "Manage scripts", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/agent-scripts" },
+    { "id": "sim-cb-s12", "title": "Add users to experience profiles", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/add-profile-default" },
+    { "id": "sim-cb-s13", "title": "Configure the inbox", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-inbox" },
+    { "id": "sim-cb-s14", "title": "Use views and filters in the inbox", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/inbox-views-filters" },
+    { "id": "sim-cb-s20", "title": "Manage Customer Knowledge Management Agent", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/admin-km-agent" },
+    { "id": "sim-cb-s23", "title": "Configure experience profiles", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-agent-experience-profile" },
+    { "id": "sim-d5-s01", "title": "Create productivity automation macros", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/macros-productivity-automation" },
+    { "id": "sim-d5-s02", "title": "Use session connector macros", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/macros-session-action" },
+    { "id": "sim-d5-s03", "title": "Use Omnichannel connector macros", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/macros-omnichannel-action" },
+    { "id": "sim-d5-s04", "title": "Manage integrated search providers", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/add-search-provider" },
+    { "id": "sim-d5-s05", "title": "Configure knowledge management", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/set-up-knowledge-management-embedded-knowledge-search" },
+    { "id": "sim-d5-s06", "title": "Search knowledge articles", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/search-knowledge-articles-csh" },
+    { "id": "sim-d5-s07", "title": "Configure knowledge search control on app side pane for entity records", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-knowledge-search-control-productivity-pane" },
+    { "id": "sim-d5-s08", "title": "Configure Microsoft Teams chats", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-teams-chat" },
+    { "id": "sim-d5-s09", "title": "Manage custom productivity tools for service representatives", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/manage-custom-productivity-tools" },
+    { "id": "sim-d5-s10", "title": "Enable multisession experience and productivity tools in custom apps", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/enable-multisession-custom-apps" },
+    { "id": "sim-d5-s11", "title": "createSession method (app profile manager) JavaScript API Reference", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/reference/methods/createsession" },
+    { "id": "sim-d5-s12", "title": "canCreateSession method (app profile manager) JavaScript API Reference", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/reference/methods/cancreatesession" },
+    { "id": "sim-d5-s13", "title": "createTab method (app profile manager) JavaScript API Reference", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/reference/methods/createtab" },
+    { "id": "sim-d5-s14", "title": "linkToConversation (Omnichannel JavaScript API reference)", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/reference/methods/linktoconversation" },
+    { "id": "sim-d5-s15", "title": "Create and manage data masking rules", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/data-masking-settings" },
+    { "id": "sim-d5-s16", "title": "Add the Knowledge Base Search control to Dynamics 365 Customer Service forms", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/add-knowledge-base-search-control-forms" },
+    { "id": "sim-d5-s17", "title": "App profile manager JavaScript API Reference", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/microsoft-apm" }
+  ],
+  "groups": [],
+  "questions": [
+    {
+      "id": "sim-d5-q01",
+      "revision": 1,
+      "kind": "match",
+      "domainId": "representative-experience",
+      "objectiveIds": ["D5.1.02"],
+      "conceptId": "app-tab-page-type-by-hosted-content",
+      "prompt": "Copperleaf Insurance runs Dynamics 365 Contact Center standalone. In Copilot Service workspace, claim sessions open the case as the anchor tab. The workspace designer is creating four custom application tab templates and will add them to the claim session template as additional tabs.\n\nYou need to choose the page type for each template.\n\nWhich page type should you choose for each template?",
+      "tray": "Page types",
+      "table": { "title": "Claim session tabs", "rowHeading": "Tab content", "answerHeading": "Page type" },
+      "tokens": [
+        { "id": "a", "text": "Entity record" },
+        { "id": "b", "text": "Entity list" },
+        { "id": "c", "text": "Search" },
+        { "id": "d", "text": "Web resource" },
+        { "id": "e", "text": "Third-party website" },
+        { "id": "f", "text": "Custom" }
+      ],
+      "rows": [
+        { "id": "r1", "label": "The knowledge base search page that Customer Service provides", "correctTokenId": "d" },
+        { "id": "r2", "label": "A Dataverse relevance search on the case title, run when the session starts", "correctTokenId": "c" },
+        { "id": "r3", "label": "A new task form, not yet saved, with its subject filled in from the case number", "correctTokenId": "a" },
+        { "id": "r4", "label": "Policy records, shown through the team's Active policies view", "correctTokenId": "b" }
+      ],
+      "answer": "Knowledge base search page: Web resource. Relevance search on the case title: Search. New task form: Entity record. Policy records through a view: Entity list.",
+      "explanation": "Each page type hosts a different kind of page, and two of the rows don't follow the obvious name. Customer Service's own knowledge base search page is hosted as a web resource: the out-of-the-box Knowledge Search template uses the Web Resource application type, and Microsoft's page-type example for a knowledge base search page is Web resource. The Search page type is the entity search, where searchType 0 selects relevance search and searchText can take a slug such as {anchor.title}. Entity record opens an existing record or a form to create one, and its data parameter prefills the new form. Entity list displays an entity view, which viewId selects.",
+      "sourceIds": ["sim-cb-s08"],
+      "tags": ["domain:representative-experience", "task:apply", "feature:application-tab-templates"],
+      "optionExplanations": {
+        "a": "Correct for the task form. Entity record displays an existing record or opens a form to create a record, and its data parameter prefills values such as the subject. It doesn't run a search or show a view.",
+        "b": "Correct for the policy records. Entity list displays an entity view, and its viewId parameter selects the view. It doesn't open a single form.",
+        "c": "Correct for the relevance search. The Search page type uses searchType 0 for relevance search, and searchText can take {anchor.title}. It isn't how Customer Service hosts its knowledge base search page, which is a web resource.",
+        "d": "Correct for the knowledge base search page. The out-of-the-box Knowledge Search template uses the Web Resource application type. A web resource tab opens the file that webresourceName names, and it doesn't take the searchType, searchText or viewId parameters.",
+        "e": "Fails on every row. Third-party website hosts an external site that's compatible with iframe hosting. All four tabs show pages from inside the app.",
+        "f": "Fails on every row. Custom hosts a Power Apps custom page that's available in the app. None of the four tabs is a custom page."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d5-n01" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d5-q02",
+      "revision": 1,
+      "kind": "match",
+      "domainId": "representative-experience",
+      "objectiveIds": ["D5.2.03"],
+      "conceptId": "macro-main-action-by-target-and-commit",
+      "prompt": "Ferrow Valley Water runs Dynamics 365 Contact Center standalone. In Copilot Service workspace, case sessions open the case as the anchor tab. A macro designer is building four macros from productivity automation actions, and each macro needs one action that does its main work.\n\nYou need to choose the main action for each macro.\n\nWhich action should you use for each macro?",
+      "tray": "Actions",
+      "table": { "title": "Macro design", "rowHeading": "Macro purpose", "answerHeading": "Action" },
+      "tokens": [
+        { "id": "a", "text": "Update an existing record" },
+        { "id": "b", "text": "Autofill form fields" },
+        { "id": "c", "text": "Clone current record" },
+        { "id": "d", "text": "Clone input record" },
+        { "id": "e", "text": "Open a new form to create a record" },
+        { "id": "f", "text": "Save the record" }
+      ],
+      "rows": [
+        { "id": "r1", "label": "Change the priority of the case open in the focused tab, with the new value saved by that action alone", "correctTokenId": "a" },
+        { "id": "r2", "label": "Fill in fields on a new task form in the focused tab, for the representative to check before saving", "correctTokenId": "b" },
+        { "id": "r3", "label": "Start a new task form with Regarding set to the case", "correctTokenId": "e" },
+        { "id": "r4", "label": "Copy another case, known only by its ID, into a new form that isn't saved yet", "correctTokenId": "d" }
+      ],
+      "answer": "Case priority: Update an existing record. Fields on the focused task form: Autofill form fields. New task form: Open a new form to create a record. Copy of another case: Clone input record.",
+      "explanation": "The actions differ in what they act on and whether they save. Update an existing record takes an entity logical name and record ID and changes the record as a back-end operation, so the new priority is saved without a form save. Autofill form fields works on the form in the focused tab and doesn't save the values until the form autosaves, which leaves the representative to check them. Open a new form to create a record opens the task and can set Regarding by passing the record ID, type and name as separate attributes. Clone input record copies the fields of a record identified by its ID and logical name without saving it, while Clone current record copies only the record open in the current tab.",
+      "sourceIds": ["sim-d5-s01"],
+      "tags": ["domain:representative-experience", "task:apply", "feature:macros"],
+      "optionExplanations": {
+        "a": "Correct for the case priority. It needs the entity logical name and record ID, and it updates the record as a back-end operation, so the change is saved without a form save. It can't fill a new task that has no record ID yet.",
+        "b": "Correct for the focused task form. It applies to the form in the focused tab with the same entity type and doesn't save the values until the form autosaves, so on row 1 it would change the case form without saving the priority.",
+        "c": "Fails on every row. It clones the record that's open in the current tab. Row 4 copies another case that the macro knows only by its ID, and no other row copies a record.",
+        "d": "Correct for the copy of another case. It clones the record given by Entity record ID and Entity logical name and doesn't save the copy. It doesn't change or create other records.",
+        "e": "Correct for the new task. It opens a form to create a record, and a lookup such as Regarding is set by passing the related record's ID, type and name as separate attributes. It doesn't change an existing account.",
+        "f": "Fails on every row. It saves a record once its mandatory fields are filled, so it follows another action rather than doing the main work."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d5-n02" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d5-q03",
+      "revision": 1,
+      "kind": "match",
+      "domainId": "representative-experience",
+      "objectiveIds": ["D5.1.03"],
+      "conceptId": "inbox-custom-record-card-and-mailbox-view",
+      "prompt": "Greystoke Home Warranty runs Dynamics 365 Contact Center standalone. Claims representatives use a custom experience profile with the inbox turned on. Claims are stored in a custom Warranty claim table, and customers send claim emails to claims@greystokewarranty.com.\n\nYou need to configure the profile's inbox to meet three requirements.\n\nWhat should you configure for each requirement?",
+      "tray": "Configurations",
+      "table": { "title": "Claims inbox", "rowHeading": "Requirement", "answerHeading": "Configuration" },
+      "tokens": [
+        { "id": "a", "text": "On the Inbox record types tab, add the record type" },
+        { "id": "b", "text": "On the Inbox record types tab, edit the record type's card attributes" },
+        { "id": "c", "text": "Add a custom view that uses the Emails in a shared mailbox setting" },
+        { "id": "d", "text": "Add a custom view that uses the Emails sent to me setting" },
+        { "id": "e", "text": "Add a custom view that uses the Emails assigned to me setting" },
+        { "id": "f", "text": "In the view's Sort section, add the attributes" }
+      ],
+      "rows": [
+        { "id": "r1", "label": "Warranty claim records can be shown in the inbox", "correctTokenId": "a" },
+        { "id": "r2", "label": "Each warranty claim card shows the product and the claim amount", "correctTokenId": "b" },
+        { "id": "r3", "label": "A view lists emails that have the claims address in the To field", "correctTokenId": "c" }
+      ],
+      "answer": "Warranty claim records: add the record type on the Inbox record types tab. Card content: edit the record type's card attributes on the same tab. Claims address view: add a custom view that uses the Emails in a shared mailbox setting.",
+      "explanation": "By default the inbox supports tables such as case, email, conversation and voicemail, and a custom table is brought in by adding it on the Inbox record types tab. The same tab is where you select a record type and add attributes to control what its cards display. For email, the Emails in a shared mailbox simple setting shows emails sent to an address that the admin specifies, using the To field only. Emails sent to me depends on the signed-in user being a recipient, and Emails assigned to me depends on the email's Owner or Worked by field.",
+      "sourceIds": ["sim-cb-s13", "sim-cb-s14"],
+      "tags": ["domain:representative-experience", "task:apply", "feature:inbox"],
+      "optionExplanations": {
+        "a": "Correct for the warranty claim records. Bringing your own entity into the inbox is done on the Inbox record types tab with + Add. It doesn't choose what the cards display.",
+        "b": "Correct for the card content. Selecting the record type on the Inbox record types tab opens Edit record type, where you add or rearrange the attributes that the card displays.",
+        "c": "Correct for the claims address view. This simple setting shows emails sent to an address that the admin specifies, using the To field and not Cc or Bcc.",
+        "d": "Fails. This setting shows emails where the signed-in user is listed in To, Cc or Bcc. It doesn't target the claims address.",
+        "e": "Fails. This setting shows emails whose Owner or Worked by field is the current user. It doesn't target the claims address.",
+        "f": "Fails. Custom sort changes the order of items in a view. It doesn't add a table to the inbox or change what a card shows."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d5-n03" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d5-q04",
+      "revision": 1,
+      "kind": "match",
+      "domainId": "representative-experience",
+      "objectiveIds": ["D5.2.04"],
+      "conceptId": "teams-connected-chat-rights-join-and-updates",
+      "prompt": "Brindle Lane Pharmacy runs Dynamics 365 Contact Center standalone, with Teams chat turned on for Copilot Service workspace. Representatives connect Teams chats to cases, and they can edit the cases they take over. Representatives and quality leads use custom security roles, and none of those roles includes the Disconnect Teams chat from Dynamics 365 record privilege. For every record type, the disconnect, Join chat and key-update settings are currently off.\n\nYou need to meet four requirements without giving anyone rights that a requirement doesn't need.\n\nWhat should you configure for each requirement?",
+      "tray": "Settings",
+      "table": { "title": "Teams collaboration", "rowHeading": "Requirement", "answerHeading": "Setting" },
+      "tokens": [
+        { "id": "a", "text": "Turn on Record owner can disconnect chats for the Case record type" },
+        { "id": "b", "text": "Turn on Chat connector can disconnect chat for the Case record type" },
+        { "id": "c", "text": "Grant the Disconnect Teams chat from Dynamics 365 record privilege in the quality leads' role" },
+        { "id": "d", "text": "Turn on Join chat for the Case record type" },
+        { "id": "e", "text": "Turn on Receive notification on key updates for the Case record type" },
+        { "id": "f", "text": "Turn on Sync Teams chats with records (Preview)" }
+      ],
+      "rows": [
+        { "id": "r1", "label": "Quality leads can disconnect any connected chat, on any record type", "correctTokenId": "c" },
+        { "id": "r2", "label": "A case's owner can disconnect chats that colleagues connected to that case", "correctTokenId": "a" },
+        { "id": "r3", "label": "A representative who takes over a case can read the full message history of the chats already connected to it", "correctTokenId": "d" },
+        { "id": "r4", "label": "Chat participants are told automatically when a case's status changes", "correctTokenId": "e" }
+      ],
+      "answer": "Quality leads: grant the disconnect privilege in their role. Case owners: turn on Record owner can disconnect chats for cases. Representatives taking over a case: turn on Join chat for cases. Status changes: turn on Receive notification on key updates for cases.",
+      "explanation": "Disconnect rights come in two scopes. A security role privilege lets every user with that role disconnect chats connected to any record type, which fits the quality leads. The two toggles work per record type: Record owner can disconnect chats covers chats on records the user owns, including chats a colleague connected, and Chat connector can disconnect chat covers only chats the user connected. Join chat lets users view and join connected chats on records they have write access to, such as a case they've taken over. The timeline sync preview shows only who connected each chat and who sent the last message, so reading the whole chat still depends on joining it. Receive notification on key updates sends updates to the chat when selected fields change, and Status is among the preconfigured case attributes.",
+      "sourceIds": ["sim-d5-s08"],
+      "tags": ["domain:representative-experience", "task:apply", "feature:teams-chat"],
+      "optionExplanations": {
+        "a": "Correct for case owners. Record owners can disconnect any chats connected to a record they own, and the setting is assigned per record type. The privilege would also cover every other record and record type, which the requirement doesn't need.",
+        "b": "Fails. This lets the user who connected a chat disconnect it. The owner on row 2 didn't connect those chats, and it doesn't give quality leads rights over every chat.",
+        "c": "Correct for quality leads. With this privilege in a role, all users with that role can disconnect chats connected to any record type. The per-record-type toggles can't give that reach.",
+        "d": "Correct for a representative who takes over a case. Join chat lets users view and join connected chats on records they have write access to, and joining shows the full chat exchange. It's set per record type.",
+        "e": "Correct for status changes. It sends updates to all chat participants when a selected field on the connected record changes. For cases, Priority, Status and Status Reason are preconfigured.",
+        "f": "Fails on every row. This preview setting shows each connected chat on the record's timeline, with who connected it and who sent the last message. Reading the full exchange still needs Join chat, and the setting doesn't send field updates or grant disconnect rights."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d5-n06" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d5-q05",
+      "revision": 1,
+      "kind": "order",
+      "domainId": "representative-experience",
+      "objectiveIds": ["D5.3.02"],
+      "conceptId": "integrated-provider-trial-activate-backfill",
+      "prompt": "Wyndale Cycles runs Dynamics 365 Contact Center standalone. Its public support site is a static website, and its site map includes a lastmod tag for each article. Integrated search providers are already provisioned, and the Integrated Search API trigger flow is turned on. Nothing has been set up for the support site yet.\n\nWyndale requires:\n- No support-site article appears in representatives' search results until a sample ingestion has been checked for crawl failures.\n- After that check, a one-off ingestion picks up articles updated during the past 30 days.\n\nYou need to add the support site as an integrated search provider.\n\nWhich four actions should you perform in sequence?",
+      "tray": "Actions",
+      "tokens": [
+        { "id": "a", "text": "Run a time-range based ingestion." },
+        { "id": "b", "text": "Select Save as draft in the wizard's Summary section." },
+        { "id": "c", "text": "Activate the search provider." },
+        { "id": "d", "text": "Run a trial ingestion." },
+        { "id": "e", "text": "Complete the wizard, and then select Save and close." },
+        { "id": "f", "text": "Add Integrated Search Dataprovider Id as a search filter." }
+      ],
+      "correctOrder": ["e", "d", "c", "a"],
+      "answer": "Complete the wizard and select Save and close, run a trial ingestion, activate the search provider, and then run a time-range based ingestion.",
+      "explanation": "Each step needs the status that the step before it produces. Save and close saves the provider as Inactive with status reason Validated, and a trial ingestion can run only in that state. The trial has to come before activation, both because it runs on an inactive, validated provider and because activating starts ingestion and puts articles into search results. A time-range based ingestion runs only when the provider is Active with status reason Ingestion Ready, so activation comes before it, as Microsoft states after the trial.",
+      "sourceIds": ["sim-d5-s04"],
+      "tags": ["domain:representative-experience", "task:apply", "feature:integrated-search-providers"],
+      "optionExplanations": {
+        "a": "Correct as the fourth step. It needs the provider to be Active with status reason Ingestion Ready, and it picks up updated articles from the date range you specify.",
+        "b": "Fails. Save as draft leaves the provider Inactive with status reason Draft, and you can't run any ingestion in that state.",
+        "c": "Correct as the third step. Activating starts ingestion of new and updated articles and makes articles appear in search results, so it has to wait for the trial check.",
+        "d": "Correct as the second step. A trial ingestion runs when the provider is Inactive with status reason Validated, and its errors show in the Crawl failures column on the Insights tab.",
+        "e": "Correct as the first step. Save and close puts the new provider in Inactive status with status reason Validated, which the trial ingestion needs.",
+        "f": "Fails. A search filter limits results to selected providers when Dataverse search is on. It doesn't ingest articles or control when they appear."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d5-n09" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d5-q06",
+      "revision": 1,
+      "kind": "hotspot",
+      "domainId": "representative-experience",
+      "objectiveIds": ["D5.1.01"],
+      "conceptId": "custom-default-profile-switch-effects",
+      "prompt": "Calder Rail runs Dynamics 365 Contact Center standalone. Its experience profiles are:\n- Legacy Desk: a custom profile that's currently the default\n- Frontline: a custom profile with rank 2, mapped to the Rail CSR security role\n- Specialists: a custom profile with Mia Okafor and Ravi Shah added in its Users section\n\nThe administrator wants Frontline to become the default profile instead of Legacy Desk.\n\nYou need to plan the change.\n\nWhat should you expect for each item?",
+      "table": { "title": "Default profile change", "rowHeading": "Item", "answerHeading": "Expected behavior" },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Making Frontline the default while Legacy Desk is still the default",
+          "options": [
+            { "id": "r1a", "text": "Legacy Desk's default has to be removed first" },
+            { "id": "r1b", "text": "Legacy Desk's default is removed automatically" },
+            { "id": "r1c", "text": "Both become defaults, and rank decides" }
+          ],
+          "correctOptionId": "r1a"
+        },
+        {
+          "id": "r2",
+          "label": "Frontline's Rail CSR mapping after Frontline becomes the default",
+          "options": [
+            { "id": "r2a", "text": "It's removed" },
+            { "id": "r2b", "text": "It stays, with rank 2" },
+            { "id": "r2c", "text": "It stays, without a rank" }
+          ],
+          "correctOptionId": "r2a"
+        },
+        {
+          "id": "r3",
+          "label": "Mia Okafor after Frontline becomes the default",
+          "options": [
+            { "id": "r3a", "text": "She keeps Specialists" },
+            { "id": "r3b", "text": "She moves to Frontline" },
+            { "id": "r3c", "text": "She gets an out-of-the-box default profile" }
+          ],
+          "correctOptionId": "r3a"
+        }
+      ],
+      "answer": "Legacy Desk: remove its default status first. Rail CSR mapping: removed. Mia Okafor: keeps Specialists.",
+      "explanation": "Only one profile can be the default. To change it, you use Remove Default on the current default and then set the new profile as the default. When a custom profile becomes the default, its existing security roles are removed and roles can no longer be assigned to it, so Frontline stops being a role-mapped profile. A custom default doesn't apply to users who are assigned specific custom profiles, so Mia keeps Specialists. The out-of-the-box profile is assigned only when there's no custom default and no role-mapped profile.",
+      "sourceIds": ["sim-cb-s12"],
+      "tags": ["domain:representative-experience", "task:evaluate", "feature:experience-profiles"],
+      "optionExplanations": {
+        "r1a": "Correct. You can't set multiple profiles as the default. To change it, Microsoft says to use Remove Default and then set the alternative profile as the default.",
+        "r1b": "Fails. You can't set multiple profiles as the default, and Microsoft's procedure for changing it is to use Remove Default on the current default and then set the alternative profile.",
+        "r1c": "Fails. You can't set multiple profiles as the default, and rank decides between role-mapped profiles, not between defaults.",
+        "r2a": "Correct. When a custom profile is set as the default, its existing security roles are removed, and you can no longer assign security roles to it.",
+        "r2b": "Fails. Setting a custom profile as the default removes its existing security roles, so the mapping and its rank don't stay.",
+        "r2c": "Fails. The security roles themselves are removed, not just the rank.",
+        "r3a": "Correct. A custom default profile isn't applicable to users who are assigned specific custom experience profiles, so her direct assignment still applies.",
+        "r3b": "Fails. The default covers users without a more specific assignment. Mia is assigned to Specialists directly.",
+        "r3c": "Fails. The out-of-the-box profile applies only when there's no custom default and no role-mapped profile. Here a custom default exists, and Mia also has a direct assignment."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d5-n03" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d5-q07",
+      "revision": 1,
+      "kind": "hotspot",
+      "domainId": "representative-experience",
+      "objectiveIds": ["D5.1.04"],
+      "conceptId": "generic-session-template-anchor-icon-title",
+      "prompt": "Harrowgate Ferries runs Dynamics 365 Contact Center standalone and is creating a custom session template for its WhatsApp workstream in Copilot Service workspace. Requirements:\n- A custom Passenger summary application tab opens as the anchor tab.\n- The session shows a ferry icon that the design team supplied as an .ico image file.\n- The session title that representatives see shows the customer's name.\n\nYou need to configure the session template.\n\nWhat should you configure for each setting?",
+      "table": { "title": "WhatsApp session template", "rowHeading": "Setting", "answerHeading": "Value" },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Type",
+          "options": [
+            { "id": "r1a", "text": "Generic" },
+            { "id": "r1b", "text": "Entity, with Contact as the entity" },
+            { "id": "r1c", "text": "Entity, with Case as the entity" }
+          ],
+          "correctOptionId": "r1a"
+        },
+        {
+          "id": "r2",
+          "label": "Session Icon",
+          "options": [
+            { "id": "r2a", "text": "The ferry image deployed as a web resource" },
+            { "id": "r2b", "text": "A slug that resolves to the ferry image's URL" },
+            { "id": "r2c", "text": "The ferry image's address on the company website" }
+          ],
+          "correctOptionId": "r2a"
+        },
+        {
+          "id": "r3",
+          "label": "Title",
+          "options": [
+            { "id": "r3a", "text": "{customerName}" },
+            { "id": "r3b", "text": "${customerName}" },
+            { "id": "r3c", "text": "${$session.customerName}" }
+          ],
+          "correctOptionId": "r3a"
+        }
+      ],
+      "answer": "Type: Generic. Session Icon: the ferry image deployed as a web resource. Title: {customerName}.",
+      "explanation": "Two requirements decide the type. The Anchor tab option is displayed only when Type is Generic, and Session Icon is available for Generic templates only, so an Entity template can't meet either. The icon must be a deployed web resource file: slugs can't customize it, and GIF files aren't supported. Session and notification titles take template slugs in the {Slug} format, as in the page's {customerName} title example. The ${Slug} format belongs to macros and scripts, and ${$session.<slug>} to the session connector context.",
+      "sourceIds": ["sim-cb-s07", "sim-cb-s03"],
+      "tags": ["domain:representative-experience", "task:apply", "feature:session-templates"],
+      "optionExplanations": {
+        "r1a": "Correct. Generic is the type for templates assigned to any channel, and only a Generic template shows the Anchor tab option and supports a session icon.",
+        "r1b": "Fails. Contact is a user-owned table that the Entity list offers, but an Entity template doesn't show the Anchor tab option and can't use a session icon.",
+        "r1c": "Fails. An Entity template for cases doesn't show the Anchor tab option and can't use a session icon.",
+        "r2a": "Correct. A web resource file for the icon must be deployed, and only a web resource file can be used. GIF files aren't supported, and Microsoft's own example is an .ico file.",
+        "r2b": "Fails. You can use a web resource file only, not slugs, to customize the session icon.",
+        "r2c": "Fails. The icon has to be a deployed web resource file, not an outside address.",
+        "r3a": "Correct. Templates use the {Slug} format, and {customerName} is Microsoft's own example for a session title.",
+        "r3b": "Fails. The ${Slug} format is for macros and scripts. Templates use {Slug}.",
+        "r3c": "Fails. The ${$session.<slug>} format runs a slug in the session connector context of a macro. It isn't a template format."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d5-n04" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d5-q08",
+      "revision": 1,
+      "kind": "hotspot",
+      "domainId": "representative-experience",
+      "objectiveIds": ["D5.1.05"],
+      "conceptId": "desktop-alert-icon-timer-countdown-limits",
+      "prompt": "Ashcombe Energy runs Dynamics 365 Contact Center standalone. Representatives use supported browsers that allow notifications from the app, and their Windows notification settings permit them. The administrator is testing three custom notification templates, each with Show desktop notifications set to Always:\n- Billing chat: the icon is an SVG web resource, and Countdown (seconds) is 120.\n- Outage chat: Countdown (seconds) is 4.\n- Moving home chat: Show Countdown is Yes, and Countdown (seconds) is 90.\n\nYou need to set the expected result for each test.\n\nWhat should each test expect?",
+      "table": { "title": "Desktop alert tests", "rowHeading": "Template", "answerHeading": "Expected desktop alert" },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Billing chat",
+          "options": [
+            { "id": "r1a", "text": "It appears without the icon" },
+            { "id": "r1b", "text": "It appears with the SVG icon" },
+            { "id": "r1c", "text": "It doesn't appear" }
+          ],
+          "correctOptionId": "r1a"
+        },
+        {
+          "id": "r2",
+          "label": "Outage chat",
+          "options": [
+            { "id": "r2a", "text": "It appears for 4 seconds" },
+            { "id": "r2b", "text": "It doesn't appear" },
+            { "id": "r2c", "text": "It appears for the default 120 seconds" }
+          ],
+          "correctOptionId": "r2b"
+        },
+        {
+          "id": "r3",
+          "label": "Moving home chat",
+          "options": [
+            { "id": "r3a", "text": "It shows the timer and disappears after 90 seconds" },
+            { "id": "r3b", "text": "It shows no timer and stays until answered" },
+            { "id": "r3c", "text": "It shows no timer and disappears after 90 seconds" }
+          ],
+          "correctOptionId": "r3c"
+        }
+      ],
+      "answer": "Billing chat: the alert appears without the icon. Outage chat: no desktop alert appears. Moving home chat: the alert shows no timer and disappears after 90 seconds.",
+      "explanation": "Desktop alerts have their own limits. An SVG icon isn't shown in desktop notifications. If the countdown is set to less than 5 seconds, the desktop notification doesn't appear. The timer isn't shown in desktop notifications even when Show Countdown is Yes, but it still runs, and the notification disappears when the countdown ends.",
+      "sourceIds": ["sim-cb-s09"],
+      "tags": ["domain:representative-experience", "task:evaluate", "feature:notification-templates"],
+      "optionExplanations": {
+        "r1a": "Correct. With Show desktop notifications on, an SVG icon isn't shown in the desktop notification. The limit concerns the icon.",
+        "r1b": "Fails. Microsoft notes that an SVG icon won't be shown in desktop notifications.",
+        "r1c": "Fails. The SVG limit is that the icon isn't shown in the desktop notification. This template's countdown is 120 seconds, so the under-5-second rule doesn't apply.",
+        "r2a": "Fails. A countdown of less than 5 seconds stops the desktop notification from appearing at all.",
+        "r2b": "Correct. If the countdown setting is less than 5 seconds, the desktop notification doesn't appear.",
+        "r2c": "Fails. 120 seconds is the default value, but this template sets 4 seconds, which is less than the 5 seconds a desktop notification needs.",
+        "r3a": "Fails. With Show desktop notifications on, the timer won't be shown in desktop notifications, even though Show Countdown is Yes.",
+        "r3b": "Fails. The timer runs whether or not it's shown, and the notification disappears after the timeout.",
+        "r3c": "Correct. The desktop alert doesn't show the timer, but the timer still runs and the notification disappears after the countdown."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d5-n04" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d5-q09",
+      "revision": 1,
+      "kind": "hotspot",
+      "domainId": "representative-experience",
+      "objectiveIds": ["D5.2.03"],
+      "conceptId": "macro-stale-context-versus-stale-form",
+      "prompt": "Petrel Bay Telecom runs Dynamics 365 Contact Center standalone. In Copilot Service workspace, case sessions open the case as the anchor tab. Representatives run two macros from the productivity pane:\n- Escalate: Update an existing record adds [Escalated] to the start of the anchor case's title. Open a new form to create a record then opens a task whose subject is built from ${anchor.title}. The task subject shows the title without [Escalated].\n- Close out: Resolve a case resolves the anchor case. When the macro finishes, the case form still shows the case as active.\n\nYou need to add actions so that each macro shows current data.\n\nWhat should you add to each macro?",
+      "table": { "title": "Macro fixes", "rowHeading": "Macro", "answerHeading": "Actions to add" },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Escalate, between the update and the new form",
+          "options": [
+            { "id": "r1a", "text": "Refresh the session context" },
+            { "id": "r1b", "text": "Get the current tab, then Refresh the tab" },
+            { "id": "r1c", "text": "Set session context" },
+            { "id": "r1d", "text": "Get the current tab, then Focus on the tab" }
+          ],
+          "correctOptionId": "r1a"
+        },
+        {
+          "id": "r2",
+          "label": "Close out, after the case is resolved",
+          "options": [
+            { "id": "r2a", "text": "Refresh the session context" },
+            { "id": "r2b", "text": "Get the current tab, then Refresh the tab" },
+            { "id": "r2c", "text": "Set session context" },
+            { "id": "r2d", "text": "Get the current tab, then Focus on the tab" }
+          ],
+          "correctOptionId": "r2b"
+        }
+      ],
+      "answer": "Escalate: add Refresh the session context between the update and the new form. Close out: add Get the current tab, then Refresh the tab, after the case is resolved.",
+      "explanation": "The two macros go stale in different places. Session context variables for an entity session are set when the session starts, so after a macro updates the case title, ${anchor.title} still returns the cached value until Refresh the session context runs. Resolving the case through a macro doesn't refresh the tab, so the form keeps showing the old state until the macro gets the tab's ID with Get the current tab and passes it to Refresh the tab.",
+      "sourceIds": ["sim-d5-s02", "sim-d5-s01"],
+      "tags": ["domain:representative-experience", "task:apply", "feature:macros"],
+      "optionExplanations": {
+        "r1a": "Correct. Microsoft's example for this case adds Refresh the session context after Update an existing record, so the next action uses the updated title rather than the cached one.",
+        "r1b": "Fails. Refreshing the tab reloads the form, but the slug comes from the session context, which isn't updated when the case title changes.",
+        "r1c": "Fails. Set session context creates a session variable of your own. It doesn't update the value that ${anchor.title} returns.",
+        "r1d": "Fails. Focusing a tab doesn't change the cached session context that the slug reads.",
+        "r2a": "Fails. This action refreshes the session context that macros read. Microsoft's resolve-case example refreshes the tab instead, because resolving a case through a macro doesn't refresh the tab.",
+        "r2b": "Correct. When a macro resolves a case, the tab isn't refreshed automatically. Get the current tab returns the Tab ID, and Refresh the tab uses it.",
+        "r2c": "Fails. Creating a session variable doesn't refresh the case form.",
+        "r2d": "Fails. Focus on the tab moves focus to a tab. It doesn't refresh the form, which is already the tab in view."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d5-n05" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d5-q10",
+      "revision": 1,
+      "kind": "hotspot",
+      "domainId": "representative-experience",
+      "objectiveIds": ["D5.2.06"],
+      "conceptId": "link-to-conversation-override-refresh-active",
+      "prompt": "Marlpit Outdoor Gear runs Dynamics 365 Contact Center standalone. A custom extension in Copilot Service workspace finds a warranty case and calls Microsoft.Omnichannel.linkToConversation with incident as the entity, the case ID and the conversation ID. Two tests use an active conversation that already has a different case linked. A third test uses a conversation that was closed before the call.\n\nYou need to write the expected result for each item.\n\nWhat should each test expect?",
+      "table": { "title": "Link tests", "rowHeading": "Item", "answerHeading": "Expected result" },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "The case that was already linked",
+          "options": [
+            { "id": "r1a", "text": "It's replaced by the new case" },
+            { "id": "r1b", "text": "It stays linked beside the new case" },
+            { "id": "r1c", "text": "It stays linked, and the call is rejected" }
+          ],
+          "correctOptionId": "r1a"
+        },
+        {
+          "id": "r2",
+          "label": "When the representative sees the new link",
+          "options": [
+            { "id": "r2a", "text": "As soon as the call resolves" },
+            { "id": "r2b", "text": "After the extension refreshes the tab" },
+            { "id": "r2c", "text": "After the representative saves the form" }
+          ],
+          "correctOptionId": "r2b"
+        },
+        {
+          "id": "r3",
+          "label": "The call for the closed conversation",
+          "options": [
+            { "id": "r3a", "text": "It links the case to the closed conversation" },
+            { "id": "r3b", "text": "It reopens the conversation and links the case" },
+            { "id": "r3c", "text": "It isn't supported, because the conversation isn't active" }
+          ],
+          "correctOptionId": "r3c"
+        }
+      ],
+      "answer": "Existing case: replaced by the new case. New link: shown after the extension refreshes the tab. Closed conversation: not supported.",
+      "explanation": "linkToConversation writes the link only in the database. One account or contact and one case can be linked to a conversation at a time, so linking a new case overrides the previous case link. The link is reflected after the page is refreshed, and the caller is responsible for that refresh, which is why Microsoft's example calls Microsoft.Apm.refreshTab when the promise resolves. Linking is supported only for active conversations.",
+      "sourceIds": ["sim-d5-s14"],
+      "tags": ["domain:representative-experience", "task:evaluate", "feature:omnichannel-javascript-api"],
+      "optionExplanations": {
+        "r1a": "Correct. Only one case can be linked to a conversation at a time, and linking a new case overrides the previous record link.",
+        "r1b": "Fails. A conversation holds one case link at a time, so the old link doesn't stay.",
+        "r1c": "Fails. The new link overrides the previous one rather than being rejected.",
+        "r2a": "Fails. The method only links the records in the database. The link shows after the page is refreshed.",
+        "r2b": "Correct. The link is reflected after the page is refreshed, and the caller is responsible for the UI refresh, as in Microsoft's refreshTab example.",
+        "r2c": "Fails. The link is already written to the database. What's missing is a page refresh, which the caller triggers.",
+        "r3a": "Fails. Linking is supported only to active conversations.",
+        "r3b": "Fails. The method links records to a conversation, and linking is supported only for active conversations.",
+        "r3c": "Correct. Microsoft notes that linking is supported only to active conversations."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d5-n07" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d5-q11",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "representative-experience",
+      "objectiveIds": ["D5.2.01"],
+      "conceptId": "custom-app-pane-tool-multisession-alm",
+      "prompt": "Lowther Appliance Care built Claims Desk, a custom model-driven app, in an unmanaged solution in its development environment, and it deploys the solution to production as a managed solution. A custom page named Parts Lookup and its pane tool configuration, with Global set to Yes, already exist in both environments. In production, claims representatives are assigned a custom experience profile named Claims Reps and have the Productivity tools user role.\n\nRepresentatives must see Parts Lookup in the productivity pane while they work multiple sessions in Claims Desk in production.\n\nYou need to complete the setup.\n\nWhich two actions should you perform? Each correct answer presents part of the solution.",
+      "options": [
+        { "id": "a", "text": "In development, select Multisession with productivity tools for Claims Desk, then export the solution and import it to production." },
+        { "id": "b", "text": "In production, select Multisession with productivity tools for Claims Desk in Productivity setting for model-driven apps." },
+        { "id": "c", "text": "In the Claims Reps profile, turn on the productivity pane and the Parts Lookup tool, and save." },
+        { "id": "d", "text": "In the Claims Reps profile, add an entity session template that opens Parts Lookup as an additional tab." },
+        { "id": "e", "text": "Assign the Productivity tools administrator role to the claims representatives in production." }
+      ],
+      "correctOptionIds": ["a", "c"],
+      "answer": "Enable Multisession with productivity tools for Claims Desk in development and carry it to production with the solution, and turn on the productivity pane and Parts Lookup in the Claims Reps profile.",
+      "explanation": "Two layers are missing. The app itself needs the multisession and productivity tools setting, and Microsoft supports enabling it only for a model-driven app in an unmanaged solution. Claims Desk is managed in production, so you enable it in development and carry it over by exporting and importing the solution, which includes the multisession settings in the app module. A registered pane tool also isn't visible until it's enabled in the productivity pane of the representatives' experience profile.",
+      "sourceIds": ["sim-d5-s10", "sim-d5-s09", "sim-cb-s23"],
+      "tags": ["domain:representative-experience", "task:apply", "feature:productivity-pane"],
+      "optionExplanations": {
+        "a": "Correct, and part of the solution. Multisession can be enabled only for an app in an unmanaged solution, and the setting travels in the app module when you export and import the solution. Selecting it also selects Productivity tool.",
+        "b": "Fails. In production Claims Desk is part of a managed solution, which shows a lock icon and can't be edited there.",
+        "c": "Correct, and part of the solution. A configured custom tool appears to representatives only after it's enabled in the Productivity pane of their experience profile.",
+        "d": "Fails. An additional tab opens in the session's tab panel, not in the productivity pane. Custom tools are enabled through the profile's Productivity pane instead.",
+        "e": "Fails. Productivity tools administrator is the role for configuring tools. Representatives need Productivity tools user, which they already have."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d5-n06" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d5-q12",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "representative-experience",
+      "objectiveIds": ["D5.2.05"],
+      "conceptId": "apm-background-session-creation-guard",
+      "prompt": "Kinloch Building Society runs Dynamics 365 Contact Center standalone. A custom control in Copilot Service workspace opens a mortgage case in a new session by calling Microsoft.Apm.createSession with a custom case session template. The template is in the representatives' experience profile. Requirements:\n- The representative's current session stays in focus when the new session opens.\n- If the workspace already has its maximum number of sessions open, the control shows its own message instead of trying to open a session.\n\nYou need to update the control.\n\nWhich two actions should you perform? Each correct answer presents part of the solution.",
+      "options": [
+        { "id": "a", "text": "Call canCreateSession first, and call createSession only when it returns true." },
+        { "id": "b", "text": "Pass isFocused set to false in the createSession input." },
+        { "id": "c", "text": "Call canCreateTab first, and call createSession only when it returns true." },
+        { "id": "d", "text": "Call requestFocus on the current session after createSession returns." },
+        { "id": "e", "text": "Call createTab with isFocused set to false instead of createSession." }
+      ],
+      "correctOptionIds": ["a", "b"],
+      "answer": "Check canCreateSession before calling createSession, and pass isFocused set to false.",
+      "explanation": "Copilot Service workspace allows up to 10 open sessions, and canCreateSession returns false when a new session can't be created, so the control can show its own message instead. The createSession input has an optional isFocused property, and Microsoft's example of a session that isn't in focus sets it to false. requestFocus only shows a notification indicator on a session that isn't in focus, and createTab and canCreateTab work on tabs within a session rather than on sessions.",
+      "sourceIds": ["sim-d5-s11", "sim-d5-s12", "sim-d5-s13", "sim-d5-s17"],
+      "tags": ["domain:representative-experience", "task:apply", "feature:app-profile-manager-api"],
+      "optionExplanations": {
+        "a": "Correct, and part of the solution. canCreateSession returns false when a new session can't be created, and Microsoft's example uses it to check whether the maximum has been reached before calling createSession.",
+        "b": "Correct, and part of the solution. isFocused sets whether the new session takes focus, and Microsoft's example of a session that isn't in focus passes false.",
+        "c": "Fails. canCreateTab reports whether a new tab can be created for a session. It doesn't check the session limit.",
+        "d": "Fails. requestFocus shows a notification indicator on a session that isn't in focus. It doesn't keep the current session in front.",
+        "e": "Fails. createTab creates a tab in the focused session, so it doesn't open the case in a new session."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d5-n07" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d5-q13",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "representative-experience",
+      "objectiveIds": ["D5.3.03"],
+      "conceptId": "record-type-autosearch-field-and-email-recipient",
+      "prompt": "Tarrant Marine Insurance runs Dynamics 365 Contact Center standalone. Representatives handle a custom Marine claim table in Copilot Service workspace, and Marine claim has been added as a knowledge record type. The table includes these columns:\n- Claim summary: multiple lines of text\n- Policyholder: lookup to Contact\n- Assigned surveyor: lookup to User\n\nRequirements:\n- When a representative opens a claim, knowledge search on the app side pane runs automatically on the claim summary.\n- Representatives can link an article to the claim and email the article's URL, with a person named on the claim filled in as the recipient.\n\nYou need to edit the Marine claim record type's knowledge settings.\n\nWhich two settings should you configure? Each correct answer presents part of the solution.",
+      "options": [
+        { "id": "a", "text": "Turn on automatic search, and provide search results using Claim summary." },
+        { "id": "b", "text": "Select Link article and email URL, and set Policyholder as the default email recipient." },
+        { "id": "c", "text": "Select Link article and email URL, and set Assigned surveyor as the default email recipient." },
+        { "id": "d", "text": "Select Link article and send article content, and set Policyholder as the default email recipient." },
+        { "id": "e", "text": "Turn on automatic search, and provide search results using Policyholder." }
+      ],
+      "correctOptionIds": ["a", "b"],
+      "answer": "Turn on automatic search using Claim summary, and select Link article and email URL with Policyholder as the default email recipient.",
+      "explanation": "In the record type's Knowledge settings dialog, Automatic search runs a search when the record opens, using the field you pick in Provide search results using. The Actions checkboxes decide what representatives can do with an article. Link article and email URL associates the article with the record and shares its URL by email, while Link article and send article content shares the article's contents. The default email recipient is available only for Customer or Lookup columns that point to an account or contact, so Policyholder qualifies and Assigned surveyor doesn't.",
+      "sourceIds": ["sim-d5-s07", "sim-d5-s16"],
+      "tags": ["domain:representative-experience", "task:apply", "feature:knowledge-record-types"],
+      "optionExplanations": {
+        "a": "Correct, and part of the solution. Turning on automatic search with Claim summary as the field runs the search on that column when a claim opens.",
+        "b": "Correct, and part of the solution. This action links the article and shares its URL by email, and Policyholder is a lookup to Contact, which the recipient setting supports.",
+        "c": "Fails. The default email recipient is available only for Customer or Lookup columns that point to an account or contact. Assigned surveyor points to User.",
+        "d": "Fails. This action emails the article's contents. The requirement is to email its URL.",
+        "e": "Fails. Automatic search would run on the policyholder rather than on the claim summary that the requirement names."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d5-n08" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d5-q14",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "representative-experience",
+      "objectiveIds": ["D5.3.04"],
+      "conceptId": "ckm-custom-record-type-harvest-trigger",
+      "prompt": "Hollybank Facilities Services runs Dynamics 365 Contact Center standalone. Engineers record completed site repairs in a custom Repair visit table. The company wants Customer Knowledge Management Agent to create an article from a single repair visit when an engineer asks for one from that record. The agent's prerequisites show Ready, and Repair visit has been added as a knowledge record type. The agent has no custom record types yet, and the company accepts production-ready preview features. After this task, the team will configure the record type's creation rules and attributes.\n\nYou need to make Repair visit available to the agent and give engineers a way to start article creation from a record.\n\nWhich two actions should you perform? Each correct answer presents part of the solution.",
+      "options": [
+        { "id": "a", "text": "On the Customer Knowledge Management Agent page, select Add record type, and add Repair visit." },
+        { "id": "b", "text": "Add a Trigger Harvesting command to the Repair visit main form by using Microsoft's sample script, and publish it." },
+        { "id": "c", "text": "On the Case tab, select Let Copilot use information from current case to create knowledge articles." },
+        { "id": "d", "text": "Turn on Track changes for Repair visit, and add Repair visit to the Entity Analytics Config table." },
+        { "id": "e", "text": "In the Custom record type section, select the option to use historical custom record types to create knowledge articles." }
+      ],
+      "correctOptionIds": ["a", "b"],
+      "answer": "Add Repair visit with Add record type on the agent's page, and add a Trigger Harvesting command to the Repair visit main form.",
+      "explanation": "Custom record types are a production-ready preview in Customer Knowledge Management Agent. Once knowledge management is on for the table, you add it on the agent's page with Add record type, up to five types. For real-time creation from one record of a custom type, Microsoft's procedure adds a trigger harvesting command button to the table's main form, and selecting it triggers harvesting for the current record. Case real-time creation runs when a case is resolved, and historical creation works through the records that match its rules after you start it, so neither gives an engineer a trigger on one record.",
+      "sourceIds": ["sim-cb-s20"],
+      "tags": ["domain:representative-experience", "task:apply", "feature:customer-knowledge-management-agent"],
+      "optionExplanations": {
+        "a": "Correct, and part of the solution. Add record type on the agent page adds a custom record type that the agent can use to create articles, after knowledge management is turned on for it.",
+        "b": "Correct, and part of the solution. Microsoft's procedure adds a trigger harvesting button to the custom table's main form with Command Designer, and the button triggers harvesting for the current record. The script is a sample that you can adapt.",
+        "c": "Fails. This option creates articles in real time when a representative resolves a case. Repair visit isn't a case.",
+        "d": "Fails. Microsoft recommends this to avoid issues when creating articles from historical data. It doesn't give engineers a trigger on a record.",
+        "e": "Fails. Historical creation works through the records that match its rules once you select Start. It isn't started from one record."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d5-n10" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d5-q15",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": ["D5.2.02", "D5.2.03"],
+      "conceptId": "script-focus-requires-session-association",
+      "prompt": "Quarry Lane Veterinary runs Dynamics 365 Contact Center standalone. Chat sessions use a custom session template, and representatives start each chat on the Standard visit script. One step in that script runs a macro that raises the case priority and then uses Set Script focus with the unique name of a separate Urgent visit script. Both must happen in a single macro run. In testing, the priority changes, but the Scripts list on the app side pane stays on Standard visit. The unique name in the action is correct.\n\nYou need representatives to move to the Urgent visit script when the macro runs.\n\nWhat should you do?",
+      "options": [
+        { "id": "a", "text": "Associate the Urgent visit script with the chat session template." },
+        { "id": "b", "text": "Build an expression on the chat session template that sets Urgent visit as the default script." },
+        { "id": "c", "text": "Add Refresh the session context to the macro before Set Script focus." },
+        { "id": "d", "text": "Change the step's action type to Script, with Urgent visit as the target script." }
+      ],
+      "correctOptionIds": ["a"],
+      "answer": "Associate the Urgent visit script with the chat session template.",
+      "explanation": "Set Script focus puts a script in focus in the Scripts list on the app side pane, but the script in focus must be associated with the session template. Scripts load for representatives according to the scripts associated with their session's template, so Urgent visit has to be added on the template's Scripts tab. A default-script expression only picks the script when a representative accepts a conversation, and a Script-type step would open the script without running the macro.",
+      "sourceIds": ["sim-d5-s01", "sim-cb-s10"],
+      "tags": ["domain:representative-experience", "task:apply", "feature:scripts"],
+      "optionExplanations": {
+        "a": "Correct. Microsoft states that the script set in focus must be associated with the session template.",
+        "b": "Fails. The expression chooses the default script when a representative accepts a conversation. It doesn't move the representative to another script partway through a session.",
+        "c": "Fails. Refresh the session context updates cached session values for entity sessions. It doesn't make a script available to the session.",
+        "d": "Fails. A Script-type step opens its target script instead of running a macro, so the priority change wouldn't happen in the same run."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d5-n05" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d5-q16",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": ["D5.3.01"],
+      "conceptId": "suggest-as-you-type-title-phrase-match",
+      "prompt": "Fenbridge Broadband runs Dynamics 365 Contact Center standalone with Dataverse search turned on. In the knowledge General settings, Enable suggest as you type and Set search mode as all are both set to Yes. During a test, a representative types router firmware rollback into the knowledge search box on the app side pane of Copilot Service workspace.\n\nYou need to define what the suggestion flyout should show.\n\nWhat should the test expect?",
+      "options": [
+        { "id": "a", "text": "Up to six articles whose titles contain the full phrase router firmware rollback" },
+        { "id": "b", "text": "Up to six articles whose titles contain all three words in any order" },
+        { "id": "c", "text": "Up to 10 articles whose title or content contains any of the three words" },
+        { "id": "d", "text": "Up to 10 articles whose title or content contains all three words" }
+      ],
+      "correctOptionIds": ["a"],
+      "answer": "Up to six articles whose titles contain the full phrase router firmware rollback.",
+      "explanation": "Suggest-as-you-type matches the search term against article titles. For a term of more than one word, it returns only titles that contain the full string, not titles that contain the individual words, and it suggests up to six articles. Set search mode as all is the search logic for knowledge search results, which then match all keywords, and the app side pane shows up to 10 results by default. Those settings describe the results list, while the flyout follows its own title rule.",
+      "sourceIds": ["sim-d5-s06", "sim-d5-s05"],
+      "tags": ["domain:representative-experience", "task:evaluate", "feature:knowledge-search"],
+      "optionExplanations": {
+        "a": "Correct. Suggestions match the full string against article titles, and up to six articles are suggested.",
+        "b": "Fails. Matching all keywords is the Set search mode as all logic for search results. Suggestions match the full phrase in the title.",
+        "c": "Fails. Any-keyword matching is the default search logic for results, and the app side pane shows up to 10 results. Suggestions match titles only, up to six.",
+        "d": "Fails. That's closer to the search results with Set search mode as all, shown up to 10 on the app side pane. The flyout matches the full phrase in titles and suggests up to six."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d5-n08" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d5-q17",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": ["D5.3.05", "D5.2.03"],
+      "conceptId": "chat-article-link-macro-portal-setting",
+      "prompt": "Linthorpe Travel Insurance runs Dynamics 365 Contact Center standalone. Its customer portal shows published knowledge articles at public URLs, and the articles that representatives share are published. Representatives want a macro that finds an article from the case title and posts the article's public link into the customer's chat.\n\nYou need to design the macro and the knowledge setting that it relies on.\n\nWhat should you do?",
+      "options": [
+        { "id": "a", "text": "Use Search the knowledge base for the populated phrase, then Send knowledge base article link in chat, and set Use an external portal to Yes with the portal's URL format." },
+        { "id": "b", "text": "Use Search the knowledge base for the populated phrase, then Send knowledge base article link in chat, and set Sync attachments to portal to Yes." },
+        { "id": "c", "text": "Use Do a relevance search based on the phrase, then Send knowledge base article link in chat, and set Use an external portal to Yes with the portal's URL format." },
+        { "id": "d", "text": "Use Do a relevance search based on the phrase, then Send knowledge base article link in chat, and set Sync attachments to portal to Yes." }
+      ],
+      "correctOptionIds": ["a"],
+      "answer": "Use Search the knowledge base for the populated phrase, then Send knowledge base article link in chat, and set Use an external portal to Yes with the portal's URL format.",
+      "explanation": "Send knowledge base article link in chat is an Omnichannel connector action that sends an article link to the conversation's chat window. Microsoft states that it must be used with the action that searches the knowledge base for the populated phrase, and that Use an external portal must be set to Yes. That portal setting includes the URL format, in which {kbnum} is replaced by the article number to build the public link. Sync attachments to portal concerns article attachments on the portal, and the relevance search action isn't the search action that the send action works with.",
+      "sourceIds": ["sim-d5-s03", "sim-d5-s05", "sim-d5-s01"],
+      "tags": ["domain:representative-experience", "task:apply", "feature:knowledge-portal"],
+      "optionExplanations": {
+        "a": "Correct. The send action must be used with Search the knowledge base for the populated phrase, and Use an external portal must be Yes, with the URL format that builds the article's public link.",
+        "b": "Fails. The search action is right, but Sync attachments to portal syncs article attachments. The send action needs Use an external portal set to Yes.",
+        "c": "Fails. The portal setting is right, but the send action must be used with Search the knowledge base for the populated phrase, not with the relevance search action.",
+        "d": "Fails. The send action needs the Search the knowledge base for the populated phrase action and Use an external portal, and this design has neither."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d5-n09" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d5-q18",
+      "revision": 1,
+      "kind": "hotspot",
+      "domainId": "channels",
+      "objectiveIds": ["D2.3.05"],
+      "conceptId": "automated-masking-sender-and-channel-scope",
+      "prompt": "Oakhurst Motor Finance runs Dynamics 365 Contact Center standalone with a live chat channel and a WhatsApp channel, which is asynchronous. In data masking, the out-of-the-box Credit Card rule is active, and both Mask private agent data from the customer and Mask private customer data from the agent are turned on.\n\nYou need to tell the compliance team where card numbers are masked.\n\nWhat happens in each case?",
+      "table": { "title": "Card number masking", "rowHeading": "Message", "answerHeading": "Result" },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "A customer types a card number in live chat",
+          "options": [
+            { "id": "r1a", "text": "Masked for the customer and the representative" },
+            { "id": "r1b", "text": "Masked only in the representative's view" },
+            { "id": "r1c", "text": "Masked only in the customer's view" },
+            { "id": "r1d", "text": "Not masked" }
+          ],
+          "correctOptionId": "r1a"
+        },
+        {
+          "id": "r2",
+          "label": "A customer types a card number in WhatsApp",
+          "options": [
+            { "id": "r2a", "text": "Masked for the customer and the representative" },
+            { "id": "r2b", "text": "Masked only in the representative's view" },
+            { "id": "r2c", "text": "Masked only in the customer's view" },
+            { "id": "r2d", "text": "Not masked" }
+          ],
+          "correctOptionId": "r2b"
+        },
+        {
+          "id": "r3",
+          "label": "A representative types a card number in a WhatsApp reply",
+          "options": [
+            { "id": "r3a", "text": "Masked for the customer and the representative" },
+            { "id": "r3b", "text": "Masked only in the representative's view" },
+            { "id": "r3c", "text": "Masked only in the customer's view" },
+            { "id": "r3d", "text": "Not masked" }
+          ],
+          "correctOptionId": "r3a"
+        }
+      ],
+      "answer": "Customer in live chat: masked for the customer and the representative. Customer in WhatsApp: masked only in the representative's view. Representative in WhatsApp: masked for the customer and the representative.",
+      "explanation": "The two settings cover different senders, and one of them behaves differently on asynchronous channels. Mask private agent data from the customer masks what a representative sends for both the customer and the representative, in live chat and in asynchronous messages. Mask private customer data from the agent masks what a customer sends for both people in live chat, but only in the representative's user interface on asynchronous channels such as WhatsApp. Text masked in a message is also masked in the conversation transcript.",
+      "sourceIds": ["sim-d5-s15", "sim-cb-s13"],
+      "tags": ["domain:channels", "task:evaluate", "feature:data-masking"],
+      "optionExplanations": {
+        "r1a": "Correct. For live chat, data the customer sends is masked for both the customer and the representative.",
+        "r1b": "Fails. The representative-only result applies to customer data on asynchronous channels. Live chat masks it for both people.",
+        "r1c": "Fails. For live chat, the customer's data is masked for both people, not only for the customer.",
+        "r1d": "Fails. The Credit Card rule is active and customer data masking is on, so the number is masked.",
+        "r2a": "Fails. On asynchronous channels, data the customer sends is masked only in the representative's user interface.",
+        "r2b": "Correct. For asynchronous channels, customer data is masked only in the representative's user interface, so the customer's own view isn't covered.",
+        "r2c": "Fails. Customer data on asynchronous channels is masked in the representative's view, not the customer's.",
+        "r2d": "Fails. The number is masked in the representative's view, because the Credit Card rule is active and customer data masking is on.",
+        "r3a": "Correct. Data a representative sends is masked for both the customer and the representative in live chat and asynchronous messages.",
+        "r3b": "Fails. The representative-only result is for customer data on asynchronous channels. Representative data is masked for both people.",
+        "r3c": "Fails. Representative data is masked for the representative too, not only for the customer.",
+        "r3d": "Fails. Mask private agent data from the customer is on and applies to asynchronous messages."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d2-n12" }],
+      "status": "draft"
+    }
+  ],
+  "editorial": [
+    {
+      "id": "sim-d5-q01", "revision": 1, "domainId": "representative-experience", "conceptId": "app-tab-page-type-by-hosted-content",
+      "objectiveIds": ["D5.1.02"], "level": "advanced", "author": "experience-author", "authoredAt": "2026-11-07", "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-cb-s08",
+          "section": "Create application tab templates; Page types: Entity list, Entity record, Search, Third-party website, Web resource, Custom; Out-of-the-box application tab templates",
+          "claim": "The create-template table gives Web resource as the example page type for a Knowledge article search tab, described as used to display a knowledge base search page. The out-of-the-box Knowledge Search template displays the knowledge article search page and has the Web Resource application type. Entity list displays an entity view, with entityName and an optional viewId. Entity record displays an existing record or opens a form to create one, and its create parameters include data to prepopulate the form. The entity search page type takes searchType, 0 for relevance search or 1 for categorized search, and a required searchText that supports slugs such as {anchor.title}. Third-party website hosts iframe-compatible websites, and Custom hosts custom pages that are available in the app. A web resource tab opens the web resource that webresourceName names and takes none of the entity list or search parameters.",
+          "applicability": "Customer Service and Contact Center standalone only, page dated 2026-06-17; the stem states standalone. The page also lists an out-of-the-box template named Search (deprecated) with the Control application type. That is a template, not the Search page type, which the page still documents with its parameters."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d5-q01 (third-party website iframe hosting), ab250-d5-q10 (dashboard app module membership), ab250-d5-q11 (entity record create versus lookup), ab250-d5-q12 (website tab parameters) and sim-b-q05 (third-party website tab on a session template). None asks which page type hosts each kind of content, or that the knowledge base search page is a web resource."
+    },
+    {
+      "id": "sim-d5-q02", "revision": 1, "domainId": "representative-experience", "conceptId": "macro-main-action-by-target-and-commit",
+      "objectiveIds": ["D5.2.03"], "level": "advanced", "author": "experience-author", "authoredAt": "2026-11-07", "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d5-s01",
+          "section": "Open a new form to create a record; Autofill form fields; Update an existing record; Clone current record; Clone input record; Save the record",
+          "claim": "Open a new form to create a record opens a form, and lookups need the related record ID, type and name as separate attributes, as in the regardingobjectid example. Autofill form fields updates form fields, doesn't save new values in Dataverse until the form triggers autosave, and applies to the form in the focused tab with the same entity type. Update an existing record has mandatory Entity logical name and Entity record ID fields, and the page says the update record macro performs a back-end operation and doesn't refresh the tab. Clone current record clones an existing record open in the current tab. Clone input record clones a record given by its mandatory Entity record ID and Entity logical name. Both only copy the fields and don't save the record. Save the record fails if mandatory fields are blank.",
+          "applicability": "Customer Service and Contact Center standalone only, page dated 2025-05-07. The page's clone examples describe parent and child roles inconsistently, so the rows avoid parent and child cases and rely only on what each action clones."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d5-q02 (Autofill changes the focused form), ab250-d5-q24 (lookup attribute triplet), ab250-d5-q25 (Save failure on mandatory fields), ab250-d5-q22 and ab250-d5-q23 (query scope). Those test single action details. None asks which action fits each purpose, and none uses Clone input record."
+    },
+    {
+      "id": "sim-d5-q03", "revision": 1, "domainId": "representative-experience", "conceptId": "inbox-custom-record-card-and-mailbox-view",
+      "objectiveIds": ["D5.1.03"], "level": "advanced", "author": "experience-author", "authoredAt": "2026-11-07", "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-cb-s13",
+          "section": "Introduction; Bring your own entity to the inbox; Custom card configuration; Configure custom views for the inbox; Simple settings; Advanced settings for conversations; Configure custom sort in the inbox",
+          "claim": "Inbox settings can be configured only for custom experience profiles. By default the inbox supports entities such as case, emails, conversations and voicemails, and you bring your own entities by selecting + Add on the Inbox record types tab. Custom card configuration is on the same tab: select the record type, then add or rearrange attributes in the Edit record type pane. Simple settings for Email include Emails sent to me and Emails in a shared mailbox. Advanced settings are for the conversation record type in custom profiles with conversations enabled. Custom sort selects the entity, attributes and sort order.",
+          "applicability": "Contact Center embedded and standalone and Customer Service, page dated 2026-10-29. The stem states a custom profile, which inbox settings require."
+        },
+        {
+          "sourceId": "sim-cb-s14",
+          "section": "Inbox filters",
+          "claim": "Emails in a shared mailbox shows emails sent to an address that the admin specifies, using the To field and not Cc or Bcc. Emails sent to me shows emails where the user is listed in To, Cc or Bcc. Emails assigned to me shows emails whose Owner or Worked by field is the current user.",
+          "applicability": "Page dated 2026-05-28."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d5-q07 (view record types and representative visibility), ab250-d5-q08 (custom sort), ab250-d5-q09 (voice in the inbox) and sim-b-q07 (incoming work items and an Advanced conversation view). None tests bringing a custom table into the inbox, card attributes or the shared mailbox setting. Sort and Emails assigned to me appear only as distractors."
+    },
+    {
+      "id": "sim-d5-q04", "revision": 1, "domainId": "representative-experience", "conceptId": "teams-connected-chat-rights-join-and-updates",
+      "objectiveIds": ["D5.2.04"], "level": "advanced", "author": "experience-author", "authoredAt": "2026-11-07", "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d5-s08",
+          "section": "Assign disconnect chat rights to specific users; Assign disconnect chat rights for security roles; How user rights work together for disconnecting chats; Configure the ability for users to join chats; Keep chat participants informed when fields are updated; Configure the ability for representatives to view Teams chats on a connected record's timeline (preview)",
+          "claim": "Record owner can disconnect chats lets record owners disconnect any chats connected to a record, and Chat connector can disconnect chat lets the user who connected a chat disconnect it; both are assigned at a record-type level. When the Disconnect Teams chat from Dynamics 365 record privilege is in a security role, all users with that role can disconnect chats connected to any record type. Join chat lets users view and join chats connected to records they have write access to, configured per record type. Receive notification on key updates sends automatic notifications when selected attributes change, with Priority, Status and Status Reason preconfigured for Case. Sync Teams chats with records (Preview) shows connected chats on the timeline, and if Join chat is on, a new representative can join from there. The timeline entry shows who connected the chat and when, and the last person to send a message and when.",
+          "applicability": "Customer Service and Contact Center standalone only, page dated 2026-07-31. Defaults matter: the owner and connector toggles are on by default for new organizations, Join chat is on by default for cases, and the OC admin, OC supervisor and OC agent roles have the disconnect privilege by default. The stem therefore states custom roles without the privilege and all record-type settings off."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d5-q30 (multisession profile and permissions), ab250-d5-q31 (introduction note field exposure) and ab250-d5-q32 (custom record type connection). None tests disconnect scopes, Join chat or key-update notifications."
+    },
+    {
+      "id": "sim-d5-q05", "revision": 1, "domainId": "representative-experience", "conceptId": "integrated-provider-trial-activate-backfill",
+      "objectiveIds": ["D5.3.02"], "level": "advanced", "author": "experience-author", "authoredAt": "2026-11-07", "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d5-s04",
+          "section": "Prerequisites; Provision integrated search providers; Add integrated search providers; Run ingestion for search providers: Trial ingestion, Time-range based ingestion; Activate search providers; Configure search providers as search filters",
+          "claim": "After Save and close, the new provider is Inactive with status reason Validated. Save as draft leaves it Inactive with status reason Draft, and you can't run ingestion for Draft providers. A trial ingestion runs when the provider is Inactive with status reason Validated, and errors show in the Crawl failures column of the Insights tab; if there are none and you want a time-range based ingestion, you activate the provider first. A time-range based ingestion runs when the provider is Active with status reason Ingestion Ready and picks up updated articles from a date range. Activating starts ingestion of new and updated articles, and articles start appearing in search results. Provider search filters work only with Dataverse search. The site map must have lastmod tags, and only static websites are supported.",
+          "applicability": "Customer Service and Contact Center standalone only, page dated 2026-06-26. Check 1 by pair: Save and close before trial, because the trial needs Validated status and Draft blocks ingestion. Trial before activation, because the trial runs only on an inactive validated provider and the stem forbids search results before the check. Activation before time-range ingestion, because that ingestion needs Active status and the page says to activate first. Reverse check: the schema mapping page that the wizard links to (int-data-mapping, dated 2026-06-26, opened 2026-11-07) covers only the schema step and shows no other order. Provisioning and the trigger flow are stated as done, so they aren't steps."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d5-q42 (custom-role privileges for external search providers) and ab250-d5-q43 (Microsoft Graph connector provider). Those cover external search providers, which federate search. A keyword search of ab250-bank and the simulator batches for integrated search found nothing."
+    },
+    {
+      "id": "sim-d5-q06", "revision": 1, "domainId": "representative-experience", "conceptId": "custom-default-profile-switch-effects",
+      "objectiveIds": ["D5.1.01"], "level": "advanced", "author": "experience-author", "authoredAt": "2026-11-07", "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-cb-s12",
+          "section": "Set a custom experience profile as default; Switch default profiles; Map security roles to experience profiles; Manage users assigned to experience profiles",
+          "claim": "A custom profile set as the default isn't applicable to users who are assigned specific custom experience profiles. You can't set multiple profiles as the default; to change the default, use Remove Default and then set an alternative profile as the default. When you set a custom profile as the default, you can no longer assign security roles to it, and existing security roles are removed. If you haven't set a default custom profile or mapped a profile to a role, the out-of-the-box default profile is assigned to all available users.",
+          "applicability": "Contact Center embedded and standalone and Customer Service, page dated 2026-05-27."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d5-q05 (don't edit the supplied default), ab250-d5-q06 (assignment verification) and sim-b-q06 (choosing default, rank, role or direct assignment for each group). sim-b-q06 picks a mechanism; this question asks what switching the default does to the current default, a role mapping and a direct assignment."
+    },
+    {
+      "id": "sim-d5-q07", "revision": 1, "domainId": "representative-experience", "conceptId": "generic-session-template-anchor-icon-title",
+      "objectiveIds": ["D5.1.04"], "level": "advanced", "author": "experience-author", "authoredAt": "2026-11-07", "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-cb-s07",
+          "section": "Create a session template (Type, Entity, Title, Session Icon and Anchor tab rows); out-of-the-box generic templates",
+          "claim": "Type is Entity or Generic, with Generic selected when the template is to be assigned to any channel. The Entity list displays user-owned entities only. The Title example is {customerName}. Session Icon is available for generic templates only, needs a deployed web resource file, can use a web resource file only and not slugs, and doesn't support GIF files; its example is WhatsApp.ico. The Anchor tab option is displayed only when Type is generic. WhatsApp session - default is among the generic out-of-the-box templates.",
+          "applicability": "Contact Center embedded and standalone and Customer Service, page dated 2026-07-30. The stem states standalone."
+        },
+        {
+          "sourceId": "sim-cb-s03",
+          "section": "Format for slugs for productivity tools; Format for slugs for templates",
+          "claim": "Session and notification titles can take parameter keys. Templates use the {Slug} format, for example {caseId}. Macros and scripts use ${Slug}, and the session connector context uses ${$session.<slug>}.",
+          "applicability": "Page dated 2026-05-08."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d5-q04 (session template and workstream composition), ab250-d5-q13 (Entity list shows user-owned tables), ab250-d5-q14 (initial communication panel mode) and sim-b-q05 (session tabs and default script). None tests the anchor-tab and icon dependency on Generic type, the icon file rules or the template slug format."
+    },
+    {
+      "id": "sim-d5-q08", "revision": 1, "domainId": "representative-experience", "conceptId": "desktop-alert-icon-timer-countdown-limits",
+      "objectiveIds": ["D5.1.05"], "level": "advanced", "author": "experience-author", "authoredAt": "2026-11-07", "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-cb-s09",
+          "section": "Desktop notifications; Allow a browser to show notifications; Create a notification template: Icon, Show Countdown, Countdown (seconds), Show desktop notifications",
+          "claim": "If Show desktop notifications is on and the icon is SVG, the SVG icon won't be shown in desktop notifications. Whether Show Countdown is Yes or No, the timer runs and the notification disappears after the timeout, and with Show desktop notifications on, the timer won't be shown in desktop notifications. If the countdown setting is less than 5 seconds, the desktop notification doesn't appear. Countdown defaults to 120 seconds and Show desktop notifications defaults to Never. The configured wait time is how long the notification is displayed, but it isn't shown on the notification.",
+          "applicability": "Contact Center embedded and standalone and Customer Service, page dated 2026-05-04, updated 2026-08-20. The stem sets Always and states that browser and Windows notification permissions are in place, so the desktop prerequisites on the same page don't decide the answer. The page says the SVG icon isn't shown; it doesn't say the alert is suppressed, so the stem gives Billing chat a 120-second countdown and r1c is rejected because the countdown is well over 5 seconds."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d5-q15 (selecting the alert body), ab250-d5-q16 (Reject on record notifications), ab250-d5-q17 (browser permission) and sim-b-q05 (notification fields). None tests the SVG icon, sub-5-second countdown or hidden timer limits."
+    },
+    {
+      "id": "sim-d5-q09", "revision": 1, "domainId": "representative-experience", "conceptId": "macro-stale-context-versus-stale-form",
+      "objectiveIds": ["D5.2.03"], "level": "advanced", "author": "experience-author", "authoredAt": "2026-11-07", "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d5-s02",
+          "section": "Get the current tab; Refresh the tab; Focus on the tab; Refresh the session context; Set session context",
+          "claim": "Get the current tab retrieves the Tab ID used by the Refresh tab and Focus tab actions. Refresh the tab refreshes a tab by Tab ID, and the resolve example runs Resolve case, Get the current tab and Refresh the tab. Refresh the session context refreshes the session context for entity sessions: the variables are defined when the session starts, an updated case title isn't reflected, and macros use the cached information. Its example adds it after Update an existing record changes the title and before Open a new form to create a record uses ${anchor.title}. Set session context creates a variable in the session context.",
+          "applicability": "Customer Service and Contact Center standalone only, page dated 2026-04-22."
+        },
+        {
+          "sourceId": "sim-d5-s01",
+          "section": "Resolve a case; Update an existing record",
+          "claim": "When representatives resolve a case by using a macro, the tab isn't automatically refreshed, so the example adds Get the current tab and Refresh the tab. Update an existing record performs a back-end operation and doesn't automatically refresh the tab.",
+          "applicability": "Page dated 2025-05-07."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d5-q34 (updateContext for future macros), ab250-d5-q26 (action output scope) and ab250-d1-q13 (session context navigation). None tests Refresh the session context against Refresh the tab."
+    },
+    {
+      "id": "sim-d5-q10", "revision": 1, "domainId": "representative-experience", "conceptId": "link-to-conversation-override-refresh-active",
+      "objectiveIds": ["D5.2.06"], "level": "advanced", "author": "experience-author", "authoredAt": "2026-11-07", "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d5-s14",
+          "section": "linkToConversation: description, note, parameters and example",
+          "claim": "The function links account, contact or incident records to the conversation, only in the database; the link is reflected after the page is refreshed, and the caller is responsible for the UI refresh. Only one account or contact and one case can be linked to a conversation at a time, and linking a new customer or case record overrides the previous link. Linking is supported only to active conversations. conversationId is optional and defaults to the focused conversation. The example calls Microsoft.Apm.refreshTab when the promise resolves.",
+          "applicability": "Omnichannel JavaScript API, page dated 2022-02-18, updated 2024-11-28. The stem passes the conversation ID, so focus doesn't decide the result. Related note cc-d5-n07 scopes record linking to standalone, which the stem states."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d5-q35 (confirming the focused session before linking), ab250-d5-q36 (embedded applicability) and ab250-d5-q37 (getConversations). None tests the override, refresh or active-only behavior."
+    },
+    {
+      "id": "sim-d5-q11", "revision": 1, "domainId": "representative-experience", "conceptId": "custom-app-pane-tool-multisession-alm",
+      "objectiveIds": ["D5.2.01"], "level": "advanced", "author": "experience-author", "authoredAt": "2026-11-07", "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d5-s10",
+          "section": "How it works; Enable multisession experience and productivity tools; Manage the application lifecycle",
+          "claim": "In Workspaces, Productivity setting for model-driven apps, you edit the custom app and select Productivity tool and Multisession with productivity tools; selecting the latter selects Productivity tool automatically, and you confirm. An app with a lock icon is part of a managed solution and can't be edited. Multisession can be enabled only for a model-driven app within an unmanaged solution, and it isn't supported for apps installed by default such as Sales Hub. When you export the solution, the multisession navigation settings are included in the app module by default, and you import it into the next environment.",
+          "applicability": "Page dated 2025-10-16."
+        },
+        {
+          "sourceId": "sim-d5-s09",
+          "section": "Prerequisites; Configure a custom productivity tool",
+          "claim": "Admins need Productivity tools administrator, and representatives and supervisors need Productivity tools user. A pane tool configuration has Type Control or Custom Page and Global set to Yes, which makes it available across sessions. After saving, you edit the experience profile's Productivity pane and enable the custom tool.",
+          "applicability": "Customer Service and Contact Center standalone only, page dated 2026-07-30."
+        },
+        {
+          "sourceId": "sim-cb-s23",
+          "section": "Assign users, templates, configure productivity pane, channels",
+          "claim": "In the profile's Productivity pane you select On to enable the productivity tools pane and then turn on the options representatives can use. Add entity session template links a session template to the profile.",
+          "applicability": "Contact Center embedded and standalone and Customer Service, page dated 2026-07-28."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d5-q28 (custom component deployment order) and ab250-d5-q29 (custom tool session context). Neither tests enabling multisession in a custom model-driven app or the managed-solution limit."
+    },
+    {
+      "id": "sim-d5-q12", "revision": 1, "domainId": "representative-experience", "conceptId": "apm-background-session-creation-guard",
+      "objectiveIds": ["D5.2.05"], "level": "advanced", "author": "experience-author", "authoredAt": "2026-11-07", "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d5-s11",
+          "section": "Parameters; Examples: Create a session that is not in focus",
+          "claim": "createSession creates a session from a session template. SessionInput has templateName, sessionContext, an optional isFocused property described as will focus after session is created, and an optional shouldRestore. The example of a session that isn't in focus passes isFocused: false. The invoking user must be assigned to an app profile that contains the session template.",
+          "applicability": "Page dated 2026-07-14. The stem states that the template is in the representatives' profile."
+        },
+        {
+          "sourceId": "sim-d5-s12",
+          "section": "Note; Return value; Example",
+          "claim": "Copilot Service workspace lets you open up to 10 sessions; beyond that, Maximum sessions reached is shown. canCreateSession returns true if a new session can be created and false otherwise, and the example checks it before calling createSession.",
+          "applicability": "Page dated 2025-06-17."
+        },
+        {
+          "sourceId": "sim-d5-s13",
+          "section": "Introduction; Parameters",
+          "claim": "createTab creates an app tab in a focused session. AppTabInput has templateName, appContext and isFocused.",
+          "applicability": "Page dated 2025-06-17."
+        },
+        {
+          "sourceId": "sim-d5-s17",
+          "section": "Prerequisite; Session management; Tab management",
+          "claim": "requestFocus shows a notification indicator on a given session if the session isn't in focus. canCreateTab returns whether a new tab can be created for a session. The APIs need the App Profile user or Productivity tools user role.",
+          "applicability": "Page dated 2024-04-23, updated 2025-06-17."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d5-q33 (requestFocus for an existing background session) and ab250-d5-q34 (updateContext). Neither tests opening a new session without focus or guarding the session limit."
+    },
+    {
+      "id": "sim-d5-q13", "revision": 1, "domainId": "representative-experience", "conceptId": "record-type-autosearch-field-and-email-recipient",
+      "objectiveIds": ["D5.3.03"], "level": "advanced", "author": "experience-author", "authoredAt": "2026-11-07", "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d5-s07",
+          "section": "Add record types for which you want to turn on knowledge management; Configure knowledge search control on the app side pane",
+          "claim": "After adding a record type, you edit it in the Knowledge settings dialog. Automatic search has Turn on automatic search and Provide search results using, which selects the field. Actions include Link / unlink article, Copy URL, Link article and email URL, and Link article and send article content. The default email recipient is available only to the Customer or Lookup attribute type, and to the Account or Contact lookup entity.",
+          "applicability": "Customer Service and Contact Center standalone only, page dated 2026-06-26. The app side pane is available only in Copilot Service workspace, which the stem uses."
+        },
+        {
+          "sourceId": "sim-d5-s16",
+          "section": "Power Apps experience: properties table (Automatic search, Actions, Select default email recipient)",
+          "claim": "Link article and email URL associates an article with the primary record and shares the article URL through email. Link article and send article content associates it and shares the article's contents through email. Fields for automatic search can be text, multi-line text or lookup fields.",
+          "applicability": "Page dated 2026-07-29. Used for the action definitions; the side-pane dialog uses the same action names."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d5-q38 (enabling knowledge for a custom table), ab250-d5-q39 (search index and pane) and ab250-d5-q40 (non-anchor form-control auto search). None tests the record type's automatic search field, action choice or recipient limits."
+    },
+    {
+      "id": "sim-d5-q14", "revision": 1, "domainId": "representative-experience", "conceptId": "ckm-custom-record-type-harvest-trigger",
+      "objectiveIds": ["D5.3.04"], "level": "advanced", "author": "experience-author", "authoredAt": "2026-11-07", "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-cb-s20",
+          "section": "Enable real-time knowledge creation; Enable track changes and add mapped entities to the Entity Analytics Config table; Enable real-time knowledge harvesting for a custom record type; Add a trigger harvesting button; Enable historical knowledge creation; Add custom record types (preview)",
+          "claim": "Case real-time creation is triggered when a representative resolves a case. For a custom record type, the real-time procedure turns on knowledge management for the record type, adds custom record types (preview), configures the side pane tab, rules and attributes, and adds a trigger harvesting button to the table's main form; selecting the button triggers harvesting for the current record. The JavaScript is a sample implementation that can be customized, the command calls Msdyn.KnowledgeHarvest.triggerHarvest with PrimaryControl, and it's saved and published. Add record type on the agent page adds a custom record type after knowledge management is turned on for it, up to five. Track changes and the Entity Analytics Config table are recommended to avoid issues when creating articles from historical data. Historical creation starts when you select Start and processes records that meet the rule conditions.",
+          "applicability": "Page dated 2026-07-29. Adding custom record types is a production-ready preview, which the stem says the company accepts. The stem leaves rules and attributes for later, so the two answers are part of the solution, as the prompt says."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d5-q45 to ab250-d5-q50 (runtime readiness, existing-content check, historical batching, internal autopublish, sensitive data and manual review). None tests custom record types or the trigger button."
+    },
+    {
+      "id": "sim-d5-q15", "revision": 1, "domainId": "representative-experience", "conceptId": "script-focus-requires-session-association",
+      "objectiveIds": ["D5.2.02", "D5.2.03"], "level": "advanced", "author": "experience-author", "authoredAt": "2026-11-07", "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d5-s01",
+          "section": "Set Script focus",
+          "claim": "Set Script focus sets the focus on a script, given by Agent Script Unique Name, in the Scripts dropdown on the app side pane. The script in focus must be associated with the session template. The example updates a case's priority and then sets focus on another script.",
+          "applicability": "Customer Service and Contact Center standalone only, page dated 2025-05-07."
+        },
+        {
+          "sourceId": "sim-cb-s10",
+          "section": "Create scripts (Action Type); Associate a script with a session template; Set the default script for representatives",
+          "claim": "A script step's Action Type is Text instruction, Macro or Script, with Target macro or Target script fields. Scripts are associated with a session template so that they load for the type of session. The expression builder sets the default script that the script control shows when a representative accepts an incoming conversation, and representatives can still select another available script.",
+          "applicability": "Customer Service and Contact Center standalone only, page dated 2026-05-08."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d5-q18 (Script-type step for reusable guidance), ab250-d5-q19 (Macro-type step), ab250-d5-q20 (manual switch to an associated script) and sim-b-q05 (default script expression). None tests the association requirement of Set Script focus."
+    },
+    {
+      "id": "sim-d5-q16", "revision": 1, "domainId": "representative-experience", "conceptId": "suggest-as-you-type-title-phrase-match",
+      "objectiveIds": ["D5.3.01"], "level": "advanced", "author": "experience-author", "authoredAt": "2026-11-07", "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d5-s06",
+          "section": "Search for related articles in Copilot Service workspace; Save time searching with suggest-as-you-type",
+          "claim": "A successful app side pane search displays up to 10 results by default. Suggest-as-you-type matches the term against article titles; for a term of more than one word, only titles that contain the full string, not the individual words, are matched; it suggests up to six articles.",
+          "applicability": "Customer Service and Contact Center standalone only, page dated 2026-07-31."
+        },
+        {
+          "sourceId": "sim-d5-s05",
+          "section": "Set up knowledge search logic; Enable the suggest-as-you-type option",
+          "claim": "With Dataverse search, knowledge search uses searchMode=any by default, and Set search mode as all makes it match all the keywords. Suggest-as-you-type matches the phrase against the article title and shows matches in a flyout.",
+          "applicability": "Customer Service and Contact Center standalone only, page dated 2026-07-20."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d5-q41 (Set search mode as all for search results) and ab250-d5-q51 (global search preview). Neither tests suggest-as-you-type matching; q41's setting appears here only as a decoy."
+    },
+    {
+      "id": "sim-d5-q17", "revision": 1, "domainId": "representative-experience", "conceptId": "chat-article-link-macro-portal-setting",
+      "objectiveIds": ["D5.3.05", "D5.2.03"], "level": "advanced", "author": "experience-author", "authoredAt": "2026-11-07", "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d5-s03",
+          "section": "Send knowledge base article link in chat; introduction note",
+          "claim": "The action sends a knowledge base article link to the conversation chat window. It must be used with the Search knowledge base for the populated phrase action, and the Use an external portal toggle must be set to Yes. Omnichannel connector actions are available if Copilot Service workspace in Contact Center is installed.",
+          "applicability": "Customer Service and Contact Center standalone only, page dated 2026-05-27. This page calls the search action Search knowledge base for the populated phrase; the productivity automation page names it Search the knowledge base for the populated phrase, which the options use."
+        },
+        {
+          "sourceId": "sim-d5-s05",
+          "section": "Set up knowledge management, Portals step; Configure knowledge base article URLs; Update knowledge article attachments for portal",
+          "claim": "Use an external portal integrates an external portal, and URL Format builds external links as https://support portal URL/kb/{kbnum}, with {kbnum} replaced by the article number. A portal must be created first. Sync attachments to portal turns on knowledge article attachments for the portal.",
+          "applicability": "Page dated 2026-07-20."
+        },
+        {
+          "sourceId": "sim-d5-s01",
+          "section": "Search the knowledge base for the populated phrase; Do a relevance search based on the phrase",
+          "claim": "Search the knowledge base for the populated phrase searches knowledge articles from a phrase such as the case title. Do a relevance search based on the phrase is a separate action, and its example searches for cases with the same title.",
+          "applicability": "Page dated 2025-05-07."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d5-q44, which asks for Use an external portal with its URL format and Sync attachments to portal as two separate requirements. This question pairs the portal setting with the chat link macro's required search action, and attachment sync appears only as a distractor."
+    },
+    {
+      "id": "sim-d5-q18", "revision": 1, "domainId": "channels", "conceptId": "automated-masking-sender-and-channel-scope",
+      "objectiveIds": ["D2.3.05"], "level": "advanced", "author": "experience-author", "authoredAt": "2026-11-07", "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d5-s15",
+          "section": "Automated data masking",
+          "claim": "Automated masking uses regular-expression rules on chat and asynchronous channel messages, and text masked in a message is also masked in the transcript. Mask private agent data from the customer: data the representative sends is masked for both the customer and the representative for live chat and async channel messages. Mask private customer data from the agent: data the customer sends is masked for both for live chat, but only for the user interface of the representative when using async channels. Rules apply only when Active. Credit Card is an out-of-the-box rule.",
+          "applicability": "Contact Center embedded and standalone and Customer Service, page dated 2026-10-19, updated 2026-10-20."
+        },
+        {
+          "sourceId": "sim-cb-s13",
+          "section": "Introduction: asynchronous channels in the conversation inbox",
+          "claim": "WhatsApp is listed among the asynchronous channels available in the conversation inbox.",
+          "applicability": "Page dated 2026-10-29. Used only to classify WhatsApp as asynchronous, which the stem also states."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d2-q22 (encryption can't recover automatically masked text) and ab250-d2-q34 (manual masking roles and messages). A keyword search of the simulator batches for masking found nothing, including 8c-pilot, 8d-channels-voice and 8d-channels-digital, and no bank item asks where each setting masks by sender and channel type."
+    }
+  ]
+}

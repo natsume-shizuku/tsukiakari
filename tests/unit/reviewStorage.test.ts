@@ -1,3 +1,4 @@
+import { sel } from '../support/selection';
 import { engineeringQuestionBank as testFixturePack } from '../../src/content/engineeringQuestionBank';
 import { createTestAttempt, completeTestAttempt, answerTestAttempt } from '../../src/testEngine';
 import 'fake-indexeddb/auto';
@@ -410,7 +411,7 @@ describe('atomic review persistence', () => {
     const deck = await deckWith([mcq.id]);
     const started = createTestAttempt(testFixturePack, { mode: 'practice', count: 50, durationMinutes: 120, fixturePreview: true }, [], now);
     const question = started.questions[0].card;
-    const wrongOption = question.options.find(option => !question.correctOptionIds.includes(option.id))!.id;
+    const wrongOption = sel(question).options.find(option => !sel(question).correctOptionIds.includes(option.id))!.id;
     const attempt = completeTestAttempt(answerTestAttempt(started, question.id, [wrongOption], now), now);
     await db.testAttempts.add(attempt);
     const session = await startReview(deck.id, now, db);

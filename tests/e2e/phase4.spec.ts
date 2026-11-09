@@ -1,3 +1,4 @@
+import { sel } from '../support/selection';
 import { test, expect, type Page } from '@playwright/test';
 import type { TestAttempt } from '../../src/domain';
 
@@ -39,10 +40,10 @@ async function question(page: Page, index: number) {
 }
 async function choose(page: Page, attempt: TestAttempt, index: number, correct = true) {
   const card = attempt.questions[index].card;
-  const optionIds = correct ? card.correctOptionIds : [card.options.find(option => !card.correctOptionIds.includes(option.id))!.id];
+  const optionIds = correct ? sel(card).correctOptionIds : [sel(card).options.find(option => !sel(card).correctOptionIds.includes(option.id))!.id];
   const selected: string[] = [];
   for (const optionId of optionIds) {
-    const position = card.options.findIndex(option => option.id === optionId);
+    const position = sel(card).options.findIndex(option => option.id === optionId);
     await (await question(page, index)).locator('input[type="radio"], input[type="checkbox"]').nth(position).check();
     selected.push(optionId);
     await expect.poll(async () => [...((await attempts(page)).find(item => item.id === attempt.id)!.responses.find(response => response.cardId === card.id)?.selectedOptionIds ?? [])].sort()).toEqual([...selected].sort());
@@ -122,7 +123,7 @@ test('failed answer writes retain the draft, block finish and protect navigation
   await expect((await question(page, 20)).locator('input[type="radio"], input[type="checkbox"]').nth(1)).toBeChecked();
   await (await question(page, 20)).getByRole('button', { name: 'Retry saving answer', exact: true }).click();
   await expect((await question(page, 20)).getByRole('button', { name: 'Retry saving answer', exact: true })).toHaveCount(0);
-  expect((await attempts(page))[0].responses[20].selectedOptionIds).toEqual([attempt.questions[20].card.options[1].id]);
+  expect((await attempts(page))[0].responses[20].selectedOptionIds).toEqual([sel(attempt.questions[20].card).options[1].id]);
   await expect(page.getByRole('button', { name: 'Finish test', exact: true })).toBeEnabled();
   await failNextWrite(page);
   await confirmButton(page, 'Reveal answer', 20);
@@ -251,7 +252,7 @@ for (const theme of ['dark', 'light']) {
     const radio = (await question(page, 0)).locator('input[type="radio"], input[type="checkbox"]').first();
     await radio.focus(); await page.keyboard.press('Space');
     await expect(radio).toBeChecked();
-    await expect.poll(async () => (await attempts(page))[0].responses[0].selectedOptionIds).toEqual([attempt.questions[0].card.options[0].id]);
+    await expect.poll(async () => (await attempts(page))[0].responses[0].selectedOptionIds).toEqual([sel(attempt.questions[0].card).options[0].id]);
     for (const width of [320, 768, 1440, 1920, 2560]) {
       await page.setViewportSize({ width, height: 1000 });
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
@@ -381,7 +382,7 @@ for (const width of [320, 1440]) {
     await expect(radio).toHaveAttribute('aria-disabled', 'false');
     await expect(radio).toBeFocused();
     await expect(radio).toBeChecked();
-    expect((await attempts(page))[0].responses[0].selectedOptionIds).toEqual([attempt.questions[0].card.options[0].id]);
+    expect((await attempts(page))[0].responses[0].selectedOptionIds).toEqual([sel(attempt.questions[0].card).options[0].id]);
     expect(await first.boundingBox()).toEqual(before);
     await expect(page.getByText('This selection is not saved.', { exact: true })).toHaveCount(0);
   });

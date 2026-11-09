@@ -1,0 +1,494 @@
+[
+  {
+    "id": "sim-d1-q01",
+    "revision": 1,
+    "reviewer": "deployment-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands after revision, and the row 3 finding is resolved. The rule now names the Conversational Setup experience and its documented operations, and it names the Agentic Simulation tile as a separate tool. Both tiles are on the current pages, and the use page's operation tables list no simulation operation, so the release plan's wording no longer flips row 3. I retested all 20 row and token pairs and each row has one answer. Row 1: Validate is a listed operation, and the rule keeps a manual check from being a second answer. Row 2: percentage and multi-queue distribution are documented as manual, and the route-to-queue page confirms percentage allocation is set in route-to-queue rules. Row 3: only the simulation fits, and it's inbound voice only, so it fails for SMS. Row 4: rollout plans aren't among the agent's operations. Option c now explains rows 3 and 4. The release plan is named only in prose in the evidence note. That's acceptable, because I opened it on learn.microsoft.com, the note is accurate, and no answer rests on it. The stem states the preview status.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d1-s05",
+        "supported": true,
+        "section": "Supported capabilities; Prerequisites; Steps to access; Create and manage workstream; Create and manage routing rules (route-to-queue rules)",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-07-09, updated 2026-08-31. Confirmed the Conversational Setup tile, the Validate operation, the Omnichannel administrator and billing prerequisites, the Dataverse connection, and that percentage-based or multi-queue distribution is manual in Copilot Service admin center. Simulations appear only as a related-information link, and rollout plans not at all."
+      },
+      {
+        "sourceId": "sim-d1-s04",
+        "supported": true,
+        "section": "Introduction; Prerequisites; Run a simulation; Things to consider",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-09-21, preview, inbound voice workstreams only. Launched from its own Agentic Simulation tile. The Ongoing conversation report shows conversations during a run. The release plan shows public preview on 2026-07-31 with no general availability date."
+      },
+      {
+        "sourceId": "sim-d1-s06",
+        "supported": true,
+        "section": "Prerequisite; Create rollout plans using rollout manager; Manage rollout plans",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-05-08. Confirmed the enabled-agent prerequisite, the Agent hub path, line of business selection for Customer Intent Agent, and Schedule for automatic enablement at a future date and time."
+      }
+    ],
+    "fingerprint": "60b43b2c07c92ad70a1c87ee33f02015f9bf2b7de43fa7e1cdbfafe3a8480704"
+  },
+  {
+    "id": "sim-d1-q02",
+    "revision": 1,
+    "reviewer": "deployment-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands. I tested all 15 row and token pairs, and each row has one answer. Row 1: the strongest alternative was Non-interactive user, because the page says application users are created with a non-interactive user account. It doesn't hold, because the row names a registered application using server-to-server authentication, and the page says those operations run as the application user. Row 2: only the administrative user reaches administration features without customer data access, and a non-interactive user can't reach admin portals. Row 3: the row says the connector signs in with its own user account, which separates it from an application user. Regular user fails on the stem's no-license condition. All option explanations are true, and the evidence note correctly avoids claiming the no-license point for application users. Nothing like this is in the accepted bank.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d1-s17",
+        "supported": true,
+        "section": "User types; Requirements for successfully adding users in Dataverse; Create an administrative user account; Create a non-interactive user account; Create an application user; How stub users are created",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-10-02. Confirmed each account type as described, including that administrative users have no customer data access and need no license after setup, that non-interactive users work through SDK or API calls with no web interface or admin portal, that server-to-server operations run as the application user, and that stub users can't sign in. The page's agent user and unlicensed user types are preview and aren't used."
+      }
+    ],
+    "fingerprint": "dea0d572f8d9b2be0ddc90dc5a6cc1ef413e4c7704d032e5f9c602c63fb35f87"
+  },
+  {
+    "id": "sim-d1-q03",
+    "revision": 1,
+    "reviewer": "deployment-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands, and the author's concern about row 3 is resolved by pages the author didn't cite. I tested all 24 row and token pairs. The strongest alternative was App Profile Manager Administrator on row 3, because one sentence on the roles page says that role goes to the user who creates productivity tools. It doesn't hold. The Scripts page makes Productivity tools administrator its prerequisite, and the Macros page requires Productivity tools administrator or System Administrator, so the two authoring pages agree with the privilege table. The experience profiles page shows what that sentence means: a profile turns productivity tools on for representatives, including agent scripts. That's configuration, not authoring, so there's no real conflict and check 5 holds. Both authoring pages apply to standalone, and the stem says standalone. Row 1 holds because monitoring, assigning and transferring are listed for the supervisor only. Row 2 is listed for the administrator only. Row 4 holds because the administrator includes the same privileges but is broader, and the stem asks for the narrowest. Distinctness: row 3 repeats the fact in ab250-d5-q03, script-author-permission, which the duplicate check doesn't list. The question as a whole is a different decision, choosing the narrowest role across four jobs, so this isn't a duplicate.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d1-s14",
+        "supported": true,
+        "section": "Roles in Dynamics 365 Contact Center; Understand roles and their privileges",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-10-23. Confirmed every privilege row the question uses against the table. Productivity tools user can read scripts, script steps and macro actions. Productivity tools administrator can create them. Omnichannel agent can view lists and quick replies."
+      },
+      {
+        "sourceId": "sim-d1-s16",
+        "supported": true,
+        "section": "Roles for Copilot Service workspace; Roles for Dynamics 365 Contact Center; Role: App Profile Manager Administrator",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-05-08. Confirmed the privilege table covers application configurations and session templates and has no script or macro entries, and that the Omnichannel administrator includes these privileges out of the box. I also opened the Scripts page (dated 2026-05-08), the Macros page (dated 2026-06-17) and the experience profiles page (updated 2026-11-03)."
+      }
+    ],
+    "fingerprint": "a16fb22a067d9aeb34fedf95ff27c06ff36acd77a6dae5e03856a9f6d76c0587"
+  },
+  {
+    "id": "sim-d1-q04",
+    "revision": 1,
+    "reviewer": "deployment-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands. I tested all 16 row and token pairs. Row 1: session templates, notification templates and macros are named components of the solution step. Row 2: Characteristic, Rating Model and Rating Value are the tables in the Configuration Migration tool step. Row 3: the channel page's verification step says the user, bookable resource and characteristic records are linked, associated or created manually. Row 4: the page says the Calendar item can't be migrated and is set after import. The strongest alternative was the Configuration Migration tool on row 3, since the tool could technically move records, but the stem asks for the documented path. Environment copy fails for a documented reason, because a production environment can't be a copy target. I confirmed in the page's links that the channel page's session template, skill and queue sections point to the record routing sections the evidence cites, so the calendar statement does apply to the channel procedure. Distinct from sim-p-q09, which tests first and later promotion of a capacity profile and a playbook, and from ab250-d1-q31, whose single fact is reused and disclosed on one row.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d1-s02",
+        "supported": true,
+        "section": "Prerequisites; Channel configuration migration steps; Migrate configuration for session templates and notification templates; Migrate configuration for skill-based routing rulesets; Migrate configuration for queues; Verify your migration",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-05-15. Confirmed the schema prerequisites the stem restates, the links into the record routing page, and the manual association step."
+      },
+      {
+        "sourceId": "sim-d1-s09",
+        "supported": true,
+        "section": "Migrate configuration for session templates and notification templates; Migrate configuration for skill-based routing rulesets; Migrate configuration for record queues",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-06-16. Confirmed the component list including macros, the tool-based skill tables, and that the Calendar item can't be migrated and must be set after the Operating Hour table is imported."
+      },
+      {
+        "sourceId": "sim-d1-s26",
+        "supported": true,
+        "section": "Introduction note; How to copy an environment",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2025-12-04, updated 2026-08-14. Confirmed that production environments can't be overwritten and that the target's data, components and customizations are deleted and replaced."
+      }
+    ],
+    "fingerprint": "3b38288975a9daca904ba1310dd5b9bd710850f74a2881be0d7eca85a1f2e4ff"
+  },
+  {
+    "id": "sim-d1-q05",
+    "revision": 1,
+    "reviewer": "deployment-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands. Each neighbouring pair is a real dependency. Import before copy: there's no flow to open until it's imported. Copy before REST message: the strongest challenge is that the page starts a new REST message before it describes getting the URL, so a REST message record could begin first. It doesn't hold, because the token is a REST message with the flow URL as its endpoint, which can't be finished before the URL is copied. REST message before business rule: the page says this order is required, and the script needs values from the REST message. The any-CRM page gives the same order and I found no Microsoft page showing the reverse. Both distractors fail for documented reasons. Source CRM URL stores the record's URL, and the Apex triggers link on the any-CRM page goes to Salesforce developer documentation, so calling it the Salesforce option is fair. Turning the flows on is a further real step that isn't a token, but it has no required position against these four and doesn't change the answer. Nothing else in the bank tests ServiceNow.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d1-s07",
+        "supported": true,
+        "section": "Import flows to Power Automate; Configure incremental data sync; Create REST message; Create a Business Rule; Configure View-In-CRM functionality",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-05-28. Confirmed the required order, individual REST messages for create, update and delete, the HTTP URL copied from the Manual step, the fields the business rule script needs, and the baseURL value."
+      },
+      {
+        "sourceId": "sim-d1-s25",
+        "supported": true,
+        "section": "Add a connector using Business rules; Use Apex triggers",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-05-28. Confirmed the same REST message then business rule order. Checked the page's link: Apex triggers goes to developer.salesforce.com."
+      }
+    ],
+    "fingerprint": "e15ea4bcc28881e317f1a28f198666c351b655a9792ba92dd3a694f81bfe7cc5"
+  },
+  {
+    "id": "sim-d1-q06",
+    "revision": 1,
+    "reviewer": "deployment-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands, and merging the two steps was the right call. The current English page edits the file before import. Even if another guide set the URL after import, token c says the definition is imported with the URL set, so the URL has to be copied first under either order, and the membership step must still follow the call center's creation. No order exists in which a right learner is marked wrong. Both pairs are real dependencies: the definition needs the value, and a call center must exist to have users. Both distractors fail for documented reasons. The definition is imported through Call Center in Salesforce Setup, and the named admin center page syncs CRM data into Dataverse. The adapter URL is the embedded widget URL, not a customer-facing script. Distinct from ab250-d1-q01 and q09, which test the URL value and the membership check as single facts. This tests the dependency chain.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d1-s03",
+        "supported": true,
+        "section": "Prerequisites; Set up the call center in Salesforce",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-05-08, updated 2026-07-21. Confirmed the widget URL location, replacing the CTI Adapter URL in the file, importing through Call Center in Setup, and Manage Call Center Users. I couldn't confirm the older guide the evidence note mentions, and the merged token doesn't depend on it."
+      }
+    ],
+    "fingerprint": "66bca7732631580d70f8cc5231b052587167498eae0e885a3cb721de3b974c8a"
+  },
+  {
+    "id": "sim-d1-q07",
+    "revision": 1,
+    "reviewer": "deployment-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands after revision, and the row 1 finding is resolved. The stem no longer sets a live number beside a harmless one, so row 1 now tests the rule: the setup detaches the selected number from its existing workstream settings and attaches it to a new workstream. Both distractors fail for documented reasons. r1a keeps the number in place, which the page's note contradicts, and r1c fails because the administrator selects a configured number and that number is what's attached. Rows 2 and 3 are unchanged and stand. The closing line and the Item and Choice headings stayed as they were. They read a little loosely for a row about behaviour, but a learner still picks one true statement, so the answer isn't ambiguous and this is a style point. The preview clause attaches to the template, which is prerelease. The release plan shows public preview on 2026-07-31 with no general availability date. Service Operations Agent itself reached general availability on 2026-07-09 in that plan, and nothing in the question depends on its status. Nothing stale remains from the old scenario in the answer, the explanation or the evidence.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d1-s20",
+        "supported": true,
+        "section": "Prerequisites; How industry template setup works; Use industry template in Service Operations Agent",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-09-21, preview, retail and telecom. Confirmed the prerequisites, the billing note, that the system creates a new workstream and moves the selected number to it, and the republish response to LatestPublishedVersionNotFound."
+      },
+      {
+        "sourceId": "sim-d1-s05",
+        "supported": true,
+        "section": "Prerequisites; Steps to access",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-07-09, updated 2026-08-31. Confirmed the Omnichannel administrator requirement, the Application Insights purpose, and the D365 Contact Center MCP Connection refresh steps. The r3b and r3c explanations are true as worded."
+      }
+    ],
+    "fingerprint": "c153982ba685c7e4d7763f2f55236ab31604e54d3b4f90e172001d575b7a02d9"
+  },
+  {
+    "id": "sim-d1-q08",
+    "revision": 1,
+    "reviewer": "deployment-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands. The answer is the documented multiple-profile design with the stem's own numbers. Row 1: the workstream's profile applies to every work item, so only Daily Total enforces the overall limit. Row 2: a classification ruleset can set a capacity profile as a rule output, and the classification page has a section for it. The strongest alternative was the queue's assignment rules, which fails because the page says that capacity-specific assignment rules aren't needed and the system matches the attached profile. Route-to-queue fails because the route-to-queue page documents queue selection and no capacity output, and the option explanation says only what the documented places are. Row 3: the page says representatives need all three. Capacity is consumed from both profiles on the work item. The stem states capacity profiles only, matching the recommendation not to use both models. No accepted question tests several profiles on one work item.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d1-s13",
+        "supported": true,
+        "section": "Set capacity profiles for workstreams; How to set multiple capacity profiles in a single workstream; Runtime behavior of multiple capacity profiles in a single workstream",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-02-03, updated 2026-03-18. Confirmed each element of the design and the runtime behaviour. Also opened the classification page, which covers rulesets based on capacity profiles, and the route-to-queue page."
+      }
+    ],
+    "fingerprint": "fbfdd127a18509738d58c040f86c7b6d7472d8c35ffa10b22db3f0d80ff0e2f0"
+  },
+  {
+    "id": "sim-d1-q09",
+    "revision": 1,
+    "reviewer": "deployment-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands. Row 1: changes to synced data in Dataverse aren't synced back, and the page says to update Salesforce only. Row 2: the team writes to Dataverse and needs read and write on the selected tables, or synchronization fails. The tempting belief that a one-way sync needs little access is a real trap. Row 3: the data remains in Dataverse, and only new data isn't synced. Reset returns mappings to the out-of-box defaults, so r1c and r3c fail for documented reasons. r2c is rejected on the stated write requirement, and the explanation doesn't claim anything about reactivation beyond that. This is the admin center connector, which is distinct from the Power Automate connector questions in the accepted bank.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d1-s08",
+        "supported": true,
+        "section": "Configure the data connector (Important note and Teams permissions step); Manage the data connector",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-05-08, updated 2026-07-21. Confirmed the update-in-Salesforce guidance, the team's read and write requirement, the Reset option, and the note on removed tables and mapped fields."
+      }
+    ],
+    "fingerprint": "ea07c73007c6779f059b0fa99c95dd884a2acf1eea94dfeedd553eecac6d3a1a"
+  },
+  {
+    "id": "sim-d1-q10",
+    "revision": 1,
+    "reviewer": "deployment-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands. Row 1: the Post-move updates list gives the new webhook endpoints, copied from Manage Azure Communication Services into the Event Grid subscriptions. Row 2: no extra steps once the organization is out of administration mode, which the stem states. Row 3: turn the real-time setting off and on, for the UAT copy. The strongest alternative was r1b, connecting a new resource, which is the copy guidance rather than the geo move. Each distractor is real guidance for the other operation, so the question tests telling the two operations apart. The Power Platform geo migration page has a Contact Center section that points to these Post-move updates, as the evidence note says. The msdyn_analytics rejection is supported. A learner could notice that the setting shares words with the row label, but that's the setting's name and it doesn't decide the row. Distinct from ab250-d1-q02, q33 and q34.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d1-s11",
+        "supported": true,
+        "section": "Introduction; Move contact center from one geo to another; Post-move updates",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-08-03, updated 2026-08-06. Confirmed the recreate statement, the voice endpoint steps, the record routing line, and that provisioning again applies to reset, restore and tenant-to-tenant migration."
+      },
+      {
+        "sourceId": "sim-d1-s10",
+        "supported": true,
+        "section": "Configure the target environment after the copy; Voice channel with Azure Communication Services; Configure real-time and historical analytics",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-09-09. Confirmed the record routing note, the target's own resource, and the turn-off and turn-on step for real-time analytics."
+      },
+      {
+        "sourceId": "sim-d1-s12",
+        "supported": true,
+        "section": "Introduction note",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-05-08. Confirmed the recommendation against exporting the msdyn_analytics entity because it holds organization-specific configuration."
+      }
+    ],
+    "fingerprint": "9c9b8594be87ee501f6e1a8b66408720b20b63fd1176759d7320b2f2a25177f5"
+  },
+  {
+    "id": "sim-d1-q11",
+    "revision": 1,
+    "reviewer": "deployment-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands after revision, and the leak finding is resolved. The stem now says the release manager wants the direct edit gone, so the word layer no longer points to the correct row 1 option. The requirement still does its job, because editing the template again leaves an active customization in place. Both answers are right. r1b is the documented command for a component that also has managed layers, and the support article on changes not taking effect after import names removing the active customization as the fix. r2c rests on a current known-limitations table, and the stem states both uses, so no inference is needed. r2a fails because removing an unmanaged layer stays allowed, and r2b fails because only dataflows are named as an exception. General advice to prevent unmanaged customizations in target environments doesn't override a listed limitation. The Overwrite Customizations note is accurate, and that option isn't offered. Distinct from ab250-d1-q27, which explains why an active customization wins, and from q03, which tests viewing layers.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d1-s21",
+        "supported": true,
+        "section": "Remove an unmanaged layer",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-01-09. Confirmed the top-layer statement, the Remove active customizations steps, the warning that removal can't be undone, and the base-layer exception. Also opened the update solutions page and the support article on changes not taking effect after import."
+      },
+      {
+        "sourceId": "sim-d1-s01",
+        "supported": true,
+        "section": "Update of configuration and active layers",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-05-08. Confirmed that editing a managed configuration creates an active customization, which can make deleting the managed solution fail and can stop updates despite a successful import."
+      },
+      {
+        "sourceId": "sim-d1-s22",
+        "supported": true,
+        "section": "Introduction; Dataflows aren't blocked; Enable block unmanaged customizations; Known limitations",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-09-21, updated 2026-09-26. Confirmed the default-off setting, the operations still allowed, the dataflows exception, both table rows, and the recommendation to disable the setting."
+      },
+      {
+        "sourceId": "sim-d1-s09",
+        "supported": true,
+        "section": "Migrate configuration for session templates and notification templates",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-06-16. Confirmed that session templates are solution components."
+      }
+    ],
+    "fingerprint": "b454813f0d07d4e20b7ebe852c7d3d7a081cabde951294635cb1bd6b718d7422"
+  },
+  {
+    "id": "sim-d1-q12",
+    "revision": 1,
+    "reviewer": "deployment-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands after revision, and the elimination finding is resolved in substance. The two correct items now look defensible on their face: cookies blocked in private windows only, and a retired product's domain. A learner needs the page's any-mode wording and the allow list entry to reject them, while the Edge and recommended-bandwidth beliefs now pull toward a and c. The strongest alternative was keeping the cookie policy because Microsoft recommends normal mode, and that fails because the requirement covers any mode, as the option explanation says. Blocking *.skype.com fails because the domain is on the list for users, with no condition on using Skype. The category filter is compliant, because the page asks only that the listed websites stay allowed. It has to state its own compliance to be unambiguous, and that gives a test-wise learner a small hint, but elimination no longer reaches the answer without knowing the requirements. Every figure and statement is true, including the 4 and 8 Mbps minimums, and the correct options aren't the longest. Check 14 holds: anything-blocked names three options, and Edge plus recommended bandwidth names a and c.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d1-s19",
+        "supported": true,
+        "section": "System requirements; Provision Dynamics 365 Contact Center note; Allow access to websites",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-01-30, updated 2026-07-21. Confirmed the browser list, the any-mode cookie requirement, the minimum and recommended bandwidth, the normal-mode recommendation, and that the URL filter guidance covers blocked categories with the listed websites allowed as exceptions. *.skype.com is on the list for users."
+      }
+    ],
+    "fingerprint": "1ea4ed4c1cf3bdb0da46c8e44a705e9bb1778d7011a9bdec60b2e1696f7140cf"
+  },
+  {
+    "id": "sim-d1-q13",
+    "revision": 1,
+    "reviewer": "deployment-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands after revision, and both findings are resolved. The explanation no longer says only two actions exist: it says someone has to act on the queue item and attributes the two actions to the capacity page. The evidence note no longer leaves a conflict open. Its statements are accurate: the unified routing page's closing guidance says tables other than incident need the queue item deactivated to release capacity, and the email routing page says to make sure capacity is released after work on an email and points to the same section. The email routing page is named only in prose. That's acceptable, because I opened it, the note is accurate, and no answer rests on it. The key is right: the capacity page lists exactly these two actions, and the stem accepts either outcome, so both are complete solutions. Option b fails because session close is the conversation rule, and closing a session isn't closing the record. Options d and e leave consumed capacity in place. The question offers no option about completing or moving the email, so it doesn't ask the learner to settle anything. Check 14 holds: the belief that a capacity setting frees capacity names d and e.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d1-s13",
+        "supported": true,
+        "section": "Release capacity for representatives; Create a capacity profile and assign to users; How representative-specific limits work",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-02-03, updated 2026-03-18. Confirmed the conversation, case and activity release rules, the two actions for record-routed email, Assignment blocking, and that custom limits apply to new work only."
+      },
+      {
+        "sourceId": "sim-d1-s24",
+        "supported": true,
+        "section": "What happens when you change the Queue field; What happens when you delete or deactivate a queue item",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-08-25. Confirmed deactivation closes the live work item and updates capacity, that changing the queue releases capacity, and the closing guidance on tables other than incident. Also opened the email routing page (dated 2026-03-18), which points to the capacity page release section, and the guidance page on capacity for custom entities (dated 2025-05-12)."
+      }
+    ],
+    "fingerprint": "36d671e9bb29966b5bc3a694c5e9f81d5b806d787b3c16a15bfe37b3fc5b847b"
+  },
+  {
+    "id": "sim-d1-q14",
+    "revision": 1,
+    "reviewer": "deployment-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands, and the author's concern about preview limits doesn't change this. I reopened the page: it's still dated 2026-09-21 and all three limits are unchanged. The release plan shows public preview on 2026-07-31 with no general availability date, and the stem states the preview status. Option a exceeds the five-conversation limit, b breaks the one-simulation limit, and e breaks the English limit. c and d meet all three. The strongest challenge to d is that one after another doesn't say the earlier run finished, but the explanation states the runs don't overlap, and the other three options fail on their own, so the count of two settles it. Every prerequisite is stated in the stem, including the roles, the number and the absence of keypad input. Check 14 holds, though more strongly than the evidence note says: the real trap is a learner who doesn't know the English limit and picks the two matching five-conversation plans, c and e. Distinct from ab250-d1-q14 to q17, which test keypad scope, evidence, the destination number and journey scope.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d1-s04",
+        "supported": true,
+        "section": "Prerequisites; Things to consider",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-09-21, preview, inbound voice only. Confirmed up to five conversations per prompt, up to two concurrent calls, English only, one simulation at a time in one organization, the phone number requirement, and no DTMF."
+      }
+    ],
+    "fingerprint": "e0da8512d4e28ab0fc7c252d61031c1c447aba7ff837fd732bc25d75391fc808"
+  },
+  {
+    "id": "sim-d1-q15",
+    "revision": 1,
+    "reviewer": "deployment-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands, and the non-interactive answer is firmer than the author reported. Three statements close the chain. The security group page says associating a group disables all users in the environment who aren't members, with named exemptions for Power Platform Administrators and application users only. The Create users page says security group rules still apply to non-interactive users. The same page's requirements section says that if an environment has a security group, the user must be part of it unless the user is a tenant or Power Platform administrator, and its only non-interactive exception is the license. Its FAQ says users who no longer meet the criteria change to disabled. So a non-interactive account outside the group fails a stated criterion and becomes disabled, even though no sentence walks through that exact case. The strongest alternative was that a non-interactive account is exempt like an application user, since application users are created with a non-interactive account. That doesn't hold, because the exemption is stated for application users alone. The Dataverse table page's note on disabling a non-interactive user through its access mode describes one way to disable it and isn't an exemption. Check 14 holds: all human users names a, b and c, and all non-administrators names a, d and e. Distinct from ab250-d1-q37 and q38.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d1-s18",
+        "supported": true,
+        "section": "Note the following information about security groups; Review admin roles you need to complete different tasks",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-08-26, updated 2026-08-28. Confirmed the disabling statement, the Power Platform Administrator exemption, the Dynamics 365 administrator requirement, which the page's qualifications repeat, and the application user exemption."
+      },
+      {
+        "sourceId": "sim-d1-s17",
+        "supported": true,
+        "section": "User types: Non-interactive users; Requirements for successfully adding users in Dataverse; FAQ",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-10-02. Confirmed the note that security group rules still apply, the membership criterion with its administrator exceptions, and the FAQ that says users who stop meeting the criteria become disabled. Also opened the add users page and the Dataverse user and team tables page. Neither contradicts this."
+      }
+    ],
+    "fingerprint": "17fb00b1d5c79de3943192c8e9aa08ce8262ebf415cf93742e5c4a30faddeb9c"
+  },
+  {
+    "id": "sim-d1-q16",
+    "revision": 1,
+    "reviewer": "deployment-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands. Both named settings are on the list of features that need column-level permissions, and their tables are listed with secret attributes. The page's procedure is the column security profile. The strongest alternative was System Administrator, which bypasses column security, and the stem's policy rules it out. Option a fails for a documented reason, because table privileges don't reach a secured column and users outside a profile have no access. Option b fails because persona mapping defines permissions for unified routing. Option d fails because the role's privilege table has no column permissions, and the option's tempting detail, channel providers, is real. The option's wording matches the page's permissions, and the stem doesn't imply that Mina configures this herself. Nothing in the accepted bank tests column security.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d1-s14",
+        "supported": true,
+        "section": "Configure permissions to access secure columns",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-10-23. Confirmed that Azure Communication Services and the WhatsApp channel are listed, that msdyn_occommunicationprovidersetting and msdyn_ocwhatsappchannelaccount have secret attributes, and the column security profile procedure."
+      },
+      {
+        "sourceId": "sim-d1-s23",
+        "supported": true,
+        "section": "Introduction; Add teams or users to a column security profile to control access",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-09-21. Confirmed table-level and column-level roles, the System Administrator exception, and that users outside a profile see the value masked on forms and views, which fits the stem's hidden values."
+      },
+      {
+        "sourceId": "sim-d1-s15",
+        "supported": true,
+        "section": "Introduction",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-10-23. Confirmed that personas define user permissions for unified routing."
+      },
+      {
+        "sourceId": "sim-d1-s16",
+        "supported": true,
+        "section": "Role: App Profile Manager Administrator",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-05-08. Confirmed the privilege table covers channel providers, application configurations and templates, and has no column permission entries."
+      }
+    ],
+    "fingerprint": "017995187986eb000b7e664b221ebc7d3ac58b0ef73d7e4926f23f9cbe48ed31"
+  },
+  {
+    "id": "sim-d1-q17",
+    "revision": 1,
+    "reviewer": "deployment-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands after revision, and the leak finding is resolved. Seasonal Rep now appears in two options, so the name no longer identifies the answer, and the correct option isn't the longest. Option d is a real feature used in the wrong place: the experience profiles page says Set rank and roles assigns security roles to a profile, and it never mentions personas. The answer is right. The page defines the Contact center users view by persona, a custom role isn't mapped by default, and Microsoft's seasonal example maps the copied role on the Agent persona. The strongest alternative was a bookable resource, which fails because the page ties the view to persona and ties bookable resources to work assignment. The sim-cb-s23 entry is identical to the one in batch 8d-case-b. Distinct from ab250-d1-q44, which tests what persona mapping doesn't grant.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-cb-s27",
+        "supported": true,
+        "section": "Introduction; Manage contact center users; Manage users using the classic experience",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-10-23, updated 2026-10-26. Confirmed the two view definitions, the bulk queue update, the bookable resource purpose, and what Default Presence does. A later step says the view shows users configured in Power Platform admin center, which doesn't change the persona definition."
+      },
+      {
+        "sourceId": "sim-d1-s15",
+        "supported": true,
+        "section": "Create custom security roles; Map roles to personas; Manage personas",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-10-23. Confirmed the default mappings for the three primary roles, the Role persona mapping steps, and the seasonal example."
+      },
+      {
+        "sourceId": "sim-cb-s23",
+        "supported": true,
+        "section": "Assign users, templates, configure productivity pane, channels",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Dated 2026-07-28, updated 2026-11-03. Confirmed that Set rank and roles assigns a rank and security roles to a profile, and that the page describes profiles as targeted app experiences. A search of the page found no mention of personas."
+      }
+    ],
+    "fingerprint": "b50cdccd050c4487aea62464c91cbc7ff247b43dcb6bd9e4e36bf6e5aa9e3616"
+  }
+]

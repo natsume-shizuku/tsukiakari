@@ -1,0 +1,414 @@
+[
+  {
+    "id": "sim-p-q01",
+    "revision": 1,
+    "reviewer": "pilot-reviewer-2",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands as a standalone hotspot. It has no groupId and no text or evidence note refers to the case, so check 2 doesn't apply. The scenario contains what each row needs. Row 1: numbers that haven't moved stay on Azure Communication Services Direct Routing with no planned downtime, so the name can't be shared or moved, and the Teams trunk needs a different name or alias. Row 2: the certificate names only sbc1, so it can't stay unchanged, and the accepted certificate authority rule removes the self-signed option. Row 3: the old trunk goes only after validation. Each row has one defensible answer. Strongest alternatives argued: moving the name to Teams would only work with a new alias on the Azure side, which the option doesn't say and which is the reverse of the page's example, and on its own it strands the unmoved numbers. Keeping the current certificate fails even though separate certificates leave it in place on one side, because the option adds nothing for the new name. Self-signed is a kind of separate certificate, but it fails the authority rule. Removing the trunk during the final window before carrier routing changes is the full cutover sequence and would cut off the last numbers. r2a's 'both names' hints at row 1, but r1b with r2b is a consistent wrong pair, so the learner still has to know the rule. The Bring your own carrier page (2026-05-27) independently says the two services must use a different fully qualified domain name, so there is no conflict. Every option explanation is true. Distinct from ab250-d2-q41 (carrier path), ab250-d2-q47 (DNS placement) and ab250-d2-q37 (voice routing policy); the bank has no question on sharing an SBC name.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2-s02",
+        "supported": true,
+        "section": "Choose a domain transition approach; Update the SBC; Transition production numbers; Validate the migration; Decommission the Azure Communication Services configuration",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Opened, page updated 2026-09-23. Confirmed the rule that one SBC name can't be on both services, the coexistence alias, the certificate rule, the accepted certificate authority, the downtime warning, that removing the SBC first belongs to a full cutover that reuses the name, and that old routes are removed only after confirming that nothing depends on them."
+      },
+      {
+        "sourceId": "sim-d2-s01",
+        "supported": true,
+        "section": "Choose a voice migration path",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Opened, page updated 2026-10-08. Teams Direct Routing is the path for retaining carrier relationships and SBC investments, so the scenario's design is a supported path."
+      }
+    ],
+    "fingerprint": "40b9490a23977907e5b62c973c26e85111e2578dfbc886e2266649b1cc4541b4"
+  },
+  {
+    "id": "sim-p-q02",
+    "revision": 1,
+    "reviewer": "pilot-reviewer-2",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands. My earlier finding is fixed: the first evidence entry now says that the account and its license are one token, which matches tokens e and f and the sim-d2-s08 entry, and the reasoning it gives for check 1 is right. The quickstart does assign the number before the license, and the account must still exist first. I confirmed that this sentence is the only change to q02 since my first pass. Check 2: with the exhibits hidden the order can be worked out, but the number type can't. The stem says only that the number is ready in Teams, the three assignment tokens are parallel, and the Technical requirements exhibit decides. 'Which four actions' settles any doubt that 'ready' might mean already assigned. Check 1 holds on every neighbouring pair. Account before number: the number is assigned to that account. Number before sync: the sync transfers phone number data from the Teams resource account, so there is nothing to transfer first. Sync before workstream: Sync from Teams creates the phone number record, and the voice setup selects a number from the list. I looked for the reverse. The Direct Routing, Operator Connect and Calling Plan migration articles all use account, license, number, sync. The Azure Communication Services quickstart assigns the number before the license and runs Sync-CsOnlineApplicationInstance before the number, but that cmdlet isn't the Sync from Teams button, and the license shares a token with account creation, which still comes first. The archived release plan lists linking numbers to accounts before connecting accounts to the Dynamics 365 app, in unnumbered bullets, and the accounts must still exist first. No page reverses a keyed pair, and a learner who is right can't be marked wrong. The FAQ evidence note is accurate. The FAQ page is dated 2026-04-15. The line is a note inside the answer to whether numbers must be bought from Azure Communication Services, directly after a sentence on bringing carrier numbers from Teams into Azure Communication Services. The release plan marks general availability on Sep 2, 2025. Configure Teams Phone, Plan migration and the three migration articles are all newer and document the Teams Phone path, and Plan migration requires it. The line is scoped or stale, not a live conflict. The Outage number is also a carrier number on Direct Routing, not a Microsoft-native one, and no explanation relies on the line. All option explanations are true.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2-s02",
+        "supported": true,
+        "section": "Connect the migrated numbers to Dynamics 365 Contact Center",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Opened, page updated 2026-09-23. Resource account, license, number, then sync and voice channel configuration, and each number needs a resource account. The page supports the claim, and the corrected applicability sentence now describes tokens e and f accurately."
+      },
+      {
+        "sourceId": "sim-d2-s03",
+        "supported": true,
+        "section": "Prerequisites; Create a Teams resource account; Assign service number to Teams resource account; Configure Teams Phone in the voice channel",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Opened, page updated 2026-10-30. Roles and TeamsResourceAccount.Read.All, the sync transferring phone number data from the resource account, PhoneNumberType DirectRouting and OperatorConnect, Sync from Teams creating the phone number record, and the voice channel step afterwards. FAQ line tested against this page: FAQ dated 2026-04-15, release plan general availability marked Sep 2, 2025. Update 26104 (2026-11-03) also says that Teams Phone is generally available for the contact center. Status doesn't change the answer, because the case requires Teams Phone."
+      },
+      {
+        "sourceId": "sim-d2-s04",
+        "supported": true,
+        "section": "Prerequisites; Configure a voice channel",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Opened, page updated 2026-03-24. Acquiring a number is a prerequisite, and the voice setup selects a number from the list of numbers with inbound calls enabled that aren't on another workstream."
+      },
+      {
+        "sourceId": "sim-d2-s08",
+        "supported": true,
+        "section": "Assign a license",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Opened, page updated 2026-10-27. Each resource account must have a Microsoft Teams Phone Resource Account license. The page shows no required order against the number, which matches the sim-d2-s08 evidence entry."
+      },
+      {
+        "sourceId": "sim-d2-s01",
+        "supported": true,
+        "section": "Choose a voice migration path",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Opened, page updated 2026-10-08. Calling Plan means Microsoft-managed PSTN with no customer SBC, Teams Direct Routing keeps the carrier and SBC, and Operator Connect means a participating certified carrier manages connectivity. Both distractor tokens fail against the Technical requirements exhibit."
+      }
+    ],
+    "fingerprint": "4b2b2c026c0b0da866f7cf7bf02359405cdbfbfaa3d7a7ba7933838042f924f5"
+  },
+  {
+    "id": "sim-p-q03",
+    "revision": 1,
+    "reviewer": "pilot-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands, and the case edits did not disturb it. Removing the no-preview rule helped: option r1c now fails only on caller ID, which is firm, because a bridged transfer shows the Dynamics phone number whatever the secure contact settings do. The new explanation is accurate, since secure settings can stop capture on a bridged transfer. Row answers can't be worked out without the Business requirements exhibit, so check 2 passes, and the feature's preview status no longer matters, so check 6 passes. Row 3 still holds on the narrowest reading because the case keeps Collections on Azure Communication Services Direct Routing. The linked SIP specification, reviewed on 2026-11-05, lets the proxy act as referee if the SBC doesn't advertise REFER, so the note's instruction is a simplification, but the 'No change' option still fails on its stated reason.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2-s04",
+        "supported": true,
+        "section": "Transfer calls to external numbers and Teams users, Enhanced voice tab and the Direct Routing note",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Reopened, page unchanged (updated 2026-03-24). Caller ID, call continuity, capture, DTMF and the REFER-TO note confirmed."
+      },
+      {
+        "sourceId": "sim-d2-s05",
+        "supported": true,
+        "section": "Transfer calls, Enhanced voice tab; Consult with external contacts and transfer a call securely (preview)",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Reopened, page unchanged (updated 2026-08-18). The new call isn't recorded or transcribed, and bridged transfer is set for the workstream."
+      },
+      {
+        "sourceId": "sim-d2-s06",
+        "supported": true,
+        "section": "Set up secure consult with and transfer to external contacts (preview)",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Reopened, page unchanged (updated 2026-07-29). New claim checked: secure settings offer Turn off transcription & recording for bridged transfer. Nothing there changes the caller ID."
+      },
+      {
+        "sourceId": "sim-d2-s09",
+        "supported": true,
+        "section": "Enable call recording and transcription for voice",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Reopened, page unchanged. Automatic start applies when calls begin."
+      }
+    ],
+    "fingerprint": "af1d6afa6572a39446af7d71030c26884eb71936750433d504f7687862e01b73"
+  },
+  {
+    "id": "sim-p-q04",
+    "revision": 1,
+    "reviewer": "pilot-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands. Finding fixed: token a no longer misdescribes the rule, and 'dedicated voicemail queue' matches the page's own 'required voicemail queues and route-to-queues rules'. Every row was tested against every token. Token a on the Billing Back Office row is ruled out by the new 'no additional queues or routing rules' requirement. Token e on the Commercial Desk row fails because Billing Back Office would then receive commercial voicemails. Token a on the account manager row fails because the voicemail must be assigned to that manager. The Collections addition is consistent across the case and the stem. With the exhibits hidden, the Back Office and Commercial Desk rows can't be decided, so check 2 passes.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2-s07",
+        "supported": true,
+        "section": "Prerequisites for voicemail; Configure voicemail to manage overflow of voice calls; Use voicemail to manage direct inbound calls to service representatives; Individual voicemails; Group voicemails",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Reopened, page unchanged (updated 2026-04-08). All three rows confirmed, including configure the required voicemail queues and route-to-queues rules, the Organization phone number condition, no voice queues, and the sentiment caution."
+      }
+    ],
+    "fingerprint": "2735024a99b94ed0bd173db05165f7c876daf05313546af353d021807e95c329"
+  },
+  {
+    "id": "sim-p-q05",
+    "revision": 1,
+    "reviewer": "pilot-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands. Both findings are fixed. The case no longer contradicts itself: Outage Reporter is a staff pilot on an internal test number, and Issue 1 now describes staff in that pilot. Rows labeled Issue 1, 2 and 3 can't be answered with the exhibits hidden, so check 2 passes. Removing silence detection also removes a token that could be argued for Issue 2. Every row was tested against every token and each has one answer. The new distractor is real and fails as explained. It's on by default, which doesn't matter for a distractor.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d3-s02",
+        "supported": true,
+        "section": "Turn on basic voice; Customized automatic speech recognition; When to turn off barge-in; Specifications",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Reopened, page unchanged (updated 2026-10-20). New claim checked: Increase accuracy with agent data improves speech recognition accuracy. Barge-in claims confirmed."
+      },
+      {
+        "sourceId": "sim-d3-s01",
+        "supported": true,
+        "section": "Topics, Best practices; System trigger support; Latency messaging; Speech sensitivity",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Reopened, page unchanged (updated 2026-10-20). On Error, latency messaging and speech sensitivity claims confirmed. Preview applies to digital messaging channels, not to voice."
+      }
+    ],
+    "fingerprint": "b8009576adac8db5d34017d8f5642030f15cc9bd624bbb63dfe2101ecc1fea92"
+  },
+  {
+    "id": "sim-p-q06",
+    "revision": 1,
+    "reviewer": "pilot-reviewer-2",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands, and the stem fix works. Hide test: the stem now carries no fact. The options show that the topic is language, but not what Issue 4 is, whether the agent already serves French, whether skills are in use, or that the line must keep one number. b and d do interlock, so a test-wise learner would lean towards them, but elimination doesn't finish the job. Configure multilingual voice agents lists multiple voice channels with different phone numbers as a valid option, so b with e (a French number on its own workstream, sending calls to a French queue) is a complete design that the page alone can't reject. Only 'Each published line keeps one phone number' in Business requirements removes it. The skill option needs 'Skill-based routing isn't in use', and the second agent needs the language setup in Current environment. The deciding facts are in the exhibits, so check 2 passes. With the case, the fault is at escalation, one queue receiving everyone, and b with d is Microsoft's documented pattern. It also fits the separate teams and service-level targets. Default skill matching algorithm is a real workstream setting and fails as explained. The case's agent is consistent: Configure real-time agents (2026-10-20) supports secondary languages and lists fr-CA as validated, and nothing limits the escalation section to basic agents. The older Set up a multilingual agent page (Bot Framework Composer, ms.date 2026-01-30) says new multilingual chatbots aren't supported. That line concerns chatbots on an older path, the page itself builds one agent serving several languages, and it gives the same queues and Conversation.CustomerLanguage, so the keyed answer and the explanation hold on both pages and check 5 passes. The bank has no question on CustomerLanguage routing.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d3-s03",
+        "supported": true,
+        "section": "Opening paragraphs; Prerequisites; Examples; Escalate the call to a representative",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Opened, page updated 2026-07-29. A single voice agent and a single voice channel with one number can serve several languages, the agent must support the channel's languages, escalating to a language-specific queue needs a queue for each language staffed by its speakers, and the route-to-queues ruleset uses Conversation.CustomerLanguage based on what customers select. The page also allows separate numbers per language, so the case, not the page, rejects option e. Set up a multilingual agent also opened and repeats the queues and criterion."
+      }
+    ],
+    "fingerprint": "4d3b8726630e1c96a2a2837a0b176d25d3bdb201f28cdeffa50c00da3799d2d0"
+  },
+  {
+    "id": "sim-p-q07",
+    "revision": 1,
+    "reviewer": "pilot-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands. All earlier findings are fixed. With row 3 and the hit tokens gone, no row has a second answer, and every row was tested against every token, including the new distractor. A queue overflow condition applies to everyone routed to the queue, so it fails for medical-priority customers, and it does nothing for a call that matches no rule. The two-rule requirement is gone from the case, so nothing is left dangling. Doubt 5: the bare labels read clearly. Each one maps to a single Routing bullet in the Business requirements exhibit, and Corvane's other mention in Background carries no requirement. Check 2 passes, because the labels mean nothing with the exhibits hidden. Optional polish only: the table heading 'Item' could be 'Requirement'. The concept ID still says policy selection, which is a stable identifier and doesn't reach the learner.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d4-s02",
+        "supported": true,
+        "section": "Opening section; Percentage-based allocation of work to queues; Configure rules in route-to-queue ruleset",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Reopened, page unchanged (updated 2026-05-08). Fallback on no match, vendor use, five queues and 100 percent confirmed."
+      },
+      {
+        "sourceId": "sim-d4-s01",
+        "supported": true,
+        "section": "Configure overflow conditions for before a work item is queued; Configure rule-specific overflow conditions for before a work item is queued",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Reopened, page unchanged (updated 2026-10-30). Queue-level pairs and rule-specific overflow for priority customers confirmed."
+      },
+      {
+        "sourceId": "sim-d4-s06",
+        "supported": true,
+        "section": "Configure queue prioritization; How fallback queues work",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Reopened, page unchanged. Queue priority orders assignment, and work that matches no rule goes to the fallback queue."
+      },
+      {
+        "sourceId": "sim-d4-s07",
+        "supported": true,
+        "section": "Create a workstream, Fallback queue",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Reopened, page unchanged. The out-of-the-box queue is selected by default, so Storm Desk must be set."
+      }
+    ],
+    "fingerprint": "ce1cec2c60828999331ab2779304e79252e1fdec98216c1bb0455cffc1ce0212"
+  },
+  {
+    "id": "sim-p-q08",
+    "revision": 1,
+    "reviewer": "pilot-reviewer-2",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands. New option b is a real configuration: the action on Out of operation hours can be changed, and Transfer to a different queue is listed for voice. It fails on undisputed text, twice. The pre-queue check runs once before the call enters the queue, so it can't touch calls already waiting, and the Note in the playbook section draws exactly that contrast. It also removes the voicemail offer from after-hours callers, and a transfer gets no further pre-queue overflow check, so the receiving queue couldn't restore it. The explanation is true. Conflict test: the two pages disagree only on the workstream-level operating hours setting. The question, its options, explanations and evidence notes never mention that setting. The only link is the Current environment line that Channel operating hours is off on all workstreams, and with it off both pages agree that the queue's Voicemail action works. So no claim depends on which page is right, and check 5 passes. Option a is a valid pair (Voicemail is listed for queued voice items), but it would also affect daytime callers, which the stem forbids, and it doesn't respond to the closing. Option c is pre-queue, so the once-only check applies. Option d is supported by Manage overflow and Configure conversation orchestration: the condition covers a queue going out of hours while conversations wait, voicemail is an action, and new after-hours callers keep the same outcome through the queue's existing overflow, so no other caller's experience changes. Check 2: with the exhibits hidden, the learner doesn't know which callers Issue 5 is about, and the three out-of-hours options can't be separated. Check 6: the release status was reopened today as the evidence note requires. General availability is still unproven, but the case has no preview restriction, the question claims no status, and every distractor fails regardless, so the answer doesn't depend on it. The bank has no playbook question.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d4-s01",
+        "supported": true,
+        "section": "Handle overflow before a work item is queued; Configure overflow conditions for before a work item is queued; Configure rule-specific overflow conditions for before a work item is queued; Overflow condition and actions when work items are queued; Use natural language playbooks to configure overflow actions for work items in queue",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Opened, page updated 2026-10-30, no preview wording. Once-only check, no further pre-queue check after a transfer, the editable action on Out of operation hours, Transfer to a different queue and Voicemail for voice, Waiting time in queue exceeds as the only queued condition with Voicemail listed, Queue goes out of operating hours while conversations are waiting, Send to voicemail and continuous evaluation. The line that the workstream setting doesn't affect overflow settings is still there. It conflicts with the voicemail page (2026-04-08), but the question relies on neither, because the case turns the setting off."
+      },
+      {
+        "sourceId": "sim-d4-s03",
+        "supported": true,
+        "section": "Prerequisites; Supported trigger events, conditions, and actions; Sample event-action mappings",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Opened, page updated 2026-10-30. Consumption-based billing and unified routing prerequisites, Queue is out of operating hours including the transition while conversations are waiting, Offer voicemail as an action, and the sample mapping for a queue that is out of operating hours."
+      },
+      {
+        "sourceId": "sim-d4-s08",
+        "supported": true,
+        "section": "Release table; Feature details",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Opened as a cited source. It supports the behavior: the system monitors conversations that entered before closing and can guide customers to leave a voicemail through conversation orchestration. Status reopened: public preview marked Jun 20, 2026, general availability Oct 2026 with no released mark, archived as of October 2026. Updates 26102, 26103 and 26104 (the latest, 2026-11-03) don't announce general availability for this feature. Status doesn't affect the answer."
+      }
+    ],
+    "fingerprint": "43e0017bda095359aa3821d65fca7cf1b3786064eb42c790a8752fbdcafe5d65"
+  },
+  {
+    "id": "sim-p-q09",
+    "revision": 1,
+    "reviewer": "pilot-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands, and the case edits did not disturb it. It relies on the Technical requirements bullets, which are unchanged. The removed no-preview rule doesn't matter, because the migration method is the same whatever the playbook's status. Every row was tested against every token. The Configuration Migration tool fails on a later change only because the case requires managed solutions where the procedure supports them, and direct edit and environment copy are ruled out only by the case, so check 2 passes.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d1-s02",
+        "supported": true,
+        "section": "Migrate configuration for new capacity profiles (tip); Migrate configuration for channel workstreams and channel settings (table of automatically added tables)",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Reopened, page unchanged (updated 2026-06-16). New records must be migrated using the Configuration Migration tool, and updates can then be migrated using solutions."
+      },
+      {
+        "sourceId": "sim-d4-s03",
+        "supported": true,
+        "section": "Migrate conversation orchestration playbooks",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Reopened, page unchanged (updated 2026-10-30). CC User Prompt and the rule that referenced entities must already exist are confirmed."
+      },
+      {
+        "sourceId": "sim-d1-s01",
+        "supported": true,
+        "section": "Managed vs. unmanaged solutions; Update of configuration and active layers",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Reopened, page unchanged. Export as managed, and the active layer can prevent later updates."
+      }
+    ],
+    "fingerprint": "d77d77d4a95167aadf5b290b73daf8afabccda72ed715377ffc58924df69ee6e"
+  },
+  {
+    "id": "sim-p-q10",
+    "revision": 1,
+    "reviewer": "pilot-reviewer",
+    "reviewedAt": "2026-11-05",
+    "decision": "approved",
+    "rationale": "Stands. The configuration is valid for voice, with a wait of 1 to 60 minutes and Transfer to a different queue as a listed action, so the only reason it fails is the scenario's requirement that every call stays in Claims Voice. That makes this a real decision, not a trick. It is a fair new angle on ab250-d4-q11, where the same transfer is the right answer. Minor note: sim-d4-s04 is cited for contrast, but the explanation doesn't use it.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d4-s01",
+        "supported": true,
+        "section": "Handle overflow when a work item is queued; Overflow condition and actions when work items are queued; Things to keep in mind",
+        "accessedAt": "2026-11-05",
+        "claimReviewedAt": "2026-11-05",
+        "notes": "Queued overflow reroutes the work item to another queue. Waiting time in queue exceeds with Transfer to a different queue is available for voice, and the voice wait range is 1 to 60 minutes."
+      },
+      {
+        "sourceId": "sim-d4-s04",
+        "supported": true,
+        "section": "Opening paragraphs",
+        "accessedAt": "2026-11-05",
+        "claimReviewedAt": "2026-11-05",
+        "notes": "Bullseye routing keeps the conversation in the same queue, which is the contrast the evidence note describes."
+      }
+    ],
+    "fingerprint": "1109db86cb82f6b143619bad46c1536d6211d1c88392a73a5908465f575f2c8c"
+  },
+  {
+    "id": "sim-p-q11",
+    "revision": 1,
+    "reviewer": "pilot-reviewer",
+    "reviewedAt": "2026-11-05",
+    "decision": "approved",
+    "rationale": "Stands. The page matches each requirement: Level 0 first, later groups added at the configured wait, earlier groups keep higher priority, and the conversation stays in the same queue. Sixty seconds is a valid wait, least active is a supported strategy, and the scenario supplies both prerequisites. Preview status was tested. The page dated 2026-10-30 has no preview label, though a search index copy still shows '(preview)' in the title, and the archived release plan shows public preview on Jul 9, 2026 and planned general availability in October 2026. The series has no ban on preview features, so the answer is Yes either way. The series is delivered in bundle order and one way, so q11 is answered before q12 and q13 appear.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d4-s04",
+        "supported": true,
+        "section": "Opening paragraphs; Prerequisites; How bullseye routing works; Configure wait times",
+        "accessedAt": "2026-11-05",
+        "claimReviewedAt": "2026-11-05",
+        "notes": "Page dated 2026-10-30, no preview label. All cited behavior confirmed, including the 30-second minimum and that Level 1 also supports 0 seconds."
+      }
+    ],
+    "fingerprint": "d0f4374387e70b6073575b09f78461a58342233c9ed2c48901abebe64701cc70"
+  },
+  {
+    "id": "sim-p-q12",
+    "revision": 1,
+    "reviewer": "pilot-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "New question and it stands. The page says the top assignment rule is evaluated first and that if no representatives are matched the next rule is evaluated, gradually relaxing constraints. Doubt 2: the question is judged as written, and the solution states two rules with no time condition, so whether a rule could be timed doesn't arise. Neither Assignment methods nor Configure assignment rules mentions a wait-based rule condition. The strongest argument for Yes is that requirement 2 doesn't literally say 'not before 60 seconds', but the answer doesn't depend on that reading: when no specialist is free, the call reaches a general CSR without being offered to a specialist, which breaks requirement 1. The other edge case also ends in No: if rule 1 matched an unavailable specialist, the next rule wouldn't run and general CSRs would never become eligible. This is a real alternative design, so check 7 passes. Distinct from ab250-d4-q03, which tests skill conditions inside custom rules.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d4-s05",
+        "supported": true,
+        "section": "How assignment rulesets work; Components of an assignment rule; Create new",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Reopened, page unchanged (updated 2026-10-30). New claims checked: top rule first, next rule if no match, constraints gradually relax, later rules aren't evaluated once a rule matches a user. Configure assignment rules (updated 2026-09-11) also opened, with no wait-based condition found."
+      }
+    ],
+    "fingerprint": "f9c5e6cf3cd8659830f4519cfd326b945b1d10d2a1dd4c2128913846aadfc77b"
+  },
+  {
+    "id": "sim-p-q13",
+    "revision": 1,
+    "reviewer": "pilot-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "New question and it stands. A wait-time playbook changes a conversation's priority score, and higher-priority conversations are offered first, but it doesn't change who is eligible. Both user groups are associated with Claims Voice from the start, so general service CSRs can take calls immediately and requirement 1 fails. There is no credible argument for Yes. The solution is a real alternative that someone might try, not an add-on, which fixes my earlier finding and passes check 7. The answer doesn't depend on the playbook's release status. Doubt 6: one Yes in four is acceptable. The brief bars only all Yes or all No, and No, Yes, No, No shows no pattern that gives answers away. Four different approaches now sit in the series. No bank question covers dynamic prioritization.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d4-s05",
+        "supported": true,
+        "section": "How dynamic prioritization works; Scenario: Wait time escalation; Integration with existing features",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Reopened, page unchanged (updated 2026-10-30). Voice and live chat, higher-priority conversations offered first, and no custom prioritization rules needed, which the scenario meets."
+      },
+      {
+        "sourceId": "sim-d4-s04",
+        "supported": true,
+        "section": "How bullseye routing works, step 7; Create user groups",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Reopened, page unchanged (updated 2026-10-30). All users in a user group associated with the queue count as part of the queue, and queue membership comes through the user groups."
+      },
+      {
+        "sourceId": "sim-d4-s03",
+        "supported": true,
+        "section": "Supported scenarios",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Reopened, page unchanged. The template name matches the question."
+      }
+    ],
+    "fingerprint": "a8608bd96c8c3d52ee1037bf417cac902ef92ff54b1d778d71adc081b0ac1093"
+  }
+]

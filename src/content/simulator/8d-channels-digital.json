@@ -1,0 +1,2104 @@
+{
+  "sources": [
+    {
+      "id": "sim-d2d-s01",
+      "title": "Configure a Facebook channel",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-facebook-channel"
+    },
+    {
+      "id": "sim-d2d-s02",
+      "title": "Configure a LINE channel in Dynamics 365 Contact Center",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-line-channel"
+    },
+    {
+      "id": "sim-d2d-s03",
+      "title": "Configure Microsoft Teams channel",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-microsoft-teams"
+    },
+    {
+      "id": "sim-d2d-s04",
+      "title": "Configure custom messaging channels",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-custom-channel"
+    },
+    {
+      "id": "sim-d2d-s05",
+      "title": "Overview of channels",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/channels"
+    },
+    {
+      "id": "sim-d2d-s06",
+      "title": "Configure an SMS channel for Twilio",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-sms-channel-twilio"
+    },
+    {
+      "id": "sim-d2d-s07",
+      "title": "Configure an SMS channel for Infobip in Dynamics 365 Contact Center",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-sms-channel-infobip"
+    },
+    {
+      "id": "sim-d2d-s08",
+      "title": "Customize live chat widgets for mobile apps",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/render-live-chat-widget-mobile"
+    },
+    {
+      "id": "sim-d2d-s09",
+      "title": "Overview of messaging APIs",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/extend/intro-messaging-apis"
+    },
+    {
+      "id": "sim-d2d-s10",
+      "title": "Integrate your own custom channel using Direct Line",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/bring-your-own-channel"
+    },
+    {
+      "id": "sim-d2d-s11",
+      "title": "getAgentAvailability (JavaScript API reference) for Omnichannel for Customer Service",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/reference/methods/getagentavailability"
+    },
+    {
+      "id": "sim-d2d-s12",
+      "title": "Identify customers automatically",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/record-identification-rule"
+    },
+    {
+      "id": "sim-d2d-s13",
+      "title": "Configure a preconversation survey",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-pre-chat-survey"
+    },
+    {
+      "id": "sim-d2d-s14",
+      "title": "Configure authentication settings",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-chat-auth-settings"
+    },
+    {
+      "id": "sim-d2d-s15",
+      "title": "Use real-time translation of conversations for service representatives and customers",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/oc-real-time-translation"
+    },
+    {
+      "id": "sim-d2d-s16",
+      "title": "Support for live chat and asynchronous channels",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/card-support-in-channels"
+    },
+    {
+      "id": "sim-d2d-s17",
+      "title": "Create and manage operating hours",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-operating-hours"
+    },
+    {
+      "id": "sim-d2d-s18",
+      "title": "Configure a chat widget in Dynamics 365 Contact Center",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/add-chat-widget"
+    },
+    {
+      "id": "sim-d2d-s19",
+      "title": "Customize live chat widgets using data tags",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/customize-chat-widget"
+    },
+    {
+      "id": "sim-d2d-s20",
+      "title": "startChat (JavaScript API reference) for Omnichannel for Customer Service in Dynamics 365",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/reference/methods/startchat"
+    },
+    {
+      "id": "sim-d2d-s21",
+      "title": "Configure automated messages",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-automated-message"
+    },
+    {
+      "id": "sim-d2d-s22",
+      "title": "Set up unified routing for email records",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-routing-for-email-records"
+    },
+    {
+      "id": "sim-d2d-s23",
+      "title": "Route records automatically using custom flow",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/routing-trigger-automatic"
+    },
+    {
+      "id": "sim-d2d-s24",
+      "title": "Set up unified routing for records",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/set-up-record-routing"
+    },
+    {
+      "id": "sim-d2d-s25",
+      "title": "Configure timeout rules",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-time-out-rules"
+    },
+    {
+      "id": "sim-d2d-s26",
+      "title": "Show customers their position in a queue",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/show-queue"
+    },
+    {
+      "id": "sim-d2d-s27",
+      "title": "Configure proactive chat",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/proactive-chat"
+    },
+    {
+      "id": "sim-d2d-s28",
+      "title": "Start a chat proactively",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/start-proactive-chat"
+    },
+    {
+      "id": "sim-d2d-s29",
+      "title": "setContextProvider (Omnichannel for Customer Service JavaScript API reference)",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/reference/methods/setcontextprovider"
+    },
+    {
+      "id": "sim-d2d-s30",
+      "title": "Send authentication token",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/send-auth-token-starting-chat"
+    },
+    {
+      "id": "sim-d2d-s31",
+      "title": "Configure feedback surveys using Copilot Studio",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-surveys"
+    },
+    {
+      "id": "sim-d2d-s32",
+      "title": "Create quick replies",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-quick-replies"
+    },
+    {
+      "id": "sim-d2d-s33",
+      "title": "View the communication panel for conversations in Dynamics 365 Contact Center",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/oc-conversation-control"
+    },
+    {
+      "id": "sim-d2d-s34",
+      "title": "Set personal options in model-driven apps",
+      "url": "https://learn.microsoft.com/en-us/power-apps/user/set-personal-options"
+    },
+    {
+      "id": "sim-d2d-s35",
+      "title": "FAQ about Facebook channel setup",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/facebook-channel-setup-faq"
+    },
+    {
+      "id": "sim-d2d-s36",
+      "title": "View Active Conversation in Dynamics 365 Contact Center",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/oc-customer-summary"
+    },
+    {
+      "id": "sim-d2d-s37",
+      "title": "startProactiveChat (JavaScript API reference) for Omnichannel for Customer Service in Dynamics 365",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/reference/methods/startproactivechat"
+    },
+    {
+      "id": "sim-cb-s17",
+      "title": "Understand conversation states in Dynamics 365 Contact Center",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/oc-conversation-state"
+    },
+    {
+      "id": "sim-cb-s21",
+      "title": "Understand disconnected chats",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/oc-conv-state-chat-disconnect"
+    },
+    {
+      "id": "sim-d4-s07",
+      "title": "Create and manage workstreams",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-workstreams"
+    },
+    {
+      "id": "sim-d2v-s21",
+      "title": "Enable real-time translation of conversations",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/enable-real-time-translation"
+    },
+    {
+      "id": "sim-d4-s01",
+      "title": "Manage overflow of work items in queues",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/manage-overflow"
+    }
+  ],
+  "groups": [],
+  "questions": [
+    {
+      "id": "sim-d2d-q01",
+      "revision": 1,
+      "kind": "match",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.03"
+      ],
+      "conceptId": "digital-channel-provider-handshake",
+      "prompt": "Cobalt Bay Outfitters is adding four messaging channels to Dynamics 365 Contact Center. An administrator created each account in Copilot Service admin center, and each workstream is set up. The Facebook app, the LINE channel, the Teams app and the Azure bot resource already exist on the provider side, and the custom channel uses the Azure bot framework method.\n\nEach account now shows connection details that have to reach the provider before customer messages can arrive.\n\nYou need to complete the provider side of each connection.\n\nWhat should you do for each channel?",
+      "tray": "Provider actions",
+      "table": {
+        "title": "Provider connections",
+        "rowHeading": "Channel",
+        "answerHeading": "Action"
+      },
+      "tokens": [
+        {
+          "id": "a",
+          "text": "Add the callback URL and verify token to the app's webhook settings, then subscribe the page to Messages"
+        },
+        {
+          "id": "b",
+          "text": "Set the callback URL as the webhook URL in the Messaging API settings, turn on the webhook, and verify it"
+        },
+        {
+          "id": "c",
+          "text": "Enter the bot ID under App features in Developer Portal, then publish the app"
+        },
+        {
+          "id": "d",
+          "text": "Paste the messaging endpoint URL into the Messaging endpoint field of the bot resource"
+        },
+        {
+          "id": "e",
+          "text": "Copy the inbound URL from the workstream, and paste it into the Messaging section of the active phone number"
+        },
+        {
+          "id": "f",
+          "text": "Copy the callback URL, and paste it into the webhook field of a notification profile that uses HMAC authentication"
+        }
+      ],
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Facebook",
+          "correctTokenId": "a"
+        },
+        {
+          "id": "r2",
+          "label": "LINE",
+          "correctTokenId": "b"
+        },
+        {
+          "id": "r3",
+          "label": "Microsoft Teams",
+          "correctTokenId": "c"
+        },
+        {
+          "id": "r4",
+          "label": "Custom channel",
+          "correctTokenId": "d"
+        }
+      ],
+      "answer": "Facebook: Add the callback URL and verify token to the app's webhook settings, then subscribe the page to Messages. LINE: Set the callback URL as the webhook URL in the Messaging API settings, turn on the webhook, and verify it. Microsoft Teams: Enter the bot ID under App features in Developer Portal, then publish the app. Custom channel: Paste the messaging endpoint URL into the Messaging endpoint field of the bot resource.",
+      "explanation": "Every out-of-the-box channel ends the same way: handshake data has to be exchanged between the application and the provider. What changes is where it goes. Facebook uses the callback URL and verify token to configure the app's webhooks, and the page needs a subscription to Messages. LINE takes the callback URL as the webhook URL in the Messaging API settings, with the webhook toggle on and the connection verified. For Teams, the account's callback information gives a bot ID instead, which goes under App features in Developer Portal. A custom channel with the Azure bot framework method gives a messaging endpoint for the Azure bot resource. The other two steps belong to SMS providers: Twilio takes an inbound URL on the phone number, and Infobip takes the callback URL in a notification profile.",
+      "sourceIds": [
+        "sim-d2d-s05",
+        "sim-d2d-s01",
+        "sim-d2d-s02",
+        "sim-d2d-s03",
+        "sim-d2d-s04",
+        "sim-d2d-s06",
+        "sim-d2d-s07"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:channel-callback"
+      ],
+      "optionExplanations": {
+        "a": "Correct for Facebook. The callback URL and verify token configure the app's webhooks, and the page needs a subscription to Messages. LINE has no page subscription step.",
+        "b": "Correct for LINE. The copied callback URL becomes the webhook URL in the Messaging API settings, the webhook toggle is turned on, and the connection is verified.",
+        "c": "Correct for Microsoft Teams. The account's callback information gives a bot ID, which is entered under App features in Developer Portal before the app is published.",
+        "d": "Correct for the custom channel. The Messaging endpoint (URL) from the account goes in the Messaging endpoint field of the Azure bot resource.",
+        "e": "Fails on every row. This is the Twilio step, where the inbound URL goes in the Messaging section of an active SMS number. None of these four channels uses one.",
+        "f": "Fails on every row. This is the Infobip step, where the callback URL goes in a notification profile secured with HMAC. None of these four channels uses one."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n06"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d2d-q02",
+      "revision": 1,
+      "kind": "match",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.08",
+        "D2.1.10",
+        "D2.1.11"
+      ],
+      "conceptId": "messaging-integration-surface-selection",
+      "prompt": "Sundial Credit Union has three messaging projects on Dynamics 365 Contact Center. Its chat widget stays on the public website.\n\nThe mobile team will follow Microsoft's recommended approach for native apps. For this program, the security team doesn't allow any bot registration in Azure Bot Service.\n\nYou need to choose the integration surface for each project.\n\nWhat should you use for each project?",
+      "tray": "Integration surfaces",
+      "table": {
+        "title": "Messaging projects",
+        "rowHeading": "Project",
+        "answerHeading": "Integration surface"
+      },
+      "tokens": [
+        {
+          "id": "a",
+          "text": "Contact Center Messaging SDKs for iOS and Android"
+        },
+        {
+          "id": "b",
+          "text": "Live chat SDK for the chat widget"
+        },
+        {
+          "id": "c",
+          "text": "Messaging APIs"
+        },
+        {
+          "id": "d",
+          "text": "Custom messaging channel through Direct Line"
+        },
+        {
+          "id": "e",
+          "text": "Web chat widget inside a WebView"
+        }
+      ],
+      "rows": [
+        {
+          "id": "r1",
+          "label": "New native member app with in-app messaging and push notifications",
+          "correctTokenId": "a"
+        },
+        {
+          "id": "r2",
+          "label": "Back-end service that relays conversations from the in-house secure message center to representatives",
+          "correctTokenId": "c"
+        },
+        {
+          "id": "r3",
+          "label": "Website code that shows the start-chat option only while the target queue is within operating hours",
+          "correctTokenId": "b"
+        }
+      ],
+      "answer": "Native member app: Contact Center Messaging SDKs for iOS and Android. Back-end relay: Messaging APIs. Website code: Live chat SDK for the chat widget.",
+      "explanation": "Choose by where the code runs. For a native app, Microsoft strongly recommends the mobile SDKs, which include push notification support through Azure Notification Hub. Messaging APIs are built for service-to-service work and aren't recommended for calls from a user's device, so they fit the back-end relay and not the app. A custom channel through Direct Line could also bring in an in-house channel, but its documented setup needs a Bot Framework bot registered with Azure Bot Service, and security doesn't allow that here. On the website, the Live chat SDK method getAgentAvailability returns isQueueAvailable, and Microsoft names this method for deciding whether the start conversation option should be visible.",
+      "sourceIds": [
+        "sim-d2d-s08",
+        "sim-d2d-s09",
+        "sim-d2d-s04",
+        "sim-d2d-s10",
+        "sim-d2d-s11"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:integration-surface"
+      ],
+      "optionExplanations": {
+        "a": "Correct for the native app. Microsoft strongly recommends these SDKs, and they support push notifications with Azure Notification Hub. They're for native mobile apps, not for a back-end service or a website.",
+        "b": "Correct for the website code. The getAgentAvailability method of the Live chat SDK reports whether the queue is within operating hours.",
+        "c": "Correct for the back-end relay. Messaging APIs are designed for service-to-service integration and for custom channels. They aren't recommended for direct calls from a mobile or web client.",
+        "d": "Fails on every row. The documented custom channel setup needs a bot built with Bot Framework and registered with Azure Bot Service, which security doesn't allow here.",
+        "e": "Fails on every row. A WebView is the fallback when the mobile SDKs don't meet requirements or timelines, and it has reduced performance and unavailable features. The mobile team is following the recommended approach."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n10"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d2d-q03",
+      "revision": 1,
+      "kind": "match",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.06",
+        "D2.3.02"
+      ],
+      "conceptId": "preconversation-identification-link-outcomes",
+      "prompt": "Larchmont Appliances runs its chat channel with Dynamics 365 Customer Service, so representatives work with cases. The chat widget has a pre-conversation survey with a required single-line question named Email. No other identification method is in use. All contacts have the standard active status, and no account holds these email addresses.\n\nThe team lead is writing a guide that shows what representatives see after they accept a chat.\n\nYou need to identify the result of each test.\n\nWhat is the result of each test?",
+      "tray": "Results",
+      "table": {
+        "title": "Identification tests",
+        "rowHeading": "Survey answer",
+        "answerHeading": "Result"
+      },
+      "tokens": [
+        {
+          "id": "a",
+          "text": "The contact and the case are linked to the conversation"
+        },
+        {
+          "id": "b",
+          "text": "The contact is linked, and no case is linked"
+        },
+        {
+          "id": "c",
+          "text": "No contact or case is linked"
+        },
+        {
+          "id": "d",
+          "text": "The most recently updated contact is linked to the conversation"
+        },
+        {
+          "id": "e",
+          "text": "A new contact is created and linked to the conversation"
+        }
+      ],
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Matches one contact, and that contact has one active case",
+          "correctTokenId": "a"
+        },
+        {
+          "id": "r2",
+          "label": "Matches one contact, and that contact has three active cases",
+          "correctTokenId": "b"
+        },
+        {
+          "id": "r3",
+          "label": "Matches two contacts",
+          "correctTokenId": "c"
+        }
+      ],
+      "answer": "One contact with one active case: The contact and the case are linked to the conversation. One contact with three active cases: The contact is linked, and no case is linked. Two contacts: No contact or case is linked.",
+      "explanation": "Automatic identification links a record only when the result is a single record. A survey answer that matches one contact links that contact, and if the contact has one active case, that case is linked automatically too. Three active cases give no single case to link. An answer that matches two contacts links neither, because the application doesn't pick a record for you. The representative can still search for or create a record on the Active Conversation page.",
+      "sourceIds": [
+        "sim-d2d-s12",
+        "sim-d2d-s13",
+        "sim-d2d-s36"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:customer-identification"
+      ],
+      "optionExplanations": {
+        "a": "Correct for one contact with one active case. Microsoft says the case is linked automatically when the identified contact has one active case.",
+        "b": "Correct for one contact with three active cases. The contact is a single match, but the automatic case link applies when there's one active case.",
+        "c": "Correct for two contacts. When the search returns more than one contact, the record isn't linked to the conversation.",
+        "d": "Fails on every row. The application doesn't choose between matches. More than one result means the record isn't linked.",
+        "e": "Fails on every row. Identification searches existing records. Creating a record is something the representative does on the Active Conversation page."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n01"
+        },
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n02"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d2d-q04",
+      "revision": 1,
+      "kind": "hotspot",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.03"
+      ],
+      "conceptId": "infobip-sms-inbound-connection-values",
+      "prompt": "Tansy Pet Supply is adding an SMS channel through Infobip in Dynamics 365 Contact Center. SMS for Infobip is provisioned. The messaging account in Copilot Service admin center holds the API base URL and an API key with the message:send scope, and the SMS workstream is set up.\n\nAn administrator is now finishing the Infobip portal. The SMS number is assigned to a new application. The SMS subscription uses the inbound message and delivery events and filters on that application, and the number's default inbound forwarding action is Apply subscription.\n\nYou need to finish the portal setup so that customer messages reach representatives.\n\nWhat should you use for each item?",
+      "table": {
+        "title": "Infobip portal values",
+        "rowHeading": "Item",
+        "answerHeading": "Value or location"
+      },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Application ID of the new Infobip application",
+          "options": [
+            {
+              "id": "r1a",
+              "text": "The organization ID of the Dynamics 365 environment"
+            },
+            {
+              "id": "r1b",
+              "text": "The environment ID of the Dynamics 365 environment"
+            },
+            {
+              "id": "r1c",
+              "text": "The application (client) ID of a Microsoft Entra app"
+            },
+            {
+              "id": "r1d",
+              "text": "The tenant ID of the Microsoft Entra tenant"
+            }
+          ],
+          "correctOptionId": "r1a"
+        },
+        {
+          "id": "r2",
+          "label": "Secret key in the HMAC authentication settings",
+          "options": [
+            {
+              "id": "r2a",
+              "text": "The API key entered in the messaging account"
+            },
+            {
+              "id": "r2b",
+              "text": "A second API key created only for webhooks"
+            },
+            {
+              "id": "r2c",
+              "text": "The verify token from the callback information"
+            }
+          ],
+          "correctOptionId": "r2a"
+        },
+        {
+          "id": "r3",
+          "label": "Callback URL from the messaging account",
+          "options": [
+            {
+              "id": "r3a",
+              "text": "The Webhook URL field of a notification profile"
+            },
+            {
+              "id": "r3b",
+              "text": "The Messaging section of the SMS number"
+            },
+            {
+              "id": "r3c",
+              "text": "The application filter of the SMS subscription settings"
+            }
+          ],
+          "correctOptionId": "r3a"
+        }
+      ],
+      "answer": "Application ID: The organization ID of the Dynamics 365 environment. HMAC secret key: The API key entered in the messaging account. Callback URL: The Webhook URL field of a notification profile.",
+      "explanation": "Infobip inbound delivery depends on three values that are easy to confuse. The Infobip application's ID has to be the Dynamics 365 organization ID, and Microsoft specifically says not to use the environment ID, tenant ID or Microsoft Entra application ID. The HMAC settings reuse the same API key that's in the messaging account, and a mismatch is one of the listed reasons that messages don't arrive. The callback URL goes in the Webhook URL field of a notification profile, which the subscription then uses.",
+      "sourceIds": [
+        "sim-d2d-s07",
+        "sim-d2d-s06",
+        "sim-d2d-s01"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:sms-infobip"
+      ],
+      "optionExplanations": {
+        "r1a": "Correct. The Application ID is set to the organization ID, and the subscription's application filter then selects the application whose ID matches it.",
+        "r1b": "Fails. Microsoft says to use the organization ID, not the environment ID.",
+        "r1c": "Fails. Microsoft says to use the organization ID, not the Microsoft Entra application ID.",
+        "r1d": "Fails. Microsoft says to use the organization ID, not the tenant ID.",
+        "r2a": "Correct. The same API key that's in the messaging account is the secret key for HMAC authentication.",
+        "r2b": "Fails. The HMAC secret has to match the API key in the messaging account, and a mismatch is listed as a cause when messages don't arrive.",
+        "r2c": "Fails. A verify token is a Facebook value. The Infobip account's callback information gives a callback URL, and the secret key is the API key.",
+        "r3a": "Correct. The callback URL goes in the Webhook URL field of the notification profile, with the HMAC settings selected under Security settings.",
+        "r3b": "Fails. This is where the inbound URL goes for Twilio. For Infobip, the number's settings hold the application and the inbound forwarding action.",
+        "r3c": "Fails. The application filter selects the application whose ID matches the organization ID. It doesn't hold a URL."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n06"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d2d-q05",
+      "revision": 1,
+      "kind": "hotspot",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.03"
+      ],
+      "conceptId": "facebook-review-and-message-tag",
+      "prompt": "Juniper Street Books connected its Facebook page to Dynamics 365 Contact Center through a Facebook app. The Provisioning state of the page shows Running, and the workstream and routing are configured.\n\nA pilot found these gaps:\n- Only people who have a role in the Facebook app can message the page.\n- Representatives can't reply once 24 hours have passed since a customer's last message.\n\nYou need to close the gaps.\n\nWhat should you do for each item?",
+      "table": {
+        "title": "Facebook channel changes",
+        "rowHeading": "Item",
+        "answerHeading": "Action"
+      },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Let any customer message the page without being given a role in the Facebook app",
+          "options": [
+            {
+              "id": "r1a",
+              "text": "Get the pages_messaging permission approved through Meta App Review"
+            },
+            {
+              "id": "r1b",
+              "text": "Refresh the page access token on the Facebook account"
+            },
+            {
+              "id": "r1c",
+              "text": "Turn on the Facebook message tag on the channel instance"
+            },
+            {
+              "id": "r1d",
+              "text": "Add the callback URL to the app again, and resubscribe the page to Messages"
+            }
+          ],
+          "correctOptionId": "r1a"
+        },
+        {
+          "id": "r2",
+          "label": "Let representatives reply after the 24 hours have passed",
+          "options": [
+            {
+              "id": "r2a",
+              "text": "Set Facebook message tag to Yes on the channel instance, and turn the tag on in the Facebook app"
+            },
+            {
+              "id": "r2b",
+              "text": "Set Facebook message tag to Yes on the channel instance, and leave the Facebook app unchanged"
+            },
+            {
+              "id": "r2c",
+              "text": "Turn the tag on in the Facebook app, and leave Facebook message tag set to No on the channel instance"
+            },
+            {
+              "id": "r2d",
+              "text": "Set Auto-close after inactivity to seven days on the workstream, and leave Facebook message tag set to No"
+            }
+          ],
+          "correctOptionId": "r2a"
+        }
+      ],
+      "answer": "Customers without a role: Get the pages_messaging permission approved through Meta App Review. Replies after 24 hours: Set Facebook message tag to Yes on the channel instance, and turn the tag on in the Facebook app.",
+      "explanation": "These are two separate limits. Who can message the page depends on the Facebook app. Until Meta approves pages_messaging through App Review, only people with a role in the app can message the page. How long representatives can reply depends on the Facebook message tag. With the tag set to No, representatives can't respond after 24 hours unless the customer sends another message. The tag has to be on in both places: the channel instance's User features and the Facebook app.",
+      "sourceIds": [
+        "sim-d2d-s01",
+        "sim-d2d-s35",
+        "sim-d4-s07"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:facebook-channel"
+      ],
+      "optionExplanations": {
+        "r1a": "Correct. Until Meta approves pages_messaging for the app, only Facebook users with a role in the app can message the page.",
+        "r1b": "Fails. Page access tokens need refreshing on a schedule, but the limit on who can message the page comes from the pages_messaging approval.",
+        "r1c": "Fails. The message tag controls how long representatives can reply. It doesn't change who can message the page.",
+        "r1d": "Fails. The callback URL and subscription connect the app to Dynamics 365. The limit here comes from the pages_messaging approval.",
+        "r2a": "Correct. Microsoft says the tag must also be turned on in the Facebook app, so both places are needed.",
+        "r2b": "Fails. Microsoft says that to use the human agent message tag, you must also turn it on in the Facebook app.",
+        "r2c": "Fails. With Facebook message tag set to No, representatives can't respond after 24 hours unless the customer sends another message.",
+        "r2d": "Fails. Auto-close after inactivity decides when inactive conversations close. The 24-hour reply limit depends on the message tag."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n06"
+        },
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n11"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d2d-q06",
+      "revision": 1,
+      "kind": "hotspot",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.09"
+      ],
+      "conceptId": "authenticated-chat-key-rotation-and-claims",
+      "prompt": "Alpine Ridge Travel has a custom customer portal that isn't built on Power Pages. Its web team is adding authenticated chat to the portal's chat widget in Dynamics 365 Contact Center. An authentication settings record will be added to the widget, and the portal will issue a signed JSON Web Token (JWT).\n\nRequirements:\n- Signing keys rotate. During each rotation, tokens signed with the old key and with the new key must both validate.\n- A representative sees the signed-in customer's contact record, and the customer isn't asked any questions.\n- The chat button appears on public pages, so a visitor can select it before signing in.\n\nYou need to design the token flow.\n\nWhat should you do for each requirement?",
+      "table": {
+        "title": "Token flow design",
+        "rowHeading": "Requirement",
+        "answerHeading": "Design"
+      },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Key rotation",
+          "options": [
+            {
+              "id": "r1a",
+              "text": "Return kid and public key pairs from the public key endpoint, and pass kid in the JWT header"
+            },
+            {
+              "id": "r1b",
+              "text": "Point the Public key URL in the authentication settings record at a new endpoint that returns only the new key"
+            },
+            {
+              "id": "r1c",
+              "text": "Keep one public key at the endpoint, and pass the new public key in the lwicontexts claim"
+            }
+          ],
+          "correctOptionId": "r1a"
+        },
+        {
+          "id": "r2",
+          "label": "Contact record",
+          "options": [
+            {
+              "id": "r2a",
+              "text": "Put the GUID of the contact record in the sub claim"
+            },
+            {
+              "id": "r2b",
+              "text": "Put the GUID of the contact record in the iss claim"
+            },
+            {
+              "id": "r2c",
+              "text": "Put the GUID of the contact record in the kid header"
+            }
+          ],
+          "correctOptionId": "r2a"
+        },
+        {
+          "id": "r3",
+          "label": "Visitor who isn't signed in",
+          "options": [
+            {
+              "id": "r3a",
+              "text": "Redirect the visitor to sign in from the JavaScript client function or an earlier step"
+            },
+            {
+              "id": "r3b",
+              "text": "Have the JavaScript client function return an expired token until the visitor has signed in"
+            },
+            {
+              "id": "r3c",
+              "text": "Add a pre-conversation survey question that asks visitors to enter an email address"
+            }
+          ],
+          "correctOptionId": "r3a"
+        }
+      ],
+      "answer": "Key rotation: Return kid and public key pairs from the public key endpoint, and pass kid in the JWT header. Contact record: Put the GUID of the contact record in the sub claim. Visitor who isn't signed in: Redirect the visitor to sign in from the JavaScript client function or an earlier step.",
+      "explanation": "A custom portal owns the token flow, so each requirement maps to a specific part of it. To use several public keys, the endpoint returns unique kid and public key pairs, and the JWT header carries the kid. To link the record, Microsoft recommends passing the contact or account GUID in the sub claim. The system uses it to identify and link the contact. A chat button that's visible before sign-in needs a redirect, either in the JavaScript function or earlier in the user flow, because an expired or invalid token makes the widget throw an error event.",
+      "sourceIds": [
+        "sim-d2d-s14"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:authenticated-chat"
+      ],
+      "optionExplanations": {
+        "r1a": "Correct. When multiple public keys are needed, the endpoint can return a set of kid and public key pairs, and the kid is passed in the JWT header.",
+        "r1b": "Fails. The system validates each token with the public key from the record's Public key URL. An endpoint that returns only the new key can't validate tokens signed with the old key during the rotation.",
+        "r1c": "Fails. lwicontexts carries context variables for routing or display. Public keys come from the public key endpoint.",
+        "r2a": "Correct. Microsoft recommends passing the GUID of the contact or account record in sub, which is used to identify and link the record.",
+        "r2b": "Fails. The iss claim holds the issuer of the token.",
+        "r2c": "Fails. The kid value identifies which public key signed the token.",
+        "r3a": "Correct. If the button is exposed before users are authenticated, Microsoft says to redirect them to your authentication page, in the JavaScript function or as an earlier step.",
+        "r3b": "Fails. If the token has expired or is invalid, the chat widget throws an error event.",
+        "r3c": "Fails. A survey answer can identify a record, but identification doesn't authenticate the customer. The requirement is for a signed-in chat."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n01"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d2d-q07",
+      "revision": 1,
+      "kind": "hotspot",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.12"
+      ],
+      "conceptId": "translation-detection-endpoint-and-per-conversation-control",
+      "prompt": "Seaholm Cruises uses real-time translation for chat in Dynamics 365 Contact Center. It uses its own web resource, based on Microsoft's sample, with Azure Translation Services as the provider. Translation is turned on, the web resource URL is registered, and representatives work in English.\n\nDuring testing, a customer writing in Portuguese sends one short message in English, and translation stops until the customer writes in Portuguese again. Separately, the Azure Translation Services resource is being set up for production, and a bilingual representative asks to read one customer's messages untranslated.\n\nYou need to configure the solution.\n\nWhat should you do for each item?",
+      "table": {
+        "title": "Translation decisions",
+        "rowHeading": "Item",
+        "answerHeading": "Decision"
+      },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Keep translation running after a one-off message in another language",
+          "options": [
+            {
+              "id": "r1a",
+              "text": "Set enableLanguageDetectionWithHistoryMessages to true in the web resource file"
+            },
+            {
+              "id": "r1b",
+              "text": "Set Default input language to Portuguese on the Real Time Translation Settings page"
+            },
+            {
+              "id": "r1c",
+              "text": "Turn translation back on with More commands in the chat window after each one-off message"
+            }
+          ],
+          "correctOptionId": "r1a"
+        },
+        {
+          "id": "r2",
+          "label": "Endpoint for the Azure Translation Services resource",
+          "options": [
+            {
+              "id": "r2a",
+              "text": "The global endpoint"
+            },
+            {
+              "id": "r2b",
+              "text": "A regional endpoint in the same geography as the environment"
+            },
+            {
+              "id": "r2c",
+              "text": "A private endpoint in the company virtual network"
+            }
+          ],
+          "correctOptionId": "r2a"
+        },
+        {
+          "id": "r3",
+          "label": "Switch translation off for one conversation",
+          "options": [
+            {
+              "id": "r3a",
+              "text": "The representative uses More commands in the chat window"
+            },
+            {
+              "id": "r3b",
+              "text": "An administrator sets Turn on to No in the Real Time Translation Settings"
+            },
+            {
+              "id": "r3c",
+              "text": "An administrator sets enableLanguageDetectionWithHistoryMessages to false"
+            }
+          ],
+          "correctOptionId": "r3a"
+        }
+      ],
+      "answer": "One-off message: Set enableLanguageDetectionWithHistoryMessages to true in the web resource file. Endpoint: The global endpoint. One conversation: The representative uses More commands in the chat window.",
+      "explanation": "With the web resource approach, each of these has its own place. Score-based language detection is a value in the web resource file. It moves translation to the most-used language, so a one-off message doesn't change or stop it. When Azure Translation Services is the provider, Microsoft says the resource must use the global endpoint. The switch for a single conversation belongs to the representative, through More commands in the chat window. The administrator's Turn on setting applies to the feature as a whole.",
+      "sourceIds": [
+        "sim-d2v-s21",
+        "sim-d2d-s15"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:real-time-translation"
+      ],
+      "optionExplanations": {
+        "r1a": "Correct. Setting this value to true enables score-based language detection, which prevents one-off messages from changing the language unexpectedly.",
+        "r1b": "Fails. Default input language sets the language that representatives work in. Representatives here work in English.",
+        "r1c": "Fails. More commands turns translation on or off for one conversation. Turning it back on after each one-off message doesn't keep it running, and Microsoft's documented fix for one-off messages is score-based detection in the web resource file.",
+        "r2a": "Correct. Microsoft says that with Azure Translation Services as the provider, you must configure the resource to use the global endpoint.",
+        "r2b": "Fails. Microsoft says the resource must use the global endpoint.",
+        "r2c": "Fails. Microsoft says the resource must use the global endpoint.",
+        "r3a": "Correct. Representatives can turn translation on or off for each conversation by using More commands on the chat window.",
+        "r3b": "Fails. This is the setting that turns on the feature in the admin center, so it isn't a choice for one conversation.",
+        "r3c": "Fails. This value controls score-based language detection. It doesn't switch translation off."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n07"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d2d-q08",
+      "revision": 1,
+      "kind": "hotspot",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.12",
+        "D2.3.03"
+      ],
+      "conceptId": "conversation-status-after-close-or-disconnect",
+      "prompt": "Kestrel Telecom handles support through an SMS workstream and a live chat workstream in Dynamics 365 Contact Center. The live chat workstream doesn't use persistent chat. Representatives accept both types of conversation, so each conversation below starts in Active.\n\nThe operations lead is updating the representative guide.\n\nYou need to state the status reason that follows each event.\n\nWhat is the status reason after each event?",
+      "table": {
+        "title": "Conversation events",
+        "rowHeading": "Event",
+        "answerHeading": "Status reason"
+      },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "SMS: the representative selects the close (X) button and doesn't select End",
+          "options": [
+            {
+              "id": "r1a",
+              "text": "Open"
+            },
+            {
+              "id": "r1b",
+              "text": "Waiting"
+            },
+            {
+              "id": "r1c",
+              "text": "Wrap-up"
+            },
+            {
+              "id": "r1d",
+              "text": "Closed"
+            }
+          ],
+          "correctOptionId": "r1b"
+        },
+        {
+          "id": "r2",
+          "label": "Live chat: the representative selects the close (X) button and doesn't select End",
+          "options": [
+            {
+              "id": "r2a",
+              "text": "Open"
+            },
+            {
+              "id": "r2b",
+              "text": "Waiting"
+            },
+            {
+              "id": "r2c",
+              "text": "Wrap-up"
+            },
+            {
+              "id": "r2d",
+              "text": "Closed"
+            }
+          ],
+          "correctOptionId": "r2a"
+        },
+        {
+          "id": "r3",
+          "label": "Live chat: the customer's connection drops, and the customer stays away for longer than the reconnection duration",
+          "options": [
+            {
+              "id": "r3a",
+              "text": "Open"
+            },
+            {
+              "id": "r3b",
+              "text": "Waiting"
+            },
+            {
+              "id": "r3c",
+              "text": "Wrap-up"
+            },
+            {
+              "id": "r3d",
+              "text": "Closed"
+            }
+          ],
+          "correctOptionId": "r3c"
+        }
+      ],
+      "answer": "SMS close without End: Waiting. Live chat close without End: Open. Live chat customer disconnection: Wrap-up.",
+      "explanation": "The same button has different results because live chat has no Waiting status. On an asynchronous channel, closing the session with X and not End moves the conversation to Waiting, which releases the representative's capacity until the customer comes back. On live chat, the same action sends the conversation to Open for reassignment. A live chat customer who stays disconnected past the set duration, three minutes by default, ends the exchange, so the application moves the active chat to Wrap-up and updates capacity.",
+      "sourceIds": [
+        "sim-cb-s17",
+        "sim-cb-s21"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:conversation-state"
+      ],
+      "optionExplanations": {
+        "r1a": "Fails. Open is the live chat and voice result. On asynchronous channels, this action leads to Waiting.",
+        "r1b": "Correct. On persistent chat and asynchronous channels, closing with X and not End moves the conversation to Waiting, and capacity is released at once.",
+        "r1c": "Fails. Wrap-up follows the End button. Here the representative didn't select End.",
+        "r1d": "Fails. An SMS conversation in Waiting closes later, through inactivity. It doesn't close at this event.",
+        "r2a": "Correct. On voice and chat, closing with X and not End sends the conversation to Open so that it can be reassigned.",
+        "r2b": "Fails. Waiting applies to asynchronous and persistent chats only, not to live chat.",
+        "r2c": "Fails. Wrap-up follows the End button or a customer ending or leaving the chat.",
+        "r2d": "Fails. The conversation is still in progress, so the system reassigns it.",
+        "r3a": "Fails. Open applies while the conversation is unassigned or being reassigned. An active chat that the customer leaves moves forward to Wrap-up.",
+        "r3b": "Fails. Waiting doesn't apply to live chat.",
+        "r3c": "Correct. When an ongoing chat gets disconnected, the application moves it from Active to Wrap-up and updates capacity.",
+        "r3d": "Fails. Closed is the result for a disconnection from Open. From Active, the chat moves to Wrap-up."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n11"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d2d-q09",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.03",
+        "D2.3.14"
+      ],
+      "conceptId": "channel-fit-pdf-and-suggested-actions",
+      "prompt": "Harbor Cycle Insurance wants to add one more messaging channel to Dynamics 365 Contact Center for claims.\n\nRequirements:\n- Customers send documents, such as claim forms, to representatives during the conversation.\n- An AI agent greets customers first and offers suggested actions that customers can select.\n\nFile attachments will be turned on for customers on the chosen channel, and any client work that the channel needs for attachments will be done.\n\nYou need to choose a channel that meets both requirements.\n\nWhich two channels meet both requirements? Each correct answer presents a complete solution.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Facebook"
+        },
+        {
+          "id": "b",
+          "text": "Custom messaging through Direct Line"
+        },
+        {
+          "id": "c",
+          "text": "LINE"
+        },
+        {
+          "id": "d",
+          "text": "WhatsApp through Twilio"
+        },
+        {
+          "id": "e",
+          "text": "Microsoft Teams"
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "answer": "Facebook, and custom messaging through Direct Line.",
+      "explanation": "Check each requirement against the channel support tables separately, because neither one predicts the other. Inbound attachments are what matters for a form that a customer sends. Facebook and Teams list Document, custom messaging through Direct Line accepts all types except those blocked in the organization, LINE's inbound list has no Document, and WhatsApp through Twilio lists PDF. Teams and WhatsApp don't support suggested actions. Facebook, LINE and Direct Line support suggested actions. Only Facebook and Direct Line appear on both lists.",
+      "sourceIds": [
+        "sim-d2d-s16"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:channel-capabilities"
+      ],
+      "optionExplanations": {
+        "a": "Correct. Facebook lists documents for inbound attachments and supports suggested actions.",
+        "b": "Correct. Direct Line custom channels accept all inbound types except those blocked in the organization and support suggested actions. The client has to implement attachments, which the scenario covers.",
+        "c": "Fails. LINE supports suggested actions, but its inbound attachments are image, audio, video and GIF, with no Document.",
+        "d": "Fails. WhatsApp through Twilio doesn't support suggested actions.",
+        "e": "Fails. Teams accepts inbound documents, but it doesn't support suggested actions."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n12"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d2d-q10",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.04",
+        "D2.1.08"
+      ],
+      "conceptId": "hide-chat-entry-outside-operating-hours",
+      "prompt": "Fern Hollow Garden Centre has a modern chat widget on its website in Dynamics 365 Contact Center. From 8:00 AM to 5:00 PM, customers must be able to start a chat. Outside those hours, customers must not see any way to start one.\n\nThose hours are set up as operating hours on the chat queue. The workstream has no AI agent, the web team can change the website's code, and the site gets only a few visitors a minute.\n\nYou need to meet the requirement.\n\nWhich two solutions meet the requirement? Each correct answer presents a complete solution.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Turn on Show widget during operation hours, select the operating hour record, and leave Show widget outside of operation hours cleared."
+        },
+        {
+          "id": "b",
+          "text": "Add data-hide-chat-button to the widget script. After lcw:ready, call getAgentAvailability, and show your own button, which calls startChat, only if isQueueAvailable is true."
+        },
+        {
+          "id": "c",
+          "text": "Add data-hide-chat-button to the widget script. After lcw:ready, call getAgentAvailability, and show your own button, which calls startChat, only if isAgentAvailable is true."
+        },
+        {
+          "id": "d",
+          "text": "Set the action for the chat queue's Out of operation hours overflow condition to End conversation, and edit its closing message."
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "answer": "Turn on Show widget during operation hours with the record and leave Show widget outside of operation hours cleared. Or hide the default button and show a custom button only when getAgentAvailability returns isQueueAvailable as true.",
+      "explanation": "The requirement is about what customers can see, so the solution has to act before a chat starts. The widget setting does this directly: the widget displays during the hours in the selected record, and it appears outside them only if the outside-hours option is selected. Code can do the same. The data-hide-chat-button tag removes the default button, and getAgentAvailability tells the page whether the queue is within operating hours, so a custom button can follow that result. isAgentAvailable follows representative availability, not operating hours, so a button built on it can disappear while the queue is open. Overflow acts only after a customer has started a conversation, so the way to start one stays visible.",
+      "sourceIds": [
+        "sim-d2d-s17",
+        "sim-d2d-s18",
+        "sim-d2d-s19",
+        "sim-d2d-s11",
+        "sim-d2d-s20",
+        "sim-d4-s01"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:chat-widget"
+      ],
+      "optionExplanations": {
+        "a": "Correct. The widget displays during the hours in the selected record, and it displays outside them only if Show widget outside of operation hours is selected.",
+        "b": "Correct. The tag hides the default button, and isQueueAvailable is true when the queue is within operating hours, so the page can show a custom button only then. Microsoft names this method for deciding whether the start option is visible.",
+        "c": "Fails. isAgentAvailable is true when representatives in the queue are available to take requests, not when the queue is within operating hours. If no representative is available to take requests during opening hours, it's false and the button disappears, but customers must still be able to start a chat then.",
+        "d": "Fails. Overflow conditions for before a work item is queued run after the customer starts a conversation, and End conversation ends it then. The widget stays visible, so customers still see a way to start one."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n03"
+        },
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n10"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d2d-q11",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.02"
+      ],
+      "conceptId": "route-email-records-intake-and-flow",
+      "prompt": "Stonebridge Property Management uses unified routing in Dynamics 365 Customer Service. It wants each email sent to its support mailbox to reach representatives automatically as an email record.\n\nThe following are in place:\n- Email is added on the Record routing page.\n- The mailbox uses server-side synchronization to create the email record and queue item.\n- A Record workstream for Email has classification and route-to-queue rules.\n- Queues and assignment methods are set up.\n- A process releases representative capacity when work on an email is done.\n\nYou need to finish the routing setup.\n\nWhich two actions should you perform? Each correct answer presents part of the solution.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Create an intake rule that maps incoming email records to the Email workstream."
+        },
+        {
+          "id": "b",
+          "text": "Create a cloud flow that runs msdyn_ApplyRoutingRuleEntityRecord when an email row is created."
+        },
+        {
+          "id": "c",
+          "text": "Create a route-to-queue rule that sends incoming email records to the Email workstream."
+        },
+        {
+          "id": "d",
+          "text": "Set the Route Case field to Yes on the records that are created from the support mailbox."
+        },
+        {
+          "id": "e",
+          "text": "Add the support mailbox to a Messaging workstream as an email channel instance."
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "answer": "Create an intake rule that maps incoming email records to the Email workstream, and create a cloud flow that runs msdyn_ApplyRoutingRuleEntityRecord when an email row is created.",
+      "explanation": "Microsoft documents a path for routing email as a record, and the two steps not yet done here are the flow and the intake rule. Server-side synchronization creates the record, but something has to trigger routing, and the documented flow runs msdyn_ApplyRoutingRuleEntityRecord when an Email Messages row is created. Intake rules then help determine which workstream receives the record. Route-to-queue rules work inside a workstream, so they can't choose it.",
+      "sourceIds": [
+        "sim-d2d-s22",
+        "sim-d2d-s23",
+        "sim-d2d-s24",
+        "sim-d4-s07"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:email-record-routing"
+      ],
+      "optionExplanations": {
+        "a": "Correct, and part of the solution. Intake rules help determine the workstream to use for an incoming record work item.",
+        "b": "Correct, and part of the solution. The documented custom flow triggers on a new Email Messages row and applies the routing rules to it.",
+        "c": "Fails. Route-to-queue rules belong to a workstream and send work items to its queues. Intake rules help determine which workstream receives the record.",
+        "d": "Fails. Route Case is a case field that decides whether a new case is routed. The records here are emails.",
+        "e": "Fails. Messaging workstreams route live chat, SMS, social and Teams conversations. Email is a record, so it uses a Record workstream."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n09"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d2d-q12",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.03",
+        "D2.3.12"
+      ],
+      "conceptId": "timeout-rule-free-capacity-keep-conversation",
+      "prompt": "Hillcrest Medical Supply handles orders over SMS in Dynamics 365 Contact Center. Representatives often ask a customer for a purchase order number, and the customer takes hours to reply. Meanwhile, the conversation holds the representative's capacity.\n\nManagers want an active timeout rule on the SMS workstream so that after four hours:\n- The representative can take other work while the customer is away.\n- The representative is notified when the customer replies.\n\nYou need to configure the rule.\n\nWhich two settings should you use? Each correct answer presents part of the solution.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Trigger event: Customer Non-Response Time"
+        },
+        {
+          "id": "b",
+          "text": "Trigger event: Representative Non-Response Time"
+        },
+        {
+          "id": "c",
+          "text": "Action: Move active conversation to waiting"
+        },
+        {
+          "id": "d",
+          "text": "Action: Send a message"
+        },
+        {
+          "id": "e",
+          "text": "Action: Release conversation back to queue for reassignment"
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "c"
+      ],
+      "answer": "Trigger event: Customer Non-Response Time. Action: Move active conversation to waiting.",
+      "explanation": "The clock here starts with the representative's last message, which is what Customer Non-Response Time measures. The action decides what happens to the conversation. Moving it to Waiting fits, because a conversation in Waiting doesn't consume capacity, the option exists for asynchronous channels such as SMS, and the representative gets a notification when the customer restarts the conversation. Sending a message leaves the conversation in Active, where capacity is consumed. Releasing it frees capacity, but it reassigns the conversation to a different representative.",
+      "sourceIds": [
+        "sim-d2d-s25",
+        "sim-cb-s17"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:timeout-rules"
+      ],
+      "optionExplanations": {
+        "a": "Correct, and part of the solution. This trigger measures how long a customer stays inactive after the representative's last message.",
+        "b": "Fails. This trigger measures how long a representative leaves a customer's message unanswered, which is the opposite situation.",
+        "c": "Correct, and part of the solution. For asynchronous channels, this action moves the conversation to Waiting, and the representative is notified when the customer restarts it.",
+        "d": "Fails. This action sends a message and leaves the conversation in Active, where the representative's capacity is still consumed.",
+        "e": "Fails. This action reassigns the conversation to a different representative in the same queue, so it's no longer this representative's conversation when the customer replies."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n11"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d2d-q13",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.07",
+        "D2.1.11"
+      ],
+      "conceptId": "messaging-api-queue-position-notification",
+      "prompt": "Pinecrest Logistics runs a custom messaging channel through Messaging APIs in Dynamics 365 Contact Center. The channel instance is on a messaging workstream, and its queue often has a backlog.\n\nWhile customers wait, they must get a message with their current place in the queue every five minutes until a representative is assigned.\n\nYou need to configure the message.\n\nWhich two actions should you perform? Each correct answer presents part of the solution.",
+      "options": [
+        {
+          "id": "a",
+          "text": "On the channel instance, add a custom message for the Estimate Wait Time Notification trigger, and include {QueuePosition} in the text."
+        },
+        {
+          "id": "b",
+          "text": "In the custom message pane, set Message interval to 5 minutes, and turn on the isRecurring toggle."
+        },
+        {
+          "id": "c",
+          "text": "On the Behaviors page of the channel instance, turn on Customer wait time, and select the option to show customers their position in the queue."
+        },
+        {
+          "id": "d",
+          "text": "On the Automated messages page, activate the Average wait time for customers: Minutes message for the channel."
+        },
+        {
+          "id": "e",
+          "text": "On the channel instance, add a custom message for the Customer's position in queue trigger, and include {$QueuePosition$} in the text."
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "answer": "Add a custom message for the Estimate Wait Time Notification trigger with {QueuePosition} in the text, and set Message interval to 5 minutes with isRecurring turned on.",
+      "explanation": "Messaging API channel instances have their own wait time notification. It's a custom automated message on the Estimate Wait Time Notification trigger, and the {QueuePosition} variable shows the customer's current place. Message interval sets how often it's sent, and isRecurring repeats it until a representative is assigned. The other routes look similar, but they can't meet the five-minute cycle. The Customer wait time setting sends updates on fixed intervals of 30 or 60 seconds, and the average wait time messages apply to live chat and voice. The {$...$} format is for context variables, so with no such variable it becomes an empty string.",
+      "sourceIds": [
+        "sim-d2d-s21",
+        "sim-d2d-s26"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:automated-messages"
+      ],
+      "optionExplanations": {
+        "a": "Correct, and part of the solution. This is the trigger for Messaging API channel instances, and {QueuePosition} shows the customer's current position.",
+        "b": "Correct, and part of the solution. Message interval sets the time between messages, and isRecurring repeats the message until a representative is assigned.",
+        "c": "Fails. Queue position notifications from this setting go at fixed intervals of 30 or 60 seconds, so it can't send one every five minutes.",
+        "d": "Fails. The average wait time messages apply to live chat and voice channels only, and they give a wait time and not a place in the queue.",
+        "e": "Fails. {$...$} is the context variable format, and a variable that isn't found becomes an empty string. Message interval and isRecurring are documented for the Estimate Wait Time Notification trigger."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n13"
+        },
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n10"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d2d-q14",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.05",
+        "D2.3.01"
+      ],
+      "conceptId": "proactive-invite-context-in-authenticated-chat",
+      "prompt": "Sorrel Lodge Hotels runs Dynamics 365 Contact Center standalone. Its booking portal has a chat widget that uses authenticated chat with a JSON Web Token (JWT). Proactive chat is turned on, and after lcw:ready the page calls startProactiveChat when a signed-in guest has spent 30 seconds on a booking.\n\nThe developer based the page on Microsoft's proactive chat samples, which call setContextProvider to send values. The booking reference and loyalty tier are sent this way, but they don't reach the conversation, although the workstream has context variables with the same names. The portal's token service already knows both values.\n\nYou need to send both values so that they can be used for routing and shown to the representative.\n\nWhat should you do?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Add both values to the lwicontexts claim in the JWT payload."
+        },
+        {
+          "id": "b",
+          "text": "Add both values to the JWT header beside the alg and typ values."
+        },
+        {
+          "id": "c",
+          "text": "Call setContextProvider before the lcw:ready event is raised."
+        },
+        {
+          "id": "d",
+          "text": "Set isDisplayable to true for both values in setContextProvider."
+        },
+        {
+          "id": "e",
+          "text": "Add both values to the notificationUIConfig object for the invitation."
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "answer": "Add both values to the lwicontexts claim in the JWT payload.",
+      "explanation": "The samples for proactive chat use setContextProvider, but Microsoft notes that this method works for unauthenticated chat only. For authenticated chat, context travels in the JWT. The lwicontexts value in the payload holds serialized custom context, its keys must correspond to the workstream's context variables, and the values can be used for routing or shown to the representative. The widget's sign-in state decides the method, and proactive chat doesn't change that.",
+      "sourceIds": [
+        "sim-d2d-s14",
+        "sim-d2d-s30",
+        "sim-d2d-s29",
+        "sim-d2d-s28",
+        "sim-d2d-s27",
+        "sim-d2d-s37"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:proactive-chat"
+      ],
+      "optionExplanations": {
+        "a": "Correct. Pass lwicontexts in the JWT payload for authenticated chat. Its keys must match the workstream's context variables, and it can carry values for routing or display.",
+        "b": "Fails. The JWT header holds values such as alg, typ and kid. Context variables go in the lwicontexts claim of the payload.",
+        "c": "Fails. SDK methods run after lcw:ready, and setContextProvider isn't supported for authenticated chat at any point.",
+        "d": "Fails. isDisplayable controls display of values that setContextProvider passes, and that method isn't supported for authenticated chat.",
+        "e": "Fails. notificationUIConfig customizes the invitation, including its message. It doesn't set context variables."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n04"
+        },
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n01"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d2d-q15",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.13"
+      ],
+      "conceptId": "satisfaction-score-variable-for-historical-report",
+      "prompt": "Mossgrove Foods uses a survey from Customer feedback as the post-conversation survey on live chat in Dynamics 365 Contact Center. The survey agent is published in Copilot Studio, and the survey is selected on the channel with Powered by Microsoft Copilot Studio.\n\nA maker changed the rating question so that it stores the 1 to 5 score in a new variable named MCS_Rating. Responses appear in the Customer feedback survey response table, but the satisfaction scores for conversations don't appear in the Omnichannel historical analytics report.\n\nYou need the scores to appear in the report.\n\nWhat should you do?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Store the score as a numeric value in the MCS_CSAT variable."
+        },
+        {
+          "id": "b",
+          "text": "Pass the score in mcs_additionalcontext as a JSON key value pair."
+        },
+        {
+          "id": "c",
+          "text": "Store the score as a text value in the MCS_CSAT variable."
+        },
+        {
+          "id": "d",
+          "text": "Move the MCS_Rating question to a system topic other than Conversation Start."
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "answer": "Store the score as a numeric value in the MCS_CSAT variable.",
+      "explanation": "Two variable rules are at work. An added question's response is stored in Dataverse when its variable name starts with MCS_, which is why MCS_Rating appears in the response table. The report is more specific: scores for conversations appear in the Omnichannel historical analytics report if they're stored as numeric values in the MCS_CSAT variable. So the data was saved, but not in the variable that the report reads.",
+      "sourceIds": [
+        "sim-d2d-s31"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:customer-feedback-survey"
+      ],
+      "optionExplanations": {
+        "a": "Correct. Microsoft says scores for conversations appear in the Omnichannel historical analytics report if they're stored as numeric values in MCS_CSAT.",
+        "b": "Fails. mcs_additionalcontext passes extra context to the survey agent. It isn't where the report reads scores.",
+        "c": "Fails. Microsoft says scores for conversations appear in the Omnichannel historical analytics report if they're stored as numeric values in MCS_CSAT. A text value doesn't meet that condition.",
+        "d": "Fails. Conversation Start is the only system topic to edit. Microsoft says all other system topics are disabled and must not be used."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n15"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d2d-q16",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.1.07"
+      ],
+      "conceptId": "quick-reply-representative-language-setting",
+      "prompt": "Brightwell Insurance has a French-language chat widget on its Quebec workstream in Dynamics 365 Contact Center. The compliance team approved a set of French quick replies. Each one has the French locale and is associated with the Quebec workstream. French is enabled in the environment.\n\nWhen the Quebec representatives open quick replies, they're offered the English replies, and they have to choose French in the View all pane to find the approved text.\n\nYou need these representatives to be offered the French replies without that extra step.\n\nWhat should you do?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Change the language in each representative's personal settings to French."
+        },
+        {
+          "id": "b",
+          "text": "Remove the Quebec workstream association from the French quick replies."
+        },
+        {
+          "id": "c",
+          "text": "Set Default input language to French in the Real Time Translation Settings."
+        },
+        {
+          "id": "d",
+          "text": "Add a French tag to the approved quick replies."
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "answer": "Change the language in each representative's personal settings to French.",
+      "explanation": "Three things decide which quick replies a representative sees: the language mapped to the channel instance, the language in the representative's personal settings, and the workstream. The widget language and the workstream are already right. The remaining factor is the representative's own setting, because when it's configured, it determines the language in which quick replies are available. Tags and workstream associations change which replies can be found, not the language that's offered.",
+      "sourceIds": [
+        "sim-d2d-s32",
+        "sim-d2d-s33",
+        "sim-d2d-s34",
+        "sim-d2v-s21"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:quick-replies"
+      ],
+      "optionExplanations": {
+        "a": "Correct. When a representative has a language configured, that setting determines the language in which quick replies are available.",
+        "b": "Fails. With no association, a reply is available to all representatives, but the language setting still decides which language they're offered.",
+        "c": "Fails. Default input language is the language that translation uses for representatives. It doesn't decide which quick replies are offered.",
+        "d": "Fails. Tags group quick replies, and finding replies by tag is still an extra step for the representative."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n05"
+        }
+      ],
+      "status": "draft"
+    }
+  ],
+  "editorial": [
+    {
+      "id": "sim-d2d-q01",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "digital-channel-provider-handshake",
+      "objectiveIds": [
+        "D2.1.03"
+      ],
+      "level": "advanced",
+      "author": "channels-digital-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2d-s05",
+          "section": "Overview of channels (implementation pattern)",
+          "claim": "The implementation pattern for the out-of-the-box channels ends by populating the exchange of handshake data, such as tokens and secrets, in both the Copilot Service admin center app and the channel provider experience.",
+          "applicability": "Frames all four rows. Page dated 2026-05-08."
+        },
+        {
+          "sourceId": "sim-d2d-s01",
+          "section": "Configure a Facebook channel: Create the Facebook channel account",
+          "claim": "The Callback URL and Verify token fields are populated when settings are saved and are used to configure webhooks in the Facebook application. The steps then add the callback URL on the Facebook Application Messenger settings page, select Add subscriptions for the page, and select Messages.",
+          "applicability": "Row r1. Token a says webhook settings because the page says these values configure webhooks in the app. Page dated 2026-09-01."
+        },
+        {
+          "sourceId": "sim-d2d-s02",
+          "section": "Create a LINE channel",
+          "claim": "On Callback information, the admin copies the Callback URL, updates the webhook URL in the channel Messaging API setting in the LINE developer portal, makes sure the webhook toggle is turned on, and verifies that LINE can connect to the webhook URL.",
+          "applicability": "Row r2. Page dated 2026-04-07."
+        },
+        {
+          "sourceId": "sim-d2d-s03",
+          "section": "Configure a Microsoft Teams channel; Configure Teams details",
+          "claim": "On Callback information the admin copies the Bot ID, which the Teams app uses. In Developer Portal, the app's App features page has Bot, then Enter a bot ID, where the value is pasted, followed by save, preview and publish.",
+          "applicability": "Row r3. Page dated 2026-07-30."
+        },
+        {
+          "sourceId": "sim-d2d-s04",
+          "section": "Configure callback information",
+          "claim": "The admin copies the value in Messaging endpoint (URL), opens the Azure bot resource in the Azure portal, and pastes it in the Messaging endpoint field.",
+          "applicability": "Row r4. Applies to the Azure bot framework method, which the stem states. Page dated 2026-05-08."
+        },
+        {
+          "sourceId": "sim-d2d-s06",
+          "section": "Establish a connection between omnichannel application and Twilio",
+          "claim": "The Twilio inbound URL is copied from the workstream and pasted in the Messaging section of the SMS number under Phone Numbers, Active Numbers.",
+          "applicability": "Distractor e. It belongs to SMS through Twilio, which isn't one of the four channels."
+        },
+        {
+          "sourceId": "sim-d2d-s07",
+          "section": "Configure the notification profile",
+          "claim": "The callback URL from the messaging account goes in the Webhook URL field of an Infobip notification profile, which uses the HMAC authentication settings.",
+          "applicability": "Distractor f. It belongs to SMS through Infobip, which isn't one of the four channels."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d2-q07 (Twilio number format and opt-out), sim-b-q02 (WhatsApp outbound templates) and sim-d2d-q04 (Infobip values). None asks where each provider's connection details go across channels. Note cc-d2-n06 covers only the Twilio callback."
+    },
+    {
+      "id": "sim-d2d-q02",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "messaging-integration-surface-selection",
+      "objectiveIds": [
+        "D2.1.08",
+        "D2.1.10",
+        "D2.1.11"
+      ],
+      "level": "advanced",
+      "author": "channels-digital-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2d-s08",
+          "section": "Customize live chat widgets for mobile apps (introduction; Integrate with the Dynamics 365 Contact Center mobile SDKs; Render the live chat widget using embedded code)",
+          "claim": "There are two options for a native app, the native mobile SDKs and the web widget in a WebView, and Microsoft strongly recommends the native SDKs. They support push notifications with Azure Notification Hub. A WebView is for when the SDKs don't meet requirements or timelines, and it has limitations.",
+          "applicability": "Row r1 and distractor e. The stem says the team follows the recommended approach."
+        },
+        {
+          "sourceId": "sim-d2d-s09",
+          "section": "Overview of messaging APIs (introduction and note)",
+          "claim": "Messaging APIs are RESTful, designed for service-to-service integrations, and suit custom messaging channels. They're intended for back-end integrations and aren't recommended where APIs are invoked directly from the user's device. For client-to-service scenarios, Microsoft recommends its native SDKs or chat widgets.",
+          "applicability": "Row r2, and why token c fails rows r1 and r3. Page dated 2025-09-11, updated 2026-07-21."
+        },
+        {
+          "sourceId": "sim-d2d-s04",
+          "section": "Prerequisites",
+          "claim": "The custom messaging channel prerequisites include an agent built using Microsoft Bot Framework and registered with Azure Bot Service, connected to the custom channel.",
+          "applicability": "Distractor d. The stem rules out a bot registration, so this requirement decides it."
+        },
+        {
+          "sourceId": "sim-d2d-s10",
+          "section": "Integrate your own custom channel using Direct Line (introduction)",
+          "claim": "A custom channel connector uses Direct Line API 3.0, and the channel connects to the Direct Line Bot Framework.",
+          "applicability": "Confirms that distractor d is the Bot Framework route."
+        },
+        {
+          "sourceId": "sim-d2d-s11",
+          "section": "getAgentAvailability (introduction; Return value)",
+          "claim": "The API can be used to determine whether the start conversation option should be visible to the customer. isQueueAvailable is true when the queue is within operating hours.",
+          "applicability": "Row r3. The Messaging API endpoint table lists no equivalent call, and that API isn't recommended for web clients in any case."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d2-q14 (mobile SDK styling and push), ab250-d2-q15 (Messaging API authorization header) and ab250-d2-q12 (startProactiveChat arguments). Those test how to use one surface. This tests which surface fits each project."
+    },
+    {
+      "id": "sim-d2d-q03",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "preconversation-identification-link-outcomes",
+      "objectiveIds": [
+        "D2.1.06",
+        "D2.3.02"
+      ],
+      "level": "advanced",
+      "author": "channels-digital-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2d-s12",
+          "section": "Identify customers automatically (introduction; Set up preconversation questions)",
+          "claim": "For an account or contact, the application searches on Name, Email or Phone Number. If the identified contact or account has one active case linked to it, the case is automatically linked to the conversation. If the search results in more than one account, contact or case, the record isn't linked. The page also notes that case is applicable to Customer Service only, and that Email is a question name with a single-line answer type.",
+          "applicability": "All rows. The stem states Dynamics 365 Customer Service because of the case note. The page gives the one-case rule and the more-than-one rule, but no worked example of a contact with several active cases, so row r2 rests on those two statements together. Page dated 2026-05-27."
+        },
+        {
+          "sourceId": "sim-d2d-s13",
+          "section": "Configure a preconversation survey",
+          "claim": "A pre-conversation survey is configured on the Behaviors tab of the chat channel with a question name, question text, answer type and Required setting.",
+          "applicability": "Stem setup."
+        },
+        {
+          "sourceId": "sim-d2d-s36",
+          "section": "View customer details; View case details",
+          "claim": "Representatives use the Customer section to search for an existing contact or account and link it to the conversation, or create one with Add Contact or Add Account. The Case section works the same way.",
+          "applicability": "Distractor e and the closing sentence of the explanation. The stem states Dynamics 365 Customer Service because the identification page says case is applicable to Customer Service only. Page dated 2026-02-09."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d2-q02 (phone field mapping) and ab250-d2-q19 (custom status codes). Those test what stops a match. This tests what is linked for each match count."
+    },
+    {
+      "id": "sim-d2d-q04",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "infobip-sms-inbound-connection-values",
+      "objectiveIds": [
+        "D2.1.03"
+      ],
+      "level": "advanced",
+      "author": "channels-digital-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2d-s07",
+          "section": "Prerequisites; Get Infobip account details; Configure HMAC authentication; Configure the notification profile; Configure the SMS subscription",
+          "claim": "Application ID is set to the organization ID, and the page says to use the organization ID, not the environment ID, tenant ID or Microsoft Entra application ID. HMAC authentication uses the same API key as the secret key. The callback URL goes in the Webhook URL field of a notification profile. The subscription's application filter selects the application whose Application ID matches the organization ID. If messages don't arrive, one check is that the HMAC secret matches the API key in the messaging account.",
+          "applicability": "All rows. The answers don't depend on release status, and the stem states the other connection steps as done. Page dated 2026-09-21, updated 2026-10-14."
+        },
+        {
+          "sourceId": "sim-d2d-s06",
+          "section": "Establish a connection between omnichannel application and Twilio",
+          "claim": "For Twilio, the inbound URL is pasted in the Messaging section of the SMS number.",
+          "applicability": "Distractor r3b, which is the Twilio location."
+        },
+        {
+          "sourceId": "sim-d2d-s01",
+          "section": "Create the Facebook channel account",
+          "claim": "The Facebook callback information has a Callback URL and a Verify token.",
+          "applicability": "Distractor r2c, which is a Facebook value. The Infobip page lists only a callback URL under callback information."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d2-q07 (Twilio number format) and sim-d2d-q01 (provider handshake across channels, where Infobip is only a distractor). No question tests the Infobip values."
+    },
+    {
+      "id": "sim-d2d-q05",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "facebook-review-and-message-tag",
+      "objectiveIds": [
+        "D2.1.03"
+      ],
+      "level": "advanced",
+      "author": "channels-digital-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2d-s01",
+          "section": "Prerequisites; Roles and permissions; Create a Facebook workstream (User features)",
+          "claim": "Until pages_messaging is approved through App Review, only Facebook users with a role in the app can message the page. Facebook message tag set to Yes lets representatives message customers after 24 hours, and set to No they can't respond after 24 hours unless the customer sends another message. The tag must also be turned on in the Facebook app. Page access tokens should be refreshed on a 60-day schedule or as required.",
+          "applicability": "All rows. Page dated 2026-09-01. Facebook's own developer pages weren't used, because evidence is limited to learn.microsoft.com."
+        },
+        {
+          "sourceId": "sim-d2d-s35",
+          "section": "Why aren't representatives able to receive messages that are sent from Facebook?",
+          "claim": "In production mode, after the pages_messaging request is approved, any Facebook user can send messages to the business page. In development mode, only users with roles in the app can.",
+          "applicability": "Row r1. Consistent with the channel page."
+        },
+        {
+          "sourceId": "sim-d4-s07",
+          "section": "Configure work distribution",
+          "claim": "Auto-close after inactivity selects a period after which inactive conversations are moved to the closed state, and it's available for persistent chat, SMS, social and Microsoft Teams channels.",
+          "applicability": "Distractor r2d. This setting concerns closure, not the Facebook reply limit."
+        }
+      ],
+      "duplicateCheck": "The accepted bank and the other simulator batches have no question on the Facebook channel. Distinct from sim-d2d-q01, which covers the webhook handshake."
+    },
+    {
+      "id": "sim-d2d-q06",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "authenticated-chat-key-rotation-and-claims",
+      "objectiveIds": [
+        "D2.1.09"
+      ],
+      "level": "advanced",
+      "author": "channels-digital-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2d-s14",
+          "section": "Authentication compared to customer identification; Create an authentication setting record for chat; Add authentication to chat widget; Setup for custom portals",
+          "claim": "The system validates the token with the public key that you specify in the authentication setting record, and the Public key URL is used to validate the information that comes in from the JWT. The public key endpoint can return a set of kid and public key pairs when multiple keys are needed, with the kid passed in the JWT header. The payload needs iss, iat, exp and sub, with the contact or account GUID recommended in sub to identify and link the record. lwicontexts holds context variables. If the token has expired or is invalid, the chat widget throws an error event. If the button is exposed before users are authenticated, redirect them in the JavaScript function or an earlier step. Identification doesn't authenticate the customer.",
+          "applicability": "All rows. Custom portal path, which the stem states. Distractor r1b rests on the system validating the JWT with the public key from the Public key URL in the record. Page dated 2026-10-12."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d2-q13 (Public key URL points at the wrong page) and sim-b-q01 (widget sign-in state and continuity). Neither tests key rotation, the sub claim or signed-out visitors. The context claim is tested separately in sim-d2d-q14."
+    },
+    {
+      "id": "sim-d2d-q07",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "translation-detection-endpoint-and-per-conversation-control",
+      "objectiveIds": [
+        "D2.1.12"
+      ],
+      "level": "advanced",
+      "author": "channels-digital-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2v-s21",
+          "section": "Enable real-time translation for representative and customer conversations; Enable score-based language detection",
+          "claim": "Default input language is the language for representatives to converse with customers. With Azure Translation Services as the provider, the resource must use the global endpoint. Score-based detection prevents one-off messages from changing the language unexpectedly and is enabled with enableLanguageDetectionWithHistoryMessages set to true in the web resource file. The page's example shows translation stopping when a customer switches to the representative's language.",
+          "applicability": "Rows r1 and r2, using the web resource approach that the stem states. The archived 2026 wave 1 plan lists Use enhanced real-time translation, an out-of-the-box replacement for bring-your-own web resources, for public preview in September 2026 with no general availability date. This scenario uses its own web resource. Page dated 2026-04-15."
+        },
+        {
+          "sourceId": "sim-d2d-s15",
+          "section": "How language translation of conversations works",
+          "claim": "The representative receives chat text in the default language, irrespective of the language the customer uses, and the customer receives replies in the language they used to start the chat. Representatives can turn translation on or off for each conversation by using the More commands button on the chat window.",
+          "applicability": "Row r3 and distractor r1c. Page dated 2026-05-08."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d2-q16 (Default input language for French representatives) and sim-d2v-q17 (voice translation depends on capture). Those test the representative language and voice capture. This tests detection, the provider endpoint and per-conversation control. Default input language appears only as a distractor."
+    },
+    {
+      "id": "sim-d2d-q08",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "conversation-status-after-close-or-disconnect",
+      "objectiveIds": [
+        "D2.3.12",
+        "D2.3.03"
+      ],
+      "level": "advanced",
+      "author": "channels-digital-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-cb-s17",
+          "section": "Active; Waiting; How conversations are handled on close or end",
+          "claim": "Close (X) without End on voice and chat sends the conversation to the open state, and the system reassigns it. On persistent chat and asynchronous channels, it goes to waiting and capacity is released immediately. The waiting state applies to asynchronous and persistent chats only, not live chats or voice calls. Active moves to Wrap-up when the customer is disconnected, which is applicable only to the live chat channel.",
+          "applicability": "Rows r1 to r3. SMS is one of the channels that this page calls a Channel. The question asks only for the status reason, because the state page and the workstream page describe reassignment differently, and that isn't tested. Page dated 2026-07-13."
+        },
+        {
+          "sourceId": "sim-cb-s21",
+          "section": "Understand disconnected chats (introduction)",
+          "claim": "A customer who stays disconnected for more than a set duration, three minutes by default, can no longer chat. The application then moves the chat from Open to Closed, or from Active to Wrap-up and updates capacity.",
+          "applicability": "Row r3. Page dated 2026-01-30."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d2-q20 (scheduler recalculation), ab250-d2-q29 (transfer to an empty queue) and sim-b-q09 (supervisor actions by state). None tests the status that follows close without End or a customer disconnection."
+    },
+    {
+      "id": "sim-d2d-q09",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "channel-fit-pdf-and-suggested-actions",
+      "objectiveIds": [
+        "D2.1.03",
+        "D2.3.14"
+      ],
+      "level": "advanced",
+      "author": "channels-digital-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2d-s16",
+          "section": "Support for suggested actions; Support for file attachments",
+          "claim": "Suggested actions: Teams No, Facebook Yes, LINE Yes, WhatsApp No, custom messaging (Direct Line) Yes. Inbound attachments: Teams includes Document, Facebook includes Document, LINE is image, audio, video and GIF, WhatsApp (Twilio) is image, audio, video and PDF, and custom messaging (Direct Line) is all types except blocked types in the organization. Direct Line custom channels support different file types, but it's up to the client to implement them.",
+          "applicability": "All options. The stem uses the table's own category, Document. The stem covers the client implementation and turning attachments on. Page dated 2026-06-17."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d2-q31 (txt extension and transcripts). No question in the bank or other batches uses the channel support tables. Wrong rule tested: treating the two Meta channels as equivalent names exactly two options."
+    },
+    {
+      "id": "sim-d2d-q10",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "hide-chat-entry-outside-operating-hours",
+      "objectiveIds": [
+        "D2.1.04",
+        "D2.1.08"
+      ],
+      "level": "advanced",
+      "author": "channels-digital-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2d-s17",
+          "section": "Add operating hours to a chat widget; introduction",
+          "claim": "Show widget during operation hours with an operating hour record displays the widget during those hours, and Show widget outside of operation hours displays it outside them. When operating hours are in effect, work items during non-business hours are handled based on overflow conditions for before a work item is queued.",
+          "applicability": "Option a and distractor d. Page dated 2026-03-18."
+        },
+        {
+          "sourceId": "sim-d2d-s18",
+          "section": "Set up the modern widget",
+          "claim": "The modern widget has Show widget during operation hours, where the admin selects an operating hour setting and can optionally select the checkbox to show the widget outside of operation hours.",
+          "applicability": "Option a. The stem states the modern widget because the classic label differs."
+        },
+        {
+          "sourceId": "sim-d2d-s19",
+          "section": "Customize live chat widgets using data tags",
+          "claim": "data-hide-chat-button hides the default open chat button so that you can add your own.",
+          "applicability": "Option b."
+        },
+        {
+          "sourceId": "sim-d2d-s11",
+          "section": "getAgentAvailability (introduction; Return value)",
+          "claim": "The API can be used to determine whether the start conversation option should be visible. isQueueAvailable is true if the queue is within operating hours. SDK methods are called after lcw:ready. isAgentAvailable is TRUE if agents in the queue are currently available to take requests and FALSE if they aren't. isAgentAvailable also returns true if a bot is attached, and Microsoft recommends that this API not be used when a bot is present. The method is limited to 100 calls per minute per organization.",
+          "applicability": "Options b and c. The stem sets the operating hours on the queue and has no AI agent, so the bot caveat doesn't decide c. The stem's traffic keeps calls under 100 per minute per organization."
+        },
+        {
+          "sourceId": "sim-d2d-s20",
+          "section": "startChat",
+          "claim": "startChat opens an existing chat, if any, and otherwise initiates a new one, after lcw:ready.",
+          "applicability": "Option b, for the custom button."
+        },
+        {
+          "sourceId": "sim-d4-s01",
+          "section": "Handle overflow before a work item is queued; Configure overflow conditions for before a work item is queued; Edit automated messages for overflow actions",
+          "claim": "Unified routing checks overflow conditions after evaluating the route-to-queue rules and before directing a work item to a queue. Adding an operating hour record to a queue assigns the Out of operation hours condition, whose action can be changed. For messaging queues, End conversation routes the conversation to the queue and ends it, and the automated message for End conversation can be edited.",
+          "applicability": "Distractor d, which acts only on a conversation that the customer has already started. Page dated 2026-10-30."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d2-q08 (domain restriction) and ab250-d2-q05 (active version release). Neither tests hiding the entry point by time. The two correct options are separate approaches, one configuration and one code. Wrong rules tested: code only names b and c, and configuration only names a and d."
+    },
+    {
+      "id": "sim-d2d-q11",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "route-email-records-intake-and-flow",
+      "objectiveIds": [
+        "D2.1.02"
+      ],
+      "level": "advanced",
+      "author": "channels-digital-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2d-s22",
+          "section": "Route email as a case; Route email as a record",
+          "claim": "The case path uses rules to create or update records, then Save and route on the case form. The record path lists a dedicated mailbox, server-side sync to create the email record and queue item, a flow to route the work item, workstreams with classification and route-to-queue rules, intake rules, and queues with assignment methods.",
+          "applicability": "All options. The first step of the record path also says the email 'is converted to a case', although the rest of that path and the flow page work on the email record. The stem and the answer don't rely on that sentence, and the decision rests on the listed steps. Flagged for the reviewer. Page dated 2026-03-18, which names Dynamics 365 Customer Service, so the stem does too."
+        },
+        {
+          "sourceId": "sim-d2d-s23",
+          "section": "Set up custom flow to automatically route records",
+          "claim": "The flow uses When a row is added, modified or deleted with Change type Create and Table name Email Messages, then Perform an unbound action with msdyn_ApplyRoutingRuleEntityRecord. For cases, routing depends on the Route Case field.",
+          "applicability": "Option b and distractor d. Page dated 2026-05-08."
+        },
+        {
+          "sourceId": "sim-d2d-s24",
+          "section": "Configure intake rules; Configure routing rules",
+          "claim": "Intake rules help determine the workstream to use to assign an incoming record work item, and they can be mapped to a workstream. Routing rules for a workstream consist of work classification rules and route-to-queue rules.",
+          "applicability": "Option a and distractor c."
+        },
+        {
+          "sourceId": "sim-d4-s07",
+          "section": "Create and manage workstreams (introduction)",
+          "claim": "Messaging workstreams route conversations from live chat, SMS, social and Microsoft Teams channels. Record workstreams route records, such as case, email and activity.",
+          "applicability": "Distractor e."
+        }
+      ],
+      "duplicateCheck": "Compared with sim-d1-q13 (releasing capacity for routed email, which the stem states as done), ab250-d2-q06 (queue capability on a custom table). Neither tests the intake rule and flow for email. Wrong rule tested: record routing needs only rules, which names exactly two options, a and c. Also distinct from ab250-d4-q32."
+    },
+    {
+      "id": "sim-d2d-q12",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "timeout-rule-free-capacity-keep-conversation",
+      "objectiveIds": [
+        "D2.3.03",
+        "D2.3.12"
+      ],
+      "level": "advanced",
+      "author": "channels-digital-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2d-s25",
+          "section": "Configure the timeout rules",
+          "claim": "Customer Non-Response Time is the time a customer stays inactive after the representative's last message. Representative Non-Response Time covers representative delays. Send a message sends a configured message automatically. Move active conversation to waiting applies to asynchronous messaging or persistent chat channels, and the representative receives a notification when the customer restarts the conversation. Release conversation back to queue for reassignment reassigns it to a different representative in the same queue. Rules are set up per workstream, and the Status toggle sets a rule as active.",
+          "applicability": "All options. SMS is an asynchronous channel, and timeout rules support all messaging channels except voice. Page dated 2026-05-29."
+        },
+        {
+          "sourceId": "sim-cb-s17",
+          "section": "Active; Waiting",
+          "claim": "In Active, the representative capacity is consumed. A conversation in waiting doesn't consume a representative's capacity.",
+          "applicability": "Confirms that option c frees capacity. Option d keeps the conversation in Active: the state page lists the transitions out of Active and none is a message being sent, and the timeout rules page gives Send a message no change of state. Page dated 2026-07-13."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d2-q20 (scheduler recalculation), sim-d2d-q08 (status after close or disconnection). Timeout rules aren't tested anywhere else in the bank or other batches. Wrong pairing tested: option b with option e names exactly two options."
+    },
+    {
+      "id": "sim-d2d-q13",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "messaging-api-queue-position-notification",
+      "objectiveIds": [
+        "D2.3.07",
+        "D2.1.11"
+      ],
+      "level": "advanced",
+      "author": "channels-digital-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2d-s21",
+          "section": "Add a wait time notification for the Messaging API channel; Waiting in queue; Context variables",
+          "claim": "For a Messaging API channel instance, the Estimate Wait Time Notification trigger takes a message, with {QueuePosition} for the customer's current position, a Message interval in minutes, and an isRecurring toggle that repeats the message until a representative is assigned. Average wait time messages apply to live chat and voice channels only. Context variables use {$Name$}, and a missing variable becomes an empty string.",
+          "applicability": "Options a, b, d and e. Customer's position in queue has no channel note, so distractor e fails on the interval requirement and the placeholder format, not on the channel. Page dated 2026-10-12."
+        },
+        {
+          "sourceId": "sim-d2d-s26",
+          "section": "Show customers their position in a queue",
+          "claim": "The notification goes at an interval of every 30 seconds if the queue position is fewer than 150 items, and every 60 seconds above that. It's enabled with Customer wait time on the Behaviors tab.",
+          "applicability": "Distractor c fails on the five-minute requirement, whatever the channel. Page dated 2025-11-27."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d2-q24 (overflow message fallback) and ab250-d2-q15 (Messaging API authorization). Neither tests this trigger, and note cc-d2-n13 covers the placeholder format only in general."
+    },
+    {
+      "id": "sim-d2d-q14",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "proactive-invite-context-in-authenticated-chat",
+      "objectiveIds": [
+        "D2.1.05",
+        "D2.3.01"
+      ],
+      "level": "advanced",
+      "author": "channels-digital-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2d-s14",
+          "section": "Setup for custom portals (JWT header and payload; notes)",
+          "claim": "lwicontexts holds the context variables to pass in as part of the conversation, either for routing or to display to the representative. The JWT header example has alg, typ and optionally kid. The setContextProvider method isn't supported for authenticated chat, so lwicontexts goes in the JWT payload.",
+          "applicability": "Options a and b. Page dated 2026-10-12."
+        },
+        {
+          "sourceId": "sim-d2d-s30",
+          "section": "Send authentication token (Important)",
+          "claim": "The lwicontexts value is the serialized custom context, and its keys must correspond to context variables created for the workstream.",
+          "applicability": "Option a. Page dated 2026-05-27."
+        },
+        {
+          "sourceId": "sim-d2d-s29",
+          "section": "setContextProvider (Important; Example)",
+          "claim": "The method is supported only for unauthenticated chat, and for authenticated chat you must use the JWT. SDK methods are invoked after lcw:ready. isDisplayable set to true displays the item on the Conversation Summary Control.",
+          "applicability": "Distractors c and d."
+        },
+        {
+          "sourceId": "sim-d2d-s28",
+          "section": "Start a chat proactively (note)",
+          "claim": "The samples use setContextProvider, which can be used for unauthenticated chat only. For authenticated chat, you must use the JWT.",
+          "applicability": "Stem and explanation. Page dated 2026-05-27."
+        },
+        {
+          "sourceId": "sim-d2d-s27",
+          "section": "Configure proactive chat",
+          "claim": "Proactive chat is turned on with the Proactive chat toggle and is triggered on pages where the chat widget is embedded. The page applies to Dynamics 365 Customer Service and Contact Center standalone only.",
+          "applicability": "The stem states standalone because of this scope. Page dated 2026-07-31."
+        },
+        {
+          "sourceId": "sim-d2d-s37",
+          "section": "startProactiveChat (Parameters)",
+          "claim": "notificationUIConfig passes UI configurations for the proactive chat notification and lets you customize the notification, including the message to be displayed.",
+          "applicability": "Distractor e."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d2-q01 (anonymous context and lcw:ready), ab250-d2-q12 (startProactiveChat arguments) and ab250-d2-q09 (invitation expiry). None tests context on an authenticated proactive chat. sim-d2d-q06 tests other parts of the JWT, and no option repeats here."
+    },
+    {
+      "id": "sim-d2d-q15",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "satisfaction-score-variable-for-historical-report",
+      "objectiveIds": [
+        "D2.3.13"
+      ],
+      "level": "advanced",
+      "author": "channels-digital-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2d-s31",
+          "section": "Things to consider; View the survey results; Create a survey; Enable the post-conversation survey for digital messaging channels",
+          "claim": "To add another question and store the data in Dataverse, the response variable name must start with MCS_. Extra context uses the variable mcs_additionalcontext with a JSON key value pair. Edit the Conversation Start system topic only, because all other system topics are disabled and must not be used. Results are in the Customer feedback survey response table. CSAT scores for conversations appear in the Omnichannel historical analytics report if they're stored as numeric values in MCS_CSAT.",
+          "applicability": "All options. Copilot Studio survey agents only, which the stem states, not Customer Voice surveys. Page dated 2026-05-07, updated 2026-07-21."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d2-q30 (Dataverse connection reference and publishing). That question stops at publishing. This one starts with a published survey and tests what the report reads. Note cc-d2-n15 mentions the stored-variable prefix only."
+    },
+    {
+      "id": "sim-d2d-q16",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "quick-reply-representative-language-setting",
+      "objectiveIds": [
+        "D2.1.07"
+      ],
+      "level": "advanced",
+      "author": "channels-digital-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2d-s32",
+          "section": "Availability of quick replies and language settings; Associate quick replies with a workstream; Create or edit tags",
+          "claim": "Three parameters determine the quick replies that representatives see: the language mapped to the channel instance, the language configured in the representative's personal settings, and the workstream. The representative-specific language setting, if configured, determines the language in which the quick replies are available. If no workstream is associated, the quick reply is available for all representatives. Tags classify quick replies.",
+          "applicability": "All options. Page dated 2026-06-30."
+        },
+        {
+          "sourceId": "sim-d2d-s33",
+          "section": "Send quick replies",
+          "claim": "In View all, representatives can choose a language and search for quick replies. Representatives can search by tag with /q.",
+          "applicability": "Stem, which treats choosing a language in View all as the step to remove, and distractor d. Page dated 2026-10-26."
+        },
+        {
+          "sourceId": "sim-d2d-s34",
+          "section": "Languages tab options",
+          "claim": "Personal settings has a Languages tab, and adding a language other than the base language needs the administrator to install and enable the language pack.",
+          "applicability": "The stem states that French is enabled. The quick reply page calls this the language configured in personal settings, and the option uses those words. Page dated 2026-10-30."
+        },
+        {
+          "sourceId": "sim-d2v-s21",
+          "section": "Enable real-time translation for representative and customer conversations",
+          "claim": "Default input language is the language for representatives to converse with customers, and translation renders customer messages in it.",
+          "applicability": "Distractor c."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d2-q11 (context value syntax, workstream association and tags). This uses a different decision: which setting controls the language offered to a representative. Workstream and tag appear only as distractors."
+    }
+  ]
+}

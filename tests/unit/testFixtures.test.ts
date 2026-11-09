@@ -1,3 +1,4 @@
+import { sel } from '../support/selection';
 import { describe, expect, it } from 'vitest';
 import { engineeringQuestionBank as bank } from '../../src/content/engineeringQuestionBank';
 import { testFixturePack } from '../../src/content/testFixtures';
@@ -23,19 +24,19 @@ describe('independent engineering question bank', () => {
     expect(bank.questions.filter(question => question.kind === 'multiple')).toHaveLength(75);
     expect(bank.domains.map(domain => bank.questions.filter(question => question.domainId === domain.id).length)).toEqual([51, 96, 36, 36, 51, 30]);
     for (const question of bank.questions) {
-      expect(question.options).toHaveLength(4);
-      expect(new Set(question.options.map(option => option.text)).size).toBe(4);
+      expect(sel(question).options).toHaveLength(4);
+      expect(new Set(sel(question).options.map(option => option.text)).size).toBe(4);
       const expected = question.kind === 'single'
         ? Number(question.prompt.match(/What is (\d+) \+ (\d+)\?/)![1]) + Number(question.prompt.match(/What is (\d+) \+ (\d+)\?/)![2])
         : Number(question.prompt.match(/equal (\d+)/)![1]);
-      const correct = question.options.filter(option => {
+      const correct = sel(question).options.filter(option => {
         if (question.kind === 'single') return Number(option.text) === expected;
         const parts = option.text.split(' + ').map(Number);
         return parts[0] + parts[1] === expected;
       }).map(option => option.id);
-      expect(question.correctOptionIds).toEqual(correct);
+      expect(sel(question).correctOptionIds).toEqual(correct);
       expect(correct).toHaveLength(question.kind === 'single' ? 1 : 2);
-      expect(Object.keys(question.optionExplanations).sort()).toEqual(question.options.map(option => option.id).sort());
+      expect(Object.keys(question.optionExplanations).sort()).toEqual(sel(question).options.map(option => option.id).sort());
     }
   });
 });

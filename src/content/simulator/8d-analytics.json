@@ -1,0 +1,571 @@
+{
+  "sources": [
+    { "id": "sim-d6-s01", "title": "Enable real-time customer sentiment with sentiment analysis", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/enable-sentiment-analysis" },
+    { "id": "sim-d6-s02", "title": "Use evaluation criteria", "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/evaluation-criteria" },
+    { "id": "sim-d6-s03", "title": "Use evaluations", "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/use-evaluations" },
+    { "id": "sim-d6-s04", "title": "Use on-demand evaluation", "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/on-demand-evaluation" },
+    { "id": "sim-d6-s05", "title": "Overview of the real-time Omnichannel analytics dashboard", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/intro-realtime-analytics-dashboard" },
+    { "id": "sim-d6-s06", "title": "Overview of real-time analytics for record routing", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/rr-overview" },
+    { "id": "sim-d6-s07", "title": "Backlog conversation report", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/realtime-backlog-conv" },
+    { "id": "sim-d6-s08", "title": "View and understand the Ongoing conversation report in Omnichannel real-time analytics", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/realtime-ongoing" },
+    { "id": "sim-d6-s09", "title": "Customize visual display", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/customize-reports" },
+    { "id": "sim-d6-s10", "title": "Overview of data model customization", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/datamodel-overview" },
+    { "id": "sim-d6-s11", "title": "Data model and report mapping for historical analytics reports", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/oob-data-models" },
+    { "id": "sim-d6-s12", "title": "Manage bookmarks for reports", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/manage-bookmarks" },
+    { "id": "sim-d6-s13", "title": "Manage real-time analytics reports in Dynamics 365 Contact Center", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/enable-realtime-analytics-dashboard-administrator" },
+    { "id": "sim-d6-s14", "title": "Customize data models of historical and real-time analytics reports", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/model-customize-reports" },
+    { "id": "sim-d6-s15", "title": "Use the out-of-the-box data model in your custom reports", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/use-datamodel" },
+    { "id": "sim-d6-s16", "title": "Automatic Page Refresh in Power BI Desktop", "url": "https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-automatic-page-refresh" },
+    { "id": "sim-d6-s17", "title": "Configure conversation diagnostics", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-conversation-diagnostics" },
+    { "id": "sim-d6-s18", "title": "Conversation diagnostics in Azure Application Insights", "url": "https://learn.microsoft.com/en-us/power-platform/admin/conversation-diagnostics-application-insights" },
+    { "id": "sim-d6-s19", "title": "Diagnose contact center health with the Application Insights dashboard", "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/diagnose-dashboard" },
+    { "id": "sim-d6-s20", "title": "Understand conversation diagnostics data in Customer Service and Dynamics 365 Contact Center", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/conversation-diagnostics-subscenarios" },
+    { "id": "sim-d6-s21", "title": "Sample queries and dashboards for conversation diagnostics", "url": "https://learn.microsoft.com/en-us/dynamics365/guidance/resources/conversation-diagnostics-sample-queries" },
+    { "id": "sim-d6-s22", "title": "Enable supervisor access to manage conversations", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/enable-monitor-assign-transfer-conv" },
+    { "id": "sim-d6-s24", "title": "Enable Diagnose dashboard", "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/enable-diagnose-dashboard" },
+    { "id": "sim-d6-s25", "title": "Create or edit a Power BI embedded system dashboard", "url": "https://learn.microsoft.com/en-us/power-apps/maker/model-driven-apps/create-edit-powerbi-embedded-page" }
+  ],
+  "groups": [],
+  "questions": [
+    {
+      "id": "sim-d6-q01",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "analytics",
+      "objectiveIds": ["D6.1.01"],
+      "conceptId": "supervisor-sentiment-notification-conditions",
+      "prompt": "Orchard Lane Grocers runs Dynamics 365 Contact Center standalone. On the Sentiment analysis page, Monitor real-time customer sentiment is set to Yes, and Send notifications when a customer's sentiment decreases to or below is set to Negative.\n\nDuring a conversation in the Deliveries queue, the customer's sentiment decreases to Very negative. At that moment, the supervisors are in these states:\n- Dara: Available, assigned to the Deliveries queue\n- Emil: Busy, assigned to the Deliveries queue\n- Ines: Away, assigned to the Deliveries queue\n- Priya: Available, assigned to the Deliveries queue\n- Tomas: Available, not assigned to any queue\n\nYou need to identify the supervisors who won't receive a notification.\n\nWhich two supervisors should you identify? Each correct answer presents part of the solution.",
+      "options": [
+        { "id": "a", "text": "Dara" },
+        { "id": "b", "text": "Emil" },
+        { "id": "c", "text": "Ines" },
+        { "id": "d", "text": "Priya" },
+        { "id": "e", "text": "Tomas" }
+      ],
+      "correctOptionIds": ["c", "e"],
+      "answer": "Ines and Tomas.",
+      "explanation": "The threshold sets the sentiment level that raises a notification, and Very negative is below Negative, so this conversation reaches it. Two further conditions decide who can receive it: a supervisor receives threshold alerts only when their presence is Available or Busy and they're assigned to a queue. Ines is Away, so she fails the first condition. Tomas is Available but isn't assigned to any queue, so he fails the second. Busy is an accepted presence here, so being occupied doesn't rule out Emil.",
+      "sourceIds": ["sim-d6-s01"],
+      "tags": ["domain:analytics", "task:apply", "feature:sentiment-analysis"],
+      "optionExplanations": {
+        "a": "Fails. Dara's presence is Available and she's assigned to the queue, so neither documented condition rules her out.",
+        "b": "Fails. Busy is one of the two accepted presences and Emil is assigned to the queue, so neither documented condition rules him out.",
+        "c": "Correct, and part of the solution. Supervisors receive threshold alerts only when their presence is Available or Busy, and Ines is Away.",
+        "d": "Fails. Priya's presence is Available and she's assigned to the queue, so neither documented condition rules her out.",
+        "e": "Correct, and part of the solution. Supervisors receive threshold alerts only when they're assigned to a queue, and Tomas isn't assigned to any queue."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d6-n03" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d6-q02",
+      "revision": 1,
+      "kind": "match",
+      "domainId": "analytics",
+      "objectiveIds": ["D6.1.02"],
+      "conceptId": "evaluation-criteria-governance-features",
+      "prompt": "Tessaly Credit Union uses quality evaluation in Dynamics 365 Contact Center. Quality evaluation is enabled, and the QEA Simulation flow is turned on. Quality managers are building a new custom evaluation criteria named Member Care Baseline, with criteria scoring turned on. The criteria is still a draft.\n\nThe managers have four requirements.\n\nYou need to choose the evaluation criteria capability that meets each requirement.\n\nWhich capability should you use for each requirement?",
+      "tray": "Capabilities",
+      "table": { "title": "Evaluation criteria design", "rowHeading": "Requirement", "answerHeading": "Capability" },
+      "tokens": [
+        { "id": "a", "text": "Extend criteria" },
+        { "id": "b", "text": "Mark as critical question" },
+        { "id": "c", "text": "Copy criteria" },
+        { "id": "d", "text": "Allow scoring for question" },
+        { "id": "e", "text": "Create Simulation" },
+        { "id": "f", "text": "Request evaluation" }
+      ],
+      "rows": [
+        { "id": "r1", "label": "An evaluation must fail if the mandatory fee disclosure was missed, whatever its score", "correctTokenId": "b" },
+        { "id": "r2", "label": "After publication, each region adds its own questions, and later baseline edits reach every region automatically", "correctTokenId": "a" },
+        { "id": "r3", "label": "Reviewers try the draft on recent real conversations, and nothing affects records or quality metrics", "correctTokenId": "e" },
+        { "id": "r4", "label": "One question must carry more of its section's weight than the others", "correctTokenId": "d" }
+      ],
+      "answer": "Mandatory fee disclosure: Mark as critical question. Regional questions: Extend criteria. Trying the draft: Create Simulation. Extra weight on one question: Allow scoring for question.",
+      "explanation": "Each requirement separates capabilities that look alike. A critical question fails the entire evaluation when it's answered with a fail option, and the score itself doesn't change, so it works as a gate rather than a weight. Question-level weights only change how much a question adds to the score. Extended criteria keep a link to a published custom source, so updates to the source appear in every extension. A copy is a separate criteria, and Microsoft describes automatic source updates only for extended criteria. A simulation runs on draft or published criteria against real data, and its results don't affect records or quality metrics. Requesting an evaluation creates a real evaluation record instead.",
+      "sourceIds": ["sim-d6-s02", "sim-d6-s03", "sim-d6-s04"],
+      "tags": ["domain:analytics", "task:apply", "feature:quality-evaluation"],
+      "optionExplanations": {
+        "a": "Correct for the regional questions. Extended criteria add questions to a published custom source, and updates to the source appear in all the extended criteria.",
+        "b": "Correct for the fee disclosure. If a critical question is answered with a fail option, the entire evaluation fails, and the score doesn't change.",
+        "c": "Fails on every row. A copy is a separate criteria that you edit on its own, and Microsoft describes automatic source updates only for extended criteria.",
+        "d": "Correct for the extra weight. This toggle defines weights per question within a section. It can't fail an evaluation, so it doesn't meet the disclosure requirement.",
+        "e": "Correct for trying the draft. A simulation can use criteria in Draft state with real data, and its results don't affect records or quality metrics.",
+        "f": "Fails. An on-demand request creates an evaluation record, and active evaluation records count in average quality scores and reports."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d6-n04" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d6-q03",
+      "revision": 1,
+      "kind": "match",
+      "domainId": "analytics",
+      "objectiveIds": ["D6.1.03"],
+      "conceptId": "realtime-report-population-boundaries",
+      "prompt": "Larkfield University runs Dynamics 365 Contact Center standalone for student services. Supervisors have the Omnichannel Supervisor and CSR Manager roles, and they use the out-of-the-box Omnichannel real-time analytics reports in Copilot Service workspace. A Business Unit filter was added to the reports. All real-time analytics dashboards are turned on.\n\nSupervisors raised four issues.\n\nYou need to find the fix for each issue, or the place where the missing data can be seen.\n\nWhat should you do for each issue?",
+      "tray": "Actions",
+      "table": { "title": "Real-time report issues", "rowHeading": "Issue", "answerHeading": "Action" },
+      "tokens": [
+        { "id": "a", "text": "Select Add real-time analytics for intent" },
+        { "id": "b", "text": "Add the supervisor to the queue" },
+        { "id": "c", "text": "Open the Backlog conversation report" },
+        { "id": "d", "text": "Publish a filter change in the embedded editor" },
+        { "id": "e", "text": "Review the supervisor's Dataverse permissions" },
+        { "id": "f", "text": "Open Real-time analytics for record routing" }
+      ],
+      "rows": [
+        { "id": "r1", "label": "One supervisor's reports leave out the Housing queue. Her Dataverse permissions have been reviewed and are correct.", "correctTokenId": "b" },
+        { "id": "r2", "label": "A supervisor who belongs to the Athletics queues selects Athletics in the Business Unit filter and sees no data", "correctTokenId": "e" },
+        { "id": "r3", "label": "Work items in entity record queues are missing from every report", "correctTokenId": "f" },
+        { "id": "r4", "label": "A persistent chat created nine days ago is still waiting, has had no recent activity, and isn't in the Ongoing conversation report", "correctTokenId": "c" }
+      ],
+      "answer": "Missing Housing queue: add the supervisor to the queue. Empty Business Unit filter: review the supervisor's Dataverse permissions. Entity record work items: open Real-time analytics for record routing. Nine-day-old persistent chat: open the Backlog conversation report.",
+      "explanation": "Each report limits what it shows in a different way, so a gap isn't automatically a fault. Supervisors see metrics and conversations for their assigned queues only. Real-time analytics also uses Dataverse security, and the Business Unit filter doesn't grant access, so selecting a unit without permission shows nothing. Entity record queues appear only in Real-time analytics for record routing, which is turned on here and needs the CSR Manager role that these supervisors have. The Ongoing conversation report focuses on recent conversations, while the Backlog conversation report lists open, active and waiting conversations created in the last 30 days, including persistent chats.",
+      "sourceIds": ["sim-d6-s05", "sim-d6-s06", "sim-d6-s07", "sim-d6-s08", "sim-d6-s09", "sim-d6-s13"],
+      "tags": ["domain:analytics", "task:evaluate", "feature:real-time-analytics"],
+      "optionExplanations": {
+        "a": "Fails. This option adds intent insights. It doesn't bring in a queue, a business unit, entity record work items or an older chat.",
+        "b": "Correct for the Housing queue. The reports are prefiltered to the supervisor's assigned queues, and her permissions have been reviewed and are correct.",
+        "c": "Correct for the persistent chat. This report lists open, active and waiting conversations created in the last 30 days and is the documented place for longer persistent chats.",
+        "d": "Fails. A filter narrows what a report shows, and a published customization is visible to all users. It can't add data that a user isn't allowed to see or that the report doesn't contain.",
+        "e": "Correct for the empty filter. The Business Unit filter doesn't grant access, so a user without permission to see a unit's data gets no information when selecting it.",
+        "f": "Correct for entity record work items. These reports don't include the Entity Record channel, and entity record queues are available only in this dashboard."
+      },
+      "relatedNotes": [
+        { "packId": "contact-center-core", "noteId": "cc-d6-n02" },
+        { "packId": "contact-center-core", "noteId": "cc-d6-n01" }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d6-q04",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "analytics",
+      "objectiveIds": ["D6.2.01"],
+      "conceptId": "embedded-editor-delivery-boundary",
+      "prompt": "Mosswood Hotels runs Dynamics 365 Contact Center standalone, and supervisors read the out-of-the-box analytics reports in Copilot Service workspace. Two analysts have the Analytics Report Author role. Mosswood has no paid Power BI service, so the analysts can work only in the embedded Power BI editor.\n\nThe analysts received five change requests.\n\nYou need to choose the request that they can deliver.\n\nWhich request should you choose?",
+      "options": [
+        { "id": "a", "text": "Add a 90-second service-level measure to the Omnichannel real-time Summary report." },
+        { "id": "b", "text": "Add a chart to the Knowledge analytics report." },
+        { "id": "c", "text": "Filter the Queue report to three queues for one supervisor, with no change for other supervisors." },
+        { "id": "d", "text": "Add a visual of accepted consult sessions from FactSessionParticipant to the Omnichannel historical analytics report." },
+        { "id": "e", "text": "Break down handle time by a custom region column on the user table." }
+      ],
+      "correctOptionIds": ["d"],
+      "answer": "Add a visual of accepted consult sessions from FactSessionParticipant to the Omnichannel historical analytics report.",
+      "explanation": "The embedded editor changes how existing model data is presented, and it needs no extra license for Omnichannel historical and real-time reports. Its Data pane lists all the available metrics, including ones that the out-of-the-box report doesn't show, so an unused consult metric is within reach. New logic and new attributes aren't: a service-level target that the model doesn't provide and a custom column both need data model customization, which requires a paid Power BI service. Knowledge analytics can't be customized. A published change is visible to everyone, so a view for one supervisor belongs in a bookmark.",
+      "sourceIds": ["sim-d6-s09", "sim-d6-s10", "sim-d6-s11", "sim-d6-s12"],
+      "tags": ["domain:analytics", "task:evaluate", "feature:embedded-report-editor"],
+      "optionExplanations": {
+        "a": "Fails. Microsoft provides service levels of 10, 20, 30, 40, 60 and 120 seconds. A new variant that uses different logic is a data model customization scenario, and that requires a paid Power BI service.",
+        "b": "Fails. You can't customize knowledge analytics reports.",
+        "c": "Fails. A published customization is visible to all users. A personal view for one supervisor is what a report bookmark provides.",
+        "d": "Correct. The Data pane includes metrics that the out-of-the-box reports don't display, and FactSessionParticipant in the historical model holds consult session data.",
+        "e": "Fails. Reporting on a custom attribute of a Dynamics 365 entity is a data model customization scenario, and that requires a paid Power BI service."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d6-n05" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d6-q05",
+      "revision": 1,
+      "kind": "hotspot",
+      "domainId": "analytics",
+      "objectiveIds": ["D6.2.02"],
+      "conceptId": "customized-app-report-navigation-pages",
+      "prompt": "Halden Medical Supplies runs Dynamics 365 Contact Center standalone and has customized its Copilot Service workspace app. Omnichannel real-time analytics is on. Real-time data model customization is provisioned, and report authors have published two custom reports to the customer workspace. Supervisors have the permissions that they need.\n\nSupervisors must reach both custom reports from one navigation entry in the app.\n\nYou need to configure the app and the reports.\n\nWhat should you use for each item?",
+      "table": { "title": "Report navigation", "rowHeading": "Item", "answerHeading": "Configuration" },
+      "rows": [
+        {
+          "id": "r2",
+          "label": "Customized Reports entry in App Designer",
+          "options": [
+            { "id": "r2a", "text": "Dataverse table page for Omnichannel Realtime analytics" },
+            { "id": "r2b", "text": "Dashboard page that embeds one report" },
+            { "id": "r2c", "text": "URL page that opens a control" }
+          ],
+          "correctOptionId": "r2c"
+        },
+        {
+          "id": "r3",
+          "label": "The two custom reports inside the Customized Reports entry",
+          "options": [
+            { "id": "r3a", "text": "Add report on the data model customization page" },
+            { "id": "r3b", "text": "A separate page for each report in App Designer" },
+            { "id": "r3c", "text": "Share each report with supervisors from the Power BI service" }
+          ],
+          "correctOptionId": "r3a"
+        }
+      ],
+      "answer": "Customized Reports: URL page that opens a control. The two custom reports: Add report on the data model customization page.",
+      "explanation": "A customized app needs the Customized Reports entry added by hand. It's a URL page that opens the modern reporting control, and one entry can hold many reports. That entry is only the container. Each report is added in Step 4 of the data model customization page in Copilot Service admin center, which lists the reports in the configured customer workspace. The other page types don't meet the one-entry requirement: the Omnichannel Realtime analytics table opens the out-of-the-box reports, and a dashboard page that embeds one report leaves out the second report.",
+      "sourceIds": ["sim-d6-s13", "sim-d6-s14", "sim-d6-s25"],
+      "tags": ["domain:analytics", "task:apply", "feature:report-embedding"],
+      "optionExplanations": {
+        "r2a": "Fails. This table opens the out-of-the-box real-time reports, not the customized reports, so supervisors wouldn't reach the two custom reports from this entry.",
+        "r2b": "Fails. This page shows the one report selected for it, so the second custom report isn't in the entry. Supervisors must reach both custom reports from one navigation entry.",
+        "r2c": "Correct. A URL page holds the organization URL that opens the modern reporting control with the feature IDs for customized reports.",
+        "r3a": "Correct. Step 4 uses Add report, and its dropdown list shows the reports in the workspace configured in Step 1.",
+        "r3b": "Fails. An App Designer page is a navigation entry of its own, so it would sit beside Customized Reports, not inside it. Reports inside that entry come from Add report.",
+        "r3c": "Fails. Sharing gives people access to a report, and supervisors already have the permissions that they need. It doesn't add the report to the navigation."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d6-n07" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d6-q06",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "analytics",
+      "objectiveIds": ["D6.2.03"],
+      "conceptId": "model-customization-provisioning-readiness",
+      "prompt": "Fennmoor Telecom runs Dynamics 365 Contact Center standalone. Report authors need custom real-time reports, so you are enabling real-time data model customization. Licensing requirements are met, and Omnichannel real-time analytics is on.\n\nThe current setup is:\n- A Microsoft Entra ID security group exists, and the tenant settings that customization requires are turned on for it. Its only members are the report authors.\n- The Dynamics 365 Analytics service account is available in the tenant.\n- The customer workspace will be an existing Microsoft Fabric workspace named Fennmoor Reports.\n- You will enable customization by using your Dynamics administrator account, which has Contributor access to Fennmoor Reports.\n\nYou need to make sure that the data models provision successfully.\n\nWhich two actions should you perform before you start provisioning? Each correct answer presents part of the solution.",
+      "options": [
+        { "id": "a", "text": "Enable Omnichannel historical analytics." },
+        { "id": "b", "text": "Add the Dynamics 365 Analytics service account to the security group." },
+        { "id": "c", "text": "Create the managed workspace in Microsoft Fabric." },
+        { "id": "d", "text": "Assign the Analytics Report Author role to the service account." },
+        { "id": "e", "text": "Make your account a workspace administrator of Fennmoor Reports." }
+      ],
+      "correctOptionIds": ["b", "e"],
+      "answer": "Add the Dynamics 365 Analytics service account to the security group. Make your account a workspace administrator of Fennmoor Reports.",
+      "explanation": "Provisioning runs through two identities. The Dynamics 365 Analytics service principal deploys the data model and changes the Fabric workspace, and Power BI grants permissions to groups, so the service account must be a member of the security group. The Dynamics administrator who enables customization must also be a workspace administrator of an existing workspace that hosts the report copies. Contributor access isn't enough. Microsoft creates the managed workspace itself, and the real-time path depends on real-time analytics, not historical analytics.",
+      "sourceIds": ["sim-d6-s14", "sim-d6-s10", "sim-d6-s09"],
+      "tags": ["domain:analytics", "task:apply", "feature:data-model-customization"],
+      "optionExplanations": {
+        "a": "Fails. Historical reports are the prerequisite for historical data model customization. Real-time customization needs real-time analytics, which is already on.",
+        "b": "Correct, and part of the solution. Successful provisioning needs this service account in the security group, and today the group holds only report authors.",
+        "c": "Fails. Dynamics 365 provisions and maintains the managed workspace. The workspace that you choose applies only to the customer workspace.",
+        "d": "Fails. This role is for users who edit analytics reports. The documented provisioning requirement for the service account is membership of the security group.",
+        "e": "Correct, and part of the solution. When an existing workspace is used, the Dynamics administrator enabling customization must be a workspace administrator of it."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d6-n06" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d6-q07",
+      "revision": 1,
+      "kind": "hotspot",
+      "domainId": "analytics",
+      "objectiveIds": ["D6.2.04", "D6.1.04"],
+      "conceptId": "custom-realtime-wallboard-refresh-and-actions",
+      "prompt": "Sundale Travel runs Dynamics 365 Contact Center standalone, and real-time data model customization is provisioned. A report author is building a wallboard for supervisors in Power BI Desktop and will publish it to the customer workspace, which is on a Microsoft Fabric capacity. Automatic page refresh is enabled in the Microsoft Fabric Admin portal, and the capacity's minimum refresh interval isn't a constraint. Force Close is set to Yes in supervisor settings.\n\nSundale has these requirements:\n- The wallboard must connect live to Microsoft's maintained metrics, with no local model.\n- Its figures must update on their own while the page stays open.\n- Supervisors who spot a stuck conversation must be able to force close it.\n\nYou need to design the solution.\n\nWhat should you choose for each item?",
+      "table": { "title": "Wallboard design", "rowHeading": "Item", "answerHeading": "Choice" },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Semantic model for the wallboard",
+          "options": [
+            { "id": "r1a", "text": "Historical model in the Customer Service managed workspace" },
+            { "id": "r1b", "text": "Real-time model in the Omnichannel managed workspace" },
+            { "id": "r1c", "text": "New Import model built from Dataverse tables" }
+          ],
+          "correctOptionId": "r1b"
+        },
+        {
+          "id": "r2",
+          "label": "Page refresh on the wallboard",
+          "options": [
+            { "id": "r2a", "text": "Change detection, checked every 10 seconds" },
+            { "id": "r2b", "text": "Auto page refresh, fixed at 1 second" },
+            { "id": "r2c", "text": "Auto page refresh, fixed at 5 or 10 seconds" }
+          ],
+          "correctOptionId": "r2c"
+        },
+        {
+          "id": "r3",
+          "label": "Force closing a stuck conversation",
+          "options": [
+            { "id": "r3a", "text": "Use the out-of-the-box Ongoing conversation report, refreshed manually" },
+            { "id": "r3b", "text": "Select Force Close on the wallboard" },
+            { "id": "r3c", "text": "Use the out-of-the-box Ongoing conversation report with automatic page refresh turned on" }
+          ],
+          "correctOptionId": "r3a"
+        }
+      ],
+      "answer": "Semantic model: real-time model in the Omnichannel managed workspace. Page refresh: Auto page refresh, fixed at 5 or 10 seconds. Force closing: use the out-of-the-box Ongoing conversation report, refreshed manually.",
+      "explanation": "A wallboard that updates itself needs the real-time model, because automatic page refresh is available only for real-time reports and the historical model refreshes daily. Power BI allows shorter fixed intervals in general, but Microsoft's guidance for these Dynamics reports is a fixed interval of 5 or 10 seconds. Change detection isn't supported for a live connection to a semantic model. The wallboard can't also be the intervention surface. Assign, transfer, monitor and force close aren't available on model-customized reports, so supervisors act from the Ongoing conversation report, which has no autorefresh and must be refreshed manually.",
+      "sourceIds": ["sim-d6-s14", "sim-d6-s10", "sim-d6-s15", "sim-d6-s16", "sim-d6-s08", "sim-d6-s22"],
+      "tags": ["domain:analytics", "task:apply", "feature:automatic-page-refresh"],
+      "optionExplanations": {
+        "r1a": "Fails. The historical model is refreshed daily, and automatic page refresh is available only for real-time reports.",
+        "r1b": "Correct. The real-time model is hosted in the Omnichannel managed workspace, and new custom reports connect to the data model in the managed workspace.",
+        "r1c": "Fails. Import storage mode doesn't support automatic page refresh, and rebuilding metrics loses the logic that Microsoft maintains in the out-of-the-box model.",
+        "r2a": "Fails. Microsoft's guidance for these reports is the fixed interval type, and change detection isn't supported for live connections to Power BI semantic models.",
+        "r2b": "Fails. Power BI in general allows one second, but Microsoft's guidance for these reports is either 5 or 10 seconds.",
+        "r2c": "Correct. Microsoft says to use the fixed interval refresh type with either 5 or 10 seconds as the interval.",
+        "r3a": "Correct. Force Close is available on the Ongoing conversation report, and that report must be refreshed manually to see the latest conversations.",
+        "r3b": "Fails. Supervisor actions such as force close aren't available on model-customized reports, even with Force Close set to Yes.",
+        "r3c": "Fails. This is the right report, but autorefresh isn't available on it. It must be refreshed manually."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d6-n06" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d6-q08",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "analytics",
+      "objectiveIds": ["D6.2.05"],
+      "conceptId": "guided-diagnostics-test-connection-readiness",
+      "prompt": "Ridgeway Logistics runs Dynamics 365 Contact Center in a Managed environment in the commercial cloud. You have the required Azure and Power Platform access, and you're using the guided setup on the Conversation lifecycle diagnostics page in Copilot Service admin center.\n\nThe Application Insights resource is connected to the organization. You entered its App ID and selected Provision. Provisioning finished and displayed the 3P Application Name for a new third-party app. You haven't made any other changes.\n\nYou need to finish the steps that the guided setup leaves for you before you select Test connection.\n\nWhich two actions should you perform? Each correct answer presents part of the solution.",
+      "options": [
+        { "id": "a", "text": "Assign the third-party app the Monitoring Reader role on the resource." },
+        { "id": "b", "text": "Add a federated identity credential to the third-party app in Microsoft Entra ID." },
+        { "id": "c", "text": "Update the Application Insights ID in the environment variable's Default Value and Current Value." },
+        { "id": "d", "text": "Verify the app's API permission status, and grant admin consent if needed." },
+        { "id": "e", "text": "Add a second data export for the environment in Power Platform admin center." }
+      ],
+      "correctOptionIds": ["a", "d"],
+      "answer": "Assign the third-party app the Monitoring Reader role on the resource. Verify the app's API permission status, and grant admin consent if needed.",
+      "explanation": "Guided setup automates part of the read path, not all of it. Provision creates the required app and federated identity credential and sets the environment variable. Two steps remain for you in the Azure portal before the test. You review the new third-party app's Application Insights Read API permission and grant admin consent if its status is Not granted, and you assign the app the Monitoring Reader role on the Application Insights resource. Test connection follows those steps, and a successful test confirms that the service can read telemetry.",
+      "sourceIds": ["sim-d6-s17", "sim-d6-s18", "sim-d6-s24"],
+      "tags": ["domain:analytics", "task:apply", "feature:conversation-diagnostics"],
+      "optionExplanations": {
+        "a": "Correct, and part of the solution. The guided setup has you assign this role to the app in Access Control (IAM) on the Application Insights resource.",
+        "b": "Fails. The guided setup already creates the required app and federated identity credential during provisioning.",
+        "c": "Fails. The guided setup sets the environment variable itself. Updating it by hand is a step in the Enable Diagnose dashboard guide, not one that guided setup leaves for you.",
+        "d": "Correct, and part of the solution. The guided setup has you verify that the Application Insights Read permission's status is Granted and select Grant admin consent if it's Not granted.",
+        "e": "Fails. You can create only one data export configuration from Customer Service to Application Insights per environment, and an export pushes data to Application Insights. It doesn't let the service read that data."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d6-n08" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d6-q09",
+      "revision": 1,
+      "kind": "hotspot",
+      "domainId": "analytics",
+      "objectiveIds": ["D6.2.06", "D6.2.05"],
+      "conceptId": "debug-tab-investigation-paths",
+      "prompt": "Kestrel Rail takes customer calls and chats in Dynamics 365 Contact Center standalone. Its queues use out-of-the-box assignment methods. Omnichannel real-time analytics is on, and the Diagnose dashboard is configured. A contact center engineer has the Omnichannel Supervisor role and Read access to Application Insights.\n\nThe Refunds queue has a growing backlog even though representatives show the required presence. The engineer opens the Debug tab and finds three items to explain.\n\nYou need to make sure that the engineer interprets or investigates each item correctly.\n\nWhat should the engineer conclude or do for each item?",
+      "table": { "title": "Debug investigation", "rowHeading": "Item", "answerHeading": "Conclusion or next step" },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "One conversation is counted under both No eligible CSRs found and CSR reject",
+          "options": [
+            { "id": "r1a", "text": "Two representatives rejected it during one assignment attempt" },
+            { "id": "r1b", "text": "A representative rejected it, and a later attempt found nobody eligible" },
+            { "id": "r1c", "text": "The same assignment event was logged twice" }
+          ],
+          "correctOptionId": "r1b"
+        },
+        {
+          "id": "r2",
+          "label": "Mia wasn't selected during a specific assignment attempt",
+          "options": [
+            { "id": "r2a", "text": "Review the rule conditions in the Route To Queue event" },
+            { "id": "r2b", "text": "Review the distribution in View by time to assign" },
+            { "id": "r2c", "text": "Compare her presence, skills and capacity in Assignment event details" }
+          ],
+          "correctOptionId": "r2c"
+        },
+        {
+          "id": "r3",
+          "label": "A voice consult between two representatives didn't connect",
+          "options": [
+            { "id": "r3a", "text": "Query the diagnostic events in Application Insights" },
+            { "id": "r3b", "text": "Review Conversations with non-assignment reasons" },
+            { "id": "r3c", "text": "Review the Assignment event details timeline" }
+          ],
+          "correctOptionId": "r3a"
+        }
+      ],
+      "answer": "Double count: a representative rejected it, and a later attempt found nobody eligible. Mia: compare her presence, skills and capacity in Assignment event details. Voice consult: query the diagnostic events in Application Insights.",
+      "explanation": "The Debug tab answers assignment questions, so the engineer first needs to know which question is being asked. The two non-assignment reasons can overlap by design: when a representative rejects a conversation and a later attempt finds no eligible representative, the conversation is counted in both. For one representative in one assignment run, Assignment event details shows her presence, skills, capacity and capacity profile next to the conversation's requirements. Transfer and consult data is outside what these diagnostics support. Application Insights still holds the telemetry, including the Consult subscenario, which logs an error when a voice consult isn't successful.",
+      "sourceIds": ["sim-d6-s19", "sim-d6-s20", "sim-d6-s21"],
+      "tags": ["domain:analytics", "task:evaluate", "feature:diagnose-dashboard"],
+      "optionExplanations": {
+        "r1a": "Fails. The documented overlap involves a rejection and then a later attempt that finds no eligible representative.",
+        "r1b": "Correct. Microsoft says that the system counts this case in both No eligible CSRs found and CSR reject.",
+        "r1c": "Fails. The double count is documented behavior for a rejection followed by a later attempt, not a duplicate log entry.",
+        "r2a": "Fails. Route To Queue shows the rulesets, conditions and queue selected. It doesn't explain why a representative in the queue wasn't eligible.",
+        "r2b": "Fails. This view shows how conversations are distributed by time to first assignment. It doesn't explain one representative in one assignment run.",
+        "r2c": "Correct. Microsoft points to Assignment event details for validating why a representative wasn't eligible during a particular assignment run.",
+        "r3a": "Correct. Diagnostics don't support data for transfer and consult conversations, and the Consult subscenario in Application Insights tracks whether a voice consult succeeded and logs an error if it didn't.",
+        "r3b": "Fails. These reasons explain why a conversation wasn't assigned during the assignment flow, and consult data isn't supported by these diagnostics.",
+        "r3c": "Fails. This timeline covers assignment attempts. Consult data isn't supported by these diagnostics."
+      },
+      "relatedNotes": [
+        { "packId": "contact-center-core", "noteId": "cc-d6-n02" },
+        { "packId": "contact-center-core", "noteId": "cc-d6-n08" }
+      ],
+      "status": "draft"
+    }
+  ],
+  "editorial": [
+    {
+      "id": "sim-d6-q01",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "supervisor-sentiment-notification-conditions",
+      "objectiveIds": ["D6.1.01"],
+      "level": "advanced",
+      "author": "analytics-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d6-s01", "section": "Supervisor settings", "claim": "Supervisors can be notified when a customer's sentiment decreases to or below a selected value. The supervisor receives threshold alerts only when their presence is Available or Busy and they're assigned to a queue.", "applicability": "Customer Service and Contact Center standalone, page dated 2026-08-31 and reopened 2026-11-06. This wording gives necessary conditions, so the question asks who won't receive a notification, which it proves, and makes no claim that the other supervisors will. The page doesn't say how Busy - DND is treated, so no supervisor uses it. It also doesn't say that assignment to one queue brings alerts from another queue's conversations, so the assigned supervisors are all on the Deliveries queue and Tomas is on no queue. Emil is the only Busy supervisor, so the wrong belief that only Available supervisors get alerts, whatever their queue, names exactly Emil and Ines, which fits the count of two." }
+      ],
+      "duplicateCheck": "Compared with supervisor-action-permission-layer, monitor-state-channel-scope and outbound-queue-monitoring-separation. A keyword search of ab250-bank for sentiment found only the outbound queue question, which tests queue design. No question tests the presence and queue conditions for sentiment notifications."
+    },
+    {
+      "id": "sim-d6-q02",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "evaluation-criteria-governance-features",
+      "objectiveIds": ["D6.1.02"],
+      "level": "advanced",
+      "author": "analytics-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d6-s02", "section": "Mark a question as critical", "claim": "If a critical question is answered with a fail option, the entire evaluation fails. Each critical question needs at least one fail option. Scoring doesn't change when a critical question causes an evaluation to fail.", "applicability": "Quality evaluation, page dated 2026-10-23. The question depends on no preview feature." },
+        { "sourceId": "sim-d6-s02", "section": "Extend your evaluation criteria", "claim": "Any custom criteria in the Published state can be a source. Updates to the source criteria automatically appear in all the extended criteria. You can't extend an out-of-the-box criteria.", "applicability": "The stem makes Member Care Baseline a custom criteria, and the row says After publication." },
+        { "sourceId": "sim-d6-s02", "section": "Create and run a simulation", "claim": "Supervisors can run a simulation on any criteria in Draft or Published state with real case and conversation data. The results don't affect records or quality metrics. The QEA Simulation flow must be enabled first.", "applicability": "The stem states that the flow is on. The article's limit on knowledge-based criteria doesn't apply because no knowledge source is mentioned." },
+        { "sourceId": "sim-d6-s02", "section": "Create evaluation criteria; Question-level weightage", "claim": "Turn on Allow scoring for question to define weights per question within a section. Weighted questions give greater importance to specific questions.", "applicability": "Applies to the new criteria in the stem, which has criteria scoring on." },
+        { "sourceId": "sim-d6-s02", "section": "Copy the default evaluation criteria for cases and conversations", "claim": "Copy gives you a copy of the criteria form to edit. The article describes automatic source updates only for extended criteria.", "applicability": "The article doesn't say outright that a copy receives no updates, so the option explanation is worded around what Microsoft describes." },
+        { "sourceId": "sim-d6-s03", "section": "Mark an evaluation as inactive", "claim": "All evaluation records are active by default. Marking one inactive excludes it from average quality scores and reports.", "applicability": "Shows that a real evaluation counts unless someone acts, which rules out Request evaluation for the simulation row." },
+        { "sourceId": "sim-d6-s04", "section": "On-demand evaluation for closed conversations", "claim": "Request evaluation creates an evaluation for selected closed conversations, viewable as an evaluation record.", "applicability": "Explains the Request evaluation distractor." }
+      ],
+      "duplicateCheck": "Compared with quality-evaluator-role-boundary, quality-evaluation-connection-readiness, quality-ai-assisted-method-contract, trigger-plan-history-interpretation and ivr-only-quality-evaluation-scope. Those test roles, readiness, method and plan scope. A keyword search of ab250-bank found no question on critical questions, extended criteria, criteria simulation or question weights. The simulation questions in D1 concern agent simulation, not evaluation criteria."
+    },
+    {
+      "id": "sim-d6-q03",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "realtime-report-population-boundaries",
+      "objectiveIds": ["D6.1.03"],
+      "level": "advanced",
+      "author": "analytics-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d6-s05", "section": "Dashboard details", "claim": "The reports are prefiltered based on the queues you're signed in to as a supervisor, so metrics and conversations pertain to the assigned queues only. The reports don't include work items of the Entity Record channel, and entity record queues are available only in real-time analytics for record routing.", "applicability": "Omnichannel real-time analytics, Contact Center standalone. The Housing row states that her permissions have been reviewed and are correct, because the same page says that differing values call for a permissions review." },
+        { "sourceId": "sim-d6-s05", "section": "Filter information displayed on dashboard", "claim": "The Business Unit filter doesn't grant additional access. If a user doesn't have security permissions to view a business unit's data, selecting that business unit doesn't display any information.", "applicability": "The stem says that the filter was added, and the row says that she belongs to those queues, which removes the queue cause." },
+        { "sourceId": "sim-d6-s05", "section": "Security roles and permissions", "claim": "Real-time analytics uses Dataverse security permissions, and differing values between users call for investigating their permissions.", "applicability": "Supports the Dataverse permissions token." },
+        { "sourceId": "sim-d6-s06", "section": "Security roles and permissions; Dashboard details", "claim": "Viewing real-time analytics for record routing requires the CSR Manager role. Its Queue report shows entity record type queues only.", "applicability": "The stem gives supervisors the CSR Manager role and says that all real-time analytics dashboards are turned on. Manage real-time analytics for record routing (enable-record-routing, dated 2026-06-26, opened 2026-11-06) says both that the dashboard is disabled by default and that enabling unified routing enables it automatically. The stem therefore states that it's on, and the explanations take no side on the default." },
+        { "sourceId": "sim-d6-s07", "section": "Introduction; Key metrics", "claim": "The Backlog conversation report lists all open, active and waiting conversations created in the last 30 days, and it lets you view persistent chats.", "applicability": "Microsoft pages disagree on the threshold: this page says persistent chats longer than 2 hrs, and the real-time overview says longer than 24 hrs. The row uses a nine-day-old chat, past both figures, and the explanations state no threshold." },
+        { "sourceId": "sim-d6-s05", "section": "Filter information displayed on dashboard", "claim": "The Time filter shows conversations from the last 2 hours by default, and you can see conversations up to the last 24 hours. Today shows all conversations started or modified in the selected time zone.", "applicability": "The row uses a chat created nine days ago with no recent activity, so neither the 24-hour reach nor the started or modified behavior of Today brings it back into the report." },
+        { "sourceId": "sim-d6-s08", "section": "Introduction", "claim": "The Ongoing conversation report shows ongoing conversations from the last 2 hours.", "applicability": "This is the report the row names. The time filter statements are on sim-d6-s05, not on this page." },
+        { "sourceId": "sim-d6-s09", "section": "Introduction note", "claim": "After you customize and publish a report, all customizations become visible to all users.", "applicability": "Rules out the published filter token." },
+        { "sourceId": "sim-d6-s13", "section": "Manage Omnichannel real-time analytics reports", "claim": "Add real-time analytics for intent adds intent insights.", "applicability": "Explains the intent distractor." }
+      ],
+      "duplicateCheck": "Compared with custom-analytics-reader-data, analytics-conversation-channel-scope and proactive-dashboard-filter-scope. The first tests table privileges, the second tests channel scope in Copilot throughput, and the last aligns proactive dashboard filters for a comparison. A keyword search of ab250-bank found no question on supervisor queue prefiltering, the Backlog conversation report or entity record queues in these reports."
+    },
+    {
+      "id": "sim-d6-q04",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "embedded-editor-delivery-boundary",
+      "objectiveIds": ["D6.2.01"],
+      "level": "advanced",
+      "author": "analytics-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d6-s09", "section": "Introduction; Customize the display of analytics reports", "claim": "You can't customize unified routing and knowledge analytics reports. No licenses are needed to customize Customer Service historical, Omnichannel historical and Omnichannel real-time reports. The Data pane includes all available metrics, not just those shown in the out-of-the-box reports. After you publish, customizations are visible to all users.", "applicability": "Embedded editor in Copilot Service workspace. The page's example is the Participation Mode metric in FactSessionParticipant. The option avoids that metric name because the historical data dictionary doesn't list it." },
+        { "sourceId": "sim-d6-s10", "section": "Scenario-based use cases; How data model customization works", "claim": "Service levels of 10, 20, 30, 40, 60 and 120 seconds are provided, and a different target is a Scenario 1 variant. Custom attributes on Dynamics 365 entities are Scenario 3. Data model customization requires a paid Power BI service.", "applicability": "Rules out the 90-second measure and the custom region column, given the stem's lack of a paid Power BI service. This page also says that Knowledge analytics isn't available for data model customization." },
+        { "sourceId": "sim-d6-s11", "section": "Omnichannel analytics; Data dictionary", "claim": "FactSessionParticipant is in the Omnichannel analytics historical model, with Consult sessions counting sessions a user accepts in mode = consult.", "applicability": "Confirms that the option's metric exists in the historical model named in the option." },
+        { "sourceId": "sim-d6-s12", "section": "Introduction; Manage bookmarks", "claim": "A bookmark saves a personalized view with filters, and a pinned bookmark can be the default view.", "applicability": "Explains why the one-supervisor request belongs in a bookmark rather than a published change." }
+      ],
+      "duplicateCheck": "Compared with existing-metric-visual-customization, business-metric-logic-extension, composite-model-relationship-design, published-visual-editing-lifecycle and report-bookmark-least-privilege. Each of those tests one path in isolation. This item asks for the boundary across five paths under a no-paid-Power-BI constraint, and adds the report families that can't be customized. A keyword search of ab250-bank for Knowledge analytics found no question."
+    },
+    {
+      "id": "sim-d6-q05",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "customized-app-report-navigation-pages",
+      "objectiveIds": ["D6.2.02"],
+      "level": "advanced",
+      "author": "analytics-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d6-s13", "section": "View Omnichannel real-time analytics reports", "claim": "If you customized the Copilot Service workspace app, in App Designer select New, then Dataverse table, search for Omnichannel Realtime analytics, select Show in navigation and Add, set the display options, then save and publish.", "applicability": "Customized app only, which the stem states. Shows that this table opens the out-of-the-box real-time reports, which is why the option naming it fails for the custom reports. No page I opened says whether any other table page could open customized reports, so the option names this table and makes no wider claim." },
+        { "sourceId": "sim-d6-s14", "section": "View customized reports", "claim": "If you customized the app, in App Designer select New, then URL, enter the organization URL that opens MscrmControls.Analytics.ModernReportingControl with its feature IDs and the title Customized Reports, then save and publish.", "applicability": "Customized app only. Covers the navigation entry, not the reports inside it. This page shows that the entry uses a URL. It doesn't show that other page types couldn't work, so the distractors rest on sim-d6-s13 and sim-d6-s25 instead." },
+        { "sourceId": "sim-d6-s25", "section": "Create a system dashboard with Power BI embedded; Add a Power BI embedded page to a model-driven app", "claim": "A Power BI embedded system dashboard references a Power BI report or dashboard that you select, and it's added to a model-driven app as a Dashboard page.", "applicability": "Power Apps model-driven apps, page dated 2026-08-06, opened 2026-11-06. This is a working way to reach one report, so the option says that it embeds one report and the stem requires both reports in one entry. The same page says that a dashboard's display name appears in a selector on the Dashboards page, so several embedded dashboards might share a Dashboards entry. The option doesn't describe that design, and no page I opened confirms it for these reports." },
+        { "sourceId": "sim-d6-s14", "section": "Step 4: Embed customized reports back to Dynamics 365", "claim": "After reports are published, select Add report, name the report, select it from the dropdown list and save. The list shows reports in the workspace configured in Step 1.", "applicability": "Data model customization in Copilot Service admin center. The stem says that reports are in the customer workspace and that permissions are in place." }
+      ],
+      "duplicateCheck": "Compared with customized-app-report-state-retention (ab250-d6-q18), custom-report-navigation-origin, custom-report-embedding-consumer-access and dashboard-tab-app-module-membership. q18 tests the Table content type that keeps report state. This item has no row on state retention or on the built-in reports' entry, because that row repeated q18 and was removed in this revision. The other three test which page may modify an entry, embedding access and app membership. None asks which page type the Customized Reports entry uses or where its reports are added."
+    },
+    {
+      "id": "sim-d6-q06",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "model-customization-provisioning-readiness",
+      "objectiveIds": ["D6.2.03"],
+      "level": "advanced",
+      "author": "analytics-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d6-s14", "section": "Create a Microsoft Entra ID security group; Step 2: Provision the data models", "claim": "The Dynamics 365 Analytics service account must be a member of the security group. The note under Step 2 ties this to successful provisioning. The service principal deploys the data model and changes the workspace, and Power BI grants permissions to groups only.", "applicability": "The stem says that the account is available, so the Dynamics CCA Data Analytics fallback isn't needed, and that the group holds only report authors." },
+        { "sourceId": "sim-d6-s14", "section": "Step 1: Select a Microsoft Fabric workspace", "claim": "If you use an existing workspace, the Dynamics administrator enabling model customization must be a workspace administrator of it. The specified workspace applies only to the customer workspace, and Microsoft creates the managed workspace.", "applicability": "The stem gives the account Contributor access to an existing workspace." },
+        { "sourceId": "sim-d6-s14", "section": "Prerequisites: Enable insights features in Customer Service", "claim": "Historical customization needs a historical report enabled. Real-time customization needs real-time analytics for Omnichannel.", "applicability": "Rules out enabling historical analytics for this real-time path." },
+        { "sourceId": "sim-d6-s10", "section": "Managed workspace", "claim": "Dynamics 365 Customer Service provisions and maintains the managed workspace.", "applicability": "Rules out creating it by hand." },
+        { "sourceId": "sim-d6-s09", "section": "Prerequisites", "claim": "To edit analytics reports, users must have the Analytics Report Author role.", "applicability": "Explains what the role is for. No page lists it as a provisioning requirement." }
+      ],
+      "duplicateCheck": "Compared with custom-report-embedding-consumer-access, custom-report-navigation-origin and managed-versus-customer-update-lifecycle. Those cover embedding access, ownership of entries and maintenance after provisioning. A keyword search of ab250-bank for Dynamics 365 Analytics and service principal found no question on provisioning prerequisites."
+    },
+    {
+      "id": "sim-d6-q07",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "custom-realtime-wallboard-refresh-and-actions",
+      "objectiveIds": ["D6.2.04", "D6.1.04"],
+      "level": "advanced",
+      "author": "analytics-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d6-s14", "section": "Enable automatic page refresh for reports", "claim": "Automatic page refresh is available only for real-time reports. An administrator must first enable it in the Microsoft Fabric Admin portal. You need to use the fixed interval refresh type with either 5 or 10 seconds as the interval.", "applicability": "Dynamics real-time reports. The stem states that the portal setting is on." },
+        { "sourceId": "sim-d6-s10", "section": "Managed workspace; How data model customization works", "claim": "The real-time data model is in Omnichannel Managed Workspace. The historical data model is in Customer Service Managed Workspace and is refreshed daily. Supervisor actions like assign, transfer, monitor and force close aren't available for model customized reports. Recreating metrics loses the benefit of logic that stays updated.", "applicability": "Applies to a wallboard built on the provisioned data model." },
+        { "sourceId": "sim-d6-s15", "section": "Create a new report based on Dynamics 365 Customer Service dataset", "claim": "In Power BI Desktop, select the dataset for real-time or historical metrics, and make sure that you select the data model from managed workspaces.", "applicability": "The wallboard is a new report with no local model, as the stem states." },
+        { "sourceId": "sim-d6-s16", "section": "Refresh types; Fixed interval setup; Restrictions on refresh intervals", "claim": "Power BI's general minimum fixed interval is one second. Power BI semantic models connected live don't support change detection, and Import doesn't support automatic page refresh. Shared capacity has a 30-minute minimum, and a capacity administrator sets a minimum interval.", "applicability": "General Power BI limits. The one-second minimum doesn't contradict the 5 or 10 second Dynamics guidance, which is narrower. The stem places the workspace on a Fabric capacity and removes the capacity minimum as a constraint." },
+        { "sourceId": "sim-d6-s08", "section": "Introduction notes; Force close conversations", "claim": "Autorefresh isn't available for the ongoing conversations page, so it must be refreshed manually. Actions like assign, transfer, monitor or force close aren't supported in model-customized reports. Force Close is a report action.", "applicability": "Two pages agree on the manual refresh: this page and the Pause updates section of the real-time overview." },
+        { "sourceId": "sim-d6-s22", "section": "Configure supervisor settings", "claim": "Force Close is a toggle in the Ongoing conversation insights settings.", "applicability": "Establishes the setting that the stem says is Yes, so the action boundary isn't a permissions problem." }
+      ],
+      "duplicateCheck": "Compared with managed-versus-customer-update-lifecycle, composite-model-relationship-design and the D6.1.04 questions supervisor-public-intervention, monitor-state-channel-scope and supervisor-transfer-elevated-media. A keyword search of ab250-bank found no question on automatic page refresh in analytics, and none on supervisor actions in model-customized reports. Card cc-d6-c17 covers that action fact, but cards and questions are separate content types."
+    },
+    {
+      "id": "sim-d6-q08",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "guided-diagnostics-test-connection-readiness",
+      "objectiveIds": ["D6.2.05"],
+      "level": "advanced",
+      "author": "analytics-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d6-s17", "section": "Set up a connection with Azure Application Insights", "claim": "After Provision, the guided setup creates the required app and federated identity credential, sets the environment variable and validates the connection. You verify that the Application Insights Read permission Status is Granted, selecting Grant admin consent if it's Not granted, and assign the Monitoring Reader role to the app. A successful Test connection confirms that the service can read telemetry.", "applicability": "Guided setup in Copilot Service admin center, page dated 2026-10-20 and reopened 2026-11-06. The section label says Monitor Reader, and the Azure step names the role as Monitoring Reader. The page lists both steps before Test connection but doesn't say that the test fails without them, so the stem asks for the remaining steps, not for a passing test. The stem is confined to the guided setup because the API permission and admin consent step exists only on this page. The Enable Diagnose dashboard guide has no such step, and neither page says how the two routes relate." },
+        { "sourceId": "sim-d6-s17", "section": "Prerequisites", "claim": "Setup needs a Managed environment and the documented Azure and Power Platform access. Export isn't available in sovereign clouds.", "applicability": "The stem states a Managed environment, the commercial cloud and the required access." },
+        { "sourceId": "sim-d6-s18", "section": "Set up a connection with Azure Application Insights", "claim": "You can create only one data export configuration from Customer Service to Application Insights per environment.", "applicability": "Rules out adding a second data export." },
+        { "sourceId": "sim-d6-s24", "section": "Configure conversation diagnostics and connection; Update Application Insights ID in environment variable", "claim": "The connection is used to connect with the Application Insights instance and push data from the Dynamics instance into Application Insights. This guide has you update the Application Insights ID in the Default Value and Current Value fields of the environment variable.", "applicability": "Page dated 2026-05-06, opened 2026-11-06. Supports the explanation that an export pushes data, and shows that updating the variable by hand belongs to this guide. That option fails because the guided setup page says that the guided setup sets the environment variable." }
+      ],
+      "duplicateCheck": "Compared with diagnostics-setup-prerequisites, single-export-environment-target, diagnose-app-identity-and-query-role and diagnose-federated-subject-debugging. diagnose-app-identity-and-query-role shares Monitoring Reader, but it tests the manual route with the managed identity record. This item tests what the guided setup leaves for you to do, including the API permission and admin consent, which no accepted diagnostics question covers. A keyword search of ab250-bank for admin consent, guided setup and Test connection found only teams-sync-delegated-permission, which concerns Teams number sync."
+    },
+    {
+      "id": "sim-d6-q09",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "debug-tab-investigation-paths",
+      "objectiveIds": ["D6.2.06", "D6.2.05"],
+      "level": "advanced",
+      "author": "analytics-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d6-s19", "section": "Use the Debug tab to view assignment data", "claim": "If a representative rejects a conversation and a subsequent attempt finds no eligible representative, the system counts the case in both No eligible CSRs found and CSR reject. Assignment event details helps validate why a representative wasn't eligible during a particular assignment run, by comparing presence, skills, capacity and capacity profile with the requirements.", "applicability": "Diagnose dashboard in Omnichannel real-time analytics. Microsoft's own wording for the Route To Queue event and View by time to assign shows what those views are for." },
+        { "sourceId": "sim-d6-s19", "section": "Things to keep in mind; Prerequisites", "claim": "Diagnostics insights is supported for out-of-the-box assignment methods only. Diagnostics to view data related to transfer and consult conversations aren't supported. Omnichannel supervisor or CSR Manager can access the dashboard in Omnichannel real-time analytics.", "applicability": "The stem states out-of-the-box assignment methods, the Omnichannel Supervisor role and real-time analytics. The page also offers raw event access from the Debug experience, so no distractor rules out viewing the raw events there." },
+        { "sourceId": "sim-d6-s20", "section": "Transfer and consult", "claim": "The Consult subscenario tracks if a voice consult is successful and, if it isn't, logs an error.", "applicability": "Conversation diagnostics data in Application Insights. The stem gives the engineer Read access." },
+        { "sourceId": "sim-d6-s21", "section": "Consults with other assignment attempts", "claim": "Sample queries read the traces table and filter on the conversation ID to view consult attempts.", "applicability": "Shows the documented way to investigate consults in Application Insights." }
+      ],
+      "duplicateCheck": "Compared with diagnostic-insights-versus-raw-custom-events, diagnostic-dashboard-latency-interpretation, queue-selection-event and diagnose-federated-subject-debugging. The first tests the custom assignment limit, and this item tests the transfer and consult limit. A keyword search of ab250-bank found no question on the double count or on Assignment event details."
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import { sel } from '../support/selection';
 import { describe, expect, it } from 'vitest';
 import { engineeringQuestionBank as bank } from '../../src/content/engineeringQuestionBank';
 import type { TestAttempt, TestExposure } from '../../src/domain';
@@ -114,25 +115,25 @@ describe('responses, deadlines and exact-set scoring', () => {
     let current = attempt();
     const single = current.questions.find(q => q.card.kind === 'single')!;
     const multiple = current.questions.find(q => q.card.kind === 'multiple')!;
-    current = answerTestAttempt(current, single.card.id, single.card.correctOptionIds, start + 1);
-    current = answerTestAttempt(current, multiple.card.id, [multiple.card.correctOptionIds[0]], start + 2);
+    current = answerTestAttempt(current, single.card.id, sel(single.card).correctOptionIds, start + 1);
+    current = answerTestAttempt(current, multiple.card.id, [sel(multiple.card).correctOptionIds[0]], start + 2);
     expect(scoreTestAttempt(current)).toEqual({ correct: 1, wrong: 1, skipped: 48 });
-    current = answerTestAttempt(current, multiple.card.id, [...multiple.card.correctOptionIds].reverse(), start + 3);
+    current = answerTestAttempt(current, multiple.card.id, [...sel(multiple.card).correctOptionIds].reverse(), start + 3);
     expect(completeTestAttempt(current, start + 4).result).toEqual({ correct: 2, wrong: 0, skipped: 48 });
   });
   it('rejects duplicate, foreign, over-count and multiple choices on a single-answer item', () => {
     const current = attempt();
     const single = current.questions.find(q => q.card.kind === 'single')!.card;
     const multiple = current.questions.find(q => q.card.kind === 'multiple')!.card;
-    expect(() => answerTestAttempt(current, single.id, [single.options[0].id, single.options[1].id], start + 1)).toThrow(/requested number/);
-    expect(() => answerTestAttempt(current, multiple.id, [multiple.options[0].id, multiple.options[0].id], start + 1)).toThrow(/distinct/);
-    expect(() => answerTestAttempt(current, multiple.id, multiple.options.slice(0, 3).map(option => option.id), start + 1)).toThrow(/requested number/);
+    expect(() => answerTestAttempt(current, single.id, [sel(single).options[0].id, sel(single).options[1].id], start + 1)).toThrow(/requested number/);
+    expect(() => answerTestAttempt(current, multiple.id, [sel(multiple).options[0].id, sel(multiple).options[0].id], start + 1)).toThrow(/distinct/);
+    expect(() => answerTestAttempt(current, multiple.id, sel(multiple).options.slice(0, 3).map(option => option.id), start + 1)).toThrow(/requested number/);
     expect(() => answerTestAttempt(current, single.id, ['foreign'], start + 1)).toThrow(/part of/);
     expect(() => answerTestAttempt(current, 'missing', [], start + 1)).toThrow(/not part/);
   });
   it('preserves partial multi-answer drafts and can clear answers before reveal', () => {
     const initial = attempt(); const question = initial.questions.find(q => q.card.kind === 'multiple')!.card;
-    const selected = answerTestAttempt(initial, question.id, [question.correctOptionIds[0]], start + 1);
+    const selected = answerTestAttempt(initial, question.id, [sel(question).correctOptionIds[0]], start + 1);
     expect(initial.responses.find(r => r.cardId === question.id)!.selectedOptionIds).toEqual([]);
     expect(selected.responses.find(r => r.cardId === question.id)!.selectedOptionIds).toHaveLength(1);
     const cleared = answerTestAttempt(selected, question.id, [], start + 2);
@@ -141,7 +142,7 @@ describe('responses, deadlines and exact-set scoring', () => {
     expect(() => answerTestAttempt(revealed, question.id, [], start + 4)).toThrow(/revealed/);
     const other = initial.questions.find(q => q.card.id !== question.id)!;
     const skipped = revealTestAttempt(revealed, other.card.id, start + 4);
-    expect(() => answerTestAttempt(skipped, other.card.id, other.card.correctOptionIds, start + 5)).toThrow(/revealed/);
+    expect(() => answerTestAttempt(skipped, other.card.id, sel(other.card).correctOptionIds, start + 5)).toThrow(/revealed/);
   });
   it('never reveals exam answers individually and rejects missing questions', () => {
     const current = attempt('exam');
@@ -150,11 +151,11 @@ describe('responses, deadlines and exact-set scoring', () => {
   });
   it('accepts pre-deadline answers but finalizes before applying a late response', () => {
     const current = attempt('exam'); const question = current.questions[0].card;
-    const before = answerTestAttempt(current, question.id, question.correctOptionIds, current.deadlineAt! - 1);
+    const before = answerTestAttempt(current, question.id, sel(question).correctOptionIds, current.deadlineAt! - 1);
     expect(before.completedAt).toBeNull(); expect(testHasExpired(before, current.deadlineAt!)).toBe(true);
     const late = answerTestAttempt(before, question.id, [], current.deadlineAt!);
     expect(late.completedAt).toBe(current.deadlineAt);
-    expect(late.responses[0].selectedOptionIds).toEqual(question.correctOptionIds);
+    expect(late.responses[0].selectedOptionIds).toEqual(sel(question).correctOptionIds);
     expect(late.result).toEqual({ correct: 1, wrong: 0, skipped: 49 });
   });
   it('completion is idempotent and practice has no deadline', () => {
@@ -167,7 +168,7 @@ describe('responses, deadlines and exact-set scoring', () => {
   });
   it('retries retain snapshots, mode and duration in a separate attempt', () => {
     const current = attempt('exam');
-    const answered = answerTestAttempt(current, current.questions[0].card.id, current.questions[0].card.correctOptionIds, start + 1);
+    const answered = answerTestAttempt(current, current.questions[0].card.id, sel(current.questions[0].card).correctOptionIds, start + 1);
     const finished = completeTestAttempt(answered, start + 2);
     const retried = retryAttempt(finished, start + 3);
     expect(retried.id).not.toBe(finished.id); expect(retried.retryOf).toBe(finished.id);

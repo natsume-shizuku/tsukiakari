@@ -1,0 +1,2053 @@
+{
+  "sources": [
+    {
+      "id": "sim-d3-s01",
+      "title": "Configure real-time agents",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-realtime-configure"
+    },
+    {
+      "id": "sim-d3-s02",
+      "title": "Configure basic voice agents",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-configuration"
+    },
+    {
+      "id": "sim-cb-s18",
+      "title": "Configure Copilot features in the help pane",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/copilot-enable-help-pane"
+    },
+    {
+      "id": "sim-cb-s19",
+      "title": "Extend Copilot with Copilot Studio (preview)",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/extend-copilot-with-copilot-studio"
+    },
+    {
+      "id": "sim-cb-s22",
+      "title": "Configure assignment methods for queues",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-assignment-rules"
+    },
+    {
+      "id": "sim-cb-s27",
+      "title": "Create and manage users and user profiles",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/users-user-profiles"
+    },
+    {
+      "id": "sim-cb-s09",
+      "title": "Manage notification settings and templates",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/notification-templates"
+    },
+    {
+      "id": "sim-d1-s13",
+      "title": "Create and manage capacity profiles in Dynamics 365 Customer Service and Dynamics 365 Contact Center",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/capacity-profiles"
+    },
+    {
+      "id": "sim-d2d-s24",
+      "title": "Set up unified routing for records",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/set-up-record-routing"
+    },
+    {
+      "id": "sim-d4-s01",
+      "title": "Manage overflow of work items in queues",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/manage-overflow"
+    },
+    {
+      "id": "sim-d4-s02",
+      "title": "Configure route-to-queue rules",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-route-to-queue-rules"
+    },
+    {
+      "id": "sim-d4-s03",
+      "title": "Configure conversation orchestration in Dynamics 365 Contact Center",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-conversation-orchestration"
+    },
+    {
+      "id": "sim-d4-s05",
+      "title": "Assignment methods for queues",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/assignment-methods"
+    },
+    {
+      "id": "sim-d4-s07",
+      "title": "Create and manage workstreams",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-workstreams"
+    },
+    {
+      "id": "sim-d34-s01",
+      "title": "Turn on DTMF support for your voice-enabled agent",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-dtmf"
+    },
+    {
+      "id": "sim-d34-s02",
+      "title": "Remove sensitive data",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-sensitive-data"
+    },
+    {
+      "id": "sim-d34-s03",
+      "title": "Consent-based recording",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-consent-based-record"
+    },
+    {
+      "id": "sim-d34-s04",
+      "title": "Work with variables",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-variables"
+    },
+    {
+      "id": "sim-d34-s05",
+      "title": "Variables overview",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-variables-about"
+    },
+    {
+      "id": "sim-d34-s06",
+      "title": "View Copilot analytics report",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/copilot-analytics-report"
+    },
+    {
+      "id": "sim-d34-s07",
+      "title": "Understand how skill match algorithm works in unified routing",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/set-up-skill-based-routing"
+    },
+    {
+      "id": "sim-d34-s08",
+      "title": "Configure routing to preferred or previously engaged representatives in Dynamics 365 Contact Center",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-preferred-agent"
+    },
+    {
+      "id": "sim-d34-s09",
+      "title": "Best practices for configuring AI agents",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-bot-best-practices"
+    },
+    {
+      "id": "sim-d34-s10",
+      "title": "Integrate a Copilot agent in Dynamics 365 Contact Center",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-bot-virtual-agent"
+    },
+    {
+      "id": "sim-d34-s11",
+      "title": "Configure work classification rulesets",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-work-classification"
+    },
+    {
+      "id": "sim-d34-s12",
+      "title": "Work with global variables",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-variables-bot"
+    },
+    {
+      "id": "sim-d34-s13",
+      "title": "Use system topics",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-system-topics"
+    }
+  ],
+  "groups": [],
+  "questions": [
+    {
+      "id": "sim-d34-q01",
+      "revision": 1,
+      "kind": "match",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.07",
+        "D3.2.08"
+      ],
+      "conceptId": "basic-voice-dtmf-input-precedence",
+      "prompt": "Halden Water Services is building a Basic voice agent in Copilot Studio that uses classic orchestration. Enable voice is turned on, and the agent is published to the Telephony channel of Dynamics 365 Contact Center.\n\nThe design says that pressing 0 opens the Operator topic from any point in a call. Key 5 isn't assigned to anything in the agent. Testers are writing the expected result for three key presses.\n\nYou need to identify what handles each key press.\n\nWhat handles each key press?",
+      "answer": "No question waiting, key 0: the DTMF global command received trigger. No question waiting, key 5: the Unknown dial pad press system topic. Question with an option on 0, key 0: the Question node that's waiting for input.",
+      "explanation": "A topic whose trigger is DTMF global command received runs when the caller presses its single key during the conversation, so the Operator topic needs that trigger on 0. A key that isn't mapped to any DTMF global trigger runs the Unknown dial pad press system topic instead. A waiting Question node changes the result. Microsoft says the DTMF received trigger isn't called when the caller is answering a Question node that accepts single-digit DTMF and one of its allowed options maps to the same key. So in row 3 the Question node's own option takes 0, and the design's \"from any point\" doesn't hold while that question is waiting.",
+      "sourceIds": [
+        "sim-d34-s01",
+        "sim-d3-s02",
+        "sim-d34-s13"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:dtmf"
+      ],
+      "optionExplanations": {
+        "a": "Correct for row 1. With no Question node waiting, a single key that a DTMF global command received trigger listens for starts that topic, here the Operator topic. It fails row 2, because no global trigger uses 5, and row 3, because the trigger isn't called while a single-digit Question node has an option on the same key.",
+        "b": "Correct for row 2. Microsoft says a key that isn't mapped to the DTMF global triggers runs the Unknown dial pad press system topic. It fails row 1, where 0 is mapped to a global trigger, and row 3, where the key matches one of the waiting Question node's options.",
+        "c": "Correct for row 3. The Question node accepts single-digit DTMF and one of its options is mapped to 0, so the DTMF received trigger isn't called and the option is selected instead. It fails rows 1 and 2, because no Question node is waiting.",
+        "d": "Fails on every row. Silence detection sets how long the agent waits when the caller gives no input, and every row is a key press.",
+        "e": "Fails on every row. Escalate triggers when \"talk to agent\" is matched or the Escalate system event is called. Pressing 0 starts it only if a trigger is built for that, and the rows are handled by the DTMF trigger, the Unknown dial pad press topic and the Question node."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n06"
+        }
+      ],
+      "status": "draft",
+      "tray": "Handlers",
+      "table": {
+        "title": "Keypad input handling",
+        "rowHeading": "Key press",
+        "answerHeading": "Handled by"
+      },
+      "tokens": [
+        {
+          "id": "a",
+          "text": "The DTMF global command received trigger"
+        },
+        {
+          "id": "b",
+          "text": "The Unknown dial pad press system topic"
+        },
+        {
+          "id": "c",
+          "text": "The Question node that's waiting for input"
+        },
+        {
+          "id": "d",
+          "text": "The Silence detection system topic"
+        },
+        {
+          "id": "e",
+          "text": "The Escalate system topic"
+        }
+      ],
+      "rows": [
+        {
+          "id": "r1",
+          "label": "No Question node is waiting for input, and the caller presses 0",
+          "correctTokenId": "a"
+        },
+        {
+          "id": "r2",
+          "label": "No Question node is waiting for input, and the caller presses 5",
+          "correctTokenId": "b"
+        },
+        {
+          "id": "r3",
+          "label": "A Question node waits for one key, its options are mapped to 1, 2 and 0, and the caller presses 0",
+          "correctTokenId": "c"
+        }
+      ]
+    },
+    {
+      "id": "sim-d34-q02",
+      "revision": 1,
+      "kind": "match",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.06",
+        "D3.2.09"
+      ],
+      "conceptId": "realtime-speech-sensitivity-selection",
+      "prompt": "Ashgrove Building Supplies has four real-time agents in Copilot Studio. Each uses the GPT-Realtime model, is deployed to the voice channel of Dynamics 365 Contact Center, and has its own Speech sensitivity setting.\n\nThe Depot and Claims agents are new, so you're choosing how they detect the end of a caller's turn. The Yard and Parts agents already use Based on sound (silence), and each has one problem to tune.\n\nYou need to choose the Speech sensitivity setting for each agent.\n\nWhich setting should you use for each agent?",
+      "answer": "Depot: Based on sound (silence). Claims: Based on sentence context, Eagerness Low. Yard: raise Threshold. Parts: raise Prefix padding.",
+      "explanation": "Microsoft recommends server-based detection, Based on sound (silence), when interactions are structured, responses are short, background noise is a concern and turn-taking must be fast. It notes that semantic detection might wait too long in noise, so the noisy Depot line uses sound even though it sounds counterintuitive. Semantic detection, Based on sentence context, suits open-ended explanations with hesitation and filler words, and Low eagerness waits longer for callers who pause. Within Based on sound, a higher Threshold makes detection less sensitive and reduces false triggers from background noise, and a higher Prefix padding captures more audio before speech is detected, so the first word isn't cut off.",
+      "sourceIds": [
+        "sim-d3-s01"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:real-time-voice"
+      ],
+      "optionExplanations": {
+        "a": "Correct for Depot. Short, menu-style answers, background noise and fast turn-taking are the conditions Microsoft gives for server-based detection. It doesn't fit Claims, where callers pause mid-explanation, and it isn't a change for Yard or Parts, which already use it.",
+        "b": "Correct for Claims. Sentence context adapts to pauses and filler words, and Low eagerness waits longer for callers who think out loud. It fails Depot, because semantic detection might wait too long in noise, and it doesn't address Yard's false triggers or Parts' missed first word.",
+        "c": "Fails on every row. High eagerness responds quickly, which risks cutting off Claims callers, and semantic detection might wait too long on Depot's noisy line.",
+        "d": "Correct for Yard. A higher Threshold is less sensitive and needs louder speech, which reduces false triggers. It doesn't recover a missed first word for Parts, because it makes quiet speech less likely to register.",
+        "e": "Correct for Parts. Prefix padding is the audio captured before speech starts, and a higher value is safer capture that prevents cutting off the first word. It doesn't stop noise from triggering a response for Yard.",
+        "f": "Fails on every row. A lower Silence duration gives faster turn-taking but might interrupt callers who pause, and it doesn't address noise or the first word."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n09"
+        }
+      ],
+      "status": "draft",
+      "tray": "Settings",
+      "table": {
+        "title": "Speech sensitivity",
+        "rowHeading": "Agent",
+        "answerHeading": "Setting"
+      },
+      "tokens": [
+        {
+          "id": "a",
+          "text": "Based on sound (silence)"
+        },
+        {
+          "id": "b",
+          "text": "Based on sentence context, Eagerness Low"
+        },
+        {
+          "id": "c",
+          "text": "Based on sentence context, Eagerness High"
+        },
+        {
+          "id": "d",
+          "text": "Raise Threshold"
+        },
+        {
+          "id": "e",
+          "text": "Raise Prefix padding"
+        },
+        {
+          "id": "f",
+          "text": "Lower Silence duration"
+        }
+      ],
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Depot: callers on loud loading docks answer menu questions in one or two words, and turns must be quick",
+          "correctTokenId": "a"
+        },
+        {
+          "id": "r2",
+          "label": "Claims: callers explain incidents at length, pause to think and say \"um\", and mustn't be cut off",
+          "correctTokenId": "b"
+        },
+        {
+          "id": "r3",
+          "label": "Yard: engine noise makes the agent respond when nobody has spoken",
+          "correctTokenId": "d"
+        },
+        {
+          "id": "r4",
+          "label": "Parts: the agent often misses the first word of each answer",
+          "correctTokenId": "e"
+        }
+      ]
+    },
+    {
+      "id": "sim-d34-q03",
+      "revision": 1,
+      "kind": "hotspot",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.03",
+        "D3.2.02"
+      ],
+      "conceptId": "voice-sensitive-variable-boundaries",
+      "prompt": "Marlow Credit Union has a voice agent in Copilot Studio that's connected to Dynamics 365 Contact Center. Before go-live, the security team reviewed three items:\n- The telephony system sends a member token in a SIP X-header when each call starts. The token must stay out of transcripts and telemetry, and routing logic still needs it.\n- A Question node in the Verify Card topic collects a card number into a variable that has Sensitive data turned on. The Take Payment topic needs the same value, which must stay out of transcripts and platform logs.\n- A tester entered a PIN in the Test your agent panel. The PIN appears unredacted under DialogTracing in the ConversationTranscript record.\n\nYou need to decide how to handle each item.\n\nWhat should you do for each item?",
+      "answer": "Member token: create a matching global variable in Conversation Start with External sources can set value and Sensitive data on. Card number: turn on Sensitive data on the Verify Card output and the Take Payment input. Test-panel PIN: treat it as expected test behavior.",
+      "explanation": "A context variable that arrives through a SIP X-header is marked sensitive on a global variable in the Conversation Start system topic, with both External sources can set value and Sensitive data turned on. Its value is then kept out of transcripts and telemetry but stays in memory for routing. To pass a sensitive value between topics, Microsoft's example turns on Sensitive data for the variable on Topic A's output and Topic B's input, which keeps it out of transcripts and logs. Values received back from Power Automate or written explicitly to Dataverse aren't redacted. Finally, transcripts from the Test your agent panel contain unredacted values under DialogTracing by design, so makers can confirm their redaction rules before production.",
+      "sourceIds": [
+        "sim-d34-s02",
+        "sim-d34-s05"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:sensitive-data"
+      ],
+      "optionExplanations": {
+        "r1a": "Correct. Microsoft marks a context variable as sensitive by defining a global variable on the Conversation Start system topic with External sources can set value and Sensitive data turned on. The name must match the calling system exactly.",
+        "r1b": "Fails. isDisplayable controls whether a Live Chat context variable is visible to representatives, and Microsoft says it isn't configurable per conversation for voice channels. It doesn't keep the token out of transcripts.",
+        "r1c": "Fails. Log sensitive properties controls whether variables already marked as sensitive are written to Application Insights. The token isn't marked sensitive, and the setting doesn't govern transcripts.",
+        "r1d": "Fails. Without Sensitive data, the token isn't redacted from transcripts and telemetry. Turning it on doesn't block routing, because Microsoft says a sensitive context variable remains in memory for routing, orchestration and passing between topics.",
+        "r2a": "Correct. Variables marked as Sensitive data on topic input and output parameters aren't written to transcripts or platform logs, stay in memory and can be passed between topics. This is Microsoft's Topic A output and Topic B input example.",
+        "r2b": "Fails. Passing a sensitive value to Power Automate is supported, but Microsoft lists receiving sensitive data from Power Automate as not supported, so the returned value isn't redacted.",
+        "r2c": "Fails. Microsoft lists writing sensitive data to Dataverse explicitly as not supported, says data isn't redacted, and advises avoiding it.",
+        "r2d": "Fails. Environment variables are read-only in Copilot Studio, so a topic can't save the card number into one.",
+        "r3a": "Correct. Microsoft says transcripts stored in the ConversationTranscript table from the Test your agent panel contain unredacted values under DialogTracing, that this is expected, and that it helps makers confirm redaction before production.",
+        "r3b": "Fails. Log sensitive properties governs Application Insights logging, and turning it on is what logs sensitive values. The test-panel transcript stays unredacted by design whatever this setting is.",
+        "r3c": "Fails. The unredacted value is expected test-panel behavior, not a sign that the setting hasn't been published. Republishing doesn't change what the test panel stores."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n07"
+        },
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n02"
+        }
+      ],
+      "status": "draft",
+      "table": {
+        "title": "Sensitive data handling",
+        "rowHeading": "Item",
+        "answerHeading": "Action"
+      },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Member token from the SIP X-header",
+          "correctOptionId": "r1a",
+          "options": [
+            {
+              "id": "r1a",
+              "text": "In Conversation Start, create a matching global variable with External sources can set value and Sensitive data on"
+            },
+            {
+              "id": "r1b",
+              "text": "In the voice workstream, add a context variable with the token's exact name, and set isDisplayable to false for it"
+            },
+            {
+              "id": "r1c",
+              "text": "In the agent's Application Insights settings, keep Log sensitive properties turned off so that the token isn't logged"
+            },
+            {
+              "id": "r1d",
+              "text": "In Conversation Start, create a matching global variable with External sources can set value on, and leave Sensitive data off so that routing can read it"
+            }
+          ]
+        },
+        {
+          "id": "r2",
+          "label": "Card number needed by Take Payment",
+          "correctOptionId": "r2a",
+          "options": [
+            {
+              "id": "r2a",
+              "text": "Turn on Sensitive data for the variable on the Verify Card output and on the Take Payment input"
+            },
+            {
+              "id": "r2b",
+              "text": "Send the number to a Power Automate flow with the sensitive flag on, and use its returned value in Take Payment"
+            },
+            {
+              "id": "r2c",
+              "text": "Write the number to a Dataverse column in Verify Card, and read the column back in Take Payment"
+            },
+            {
+              "id": "r2d",
+              "text": "Save the number in a Secret environment variable in Verify Card, and read that variable in Take Payment"
+            }
+          ]
+        },
+        {
+          "id": "r3",
+          "label": "Unredacted PIN in a test-panel transcript",
+          "correctOptionId": "r3a",
+          "options": [
+            {
+              "id": "r3a",
+              "text": "Treat it as expected behavior that lets makers confirm their redaction before production"
+            },
+            {
+              "id": "r3b",
+              "text": "Turn off Log sensitive properties, and then repeat the test in the Test your agent panel"
+            },
+            {
+              "id": "r3c",
+              "text": "Republish the agent, because Sensitive data takes effect only after the agent is published"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sim-d34-q04",
+      "revision": 1,
+      "kind": "hotspot",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.04"
+      ],
+      "conceptId": "consent-recording-runtime-outcomes",
+      "prompt": "Pemberton Dental Partners takes appointment calls through an inbound voice workstream in Dynamics 365 Contact Center. A voice-enabled agent built in Copilot Studio answers every call. The workstream's Transcription and recording setting is Transcription and recording, and the team is rolling out consent-based recording.\n\nThe compliance lead has asked about three situations.\n\nYou need to identify the outcome of each situation.\n\nWhat is the outcome of each situation?",
+      "answer": "Setting on, topic not connected: no prompt, and calls are recorded and transcribed. Declined consent with escalation and transfer: nothing more is captured, and neither CSR can start recording. Consent audio: customers can't access it, and Microsoft deletes it within two hours.",
+      "explanation": "Request for User Consent doesn't prompt anyone by itself. The agent must redirect Conversation Start to the User Consent topic. With the workstream setting on and the topic off, Microsoft says all customers are treated as having opted in, and recording and transcription proceed. When a caller declines, the decision follows the call: after escalation, the transcript isn't shown and representatives can't start or pause recording and transcripts, and a transfer or consult inside Dynamics 365 Contact Center keeps the original choice. Microsoft records the consent prompt and response for compliance in Microsoft-managed storage that customers can't access, and deletes it automatically within two hours.",
+      "sourceIds": [
+        "sim-d34-s03"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:consent-based-recording"
+      ],
+      "optionExplanations": {
+        "r1a": "Correct. The behavior table lists workstream On with topic Off as defining all customers as having opted in, so the system proceeds with recording and transcription without a prompt.",
+        "r1b": "Fails. That is the result when Request for User Consent is off, not when it's on without the topic. With the setting on and the topic off, calls are still recorded and transcribed.",
+        "r1c": "Fails. Microsoft says turning on Request for User Consent doesn't automatically prompt the user. The prompt comes from the User Consent topic that Conversation Start redirects to.",
+        "r2a": "Correct. If the caller doesn't consent, recording stops, the call isn't recorded at any point during a transfer or the rest of the interaction, and representatives can't start or pause recording and transcripts.",
+        "r2b": "Fails. Representatives can't start recording when the caller declined through the agent, so a CSR can't restart capture.",
+        "r2c": "Fails. The caller's choice is honored after escalation to a CSR. The transcript isn't displayed and the call progresses without recording.",
+        "r2d": "Fails. Transfers and consults inside Dynamics 365 Contact Center keep the caller's original consent choice, so recording doesn't start after the transfer.",
+        "r3a": "Correct. The system records the consent prompt and response to support compliance, stores the recording in Microsoft-managed storage that customers can't access, and deletes it automatically within two hours.",
+        "r3b": "Fails. The consent audio isn't kept with the customer's call recording. Microsoft stores it separately and deletes it within two hours.",
+        "r3c": "Fails. The consent audio isn't stored in Dataverse for an administrator to manage. It's in Microsoft-managed storage that customers can't access."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n07"
+        }
+      ],
+      "status": "draft",
+      "table": {
+        "title": "Consent-based recording",
+        "rowHeading": "Situation",
+        "answerHeading": "Outcome"
+      },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Request for User Consent is on, but the Conversation Start topic doesn't redirect to the User Consent topic",
+          "correctOptionId": "r1a",
+          "options": [
+            {
+              "id": "r1a",
+              "text": "Callers hear no consent prompt, and calls are recorded and transcribed"
+            },
+            {
+              "id": "r1b",
+              "text": "Callers hear no consent prompt, and calls aren't recorded or transcribed"
+            },
+            {
+              "id": "r1c",
+              "text": "Callers hear a consent prompt that the workstream setting provides"
+            }
+          ]
+        },
+        {
+          "id": "r2",
+          "label": "A caller declines consent, and the agent escalates to a CSR, who then transfers the call to another CSR in Dynamics 365 Contact Center",
+          "correctOptionId": "r2a",
+          "options": [
+            {
+              "id": "r2a",
+              "text": "Nothing more is recorded or transcribed, and neither CSR can start recording"
+            },
+            {
+              "id": "r2b",
+              "text": "Nothing more is recorded until a CSR starts recording after asking the caller"
+            },
+            {
+              "id": "r2c",
+              "text": "Recording starts when the first CSR joins, because consent covers only the agent"
+            },
+            {
+              "id": "r2d",
+              "text": "Recording stays off for the first CSR and starts after the transfer completes"
+            }
+          ]
+        },
+        {
+          "id": "r3",
+          "label": "An auditor asks for the audio of one caller's consent prompt and response",
+          "correctOptionId": "r3a",
+          "options": [
+            {
+              "id": "r3a",
+              "text": "Customers can't access it, and Microsoft deletes it within two hours"
+            },
+            {
+              "id": "r3b",
+              "text": "It's kept with the call recording for the workstream's retention period"
+            },
+            {
+              "id": "r3c",
+              "text": "It's stored in Dataverse until an administrator deletes the record"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sim-d34-q05",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.02"
+      ],
+      "conceptId": "topic-value-reuse-without-reprompt",
+      "prompt": "Cedar Hollow Veterinary Clinics has a Basic voice agent in Copilot Studio. In the Verify Pet topic, a Question node uses the Number entity to store the caller's pet ID in a topic variable named PetId. Verify Pet then asks two more questions, and a Redirect node sends the call to the Book Visit topic. Book Visit currently asks for the pet ID again.\n\nCallers mustn't be asked for the pet ID twice in the same call.\n\nYou need to make the pet ID available in Book Visit.\n\nWhich two actions should you perform? Each correct answer presents a complete solution.",
+      "answer": "Make PetId global and use it in Book Visit, or set Book Visit's variable to receive values from other topics and pass PetId in the Redirect node.",
+      "explanation": "A topic variable is usable only in the topic that creates it. Microsoft gives two ways to reuse it. Changing the variable to Global (any topic can access) makes it available in every topic for the rest of the session. Passing it between topics works when one topic redirects to another: the destination topic's variable is set to Receive values from other topics, the source topic's Redirect node passes the value, and the destination skips its question. Environment variables are read-only in Copilot Studio. LastMessage.Text holds the caller's previous message, which after two more questions isn't the pet ID, and Recognizer.TriggeringMessage.Text holds the message that triggered the current topic, but a redirect started Book Visit.",
+      "sourceIds": [
+        "sim-d34-s04",
+        "sim-d34-s12",
+        "sim-d34-s05"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:variables"
+      ],
+      "optionExplanations": {
+        "a": "Correct, a complete solution. A global variable is available in all topics during the user session, so Book Visit can use Global.PetId and skip the question.",
+        "b": "Correct, a complete solution. When a topic redirects to another, it can pass a variable's value to a destination variable set to Receive values from other topics, and the destination skips its question. The Number entity can be passed between topics.",
+        "c": "Fails. Environment variables are read-only in Copilot Studio, so Verify Pet can't store the pet ID in one.",
+        "d": "Fails. LastMessage.Text is the previous message sent by the user. After two more questions, that message is an answer to a later question, not the pet ID.",
+        "e": "Fails. Recognizer.TriggeringMessage.Text is the user message that triggered the current topic, and Book Visit is started by a Redirect node, not by the pet ID message."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n02"
+        }
+      ],
+      "status": "draft",
+      "options": [
+        {
+          "id": "a",
+          "text": "Change PetId to a global variable, and then use Global.PetId in Book Visit instead of asking the caller"
+        },
+        {
+          "id": "b",
+          "text": "In Book Visit, set the pet ID variable to Receive values from other topics, and pass PetId in the Redirect node"
+        },
+        {
+          "id": "c",
+          "text": "In Verify Pet, store PetId in an environment variable with a Set variable value node, and read it in Book Visit"
+        },
+        {
+          "id": "d",
+          "text": "In Book Visit, read the pet ID from the LastMessage.Text system variable instead of asking the caller"
+        },
+        {
+          "id": "e",
+          "text": "In Book Visit, read the pet ID from the Recognizer.TriggeringMessage.Text system variable instead of asking"
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "id": "sim-d34-q06",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.1.04"
+      ],
+      "conceptId": "managed-copilot-bot-model-via-connected-agent",
+      "prompt": "Ironvale Appliance Care uses Ask a question in Copilot Service workspace. Extend agent with Copilot Studio is selected for the Customer Support agent, so questions go first to the managed Customer Service Copilot Bot. Microsoft labels this extensibility a production-ready preview, and Ironvale has accepted its terms.\n\nWarranty-law questions must be answered by an agent that uses a different model from the one in the Customer Service Copilot Bot.\n\nYou need to use that model for warranty-law questions.\n\nWhich two actions should you perform? Each correct answer presents part of the solution.",
+      "answer": "Build a separate warranty-law agent that uses the required model, and connect it to the Customer Service Copilot Bot.",
+      "explanation": "The Customer Service Copilot Bot is a managed agent with limitations. Microsoft says you can't update its model, its instructions or its topics whose names start with msdyn_. The same limitation says that if you connect this agent to other agents, you can use a different model in those agents. Microsoft's example of a connected agent is one that specializes in questions about one area of the business, which is the warranty-law agent here.",
+      "sourceIds": [
+        "sim-cb-s19"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:copilot-extensibility"
+      ],
+      "optionExplanations": {
+        "a": "Correct, part of the solution. A separate agent can use a different model, and it can specialize in one area of the business.",
+        "b": "Correct, part of the solution. Connecting other agents to the Customer Service Copilot Bot is how Microsoft says a different model can be used, because the bot's own model can't change.",
+        "c": "Fails. The agent model is the first item in the list of components you can't update in the Customer Service Copilot Bot.",
+        "d": "Fails. Instructions are listed among the components you can't update in the Customer Service Copilot Bot.",
+        "e": "Fails. Topics with names that start with msdyn_ can't be modified in the Customer Service Copilot Bot."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n04"
+        }
+      ],
+      "status": "draft",
+      "options": [
+        {
+          "id": "a",
+          "text": "Build a Copilot Studio agent for warranty law that uses the required model"
+        },
+        {
+          "id": "b",
+          "text": "Connect the warranty-law agent to the Customer Service Copilot Bot as an agent"
+        },
+        {
+          "id": "c",
+          "text": "Change the agent model of the Customer Service Copilot Bot to the required model"
+        },
+        {
+          "id": "d",
+          "text": "Add warranty-law routing guidance to the agent instructions of the Customer Service Copilot Bot"
+        },
+        {
+          "id": "e",
+          "text": "Edit the bot's msdyn_ topics so that warranty-law questions call the required model"
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "id": "sim-d34-q07",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.1.05"
+      ],
+      "conceptId": "copilot-report-copy-versus-rating",
+      "prompt": "Lindqvist Freight runs Dynamics 365 Contact Center standalone, and Copilot analytics is enabled. Last month's Copilot analytics report shows 25 percent for Percentage of Copilot AI responses used. A manager concludes that representatives found the other 75 percent of the responses wrong.\n\nYou need to tell the manager what the 25 percent measures.\n\nWhat does the 25 percent measure?",
+      "answer": "The share of Copilot responses from which representatives copied text.",
+      "explanation": "In the Copilot analytics report, Number of responses used is the number of times text from a Copilot response was copied, and Percentage of Copilot AI responses used is the percentage of responses that were copied. So the 25 percent is a copy rate, and a response that wasn't copied wasn't necessarily judged wrong. Representatives' judgments are counted separately by Agent ratings in the Satisfaction section, the number of times representatives rated a Copilot response positively or negatively.",
+      "sourceIds": [
+        "sim-d34-s06"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:evaluate",
+        "feature:copilot-analytics"
+      ],
+      "optionExplanations": {
+        "a": "Correct. The report defines Percentage of Copilot AI responses used as the percentage of responses that were copied.",
+        "b": "Fails. Ratings are a separate metric, Agent ratings, which counts how many times representatives rated a Copilot response positively or negatively.",
+        "c": "Fails. The report counts a response as used when text from it was copied, not when it was sent to a customer.",
+        "d": "Fails. That is Percentage of conversations using Copilot AI, the percentage of engaged conversations that used Copilot. It counts conversations, not responses."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n04"
+        }
+      ],
+      "status": "draft",
+      "options": [
+        {
+          "id": "a",
+          "text": "The share of Copilot responses from which representatives copied text"
+        },
+        {
+          "id": "b",
+          "text": "The share of Copilot responses that representatives rated positively"
+        },
+        {
+          "id": "c",
+          "text": "The share of Copilot responses that representatives sent to customers"
+        },
+        {
+          "id": "d",
+          "text": "The share of engaged conversations in which representatives used Copilot"
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ]
+    },
+    {
+      "id": "sim-d34-q08",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.1.02",
+        "D3.1.03"
+      ],
+      "conceptId": "customer-support-instructions-source-dependency",
+      "prompt": "Wrenfield Mutual is choosing how Ask a question will answer policy questions in Copilot Service workspace. Its policies exist as current, published knowledge articles in the representatives' language, and also as documents that could be added as knowledge in the Customer Service Copilot Bot.\n\nCompliance requires every Ask a question answer to follow a house style and to tell the representative to escalate when no clear answer exists. The team wants to write this guidance once.\n\nYou need to choose a design in which that guidance shapes the answers.\n\nWhich design should you use?",
+      "answer": "Use only the organization's knowledge base, and put the guidance in the Customer Support agent's Instructions field.",
+      "explanation": "The Instructions field on the Customer Support agent's Overview tab guides tone, style, escalation guidance and compliance reminders for Ask a question, and applies to every response. Microsoft adds a condition: custom instructions are applied only when the organization's Dynamics 365 knowledge base is selected as a knowledge source, and aren't applied with other sources such as Copilot Studio. The Customer Service Copilot Bot's own instructions can't be updated, and Deterministic response makes outputs repeatable without adding any guidance.",
+      "sourceIds": [
+        "sim-cb-s18",
+        "sim-cb-s19"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:ask-a-question"
+      ],
+      "optionExplanations": {
+        "a": "Correct. With the organization's knowledge base as the source, the custom instructions apply to the responses that Copilot generates for Ask a question.",
+        "b": "Fails. Microsoft says custom instructions aren't applied when you use other sources, such as Copilot Studio.",
+        "c": "Fails. Instructions are one of the components that you can't update in the managed Customer Service Copilot Bot.",
+        "d": "Fails. Deterministic response returns consistent, repeatable outputs for the same input. It doesn't apply a house style or escalation guidance."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n03"
+        }
+      ],
+      "status": "draft",
+      "options": [
+        {
+          "id": "a",
+          "text": "Use only the organization's knowledge base as the knowledge source, and put the guidance in the Customer Support agent's Instructions field"
+        },
+        {
+          "id": "b",
+          "text": "Use only the bot's Copilot Studio knowledge as the knowledge source, and put the guidance in the Customer Support agent's Instructions field"
+        },
+        {
+          "id": "c",
+          "text": "Use only the bot's Copilot Studio knowledge as the knowledge source, and put the guidance in the Customer Service Copilot Bot's instructions"
+        },
+        {
+          "id": "d",
+          "text": "Use only the organization's knowledge base as the knowledge source, and turn on Deterministic response on the Customer Support agent's Overview tab"
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ]
+    },
+    {
+      "id": "sim-d34-q09",
+      "revision": 1,
+      "kind": "match",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.1.04",
+        "D4.1.02"
+      ],
+      "conceptId": "custom-assignment-component-selection",
+      "prompt": "Larkspur Hotels routes guest chats to one messaging queue, Guest Care. The queue uses a custom assignment method whose rulesets are being designed, and every chat must stay in Guest Care.\n\nYou need to choose the component that meets each requirement.\n\nWhich component should you use for each requirement?",
+      "answer": "Elite or Standard ruleset: a selection criteria rule. Cancelled stays first: a prioritization rule. Region comparison: an assignment rule condition that uses dynamic match. Nearest proficiency: the Order by setting of an assignment rule.",
+      "explanation": "A custom assignment method has two kinds of ruleset. A prioritization ruleset orders the work in the queue: each prioritization rule is a priority bucket, so the first rule's matching items are offered first. Assignment rulesets select and sort representatives. When there's more than one assignment ruleset, selection criteria decide which one runs, and the default ruleset runs if no criterion is met. In an assignment rule, a dynamic match compares a System User attribute with a value on the conversation, which avoids one static rule per value. If several representatives match, the Order by setting sorts them, and ordering by proficiency with Nearest proficiency gives the closest skill match. Route-to-queue and classification rules act before the queue, so they can't choose an assignment ruleset or sort representatives, and the order of waiting work in a custom assignment method comes from its prioritization rules.",
+      "sourceIds": [
+        "sim-cb-s22",
+        "sim-d4-s05",
+        "sim-d34-s07"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:custom-assignment"
+      ],
+      "optionExplanations": {
+        "a": "Correct for the Elite and Standard requirement. Selection criteria determine which assignment ruleset runs when a method has more than one.",
+        "b": "Correct for cancelled stays. Each prioritization rule creates a priority bucket, and items in the first matching bucket are assigned before the rest.",
+        "c": "Correct for the region comparison. With dynamic match, the left side is the System User attribute and the right side is the conversation value, which Microsoft says avoids maintaining a static rule for each combination.",
+        "d": "Correct for nearest proficiency. Order by sorts the representatives who meet a rule's conditions, and Proficiency with Nearest proficiency gives the closest match.",
+        "e": "Fails on every row. Route-to-queue rules choose the queue, and every chat already stays in Guest Care. They don't choose an assignment ruleset or order the work.",
+        "f": "Fails on every row. Classification rules run before queue selection and set attributes on the work item, such as skills. They don't choose the assignment ruleset or sort representatives, and in a custom assignment method the order of waiting work comes from its prioritization rules."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n03"
+        },
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n02"
+        }
+      ],
+      "status": "draft",
+      "tray": "Components",
+      "table": {
+        "title": "Guest Care assignment design",
+        "rowHeading": "Requirement",
+        "answerHeading": "Component"
+      },
+      "tokens": [
+        {
+          "id": "a",
+          "text": "A selection criteria rule"
+        },
+        {
+          "id": "b",
+          "text": "A prioritization rule"
+        },
+        {
+          "id": "c",
+          "text": "An assignment rule condition that uses dynamic match"
+        },
+        {
+          "id": "d",
+          "text": "The Order by setting of an assignment rule"
+        },
+        {
+          "id": "e",
+          "text": "A route-to-queue rule"
+        },
+        {
+          "id": "f",
+          "text": "A work classification rule"
+        }
+      ],
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Chats from Elite members use the Elite assignment ruleset, and all other chats use the Standard assignment ruleset",
+          "correctTokenId": "a"
+        },
+        {
+          "id": "r2",
+          "label": "Chats about cancelled stays are offered before every other chat that's waiting in Guest Care",
+          "correctTokenId": "b"
+        },
+        {
+          "id": "r3",
+          "label": "Each CSR's Home region is compared with the guest's region on the chat, without one rule per region",
+          "correctTokenId": "c"
+        },
+        {
+          "id": "r4",
+          "label": "When several CSRs meet a rule's conditions, the chat goes to the one whose proficiency is nearest to what's required",
+          "correctTokenId": "d"
+        }
+      ]
+    },
+    {
+      "id": "sim-d34-q10",
+      "revision": 1,
+      "kind": "match",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.02",
+        "D4.2.08",
+        "D4.1.02"
+      ],
+      "conceptId": "routing-rule-layer-selection",
+      "prompt": "Hollis Opticians is redesigning routing in Dynamics 365 Contact Center. Cases arrive through two record workstreams, Lens Orders and Repairs. Live chats arrive through one messaging workstream that sends chats to several queues, and a published conversation orchestration playbook raises a chat's priority score while it waits.\n\nYou need to choose the type of rule that meets each requirement.\n\nWhich type of rule should you use for each requirement?",
+      "answer": "Workstream for each case: an intake rule. Starting priority score: a work classification rule. Refunds queue: a route-to-queue rule. Spanish skill: a work classification rule.",
+      "explanation": "Each layer answers a different question. Intake rules decide which workstream an incoming record uses. Inside a workstream, classification rules run first and enrich the work item, for example by attaching skills. Route-to-queue rules then pick the queue. Dynamic prioritization adds to a priority score, and Microsoft says the initial or base score is set with classification rules. A prioritization rule is the wrong tool here, even though its name fits: dynamic prioritization doesn't apply to queues with custom prioritization rules, so adding one would stop the playbook. Assignment rules choose a representative after the queue is known.",
+      "sourceIds": [
+        "sim-d2d-s24",
+        "sim-d34-s11",
+        "sim-d4-s02",
+        "sim-d4-s05",
+        "sim-d4-s03"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:routing-rules"
+      ],
+      "optionExplanations": {
+        "a": "Correct for the case workstreams. Intake rules determine the workstream that an incoming record work item uses.",
+        "b": "Correct for the starting score and the Spanish skill. Classification rules set the initial or base priority score, and logical skill classification rules attach skills.",
+        "c": "Correct for refunds. Route-to-queue rules send the work item to the queue whose conditions it meets.",
+        "d": "Fails on every row. Prioritization rules order work inside a queue with a custom assignment method, and dynamic prioritization playbooks don't apply to queues with custom prioritization rules. That would stop the playbook from raising the score.",
+        "e": "Fails on every row. Assignment rules select and sort representatives after the queue is chosen. They don't pick a workstream or queue, attach skills or set a starting score."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n01"
+        },
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n08"
+        }
+      ],
+      "status": "draft",
+      "tray": "Rule types",
+      "table": {
+        "title": "Routing rule layers",
+        "rowHeading": "Requirement",
+        "answerHeading": "Rule type"
+      },
+      "tokens": [
+        {
+          "id": "a",
+          "text": "An intake rule"
+        },
+        {
+          "id": "b",
+          "text": "A work classification rule"
+        },
+        {
+          "id": "c",
+          "text": "A route-to-queue rule"
+        },
+        {
+          "id": "d",
+          "text": "A prioritization rule"
+        },
+        {
+          "id": "e",
+          "text": "An assignment rule"
+        }
+      ],
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Each new case goes to the Lens Orders workstream or the Repairs workstream, depending on its category",
+          "correctTokenId": "a"
+        },
+        {
+          "id": "r2",
+          "label": "Chats from Platinum members start with a higher priority score than other chats, before the playbook raises it",
+          "correctTokenId": "b"
+        },
+        {
+          "id": "r3",
+          "label": "Chats about refunds go to the Refunds queue",
+          "correctTokenId": "c"
+        },
+        {
+          "id": "r4",
+          "label": "Chats from customers who chose Spanish in the pre-chat survey get the Spanish skill",
+          "correctTokenId": "b"
+        }
+      ]
+    },
+    {
+      "id": "sim-d34-q11",
+      "revision": 1,
+      "kind": "hotspot",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.04",
+        "D4.1.04"
+      ],
+      "conceptId": "exact-versus-closest-skill-outcomes",
+      "prompt": "Copperleaf Appliances routes repair chats through a messaging workstream to the Repairs queue, which uses the Highest capacity assignment method. A work classification rule attaches two skills to each chat: Dishwashers at proficiency 3 and Spanish at proficiency 3. All skills use the same rating model.\n\nThree CSRs in Repairs have an allowed presence and enough capacity for a chat:\n- Anika: Dishwashers 3, Spanish 3, available capacity 40\n- Bruno: Dishwashers 5, Spanish 4, available capacity 90\n- Chiara: Dishwashers 5, Spanish 2, available capacity 120\n\nYou need to predict the outcome of each workstream setting.\n\nWhat is the outcome of each setting?",
+      "answer": "Exact Match: Bruno. Closest Match: Anika. Closest Match with no skilled CSR: the chat might be assigned to that CSR.",
+      "explanation": "Exact Match keeps only representatives whose rating is greater than or equal to the required value for every skill, then orders them by the queue's assignment method. Chiara's Spanish 2 is below 3, so Anika and Bruno remain, and Highest capacity picks Bruno. Closest Match doesn't filter on skills. It filters on presence and capacity, then orders representatives by closest match and not by available capacity. Microsoft describes that order as closeness to the required skill and proficiency, with exact qualified representatives on top, and achieves closest match in custom assignment by ordering on Proficiency with Nearest Proficient. Anika matches both required proficiencies exactly, so she comes before Bruno, who is above both, and Chiara, who is above on Dishwashers and below on Spanish. The assignment method ranks representatives only when they have the same skill score. With Closest Match, Microsoft says that if no representative has any of the required skills, the conversation might be assigned to a representative without them. Under Exact Match it would stay in the queue instead.",
+      "sourceIds": [
+        "sim-d34-s07",
+        "sim-d4-s05",
+        "sim-d4-s07"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:evaluate",
+        "feature:skill-based-routing"
+      ],
+      "optionExplanations": {
+        "r1a": "Fails. Anika meets every required proficiency, but Bruno also does and has more available capacity, and Highest capacity orders the filtered representatives by capacity.",
+        "r1b": "Correct. Exact Match leaves Anika and Bruno, because both meet or exceed proficiency 3 for both skills, and Highest capacity picks Bruno with 90.",
+        "r1c": "Fails. Chiara has the most capacity, but her Spanish 2 is below the required 3, so Exact Match filters her out.",
+        "r2a": "Correct. Closest Match orders by closeness to the required skills and proficiency, not by available capacity, and Anika matches both skills exactly.",
+        "r2b": "Fails. Bruno is above the required proficiency on both skills, and Microsoft puts exact qualified representatives on top. His higher capacity would count only against a representative with the same skill score.",
+        "r2c": "Fails. Chiara has the most capacity, but she's overqualified on one skill and under on the other, so she isn't the closest match.",
+        "r3a": "Correct. Microsoft says that with Closest Match, if no representative is available with any of the required skills, the conversation might be assigned to a representative without them.",
+        "r3b": "Fails. Staying unassigned is the Exact Match behavior when no one has all the required skills. Closest Match doesn't filter out representatives by skill.",
+        "r3c": "Fails. The fallback queue is used for classification errors, route-to-queue errors or no matching rule. Skill matching happens during assignment in the chosen queue."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n02"
+        },
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n06"
+        }
+      ],
+      "status": "draft",
+      "table": {
+        "title": "Skill matching outcomes",
+        "rowHeading": "Workstream setting",
+        "answerHeading": "Outcome"
+      },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Default skill matching algorithm is Exact Match",
+          "correctOptionId": "r1b",
+          "options": [
+            {
+              "id": "r1a",
+              "text": "The chat is assigned to Anika"
+            },
+            {
+              "id": "r1b",
+              "text": "The chat is assigned to Bruno"
+            },
+            {
+              "id": "r1c",
+              "text": "The chat is assigned to Chiara"
+            }
+          ]
+        },
+        {
+          "id": "r2",
+          "label": "Default skill matching algorithm is Closest Match",
+          "correctOptionId": "r2a",
+          "options": [
+            {
+              "id": "r2a",
+              "text": "The chat is assigned to Anika"
+            },
+            {
+              "id": "r2b",
+              "text": "The chat is assigned to Bruno"
+            },
+            {
+              "id": "r2c",
+              "text": "The chat is assigned to Chiara"
+            }
+          ]
+        },
+        {
+          "id": "r3",
+          "label": "Closest Match, and later the only CSR in Repairs with an allowed presence and capacity has neither skill",
+          "correctOptionId": "r3a",
+          "options": [
+            {
+              "id": "r3a",
+              "text": "The chat might be assigned to that CSR"
+            },
+            {
+              "id": "r3b",
+              "text": "The chat stays unassigned in Repairs"
+            },
+            {
+              "id": "r3c",
+              "text": "The chat goes to the workstream's fallback queue"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sim-d34-q12",
+      "revision": 1,
+      "kind": "hotspot",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.1.02",
+        "D4.1.04"
+      ],
+      "conceptId": "prioritization-bucket-offer-order",
+      "prompt": "Stonegate Lettings routes tenant cases to the Tenant Cases record queue. The queue uses a custom assignment method with this prioritization ruleset:\n1. Leaks: Case type equals Water leak. Order by: first in, first out.\n2. Premier: Tenant tier equals Premier. Order by: first in, first out.\n\nFour cases are waiting, listed from first routed to last routed:\n- Case A: Standard tier, Billing\n- Case B: Premier tier, Billing\n- Case C: Standard tier, Water leak\n- Case D: Premier tier, Water leak\n\nOne CSR who meets the queue's assignment rules for all four cases becomes available.\n\nYou need to predict the order in which the cases are offered.\n\nWhat is the answer to each question?",
+      "answer": "First: Case C. Last: Case A. After Case C becomes a Billing case: Case D first.",
+      "explanation": "Prioritization rules run in order, and each one forms a priority bucket. The Leaks rule takes Cases C and D, oldest first, so Case C is offered first. Matching both rules doesn't move Case D ahead, because a case belongs to the first bucket it matches and buckets are sorted by the rule's Order by. The Premier rule then takes Case B from the remaining cases. Case A matches no rule, so it goes to the last bucket, ordered first in, first out, even though it was routed first. Prioritization rules run in every assignment cycle, and a changed attribute counts in the next cycle. So once Case C is a Billing case, it matches no rule and drops to the last bucket, and Case D, now the only Leaks case, is offered first.",
+      "sourceIds": [
+        "sim-d4-s05"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:evaluate",
+        "feature:queue-prioritization"
+      ],
+      "optionExplanations": {
+        "r1a": "Fails. Case A was routed first, but it matches no prioritization rule, so it goes to the last bucket.",
+        "r1b": "Fails. Case B matches only the second rule, so its bucket comes after the Leaks bucket.",
+        "r1c": "Correct. Case C is in the Leaks bucket, which is the top bucket, and it was routed before Case D.",
+        "r1d": "Fails. Case D matches both rules, but it's placed in the Leaks bucket, where first in, first out puts the older Case C ahead of it.",
+        "r2a": "Correct. Work items that don't match any prioritization rule go to the last priority bucket, ordered first in, first out, so Case A is offered last.",
+        "r2b": "Fails. Case B is in the Premier bucket, which comes before the bucket of unmatched cases.",
+        "r2c": "Fails. Case C is in the top bucket and is offered first.",
+        "r2d": "Fails. Case D is in the Leaks bucket, so it's offered second, after Case C.",
+        "r3a": "Fails. Case A still matches no rule, so it stays in the last bucket.",
+        "r3b": "Fails. Case B stays in the Premier bucket, which still comes after the Leaks bucket, and Case D is still a Leaks case.",
+        "r3c": "Fails. Once its type is Billing, Case C matches no rule, so it moves to the last bucket, behind Case A.",
+        "r3d": "Correct. The changed attribute counts in the next cycle. Case C no longer matches Leaks, so Case D is the only case in the top bucket."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n03"
+        }
+      ],
+      "status": "draft",
+      "table": {
+        "title": "Tenant Cases offer order",
+        "rowHeading": "Question",
+        "answerHeading": "Case"
+      },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Which case is offered first?",
+          "correctOptionId": "r1c",
+          "options": [
+            {
+              "id": "r1a",
+              "text": "Case A"
+            },
+            {
+              "id": "r1b",
+              "text": "Case B"
+            },
+            {
+              "id": "r1c",
+              "text": "Case C"
+            },
+            {
+              "id": "r1d",
+              "text": "Case D"
+            }
+          ]
+        },
+        {
+          "id": "r2",
+          "label": "Which case is offered last?",
+          "correctOptionId": "r2a",
+          "options": [
+            {
+              "id": "r2a",
+              "text": "Case A"
+            },
+            {
+              "id": "r2b",
+              "text": "Case B"
+            },
+            {
+              "id": "r2c",
+              "text": "Case C"
+            },
+            {
+              "id": "r2d",
+              "text": "Case D"
+            }
+          ]
+        },
+        {
+          "id": "r3",
+          "label": "Instead, before the next assignment cycle, Case C's case type is changed to Billing. Which case is offered first in that cycle?",
+          "correctOptionId": "r3d",
+          "options": [
+            {
+              "id": "r3a",
+              "text": "Case A"
+            },
+            {
+              "id": "r3b",
+              "text": "Case B"
+            },
+            {
+              "id": "r3c",
+              "text": "Case C"
+            },
+            {
+              "id": "r3d",
+              "text": "Case D"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sim-d34-q13",
+      "revision": 1,
+      "kind": "hotspot",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.1.03",
+        "D4.2.01"
+      ],
+      "conceptId": "prequeue-overflow-evaluation-order",
+      "prompt": "Redcliff Rail Travel runs a voice workstream in Dynamics 365 Contact Center. Its route-to-queue ruleset uses the default rule-hit policy, and each queue has overflow conditions in Before work items are queued.\n\nYou need to predict how unified routing handles each call.\n\nWhat happens in each situation?",
+      "answer": "Two matching queues: the call goes to Service. Two overflow conditions: the Out of operation hours action runs first. AI agent: overflow is checked after the first escalation only.",
+      "explanation": "Before a work item is queued, unified routing checks overflow once. With the default hit-all policy, if several queues match the route-to-queue rules, the work item goes to the first one that isn't overflowing, so Service takes the call. If the matched queue is overflowing for more than one reason, the action for the operating hours condition runs first, followed by the other conditions in the order they're defined. The listing order doesn't move Work item limit exceeds ahead. When an AI agent is configured for the workstream, overflow is checked only after the AI agent escalates to a representative. If it escalates more than once, the check and action happen after the first escalation.",
+      "sourceIds": [
+        "sim-d4-s01",
+        "sim-d4-s02"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:evaluate",
+        "feature:overflow"
+      ],
+      "optionExplanations": {
+        "r1a": "Correct. Under hit-all, the system evaluates rule conditions and queue overflow, and routes to the first matched queue that isn't overflowing.",
+        "r1b": "Fails. Sales gets the call and runs its overflow action only if every matched queue is overflowing. Service isn't.",
+        "r1c": "Fails. The fallback queue is used for errors or when no route-to-queue rule matches. Here two rules match.",
+        "r2a": "Correct. When several conditions are true, the action defined for the operating hours condition runs first, and the other conditions follow in their defined order.",
+        "r2b": "Fails. Definition order applies only to the other conditions. The operating hours condition's action runs first wherever it's listed.",
+        "r2c": "Fails. Both conditions are true for the matched queue, so overflow actions run, and the operating hours action runs first.",
+        "r3a": "Correct. With an AI agent on the workstream, overflow is checked after the agent escalates, and with multiple escalations the check and action follow the first one.",
+        "r3b": "Fails. The AI agent is engaged first, and overflow isn't checked until it escalates to a representative.",
+        "r3c": "Fails. Microsoft says that with multiple escalations, the system checks overflow and triggers an action after the first one only."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n04"
+        }
+      ],
+      "status": "draft",
+      "table": {
+        "title": "Overflow before queueing",
+        "rowHeading": "Situation",
+        "answerHeading": "Result"
+      },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Two route-to-queue rules match a call. The first rule's queue, Sales, is over its work item limit. The second rule's queue, Service, isn't overflowing.",
+          "correctOptionId": "r1a",
+          "options": [
+            {
+              "id": "r1a",
+              "text": "The call goes to Service"
+            },
+            {
+              "id": "r1b",
+              "text": "The call goes to Sales, and the Sales overflow action runs"
+            },
+            {
+              "id": "r1c",
+              "text": "The call goes to the fallback queue, not to Sales or Service"
+            }
+          ]
+        },
+        {
+          "id": "r2",
+          "label": "A call reaches Bookings while it's out of operating hours and over its work item limit. The Work item limit exceeds pair is listed before the Out of operation hours pair.",
+          "correctOptionId": "r2a",
+          "options": [
+            {
+              "id": "r2a",
+              "text": "The Out of operation hours action runs first"
+            },
+            {
+              "id": "r2b",
+              "text": "The Work item limit exceeds action runs first"
+            },
+            {
+              "id": "r2c",
+              "text": "Neither the Out of operation hours nor the Work item limit exceeds action runs"
+            }
+          ]
+        },
+        {
+          "id": "r3",
+          "label": "An AI agent is configured for the workstream. A call arrives while its target queue is over its work item limit, and the AI agent escalates the call more than once.",
+          "correctOptionId": "r3a",
+          "options": [
+            {
+              "id": "r3a",
+              "text": "Overflow is checked after the first escalation only"
+            },
+            {
+              "id": "r3b",
+              "text": "Overflow is checked when the call arrives, before the AI agent"
+            },
+            {
+              "id": "r3c",
+              "text": "Overflow is checked again after each escalation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sim-d34-q14",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.07",
+        "D4.2.01"
+      ],
+      "conceptId": "returning-async-chat-same-csr-limit",
+      "prompt": "Greenhaven Insurance handles claims over SMS through a push messaging workstream in Dynamics 365 Contact Center. Representative affinity is turned on for the workstream, and its notification template has Autoassign work items set to Yes. Microsoft labels Autoassign work items a preview setting, and Greenhaven has accepted the preview terms. Conversation orchestration is set up, and each CSR's conversation limit has been set in Enhanced user management.\n\nToday, when a customer replies to a waiting SMS conversation, it goes back to the CSR who handled it. Managers want it to go back to that CSR only if the CSR is in a presence the managers choose and has fewer conversations open across all channels than their limit, which can be higher than their capacity. Otherwise, the next best CSR in the queue should get it.\n\nYou need to configure this behavior.\n\nWhat should you do?",
+      "answer": "Publish a Keep the same expert for async chats playbook with the presences, the active conversation limit and the next best expert fallback.",
+      "explanation": "Representative affinity already reconnects a returning asynchronous conversation with the CSR who handled it, regardless of that CSR's capacity and presence, as long as the notification template's Autoassign work items is Yes. The Keep the same expert for async chats playbook adds the checks managers want, and its prerequisite is that representative affinity is enabled for the workstream. It checks the configured presences and compares the CSR's capacity-occupying conversations across all channels with their active conversation limit, reconnecting even when the limit exceeds the capacity profile. If the CSR fails a check, it assigns the next best expert or keeps the chat unassigned, as configured. New conversations are still governed by capacity profiles.",
+      "sourceIds": [
+        "sim-d34-s08",
+        "sim-d4-s07",
+        "sim-cb-s27",
+        "sim-cb-s09"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:conversation-orchestration"
+      ],
+      "optionExplanations": {
+        "a": "Correct. This playbook applies to queues where representative affinity is enabled. For a returning asynchronous chat, it checks the configured presences and the CSR's active conversation limit across all channels, even when the limit exceeds the capacity profile, and otherwise assigns the next best expert in the queue.",
+        "b": "Fails. This playbook runs when a conversation is routed to a queue and checks presence, queue membership and a recency window of up to 30 days. It doesn't check the active conversation limit.",
+        "c": "Fails. Representative affinity reassigns a returning conversation regardless of the CSR's capacity and presence, and managers want a limit that can be higher than capacity. Assignment blocking only stops automatic assignment of new work items once the work item limit is met.",
+        "d": "Fails. Preferred representative routing assigns a contact to representatives you map in the matrix and skips the capacity check. It doesn't follow the CSR who last handled the conversation or check a conversation limit."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n07"
+        }
+      ],
+      "status": "draft",
+      "options": [
+        {
+          "id": "a",
+          "text": "Publish a Keep the same expert for async chats playbook with the presences, active conversation limit and next best fallback"
+        },
+        {
+          "id": "b",
+          "text": "Publish an Assign to a previous or preferred expert playbook that checks presence and a 30-day recency window, with next best fallback"
+        },
+        {
+          "id": "c",
+          "text": "Set each CSR's work item limit in the SMS capacity profile equal to their conversation limit, and turn on Assignment blocking"
+        },
+        {
+          "id": "d",
+          "text": "Map each customer's contact to their last CSR in Preferred representative routing, with the next best representative fallback"
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ]
+    },
+    {
+      "id": "sim-d34-q15",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.03",
+        "D4.2.01"
+      ],
+      "conceptId": "ai-agent-first-placement-options",
+      "prompt": "Thornbury Outfitters has a Copilot Studio agent that's connected to Dynamics 365 Contact Center and has an escalation topic for handoff to CSRs. Live chats arrive through a push messaging workstream, and its route-to-queue rules send every chat to the Orders queue. Orders uses the Highest capacity assignment method, and its members use unit-based capacity.\n\nEvery chat must be handled by the AI agent before any CSR receives it.\n\nYou need to decide where the AI agent receives chats.\n\nWhich two actions should you perform? Each correct answer presents a complete solution.",
+      "answer": "Add the AI agent in the Bot area of the push workstream, or add it to Orders with more capacity than any CSR.",
+      "explanation": "Microsoft documents two places for an AI agent. Added to a push workstream, it receives every incoming work item first, after classification runs. Added to a queue alongside CSRs, it should have more capacity than all of them, because its capacity isn't reduced after an assignment, so any conversation routed to the queue is picked up by the agent first. Equal capacity leaves ties to the assignment method, so some chats would reach CSRs first. Agents aren't in a default queue unless you add them, and a default queue gets only the work routed to it, while these chats all go to Orders. Agents receive conversations only from push workstreams. For an agent that presents the greeting, Microsoft prefers the workstream because engagement is quicker, but either placement meets this goal.",
+      "sourceIds": [
+        "sim-d4-s07",
+        "sim-d34-s09",
+        "sim-d34-s10",
+        "sim-d4-s05"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:engagement-agent"
+      ],
+      "optionExplanations": {
+        "a": "Correct, a complete solution. After an agent is added to a workstream, the incoming work item is first routed to that agent at runtime, and the workstream is push-based.",
+        "b": "Correct, a complete solution. In a queue with both agents and CSRs, setting the agent's capacity higher than all CSRs ensures that any conversation routed to the queue is picked up by the agent first.",
+        "c": "Fails. Microsoft's guidance is to set the agent's capacity higher than all representatives. With equal capacity, Highest capacity breaks ties by round robin, so some chats reach CSRs first.",
+        "d": "Fails. The route-to-queue rules send every chat to Orders, so the default messaging queue doesn't receive these chats. Agents also aren't in a default queue until you add them.",
+        "e": "Fails. Agents can receive conversations only if they're added to push-based workstreams, and the distribution mode can't be changed after a workstream is created."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n05"
+        }
+      ],
+      "status": "draft",
+      "options": [
+        {
+          "id": "a",
+          "text": "Add the AI agent in the Bot area of the push messaging workstream"
+        },
+        {
+          "id": "b",
+          "text": "Add the AI agent to the Orders queue, with more capacity than any CSR in Orders"
+        },
+        {
+          "id": "c",
+          "text": "Add the AI agent to the Orders queue, with the same capacity as the CSRs in Orders"
+        },
+        {
+          "id": "d",
+          "text": "Add the AI agent to the default messaging queue, and leave it out of Orders"
+        },
+        {
+          "id": "e",
+          "text": "Add the AI agent in the Bot area of a new pick messaging workstream for these chats"
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "id": "sim-d34-q16",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.08"
+      ],
+      "conceptId": "supervisor-case-assign-capacity-tracking",
+      "prompt": "Oakline Medical Billing routes cases through a record workstream in Dynamics 365 Contact Center, and its CSRs use capacity profiles. Supervisors often move a routed case from one CSR to another by selecting Assign.\n\nWhen a supervisor reassigns a case this way, unified routing rules must apply, and the capacity that the case uses must move from the previous CSR to the new CSR.\n\nYou need to configure this behavior.\n\nWhat should you do?",
+      "answer": "Turn on Consume capacity on supervisor case assignment for the case record type on the Record routing page.",
+      "explanation": "For case records, the Record routing page has a setting, Consume capacity on supervisor case assignment, that applies unified routing rules and tracks representative capacity when supervisors use Assign. The system then transfers capacity from the previous representative to the new one. The setting is off by default, so it must be turned on. Wrap-up blocking, assignment blocking, custom assignment rules and representative affinity all shape how automated assignment uses capacity. None of them makes a supervisor's Assign move the case's capacity.",
+      "sourceIds": [
+        "sim-d2d-s24",
+        "sim-d1-s13",
+        "sim-d4-s07"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:record-routing"
+      ],
+      "optionExplanations": {
+        "a": "Correct. This setting applies unified routing rules and tracks capacity when supervisors use Assign, and transfers capacity from the previous representative to the new one. It's off by default.",
+        "b": "Fails. Block capacity for wrap up controls how long capacity stays consumed after a conversation enters wrap-up. It doesn't move capacity when a supervisor reassigns a case.",
+        "c": "Fails. Assignment blocking stops automatic assignment of new work once the work item limit is met. Microsoft also says a supervisor can override capacity and assign work manually.",
+        "d": "Fails. Assignment rules select representatives for automated assignment. They don't move a case's capacity when a supervisor picks the representative with Assign.",
+        "e": "Fails. Keep same representative for entire conversation keeps a conversation with its original representative, which is the opposite of moving a case to a new CSR."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n08"
+        },
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n02"
+        }
+      ],
+      "status": "draft",
+      "options": [
+        {
+          "id": "a",
+          "text": "On the Record routing page, turn on Consume capacity on supervisor case assignment for cases"
+        },
+        {
+          "id": "b",
+          "text": "In the case workstream's work distribution settings, set Block capacity for wrap up to Always block for routed cases"
+        },
+        {
+          "id": "c",
+          "text": "In the CSRs' capacity profile, set Assignment blocking to Yes so that supervisor assignments respect limits"
+        },
+        {
+          "id": "d",
+          "text": "Give the case queue a custom assignment method whose rules check available capacity for cases"
+        },
+        {
+          "id": "e",
+          "text": "In the record routing workstream, set Keep same representative for entire conversation to Yes"
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ]
+    }
+  ],
+  "editorial": [
+    {
+      "id": "sim-d34-q01",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "basic-voice-dtmf-input-precedence",
+      "objectiveIds": [
+        "D3.2.07",
+        "D3.2.08"
+      ],
+      "level": "advanced",
+      "author": "ai-distribution-author",
+      "authoredAt": "2026-11-07",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d34-s01",
+          "section": "Introduction, Enable DTMF support in a topic's node, and Agent-level DTMF recognition",
+          "claim": "A global command is triggered when the agent's user presses a specific single-digit key, through a topic whose trigger is DTMF global command received. If the user inputs a key that isn't mapped to the DTMF global triggers, the agent triggers the Unknown dial pad press system topic. The DTMF received trigger only accepts single DTMF keys and isn't called when the user enters the key while responding to a Question node that accepts multi-digit DTMF, or one that accepts single-digit DTMF where one of the allowed options maps to the same key. DTMF menu flows are best suited to classic orchestration.",
+          "applicability": "Copilot Studio voice-enabled agents, page dated 2026-04-23, opened 2026-11-07. The page also says a key that matches none of a Question node's options makes the agent repeat the question, but it doesn't say whether Unknown dial pad press runs instead when that key is also unmapped globally, so no row tests an unmatched key at a waiting question."
+        },
+        {
+          "sourceId": "sim-d3-s02",
+          "section": "Turn on basic voice and Configure silence detection and timeouts",
+          "claim": "Turning on Enable voice for a Basic agent adds the voice system topics Silence detection, Speech unrecognized and Unknown dial pad press. Silence detection sets how long the agent waits for user input and what it does when it receives no input.",
+          "applicability": "Basic voice agents with classic orchestration for Dynamics 365 Contact Center, page dated 2026-10-02, opened 2026-11-07."
+        },
+        {
+          "sourceId": "sim-d34-s13",
+          "section": "System topic conditions and behaviors: Escalate",
+          "claim": "Escalate triggers when \"talk to agent\" is matched or the Escalate system event is called.",
+          "applicability": "Copilot Studio system topics, page dated 2026-02-27, opened 2026-11-07. Used only to reject token e."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d3-q30 (test panel /DTMFKey input), ab250-d3-q31 (multi-digit length and termination), ab250-d3-q29 (real-time silence detection) and sim-p-q05 (barge-in, On Error, latency messaging). A search of the bank and every simulator bundle for \"dial pad\" found nothing. No question tests whether a waiting Question node or a global DTMF trigger takes a key."
+    },
+    {
+      "id": "sim-d34-q02",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "realtime-speech-sensitivity-selection",
+      "objectiveIds": [
+        "D3.2.06",
+        "D3.2.09"
+      ],
+      "level": "advanced",
+      "author": "ai-distribution-author",
+      "authoredAt": "2026-11-07",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d3-s01",
+          "section": "Speech sensitivity: Understanding VAD types, Select the right VAD, Configure server-based VAD, Configure semantic VAD",
+          "claim": "Based on sound (silence) detects end of speech from audio signals and is best for structured interactions, short responses, noisy environments and fast turn-taking, used when background noise is a concern because semantic VAD might wait too long. Based on sentence context adapts to pauses and filler words and suits open-ended conversations with hesitation. Eagerness Low waits longer and suits callers who think out loud; High responds quickly. Threshold: higher is less sensitive, requires louder speech and reduces false triggers, and Microsoft recommends increasing it if background noise causes false triggers. Prefix padding captures audio before speech starts and prevents cutting off the first word; higher is safer capture. Silence duration: lower gives fast turn-taking but might interrupt.",
+          "applicability": "Real-time agents on the voice channel, page dated 2026-09-14, opened 2026-11-07. The setting is under Settings > Voice > Phone Setup > Speech input > Sensitivity for each agent, so four agents can differ."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d3-q29, where sentence-context VAD is context for a silence-detection answer, and sim-p-q05, where Based on sentence context is an unused token for a barge-in, On Error and latency set. No question asks which detection type or parameter fits a calling situation."
+    },
+    {
+      "id": "sim-d34-q03",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "voice-sensitive-variable-boundaries",
+      "objectiveIds": [
+        "D3.2.03",
+        "D3.2.02"
+      ],
+      "level": "advanced",
+      "author": "ai-distribution-author",
+      "authoredAt": "2026-11-07",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d34-s02",
+          "section": "Mark context variables as sensitive; Voice: pass the context through SIP X-headers; What the Sensitive data setting does and doesn't do for context variables",
+          "claim": "For context variables passed from Live Chat or a voice channel, define a global variable on the Conversation Start system topic and turn on both External sources can set value and Sensitive data. The value isn't written to transcripts or telemetry and remains in memory for routing. For voice, isDisplayable isn't configurable per conversation; it controls whether an agent can see a Live Chat context variable.",
+          "applicability": "Copilot Studio voice-enabled agents and Live Chat context, page dated 2026-09-24, opened 2026-11-07."
+        },
+        {
+          "sourceId": "sim-d34-s02",
+          "section": "Protect data in variables and Pass sensitive variables between topics",
+          "claim": "Values in variables explicitly marked as Sensitive data on topic input and output parameters aren't written to conversation transcripts or platform logs, remain in memory and can be passed between topics. Example: Topic A output paymentCardNumber with Sensitive data On, Topic B input paymentCardNumber with Sensitive data On.",
+          "applicability": "Same page. The stem says the card number is collected by a Question node into a sensitive variable, which the page says transcript redaction depends on."
+        },
+        {
+          "sourceId": "sim-d34-s02",
+          "section": "Supported actions tables and Turn on Application Insights logging",
+          "claim": "Power Automate, receive sensitive data: not supported. Write sensitive data to Dataverse explicitly: not supported, avoid. Log sensitive properties controls whether variables marked as sensitive are logged to Application Insights and should be kept off.",
+          "applicability": "Same page. The Contact Center masking page lists Flag variables as sensitive as Yes, which conflicts with this page's Not supported rows for flagging and for variable-management actions, so no option or explanation depends on either row. r1d fails because the token is left unmarked, and the first evidence entry says a sensitive context variable remains in memory for routing."
+        },
+        {
+          "sourceId": "sim-d34-s02",
+          "section": "Test sensitive data redaction",
+          "claim": "When you test redaction in the Test your agent panel, transcripts stored in Dataverse in the ConversationTranscript table contain unredacted values, visible in the JSON under DialogTracing. This is expected and helps makers confirm redaction before production.",
+          "applicability": "Same page."
+        },
+        {
+          "sourceId": "sim-d34-s05",
+          "section": "Variables overview: scopes and Environment variables",
+          "claim": "Environment variables are created in Power Platform and are read-only in Copilot Studio; agent authors can't modify them.",
+          "applicability": "Copilot Studio, page dated 2026-11-06, opened 2026-11-07. Used to reject r2d."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d3-q20 (a tool writes a raw PIN to an external log) and sim-d2d-q14, which mentions isDisplayable for Live Chat. A search for DialogTracing and Log sensitive found nothing. No question tests marking SIP context as sensitive, passing a sensitive value between topics, or the test-panel transcript behavior."
+    },
+    {
+      "id": "sim-d34-q04",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "consent-recording-runtime-outcomes",
+      "objectiveIds": [
+        "D3.2.04"
+      ],
+      "level": "advanced",
+      "author": "ai-distribution-author",
+      "authoredAt": "2026-11-07",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d34-s03",
+          "section": "Prerequisites note and Configure consent-based recording for new voice-enabled agents",
+          "claim": "Consent-based recording is supported only for inbound voice workstreams that have a voice-enabled agent. Conversation Start redirects to the User Consent topic, and Request for User Consent is turned on under Transcription and recording. Turning on Request for User Consent doesn't automatically prompt the user for consent.",
+          "applicability": "Copilot Studio voice-enabled agents with Dynamics 365 Contact Center, page dated 2026-05-07, opened 2026-11-07. The 2026 release wave 1 plan, now archived, lists general availability on May 8, 2026, so the stem states no preview status."
+        },
+        {
+          "sourceId": "sim-d34-s03",
+          "section": "Workstream setting",
+          "claim": "Request for user consent On with the Copilot Studio topic Off defines all customers as having opted in, and the system proceeds with recording and transcription. This applies only when recording and transcription are enabled for the workstream.",
+          "applicability": "Same page. The stem sets Transcription and recording on the workstream."
+        },
+        {
+          "sourceId": "sim-d34-s03",
+          "section": "Customer service representative experience and Transfers and consults",
+          "claim": "If the customer doesn't consent and the agent escalates, the transcript isn't displayed, the call progresses without recording or transcription, and representatives can't start or pause recording and transcripts. On a transfer or consult within Dynamics 365 Contact Center, recording and transcription follow the caller's original choice, and the call isn't recorded at any point if the caller didn't consent. If the caller doesn't consent, Microsoft immediately stops recording.",
+          "applicability": "Same page. Row 2 is a transfer inside Dynamics 365 Contact Center, not to a non-Microsoft party."
+        },
+        {
+          "sourceId": "sim-d34-s03",
+          "section": "Transfers and consults, final paragraph",
+          "claim": "To support compliance requirements, the system records the consent prompt and the caller's response, stores this recording in Microsoft-managed storage that customers can't access, and automatically deletes it within two hours.",
+          "applicability": "Same page."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d3-q22 (outbound calls aren't supported) and ab250-d3-q23 (the sample treats silence as consent). A search for Request for User Consent found nothing in the simulator bundles. No question tests the setting-and-topic matrix, the effect of a decline through transfer, or what happens to the consent audio."
+    },
+    {
+      "id": "sim-d34-q05",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "topic-value-reuse-without-reprompt",
+      "objectiveIds": [
+        "D3.2.02"
+      ],
+      "level": "advanced",
+      "author": "ai-distribution-author",
+      "authoredAt": "2026-11-07",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d34-s04",
+          "section": "Pass variables between topics and Receive values from other topics",
+          "claim": "When you redirect one topic to another, you can pass variable values from the originating topic to the destination topic. Set the destination variable to Receive values from other topics; in the source topic's Redirect node, add an input and select the variable whose value to pass. The destination topic then skips its question.",
+          "applicability": "Copilot Studio topics, page dated 2026-03-12, opened 2026-11-07. The Teams plan tab notes that Date and time, Duration, Multiple choice and custom entity variables can't be passed, so the stem uses the Number entity."
+        },
+        {
+          "sourceId": "sim-d34-s12",
+          "section": "Introduction and Create a global variable",
+          "claim": "By default a variable's value is usable only in the topic where it's created. You can reuse it by passing it from one topic to another, or by making it global, which makes it available in all topics. Global variables apply during a single user session, and you create one by selecting Global (any topic can access), which adds the Global. prefix.",
+          "applicability": "Copilot Studio, page dated 2026-05-15, opened 2026-11-07."
+        },
+        {
+          "sourceId": "sim-d34-s05",
+          "section": "Variables overview: scopes, Environment variables and System variables",
+          "claim": "Environment variables are read-only in Copilot Studio. LastMessage.Text is the previous message sent by the user. Recognizer.TriggeringMessage.Text is the user message that triggered the current topic.",
+          "applicability": "Copilot Studio, page dated 2026-11-06, opened 2026-11-07."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d3-q04 (Usage settings for an external variable), ab250-d3-q19 (declared outputs in real-time hybrid topics) and ab250-d3-q18 (parsing RecordId). A search for global variable found nothing. No question tests the two ways to reuse a collected value across topics."
+    },
+    {
+      "id": "sim-d34-q06",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "managed-copilot-bot-model-via-connected-agent",
+      "objectiveIds": [
+        "D3.1.04"
+      ],
+      "level": "advanced",
+      "author": "ai-distribution-author",
+      "authoredAt": "2026-11-07",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-cb-s19",
+          "section": "Limitations and restrictions",
+          "claim": "Currently you can't update the agent model, though if you connect this agent to other agents, you can use a different model in those agents. You also can't update instructions, or managed topics whose names start with msdyn_.",
+          "applicability": "Customer Service Copilot Bot under Copilot Studio extensibility, page dated 2026-10-14, opened 2026-11-07. The page labels the feature a production-ready preview, which the stem states."
+        },
+        {
+          "sourceId": "sim-cb-s19",
+          "section": "Understand how Copilot extensibility works, Type of Copilot Studio extensibility: Agents",
+          "claim": "When extensibility is enabled, Copilot sends the request to the Copilot Studio agent first. Agents connect Copilot to other agents; for example, you can create an agent that specializes in questions related to one area of your business. The Copilot Studio link opens the Customer Service Copilot Bot, where you can add tools, knowledge, agents and topics.",
+          "applicability": "Same page."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d3-q10 (a tool for structured data and a topic for a new flow fit the managed agent), ab250-d3-q09 (fallback when no confident response), ab250-d3-q11 (custom context) and sim-b-q10 (SharePoint knowledge, excluded). None tests using a different model through a connected agent."
+    },
+    {
+      "id": "sim-d34-q07",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "copilot-report-copy-versus-rating",
+      "objectiveIds": [
+        "D3.1.05"
+      ],
+      "level": "advanced",
+      "author": "ai-distribution-author",
+      "authoredAt": "2026-11-07",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d34-s06",
+          "section": "Filter and interpret the report: Usage, Productivity: Conversations, Satisfaction",
+          "claim": "Number of responses used is the number of times text from a Copilot response was copied, and Percentage of Copilot AI responses used is the percentage copied. Total Copilot AI responses is the total Copilot provided. Percentage of conversations using Copilot AI is the share of engaged conversations that used Copilot. Avg conversation handle time is the time from start to end. Agent ratings is the number of times representatives rated a Copilot response positively or negatively.",
+          "applicability": "Dynamics 365 Contact Center standalone only (the page lists embedded as No), page dated 2026-08-27, opened 2026-11-07. The page requires an administrator to enable Copilot analytics, which the stem states."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d3-q12 (throughput excludes voice and email) and ab250-d3-q13 (aligning duration and time zone, counting distinct users). A search for Agent ratings found nothing. Note cc-d3-n04 says a copied response doesn't prove correctness, but no question asks what the used-response percentage measures."
+    },
+    {
+      "id": "sim-d34-q08",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "customer-support-instructions-source-dependency",
+      "objectiveIds": [
+        "D3.1.02",
+        "D3.1.03"
+      ],
+      "level": "advanced",
+      "author": "ai-distribution-author",
+      "authoredAt": "2026-11-07",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-cb-s18",
+          "section": "Customer Support agent: Overview tab, Instructions, Deterministic response and Knowledge sources",
+          "claim": "Custom instructions guide how Copilot generates responses for Ask a question, including tone, style, escalation guidance and compliance reminders, and are applied to all responses. Custom instructions are applied only when the organization's Dynamics 365 knowledge base is selected as a knowledge source; with other sources, such as Copilot Studio, they aren't applied. Deterministic response returns consistent, repeatable outputs for the same input. Copilot uses published, latest-version articles tagged with the user interface language.",
+          "applicability": "Copilot help pane for Contact Center embedded, standalone and Customer Service, page dated 2026-09-10, opened 2026-11-07. The stem states that the articles are current, published and in the representatives' language."
+        },
+        {
+          "sourceId": "sim-cb-s19",
+          "section": "Limitations and restrictions",
+          "claim": "You can't update the instructions of the Customer Service Copilot Bot.",
+          "applicability": "Copilot Studio extensibility, production-ready preview, page dated 2026-10-14, opened 2026-11-07. Used to reject option c."
+        }
+      ],
+      "duplicateCheck": "Compared with sim-b-q13 (recreating content as articles meets a SharePoint goal, excluded area), ab250-d3-q03 and ab250-d3-q07 (knowledge filters) and ab250-d3-q08 (article language and publishing). A search for custom instructions and Deterministic response found nothing. No question tests that instructions depend on the knowledge source."
+    },
+    {
+      "id": "sim-d34-q09",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "custom-assignment-component-selection",
+      "objectiveIds": [
+        "D4.1.04",
+        "D4.1.02"
+      ],
+      "level": "advanced",
+      "author": "ai-distribution-author",
+      "authoredAt": "2026-11-07",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-cb-s22",
+          "section": "Create an assignment method and configure rules; Configure selection criteria",
+          "claim": "A custom method has prioritization rulesets and assignment rulesets, and each assignment rule has conditions and an Order by attribute, with Proficiency among the ordering attributes. When more than one assignment ruleset exists, selection criteria determine which ruleset runs; if no criterion is met, the system runs the default ruleset.",
+          "applicability": "Queues in Contact Center embedded, standalone and Customer Service, page dated 2026-09-11, opened 2026-11-07."
+        },
+        {
+          "sourceId": "sim-d4-s05",
+          "section": "How prioritization rulesets work and How assignment rulesets work",
+          "claim": "Every prioritization rule represents a priority bucket, and the first rule's matching items form the top bucket. In an assignment rule, a dynamic match uses the system user on the left and the conversation on the right, and reduces the effort of writing and maintaining multiple static rules for each combination of values. If more than one representative matches, Order by sorts them.",
+          "applicability": "Same product scope, page dated 2026-10-30, opened 2026-11-07."
+        },
+        {
+          "sourceId": "sim-d34-s07",
+          "section": "Closest Match, custom assignment",
+          "claim": "To achieve closest match in a custom assignment method, select order by > Proficiency > All skills or skill type > Nearest Proficient.",
+          "applicability": "Unified routing skill matching, page dated 2026-05-07, opened 2026-11-07."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d4-q03 (adding an exact-skill condition to custom rules), ab250-d4-q07 (equal priority across custom-prioritization queues), sim-p-q12 (assignment rule order with no wait) and sim-b-q04 (calendar condition, excluded). A search for selection criteria and dynamic match found nothing."
+    },
+    {
+      "id": "sim-d34-q10",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "routing-rule-layer-selection",
+      "objectiveIds": [
+        "D4.2.02",
+        "D4.2.08",
+        "D4.1.02"
+      ],
+      "level": "advanced",
+      "author": "ai-distribution-author",
+      "authoredAt": "2026-11-07",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2d-s24",
+          "section": "Configure intake rules",
+          "claim": "Intake rules help determine the workstream to use for an incoming record work item, and each is mapped to a workstream or an active basic routing rule.",
+          "applicability": "Unified routing for records, page dated 2026-10-28, opened 2026-11-07."
+        },
+        {
+          "sourceId": "sim-d34-s11",
+          "section": "How classification rulesets work and Create logical skill classification rulesets",
+          "claim": "Work classification rulesets run first, then the route-to-queue ruleset. Classification rules set output attributes on the work item, and skill attachment rules attach skills when their conditions match.",
+          "applicability": "Workstreams in Contact Center embedded, standalone and Customer Service, page dated 2026-05-08, opened 2026-11-07."
+        },
+        {
+          "sourceId": "sim-d4-s02",
+          "section": "Introduction",
+          "claim": "Route-to-queue rules are written as: if the condition is met, route the work item to the defined queue. The ruleset runs after all classification rulesets.",
+          "applicability": "Same product scope, page dated 2026-05-08, opened 2026-11-07."
+        },
+        {
+          "sourceId": "sim-d4-s05",
+          "section": "How dynamic prioritization works: Priority score system and Integration with existing features",
+          "claim": "Dynamic prioritization applies to voice and live chat conversations. The initial or base priority score can be set with classification rules. Queues with priority escalation shouldn't have custom prioritization rules, and dynamic prioritization playbooks aren't applicable to queues configured with them.",
+          "applicability": "Same product scope, page dated 2026-10-30, opened 2026-11-07. The stem uses live chat because this page limits dynamic prioritization to voice and live chat."
+        },
+        {
+          "sourceId": "sim-d4-s03",
+          "section": "Supported scenarios: Dynamic prioritization",
+          "claim": "Dynamic prioritization doesn't apply to queues with custom prioritization rules. Use classification rules to set the initial conversation priority score.",
+          "applicability": "Conversation orchestration in Dynamics 365 Contact Center, page dated 2026-10-30, opened 2026-11-07."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d4-q01 (reuse a classification attribute), ab250-d4-q19 (first match within a classification ruleset), ab250-d4-q32 (intake rules for legacy and unified case paths) and sim-p-q13 (a wait-time playbook doesn't change eligibility). Row 1 overlaps ab250-d4-q32 in using an intake rule, but it's one row of a layer-choice question. No question tests that the starting priority score comes from classification rather than a prioritization rule."
+    },
+    {
+      "id": "sim-d34-q11",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "exact-versus-closest-skill-outcomes",
+      "objectiveIds": [
+        "D4.2.04",
+        "D4.1.04"
+      ],
+      "level": "advanced",
+      "author": "ai-distribution-author",
+      "authoredAt": "2026-11-07",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d34-s07",
+          "section": "Exact match and Closest Match",
+          "claim": "Exact match filters representatives whose skill rating is greater than or equal to the required value, then orders them by the selected out-of-the-box assignment strategy; if no one has all required skills, the conversation remains unassigned. Closest Match orders representatives by closeness to the required skill and proficiency, exact qualified first, then overqualified, then underqualified. If no representative is available with any of the required skills, the conversation might be assigned to a representative without any. With out-of-the-box assignment, representatives with the same skill score are ranked by the assignment method. Microsoft recommends the same rating model across skills.",
+          "applicability": "Unified routing in Contact Center embedded, standalone and Customer Service, page dated 2026-05-07, opened 2026-11-07. The stem uses one rating model so normalization doesn't arise. Microsoft's exact, over and under example counts skills, and all three CSRs here have both skills, so row 2 rests on closeness to the required proficiency; the custom-assignment table ranks the exact-proficiency representative first under Nearest Proficient."
+        },
+        {
+          "sourceId": "sim-d4-s05",
+          "section": "Types of assignment methods: Highest capacity",
+          "claim": "With Exact Match, the system filters representatives by exact skill match, allowed presence and capacity, and orders them by available capacity. With Closest Match, it filters by presence and capacity, then orders by closest match and not by available capacity.",
+          "applicability": "Same product scope, page dated 2026-10-30, opened 2026-11-07."
+        },
+        {
+          "sourceId": "sim-d4-s07",
+          "section": "Configure work distribution",
+          "claim": "Default skill matching algorithm can be Exact Match, Closest Match or None, set in the workstream's work distribution settings.",
+          "applicability": "Workstreams, page dated 2026-05-08, opened 2026-11-07."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d4-q02 (Highest capacity with Exact Match to pick the most capacity), ab250-d4-q23 (matching rating models) and ab250-d4-q21 (appended skills on reroute). ab250-d4-q02 picks the configuration; this question predicts outcomes and contrasts Closest Match, which no question tests."
+    },
+    {
+      "id": "sim-d34-q12",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "prioritization-bucket-offer-order",
+      "objectiveIds": [
+        "D4.1.02",
+        "D4.1.04"
+      ],
+      "level": "advanced",
+      "author": "ai-distribution-author",
+      "authoredAt": "2026-11-07",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d4-s05",
+          "section": "How prioritization rulesets work",
+          "claim": "Prioritization rules run in the order listed during every assignment cycle. Items matching the first rule form the top priority bucket, sorted by that rule's Order by; the second rule runs on the rest of the items. Items that don't match any rule go to the last priority bucket, ordered first in, first out. If a work item's attributes change, the change is considered during the next assignment cycle.",
+          "applicability": "Queues with a custom assignment method in Contact Center embedded, standalone and Customer Service, page dated 2026-10-30, opened 2026-11-07. Microsoft's example uses case attributes, as this stem does."
+        },
+        {
+          "sourceId": "sim-d4-s05",
+          "section": "How unified routing prioritizes work items",
+          "claim": "For record queues, first in, first out is based on the time the record was routed, which is when the associated live work item is created.",
+          "applicability": "Same page. The stem lists the cases in routed order."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d4-q06 (queue priority numbers), ab250-d4-q07 (equal priority across custom-prioritization queues), ab250-d4-q08 (last interaction time for asynchronous FIFO) and sim-p-q13 (dynamic priority doesn't change eligibility). No question predicts bucket order inside a queue."
+    },
+    {
+      "id": "sim-d34-q13",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "prequeue-overflow-evaluation-order",
+      "objectiveIds": [
+        "D4.1.03",
+        "D4.2.01"
+      ],
+      "level": "advanced",
+      "author": "ai-distribution-author",
+      "authoredAt": "2026-11-07",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d4-s01",
+          "section": "Handle overflow before a work item is queued, and How overflow is handled when multiple conditions are true",
+          "claim": "The system checks once for each work item before it enters a queue. If multiple queues match the route-to-queue rules, it routes to the first one that isn't overflowing; only if all are overflowing does it route to an operational queue and trigger the overflow action. Fallback applies to errors or no matching rule. If an AI agent is configured for the workstream, overflow is checked only after the agent escalates to a representative, and with multiple escalations, after the first one. If the matched queue is overflowing for multiple conditions, the action for the operating hours condition runs first, followed by the other conditions in the order they're defined.",
+          "applicability": "Voice, messaging and record queues in Contact Center embedded, standalone and Customer Service, page dated 2026-10-30, opened 2026-11-07. Work item limit exceeds and Out of operation hours are both voice conditions."
+        },
+        {
+          "sourceId": "sim-d4-s02",
+          "section": "Introduction: rule-hit policies",
+          "claim": "After route-to-queue rules are configured, the workstream uses the hit-all policy by default, which evaluates all rule conditions and the overflow handling of the corresponding queues. If multiple rules match and none of their queues is overflowing, the first rule's queue is used.",
+          "applicability": "Same product scope, page dated 2026-05-08, opened 2026-11-07. The question asks only about the default policy, because the page shows no way to select hit-first."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d4-q11 (queued overflow versus average wait), ab250-d4-q12 (no second prequeue check after an overflow transfer), ab250-d4-q13 (fallback ignores overflow), ab250-d4-q14 (default after-hours action), sim-p-q07 (percentage allocation and rule-specific overflow, excluded) and sim-p-q08 and sim-p-q10 (queued and closing-time playbooks, excluded). A search for hit-all and for multiple conditions found nothing."
+    },
+    {
+      "id": "sim-d34-q14",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "returning-async-chat-same-csr-limit",
+      "objectiveIds": [
+        "D4.2.07",
+        "D4.2.01"
+      ],
+      "level": "advanced",
+      "author": "ai-distribution-author",
+      "authoredAt": "2026-11-07",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d34-s08",
+          "section": "Keep the same expert for returning asynchronous chats with active conversation limit and presence status checks",
+          "claim": "The Keep the same expert for async chats playbook applies to queues where representative affinity is enabled; its prerequisite is that representative affinity is enabled for the workstream. When a customer reinitiates a waiting asynchronous conversation, the system checks the configured presences and compares the representative's capacity-occupying conversations across all channels with their active conversation limit, reconnecting even when the limit exceeds the capacity profile. Otherwise it assigns the next best expert or keeps the chat unassigned, as configured. New conversations are governed by capacity profiles.",
+          "applicability": "Messaging queues in Contact Center embedded, standalone and Customer Service, page dated 2026-10-30, opened 2026-11-07."
+        },
+        {
+          "sourceId": "sim-d34-s08",
+          "section": "How routing to preferred representative works and Assign to a previously engaged or preferred expert",
+          "claim": "Preferred representative routing assigns to a mapped preferred representative with an allowed presence and skips capacity, skills and assignment rules. The Assign to a previous or preferred expert playbook validates presence, queue membership and a recency window of up to 30 days.",
+          "applicability": "Same page. Used to reject options b and d."
+        },
+        {
+          "sourceId": "sim-d4-s07",
+          "section": "Configure work distribution and Representative affinity",
+          "claim": "Representative affinity reassigns a conversation moving from waiting to active to the representative who handled it, regardless of the representative's capacity and presence. It applies to push distribution only, and if auto assign work items is set to no in the notification template, the system overrides the affinity setting.",
+          "applicability": "Workstreams, page dated 2026-05-08. The page says affinity is on by default for SMS but also tells administrators to set the toggle to Yes, so the stem states only that affinity is on, and no option changes it."
+        },
+        {
+          "sourceId": "sim-cb-s27",
+          "section": "Manage contact center users: Update conversation limit",
+          "claim": "Enhanced user management lets administrators set a conversation limit from 1 to 100 for selected representatives, and Microsoft suggests raising it above capacity to strengthen affinity.",
+          "applicability": "User management, page dated 2026-10-23, opened 2026-11-07. The stem says the limits are already set."
+        },
+        {
+          "sourceId": "sim-cb-s09",
+          "section": "Create a notification template",
+          "claim": "Autoassign work items: set to Yes to automatically assign the incoming conversation; the default value is No; this setting is in preview.",
+          "applicability": "Notification templates, page dated 2026-05-04. The stem states that the setting is Yes and that the preview terms are accepted."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d4-q27, q28 and q29 (preferred representative routing), sim-d2d-q12 (an active timeout rule moves a conversation to waiting) and sim-b-q01 (persistent chat continuity). A search for active conversation limit and same expert found nothing."
+    },
+    {
+      "id": "sim-d34-q15",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "ai-agent-first-placement-options",
+      "objectiveIds": [
+        "D4.2.03",
+        "D4.2.01"
+      ],
+      "level": "advanced",
+      "author": "ai-distribution-author",
+      "authoredAt": "2026-11-07",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d4-s07",
+          "section": "Create a workstream and Add an agent to a workstream",
+          "claim": "After an agent is added to a workstream, the incoming work item is first routed to the selected agent at runtime, after classification rules run. Agents can receive conversations only if they're added to push-based workstreams. Work distribution mode can't be edited later.",
+          "applicability": "Workstreams, page dated 2026-05-08, opened 2026-11-07."
+        },
+        {
+          "sourceId": "sim-d34-s09",
+          "section": "Best practices for AI agent configuration",
+          "claim": "In a queue with both agents and representatives, set the agent's capacity higher than all representatives; an agent's capacity isn't reduced after a work item is assigned, so any conversation routed to the queue is first picked up by the agent. Agents aren't added to a default queue at the outset. Configure the agent that presents the greeting for the workstream, not the queue, so engagement is quicker.",
+          "applicability": "Azure and Copilot agents in Contact Center embedded, standalone and Customer Service, page dated 2026-07-30, opened 2026-11-07. The stem doesn't require a greeting, so the workstream preference doesn't rule out the queue placement."
+        },
+        {
+          "sourceId": "sim-d34-s10",
+          "section": "Add an agent to a workstream and Add an agent to a queue",
+          "claim": "You can add only one agent per workstream, agents receive conversations only from push-based workstreams, and you can add an agent to a queue so that it can receive conversations from the queue.",
+          "applicability": "Copilot agents in Contact Center embedded, standalone and Customer Service, page dated 2026-04-30, opened 2026-11-07. The stem names no agent on the workstream, so the one-agent limit doesn't block option a."
+        },
+        {
+          "sourceId": "sim-d4-s05",
+          "section": "Types of assignment methods: Highest capacity",
+          "claim": "Highest capacity assigns to the representative with the highest available capacity, and if more than one has the same capacity, the work item is assigned in round-robin order.",
+          "applicability": "Same product scope, page dated 2026-10-30, opened 2026-11-07. Used to reject option c."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d4-q18 (connecting the agent and associating it in the Bot area) and ab250-d4-q10 (queue membership). A search for agent capacity found nothing. No question compares workstream and queue placement or the capacity rule for agents in a queue."
+    },
+    {
+      "id": "sim-d34-q16",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "supervisor-case-assign-capacity-tracking",
+      "objectiveIds": [
+        "D4.2.08"
+      ],
+      "level": "advanced",
+      "author": "ai-distribution-author",
+      "authoredAt": "2026-11-07",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2d-s24",
+          "section": "Configure unified routing for records, step 6",
+          "claim": "For case records, turn on Consume capacity on supervisor case assignment to apply unified routing rules and track representative capacity when supervisors use Assign. The system transfers capacity from the previous representative to the new representative. This setting is off by default.",
+          "applicability": "Unified routing for records, page dated 2026-10-28, opened 2026-11-07."
+        },
+        {
+          "sourceId": "sim-d1-s13",
+          "section": "Introduction and Create a capacity profile and assign to users",
+          "claim": "Assignment blocking stops automatic assignment of new work items once the work item limit is met. The supervisor can override the representative's configured capacity and assign work manually.",
+          "applicability": "Capacity profiles, page dated 2026-02-03, opened 2026-11-07."
+        },
+        {
+          "sourceId": "sim-d4-s07",
+          "section": "Configure work distribution and Representative affinity",
+          "claim": "Block capacity for wrap up controls when capacity is released after a conversation moves to wrap-up. Keep same representative for entire conversation keeps a conversation assigned to the originally assigned representative.",
+          "applicability": "Workstreams, page dated 2026-05-08, opened 2026-11-07."
+        }
+      ],
+      "duplicateCheck": "Compared with ab250-d4-q30 (record access after routing), ab250-d4-q04 (custom limit and assignment blocking), sim-d1 release-capacity-for-routed-email and sim-d2d-q12, which mentions consumed capacity during an SMS timeout. A search for supervisor case assignment found nothing."
+    }
+  ]
+}

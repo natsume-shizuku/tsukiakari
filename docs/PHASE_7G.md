@@ -1,6 +1,6 @@
 # Phase 7G: final integrated acceptance
 
-**Ready for final Phase 7 acceptance.** First run on 2026-11-04 after the user accepted 7F and authorized 7G, then updated on 2026-11-05 with the [changes below](#changes-since-the-first-7g-run). Stop here for the user's decision. Nothing is deployed. Hosting is expected to be GitHub Pages, but it isn't set up.
+**Accepted by the user on 2026-11-05.** First run on 2026-11-04 after the user accepted 7F and authorized 7G, then updated on 2026-11-05 with the [changes below](#changes-since-the-first-7g-run). Later work continues in [Phase 8](PHASE_8.md). Nothing is deployed. Hosting is expected to be GitHub Pages, but it isn't set up.
 
 ## Result
 
@@ -94,4 +94,4 @@ Nothing here blocks acceptance, but each is a real limit.
 7. Hover over the activity grid on Statistics.
 8. Try the review flow on a real phone.
 
-Stop for the user's final Phase 7 acceptance. Hosting is a separate decision, and nothing deploys automatically.
+The user gave final Phase 7 acceptance on 2026-11-05. Hosting is a separate decision, and nothing deploys automatically.

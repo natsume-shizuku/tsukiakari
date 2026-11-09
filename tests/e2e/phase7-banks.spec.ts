@@ -1,3 +1,4 @@
+import { sel } from '../support/selection';
 import { test, expect, type Page } from '@playwright/test';
 import type { TestAttempt } from '../../src/domain';
 
@@ -119,14 +120,14 @@ test('multiple answers retain failed drafts, persist on reload, and require the 
       return put.call(this, value, key);
     };
   });
-  await chooseOption(page, index, card.correctOptionIds[0]);
+  await chooseOption(page, index, sel(card).correctOptionIds[0]);
   await expect(panel.getByRole('alert')).toHaveText('This selection is not saved.');
   expect((await activeAttempt(page)).responses.find(response => response.cardId === card.id)!.selectedOptionIds).toEqual([]);
   await expect(page.getByRole('button', { name: 'Finish test', exact: true })).toBeDisabled();
   await panel.getByRole('button', { name: 'Retry saving answer', exact: true }).click();
-  await expectSaved(page, card.id, [card.correctOptionIds[0]]);
-  await chooseOption(page, index, card.correctOptionIds[1]);
-  await expectSaved(page, card.id, card.correctOptionIds);
+  await expectSaved(page, card.id, [sel(card).correctOptionIds[0]]);
+  await chooseOption(page, index, sel(card).correctOptionIds[1]);
+  await expectSaved(page, card.id, sel(card).correctOptionIds);
   await page.reload();
   await expect(panel.getByRole('checkbox', { checked: true })).toHaveCount(2);
   await panel.getByRole('button', { name: 'Reveal answer', exact: true }).click();
@@ -135,8 +136,8 @@ test('multiple answers retain failed drafts, persist on reload, and require the 
   await expect(panel.getByRole('checkbox').first()).toBeDisabled();
   const partialIndex = indices[1];
   const partial = attempt.questions[partialIndex].card;
-  await chooseOption(page, partialIndex, partial.correctOptionIds[0]);
-  await expectSaved(page, partial.id, [partial.correctOptionIds[0]]);
+  await chooseOption(page, partialIndex, sel(partial).correctOptionIds[0]);
+  await expectSaved(page, partial.id, [sel(partial).correctOptionIds[0]]);
   const partialPanel = await openQuestion(page, partialIndex);
   await partialPanel.getByRole('button', { name: 'Reveal answer', exact: true }).click();
   await expect(partialPanel.getByText('Incorrect · Response locked after reveal', { exact: true })).toBeVisible();
@@ -189,11 +190,11 @@ for (const theme of ['dark', 'light']) {
     const boxes = panel.getByRole('checkbox');
     await boxes.first().focus();
     await page.keyboard.press('Space');
-    await expectSaved(page, attempt.questions[0].card.id, [attempt.questions[0].card.options[0].id]);
+    await expectSaved(page, attempt.questions[0].card.id, [sel(attempt.questions[0].card).options[0].id]);
     await page.keyboard.press('Tab');
     await expect(boxes.nth(1)).toBeFocused();
     await page.keyboard.press('Space');
-    await expectSaved(page, attempt.questions[0].card.id, attempt.questions[0].card.correctOptionIds);
+    await expectSaved(page, attempt.questions[0].card.id, sel(attempt.questions[0].card).correctOptionIds);
     await panel.getByRole('button', { name: 'Reveal answer', exact: true }).click();
     await expect(panel.getByText('Correct · Response locked after reveal', { exact: true })).toBeVisible();
     for (const width of [320, 768, 1440, 1920, 2560]) {

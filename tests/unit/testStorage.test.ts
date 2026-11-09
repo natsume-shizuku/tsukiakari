@@ -1,3 +1,4 @@
+import { sel } from '../support/selection';
 import 'fake-indexeddb/auto';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { engineeringQuestionBank as testFixturePack } from '../../src/content/engineeringQuestionBank';
@@ -15,11 +16,11 @@ describe('transactional test persistence', () => {
   it('persists answers and reveals across database reopen', async () => {
     const attempt = await startTest(testFixturePack, options, db, now);
     const question = attempt.questions[0].card;
-    await saveTestAnswer(attempt.id, question.id, question.correctOptionIds, db, now + 1);
+    await saveTestAnswer(attempt.id, question.id, sel(question).correctOptionIds, db, now + 1);
     await revealTestAnswer(attempt.id, question.id, db, now + 2);
     db.close(); await db.open();
     const restored = (await loadWorkspace(db)).testAttempts[0];
-    expect(restored.responses[0]).toEqual({ cardId: question.id, selectedOptionIds: question.correctOptionIds, revealed: true });
+    expect(restored.responses[0]).toEqual({ cardId: question.id, selectedOptionIds: sel(question).correctOptionIds, revealed: true });
     await expect(saveTestAnswer(attempt.id, question.id, [], db, now + 3)).rejects.toThrow(/revealed/);
     expect((await db.testAttempts.get(attempt.id))?.responses[0]).toEqual(restored.responses[0]);
   });
@@ -59,7 +60,7 @@ describe('transactional test persistence', () => {
   it('commits expiry without committing a response received at or after the deadline', async () => {
     const attempt = await startTest(testFixturePack, { ...options, mode: 'exam', durationMinutes: 1 }, db, now);
     const question = attempt.questions[0].card;
-    const late = await saveTestAnswer(attempt.id, question.id, question.correctOptionIds, db, now + 60000);
+    const late = await saveTestAnswer(attempt.id, question.id, sel(question).correctOptionIds, db, now + 60000);
     expect(late.completedAt).toBe(now + 60000);
     expect(late.responses[0].selectedOptionIds).toEqual([]);
     expect(await db.testAttempts.get(attempt.id)).toEqual(late);
@@ -84,7 +85,7 @@ describe('transactional test persistence', () => {
     await db.reviewSessions.put({ id: 'active', deckId: deck.id, copyId: null, turnId: 'turn', revealed: false, selectedOptionId: null, guessed: false, startedAt: now, shownAt: now });
     const before = await loadWorkspace(db);
     const attempt = await startTest(testFixturePack, options, db, now);
-    await saveTestAnswer(attempt.id, attempt.questions[0].card.id, attempt.questions[0].card.correctOptionIds, db, now + 1);
+    await saveTestAnswer(attempt.id, attempt.questions[0].card.id, sel(attempt.questions[0].card).correctOptionIds, db, now + 1);
     await finishTestAttempt(attempt.id, db, now + 2);
     const after = await loadWorkspace(db);
     expect({ ...after, testAttempts: [], testExposures: [] }).toEqual({ ...before, testAttempts: [], testExposures: [] });
@@ -94,10 +95,10 @@ describe('transactional test persistence', () => {
     const question = attempt.questions[0].card;
     const fail = () => { throw new Error('Simulated quota failure'); };
     db.testAttempts.hook('updating', fail);
-    await expect(saveTestAnswer(attempt.id, question.id, question.correctOptionIds, db, now + 1)).rejects.toThrow(/quota/);
+    await expect(saveTestAnswer(attempt.id, question.id, sel(question).correctOptionIds, db, now + 1)).rejects.toThrow(/quota/);
     expect(await db.testAttempts.get(attempt.id)).toEqual(attempt);
     db.testAttempts.hook('updating').unsubscribe(fail);
-    expect((await saveTestAnswer(attempt.id, question.id, question.correctOptionIds, db, now + 2)).responses[0].selectedOptionIds).toEqual(question.correctOptionIds);
+    expect((await saveTestAnswer(attempt.id, question.id, sel(question).correctOptionIds, db, now + 2)).responses[0].selectedOptionIds).toEqual(sel(question).correctOptionIds);
   });
   it('retains an unfinished attempt when completion fails', async () => {
     const attempt = await startTest(testFixturePack, options, db, now);
@@ -136,7 +137,7 @@ describe('transactional test persistence', () => {
     const finished = await startTest(testFixturePack, options, db, now);
     await finishTestAttempt(finished.id, db, now + 1);
     const active = await startTest(testFixturePack, { ...options, mode: 'exam' }, db, now + 2);
-    await saveTestAnswer(active.id, active.questions[0].card.id, active.questions[0].card.correctOptionIds, db, now + 3);
+    await saveTestAnswer(active.id, active.questions[0].card.id, sel(active.questions[0].card).correctOptionIds, db, now + 3);
     const before = await loadWorkspace(db);
     await abandonTestAttempt(active.id, db);
     db.close(); await db.open();
@@ -155,7 +156,7 @@ describe('transactional test persistence', () => {
   });
   it('refuses to abandon an expired exam so its saved answers can still be scored', async () => {
     const attempt = await startTest(testFixturePack, { ...options, mode: 'exam' }, db, now);
-    await saveTestAnswer(attempt.id, attempt.questions[0].card.id, attempt.questions[0].card.correctOptionIds, db, now + 1);
+    await saveTestAnswer(attempt.id, attempt.questions[0].card.id, sel(attempt.questions[0].card).correctOptionIds, db, now + 1);
     const before = await loadWorkspace(db);
     await expect(abandonTestAttempt(attempt.id, db, attempt.deadlineAt! + 1)).rejects.toThrow(/time limit/);
     expect(await loadWorkspace(db)).toEqual(before);
@@ -165,7 +166,7 @@ describe('transactional test persistence', () => {
   });
   it('keeps the unfinished attempt after a failed abandonment and permits retry', async () => {
     const attempt = await startTest(testFixturePack, options, db, now);
-    await saveTestAnswer(attempt.id, attempt.questions[0].card.id, attempt.questions[0].card.correctOptionIds, db, now + 1);
+    await saveTestAnswer(attempt.id, attempt.questions[0].card.id, sel(attempt.questions[0].card).correctOptionIds, db, now + 1);
     const before = await loadWorkspace(db);
     const fail = () => { throw new Error('Simulated delete failure'); };
     db.testAttempts.hook('deleting', fail);

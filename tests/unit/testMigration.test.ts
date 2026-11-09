@@ -1,3 +1,4 @@
+import { sel } from '../support/selection';
 import 'fake-indexeddb/auto';
 import Dexie from 'dexie';
 import { afterEach, describe, expect, it } from 'vitest';
@@ -51,12 +52,12 @@ const oldStores = {
 describe('compatible test migration', () => {
   it('preserves v1 answer snapshots, scores, identities and annotations', async () => {
     const db = newDatabase(); const old = legacyBackup(); const parsed = parseBackup(old);
-    expect(parsed.version).toBe(2);
+    expect(parsed.version).toBe(3);
     if (parsed.kind !== 'full') throw new Error('Expected full');
     expect(parsed.workspace.copies).toEqual(old.workspace.copies);
     const saved = parsed.workspace.testAttempts[0];
     expect(saved.result).toEqual(old.workspace.testAttempts[0].result);
-    expect(saved.questions[0].card.correctOptionIds).toEqual([old.workspace.testAttempts[0].questions[0].card.correctOptionId]);
+    expect(sel(saved.questions[0].card).correctOptionIds).toEqual([old.workspace.testAttempts[0].questions[0].card.correctOptionId]);
     expect(saved.questions[0].card.status).toBe('draft');
     expect(saved.questions[0].domainTitle).toBe('Unclassified (legacy)');
     expect(parsed.workspace.testExposures).toHaveLength(50);
@@ -74,9 +75,9 @@ describe('compatible test migration', () => {
   it('migrates v1 settings and selections without changing canonical references', () => {
     const deck = { format:'tsukiakari',version:1,exportedAt:now,kind:'deck',
       deck:{name:'Selection',settings:newDeckSettings(),cards:[{packId:'original',cardId:'card',contentRevision:2}]} };
-    expect(parseBackup(deck)).toEqual({...deck,version:2});
+    expect(parseBackup(deck)).toEqual({...deck,version:3});
     const settings = { format:'tsukiakari',version:1,exportedAt:now,kind:'settings',preferences:legacyBackup().workspace.preferences,decks:[] };
-    expect(parseBackup(settings)).toEqual({...settings,version:2});
+    expect(parseBackup(settings)).toEqual({...settings,version:3});
   });
   it('upgrades a v1 database with an unfinished test atomically', async () => {
     const name = 'old-' + crypto.randomUUID();

@@ -1,0 +1,480 @@
+[
+  {
+    "id": "sim-d5-q01",
+    "revision": 1,
+    "reviewer": "experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "decision": "needs-revision",
+    "rationale": "The matching holds. I tested all 24 row and token pairs. The knowledge base search page is hosted as a web resource: the out-of-the-box Knowledge Search template has application type Web Resource, and the create-template example pairs a knowledge base search page with Web resource. Search takes searchType 0 for relevance search and a searchText slug such as {anchor.title}. Entity record opens a create form, and its data parameter prefills the subject, as in the page's {anchor.ticketnumber} example. Entity list displays a view selected by viewId. Third-party website and Custom fit no row. Check 21 passes, because row 1 turns on a fact the names mislead about: the natural pick for a search page is Search. Dashboard is a page type that isn't a token, and it fits no row. The defect is one false sentence in an option explanation.",
+    "findings": [
+      "False statement in option d's explanation. \"A web resource tab doesn't run a Dataverse relevance search or display an entity view\" is contradicted by row 1 itself: the knowledge base search web resource runs knowledge searches, and Learn sets no such limit on web resources. Fix: replace that sentence with \"A web resource tab opens the file that webresourceName names, and it doesn't take the searchType, searchText or viewId parameters.\""
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-cb-s08",
+        "supported": true,
+        "section": "Create application tab templates; Page types (Entity list, Entity record, Search, Third-party website, Web resource, Custom); Out-of-the-box application tab templates",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Page dated 2026-06-17, standalone only. Example row: Page type Web resource, description \"used to display a knowledge base search page\". Knowledge Search template: Web Resource. Search: searchType 0 relevance, 1 categorized; searchText takes {anchor.title}. Entity record create mode has data with a subject built from {anchor.ticketnumber}. Web resource parameters are only webresourceName and data. The createTab reference (sim-d5-s13) also opens msdyn_omnichannel_kbsearch with msdyn_kbsearchpagehost.html, which agrees."
+      }
+    ]
+  },
+  {
+    "id": "sim-d5-q02",
+    "revision": 1,
+    "reviewer": "experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "decision": "needs-revision",
+    "rationale": "All four rows are right, and I tested every row against every token. Row 4 avoids the page's parent and child conflict: it relies only on Clone input record taking Entity record ID and Entity logical name and not saving, against Clone current record cloning the record open in the current tab. Save the record and Clone current record fit no row. The defect is check 21.",
+    "findings": [
+      "Check 21. Every row maps to the token whose name describes it: change a field on an existing record to Update an existing record, fill in fields to Autofill form fields, start a new form to Open a new form to create a record, and copy another case by its ID to Clone input record rather than Clone current record. No row turns on a fact the names don't give. Fix: make row 1 turn on the save behaviour. Row r1 label: \"Change the priority of the case open in the focused tab, with the new value saved by that action alone\" (correctTokenId stays a). Answer: replace \"Related account: Update an existing record.\" with \"Case priority: Update an existing record.\" Explanation: replace \"so it suits an account that isn't open.\" with \"so the new priority is saved without a form save.\" Option a explanation: \"Correct for the case priority. It needs the entity logical name and record ID, and it updates the record as a back-end operation, so the change is saved without a form save. It can't fill a new task that has no record ID yet.\" Option b explanation: \"Correct for the focused task form. It applies to the form in the focused tab with the same entity type and doesn't save the values until the form autosaves, so on row 1 it would change the case form without saving the priority.\" Option c explanation: \"Fails on every row. It clones the record that's open in the current tab. Row 4 copies another case that the macro knows only by its ID, and no other row copies a record.\" After the fix, the names point row 1 at Autofill form fields, because the case form is in focus, or at Save the record, because of the word saved. Only the documented facts that Autofill doesn't save until the form autosaves and that Update an existing record writes as a back-end operation settle it, and no other token becomes valid on any row."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d5-s01",
+        "supported": true,
+        "section": "Open a new form to create a record; Autofill form fields; Update an existing record; Clone current record; Clone input record; Save the record",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Page dated 2025-05-07, standalone only. Lookups need ID, type and name as separate attributes. Autofill doesn't save until the form triggers autosave and applies to the form in the focused tab with the same entity type. Update needs entity logical name and record ID and performs a back-end operation that doesn't refresh the tab. Clone current record clones the record open in the current tab; Clone input record takes record ID and logical name; neither saves. The clone examples contradict themselves on parent and child, which the rows avoid."
+      }
+    ]
+  },
+  {
+    "id": "sim-d5-q03",
+    "revision": 1,
+    "reviewer": "experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "decision": "needs-revision",
+    "rationale": "Rows 1 to 3 are right. Bring your own entity is + Add on the Inbox record types tab, card attributes are edited by selecting the record type on the same tab, and Emails in a shared mailbox shows emails sent to an admin-specified address in the To field only. The stem states a custom profile, which inbox settings need. Check 21 passes on row 3, which needs the definitions of the email settings. The defect is token e.",
+    "findings": [
+      "Checks 5 and 9. Token e is rejected only because Advanced settings are \"documented for the conversation record type\". The same page's custom view procedure says that for each record type you choose Simple or Advanced, and that Advanced builds your own conditions when the simple filters don't cover the scenario, so a learner can reasonably believe an Advanced email view could filter on the To field. Fix: token e text: \"Add a custom view that uses the Emails assigned to me setting\". Option e explanation: \"Fails. This setting shows emails whose Owner or Worked by field is the current user. It doesn't target the claims address.\" In the explanation, replace \"and Advanced settings are documented for the conversation record type.\" with \"and Emails assigned to me depends on the email's Owner or Worked by field.\" In the sim-cb-s14 evidence claim, add: \"Emails assigned to me shows emails whose Owner or Worked by field is the current user.\" In duplicateCheck, replace \"Sort and Advanced settings appear only as distractors.\" with \"Sort and Emails assigned to me appear only as distractors.\" The new token is a simple setting listed for Email on both pages, it fits no row, and it keeps tokens c, d and e parallel."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-cb-s13",
+        "supported": true,
+        "section": "Introduction; Configure custom views for the inbox; Simple settings; Advanced settings for conversations; Configure custom sort; Bring your own entity to the inbox; Custom card configuration",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Page dated 2026-10-29. Inbox settings only for custom profiles. + Add on the Inbox record types tab brings in a record type; selecting it opens Edit record type with attributes. Email simple settings include Emails sent to me, Emails assigned to me and Emails in a shared mailbox. Step 6 of custom views offers Simple or Advanced for each record type; the Advanced section itself covers conversations only. That gap is the finding."
+      },
+      {
+        "sourceId": "sim-cb-s14",
+        "supported": true,
+        "section": "Inbox filters",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Page dated 2026-05-28. Emails in a shared mailbox: admin-specified address, To field only, not Cc or Bcc. Emails sent to me: user in To, Cc or Bcc. Emails assigned to me: Owner or Worked by is the current user."
+      }
+    ]
+  },
+  {
+    "id": "sim-d5-q04",
+    "revision": 1,
+    "reviewer": "experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "decision": "needs-revision",
+    "rationale": "All four rows are right, and I tested every row against every token. The role privilege lets everyone with the role disconnect chats on any record type. Record owner can disconnect chats covers chats on owned records, including ones a colleague connected. Join chat needs write access, which the stem states. Status is preconfigured for case key updates. The stem's default sentence covers every toggle option, so under check 32 it marks none. The defect is check 21.",
+    "findings": [
+      "Check 21. Each row maps to the token whose name describes it: quality leads to the one token that names the quality leads' role, a case's owner to Record owner can disconnect chats, entering connected chats to Join chat, and being told about a status change to Receive notification on key updates. No row turns on a fact the names don't give. Fix: make row 3 turn on the documented limit of the timeline sync preview. Row r3 label: \"A representative who takes over a case can read the full message history of the chats already connected to it\" (correctTokenId stays d). In the explanation, after the sentence ending \"such as a case they've taken over.\", add: \"The timeline sync preview shows only who connected each chat and who sent the last message, so reading the whole chat still depends on joining it.\" Option d explanation: \"Correct for a representative who takes over a case. Join chat lets users view and join connected chats on records they have write access to, and joining shows the full chat exchange. It's set per record type.\" Option f explanation: \"Fails on every row. This preview setting shows each connected chat on the record's timeline, with who connected it and who sent the last message. Reading the full exchange still needs Join chat, and the setting doesn't send field updates or grant disconnect rights.\" In the sim-d5-s08 evidence claim, add: \"The timeline entry shows who connected the chat and when, and the last person to send a message and when.\" After the fix, the names point row 3 at the sync setting, and only the documented split between the timeline entry and joining settles it."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d5-s08",
+        "supported": true,
+        "section": "Assign disconnect chat rights to specific users; Assign disconnect chat rights for security roles; How user rights work together; Configure the ability for users to join chats; Keep chat participants informed when fields are updated; View Teams chats on a connected record's timeline (preview)",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Page dated 2026-07-31, standalone only. Owner and connector toggles are per record type and on by default for new organizations; the role privilege covers any record type; OC admin, supervisor and agent have it by default. Join chat works on records with write access and is on by default for case. Key updates: Priority, Status, Status Reason preconfigured for Case. Sync preview shows who connected the chat and the last sender; with Join chat on, the new representative can join to review the full chat exchange."
+      }
+    ]
+  },
+  {
+    "id": "sim-d5-q05",
+    "revision": 1,
+    "reviewer": "experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "decision": "approved",
+    "rationale": "Stands. Every neighbouring pair is a state dependency on the current page. Save and close leaves the provider Inactive with status reason Validated, the only state where a trial ingestion runs, and Save as draft blocks all ingestion. The trial must come before activation, because it needs an inactive, validated provider and because activation starts ingestion and puts articles in search results, which the first requirement forbids before the check. Time-range ingestion needs Active with Ingestion Ready, and the page says to activate first. Check 1 reverse search: I searched Learn for integrated search provider pages and opened View and use insights for search providers, the Insights troubleshooting article and the msdyn_integratedsearchprovider table reference. None shows another order, and the table reference confirms that Ingestion Ready is the only Active status reason, while Validated and Draft are Inactive. The 30-day range is inside the 60-day limit. Both distractors fail for documented reasons. The evidence notes are accurate.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d5-s04",
+        "supported": true,
+        "section": "Add integrated search providers; Run ingestion for search providers (Trial ingestion, Time-range based ingestion); Activate search providers; Configure search providers as search filters",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Page dated 2026-06-26, standalone only. Save and close: Inactive, Validated. Save as draft: Inactive, Draft, no ingestion. Trial needs Inactive and Validated, errors in Crawl failures on Insights, then \"activate the search provider first\" for time-range. Time-range needs Active and Ingestion Ready; range within 60 days. Activation starts ingestion and articles start appearing in search results. Filters work only with Dataverse search. Site map needs lastmod; static sites only."
+      }
+    ],
+    "fingerprint": "b8f0e564dc6f4a12f652e89efb096a5a8c29a1bf30dc89b97988a2d721682d22"
+  },
+  {
+    "id": "sim-d5-q06",
+    "revision": 1,
+    "reviewer": "experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "decision": "needs-revision",
+    "rationale": "Rows 2 and 3 hold: setting a custom profile as the default removes its existing security roles, and a custom default doesn't apply to users assigned specific custom profiles. On row 1 I applied checks 4, 5 and 9. Learn doesn't describe what Set as default does while another default exists, but it says you can't set multiple profiles as the default and that to change the default you use Remove Default and then set the alternative profile. I treat that procedure as a documented requirement, so the automatic swap fails for a documented reason rather than for silence. Check 5: the FAQ agrees that admin center can't produce two defaults, and its exception for imported profiles doesn't apply here. Check 4 holds, because the row asks what the change requires, not which default to pick. Distinct from sim-c-q05, which fixes two defaults created by an import. The defect is the wording of row 1.",
+    "findings": [
+      "Check 23. Row 1's answer heading is Expected behavior, and the correct option is the only one written as an instruction (\"Remove Default from Legacy Desk first\"), while both distractors describe outcomes, which marks it. Fix: r1a text: \"Legacy Desk's default has to be removed first\". r1b text: \"Legacy Desk's default is removed automatically\". r1c unchanged. r1b explanation: \"Fails. You can't set multiple profiles as the default, and Microsoft's procedure for changing it is to use Remove Default on the current default and then set the alternative profile.\""
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-cb-s12",
+        "supported": true,
+        "section": "Set a custom experience profile as default; Switch default profiles; Map security roles to experience profiles; Manage users assigned to experience profiles",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Page dated 2026-05-27. Custom default not applicable to users assigned specific custom profiles. \"You can't set multiple profiles as the default profile. If you must change the default profile, use Remove Default...and then set an alternative profile.\" Setting a custom default: no more role assignment, existing security roles removed. Out-of-the-box profile only when no custom default and no role mapping. I also opened the FAQ about adding users to experience profiles (2026-05-28): multiple defaults only arise from imports."
+      }
+    ]
+  },
+  {
+    "id": "sim-d5-q07",
+    "revision": 1,
+    "reviewer": "experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "decision": "approved",
+    "rationale": "Stands. Type must be Generic, because the Anchor tab option is displayed only when Type is generic and Session Icon is available for generic templates only. The icon needs a deployed web resource file, not slugs, and GIF isn't supported; the page's example is WhatsApp.ico. Templates use the {Slug} format, and {customerName} is the page's title example, while ${Slug} is for macros and scripts and ${$session.<slug>} is the session connector context. Every distractor fails for a documented reason. Distinct from ab250-d5-q04, q13 and q14 and from sim-b-q05. The evidence notes are accurate.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-cb-s07",
+        "supported": true,
+        "section": "Create a session template (Type, Entity, Title, Session Icon, Anchor tab)",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Page dated 2026-07-30. Generic for any channel; Entity list shows user-owned entities. Title example {customerName}. Session Icon: generic only, deployed web resource, web resource only and not slugs, no GIF, example WhatsApp.ico. Anchor tab displayed only when Type is generic. WhatsApp session - default is a generic template."
+      },
+      {
+        "sourceId": "sim-cb-s03",
+        "supported": true,
+        "section": "Format for slugs for productivity tools; Slugs for templates; Format for slugs for templates",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Page dated 2026-05-08. Session and notification titles take parameter keys. Templates use {Slug}, for example {caseId}, and {customerName} is a template slug. Macros and scripts use ${Slug}; session connector context uses ${$session.<slug>}."
+      }
+    ],
+    "fingerprint": "ccbe26dc1df4d149d3dc23888fcdbc392462141e01c896641e2990e6935025a6"
+  },
+  {
+    "id": "sim-d5-q08",
+    "revision": 1,
+    "reviewer": "experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "decision": "approved",
+    "rationale": "Stands. An SVG icon isn't shown in desktop notifications, a countdown under 5 seconds stops the desktop notification, and the timer isn't shown in desktop notifications but still runs, so the notification disappears at the timeout. Check 32: the Countdown 120 sentence on Billing chat clears the caveat that the alert must appear at all, which r1a and r1b share, and every template states its countdown, so it marks nothing. Its dependencies hold: 120 is the documented default, Show desktop notifications (default Never) is stated as Always, and browser and Windows permissions are stated. No row depends on an unstated setting. The default icon is an SVG, but no Outage or Moving home option concerns the icon, and Show Countdown doesn't change the Billing row. The evidence notes are accurate.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-cb-s09",
+        "supported": true,
+        "section": "Desktop notifications; Allow a browser to show notifications; Create a notification template (Icon, Show Countdown, Countdown (seconds), Show desktop notifications)",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Page dated 2026-05-04, updated 2026-08-20. Icon note: with desktop notifications on, an SVG icon won't be shown. Show Countdown: the timer runs either way and the notification disappears after the timeout; the timer won't be shown in desktop notifications. Countdown default 120; under 5 seconds the desktop notification doesn't appear. Show desktop notifications default Never. Wait time sets how long the desktop notification shows but isn't displayed."
+      }
+    ],
+    "fingerprint": "9e13f3198fa35838e3f499e52bdb445a0c8e8fced72de4aeddad7dc40f82fa04"
+  },
+  {
+    "id": "sim-d5-q09",
+    "revision": 1,
+    "reviewer": "experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "decision": "approved",
+    "rationale": "Stands. Row 1 is Microsoft's own example: session context variables for an entity session are defined when the session starts, an updated case title isn't reflected, and Refresh the session context goes between Update an existing record and Open a new form to create a record. Row 2 is the resolve example: resolving through a macro doesn't refresh the tab, so Get the current tab supplies the Tab ID to Refresh the tab. The strongest alternative for row 1 is refreshing the tab, which fails because the page ties the slug to the session context set at session start. Set session context only creates a variable, and Focus on the tab only moves focus. The evidence notes are accurate.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d5-s02",
+        "supported": true,
+        "section": "Get the current tab; Refresh the tab; Focus on the tab; Refresh the session context; Set session context",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Page dated 2026-04-22, standalone only. Get the current tab retrieves the Tab ID for Refresh tab and Focus tab. Resolve example: Resolve case, Get the current tab, Refresh the tab. Refresh the session context: variables defined at session start, title update not reflected, macros use cached information; example places it after the title update and before the new task. Set session context creates a variable."
+      },
+      {
+        "sourceId": "sim-d5-s01",
+        "supported": true,
+        "section": "Resolve a case; Update an existing record",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Resolving through a macro doesn't refresh the tab, so Get the current tab and Refresh the tab follow. Update an existing record is a back-end operation that doesn't refresh the tab."
+      }
+    ],
+    "fingerprint": "a1312c6f895e2bc4c494b7621e740362b424aa3ca46643d58e7e769e4c0740a0"
+  },
+  {
+    "id": "sim-d5-q10",
+    "revision": 1,
+    "reviewer": "experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "decision": "approved",
+    "rationale": "Stands. linkToConversation links only in the database, the link shows after the page is refreshed, and the caller is responsible for that refresh, which the example does with Microsoft.Apm.refreshTab. One account or contact and one case can be linked at a time, and a new case overrides the previous link. Linking is supported only for active conversations. The strongest alternative is r2c, a form save, which fails because the page puts the refresh on the caller and documents no other route. The stem passes the conversation ID, so focus doesn't decide anything. Check 29: no row claims a closed conversation can be reopened. Distinct from ab250-d5-q35 to q37. The evidence notes are accurate.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d5-s14",
+        "supported": true,
+        "section": "Description; Note; Parameters; Example",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Page dated 2022-02-18, updated 2024-11-28. Database-only link, reflected after refresh, caller responsible for UI refresh; one account or contact and one case; new link overrides. Note: linking only to active conversations. conversationId optional, defaults to the focused conversation. Example calls Microsoft.Apm.refreshTab on resolve."
+      }
+    ],
+    "fingerprint": "2ff805188d0b3ac48c43e2d7a164c30243b576d2dab31d464e6a3315eb24d2cc"
+  },
+  {
+    "id": "sim-d5-q11",
+    "revision": 1,
+    "reviewer": "experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "decision": "approved",
+    "rationale": "Stands. Multisession can be enabled only for an app in an unmanaged solution, an app with a lock icon is managed and can't be edited, and the multisession settings travel in the app module when the solution is exported and imported. A registered pane tool appears only after it's enabled in the experience profile's Productivity pane. Check 14: the believable wrong rule of doing everything in production names b and c, exactly two. Option c names no environment, so it holds whether Claims Reps is edited in production or carried in a solution. d and e fail for documented reasons. The evidence notes are accurate.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d5-s10",
+        "supported": true,
+        "section": "How it works; Enable multisession experience and productivity tools; Manage the application lifecycle",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Page dated 2025-10-16. Productivity setting for model-driven apps, Edit, select both checkboxes; Multisession with productivity tools selects Productivity tool automatically; Confirm. Lock icon means managed and not editable. Unmanaged solution only; not for default apps such as Sales Hub. Export includes the multisession navigation settings in the app module."
+      },
+      {
+        "sourceId": "sim-d5-s09",
+        "supported": true,
+        "section": "Prerequisites; Configure a custom productivity tool",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Page dated 2026-07-30, standalone only. Admins need Productivity tools administrator; representatives need Productivity tools user. Type Control or Custom Page; Global Yes makes it available across sessions. Then edit the profile's Productivity pane and enable the tool."
+      },
+      {
+        "sourceId": "sim-cb-s23",
+        "supported": true,
+        "section": "Assign users, templates, configure productivity pane, channels",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Page dated 2026-07-28, updated 2026-11-03. Productivity pane: select On, then turn on the options. Add entity session template links a session template to the profile."
+      }
+    ],
+    "fingerprint": "e629f1985126ed35c1c3c6df6596d4adf3396ecb5578f931f0680642d3a082ea"
+  },
+  {
+    "id": "sim-d5-q12",
+    "revision": 1,
+    "reviewer": "experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "decision": "approved",
+    "rationale": "Stands. canCreateSession returns false when a new session can't be created, and its example checks it before createSession. createSession takes an optional isFocused, and the example of a session not in focus passes false. requestFocus only shows a notification indicator on a session that isn't in focus, canCreateTab reports on tabs in a session, and createTab creates a tab in the focused session. Check 14: the believable wrong rule of using the tab APIs names c and e, exactly two. The stem states the template is in the profile, which createSession needs. The evidence notes are accurate.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d5-s11",
+        "supported": true,
+        "section": "Parameters; Examples",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Page dated 2026-07-14. SessionInput: templateName, sessionContext, isFocused? (will focus after session is created), shouldRestore?. Example \"Create a session that is not in focus\" passes isFocused: false. Invoking user must be in an app profile that contains the template."
+      },
+      {
+        "sourceId": "sim-d5-s12",
+        "supported": true,
+        "section": "Note; Return value; Example",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Page dated 2025-06-17. Up to 10 sessions; \"Maximum sessions reached\" beyond. Returns true if a new session can be created, otherwise false; example wraps createSession."
+      },
+      {
+        "sourceId": "sim-d5-s13",
+        "supported": true,
+        "section": "Description; Parameters",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Page dated 2025-06-17. Creates an app tab in a focused session; AppTabInput has templateName, appContext and isFocused."
+      },
+      {
+        "sourceId": "sim-d5-s17",
+        "supported": true,
+        "section": "Prerequisite; Session management; Tab management",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Page dated 2024-04-23, updated 2025-06-17. requestFocus shows a notification indicator on a session not in focus. canCreateTab: whether a new tab can be created for a session. Needs App Profile user or Productivity tools user."
+      }
+    ],
+    "fingerprint": "f48981622e61ebbfbb5814bc5cc3603606ba070b15071a628c9ca549a22641d7"
+  },
+  {
+    "id": "sim-d5-q13",
+    "revision": 1,
+    "reviewer": "experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "decision": "needs-revision",
+    "rationale": "The answer is right. Automatic search uses the field chosen in Provide search results using, Link article and email URL shares the URL while Link article and send article content shares the contents, and the default email recipient is available only for Customer or Lookup columns pointing to Account or Contact. The defect is that the stem's wording answers it.",
+    "findings": [
+      "Checks 16 and 22. The requirements clear every distractor by wording alone. \"Runs automatically on the claim summary\" rejects e, \"email the article's URL\" rejects d, and \"with the policyholder filled in as the recipient\" rejects c, so a and b are the only options whose words match, and the documented recipient rule is never needed. Fix: in the second requirement, replace \"with the policyholder filled in as the recipient\" with \"with a person named on the claim filled in as the recipient\". No other change is needed, because the option c explanation already rejects Assigned surveyor for pointing to User. After the fix, b and c both match the wording, and only the documented recipient rule separates them. The believable wrong rule that any person lookup works names a with either b or c, so the count gives nothing away."
+    ],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d5-s07",
+        "supported": true,
+        "section": "Add record types for which you want to turn on knowledge management; Configure knowledge search control on the app side pane",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Page dated 2026-06-26, standalone only. Knowledge settings dialog: Turn on automatic search, Provide search results using; Actions Link / unlink article, Copy URL, Link article and email URL, Link article and send article content; Email recipient available only to Customer or Lookup attribute type and Account or Contact lookup entity. App side pane only in Copilot Service workspace."
+      },
+      {
+        "sourceId": "sim-d5-s16",
+        "supported": true,
+        "section": "Power Apps experience: properties table",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Page dated 2026-07-29. Link article and email URL shares the URL by email; Link article and send article content shares the contents. Automatic search fields can be text, multi-line text or lookup. This page's form-control recipient list is broader (fields enabled for email), but it covers the form control for single-session apps; the stem uses the side pane, whose dialog has the narrower rule."
+      }
+    ]
+  },
+  {
+    "id": "sim-d5-q14",
+    "revision": 1,
+    "reviewer": "experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "decision": "approved",
+    "rationale": "Stands. Adding custom record types is labelled a production-ready preview on the current page, and the stem says the company accepts production-ready previews, so the status is explicit and current. The real-time procedure for a custom record type includes Add custom record types (preview) and adding a trigger harvesting button, and selecting the button triggers harvesting for the current record. The part-of-the-solution framing is sound: the stem has already added the knowledge record type and defers the rules and attributes that the page lists between those steps. Option b's \"sample script\" matches the page, which calls the JavaScript a sample implementation to customize. The trap is real, because adding the knowledge record type doesn't add it to the agent. c, d and e fail for documented reasons. The evidence notes are accurate.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-cb-s20",
+        "supported": true,
+        "section": "Enable real-time knowledge creation; Enable track changes and add mapped entities to the Entity Analytics Config table; Enable real-time knowledge harvesting for a custom record type; Add a trigger harvesting button; Enable historical knowledge creation; Add custom record types (preview)",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Page dated 2026-07-29. Case real-time creation triggers when a case is resolved. Custom record type procedure: turn on knowledge management, add custom record types (preview), configure the side pane, rules and attributes, add the trigger button, which triggers harvesting for the current record. Button: Command Designer on the main form, sample JavaScript, Msdyn.KnowledgeHarvest.triggerHarvest with PrimaryControl, save and publish. Add record type after knowledge management is on; up to five. \"This is a production-ready preview feature.\" Track changes recommended for historical creation. Historical creation runs from Start on records matching rules."
+      }
+    ],
+    "fingerprint": "5f93013e33fd0f62ff00dc344f12e965faf578992370f715e39cff4c42904218"
+  },
+  {
+    "id": "sim-d5-q15",
+    "revision": 1,
+    "reviewer": "experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "decision": "approved",
+    "rationale": "Stands. Set Script focus moves the Scripts list to the named script, and the script in focus must be associated with the session template; scripts load according to the template's associated scripts. The strongest alternative is the default-script expression, which only picks the script when a representative accepts a conversation. Refresh the session context concerns cached values for entity sessions. A step has one action type, so a Script-type step can't also run the macro, which the single-run requirement rules out. Distinct from ab250-d5-q18 to q20. The evidence notes are accurate.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d5-s01",
+        "supported": true,
+        "section": "Set Script focus",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Sets focus on a script in the Scripts dropdown on the app side pane, by Agent Script Unique Name. \"The script in focus must be associated with the session template.\" Example updates case priority, then sets focus on another script."
+      },
+      {
+        "sourceId": "sim-cb-s10",
+        "supported": true,
+        "section": "Create scripts (Action Type); Associate a script with a session template; Set the default script for representatives",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Page dated 2026-05-08, standalone only. Action Type is Text instruction, Macro or Script, with Target macro or Target script. Associate scripts so they load based on the session type. The expression sets the default script when a representative accepts an incoming conversation; representatives can switch among available scripts."
+      }
+    ],
+    "fingerprint": "ff13e8e6c9a2ff058650f51fb862f2e71d6c94e036f375d2ae7d68d4b34211d3"
+  },
+  {
+    "id": "sim-d5-q16",
+    "revision": 1,
+    "reviewer": "experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "decision": "approved",
+    "rationale": "Stands. Suggest-as-you-type matches the term against article titles, a multi-word term matches only titles containing the full string, and it suggests up to six articles. Set search mode as all changes the results logic and is a fair decoy. The app side pane shows up to 10 results by default; General settings can change the count, but no correct option depends on it. Check 12: the correct option isn't the longest. Distinct from ab250-d5-q41, which tests search mode for results. The evidence notes are accurate.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d5-s06",
+        "supported": true,
+        "section": "Search for related articles in Copilot Service workspace; Save time searching with suggest-as-you-type",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Page dated 2026-07-31, standalone only. Side pane search displays up to 10 results by default. Term matched against titles; more than one word matches only the full string; up to six articles."
+      },
+      {
+        "sourceId": "sim-d5-s05",
+        "supported": true,
+        "section": "Set up knowledge search logic; Enable the suggest-as-you-type option",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Page dated 2026-07-20, standalone only. With Dataverse search, searchMode=any by default; Set search mode as all matches all keywords. Suggest-as-you-type matches the phrase against the title and shows matches in a flyout."
+      }
+    ],
+    "fingerprint": "40917baedeebb85cbd5d4583c31f0cf8f6926089d30511cefefd645e8be85362"
+  },
+  {
+    "id": "sim-d5-q17",
+    "revision": 1,
+    "reviewer": "experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "decision": "approved",
+    "rationale": "Stands. Send knowledge base article link in chat must be used with the Search knowledge base for the populated phrase action, and Use an external portal must be Yes; its URL format builds the public link from {kbnum}. Both search actions are described as searching knowledge articles, so the relevance search distractors fail only on the send action's stated companion, which is documented. Distinct from ab250-d5-q44: that question asks for the portal URL setting and attachment sync as two separate requirements, while this one turns on the send action's required search action, which q44 doesn't test. The portal half reapplies q44's fact as the send action's dependency, and attachment sync appears only as a distractor. The 2 by 2 options give no shortcut, because each shares one element with two others. The evidence notes are accurate, including the naming difference between the two pages.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d5-s03",
+        "supported": true,
+        "section": "Introduction note; Send knowledge base article link in chat",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Page dated 2026-05-27, standalone only. Sends an article link to the conversation chat window; \"must be used with the Search knowledge base for the populated phrase action\"; switch Use an external portal to Yes. Available if Copilot Service workspace in Contact Center is installed."
+      },
+      {
+        "sourceId": "sim-d5-s05",
+        "supported": true,
+        "section": "Set up knowledge management (Portals); Configure knowledge base article URLs; Update knowledge article attachments for portal",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Use an external portal; URL Format https://support portal URL/kb/{kbnum}, {kbnum} replaced by the article number; a portal must be created first. Sync attachments to portal turns on knowledge article attachments for the portal."
+      },
+      {
+        "sourceId": "sim-d5-s01",
+        "supported": true,
+        "section": "Search the knowledge base for the populated phrase; Do a relevance search based on the phrase",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Search the knowledge base for the populated phrase takes a search string such as the case title. Do a relevance search based on the phrase is a separate action whose example searches for cases with the same title."
+      }
+    ],
+    "fingerprint": "c3ca3cfd1591119fd6315f5290f920385e0a5505c6a538d19de6e0d5572e4b83"
+  },
+  {
+    "id": "sim-d5-q18",
+    "revision": 1,
+    "reviewer": "experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "decision": "approved",
+    "rationale": "Stands. Mask private agent data from the customer masks what the representative sends for both people, in live chat and async messages. Mask private customer data from the agent masks what the customer sends for both people in live chat, but only in the representative's user interface on async channels. The stem states that the Credit Card rule is active and both settings are on, and that WhatsApp is asynchronous, which configure-inbox confirms. Check 22: asynchronous appears in no option. Distinct from ab250-d2-q22 and q34 and from the other simulator bundles. The evidence notes are accurate.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d5-s15",
+        "supported": true,
+        "section": "Automated data masking",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Page dated 2026-10-19, updated 2026-10-20. Masked text is also masked in the transcript; works for chat and async channels; rules apply only when Active. Agent data: masked for both, live chat and async. Customer data: both for live chat, only the representative's UI on async. Credit Card is out of the box."
+      },
+      {
+        "sourceId": "sim-cb-s13",
+        "supported": true,
+        "section": "Introduction (asynchronous channels in the conversation inbox)",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "WhatsApp is listed among the asynchronous channels available in the conversation inbox."
+      }
+    ],
+    "fingerprint": "f4d32f56640ff88d728e5d69f59ce3d51d7475b62fa111b3427067f8254186f4"
+  }
+]

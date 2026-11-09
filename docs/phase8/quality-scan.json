@@ -1,0 +1,65 @@
+{
+  "questions": 85,
+  "formats": {
+    "hotspot": 21,
+    "order": 5,
+    "match": 20,
+    "multiple": 18,
+    "single": 13,
+    "series": 8
+  },
+  "domains": {
+    "channels": 40,
+    "agents-ai": 6,
+    "work-distribution": 7,
+    "deployment": 18,
+    "analytics": 11,
+    "representative-experience": 3
+  },
+  "groups": [
+    {
+      "id": "sim-case-a",
+      "kind": "case-study",
+      "questions": 8
+    },
+    {
+      "id": "sim-series-a",
+      "kind": "series",
+      "questions": 4
+    },
+    {
+      "id": "sim-case-b",
+      "kind": "case-study",
+      "questions": 9
+    },
+    {
+      "id": "sim-series-b",
+      "kind": "series",
+      "questions": 4
+    }
+  ],
+  "nearDuplicateThreshold": 0.55,
+  "nearDuplicatePairs": [],
+  "singleAnswerPositions": [
+    {
+      "position": 1,
+      "count": 4
+    },
+    {
+      "position": 2,
+      "count": 3
+    },
+    {
+      "position": 3,
+      "count": 3
+    },
+    {
+      "position": 4,
+      "count": 3
+    },
+    {
+      "position": 5,
+      "count": 0
+    }
+  ]
+}

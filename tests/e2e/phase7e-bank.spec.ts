@@ -1,3 +1,4 @@
+import { sel } from '../support/selection';
 import {test,expect,type Page} from '@playwright/test';
 import type {TestAttempt} from '../../src/domain';
 async function rows<T=unknown>(page:Page,table:string):Promise<T[]>{return page.evaluate(name=>new Promise<T[]>((resolve,reject)=>{const r=indexedDB.open('tsukiakari');r.onerror=()=>reject(r.error);r.onsuccess=()=>{const db=r.result,tx=db.transaction(name),q=tx.objectStore(name).getAll();q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error);tx.oncomplete=()=>db.close();};}),table);}
@@ -29,7 +30,7 @@ test('real practice offers small domains, never reduces a typed count and starts
  expect(await rows(page,'testAttempts')).toEqual([]);
  await page.getByLabel('Number of questions',{exact:true}).fill('50');await page.getByRole('button',{name:'Start practice',exact:true}).click();await expect(page.locator('.test-session-bar')).toContainText(`of ${50} answered`);
  const attempt=await active(page);expect(attempt.fixture).toBe(false);expect(attempt.questions.every(q=>q.card.domainId==='deployment'&&q.sources.length&&q.card.relatedNotes.length)).toBe(true);
- const first=attempt.questions[0];await choose(page,0,first.card.correctOptionIds[0]);await saved(page,first.card.id,[first.card.correctOptionIds[0]]);
+ const first=attempt.questions[0];await choose(page,0,sel(first.card).correctOptionIds[0]);await saved(page,first.card.id,[sel(first.card).correctOptionIds[0]]);
  await page.locator('.test-question').first().getByRole('button',{name:'Reveal answer',exact:true}).click();
  for(const s of first.sources)await expect(page.locator('.test-question').first().locator('a[href="'+s.url+'"]').first()).toBeVisible();
  expect(await rows(page,'reviewLogs')).toEqual([]);expect(await rows(page,'schedulerStates')).toEqual([]);
@@ -41,7 +42,7 @@ test('real timed exam uses six quotas, keeps answers hidden, reviews and retries
  const attempt=await active(page);expect(attempt.bankVersion).toBe('1.0.0');
  expect(['deployment','channels','agents-ai','work-distribution','representative-experience','analytics'].map(id=>attempt.questions.filter(q=>q.card.domainId===id).length)).toEqual([17,32,12,12,17,10]);
  await expect(page.getByRole('button',{name:'Reveal answer',exact:true})).toHaveCount(0);await expect(page.locator('.test-answer')).toHaveCount(0);
- const single=attempt.questions.findIndex(q=>q.card.kind==='single');await choose(page,single,attempt.questions[single].card.correctOptionIds[0]);await saved(page,attempt.questions[single].card.id,attempt.questions[single].card.correctOptionIds);
+ const single=attempt.questions.findIndex(q=>q.card.kind==='single');await choose(page,single,sel(attempt.questions[single].card).correctOptionIds[0]);await saved(page,attempt.questions[single].card.id,sel(attempt.questions[single].card).correctOptionIds);
  page.once('dialog',d=>d.accept());await page.getByRole('button',{name:'Finish test',exact:true}).click();
  const dialog=page.getByRole('dialog',{name:'Test results',exact:true});await expect(dialog).toContainText('1/100 (1%)');await expect(page.locator('.test-question')).toHaveCount(0);
  await dialog.getByRole('button',{name:'Review exam',exact:true}).click();await expect(page.locator('.test-question')).toHaveCount(100);await expect(page.locator('.test-answer')).toHaveCount(100);
@@ -54,12 +55,12 @@ for(const theme of ['dark','light'])test('real long answers, multiple-choice exp
  test.setTimeout(60000);await page.goto('/#settings');await expect(page.getByText('Saved in this browser',{exact:true}).first()).toBeVisible();await page.getByLabel('Appearance',{exact:true}).selectOption(theme);await ready(page);
  await page.getByLabel('Number of questions',{exact:true}).fill('50');await page.getByRole('button',{name:'Start practice',exact:true}).click();await expect(page.locator('.test-session-bar')).toContainText(`of ${50} answered`);
  const attempt=await active(page),index=attempt.questions.findIndex(q=>q.card.kind==='multiple');expect(index).toBeGreaterThanOrEqual(0);const card=attempt.questions[index].card,panel=await openQuestion(page,index);
- const input=panel.locator('input[value="'+card.correctOptionIds[0]+'"]');await input.focus();await page.keyboard.press('Space');await saved(page,card.id,[card.correctOptionIds[0]]);
- for(const id of card.correctOptionIds.slice(1)){await choose(page,index,id);await saved(page,card.id,card.correctOptionIds.slice(0,card.correctOptionIds.indexOf(id)+1));}
+ const input=panel.locator('input[value="'+sel(card).correctOptionIds[0]+'"]');await input.focus();await page.keyboard.press('Space');await saved(page,card.id,[sel(card).correctOptionIds[0]]);
+ for(const id of sel(card).correctOptionIds.slice(1)){await choose(page,index,id);await saved(page,card.id,sel(card).correctOptionIds.slice(0,sel(card).correctOptionIds.indexOf(id)+1));}
  await panel.getByRole('button',{name:'Reveal answer',exact:true}).click();await expect(panel.getByText('Correct · Response locked after reveal',{exact:true})).toBeVisible();
  await expect(panel.getByRole('heading',{name:'Why these choices?',exact:true})).toBeVisible();
  for(const width of [320,768,1440,1920,2560]){await page.setViewportSize({width,height:1000});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await panel.scrollIntoViewIfNeeded();const clipped=await panel.evaluate(el=>[...el.querySelectorAll('p,h2,dd,dt,a')].some(item=>item.scrollWidth>item.clientWidth+1));expect(clipped).toBe(false);await page.screenshot({path:'test-results/phase7e-'+theme+'-'+width+'.png'});}
- await page.reload();await expect(panel.getByRole('checkbox',{checked:true})).toHaveCount(card.correctOptionIds.length);await expect(panel.getByRole('checkbox').first()).toBeDisabled();
+ await page.reload();await expect(panel.getByRole('checkbox',{checked:true})).toHaveCount(sel(card).correctOptionIds.length);await expect(panel.getByRole('checkbox').first()).toBeDisabled();
 });
 
 test('a small real domain starts, survives a reload and returns exams to their floor',async({page})=>{

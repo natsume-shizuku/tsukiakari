@@ -14,25 +14,26 @@
     "test": "vitest run",
     "test:e2e": "playwright test",
     "check:browser": "node scripts/check-browser.mjs",
-    "content:check": "node scripts/compile-exam-bank.mjs --check",
+    "content:check": "node scripts/compile-exam-bank.mjs --check && node scripts/compile-simulator-bank.mjs --check",
     "prebuild": "npm run content:check"
   },
   "dependencies": {
+    "@dnd-kit/core": "6.3.1",
+    "dexie": "4.4.6",
     "react": "19.3.1",
     "react-dom": "19.3.1",
-    "dexie": "4.4.6",
-    "zod": "4.6.7",
-    "ts-fsrs": "5.4.2"
+    "ts-fsrs": "5.4.2",
+    "zod": "4.6.7"
   },
   "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "@types/node": "^24.0.0",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
-    "@types/node": "^24.0.0",
     "@vitejs/plugin-react": "6.1.2",
-    "vite": "8.3.4",
-    "typescript": "7.0.2",
-    "vitest": "5.0.5",
     "fake-indexeddb": "^6.2.0",
-    "@playwright/test": "1.64.1"
+    "typescript": "7.0.2",
+    "vite": "8.3.4",
+    "vitest": "5.0.5"
   }
 }

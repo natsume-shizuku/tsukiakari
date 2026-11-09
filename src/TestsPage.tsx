@@ -1,27 +1,23 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { Suspense, lazy, useEffect, useMemo, useRef, useState } from 'react';
 import { MINIMUM_EXAM_QUESTIONS } from './validation';
-import { questionOutcome } from './testEngine';
+import { QUESTIONS_PER_PAGE, questionOutcome } from './testEngine';
 import type { ReactNode } from 'react';
 import type { QuestionBank, TestAttempt, TestQuestionSnapshot } from './domain';
+import { maxBlueprintCount } from './examAssembly';
+import { QuestionAnswer } from './QuestionAnswer';
+import { SelectionOptions } from './SelectionOptions';
+import { isAnswered, isSelection, requiredSelections } from './testGrading';
+import { timeText, useNow } from './useNow';
 import type { useWorkspace } from './useWorkspace';
 import { questionBankManifests, visibleBankManifests, loadQuestionBank } from './content/questionBanks';
 import { abandonTestAttempt, expireTestAttempts, finishTestAttempt, revealTestAnswer, retryMissedQuestions, retryTestAttempt, saveTestAnswer, startTest } from './testStorage';
 import './tests-page.css';
-import { TestDomainResults, QuestionLearningResources } from './TestDomainResults';
+import { TestDomainResults } from './TestDomainResults';
+
+const ExamRunner = lazy(() => import('./ExamRunner'));
+const PlacedAnswer = lazy(() => import('./PlacedAnswer'));
 
 type Desk = ReturnType<typeof useWorkspace>;
-function useNow(ticking: boolean) {
-  const [now, setNow] = useState(Date.now);
-  useEffect(() => {
-    if (!ticking) return;
-    const update = () => setNow(Date.now());
-    const timer = window.setInterval(update, 1000);
-    window.addEventListener('focus', update);
-    document.addEventListener('visibilitychange', update);
-    return () => { window.clearInterval(timer); window.removeEventListener('focus', update); document.removeEventListener('visibilitychange', update); };
-  }, [ticking]);
-  return Math.max(now, Date.now());
-}
 /** Mounted above routes so exam deadlines also finalize while browsing elsewhere. */
 export function TestDeadlineMonitor({ desk, onExpired }: { desk: Desk; onExpired: (attemptId: string) => void }) {
   const active = desk.workspace?.testAttempts.find(attempt => attempt.completedAt === null);
@@ -37,10 +33,18 @@ export function TestDeadlineMonitor({ desk, onExpired }: { desk: Desk; onExpired
   return null;
 }
 function attemptTitle(attempt: TestAttempt) { return attempt.bankTitle ?? attempt.bankId; }
-function percent(attempt: TestAttempt) { return Math.round(100 * (attempt.result?.correct ?? 0) / attempt.questions.length); }
-function timeText(ms: number) {
-  const seconds = Math.max(0, Math.ceil(ms / 1000));
-  return [Math.floor(seconds / 3600), Math.floor(seconds / 60) % 60, seconds % 60].map(value => String(value).padStart(2, '0')).join(':');
+function percent(attempt: TestAttempt) {
+  const points = attempt.result?.points;
+  return Math.round(100 * (points ? points.earned / points.possible : (attempt.result?.correct ?? 0) / attempt.questions.length));
+}
+function scoreText(attempt: TestAttempt) {
+  const points = attempt.result?.points;
+  return `${points ? points.earned + '/' + points.possible + ' points' : (attempt.result?.correct ?? 0) + '/' + attempt.questions.length} (${percent(attempt)}%)`;
+}
+/** Microsoft reports a scaled score, so a raw percentage can only ever be a rough guide to it. */
+function ScaledNote({ attempt }: { attempt: TestAttempt }) {
+  if (!attempt.result?.points) return null;
+  return <p className="fine-print test-scaled-note">Roughly {percent(attempt) * 10} out of 1000, where 700 is the published passing score. This is an estimate: real exams report a scaled score, not a raw percentage.</p>;
 }
 
 export function TestsPage({ desk, onDirtyChange, initialBankId, initialAttemptId }: { desk: Desk; onDirtyChange?: (dirty: boolean) => void; initialBankId?: string; initialAttemptId?: string }) {
@@ -91,7 +95,9 @@ export function TestsPage({ desk, onDirtyChange, initialBankId, initialAttemptId
     if (!bankId) { setBankLoading(false); return () => { current = false; }; }
     setBankLoading(true);
     void loadQuestionBank(bankId).then(loaded => {
-      if (current) setBank(loaded);
+      if (!current) return;
+      setBank(loaded);
+      if (mode === 'exam') setCount(String(loaded.blueprint?.defaultCount ?? 100));
     }).catch(error => {
       if (current) setBankError(error instanceof Error ? error.message : 'The question bank could not be loaded.');
     }).finally(() => { if (current) setBankLoading(false); });
@@ -101,7 +107,9 @@ export function TestsPage({ desk, onDirtyChange, initialBankId, initialAttemptId
   const selectedDomain = mode === 'practice' ? domainId : '';
   const eligible = currentBank?.questions.filter(question => question.status === 'approved' && (!selectedDomain || question.domainId === selectedDomain)).length ?? 0;
   const approvedCount = currentBank?.questions.filter(question => question.status === 'approved').length ?? 0;
-  const unpublishedBank = Boolean(currentBank && !currentBank.fixture && approvedCount < 300);
+  const unpublishedBank = Boolean(currentBank && !currentBank.fixture && !currentBank.blueprint && approvedCount < 300);
+  const largestExam = useMemo(() => currentBank?.blueprint ? maxBlueprintCount(currentBank) : null, [currentBank]);
+  const countLimit = selectedDomain || largestExam === null ? eligible : largestExam;
   const minimumCount = mode === 'exam' ? MINIMUM_EXAM_QUESTIONS : 1;
   const insufficient = Boolean(currentBank && eligible < minimumCount);
   // Runs when the selection changes, not on typing, so a typed count is never altered.
@@ -117,7 +125,7 @@ export function TestsPage({ desk, onDirtyChange, initialBankId, initialAttemptId
     const questionCount = Number(count);
     const duration = mode === 'exam' ? Number(minutes) : 120;
     if (insufficient) { setSetupError(mode === 'exam' ? `Exams need at least ${MINIMUM_EXAM_QUESTIONS} available questions.` : 'This selection has no available questions. Choose another domain or All domains.'); return; }
-    if (!Number.isInteger(questionCount) || questionCount < minimumCount || questionCount > eligible) { setSetupError(`Choose a whole number from ${minimumCount} to ${eligible}. The question count is never reduced automatically.`); return; }
+    if (!Number.isInteger(questionCount) || questionCount < minimumCount || questionCount > countLimit) { setSetupError(`Choose a whole number from ${minimumCount} to ${countLimit}. The question count is never reduced automatically.`); return; }
     if (mode === 'exam' && (!Number.isInteger(duration) || duration < 1 || duration > 1440)) { setSetupError('Choose a time limit from 1 to 1440 whole minutes.'); return; }
     setStarting(true);
     let created: TestAttempt | undefined;
@@ -131,12 +139,21 @@ export function TestsPage({ desk, onDirtyChange, initialBankId, initialAttemptId
     const saved = await desk.mutate(async () => { created = await (missedOnly ? retryMissedQuestions : retryTestAttempt)(attempt.id); }, missedOnly ? 'A practice test with the questions you missed has started.' : 'A fresh attempt with the same questions has started.');
     if (saved && created) openAttempt(created.id);
   };
-  const goSetup = () => { setSelectedId(null); window.location.hash = '#tests' + (bankId ? '?bank=' + encodeURIComponent(bankId) : ''); requestAnimationFrame(() => heading.current?.focus()); };
+  // Leaving a test unmounts it before the heading exists, and a busy page can paint a frame before rendering.
+  // So the request waits here until the heading is really there.
+  const focusHeading = useRef(false);
+  useEffect(() => {
+    if (!focusHeading.current || !heading.current) return;
+    focusHeading.current = false;
+    heading.current.focus();
+  });
+  const goSetup = () => { focusHeading.current = true; setSelectedId(null); window.location.hash = '#tests' + (bankId ? '?bank=' + encodeURIComponent(bankId) : ''); requestAnimationFrame(() => { if (focusHeading.current && heading.current) { focusHeading.current = false; heading.current.focus(); } }); };
   const abandon = async (attempt: TestAttempt) => {
     if (!desk.canWrite || !window.confirm('Abandon this test? Its saved answers and any unsaved changes will be discarded. No score will be recorded. You can then start a new test.')) return;
     const saved = await desk.mutate(() => abandonTestAttempt(attempt.id), 'Test abandoned.');
     if (saved) { setSetupNotice('Test abandoned. You can start a new test.'); goSetup(); }
   };
+  if (selected?.delivery && selected.completedAt === null) return <Suspense fallback={<p role="status">Loading test…</p>}><ExamRunner key={selected.id} desk={desk} attempt={selected} onDirtyChange={onDirtyChange} onSetup={goSetup} onAbandon={() => { void abandon(selected); }}/></Suspense>;
   if (selected) return <AttemptReader key={selected.id} desk={desk} attempt={selected} onDirtyChange={onDirtyChange} onSetup={goSetup} onAbandon={() => { void abandon(selected); }} onRetry={() => { void retry(selected); }} onRetryMissed={() => { void retry(selected, true); }} hasOtherActive={Boolean(active && active.id !== selected.id)}/>;
   if (previewing && currentBank) return <PilotQuestionPreview bank={currentBank} onClose={() => { setPreviewing(false); requestAnimationFrame(() => previewButton.current?.focus()); }}/>;
   return <section className="tests-page">
@@ -147,14 +164,14 @@ export function TestsPage({ desk, onDirtyChange, initialBankId, initialAttemptId
     <section className="panel test-setup" aria-labelledby="test-setup-heading"><h2 id="test-setup-heading">New test</h2>
       <div className="test-setup-fields">
         <div className="test-pack-field"><label htmlFor="test-bank">Question bank</label><select id="test-bank" value={bankId} onChange={event => { setBankId(event.target.value); setDomainId(''); setSetupError(''); }}><option value="">Choose a question bank</option>{bankId && !manifest && <option value={bankId}>Unavailable question bank</option>}{visibleBankManifests.map(item => <option value={item.id} key={item.id}>{item.title}{item.fixture ? ' — sample data' : ''}</option>)}</select></div>
-        <div><label htmlFor="test-mode">Test mode</label><select id="test-mode" value={mode} onChange={event => { const next = event.target.value as 'practice' | 'exam'; setMode(next); setCount(next === 'exam' ? '100' : '20'); setSetupError(''); }}><option value="practice">Practice Mode</option><option value="exam">Exam Mode</option></select></div>
+        <div><label htmlFor="test-mode">Test mode</label><select id="test-mode" value={mode} onChange={event => { const next = event.target.value as 'practice' | 'exam'; setMode(next); setCount(next === 'exam' ? String(currentBank?.blueprint?.defaultCount ?? 100) : '20'); setSetupError(''); }}><option value="practice">Practice Mode</option><option value="exam">Exam Mode</option></select></div>
         {mode === 'practice' && manifest && <div><label htmlFor="test-domain">Practice domain</label><select id="test-domain" value={domainId} onChange={event => { setDomainId(event.target.value); setSetupError(''); }}><option value="">All domains</option>{manifest.domains.map(domain => <option key={domain.id} value={domain.id}>{domain.title}</option>)}</select></div>}
-        <div><label htmlFor="test-count">Number of questions</label><input id="test-count" type="number" min={minimumCount} max={eligible || undefined} step="1" value={count} onChange={event => setCount(event.target.value)}/></div>
+        <div><label htmlFor="test-count">Number of questions</label><input id="test-count" type="number" min={minimumCount} max={countLimit || undefined} step="1" value={count} onChange={event => setCount(event.target.value)}/></div>
         {mode === 'exam' && <div><label htmlFor="test-minutes">Time limit (minutes)</label><input id="test-minutes" type="number" min="1" max="1440" step="1" value={minutes} onChange={event => setMinutes(event.target.value)}/></div>}
       </div>
       {bankLoading && <p role="status" className="fine-print">Loading question bank…</p>}
       {bankError && <div className="notice error test-bank-error" role="alert"><p>{bankError} Your saved learning data has not changed.</p><button className="button secondary" onClick={() => setLoadRevision(value => value + 1)}>Retry loading question bank</button></div>}
-      {currentBank && !bankLoading && <p className="fine-print">{eligible} available questions. New tests prefer questions you have not seen, then those seen least recently.{mode === 'exam' ? ' Exams balance questions across the bank’s domains.' : ''}</p>}
+      {currentBank && !bankLoading && <p className="fine-print">{eligible} available questions. New tests prefer questions you have not seen, then those seen least recently.{largestExam !== null && !selectedDomain ? ` Each test is assembled from this bank in an exam-style mix of formats, with whole case studies on longer tests, and can have up to ${largestExam} questions.` : mode === 'exam' ? ' Exams balance questions across the bank’s domains.' : ''}</p>}
       {insufficient && !unpublishedBank && <p className="notice" role="status">{mode === 'exam' ? `Exams need at least ${MINIMUM_EXAM_QUESTIONS} available questions.` : 'This selection has no available questions. Choose another domain or All domains.'}</p>}
       {unpublishedBank && <div className="notice"><p>This pilot contains {approvedCount} reviewed questions. Full practice and exams require at least 300 approved questions.</p><button ref={previewButton} className="button secondary" onClick={() => setPreviewing(true)}>Preview pilot questions</button></div>}
       {manifest?.fixture && <p className="test-fixture-notice">Engineering preview · Generated arithmetic questions exercise the test tools. This is sample data, not an exam study pack.</p>}
@@ -253,7 +270,7 @@ function AttemptReader({ desk, attempt, onDirtyChange, onSetup, onAbandon, onRet
     const saved = await desk.mutate(() => revealTestAnswer(attempt.id, cardId), 'Answer revealed. This response is now locked.');
     if (saved) requestAnimationFrame(() => document.getElementById('test-answer-' + cardId)?.focus({ preventScroll: true }));
   };
-  const answered = attempt.responses.filter(item => item.selectedOptionIds.length > 0).length;
+  const answered = attempt.responses.filter(isAnswered).length;
   const reviewExam = () => { setReviewingExam(true); const query = new URLSearchParams({attempt:attempt.id,review:'1'}); window.history.replaceState(null,'','#tests?' + query.toString()); requestAnimationFrame(() => heading.current?.focus()); };
   const page = Math.floor(position / QUESTIONS_PER_PAGE);
   const pageStart = page * QUESTIONS_PER_PAGE;
@@ -267,7 +284,7 @@ function AttemptReader({ desk, attempt, onDirtyChange, onSetup, onAbandon, onRet
       const hasDraft = Object.prototype.hasOwnProperty.call(drafts, question.card.id) && !completed;
       const chosen = hasDraft ? drafts[question.card.id] : saved?.selectedOptionIds ?? [];
       const revealed = completed || Boolean(saved?.revealed);
-      return <Question key={question.card.id} question={question} number={index + 1} total={completed ? undefined : attempt.questions.length} selectedOptionIds={chosen} revealed={revealed} disabled={!canAnswer || Boolean(saved?.revealed)} saving={desk.busy || answerSaving} practice={attempt.mode === 'practice'} completed={completed}
+      return <Question key={question.card.id} question={question} number={index + 1} total={completed ? undefined : attempt.questions.length} selectedOptionIds={chosen} placements={saved?.placements} scoring={attempt.scoring} groupTitle={attempt.groups?.find(group => group.id === question.card.groupId)?.title} revealed={revealed} disabled={!canAnswer || Boolean(saved?.revealed)} saving={desk.busy || answerSaving} practice={attempt.mode === 'practice'} completed={completed}
         onAnswer={optionIds => { void answer(question.card.id, optionIds); }} onReveal={() => { void reveal(question.card.id); }} revealDisabled={!canAnswer || (hasDraft && !answerSaving)}>
         {hasDraft && !desk.busy && !answerSaving && <div id={"test-pending-" + question.card.id} className="test-pending-answer"><p role="alert">This selection is not saved.</p><button className="button secondary" disabled={!canAnswer} onClick={() => { void answer(question.card.id, drafts[question.card.id]); }}>Retry saving answer</button><button className="button secondary" disabled={desk.busy} onClick={() => setDrafts(previous => { const next = { ...previous }; delete next[question.card.id]; return next; })}>Discard unsaved answer</button></div>}
         {!completed && <div className="test-question-actions"><button className="button secondary" aria-pressed={progress.flagged.includes(question.card.id)} onClick={() => toggleFlag(question.card.id)}>{progress.flagged.includes(question.card.id) ? 'Remove flag' : 'Flag for review'}</button></div>}
@@ -281,7 +298,7 @@ function AttemptReader({ desk, attempt, onDirtyChange, onSetup, onAbandon, onRet
     {pending && !desk.busy && !answerSaving && <div className="notice error" role="status"><p>An answer has not been saved. Retry or discard the pending answer before finishing.</p><button className="button secondary" onClick={() => { const cardId = Object.keys(drafts)[0]; goTo(attempt.questions.findIndex(question => question.card.id === cardId)); requestAnimationFrame(() => document.getElementById("test-pending-" + cardId)?.querySelector<HTMLButtonElement>("button")?.focus({ preventScroll: true })); }}>Go to unsaved answer</button></div>}
     {answerNotice && <p className="notice error" role="alert">{answerNotice}</p>}
     {completed && Object.keys(drafts).length > 0 && <p className="notice error">An unsaved answer was not included. The results below use saved responses only.</p>}
-    {completed && attempt.result && <section className="panel test-score" aria-label="Test score"><strong>{attempt.result.correct}/{attempt.questions.length} ({percent(attempt)}%)</strong><span>{attempt.result.correct} correct · {attempt.result.wrong} wrong · {attempt.result.skipped} skipped</span>{attempt.mode === 'practice' && <span className="fine-print">{plural(attempt.responses.filter(item => item.revealed).length, 'answer')} revealed during practice</span>}<div className="test-actions">{attempt.result.wrong + attempt.result.skipped > 0 && <button className="button primary" disabled={!desk.canWrite || hasOtherActive} onClick={onRetryMissed}>Retry missed ({attempt.result.wrong + attempt.result.skipped})</button>}<button className="button secondary" disabled={!desk.canWrite || hasOtherActive} onClick={onRetry}>Retry same questions</button><button className="button secondary" onClick={leave}>New test</button>{attempt.mode === 'exam' && !reviewingExam && <button className="button secondary" onClick={reviewExam}>Review exam</button>}</div></section>}
+    {completed && attempt.result && <section className="panel test-score" aria-label="Test score"><strong>{scoreText(attempt)}</strong><span>{attempt.result.correct} correct · {attempt.result.wrong} wrong · {attempt.result.skipped} skipped</span><ScaledNote attempt={attempt}/>{attempt.mode === 'practice' && <span className="fine-print">{plural(attempt.responses.filter(item => item.revealed).length, 'answer')} revealed during practice</span>}<div className="test-actions">{attempt.result.wrong + attempt.result.skipped > 0 && <button className="button primary" disabled={!desk.canWrite || hasOtherActive} onClick={onRetryMissed}>Retry missed ({attempt.result.wrong + attempt.result.skipped})</button>}<button className="button secondary" disabled={!desk.canWrite || hasOtherActive} onClick={onRetry}>Retry same questions</button><button className="button secondary" onClick={leave}>New test</button>{attempt.mode === 'exam' && !reviewingExam && <button className="button secondary" onClick={reviewExam}>Review exam</button>}</div></section>}
     {completed && !showExamResult && <TestDomainResults attempt={attempt}/>}
     {!showExamResult && completed && <>
       <div className="test-result-filter" role="group" aria-label="Show questions">{resultFilters.map(([value, label]) => {
@@ -312,7 +329,7 @@ function AttemptReader({ desk, attempt, onDirtyChange, onSetup, onAbandon, onRet
         })}</ol>}
       </nav>
     </div>}
-    {showExamResult && <dialog ref={resultsDialog} className="test-results-dialog" aria-labelledby="test-results-title" onCancel={event => { event.preventDefault(); reviewExam(); }}><h2 id="test-results-title">Test results</h2><p className="test-result-total">{attempt.result?.correct ?? 0}/{attempt.questions.length} ({percent(attempt)}%)</p><p>{attempt.result?.correct ?? 0} correct · {attempt.result?.wrong ?? 0} wrong · {attempt.result?.skipped ?? 0} skipped</p><p>Your responses are saved. Review the exam to see answers, explanations, and references.</p><button className="button primary" autoFocus onClick={reviewExam}>Review exam</button></dialog>}
+    {showExamResult && <dialog ref={resultsDialog} className="test-results-dialog" aria-labelledby="test-results-title" onCancel={event => { event.preventDefault(); reviewExam(); }}><h2 id="test-results-title">Test results</h2><p className="test-result-total">{scoreText(attempt)}</p><p>{attempt.result?.correct ?? 0} correct · {attempt.result?.wrong ?? 0} wrong · {attempt.result?.skipped ?? 0} skipped</p><ScaledNote attempt={attempt}/><p>Your responses are saved. Review the exam to see answers, explanations, and references.</p><button className="button primary" autoFocus onClick={reviewExam}>Review exam</button></dialog>}
   </section>;
 }
 
@@ -328,8 +345,6 @@ function centerCurrentButton() {
 type ResultFilter = 'all' | 'wrong' | 'skipped';
 const resultFilters: [ResultFilter, string][] = [['all', 'All'], ['wrong', 'Wrong'], ['skipped', 'Skipped']];
 const plural = (count: number, noun: string) => `${count} ${noun}${count === 1 ? '' : 's'}`;
-/** A test in progress shows this many questions per page. Change it here to resize every page. */
-const QUESTIONS_PER_PAGE = 5;
 interface AttemptProgress { position: number; flagged: string[]; }
 const progressKey = (attemptId: string) => 'tsukiakari.test-progress.' + attemptId;
 /** Position and flags are a per-browser convenience, so they stay out of the saved attempt. */
@@ -358,36 +373,21 @@ function sameSelection(left: string[], right: string[]) {
   return left.length === right.length && left.every(id => right.includes(id));
 }
 
-function Question({ question, number, total, selectedOptionIds, revealed, disabled, saving, practice, completed, onAnswer, onReveal, revealDisabled, children, preview = false }: {
-  question: TestQuestionSnapshot; number: number; total?: number; selectedOptionIds: string[]; revealed: boolean; disabled: boolean; saving: boolean; practice: boolean; completed: boolean;
+function Question({ question, number, total, selectedOptionIds, placements, scoring, groupTitle, revealed, disabled, saving, practice, completed, onAnswer, onReveal, revealDisabled, children, preview = false }: {
+  question: TestQuestionSnapshot; number: number; total?: number; selectedOptionIds: string[]; placements?: Record<string, string>; scoring?: TestAttempt['scoring']; groupTitle?: string;
+  revealed: boolean; disabled: boolean; saving: boolean; practice: boolean; completed: boolean;
   onAnswer: (optionIds: string[]) => void; onReveal: () => void; revealDisabled: boolean; children: ReactNode; preview?: boolean;
 }) {
   const card = question.card;
   const multiple = card.kind === 'multiple';
-  const correct = sameSelection(selectedOptionIds, card.correctOptionIds);
-  const selectionLimit = card.correctOptionIds.length;
+  const selectionLimit = requiredSelections(card);
   const selectionHintId = 'test-selection-hint-' + card.id;
-  return <div className="panel test-question" data-index={number - 1}><h2 id={"test-question-title-" + card.id} tabIndex={-1} className="test-question-title"><span className="test-question-number">Question {number}{total ? ` of ${total}` : ''}</span>{card.prompt}</h2>
-    <p id={selectionHintId} className="test-selection-hint">{multiple ? `Choose ${selectionLimit} answers.` : 'Choose one answer.'}{multiple && !revealed && <span aria-live="polite"> {selectedOptionIds.length} of {selectionLimit} selected.</span>}</p>
-    <fieldset className="test-options" aria-labelledby={"test-question-title-" + card.id} aria-describedby={selectionHintId}>{card.options.map((option, index) => {
-      const checked = selectedOptionIds.includes(option.id);
-      const correctOption = card.correctOptionIds.includes(option.id);
-      const limitReached = multiple && !checked && selectedOptionIds.length >= selectionLimit;
-      return <label key={option.id} className={'test-option' + (checked ? ' is-selected' : '') + (revealed && correctOption ? ' is-correct' : '')}>
-        <input type={multiple ? 'checkbox' : 'radio'} name={'test-question-' + card.id} value={option.id} checked={checked} disabled={disabled || limitReached} aria-disabled={disabled || limitReached || saving} onClick={event => { if (saving) event.preventDefault(); }} onChange={() => {
-          if (saving || limitReached) return;
-          onAnswer(multiple ? (checked ? selectedOptionIds.filter(id => id !== option.id) : [...selectedOptionIds, option.id]) : [option.id]);
-        }}/><span><strong>{String.fromCharCode(65 + index)}.</strong> {option.text}{revealed && correctOption && <span className="test-option-result">Correct answer</span>}{revealed && checked && !correctOption && <span className="test-option-result">Your answer · Incorrect</span>}</span>
-      </label>;
-    })}</fieldset>
+  return <div className="panel test-question" data-index={number - 1}>{groupTitle && <p className="test-group-label">{groupTitle}</p>}<h2 id={"test-question-title-" + card.id} tabIndex={-1} className={'test-question-title' + (scoring ? ' is-scenario' : '')}><span className="test-question-number">Question {number}{total ? ` of ${total}` : ''}</span>{card.prompt}</h2>
+    {isSelection(card) ? <><p id={selectionHintId} className="test-selection-hint">{multiple ? `Choose ${selectionLimit} answers.` : 'Choose one answer.'}{multiple && !revealed && <span aria-live="polite"> {selectedOptionIds.length} of {selectionLimit} selected.</span>}</p>
+      <SelectionOptions card={card} selectedOptionIds={selectedOptionIds} revealed={revealed} disabled={disabled} saving={saving} hintId={selectionHintId} onAnswer={onAnswer}/></>
+      : <Suspense fallback={<p role="status">Loading answer…</p>}><PlacedAnswer card={card} placements={placements ?? {}} disabled revealed={revealed} onChange={() => {}}/></Suspense>}
     {!revealed && practice && <div className="test-question-actions"><button className="button secondary" disabled={revealDisabled} aria-disabled={revealDisabled || saving} onClick={() => { if (!saving) onReveal(); }}>Reveal answer</button></div>}
     {children}
-    {revealed && <div id={'test-answer-' + card.id} tabIndex={-1} className="test-answer"><p className="test-answer-status">{preview ? 'Answer preview' : selectedOptionIds.length ? (correct ? 'Correct' : 'Incorrect') : 'Skipped'}{!completed ? ' · Response locked after reveal' : ''}</p><h3>Answer</h3><p>{card.answer}</p><p>{card.explanation}</p>{multiple && <p className="fine-print">All correct options are required for one point. Partial selections receive no points.</p>}
-      {card.options.some(option => card.optionExplanations[option.id]) && (completed && !preview
-        ? <details className="test-why"><summary>Why these choices?</summary><dl className="test-option-explanations">{card.options.map((option, index) => card.optionExplanations[option.id] ? <div key={option.id}><dt>{String.fromCharCode(65 + index)}. {option.text}</dt><dd>{card.optionExplanations[option.id]}</dd></div> : null)}</dl></details>
-        : <><h3>Why these choices?</h3><dl className="test-option-explanations">{card.options.map((option, index) => card.optionExplanations[option.id] ? <div key={option.id}><dt>{String.fromCharCode(65 + index)}. {option.text}</dt><dd>{card.optionExplanations[option.id]}</dd></div> : null)}</dl></>)}
-      <QuestionLearningResources question={question}/>
-      <h3>References</h3><ul>{question.sources.map(source => <li key={source.id}><a href={source.url} target="_blank" rel="noreferrer">{source.title} ↗</a></li>)}</ul>
-    </div>}
+    {revealed && <QuestionAnswer question={question} answer={{ selectedOptionIds, placements }} scoring={scoring} completed={completed} preview={preview}/>}
   </div>;
 }

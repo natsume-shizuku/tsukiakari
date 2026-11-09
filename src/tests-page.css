@@ -17,6 +17,10 @@
 .test-session-bar > strong { font-size: 1.3rem; font-variant-numeric: tabular-nums; color: var(--accent); }
 .test-score { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; margin-bottom: 28px; }
 .test-score > strong { font-size: 1.8rem; }
+.test-scaled-note { width: 100%; margin: 0; }
+.test-group-label { font-size: .78rem; color: var(--muted); margin: 0 0 6px; }
+.test-question-title.is-scenario { font-weight: 400; font-size: 1rem; }
+.test-question-title.is-scenario .test-question-number { font-weight: 600; }
 .test-score .test-actions { width: 100%; }
 .test-actions, .test-question-actions, .test-pending-answer { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 .test-questions { display: grid; gap: 24px; }

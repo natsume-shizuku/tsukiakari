@@ -42,7 +42,7 @@ describe('JSON portability', () => {
   });
   it('rejects wrong formats, future versions and unknown properties', async () => {
     const b = createFullBackup(await loadWorkspace(db), now);
-    for (const change of [{format:'other'}, {version:3}, {unexpected:true}]) expect(() => parseBackup({...b,...change})).toThrow();
+    for (const change of [{format:'other'}, {version:4}, {unexpected:true}]) expect(() => parseBackup({...b,...change})).toThrow();
     expect(() => parseBackup({ ...b, workspace:{...b.workspace, secrets:[]} })).toThrow();
   });
   it('rejects duplicate identities, memberships and dangling schedules without mutation', async () => {

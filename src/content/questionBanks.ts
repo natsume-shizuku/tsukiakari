@@ -2,6 +2,7 @@ import type { QuestionBank } from '../domain';
 import { validateQuestionBank, validateQuestionBankReferences } from '../questionBankValidation';
 import { fixturesVisible } from './fixtureVisibility';
 import fixtureUrl from './engineering-question-bank.json?url';
+import simulatorFixtureUrl from './simulator-fixture-bank.json?url';
 import ab250Url from './published/ab250-bank.json?url';
 import ab250Manifest from './published/bank-manifest.json';
 
@@ -16,9 +17,17 @@ export const questionBankManifests: QuestionBankManifest[] = [{
   domains: [17, 32, 12, 12, 17, 10].map((weight, index) => ({
     id: 'fixture-domain-' + (index + 1), title: 'Fixture domain ' + (index + 1), weight,
   })),
+}, {
+  id: 'simulator-test-fixture', version: '1.0.0', title: 'Exam simulator preview',
+  description: '128 generated software fixtures in every simulator format. This is not certification material.',
+  fixture: true, questionCount: 128,
+  domains: [17, 32, 12, 12, 17, 10].map((weight, index) => ({
+    id: 'fixture-domain-' + (index + 1), title: 'Fixture domain ' + (index + 1), weight,
+  })),
 }, ab250Manifest];
-export const visibleBankManifests = fixturesVisible ? questionBankManifests : questionBankManifests.filter(bank => !bank.fixture);
-const assets: Record<string, string> = { 'developer-test-fixture': fixtureUrl, 'ab250-original': ab250Url };
+// The simulator preview is listed on the development server so its formats can be tried; production builds hide it.
+export const visibleBankManifests = fixturesVisible ? questionBankManifests : questionBankManifests.filter(bank => !bank.fixture || (import.meta.env.DEV && bank.id === 'simulator-test-fixture'));
+const assets: Record<string, string> = { 'developer-test-fixture': fixtureUrl, 'simulator-test-fixture': simulatorFixtureUrl, 'ab250-original': ab250Url };
 const pending = new Map<string, Promise<QuestionBank>>();
 
 /** Only successful/ongoing loads are cached. Retry after a network or validation failure refetches. */

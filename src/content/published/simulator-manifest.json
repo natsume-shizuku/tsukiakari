@@ -1,0 +1,40 @@
+{
+  "id": "ab250-simulator",
+  "version": "1.0.0",
+  "title": "AB-250 — Exam Simulator",
+  "description": "Original practice in exam-style formats, assembled fresh for each test. This is independent practice material, not Microsoft exam content.",
+  "fixture": false,
+  "questionCount": 85,
+  "domains": [
+    {
+      "id": "deployment",
+      "title": "Deploy Contact Center",
+      "weight": 17
+    },
+    {
+      "id": "channels",
+      "title": "Implement channels",
+      "weight": 32
+    },
+    {
+      "id": "agents-ai",
+      "title": "Configure agents and AI",
+      "weight": 12
+    },
+    {
+      "id": "work-distribution",
+      "title": "Configure work distribution",
+      "weight": 12
+    },
+    {
+      "id": "representative-experience",
+      "title": "Configure the representative experience",
+      "weight": 17
+    },
+    {
+      "id": "analytics",
+      "title": "Manage analytics",
+      "weight": 10
+    }
+  ]
+}

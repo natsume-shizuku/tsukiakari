@@ -1,0 +1,2137 @@
+{
+  "sources": [
+    {
+      "id": "sim-d2-s01",
+      "title": "Plan migration from Azure Communication Services",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/migrate-from-azure-communication-services"
+    },
+    {
+      "id": "sim-d2-s04",
+      "title": "Set up inbound calling for the voice channel",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-inbound-calling"
+    },
+    {
+      "id": "sim-d2-s05",
+      "title": "Transfer calls and consult with users",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/voice-channel-transfer-consult"
+    },
+    {
+      "id": "sim-d2-s06",
+      "title": "Enable voice call experiences",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-voice-call-experiences"
+    },
+    {
+      "id": "sim-d2-s09",
+      "title": "Configure call recording, transcription, and real-time translation",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-configure-transcripts"
+    },
+    {
+      "id": "sim-d4-s01",
+      "title": "Manage overflow of work items in queues",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/manage-overflow"
+    },
+    {
+      "id": "sim-d4-s03",
+      "title": "Configure conversation orchestration in Dynamics 365 Contact Center",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-conversation-orchestration"
+    },
+    {
+      "id": "sim-d2v-s01",
+      "title": "Configure outbound and inbound profiles",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-outbound-inbound-profiles"
+    },
+    {
+      "id": "sim-d2v-s02",
+      "title": "Set up outbound calling in the voice channel",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-outbound-calling"
+    },
+    {
+      "id": "sim-d2v-s03",
+      "title": "Manage phone numbers",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-manage-phone-numbers"
+    },
+    {
+      "id": "sim-d2v-s04",
+      "title": "Disconnect from Azure Communication Services resources",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-disconnect-from-acs"
+    },
+    {
+      "id": "sim-d2v-s05",
+      "title": "Integrate a non-Microsoft IVR system with voice channel",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-contextual-transfer-external-ivr"
+    },
+    {
+      "id": "sim-d2v-s06",
+      "title": "Configure customer-first direct callback in Dynamics 365 Contact Center",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-customer-first-callback"
+    },
+    {
+      "id": "sim-d2v-s07",
+      "title": "Use enhanced customer-first direct callbacks",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/release-plan/2026wave1/service/dynamics365-contact-center/use-enhanced-customer-first-direct-callbacks"
+    },
+    {
+      "id": "sim-d2v-s08",
+      "title": "Dial modes for proactive engagement in Dynamics 365 Contact Center",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/proactive-engagement-dial-modes"
+    },
+    {
+      "id": "sim-d2v-s09",
+      "title": "Configure proactive engagement for voice",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-proactive-engagement-voice"
+    },
+    {
+      "id": "sim-d2v-s10",
+      "title": "Use CCaaS_CreateProactiveDelivery API",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/extend/api/ccaas_createproactivedelivery"
+    },
+    {
+      "id": "sim-d2v-s11",
+      "title": "Use CCaaS_CreateProactiveBulkDelivery API",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/extend/api/ccaas_createproactivebulkdelivery"
+    },
+    {
+      "id": "sim-d2v-s12",
+      "title": "Use CCaaS_CreateSimpleProactiveDelivery API",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/extend/api/ccaas_createsimpleproactivedelivery"
+    },
+    {
+      "id": "sim-d2v-s13",
+      "title": "Use CCaaS_CreateProactiveVoiceDelivery API",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/extend/api/ccaas_createproactivevoicedelivery"
+    },
+    {
+      "id": "sim-d2v-s14",
+      "title": "Use CCaaS_CancelDeliveryTask API",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/extend/api/ccaas_canceldeliverytask"
+    },
+    {
+      "id": "sim-d2v-s15",
+      "title": "Use CCaaS_CreateOperation API",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/extend/api/ccaas_createoperation"
+    },
+    {
+      "id": "sim-d2v-s16",
+      "title": "Use APIs to pause, resume transcription and recording",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/extend/api/record-transcription-api"
+    },
+    {
+      "id": "sim-d2v-s17",
+      "title": "Deployment approaches for voice channel in Dynamics 365 Contact Center",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/guidance/resources/contact-center-deploy-voice-channel-best-practices"
+    },
+    {
+      "id": "sim-d2v-s18",
+      "title": "Create and manage forecast scenarios",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/workforce-management-forecast-scenarios"
+    },
+    {
+      "id": "sim-d2v-s19",
+      "title": "Manage external data",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/workforce-management-import-historical-data"
+    },
+    {
+      "id": "sim-d2v-s20",
+      "title": "Create and manage capacity plans",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/workforce-management-capacity-planning"
+    },
+    {
+      "id": "sim-d2v-s21",
+      "title": "Enable real-time translation of conversations",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/enable-real-time-translation"
+    },
+    {
+      "id": "sim-d2v-s22",
+      "title": "End of call survey logs",
+      "url": "https://learn.microsoft.com/en-us/azure/communication-services/concepts/analytics/logs/end-of-call-survey-logs"
+    },
+    {
+      "id": "sim-d2v-s23",
+      "title": "Use overflow actions to protect customer experience for direct inward calls",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/release-plan/2026wave1/service/dynamics365-contact-center/use-overflow-actions-protect-customer-experience-direct-inward-calls"
+    },
+    {
+      "id": "sim-d2v-s24",
+      "title": "Enable logging with Azure Monitor",
+      "url": "https://learn.microsoft.com/en-us/azure/communication-services/concepts/analytics/enable-logging"
+    },
+    {
+      "id": "sim-d2v-s25",
+      "title": "Consult, transfer securely for PSTN numbers, and IVR",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/release-plan/2025wave2/service/dynamics365-contact-center/secure-consult-transfer-pstn-numbers-ivr"
+    }
+  ],
+  "groups": [],
+  "questions": [
+    {
+      "id": "sim-d2v-q01",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.2.07"
+      ],
+      "conceptId": "ccaas-sdk-voice-module-capture-methods",
+      "sourceIds": [
+        "sim-d2v-s16"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:ccaas-sdk"
+      ],
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n22"
+        },
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n20"
+        }
+      ],
+      "status": "draft",
+      "prompt": "Sallow Bay Assurance embeds calling in a non-Microsoft CRM. Its developers control call capture through the voice module of the Dynamics 365 Contact Center CCaaS SDK.\n\nOn claims calls, the CRM must start the audio recording and the transcript together, using as few voice module method calls as possible.\n\nYou need to start capture on claims calls.\n\nWhich call or calls should the CRM make?",
+      "options": [
+        {
+          "id": "a",
+          "text": "startRecording only"
+        },
+        {
+          "id": "b",
+          "text": "startTranscription only"
+        },
+        {
+          "id": "c",
+          "text": "startRecording, and then startTranscription"
+        },
+        {
+          "id": "d",
+          "text": "startRecording, and then startTranscription after onRecordingOperationCompleted fires"
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "answer": "startRecording only.",
+      "explanation": "The voice module doesn't split the two evenly. startRecording initiates voice call recording with automatic transcription, so one method call covers both. startTranscription begins transcription without full recording, so it can't supply the audio. Adding startTranscription, with or without waiting for a callback, only adds method calls, which the requirement rules out.",
+      "optionExplanations": {
+        "a": "Correct. startRecording initiates voice call recording with automatic transcription, so one method call covers both.",
+        "b": "Fails. startTranscription begins transcription without full recording, so the audio would be missing.",
+        "c": "Fails. startRecording already includes automatic transcription, so the extra startTranscription call breaks the requirement for as few method calls as possible.",
+        "d": "Fails. startRecording already includes automatic transcription, so the callback and the startTranscription call are extra method calls, which the requirement rules out."
+      }
+    },
+    {
+      "id": "sim-d2v-q02",
+      "revision": 1,
+      "kind": "match",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.16"
+      ],
+      "conceptId": "proactive-delivery-api-selection",
+      "sourceIds": [
+        "sim-d2v-s10",
+        "sim-d2v-s11",
+        "sim-d2v-s12",
+        "sim-d2v-s13"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:proactive-engagement-api"
+      ],
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n23"
+        }
+      ],
+      "status": "draft",
+      "prompt": "Tolbury Water has a voice proactive engagement that uses the CCaaS API intake method. Its consent, opt-out and quiet hours processes are in place.\n\nThree new integrations will create deliveries, and none of them may use a first-generation API.\n\nYou need to choose the API for each integration.\n\nWhich API should each integration call?",
+      "tray": "APIs",
+      "table": {
+        "title": "Proactive delivery integrations",
+        "rowHeading": "Integration",
+        "answerHeading": "API"
+      },
+      "tokens": [
+        {
+          "id": "a",
+          "text": "CCaaS_CreateProactiveDelivery"
+        },
+        {
+          "id": "b",
+          "text": "CCaaS_CreateProactiveBulkDelivery"
+        },
+        {
+          "id": "c",
+          "text": "CCaaS_CreateSimpleProactiveDelivery"
+        },
+        {
+          "id": "d",
+          "text": "CCaaS_CreateProactiveVoiceDelivery"
+        }
+      ],
+      "rows": [
+        {
+          "id": "r1",
+          "label": "The billing system sends one request per household, with up to four account holders to dial as a linked chain",
+          "correctTokenId": "a"
+        },
+        {
+          "id": "r2",
+          "label": "A nightly job sends about 12,000 unrelated customers in a single request",
+          "correctTokenId": "b"
+        },
+        {
+          "id": "r3",
+          "label": "A Power Automate flow passes one customer as flat fields, without nested JSON",
+          "correctTokenId": "c"
+        }
+      ],
+      "answer": "Household chain: CCaaS_CreateProactiveDelivery. Nightly job: CCaaS_CreateProactiveBulkDelivery. Power Automate flow: CCaaS_CreateSimpleProactiveDelivery.",
+      "explanation": "Microsoft separates these APIs by the shape of the request. CCaaS_CreateProactiveDelivery is the most versatile and supports account calling, with one to five contacts in a voice request. CCaaS_CreateProactiveBulkDelivery takes approximately 15,000 records in one request, but it does not support account calling, so it suits unrelated customers. CCaaS_CreateSimpleProactiveDelivery handles a single recipient with flattened attributes and is best suited to surfaces like Power Automate. CCaaS_CreateProactiveVoiceDelivery is the first-generation voice API, which the stem excludes.",
+      "optionExplanations": {
+        "a": "Correct for the household chain. This API supports account calling, and a voice request can carry one to five contacts. That limit rules it out for the nightly job.",
+        "b": "Correct for the nightly job. It sends approximately 15,000 records in a single request. It does not support account calling, so it fails for the household chain.",
+        "c": "Correct for the Power Automate flow. It provides flattened attributes for a single recipient and does not require complex JSON nesting. The single recipient rules it out for the other two integrations.",
+        "d": "Fails on every row. This is the first-generation voice API, which the stem excludes. Microsoft advises migrating from it to CCaaS_CreateProactiveDelivery for the latest features."
+      }
+    },
+    {
+      "id": "sim-d2v-q03",
+      "revision": 1,
+      "kind": "match",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.17"
+      ],
+      "conceptId": "proactive-dial-mode-selection",
+      "sourceIds": [
+        "sim-d2v-s08",
+        "sim-d2v-s09"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:proactive-dial-modes"
+      ],
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n24"
+        }
+      ],
+      "status": "draft",
+      "prompt": "Greyfriars Energy uses Teams Phone extensibility numbers. It runs proactive voice engagements for service outreach only, with none for marketing or sales, and its legal team has cleared each program under the applicable telecommunications rules. About 40 representatives are normally available, and a Copilot Studio agent is on the outbound workstream.\n\nThree outreach programs are planned.\n\nYou need to choose the dial mode for each program.\n\nWhich dial mode should you use for each program?",
+      "tray": "Dial modes",
+      "table": {
+        "title": "Outreach programs",
+        "rowHeading": "Program",
+        "answerHeading": "Dial mode"
+      },
+      "tokens": [
+        {
+          "id": "a",
+          "text": "Copilot"
+        },
+        {
+          "id": "b",
+          "text": "Preview"
+        },
+        {
+          "id": "c",
+          "text": "Progressive"
+        },
+        {
+          "id": "d",
+          "text": "Predictive"
+        }
+      ],
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Planned outage notices: hundreds of calls run at once, and the AI agent finishes nearly every call without a representative",
+          "correctTokenId": "a"
+        },
+        {
+          "id": "r2",
+          "label": "Hardship plan follow-ups: a representative reads the account and starts each call when ready, because a personal conversation matters more than representative use",
+          "correctTokenId": "b"
+        },
+        {
+          "id": "r3",
+          "label": "Meter access rescheduling: every customer talks to a representative, and calls start ahead of representatives becoming free to keep them fully used",
+          "correctTokenId": "d"
+        }
+      ],
+      "answer": "Planned outage notices: Copilot. Hardship plan follow-ups: Preview. Meter access rescheduling: Predictive.",
+      "explanation": "Each mode balances AI involvement, representative use and customer experience differently. Copilot suits announcements and notifications that an IVR agent can handle, and many calls can run at once. Preview notifies a representative first and allows time to review details, so it puts customer experience ahead of representative use. Predictive starts calls before representatives are free, based on when they are forecast to be free. Progressive works from the representatives who are available now, so it does not run ahead of them, and it brings a representative onto the call, so it does not suit notices the AI agent finishes alone.",
+      "optionExplanations": {
+        "a": "Correct for outage notices. Copilot mode is for announcements and notifications that an IVR agent can handle, and a large number of calls can run at once. The agent escalates to a representative only if necessary.",
+        "b": "Correct for hardship follow-ups. The representative is notified first and gets time to review the details. On Teams Phone extensibility numbers, the call can wait until the representative starts it.",
+        "c": "Fails on every program. It works from the representatives who are available now, so it does not start calls on a forecast of when they will be free. Both of its engagement types bring a representative onto the call, and neither gives the representative time to review before dialing.",
+        "d": "Correct for rescheduling. Predictive initiates calls before representatives are available, based on when they are forecast to be free. It needs at least 10 available representatives, and Greyfriars normally has about 40."
+      }
+    },
+    {
+      "id": "sim-d2v-q04",
+      "revision": 1,
+      "kind": "match",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.2.05",
+        "D2.2.04"
+      ],
+      "conceptId": "voice-capture-setting-by-call-path",
+      "sourceIds": [
+        "sim-d2-s09",
+        "sim-d2v-s01",
+        "sim-d2v-s02",
+        "sim-d2-s06"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:voice-recording-transcription"
+      ],
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n20"
+        },
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n19"
+        }
+      ],
+      "status": "draft",
+      "prompt": "Hartwell Pharmacy wants recording and transcription to differ by type of call. Its main line is connected to a voice workstream. Each pharmacist has a personal number with an inbound profile. The shared Refills number has an outbound profile.\n\nYou need to identify where to change the transcription and recording setting for each type of call.\n\nWhere should you change the setting for each type of call?",
+      "tray": "Setting locations",
+      "table": {
+        "title": "Capture settings by call type",
+        "rowHeading": "Call type",
+        "answerHeading": "Setting location"
+      },
+      "tokens": [
+        {
+          "id": "a",
+          "text": "The Behaviors tab of the voice workstream"
+        },
+        {
+          "id": "b",
+          "text": "The inbound profile for that number"
+        },
+        {
+          "id": "c",
+          "text": "The outbound profile for that number"
+        },
+        {
+          "id": "d",
+          "text": "The default scoped outbound profile"
+        },
+        {
+          "id": "e",
+          "text": "The Voice call experiences page"
+        }
+      ],
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Customers phone the main line and are routed through queues",
+          "correctTokenId": "a"
+        },
+        {
+          "id": "r2",
+          "label": "Customers phone a pharmacist's personal number directly",
+          "correctTokenId": "b"
+        },
+        {
+          "id": "r3",
+          "label": "Pharmacists call customers from the shared Refills number",
+          "correctTokenId": "c"
+        },
+        {
+          "id": "r4",
+          "label": "Pharmacists call customers from their personal numbers",
+          "correctTokenId": "d"
+        }
+      ],
+      "answer": "Main line: the Behaviors tab of the voice workstream. Direct calls to a personal number: the inbound profile for that number. Calls from the Refills number: the outbound profile for that number. Calls from personal numbers: the default scoped outbound profile.",
+      "explanation": "The setting lives with whatever defines the call path. A queue-routed line takes its capture settings from the voice workstream. Direct inward dialing and outbound calling from a shared number are defined by profiles, and each profile type has its own transcription and recording setting. Personal numbers are the trap: they can have an inbound profile for calls in, but an outbound profile can only list numbers that are not used as personal numbers, and Microsoft says personal number calls always apply the default scoped outbound profile.",
+      "optionExplanations": {
+        "a": "Correct for the main line. The Transcription and recording section is on the Behaviors tab of the voice settings for the workstream.",
+        "b": "Correct for direct calls. Each inbound profile has a Transcription and recording setting under Inbound behaviors.",
+        "c": "Correct for the Refills number. The outbound profile holds Transcription and recording under Outbound behaviors. It fails for personal numbers, because the outbound profile number list excludes numbers used as personal numbers.",
+        "d": "Correct for calls placed from personal numbers. Microsoft says personal number calls always apply the default scoped outbound profile, and outbound profiles hold Transcription and recording under Outbound behaviors.",
+        "e": "Fails on every row. That page covers the call quality survey, automatic un-hold, DTMF broadcast and external contact overrides. It does not hold the general capture choice for a call path."
+      }
+    },
+    {
+      "id": "sim-d2v-q05",
+      "revision": 1,
+      "kind": "order",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.2.01"
+      ],
+      "conceptId": "customer-first-callback-enablement-sequence",
+      "sourceIds": [
+        "sim-d2v-s06",
+        "sim-d4-s01",
+        "sim-d2v-s07"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:direct-callback"
+      ],
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n17"
+        }
+      ],
+      "status": "draft",
+      "prompt": "Millbrook Home Services runs its voice channel on Teams Phone numbers. Its Boiler Repairs voice queue has no overflow actions yet. During winter peaks, callers should be able to leave the queue. The system should then call them first and connect a representative only after a Copilot Studio agent verifies them.\n\nThe Microsoft Copilot Studio agent is provisioned in the environment, the verification agent is built, and numbers with outbound calling are configured. Management accepts that customer-first direct callback cannot be turned off after it is enabled.\n\nYou need to enable customer-first direct callback and apply it to the Boiler Repairs queue.\n\nWhich three actions should you perform, and in what order?",
+      "tray": "Actions",
+      "tokens": [
+        {
+          "id": "a",
+          "text": "On the Boiler Repairs queue, select Direct callback as an overflow action, and then select the callback profile."
+        },
+        {
+          "id": "b",
+          "text": "Edit the provisioned Callback Agent in Copilot Studio so that it runs the customer verification."
+        },
+        {
+          "id": "c",
+          "text": "On the Callback management page, enable Copilot AI agent for callback management, and wait for Callback Agent to provision."
+        },
+        {
+          "id": "d",
+          "text": "On the workstream's fallback queue, select Direct callback as the overflow action."
+        },
+        {
+          "id": "e",
+          "text": "Turn on the Customer-first direct callback toggle, and then create and save the first callback profile."
+        }
+      ],
+      "correctOrder": [
+        "c",
+        "e",
+        "a"
+      ],
+      "answer": "1. Enable Copilot AI agent for callback management and wait for Callback Agent to provision. 2. Turn on the Customer-first direct callback toggle, and then create and save the first callback profile. 3. Select Direct callback as an overflow action on the Boiler Repairs queue, and then select the callback profile.",
+      "explanation": "Each step needs the one before it. The toggle is selected after Callback Agent finishes provisioning. Customer-first direct callback is enabled only when the first callback profile is saved, and saving it is what makes the profile available for queue configuration. A queue can then point its Direct callback overflow action at that profile. Millbrook has no overflow action on the queue yet, so the first profile is not applied to it automatically. The verification agent is selected inside the callback profile, so Callback Agent is left alone.",
+      "optionExplanations": {
+        "a": "Third step. The queue selects a callback profile, so a saved profile must already exist.",
+        "b": "Not a step. Microsoft warns against editing or deleting the AI agent configured for taking the alternative number, because changes might stop callback working as expected. Your own agent is selected in the callback profile instead.",
+        "c": "First step. The Customer-first direct callback toggle is selected after provisioning completes.",
+        "d": "Not a step. The system ignores the overflow settings of a fallback queue, and the requirement concerns the Boiler Repairs queue.",
+        "e": "Second step. The feature cannot be enabled until at least one callback profile exists, and saving the first profile makes it available for queue configuration."
+      }
+    },
+    {
+      "id": "sim-d2v-q06",
+      "revision": 1,
+      "kind": "hotspot",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.23",
+        "D2.3.17"
+      ],
+      "conceptId": "voice-feature-platform-dependency",
+      "sourceIds": [
+        "sim-d2v-s08",
+        "sim-d2v-s09",
+        "sim-d2v-s06"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:telephony-platform"
+      ],
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n16"
+        },
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n24"
+        }
+      ],
+      "status": "draft",
+      "prompt": "Ferncliff Bank is moving its voice service to Teams Phone extensibility in phases. Retail Banking still uses Azure Communication Services Direct Routing numbers. Card Services already uses Teams Phone extensibility with Teams Direct Routing numbers.\n\nThe bank has three new requirements for this phase.\n\nYou need to choose the numbers that support each requirement.\n\nWhich numbers should you use for each requirement?",
+      "table": {
+        "title": "Number platform by requirement",
+        "rowHeading": "Requirement",
+        "answerHeading": "Numbers"
+      },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "A preview engagement in which each call starts after a countdown that begins when a representative accepts",
+          "options": [
+            {
+              "id": "r1a",
+              "text": "Azure Communication Services numbers"
+            },
+            {
+              "id": "r1b",
+              "text": "Teams Phone extensibility numbers"
+            },
+            {
+              "id": "r1c",
+              "text": "Either platform's numbers"
+            }
+          ],
+          "correctOptionId": "r1b"
+        },
+        {
+          "id": "r2",
+          "label": "The callback number for customers who phoned Retail Banking and chose customer-first direct callback",
+          "options": [
+            {
+              "id": "r2a",
+              "text": "Azure Communication Services numbers"
+            },
+            {
+              "id": "r2b",
+              "text": "Teams Phone extensibility numbers"
+            },
+            {
+              "id": "r2c",
+              "text": "Either platform's numbers"
+            }
+          ],
+          "correctOptionId": "r2a"
+        },
+        {
+          "id": "r3",
+          "label": "A new outbound workstream that dials from Operator Connect numbers",
+          "options": [
+            {
+              "id": "r3a",
+              "text": "Azure Communication Services numbers"
+            },
+            {
+              "id": "r3b",
+              "text": "Teams Phone extensibility numbers"
+            },
+            {
+              "id": "r3c",
+              "text": "Either platform's numbers"
+            }
+          ],
+          "correctOptionId": "r3b"
+        }
+      ],
+      "answer": "Preview countdown: Teams Phone extensibility numbers. Callback for Retail Banking callers: Azure Communication Services numbers. Outbound workstream with Operator Connect numbers: Teams Phone extensibility numbers.",
+      "explanation": "During a phased migration, the two platforms are not interchangeable. The preview timer and delayed start are available on Teams Phone Extensibility only, and on Azure Communication Services a preview call starts as soon as the representative accepts. A callback must use the same phone platform as the inbound call, because a callback from a Teams number to a customer who called an Azure Communication Services number is never initiated and the request closes. An outbound workstream on Azure Communication Services supports Direct Routing numbers only, while Teams Phone also supports Direct Offer and Operator Connect numbers.",
+      "optionExplanations": {
+        "r1a": "Fails. On Azure Communication Services, preview calls start automatically after the representative accepts the invite, so there is no countdown.",
+        "r1b": "Correct. The timer and delayed start for preview calls are available on Teams Phone Extensibility only.",
+        "r1c": "Fails. The countdown depends on the platform, and only Teams Phone Extensibility numbers offer it.",
+        "r2a": "Correct. These customers phoned an Azure Communication Services number, and inbound calls and outbound callbacks must use the same phone platform.",
+        "r2b": "Fails. If a customer calls an Azure Communication Services number and the callback uses a Teams number, the system does not initiate the callback and closes the request.",
+        "r2c": "Fails. Mixing platforms stops the callback, so the choice is not free.",
+        "r3a": "Fails. For outbound workstreams, Azure Communication Services supports Direct Routing numbers only.",
+        "r3b": "Correct. Teams Phone supports Direct Routing, Direct Offer and Operator Connect numbers on an outbound workstream.",
+        "r3c": "Fails. Operator Connect numbers are supported on Teams Phone only."
+      }
+    },
+    {
+      "id": "sim-d2v-q07",
+      "revision": 1,
+      "kind": "hotspot",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.04",
+        "D2.3.24"
+      ],
+      "conceptId": "secure-consult-hold-setting-choice",
+      "sourceIds": [
+        "sim-d2-s06",
+        "sim-d2-s05",
+        "sim-d2v-s25"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:secure-transfer"
+      ],
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n21"
+        }
+      ],
+      "status": "draft",
+      "prompt": "Ravenscar Health Plans records and transcribes voice calls automatically. Its Member Services workstream has External phone numbers selected for Consult and Transfer, and Use bridged transfers is on. The External Contact Settings section on the Voice call experiences page, which Microsoft documents as a production-ready preview, is available.\n\nRavenscar is adding its Clinical Review and Identity Check numbers as external contacts.\n\nYou need to choose the Hold configuration for each situation.\n\nWhat should you choose for each situation?",
+      "table": {
+        "title": "External contact hold",
+        "rowHeading": "Situation",
+        "answerHeading": "Hold"
+      },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Consult with Clinical Review: representatives discuss a claim with a nurse, the member must not hear it, and no representative may lift the hold",
+          "options": [
+            {
+              "id": "r1a",
+              "text": "Customer on hold"
+            },
+            {
+              "id": "r1b",
+              "text": "Agent on hold"
+            },
+            {
+              "id": "r1c",
+              "text": "Follow workstream settings"
+            },
+            {
+              "id": "r1d",
+              "text": "No Hold setting applies"
+            }
+          ],
+          "correctOptionId": "r1a"
+        },
+        {
+          "id": "r2",
+          "label": "Consult with Identity Check: the member answers security questions on the line, and representatives must not hear the answers",
+          "options": [
+            {
+              "id": "r2a",
+              "text": "Customer on hold"
+            },
+            {
+              "id": "r2b",
+              "text": "Agent on hold"
+            },
+            {
+              "id": "r2c",
+              "text": "Follow workstream settings"
+            },
+            {
+              "id": "r2d",
+              "text": "No Hold setting applies"
+            }
+          ],
+          "correctOptionId": "r2b"
+        },
+        {
+          "id": "r3",
+          "label": "Bridged transfer to Identity Check",
+          "options": [
+            {
+              "id": "r3a",
+              "text": "Customer on hold"
+            },
+            {
+              "id": "r3b",
+              "text": "Agent on hold"
+            },
+            {
+              "id": "r3c",
+              "text": "Follow workstream settings"
+            },
+            {
+              "id": "r3d",
+              "text": "No Hold setting applies"
+            }
+          ],
+          "correctOptionId": "r3d"
+        }
+      ],
+      "answer": "Consult with Clinical Review: Customer on hold. Consult with Identity Check: Agent on hold. Bridged transfer to Identity Check: no Hold setting applies.",
+      "explanation": "The Hold option decides who is kept out of the secure conversation, and it applies to consult only. Customer on hold keeps the member out while representatives talk to the contact, and a representative cannot remove that hold. Agent on hold does the reverse: every representative on the call is held while the member interacts with the contact. Follow workstream settings adds no such lock. A bridged transfer has its own Transcription and recording choice but no Hold choice.",
+      "optionExplanations": {
+        "r1a": "Correct. The customer is placed on hold automatically during the secure consult, and the representative cannot remove the hold.",
+        "r1b": "Fails. This holds the representatives and leaves the member with the contact, which is the opposite of what the row needs.",
+        "r1c": "Fails. It inherits the workstream configuration, and in an ordinary consult the primary representative removes the customer from hold manually, so the hold could be lifted.",
+        "r1d": "Fails. This is a consult, and Hold applies to consult, so without a locked setting a representative could lift the hold.",
+        "r2a": "Fails. This holds the member, who has to answer the questions on the line.",
+        "r2b": "Correct. Representatives are placed on hold during the secure consult, so the member can interact with the contact privately, and they cannot modify the hold.",
+        "r2c": "Fails. It inherits the workstream configuration, and an ordinary consult puts the customer on hold, not the representatives.",
+        "r2d": "Fails. This is a consult, and Hold applies to consult, so without Agent on hold the representatives aren't held.",
+        "r3a": "Fails. Hold is not a bridged transfer setting.",
+        "r3b": "Fails. Hold is not a bridged transfer setting, and the representative leaves the call in a bridged transfer.",
+        "r3c": "Fails. Hold is not a bridged transfer setting, so there is nothing to inherit here.",
+        "r3d": "Correct. The Hold setting applies to consult only. Bridged transfer offers the Transcription and recording choice."
+      }
+    },
+    {
+      "id": "sim-d2v-q08",
+      "revision": 1,
+      "kind": "hotspot",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.21"
+      ],
+      "conceptId": "forecast-minimum-history-outcomes",
+      "sourceIds": [
+        "sim-d2v-s18"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:workforce-forecasting"
+      ],
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n27"
+        }
+      ],
+      "status": "draft",
+      "prompt": "Brightmoor Holidays plans staffing for three voice queues with one short-term forecast scenario. The Workforce Management for Customer Service package is installed. Each queue has a Historical End Date of January 31. The scenario has a Forecast Start Date of February 7 and a duration of 30 days.\n\nThe available history for each queue is listed in calendar days.\n\nYou need to predict how forecasting treats each queue.\n\nWhat is the result for each queue?",
+      "table": {
+        "title": "Forecast results",
+        "rowHeading": "Queue",
+        "answerHeading": "Result"
+      },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Bookings: 40 days of history",
+          "options": [
+            {
+              "id": "r1a",
+              "text": "Forecast generated normally"
+            },
+            {
+              "id": "r1b",
+              "text": "Forecast generated with reduced confidence"
+            },
+            {
+              "id": "r1c",
+              "text": "Queue skipped with no forecast"
+            }
+          ],
+          "correctOptionId": "r1a"
+        },
+        {
+          "id": "r2",
+          "label": "Refunds: 33 days of history",
+          "options": [
+            {
+              "id": "r2a",
+              "text": "Forecast generated normally"
+            },
+            {
+              "id": "r2b",
+              "text": "Forecast generated with reduced confidence"
+            },
+            {
+              "id": "r2c",
+              "text": "Queue skipped with no forecast"
+            }
+          ],
+          "correctOptionId": "r2b"
+        },
+        {
+          "id": "r3",
+          "label": "Group Travel: 28 days of history",
+          "options": [
+            {
+              "id": "r3a",
+              "text": "Forecast generated normally"
+            },
+            {
+              "id": "r3b",
+              "text": "Forecast generated with reduced confidence"
+            },
+            {
+              "id": "r3c",
+              "text": "Queue skipped with no forecast"
+            }
+          ],
+          "correctOptionId": "r3c"
+        }
+      ],
+      "answer": "Bookings: forecast generated normally. Refunds: forecast generated with reduced confidence. Group Travel: queue skipped with no forecast.",
+      "explanation": "The days between the Historical End Date and the Forecast Start Date are the gap, here February 1 through February 6, or six days. Forecasting has to predict those hidden days too, so a short-term scenario needs the gap plus the duration, which is 36 days. Bookings meets that. Refunds falls short, so the grace rules decide: the gap is within half the duration, 15 days, and 33 days meets the 30-day baseline, so it gets a forecast with reduced confidence and the Insufficient Historical Data flag. Group Travel is below the baseline, so it is skipped even though the gap is within the grace period.",
+      "optionExplanations": {
+        "r1a": "Correct. 40 days meets the gap-adjusted requirement of 36 days, so the grace rules are not needed.",
+        "r1b": "Fails. Reduced confidence applies only when history falls short of the gap-adjusted requirement.",
+        "r1c": "Fails. A queue is skipped only when history falls short and a grace condition is not met.",
+        "r2a": "Fails. 33 days meets the 30-day baseline but not the 36 days required once the gap is counted.",
+        "r2b": "Correct. History is short of 36 days, the six-day gap is within the 15-day grace period, and 33 days meets the 30-day baseline.",
+        "r2c": "Fails. Both grace conditions are met, so the forecast is still generated.",
+        "r3a": "Fails. 28 days is below both the 36-day requirement and the 30-day baseline.",
+        "r3b": "Fails. Reduced confidence needs history that meets the baseline, and 28 days is below 30.",
+        "r3c": "Correct. History is below the 30-day baseline, so one grace condition fails and forecasting skips the queue."
+      }
+    },
+    {
+      "id": "sim-d2v-q09",
+      "revision": 1,
+      "kind": "hotspot",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.15"
+      ],
+      "conceptId": "proactive-delivery-cancellation-scope",
+      "sourceIds": [
+        "sim-d2v-s09",
+        "sim-d2v-s10",
+        "sim-d2v-s14",
+        "sim-d2v-s15"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:proactive-engagement-cancellation"
+      ],
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n23"
+        }
+      ],
+      "status": "draft",
+      "prompt": "Pennine Broadband creates voice deliveries with CCaaS_CreateProactiveDelivery and stores the DeliveryId and DeliveryTaskId from each response. One engagement serves customers across the country, with reattempts and contact chaining.\n\nThree situations arise after a network fault.\n\nYou need to stop the right calls in each situation and leave all other calls in place.\n\nWhat should you use for each situation?",
+      "table": {
+        "title": "Stopping proactive calls",
+        "rowHeading": "Situation",
+        "answerHeading": "Action"
+      },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "A household reports that its fault is fixed, so nobody in that contact chain should get any further attempt",
+          "options": [
+            {
+              "id": "r1a",
+              "text": "CCaaS_CancelDeliveryTask with the DeliveryTaskId"
+            },
+            {
+              "id": "r1b",
+              "text": "CCaaS_CreateOperation with Cancel and the DeliveryId"
+            },
+            {
+              "id": "r1c",
+              "text": "A cancellation policy filtered by postal code"
+            }
+          ],
+          "correctOptionId": "r1a"
+        },
+        {
+          "id": "r2",
+          "label": "The first dial in a new request went in by mistake, and only that dial should be canceled",
+          "options": [
+            {
+              "id": "r2a",
+              "text": "CCaaS_CancelDeliveryTask with the DeliveryTaskId"
+            },
+            {
+              "id": "r2b",
+              "text": "CCaaS_CreateOperation with Cancel and the DeliveryId"
+            },
+            {
+              "id": "r2c",
+              "text": "A cancellation policy filtered by postal code"
+            }
+          ],
+          "correctOptionId": "r2b"
+        },
+        {
+          "id": "r3",
+          "label": "A flood hits one state, so queued calls there must stop and no new calls may start there until Friday",
+          "options": [
+            {
+              "id": "r3a",
+              "text": "A cancellation policy filtered by state, with an Execute policy until date"
+            },
+            {
+              "id": "r3b",
+              "text": "CCaaS_CreateOperation with Suspend and the engagement configuration ID"
+            },
+            {
+              "id": "r3c",
+              "text": "CCaaS_CancelDeliveryTask with each DeliveryTaskId in that state"
+            }
+          ],
+          "correctOptionId": "r3a"
+        }
+      ],
+      "answer": "Household chain: CCaaS_CancelDeliveryTask with the DeliveryTaskId. One mistaken dial: CCaaS_CreateOperation with Cancel and the DeliveryId. Flood in one state: a cancellation policy filtered by state, with an Execute policy until date.",
+      "explanation": "The three tools differ by scope. DeliveryTaskId identifies the task that manages the contact chain and all reattempts, so CCaaS_CancelDeliveryTask stops every pending and future attempt for that contact or account. DeliveryId identifies the first individual dial, so CCaaS_CreateOperation with Cancel stops that delivery. A cancellation policy works on criteria instead of IDs: it cancels queued calls that match, and with Execute policy until it also keeps matching contacts from being processed for new calls during that period.",
+      "optionExplanations": {
+        "r1a": "Correct. This cancels all pending and future delivery attempts for a contact or account, so no further attempts are made.",
+        "r1b": "Fails. The DeliveryId identifies one dial, so canceling it does not cover the whole chain and its reattempts.",
+        "r1c": "Fails. A postal code matches neighboring customers too, and the other calls must stay in place.",
+        "r2a": "Fails. This cancels every pending and future attempt in the chain, not only one dial.",
+        "r2b": "Correct. The DeliveryId identifies the first individual dial, and the Cancel operation cancels that delivery.",
+        "r2c": "Fails. A policy works on matching criteria and would catch other customers. It cannot target one dial.",
+        "r3a": "Correct. A cancellation policy can filter by state, and Execute policy until keeps matching contacts from being processed for new calls during that period.",
+        "r3b": "Fails. Suspend is requested for the engagement, which serves the whole country, so it would stop calls that must continue.",
+        "r3c": "Fails. Each call cancels an existing task, so nothing stops new calls from starting in that state until Friday."
+      }
+    },
+    {
+      "id": "sim-d2v-q10",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.17",
+        "D2.3.24"
+      ],
+      "conceptId": "direct-routing-sbc-predictive-requirements",
+      "sourceIds": [
+        "sim-d2v-s09",
+        "sim-d2-s04"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:direct-routing-sbc"
+      ],
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n24"
+        },
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n18"
+        }
+      ],
+      "status": "draft",
+      "prompt": "Stanmore Couriers runs its voice channel on Teams Phone extensibility, with Teams Direct Routing through its own SBC. It plans a representative-led predictive engagement to reschedule missed deliveries. Use bridged transfers is selected on every voice workstream, and the legal team has cleared the outreach.\n\nYou need to confirm that the SBC can handle the call-transfer flows that this dial mode relies on.\n\nWhich three capabilities should you confirm? Each correct answer presents part of the solution.",
+      "options": [
+        {
+          "id": "a",
+          "text": "It accepts INVITE messages with Require: replaces and Replaces headers under RFC 3891."
+        },
+        {
+          "id": "b",
+          "text": "It handles P-Asserted-Identity with Privacy ID under RFC 3325."
+        },
+        {
+          "id": "c",
+          "text": "It trusts every supported root CA for Teams SIP interface certificates."
+        },
+        {
+          "id": "d",
+          "text": "It turns a REFER-TO: sip.pstnhub.microsoft.com request into an INVITE back to the hub."
+        },
+        {
+          "id": "e",
+          "text": "It trusts only the root CA that issued the current Teams SIP interface certificate."
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b",
+        "c"
+      ],
+      "answer": "RFC 3891 Replaces support, RFC 3325 handling of P-Asserted-Identity with Privacy ID, and every supported root CA for Teams SIP interface certificates in the trust store.",
+      "explanation": "Representative-led progressive and predictive modes depend on mid-call transfer flows, so Microsoft lists SBC requirements for direct routing. The SBC must support RFC 3891 Replaces headers, including INVITE messages with Require: replaces. It must support RFC 3325 handling for P-Asserted-Identity with Privacy ID. Its trust store must include all supported root CAs, because Teams SIP interface certificates can chain to any one of them. The REFER-TO conversion belongs to a different case: external transfers when Use bridged transfers is not selected.",
+      "optionExplanations": {
+        "a": "Correct. Microsoft calls this capability essential for the mid-call transfer flows used in progressive and predictive dial modes.",
+        "b": "Correct. RFC 3325 handling for P-Asserted-Identity with Privacy ID is on the list for these dial modes.",
+        "c": "Correct. Teams SIP interface certificates can chain to any supported root CA, so the trust store must include them all.",
+        "d": "Fails here. This configuration applies to Direct Routing customers when Use bridged transfers is not selected, and Stanmore has it selected on every workstream.",
+        "e": "Fails. Certificates can chain to any of the supported roots, so trusting one root could break the connection when a certificate chains to another."
+      }
+    },
+    {
+      "id": "sim-d2v-q11",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.2.06"
+      ],
+      "conceptId": "representative-survey-log-retention",
+      "sourceIds": [
+        "sim-d2-s06",
+        "sim-d2v-s22",
+        "sim-d2v-s24"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:representative-call-survey"
+      ],
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n21"
+        }
+      ],
+      "status": "draft",
+      "prompt": "Cloudberry Mobile turned on the Customer service representative call quality survey on the Voice call experiences page and set how often it appears. Representatives have answered it for a month. Analysts now want to review the answers, but no responses can be found.\n\nYou need to make sure that future survey responses are kept for analysis.\n\nWhich two actions should you perform? Each correct answer presents a complete solution.",
+      "options": [
+        {
+          "id": "a",
+          "text": "In Azure Monitor, enable the Call Survey Logs diagnostic setting, and send the logs to a Log Analytics workspace."
+        },
+        {
+          "id": "b",
+          "text": "In Azure Monitor, enable the Call Survey Logs diagnostic setting, and send the logs to an Azure storage account."
+        },
+        {
+          "id": "c",
+          "text": "In Azure Monitor, enable the Call Summary logs diagnostic setting, and send the logs to a Log Analytics workspace."
+        },
+        {
+          "id": "d",
+          "text": "On the Voice call experiences page, turn on Set survey duration, and specify a longer duration for the survey."
+        },
+        {
+          "id": "e",
+          "text": "On the voice workstream, turn on the Post-call survey toggle, and complete the post-call survey setup steps."
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "answer": "Enable the Call Survey Logs diagnostic setting in Azure Monitor, and send the logs to either a Log Analytics workspace or an Azure storage account.",
+      "explanation": "Turning on the survey only collects the answers. Unless the Call Survey Logs diagnostic setting sends them to a Log Analytics workspace, Event Hubs or an Azure storage account, they are not stored and can be lost. Either listed destination keeps future responses, and earlier responses cannot be recovered this way because data is not stored retroactively. The other settings look related, but they cover other logs, how long the survey is shown, or the customer survey.",
+      "optionExplanations": {
+        "a": "Correct. A Log Analytics workspace is a supported destination for the survey data, and it can be queried for analysis.",
+        "b": "Correct. An Azure storage account is a supported destination for the survey data, and it also keeps the responses.",
+        "c": "Fails. The right destination does not help with the wrong log. Survey data needs the Call Survey category, not Call Summary.",
+        "d": "Fails. Set survey duration controls how long the survey appears for the representative. It does not store responses.",
+        "e": "Fails. The post-call survey is for customers. It does not store the representative call quality survey."
+      }
+    },
+    {
+      "id": "sim-d2v-q12",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.2.03"
+      ],
+      "conceptId": "phone-number-release-prerequisites",
+      "sourceIds": [
+        "sim-d2v-s03",
+        "sim-d2v-s04"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:phone-numbers"
+      ],
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n17"
+        }
+      ],
+      "status": "draft",
+      "prompt": "Saltash Ferries is giving up two Azure Communication Services numbers. The Bookings number is connected to a voice workstream, and it is also the number on an outbound profile. The Harbour Desk number is assigned to a representative as a personal number. Saltash will keep its other numbers on the same resource.\n\nYou need to prepare both numbers so that they can be released.\n\nWhich three actions should you perform? Each correct answer presents part of the solution.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Remove the Bookings number from the voice workstream."
+        },
+        {
+          "id": "b",
+          "text": "Remove the Bookings number from the outbound profile."
+        },
+        {
+          "id": "c",
+          "text": "Disable the Harbour Desk number."
+        },
+        {
+          "id": "d",
+          "text": "Clear Make calls from the Bookings number calling plan."
+        },
+        {
+          "id": "e",
+          "text": "Disconnect the Azure Communication Services resource."
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b",
+        "c"
+      ],
+      "answer": "Remove the Bookings number from the voice workstream and from the outbound profile, and disable the Harbour Desk number.",
+      "explanation": "Releasing a number deletes it from Dynamics 365, so Microsoft requires the number to be free of its uses first. Remove it from any associated workstreams or outbound profiles. If it is assigned as a personal number, disable it and then try releasing it again. Calling plan features cannot be removed once granted. Disconnecting the resource is a much larger action, because all phone numbers associated with that resource are released.",
+      "optionExplanations": {
+        "a": "Correct. A number must be removed from any associated workstreams before it is released.",
+        "b": "Correct. A number must also be removed from any associated outbound profiles.",
+        "c": "Correct. A number assigned as a personal number must be disabled before it can be released.",
+        "d": "Fails. Features cannot be removed once granted to a phone number, and the plan is not a release requirement.",
+        "e": "Fails. Disconnecting a resource also releases all phone numbers associated with it, and Saltash is keeping its other numbers."
+      }
+    },
+    {
+      "id": "sim-d2v-q13",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.21",
+        "D2.3.22"
+      ],
+      "conceptId": "legacy-wfm-data-capacity-plan-inputs",
+      "sourceIds": [
+        "sim-d2v-s19",
+        "sim-d2v-s18",
+        "sim-d2v-s20"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:workforce-external-data"
+      ],
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n27"
+        },
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n28"
+        }
+      ],
+      "status": "draft",
+      "prompt": "Hollins Department Stores moved its voice service to Dynamics 365 Contact Center last month, so Dynamics 365 holds very little workload history. Its retired workforce management application exported two intraday CSV files that match Microsoft's templates. One holds 18 months of voice volume and handle time. The other holds that application's forecast of volume and handle time for the next six weeks. The Workforce Management package is installed, and you have the WFM Administrator role.\n\nYou need a short-term capacity plan whose demand comes from the retired application's data.\n\nWhich two approaches should you use? Each correct answer presents a complete solution.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Upload the history as External historical data for forecast scenario, create a short-term External forecast scenario with Auto refresh turned off, and select that scenario in the capacity plan after its first forecast run."
+        },
+        {
+          "id": "b",
+          "text": "Upload the forecast as External forecast data for capacity planning, create the short-term capacity plan with the external file source, and select the file in External forecast file."
+        },
+        {
+          "id": "c",
+          "text": "Upload the forecast as Capacity plan parameter override, create the capacity plan from a forecast scenario with the Internal data source, and select the file in Capacity plan parameter override."
+        },
+        {
+          "id": "d",
+          "text": "Upload the history as External historical data for forecast scenario, create a short-term External forecast scenario with Auto refresh turned on, and select that scenario in the capacity plan after its first forecast run."
+        },
+        {
+          "id": "e",
+          "text": "Create a short-term forecast scenario with the Internal data source and a Historical data start date 18 months back, and select that scenario in the capacity plan after its first forecast run."
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "answer": "Either upload the history as External historical data for forecast scenario and base the capacity plan on an External forecast scenario, or upload the forecast as External forecast data for capacity planning and select it as the plan's external forecast file.",
+      "explanation": "The file type decides which capability consumes the data. External historical data trains a Dynamics 365 forecast scenario, which a capacity plan can use once it has completed a forecast run. External forecast data skips forecast generation and feeds the capacity plan directly. A parameter override only changes service assumptions and handle time, so it cannot supply volume. An External scenario can't use Auto refresh, so it isn't refreshed on a schedule.",
+      "optionExplanations": {
+        "a": "Correct. This is the route for history kept outside Dynamics 365. The forecast scenario trains on the file, and a capacity plan can use the scenario after it has completed a forecast run. Auto refresh isn't available with an external data source, so it stays off.",
+        "b": "Correct. This is the route when a forecast already exists in another system. It skips forecast generation and uses the file as the demand input.",
+        "c": "Fails. An override file carries service assumptions and handle time but no volume, and an Internal scenario would rest on the little history that Dynamics 365 holds.",
+        "d": "Fails. Auto refresh isn't available when a forecast scenario uses an external data source, so the scenario can't be set up this way.",
+        "e": "Fails. An Internal scenario forecasts from history in Dynamics 365, and the 18 months of history sit in the retired application."
+      }
+    },
+    {
+      "id": "sim-d2v-q14",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.23",
+        "D2.3.24"
+      ],
+      "conceptId": "sip-context-telephony-approach",
+      "sourceIds": [
+        "sim-d2v-s17",
+        "sim-d2-s01"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:telephony-model"
+      ],
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n16"
+        },
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n18"
+        }
+      ],
+      "status": "draft",
+      "prompt": "Pellworth Motor Club is moving its contact center to Dynamics 365 Contact Center and is reviewing its telephony provider. Breakdown calls are blind transferred to a non-Microsoft dispatch platform, and that workflow depends on SIP context such as caller ID, intent and authentication tokens. The voice design must stay in service after September 30, 2028.\n\nYou need to choose the telephony approach.\n\nWhich approach should you choose?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Teams Calling Plan numbers, with Microsoft as the carrier"
+        },
+        {
+          "id": "b",
+          "text": "Azure Communication Services Direct Routing through a customer-managed SBC"
+        },
+        {
+          "id": "c",
+          "text": "Teams Direct Routing through a customer-managed SBC"
+        },
+        {
+          "id": "d",
+          "text": "Azure Communication Services Direct Offer numbers, with Microsoft as the carrier"
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "answer": "Teams Direct Routing through a customer-managed SBC.",
+      "explanation": "Two requirements decide this. Bring-your-own telephony is the documented fit for workflows that depend on SIP context, such as blind transfers and handoffs to non-Microsoft systems, while PSTN carriers outside the Microsoft network might strip that context from Microsoft calling plan numbers. Voice through Azure Communication Services, by Direct Routing or Direct Offer, is supported only through September 30, 2028. Teams Direct Routing meets both. Pellworth still owns the risk after a transfer: once a call goes back to its SBC, SIP context and call quality are its responsibility.",
+      "optionExplanations": {
+        "a": "Fails. SIP context might be stripped by PSTN carriers outside the Microsoft network, and this approach is best for use cases that don't need full SIP metadata.",
+        "b": "Fails. It preserves SIP context, but voice through Azure Communication Services is supported only through September 30, 2028.",
+        "c": "Correct. Teams Direct Routing is bring-your-own telephony, which preserves SIP context, and it isn't affected by the retirement.",
+        "d": "Fails on both requirements. SIP context might be stripped, and Direct Offer voice through Azure Communication Services is supported only through September 30, 2028."
+      }
+    },
+    {
+      "id": "sim-d2v-q15",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.2.02"
+      ],
+      "conceptId": "external-ivr-context-variable-mapping",
+      "sourceIds": [
+        "sim-d2v-s05"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:external-ivr"
+      ],
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n18"
+        }
+      ],
+      "status": "draft",
+      "prompt": "Yarrow Family Health is keeping its non-Microsoft IVR. The IVR's SBC is connected through Azure direct routing to the Azure Communication Services resource that is connected to Dynamics 365 Contact Center, and the IVR's number is registered. The IVR transfers each call with a SIP INVITE, and its User-to-User header carries plain text key/value pairs for memberTier and visitReason.\n\nCalls reach representatives, but routing rules and representatives cannot use either value. Nothing else has been added to the voice workstream, and Yarrow wants no custom development.\n\nYou need to make both values available for routing and to representatives.\n\nWhat should you do?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Hex-encode the memberTier and visitReason payload at the IVR, and append ;encoding=hex to the User-to-User value."
+        },
+        {
+          "id": "b",
+          "text": "In the workstream advanced settings, add one context variable named User-to-User to hold memberTier and visitReason."
+        },
+        {
+          "id": "c",
+          "text": "In the workstream advanced settings, add context variables named memberTier and visitReason."
+        },
+        {
+          "id": "d",
+          "text": "Turn on transcription in the workstream behaviors so that representatives can read the IVR conversation."
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "answer": "In the workstream advanced settings, add context variables named memberTier and visitReason.",
+      "explanation": "Getting the call across and getting the context across are separate checks. The SIP UUI payload is converted automatically into context data, but only for context variables on the voice workstream whose names match the parameter names in the header exactly. Yarrow already sends a supported format, so the missing piece is the variables, and no custom code is needed.",
+      "optionExplanations": {
+        "a": "Fails. Plain text key/value pairs are already a supported format. Changing the encoding does not create the context variables that receive the values.",
+        "b": "Fails. Context variable names must match the parameter names in the header, so memberTier and visitReason each need their own variable.",
+        "c": "Correct. Variables with these exact names let the payload convert into context data for routing and for representatives.",
+        "d": "Fails. Call records and transcriptions from the non-Microsoft IVR call are not available to representatives, and a transcript would not supply routing values."
+      }
+    },
+    {
+      "id": "sim-d2v-q16",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.2.04"
+      ],
+      "conceptId": "direct-inward-dial-overflow-playbook",
+      "sourceIds": [
+        "sim-d4-s01",
+        "sim-d4-s03",
+        "sim-d2v-s01",
+        "sim-d2v-s02",
+        "sim-d2v-s23"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:inbound-profiles"
+      ],
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n19"
+        }
+      ],
+      "status": "draft",
+      "prompt": "Lockhart Private Bank gives each wealth adviser a personal number with an inbound profile, so that clients can dial an adviser directly. Conversation orchestration is licensed and set up in the environment, and its playbook templates are available.\n\nThe bank has these requirements:\n- If an adviser isn't available, including when the adviser is on another call, the client's call goes to the Adviser Support queue.\n- If an adviser rejects the call, the client reaches voicemail.\n- Other representatives' direct numbers keep their current behavior.\n\nYou need to meet the requirements.\n\nWhat should you do?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Publish a playbook from the Manage overflow of incoming conversations using advanced conditions template, scoped to a list of queues, with an action for each condition."
+        },
+        {
+          "id": "b",
+          "text": "Publish a playbook from the Handle overflow for direct inbound call template, scoped to the advisers' inbound profiles, with an action for each condition."
+        },
+        {
+          "id": "c",
+          "text": "Enter the Adviser Support number in each adviser's Call forward field, and turn on Call transfer to external phone number in each inbound profile."
+        },
+        {
+          "id": "d",
+          "text": "Use Handle rule-specific overflows in the voice workstream's route-to-queue rule, so that each adviser's direct calls overflow to the Adviser Support queue."
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "answer": "Publish a playbook from the Handle overflow for direct inbound call template, scoped to the advisers' inbound profiles, with an action for each condition.",
+      "explanation": "Direct inward dialing does not use unified routing, so queue overflow, queue playbooks and route-to-queue settings are the wrong tools. The direct inbound call playbook handles the direct call itself. The Handle overflow for direct inbound call template sets a separate action for when the user isn't available, rejects the notification, or lets it time out, and it can be scoped to a list of inbound profiles. That covers both requirements and leaves other direct numbers alone.",
+      "optionExplanations": {
+        "a": "Fails. That template acts on queues, with conditions such as no representatives available. It has no condition for one adviser rejecting a direct call, and direct inward dialing doesn't use unified routing.",
+        "b": "Correct. The template acts on the conditions in the requirements, the action list includes transferring to a queue and voicemail, and a list of inbound profiles limits the scope.",
+        "c": "Fails. Call forward sends a call to a PSTN number only when the status is DND or offline and the call is missed. A busy adviser's call goes to voicemail instead.",
+        "d": "Fails. Rule-specific overflow applies to a workstream's route-to-queue rules, and direct calls to a personal number do not go through unified routing."
+      }
+    },
+    {
+      "id": "sim-d2v-q17",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.2.05"
+      ],
+      "conceptId": "voice-translation-capture-dependency",
+      "sourceIds": [
+        "sim-d2-s09",
+        "sim-d2v-s21",
+        "sim-d2-s04",
+        "sim-d2-s06"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:real-time-translation"
+      ],
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n20"
+        }
+      ],
+      "status": "draft",
+      "prompt": "Marlowe Language Schools supports students in many languages. Real-time translation is turned on and its web resource URL is set. Chat conversations are translated as expected.\n\nMarlowe now wants representatives to see translated transcripts for voice calls too. Tenant, environment and consent prerequisites for voice features are met.\n\nYou need to add what translated voice transcripts require beyond the chat setup.\n\nWhat should you do?",
+      "options": [
+        {
+          "id": "a",
+          "text": "On the voice workstream's Language tab, add each student language, and configure its own voice settings."
+        },
+        {
+          "id": "b",
+          "text": "In the real-time translation web resource file, set enableLanguageDetectionWithHistoryMessages to true."
+        },
+        {
+          "id": "c",
+          "text": "On the Voice call experiences page, set Transcription & recording to Follow workstream settings for each external contact."
+        },
+        {
+          "id": "d",
+          "text": "On the voice workstream's Behaviors tab, select Transcription and recording with Automatic start."
+        }
+      ],
+      "correctOptionIds": [
+        "d"
+      ],
+      "answer": "On the voice workstream's Behaviors tab, select Transcription and recording with Automatic start.",
+      "explanation": "Translated voice transcripts depend on more than the translation feature. Microsoft says you must enable call recording, transcription and real-time translation, so a voice workstream that captures nothing has nothing to translate. Chat translation working shows that the translation setup is sound, which points to capture on the voice workstream.",
+      "optionExplanations": {
+        "a": "Fails. Adding a language lets the voice channel serve that language with its own settings. It does not create a transcript to translate.",
+        "b": "Fails. Score-based language detection keeps translation from stopping when messages switch language. It does not supply a voice transcript.",
+        "c": "Fails. That setting applies only during a consult with or bridged transfer to an external contact, and it inherits the workstream configuration. It doesn't start capture on a student call.",
+        "d": "Correct. Call recording and transcription are required for translated voice transcripts to be displayed, and the stem says the voice prerequisites are met."
+      }
+    }
+  ],
+  "editorial": [
+    {
+      "id": "sim-d2v-q01",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "ccaas-sdk-voice-module-capture-methods",
+      "objectiveIds": [
+        "D2.2.07"
+      ],
+      "level": "advanced",
+      "author": "channels-voice-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2v-s16",
+          "section": "Available methods",
+          "claim": "startRecording initiates voice call recording with automatic transcription. startTranscription begins transcription without full recording. onRecordingOperationCompleted invokes a callback function with event data when the recording operation completes.",
+          "applicability": "The correct option and every distractor rest on the startRecording and startTranscription descriptions. Option d fails on its extra calls alone, so no option depends on when that callback fires. The question uses only what the Learn list says. Parameters and the class reference are on GitHub, which is not evidence for this bank, so no option depends on them."
+        },
+        {
+          "sourceId": "sim-d2v-s16",
+          "section": "Introduction",
+          "claim": "Dynamics 365 Contact Center provides APIs that integrate functionality into both non-Microsoft CRMs and Dynamics environments. The voice module controls recording and transcription when sensitive information should not be captured.",
+          "applicability": "Supports the embedded CRM scenario. D2.2.07 is partial-depth in source-gaps.json. This page names voice module methods, but it is still not a full API contract, so the question stays at the level of what each method does."
+        }
+      ],
+      "duplicateCheck": "Compared with tpe-agent-client-m365-identity and tpe-multipersona-ringing-policy, which test the Teams Phone extensibility client and ringing policy, and with manual-capture-resume-label and recording-hold-auto-pause, which test workstream settings. A keyword search of ab250-bank and the simulator batches found no question on voice module methods."
+    },
+    {
+      "id": "sim-d2v-q02",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "proactive-delivery-api-selection",
+      "objectiveIds": [
+        "D2.3.16"
+      ],
+      "level": "advanced",
+      "author": "channels-voice-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2v-s10",
+          "section": "Introduction; Validation rules",
+          "claim": "CCaaS_CreateProactiveDelivery is the most versatile API and supports all features and channels, and account calling. Voice requests can contain one to five contacts.",
+          "applicability": "Supports the household row. Four account holders are within the limit, and 12,000 customers are far outside it."
+        },
+        {
+          "sourceId": "sim-d2v-s11",
+          "section": "Introduction",
+          "claim": "CCaaS_CreateProactiveBulkDelivery sends multiple records in a single request, approximately 15,000 records, and does not support account calling.",
+          "applicability": "Supports the nightly job row. The stem says the customers are unrelated, so account calling is not needed."
+        },
+        {
+          "sourceId": "sim-d2v-s12",
+          "section": "Introduction; Request parameters",
+          "claim": "CCaaS_CreateSimpleProactiveDelivery initiates a single delivery with a flattened set of contact attributes for one recipient. It does not require complex JSON nesting and is best suited for surfaces like Power Automate.",
+          "applicability": "Supports the Power Automate row. The Contacts property of CCaaS_CreateProactiveDelivery is a string containing a JSON array, which the row excludes."
+        },
+        {
+          "sourceId": "sim-d2v-s13",
+          "section": "Introduction",
+          "claim": "CCaaS_CreateProactiveVoiceDelivery is a first-generation voice API that does not support newer features. It is still supported, and Microsoft says to migrate to CCaaS_CreateProactiveDelivery for the latest features.",
+          "applicability": "The API still works, so it fails here only because the stem excludes first-generation APIs. The learner has to know which token that is."
+        }
+      ],
+      "duplicateCheck": "Compared with proactive-file-versus-journey-intake, which tests file against journey intake, and with default-proactive-delivery-window. A keyword search of ab250-bank and the simulator batches found no question naming these delivery APIs."
+    },
+    {
+      "id": "sim-d2v-q03",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "proactive-dial-mode-selection",
+      "objectiveIds": [
+        "D2.3.17"
+      ],
+      "level": "advanced",
+      "author": "channels-voice-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2v-s08",
+          "section": "Copilot",
+          "claim": "Use Copilot dial mode for announcements, notifications or outbound calls that an IVR agent can handle. A large number of these calls can be made simultaneously. The AI agent engages the customer and can escalate if necessary.",
+          "applicability": "Supports the outage notices row. The stem places a Copilot Studio agent on the workstream."
+        },
+        {
+          "sourceId": "sim-d2v-s08",
+          "section": "Progressive; Predictive",
+          "claim": "Progressive places one call for every available representative. Predictive initiates calls before representatives become available, based on when they are forecast to be free, and maximizes representative use. Predictive requires at least 10 available representatives.",
+          "applicability": "Separates the rescheduling row from Progressive. The stem gives about 40 available representatives, so the fallback below 10 does not apply."
+        },
+        {
+          "sourceId": "sim-d2v-s08",
+          "section": "Preview",
+          "claim": "The system identifies a representative and notifies them first. If the representative accepts, the system, based on configuration, gives time to review details and place the call when ready. The mode prioritizes customer experience over representative use. Timer and early media audio for preview calls are available with Teams Phone Extensibility numbers only.",
+          "applicability": "The stem states Teams Phone extensibility numbers, because the wait before the call depends on that platform."
+        },
+        {
+          "sourceId": "sim-d2v-s09",
+          "section": "Dialing modes",
+          "claim": "Progressive starts calls equal to the number of available representatives. Predictive starts calls proportional to them, using a model of availability, abandonment and answer rate. AI agent-led progressive also has a Maximum calls per representative setting of up to five.",
+          "applicability": "The dial modes article says one call per available representative, while this setting allows more for AI agent-led progressive. The rescheduling row does not depend on the ratio. It depends on starting calls before representatives are free, which Microsoft describes for predictive only, and every customer there talks to a representative."
+        },
+        {
+          "sourceId": "sim-d2v-s09",
+          "section": "Dialing modes",
+          "claim": "Manual preview requires the representative to start the call after reviewing customer details. Timer and delayed start are available on Teams Phone Extensibility only.",
+          "applicability": "Confirms the hardship row for the stated platform."
+        },
+        {
+          "sourceId": "sim-d2v-s08",
+          "section": "Important note at the top of the article",
+          "claim": "Specified automated modes must not be used for commercial marketing or sales, and representative-led progressive and predictive connection time is not TCPA compliant, so applicable regulations must be reviewed.",
+          "applicability": "The stem limits the outreach to service calls cleared by legal, so these restrictions do not decide any row. The explanation makes no compliance claim."
+        }
+      ],
+      "duplicateCheck": "Compared with predictive-low-availability-fallback, progressive-engagement-type-sequencing and outbound-threshold-pause-manual-restart, which test fallback, sequencing and pause behavior inside a chosen mode. None asks which mode fits a program. A keyword search found no question that selects among all four modes."
+    },
+    {
+      "id": "sim-d2v-q04",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "voice-capture-setting-by-call-path",
+      "objectiveIds": [
+        "D2.2.05",
+        "D2.2.04"
+      ],
+      "level": "advanced",
+      "author": "channels-voice-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2-s09",
+          "section": "Enable call recording and transcription for voice",
+          "claim": "For a workstream, open the phone number voice settings, select the Behaviors tab, and choose Transcription or Transcription and recording in the Transcription and recording section.",
+          "applicability": "Applies to the queue-routed main line in the first row."
+        },
+        {
+          "sourceId": "sim-d2v-s01",
+          "section": "Create inbound profiles; Create outbound profiles",
+          "claim": "Inbound behaviors and Outbound behaviors each include Transcription and recording. The outbound number list shows only numbers enabled for outbound calling that are not used as a personal phone number.",
+          "applicability": "Supports the second and third rows, and shows why the shared Refills profile cannot cover personal numbers."
+        },
+        {
+          "sourceId": "sim-d2v-s02",
+          "section": "Assign personal phone numbers to representatives",
+          "claim": "Personal service representative phone number calls always apply the default scoped outbound profile.",
+          "applicability": "Supports the fourth row in Microsoft's exact wording. The question makes no claim about which first-run or dialer profile this is."
+        },
+        {
+          "sourceId": "sim-d2-s06",
+          "section": "Introduction",
+          "claim": "The Voice call experiences page configures the call quality feedback survey, automatic removal from hold, DTMF broadcast, and the secured experience for consult with and transfer to external contacts.",
+          "applicability": "Explains the distractor. External contact overrides apply to consult and transfer only, not to a call path as a whole."
+        }
+      ],
+      "duplicateCheck": "Compared with manual-capture-resume-label, recording-hold-auto-pause, voice-capture-mime-event-prerequisites and bridged-transfer-capture-and-caller-id, which test labels, hold pause, prerequisites and transfer capture. None asks where capture is configured for each call path. The inbound profile questions test number prerequisites and forwarding."
+    },
+    {
+      "id": "sim-d2v-q05",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "customer-first-callback-enablement-sequence",
+      "objectiveIds": [
+        "D2.2.01"
+      ],
+      "level": "advanced",
+      "author": "channels-voice-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2v-s06",
+          "section": "Enable customer-first direct callback",
+          "claim": "Enable Copilot AI agent for callback management, confirm, and wait for Callback Agent to provision. After provisioning completes, select the Customer-first direct callback toggle. You cannot enable the feature until you create at least one callback profile. After you save the first profile, the system enables the feature and makes the profile available for queue configuration.",
+          "applicability": "Gives the first and second neighboring dependencies. The toggle and first profile are merged into one token because the page does not prove that one strictly precedes the other."
+        },
+        {
+          "sourceId": "sim-d2v-s06",
+          "section": "Use callback profile in overflow action",
+          "claim": "For a voice queue, select Direct callback as the overflow action and then select a callback profile.",
+          "applicability": "The queue step names the profile, so it cannot come before the profile exists. This holds even though the overflow action alone could be chosen earlier."
+        },
+        {
+          "sourceId": "sim-d2v-s06",
+          "section": "Prerequisites; Create callback profiles",
+          "claim": "Prerequisites are a provisioned Copilot Studio agent, numbers with outbound calling, and any agents planned for verification. After you enable the feature, you cannot disable it, and the first callback profile automatically applies to queues that already use direct callback. The AI agent for the callback flow is selected in the profile. Avoid editing or deleting the agent that takes the alternative number.",
+          "applicability": "The stem states each prerequisite and the irreversibility, and says the queue has no overflow action, so the automatic application does not apply. Explains the Callback Agent distractor."
+        },
+        {
+          "sourceId": "sim-d4-s01",
+          "section": "How overflow works when work item is routed to a fallback queue",
+          "claim": "If a work item is routed to a fallback queue, the system ignores the overflow settings for the fallback queue and assigns the work item to it.",
+          "applicability": "Explains the fallback queue distractor."
+        },
+        {
+          "sourceId": "sim-d2v-s07",
+          "section": "Feature table; Feature details",
+          "claim": "The 2026 release wave 1 plan lists general availability on Aug 24, 2026. Administrators define a callback profile and associate it with queues under overflow handling, and must select a profile for each queue where direct callback is the overflow action.",
+          "applicability": "Status check for check 6. The configuration article carries no preview label and this plan entry shows a release date. The plan page is archived, and it shows no sequence that reverses the steps."
+        }
+      ],
+      "duplicateCheck": "Compared with teams-number-onboarding-sequence and whatsapp-outbound-template-config-flow-sequence, the existing order questions, which cover other features. A keyword search of ab250-bank and the simulator batches found no question on direct callback or callback profiles."
+    },
+    {
+      "id": "sim-d2v-q06",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "voice-feature-platform-dependency",
+      "objectiveIds": [
+        "D2.3.23",
+        "D2.3.17"
+      ],
+      "level": "advanced",
+      "author": "channels-voice-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2v-s09",
+          "section": "Dialing modes, preview call settings",
+          "claim": "Timer and delayed start are available on Teams Phone Extensibility only. If you are using Azure Communication Services, preview calls start automatically after the representative accepts the invite.",
+          "applicability": "Supports the first row, for the Automatic preview setting with a countdown."
+        },
+        {
+          "sourceId": "sim-d2v-s08",
+          "section": "Preview",
+          "claim": "Timer and early media audio for service representatives for preview calls are available with Teams Phone Extensibility numbers only.",
+          "applicability": "Second page agreeing with the first row."
+        },
+        {
+          "sourceId": "sim-d2v-s06",
+          "section": "Create callback profiles, Dialing page",
+          "claim": "Configure inbound calls and outbound callbacks to use the same phone platform. If a customer calls an Azure Communication Services number but the callback uses a Microsoft Teams number, the system does not initiate the callback and automatically closes the request.",
+          "applicability": "Supports the second row, which is the documented example: a customer on an Azure Communication Services number and a callback from a Teams number."
+        },
+        {
+          "sourceId": "sim-d2v-s09",
+          "section": "Set up an outbound workstream",
+          "claim": "Azure Communication Services supports Direct Routing numbers only. Teams Phone supports Direct Routing, Direct Offer, and Operator Connect numbers.",
+          "applicability": "Supports the third row. The note sits in the outbound workstream steps, so the row is limited to an outbound workstream."
+        }
+      ],
+      "duplicateCheck": "Compared with sbc-domain-coexistence-phased-migration, operator-connect-portability-review, acs-retirement-impact-discrimination and new-acs-number-acquisition-date. Those test migration planning, carrier choice, retirement impact and number acquisition. None tests which features depend on the number platform while both run side by side."
+    },
+    {
+      "id": "sim-d2v-q07",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "secure-consult-hold-setting-choice",
+      "objectiveIds": [
+        "D2.3.04",
+        "D2.3.24"
+      ],
+      "level": "advanced",
+      "author": "channels-voice-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2-s06",
+          "section": "Set up secure consult with and transfer to external contacts (preview)",
+          "claim": "Hold applies to consult only. Customer on hold places the customer on hold during the secure consult, and the representative cannot remove it. Agent on hold places the representative on hold, all representatives if there are several, and the representative cannot remove it. Follow workstream settings inherits the workstream configuration.",
+          "applicability": "Supports every row. The page labels the feature a production-ready preview, and the stem says so. The answer does not depend on the status."
+        },
+        {
+          "sourceId": "sim-d2-s05",
+          "section": "Consult with external contacts and transfer a call securely (preview)",
+          "claim": "Secure settings need External phone numbers selected for Consult and Transfer, and Use bridged transfer enabled. In secure consult, you are placed on hold while the customer interacts with the external contact, or the hold settings configured for the workstream apply.",
+          "applicability": "The stem states both prerequisites, so no row turns on them."
+        },
+        {
+          "sourceId": "sim-d2-s05",
+          "section": "Use consult to collaborate with other representatives or supervisors",
+          "claim": "The primary representative must manually remove the customer from hold in a consult.",
+          "applicability": "Shows that an ordinary consult hold can be lifted, which is why the row that bars lifting the hold rules out Follow workstream settings."
+        },
+        {
+          "sourceId": "sim-d2v-s25",
+          "section": "Feature table; Feature details",
+          "claim": "The plan lists public preview on Mar 16, 2026, and general availability planned for Sep 2026 with no release mark. The page is archived as of October 2026.",
+          "applicability": "Status check for check 6. The product pages, last dated in July and August 2026, still say preview, and I could not confirm general availability. The stem reports what Microsoft documents, and no row depends on status."
+        }
+      ],
+      "duplicateCheck": "Compared with secure-consult-agent-hold-constraints, which asks what follows once Agent on hold is set, with secure-bridged-transfer-origin-scope and secure-consult-exit-restoration, and with external-contact-capture-phase-split, which tests capture settings by phase. This question asks which Hold value fits a requirement, and that Hold has no bridged transfer setting. It does not test bridged against unbridged transfer."
+    },
+    {
+      "id": "sim-d2v-q08",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "forecast-minimum-history-outcomes",
+      "objectiveIds": [
+        "D2.3.21"
+      ],
+      "level": "advanced",
+      "author": "channels-voice-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2v-s18",
+          "section": "How forecast dates affect the data requirement",
+          "claim": "Forecasting starts predicting on the day after the Historical End Date. Days before a later Forecast Start Date are the gap, and the gap counts toward the history you need. Available history is counted in calendar days.",
+          "applicability": "January 31 to February 7 gives a gap of February 1 through 6, which is six days."
+        },
+        {
+          "sourceId": "sim-d2v-s18",
+          "section": "Minimum historical data",
+          "claim": "For short-term forecasts, required history including the gap is gap plus duration, and baseline history with no gap is the duration.",
+          "applicability": "Required history is 36 days and the baseline is 30 days."
+        },
+        {
+          "sourceId": "sim-d2v-s18",
+          "section": "When history is insufficient; Short-term examples",
+          "claim": "If history falls short, a forecast is generated with reduced confidence only when the gap is within the grace period, no more than half the duration rounded up for short-term forecasts, and history meets the baseline. Otherwise the queue and channel are skipped. Both cases are flagged Insufficient Historical Data.",
+          "applicability": "The grace period is 15 days. The rows use different numbers from the article examples. The 30-day duration stays below both documented short-term maximums, 84 days on this page and 42 days in the forecasting overview, so the question avoids that conflict and states no maximum."
+        }
+      ],
+      "duplicateCheck": "Compared with forecast-defining-source-immutable, forecast-snapshot-output-versioning and forecast-first-scheduled-run, which test settings, snapshots and Draft status. A keyword search of ab250-bank and the simulator batches found no question on minimum history, the gap, or Insufficient Historical Data."
+    },
+    {
+      "id": "sim-d2v-q09",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "proactive-delivery-cancellation-scope",
+      "objectiveIds": [
+        "D2.3.15"
+      ],
+      "level": "advanced",
+      "author": "channels-voice-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2v-s10",
+          "section": "Response properties",
+          "claim": "DeliveryId is the unique identifier of the first individual dial or message delivery, used with CCaaS_CreateOperation and the Cancel operation to cancel that delivery. DeliveryTaskId identifies the task that manages the contact chain and all reattempts, used with CCaaS_CancelDeliveryTask to cancel pending and future attempts.",
+          "applicability": "Supports the first two rows. The stem says both IDs are stored, and the second row is limited to the first dial, which is what the DeliveryId identifies."
+        },
+        {
+          "sourceId": "sim-d2v-s14",
+          "section": "Introduction; Prerequisites",
+          "claim": "CCaaS_CancelDeliveryTask cancels all pending and future delivery attempts for a contact or an account, and no further attempts are made. The delivery task must have been created with CCaaS_CreateProactiveDelivery.",
+          "applicability": "The stem says deliveries are created with that API."
+        },
+        {
+          "sourceId": "sim-d2v-s15",
+          "section": "Request parameters",
+          "claim": "CCaaS_CreateOperation requests a Suspend, Resume or Cancel operation. DeliveryId applies to cancel operations, and ProactiveEngagementConfigId is the engagement configuration ID.",
+          "applicability": "Supports the second row. The page does not describe Suspend in detail, so the distractor is rejected only on scope: the sample targets an engagement configuration, and the stem says that engagement serves the whole country."
+        },
+        {
+          "sourceId": "sim-d2v-s09",
+          "section": "Configure voice call cancellation and suppression",
+          "claim": "A cancellation policy filters by engagement configuration ID, country or region, state and postal code in AND conditions. With an end date in Execute policy until, matching contacts are not processed for new calls during that period. Cancellation applies to queued calls only.",
+          "applicability": "Supports the third row and limits it to queued calls and new calls."
+        }
+      ],
+      "duplicateCheck": "Compared with outbound-threshold-pause-manual-restart, which tests an automatic pause, and with default-proactive-delivery-window. A keyword search of ab250-bank and the simulator batches found no question on delivery cancellation, cancellation policies or CCaaS_CancelDeliveryTask."
+    },
+    {
+      "id": "sim-d2v-q10",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "direct-routing-sbc-predictive-requirements",
+      "objectiveIds": [
+        "D2.3.17",
+        "D2.3.24"
+      ],
+      "level": "advanced",
+      "author": "channels-voice-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2v-s09",
+          "section": "Requirements for direct routing",
+          "claim": "For representative-led progressive and predictive dial modes, the SBC must support RFC 3891 Replaces headers, including INVITE messages with Require: replaces and Replaces headers, and RFC 3325 handling for P-Asserted-Identity with Privacy ID. The trust store must include all supported root CAs for Teams SIP interface certificates, because certificates can chain to any one of them.",
+          "applicability": "The stem states representative-led predictive over Teams Direct Routing, which matches the section. It does not name an SBC vendor, so the Oracle steps do not apply."
+        },
+        {
+          "sourceId": "sim-d2-s04",
+          "section": "Transfer calls to external numbers and Teams users, Enhanced voice note",
+          "claim": "If you are a Direct Routing customer and the Use bridged transfers checkbox is not selected, configure the SBC to accept a REFER-TO: sip.pstnhub.microsoft.com, convert the request to an INVITE, and send it back to complete the transfer.",
+          "applicability": "The distractor is real but conditional. The stem selects Use bridged transfers on every workstream, which removes the condition."
+        }
+      ],
+      "duplicateCheck": "Compared with sbc-dns-region-latency, sbc-domain-coexistence-phased-migration and external-ivr-sbc-number-topology, which test placement, coexistence and IVR topology. The bridged transfer questions test call behavior, and this one uses the bridged setting only to rule out a distractor. A keyword search found no question on Replaces, RFC 3891 or RFC 3325."
+    },
+    {
+      "id": "sim-d2v-q11",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "representative-survey-log-retention",
+      "objectiveIds": [
+        "D2.2.06"
+      ],
+      "level": "advanced",
+      "author": "channels-voice-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2-s06",
+          "section": "Store and view survey data",
+          "claim": "You must enable the Call Survey Logs Diagnostic Setting in Azure Monitor to send the log data of your surveys to a Log Analytics workspace, Event Hubs, or an Azure storage account. If you do not, survey data is not stored and can be lost.",
+          "applicability": "Supports both correct options. Event Hubs is also valid but is not offered, so exactly two options are correct."
+        },
+        {
+          "sourceId": "sim-d2-s06",
+          "section": "Enable representative call quality surveys",
+          "claim": "After the toggle is on, specify the frequency. Optionally, turn on Set survey duration and specify the duration during which the survey must appear for the representative.",
+          "applicability": "Explains the Set survey duration distractor."
+        },
+        {
+          "sourceId": "sim-d2v-s22",
+          "section": "Prerequisites; How do I store logs?",
+          "claim": "Select Call Survey under the diagnostic setting to enable the logs for end of call survey. Data is not stored retroactively, so you begin capturing logs only after configuring the diagnostic setting.",
+          "applicability": "This is why the stem asks only about future responses."
+        },
+        {
+          "sourceId": "sim-d2v-s24",
+          "section": "Introduction; Choose Destinations",
+          "claim": "Each resource has its own diagnostic setting, which defines log categories and destinations. Call Summary and Call Diagnostic logs are separate log categories. Log Analytics workspace, Event Hubs and Azure storage account are the listed destinations.",
+          "applicability": "Explains the Call Summary distractor: the category, not the destination, is what is wrong."
+        }
+      ],
+      "duplicateCheck": "Compared with representative-quality-survey-sampling, which tests choosing the survey feature, and with voice-capture-mime-event-prerequisites, where survey logs appear only inside a wrong option. A keyword search found no question that asks how survey responses are retained."
+    },
+    {
+      "id": "sim-d2v-q12",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "phone-number-release-prerequisites",
+      "objectiveIds": [
+        "D2.2.03"
+      ],
+      "level": "advanced",
+      "author": "channels-voice-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2v-s03",
+          "section": "Release phone numbers",
+          "claim": "Before you remove a phone number, you must remove it from any associated workstreams or outbound profiles. If the number is assigned as a personal number to any representative, you must disable the number and then try releasing it again. Releasing a number deletes it from Dynamics 365.",
+          "applicability": "The stem gives each number the use that the section names. The path applies to numbers managed through Azure Communication Services."
+        },
+        {
+          "sourceId": "sim-d2v-s03",
+          "section": "Edit phone numbers",
+          "claim": "You cannot remove features once granted to a phone number, but you can upgrade phone number features.",
+          "applicability": "Explains the calling plan distractor."
+        },
+        {
+          "sourceId": "sim-d2v-s04",
+          "section": "Introduction",
+          "claim": "When you disconnect a resource, all phone numbers associated with it are also released from Dynamics 365. To permanently release one or more numbers, use Release phone numbers.",
+          "applicability": "Explains the disconnect distractor. The stem says Saltash keeps its other numbers on the resource."
+        }
+      ],
+      "duplicateCheck": "Compared with inactive-direct-routing-number-repair, new-acs-number-acquisition-date, direct-routing-csv-number-preservation and inbound-profile-personal-number-prerequisites, which test repair, acquisition, import and assignment. A keyword search found no question on releasing a number."
+    },
+    {
+      "id": "sim-d2v-q13",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "legacy-wfm-data-capacity-plan-inputs",
+      "objectiveIds": [
+        "D2.3.21",
+        "D2.3.22"
+      ],
+      "level": "advanced",
+      "author": "channels-voice-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2v-s19",
+          "section": "File types",
+          "claim": "External historical data for forecast scenario is consumed by a forecast scenario, for workload history outside Dynamics 365, including migration from another platform. External forecast data for capacity planning is consumed by a capacity plan and skips forecast generation. Capacity plan parameter override supplies service-level assumptions by interval, channel or queue.",
+          "applicability": "Maps the two exports to the two correct options, and explains why an override cannot supply demand."
+        },
+        {
+          "sourceId": "sim-d2v-s19",
+          "section": "Prerequisites; Upload an external data file; Use external data in a forecast scenario; Use external data in a capacity plan",
+          "claim": "You need the WFM Forecaster or WFM Administrator role. Each file type supports Daily and Intraday intervals, and a short-term plan cannot consume a daily file. History can reach back up to two years. Set the source to External and select the validated file, or select the external file source and the file in External forecast file.",
+          "applicability": "The stem states the role, intraday files and 18 months of history, so none of these blocks the correct options."
+        },
+        {
+          "sourceId": "sim-d2v-s19",
+          "section": "File templates; Validate an uploaded file",
+          "claim": "External historical data uses Volume and AHT columns. External forecast data uses Forecast and ForecastAHT columns. The override file has no volume column. Validation runs against the selected file type, and a file that fails validation is not available as a data source.",
+          "applicability": "Explains the override distractor."
+        },
+        {
+          "sourceId": "sim-d2v-s18",
+          "section": "Create a forecast scenario, Historical data; Forecast refresh schedule",
+          "claim": "Data source is Internal or External. External data must be uploaded beforehand through Manage External Data. Auto refresh isn't available when you use an external data source.",
+          "applicability": "Supports the first correct option and distractor d. The page does not say how the first run of an External scenario is started, so the option says only after its first forecast run. Page dated 2026-10-19, opened 2026-11-07."
+        },
+        {
+          "sourceId": "sim-d2v-s20",
+          "section": "Prerequisites; Select an input method",
+          "claim": "To use a forecast scenario in a capacity plan, the scenario must be available and have completed at least one forecast run. Alternatively, upload an external forecast file when forecast data comes from another system.",
+          "applicability": "Supports both correct options as complete routes to the capacity plan."
+        }
+      ],
+      "duplicateCheck": "Compared with forecast-defining-source-immutable, external-wfm-flow-direction and external-wfm-service-authentication, which test scenario settings and live integration. A keyword search of ab250-bank and the simulator batches found no question on Manage External Data, external forecast files or parameter override files. sim-d2v-q08 in this batch tests minimum history, a different decision."
+    },
+    {
+      "id": "sim-d2v-q14",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "sip-context-telephony-approach",
+      "objectiveIds": [
+        "D2.3.23",
+        "D2.3.24"
+      ],
+      "level": "advanced",
+      "author": "channels-voice-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2v-s17",
+          "section": "Bring your own telephony: Azure Communication Services-based direct routing or Teams direct routing",
+          "claim": "The approach preserves SIP context such as caller ID, intent and authentication tokens. It is best for SIP context-dependent workflows such as blind transfers, callback workflows or handoffs to non-Microsoft systems. Microsoft responsibility starts after the call enters Azure Communication Services or Teams, and if the call is transferred back to your SBC, SIP context and call quality become your responsibility.",
+          "applicability": "Supports the correct option and the responsibility boundary in the explanation."
+        },
+        {
+          "sourceId": "sim-d2v-s17",
+          "section": "Microsoft calling plan numbers with Azure Communication Services direct offer or Teams calling plan",
+          "claim": "SIP context might be stripped by PSTN carriers outside the Microsoft network. The approach is best for use cases that do not require full SIP metadata.",
+          "applicability": "Rules out both Microsoft calling plan options, Teams Calling Plan and Azure Communication Services Direct Offer, because the stem's workflow depends on SIP context."
+        },
+        {
+          "sourceId": "sim-d2-s01",
+          "section": "Understand the impact; Choose a voice migration path",
+          "claim": "The retirement covers voice telephony through Azure Communication Services Direct Offer or Direct Routing, which is supported through September 30, 2028. It doesn't affect voice configurations that already use Microsoft Teams Phone extensibility, and Teams Direct Routing is a target configuration for that migration.",
+          "applicability": "The stem sets the 2028 requirement, so the Direct Routing and Direct Offer options through Azure Communication Services fail for a documented reason, and Teams Direct Routing doesn't."
+        }
+      ],
+      "duplicateCheck": "Compared with operator-connect-portability-review, which selects Operator Connect when no SBC is retained, acs-retirement-impact-discrimination, which tests retirement scope, and sbc-domain-coexistence-phased-migration, which tests cutover. Here SIP context dependence is the deciding factor, and a keyword search found no question on SIP context."
+    },
+    {
+      "id": "sim-d2v-q15",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "external-ivr-context-variable-mapping",
+      "objectiveIds": [
+        "D2.2.02"
+      ],
+      "level": "advanced",
+      "author": "channels-voice-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2v-s05",
+          "section": "Set up contextual call transfer using Azure direct routing",
+          "claim": "Populate the SIP UUI header with context data, in plain text key/value pairs or a supported hex format. Create context variables with the same names in the workstream advanced settings, and make sure they match exactly with the param names in the SIP UUI header. The payload is automatically converted into context data for routing and for showing information to the representative.",
+          "applicability": "The stem states the topology and a supported format, so only the variables are missing. The stem also rules out custom development, so a flow is not offered as an alternative. The procedure is specific to Azure Communication Services direct routing, which the stem states."
+        },
+        {
+          "sourceId": "sim-d2v-s05",
+          "section": "Note at the end of the section",
+          "claim": "Call record and transcriptions from the non-Microsoft IVR call with the customer are not available for service representatives.",
+          "applicability": "Explains the transcription distractor."
+        }
+      ],
+      "duplicateCheck": "Compared with external-ivr-uui-supported-formats, which states that matching variables exist and tests formats, and external-ivr-sbc-number-topology, which tests topology. This question gives both of those as done and tests the variable mapping."
+    },
+    {
+      "id": "sim-d2v-q16",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "direct-inward-dial-overflow-playbook",
+      "objectiveIds": [
+        "D2.2.04"
+      ],
+      "level": "advanced",
+      "author": "channels-voice-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d4-s01",
+          "section": "Use natural language playbooks to configure overflow actions for direct inward dialed calls; Use natural language playbooks to configure overflow actions for work items in queue",
+          "claim": "By default, an unanswered direct call usually goes to voicemail. Conversation orchestration playbooks can run custom overflow actions. The Handle overflow for direct inbound call template is scoped to all inbound profiles, a list of inbound profiles, or all except some. Conditions are User rejects notification, User isn't available and User notification times out. Actions include Transfer to another queue and Send to voicemail. Save and publish the playbook. In the example, a representative on another call counts as not available. A separate queue playbook applies to all queues, selected queues or all queues except some, with queue conditions such as No representatives are available immediately and All representatives are signed out.",
+          "applicability": "Supports the correct option. The stem puts a call in progress under unavailable, matching the page example. The queue playbook section explains why the option a decoy fails."
+        },
+        {
+          "sourceId": "sim-d4-s03",
+          "section": "Supported scenarios; Create a playbook",
+          "claim": "Overflow handling has two templates. Manage overflow of incoming conversations using advanced conditions covers queue conditions, such as the queue being outside operating hours or no representatives being available, and is applied to all queues, a list of queues or all queues except some. Handle overflow for direct inbound call covers the target representative being unavailable, rejecting the call or not responding. A playbook is saved as a draft and activated with Publish.",
+          "applicability": "The correct option says publish because a draft is not active. The stem says the feature is licensed and set up, which covers the prerequisites. Option a is the compliant decoy: a real template whose conditions act on queues. Opened 2026-11-07."
+        },
+        {
+          "sourceId": "sim-d2v-s01",
+          "section": "Introduction",
+          "claim": "Inbound profiles enable direct inward dialing and differ from workstreams, which route inbound calls through queues. Direct inward dialing does not use unified routing.",
+          "applicability": "Explains why both the queue playbook and rule-specific overflow fail."
+        },
+        {
+          "sourceId": "sim-d2v-s02",
+          "section": "Enable call forwarding for personal phone numbers",
+          "claim": "A call is forwarded to the PSTN number if the status is DND or offline and the representative misses the call. It is sent to voicemail if presence is Available, Away or Busy and the representative rejects or misses the call. The Call forward field takes a PSTN number.",
+          "applicability": "Explains the Call forward distractor, which fails for an adviser on another call."
+        },
+        {
+          "sourceId": "sim-d2v-s23",
+          "section": "Feature table; Feature details",
+          "claim": "The plan lists public preview on Jun 30, 2026, and general availability planned for October 2026 with no release mark. The page is archived as of October 2026.",
+          "applicability": "Status check for check 6. The manage-overflow page, dated Oct 30, 2026, has no preview label, but I could not confirm general availability. The stem states only that the playbook templates are available, and the answer does not depend on status."
+        }
+      ],
+      "duplicateCheck": "Compared with inbound-profile-personal-number-prerequisites and inbound-forwarding-external-transfer-toggle, which test setup and a toggle, and voicemail-individual-group-routing, which tests individual against group voicemail. Voicemail is only an action here. A keyword search found no question on overflow for direct inward dialed calls."
+    },
+    {
+      "id": "sim-d2v-q17",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "voice-translation-capture-dependency",
+      "objectiveIds": [
+        "D2.2.05"
+      ],
+      "level": "advanced",
+      "author": "channels-voice-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d2-s09",
+          "section": "Enable real-time translation of calls; Prerequisites; Enable call recording and transcription for voice",
+          "claim": "To view translated voice transcripts for calls, you must enable call recording, transcription, and real-time translation. Recording needs the tenant-level audio recording toggle, the audio and mpeg MIME types, and Event Grid system topics. The Behaviors tab offers Transcription or Transcription and recording, with a Start setting.",
+          "applicability": "The stem covers these prerequisites in one sentence. Microsoft does not say plainly whether Transcription alone is enough, and no option offers it, so the question does not depend on that gap."
+        },
+        {
+          "sourceId": "sim-d2v-s21",
+          "section": "Prerequisites; Enable real-time translation for representative and customer conversations; Enable score-based language detection",
+          "claim": "Enable call recording and transcription for the translated voice call transcripts to be displayed. Score-based language detection is set with enableLanguageDetectionWithHistoryMessages and keeps translation from stopping when language switches.",
+          "applicability": "Explains the correct option and the language detection distractor."
+        },
+        {
+          "sourceId": "sim-d2-s04",
+          "section": "Add a phone number to the workstream and configure language settings",
+          "claim": "You can add more languages to a voice channel, and each language has its own settings, so one number can serve several languages.",
+          "applicability": "Explains the Language tab distractor."
+        },
+        {
+          "sourceId": "sim-d2-s06",
+          "section": "Set up secure consult with and transfer to external contacts (preview)",
+          "claim": "Transcription & recording is set under Consult and Bridged transfer for each external contact, and it indicates how recording and transcription are handled when the representative is consulting with or transferring a call to that contact. Follow workstream settings inherits the workstream configuration for transcription and recording.",
+          "applicability": "Explains the option c decoy, which uses the same capture vocabulary as the correct option. The page labels this section a production-ready preview, and the decoy fails whatever its status. Page dated 2026-07-28, opened 2026-11-07."
+        }
+      ],
+      "duplicateCheck": "Compared with single-number-multilanguage-design, which tests languages on one number, and with voice-capture-mime-event-prerequisites, which tests capture prerequisites. A keyword search of ab250-bank and the simulator batches found no question on real-time translation of voice transcripts."
+    }
+  ]
+}

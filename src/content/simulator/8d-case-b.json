@@ -1,0 +1,1721 @@
+{
+  "sources": [
+    {
+      "id": "sim-cb-s01",
+      "title": "Configure persistent chat",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/persistent-chat"
+    },
+    {
+      "id": "sim-cb-s02",
+      "title": "Configure reconnection to a chat session",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-reconnect-chat"
+    },
+    {
+      "id": "sim-cb-s03",
+      "title": "Use automation dictionary to pass parameter keys",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/automation-dictionary-keys"
+    },
+    {
+      "id": "sim-cb-s04",
+      "title": "Configure a WhatsApp channel through Twilio",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-whatsapp-channel"
+    },
+    {
+      "id": "sim-cb-s05",
+      "title": "Configure outbound messaging in Dynamics 365 Contact Center",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/outbound-messaging"
+    },
+    {
+      "id": "sim-cb-s06",
+      "title": "Create message templates in Dynamics 365 Contact Center",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-message-templates"
+    },
+    {
+      "id": "sim-cb-s07",
+      "title": "Manage session templates",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/session-templates"
+    },
+    {
+      "id": "sim-cb-s08",
+      "title": "Manage application tab templates",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/application-tab-templates"
+    },
+    {
+      "id": "sim-cb-s09",
+      "title": "Manage notification settings and templates",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/notification-templates"
+    },
+    {
+      "id": "sim-cb-s10",
+      "title": "Manage scripts",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/agent-scripts"
+    },
+    {
+      "id": "sim-cb-s11",
+      "title": "Configure macros to improve representative productivity",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/macros"
+    },
+    {
+      "id": "sim-cb-s12",
+      "title": "Add users to experience profiles",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/add-profile-default"
+    },
+    {
+      "id": "sim-cb-s13",
+      "title": "Configure the inbox",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-inbox"
+    },
+    {
+      "id": "sim-cb-s14",
+      "title": "Use views and filters in the inbox",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/inbox-views-filters"
+    },
+    {
+      "id": "sim-cb-s15",
+      "title": "Use evaluation plan",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/evaluation-plan"
+    },
+    {
+      "id": "sim-cb-s16",
+      "title": "Monitor, assign, transfer, and end conversations as a supervisor in Dynamics 365 Contact Center",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/monitor-conversations"
+    },
+    {
+      "id": "sim-cb-s17",
+      "title": "Understand conversation states in Dynamics 365 Contact Center",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/oc-conversation-state"
+    },
+    {
+      "id": "sim-cb-s18",
+      "title": "Configure Copilot features in the help pane",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/copilot-enable-help-pane"
+    },
+    {
+      "id": "sim-cb-s19",
+      "title": "Extend Copilot with Copilot Studio (preview)",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/extend-copilot-with-copilot-studio"
+    },
+    {
+      "id": "sim-cb-s20",
+      "title": "Manage Customer Knowledge Management Agent",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/admin-km-agent"
+    },
+    {
+      "id": "sim-cb-s21",
+      "title": "Understand disconnected chats",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/oc-conv-state-chat-disconnect"
+    },
+    {
+      "id": "sim-cb-s22",
+      "title": "Configure assignment methods for queues",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-assignment-rules"
+    },
+    {
+      "id": "sim-cb-s23",
+      "title": "Configure experience profiles",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-agent-experience-profile"
+    },
+    {
+      "id": "sim-cb-s24",
+      "title": "Add SharePoint as a knowledge source",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-add-sharepoint"
+    },
+    {
+      "id": "sim-cb-s25",
+      "title": "Configure Copilot features",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-copilot-features"
+    },
+    {
+      "id": "sim-cb-s26",
+      "title": "Configure shift-based routing for work items",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-routing-on-agent-calendar"
+    },
+    {
+      "id": "sim-cb-s27",
+      "title": "Create and manage users and user profiles",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/users-user-profiles"
+    },
+    {
+      "id": "sim-cb-s28",
+      "title": "Conversation (msdyn_ocliveworkitem) table/entity reference",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/reference/entities/msdyn_ocliveworkitem"
+    },
+    {
+      "id": "sim-cb-s29",
+      "title": "Key concepts - Publish and deploy your agent",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-fundamentals-publish-channels"
+    },
+    {
+      "id": "sim-d4-s05",
+      "title": "Assignment methods for queues",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/assignment-methods"
+    },
+    {
+      "id": "sim-d4-s07",
+      "title": "Create and manage workstreams",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-workstreams"
+    },
+    {
+      "id": "sim-d6-s02",
+      "title": "Use evaluation criteria",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/evaluation-criteria"
+    },
+    {
+      "id": "sim-d6-s08",
+      "title": "View and understand the Ongoing conversation report in Omnichannel real-time analytics",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/realtime-ongoing"
+    },
+    {
+      "id": "sim-d6-s22",
+      "title": "Enable supervisor access to manage conversations",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/enable-monitor-assign-transfer-conv"
+    }
+  ],
+  "groups": [
+    {
+      "id": "sim-case-b",
+      "kind": "case-study",
+      "title": "Wrenfield Eyewear",
+      "exhibits": [
+        {
+          "id": "background",
+          "title": "Background",
+          "body": "Wrenfield Eyewear sells prescription glasses and contact lenses online to customers in the United States, Canada and Mexico. It has no stores and no phone line. Customers order on the website, upload a prescription and talk to Wrenfield by web chat or WhatsApp.\n\nCustomer care has about 120 customer service representatives (CSRs) in Denver and Monterrey, 24 licensed opticians who work part-time shifts, and 11 supervisors. Three of the supervisors are dispensing team leads, who also review prescriptions. A staffing agency supplies extra CSRs for the busy weeks before benefit plans reset in January.\n\nWrenfield moved to Dynamics 365 Contact Center in standalone mode last year. CSRs and opticians work in Copilot Service workspace. The Clear View program is now fixing problems from the first year and adding what the launch left out."
+        },
+        {
+          "id": "current",
+          "title": "Current environment",
+          "body": "Web chat\nAll three chat widgets are live chat today.\n- Shop Chat is on the public store. Visitors aren't signed in, and the widget has no chat authentication setting. Frame Finder, a Copilot Studio agent, answers first and escalates to the Orders queue. Reconnect to previous chat is off.\n- Account Chat is on the My Account pages. Customers are signed in, and the widget uses a chat authentication setting. Reconnect to previous chat is off.\n- Lens Consult is on the signed-in prescription pages and belongs to the Prescription Chat workstream. It uses a chat authentication setting. Reconnect to previous chat is on with a time limit, and its Redirect URL is blank.\n\nWhatsApp and SMS\n- WhatsApp runs through Twilio on one production business number, on the WhatsApp Orders workstream. The Contact Book is on. No AI agent runs on this workstream.\n- WhatsApp Orders has two route-to-queue rules. Customer phone numbers that start with +52 go to the Pedidos queue, and numbers that start with +1 go to the Orders queue.\n- A Power Automate flow named Loyalty Match runs when a WhatsApp conversation starts. It finds the contact by phone number and writes the customer's loyalty tier to the conversation.\n- The Lab Delay template was created in the Twilio Content Template Builder, and WhatsApp approved it last week. It hasn't been added in Dynamics 365. A Power Automate flow named Lab Delay Notice is built, but its OutboundConfigurationId variable has no value yet.\n- SMS also runs through Twilio. Contact lens reorder reminders use an SMS message template and an outbound configuration.\n\nQueues\n- The Orders, Pedidos and Returns queues use the Least active assignment method.\n- The Prescription queue uses Highest capacity, and its workstream uses Exact Match on a Dispensing skill. The queue's operating hours are 07:00 to 21:00 every day.\n- Each optician's shifts are set up as work hours on their bookable resource calendar. Wrenfield doesn't use shift bookings, and shift-based routing is off.\n\nWorkspace\n- Prescription Chat uses a custom session template named Prescription Session and the out-of-the-box notification templates.\n- Its preconversation survey asks for Lens type, with the answers Single vision and Progressive.\n- Two scripts are associated with Prescription Session: Single Vision Check and Progressive Check. Neither is a default, so opticians choose one by hand.\n- LensLab Tracker is the lab supplier's website. It allows iframe hosting.\n\nExperience profiles\n- Supervisor Desk has rank 1 and is mapped to the Omnichannel supervisor role.\n- Prescription Care has rank 2 and is mapped to a custom role named Dispensing Reviewer. Its inbox is off.\n- Frontline Messaging has no rank or roles. Current frontline CSRs were added to it by name. Its inbox is on with only the preconfigured views, and All active channels is on.\n- Returns Pilot is new and has no rank, roles or users.\n- No custom profile is set as the default.\n- Frontline and agency CSRs hold the Omnichannel agent role. Opticians hold that role and Dispensing Reviewer. Dispensing team leads hold those two roles and Omnichannel supervisor.\n\nSupervision and quality\n- Supervisor Monitor, Supervisor Assign, Supervisor Transfer and Force Close are all set to Yes. Supervisors work from the Ongoing conversation report.\n- Block capacity for wrap up is set to Always block on every messaging workstream.\n- Quality evaluation is set up for conversations. Chat Standards and Dispensing Standards are two separate published evaluation criteria, and all their questions are AI-enabled.\n- Two evaluation plans are active. Store Review covers the Orders and Returns queues, and Prescription Review covers the Prescription queue. Both use Chat Standards, the Closed conversations trigger and the AI agent method."
+        },
+        {
+          "id": "business",
+          "title": "Business requirements",
+          "body": "Requirement 1: Lens lab questions can take days. Account Chat customers must be able to leave, come back to the same conversation and its history, and send messages outside CSR hours. A CSR's capacity must not stay tied up while the customer is away.\n\nRequirement 2: When a lens lab reports a delay, each affected customer must automatically receive the Lab Delay notice on WhatsApp, even if they haven't messaged Wrenfield for weeks. Customers opt in to WhatsApp updates at checkout.\n\nRequirement 3: LensLab Tracker must open automatically in every Prescription Chat session, in a tab that opticians can't close.\n\nRequirement 4: Before they accept a Prescription Chat conversation, opticians must be able to see the customer's language and lens type.\n\nRequirement 5: Opticians must start on the script that matches the customer's lens type, and they must still be able to switch to the other script.\n\nRequirement 6: Eight agency CSRs named by the Returns manager must use Returns Pilot for a six-week trial. They aren't in any custom profile yet. Wrenfield won't create a security role for a six-week trial, and the trial must not change anyone else's experience.\n\nRequirement 7: A CSR who is working in the inbox must see new text conversations arrive there. A CSR or optician who is working anywhere else must get a session tab straight away, so that a new conversation isn't missed.\n\nRequirement 8: Frontline CSRs need a view in their inbox that lists only the WhatsApp conversations that are unassigned in their queues. The view must appear for all of them without any action on their part.\n\nRequirement 9: From next month, Prescription queue conversations must be evaluated against Dispensing Standards. Store Review must keep evaluating against Chat Standards, and the questions in Chat Standards must not change.\n\nRequirement 10: An auditor needs every closed Prescription queue conversation from June evaluated one time. This must not leave an ongoing schedule behind."
+        },
+        {
+          "id": "technical",
+          "title": "Technical requirements",
+          "body": "- Stay on Dynamics 365 Contact Center in standalone mode. No voice channel is planned.\n- The public store won't get a sign-in, so Shop Chat visitors stay anonymous.\n- Keep WhatsApp and SMS on Twilio. Wrenfield must keep the ability to identify WhatsApp customers by phone number.\n- The Prescription queue must stay open from 07:00 to 21:00. At least one optician is on shift throughout those hours, but shifts differ from person to person.\n- Apart from time-limited trials, experience profiles must follow people's roles or apply to everyone. Administrators won't maintain lists of named users."
+        },
+        {
+          "id": "issues",
+          "title": "Issues",
+          "body": "Issue 1: Shop Chat visitors on phones often leave the chat to find or photograph a prescription, which can take 5 to 10 minutes. When they come back, they start again with a different CSR. They usually tell the CSR before they leave. They must be able to return to the same CSR.\n\nIssue 2: Lens Consult customers who come back after the reconnection time limit are offered a new chat and join the queue again. They must be taken to the Book a Consultation page instead.\n\nIssue 3: Some WhatsApp customers have adopted usernames, so only their Business-Scoped User ID reaches Dynamics 365. Their conversations reach neither the Orders queue nor the Pedidos queue, and their loyalty tier stays blank.\n\nIssue 4: Opticians stay signed in and Available after their shift to finish lab paperwork. Prescription Chat conversations are still assigned to them during that time, while colleagues on shift have free capacity.\n\nIssue 5: Dispensing team leads receive Supervisor Desk, but they need Prescription Care. All other supervisors must keep Supervisor Desk.\n\nIssue 6: New users receive an out-of-the-box experience profile until an administrator adds them to Frontline Messaging. Every user who doesn't qualify for a role-mapped profile must receive Frontline Messaging, whichever roles they hold.\n\nIssue 7: After each weekend, the Ongoing conversation report shows WhatsApp conversations in the Orders queue in the Open state. A supervisor must give specific ones to a senior CSR who is a member of that queue.\n\nIssue 8: A CSR in the Orders queue has been called away. Her WhatsApp conversations are in the Active state, and they must go to another CSR in that queue.\n\nIssue 9: A CSR left for the day with finished conversations in the Wrap-up state. A supervisor must close them now so that her capacity is free when she starts her next shift."
+        }
+      ]
+    },
+    {
+      "id": "sim-series-b",
+      "kind": "series",
+      "title": "Ashlake Campgrounds: handbook answers in Copilot",
+      "exhibits": [
+        {
+          "id": "scenario",
+          "title": "Scenario",
+          "body": "Ashlake Campgrounds runs 38 campgrounds across the US Midwest. It uses Dynamics 365 Contact Center in standalone mode, and its environment is in the North America region. CSRs answer chats in Copilot Service workspace, in English.\n\nSite rules, pet rules and cancellation terms are in the Camp Rules Handbook, a set of PDF files in a SharePoint Online library. The library isn't on the public web. All CSRs have Read permission on it, and Restricted SharePoint Search isn't in use.\n\nCopilot is enabled, and Copilot help pane - Ask a Question is selected in Copilot settings. The CSRs' experience profile has Ask a question turned on. Knowledge management is configured, but the knowledge base doesn't contain the handbook content. A Microsoft Copilot Studio license is available, and Ashlake accepts production-ready preview features.\n\nGoal: A CSR must be able to type a question in Ask a question in the Copilot help pane and get an answer that's based on the handbook content.\n\nYou need to meet the goal."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "sim-b-q01",
+      "kind": "match",
+      "domainId": "channels",
+      "groupId": "sim-case-b",
+      "objectiveIds": [
+        "D2.1.01",
+        "D2.1.04"
+      ],
+      "conceptId": "chat-continuity-link-redirect-persistent",
+      "prompt": "You need to resolve Issue 1 and Issue 2, and meet Requirement 1.\n\nWhat should you configure for each item?",
+      "tray": "Configurations",
+      "table": {
+        "title": "Chat continuity",
+        "rowHeading": "Item",
+        "answerHeading": "Configuration"
+      },
+      "tokens": [
+        {
+          "id": "a",
+          "text": "Turn on Show previous conversations, and set History duration"
+        },
+        {
+          "id": "b",
+          "text": "Turn on Reconnect to previous chat, set the Portal URL, and add the reconnect link as a quick reply"
+        },
+        {
+          "id": "c",
+          "text": "Create a chat workstream with Make chats persistent selected, and add a chat widget to it"
+        },
+        {
+          "id": "d",
+          "text": "Turn on Reconnect to previous chat, and rely on the prompt that returning customers see on the widget"
+        },
+        {
+          "id": "e",
+          "text": "Set the Redirect URL in the widget's reconnection settings"
+        }
+      ],
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Issue 1",
+          "correctTokenId": "b"
+        },
+        {
+          "id": "r2",
+          "label": "Issue 2",
+          "correctTokenId": "e"
+        },
+        {
+          "id": "r3",
+          "label": "Requirement 1",
+          "correctTokenId": "c"
+        }
+      ],
+      "answer": "Issue 1: turn on Reconnect to previous chat, set the Portal URL, and add the reconnect link as a quick reply. Issue 2: set the Redirect URL in the widget's reconnection settings. Requirement 1: create a chat workstream with Make chats persistent selected, and add a chat widget to it.",
+      "explanation": "Reconnection and persistent chat solve different problems, and a widget's sign-in state decides what's available. Shop Chat has no authentication setting and won't get one, so the prompt that offers returning customers their previous chat doesn't apply. The reconnect link works on unauthenticated widgets too, and it fits because visitors warn the CSR before they leave. Lens Consult already has reconnection on, so only the timeout case is missing, and a Redirect URL covers it. Account Chat needs conversations that last for days. Reconnection can't do that, because it holds the CSR's capacity for its time limit. Persistent chat can: Account Chat has the authentication setting it needs, waiting conversations use no capacity, and customers can write outside operating hours. Make chats persistent is chosen when a chat workstream is created, and live and persistent chat need separate workstreams. Microsoft also says to set Keep same representative for entire conversation to Yes.",
+      "sourceIds": [
+        "sim-cb-s02",
+        "sim-cb-s03",
+        "sim-cb-s01",
+        "sim-d4-s07",
+        "sim-cb-s21"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:chat-continuity"
+      ],
+      "optionExplanations": {
+        "a": "Not used. This setting shows history to customers on a channel that's already enabled for persistent chat. It doesn't keep a live chat open or reconnect anyone.",
+        "b": "Correct for Issue 1. The reconnect link works on unauthenticated widgets, and CSRs share it when they expect a disconnection, which is what happens when a Shop Chat visitor warns them.",
+        "c": "Correct for Requirement 1. Account Chat has the authentication setting that persistent chat needs. Waiting conversations use no capacity, the history stays visible, and customers can write outside operating hours. Shop Chat couldn't use this, because it has no authentication setting.",
+        "d": "Not used. The prompt appears only on widgets that have authentication settings, so Shop Chat can't use it. Lens Consult already has it, and it doesn't cover a return after the time limit. On Account Chat, reconnection would block the CSR's capacity for the time limit.",
+        "e": "Correct for Issue 2. The Redirect URL sends customers who return after the timeout to a chosen page. Left blank, customers see the option to start a new chat, which is what Lens Consult does today."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n03"
+        },
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n11"
+        }
+      ],
+      "revision": 1,
+      "status": "draft"
+    },
+    {
+      "id": "sim-b-q02",
+      "kind": "order",
+      "domainId": "channels",
+      "groupId": "sim-case-b",
+      "objectiveIds": [
+        "D2.3.07"
+      ],
+      "conceptId": "whatsapp-outbound-template-config-flow-sequence",
+      "prompt": "You need to meet Requirement 2.\n\nWhich three actions should you perform, and in what order?",
+      "tray": "Actions",
+      "tokens": [
+        {
+          "id": "a",
+          "text": "Set the OutboundConfigurationId variable in the Lab Delay Notice flow to the Configuration ID."
+        },
+        {
+          "id": "b",
+          "text": "Create an SMS message template with localized text in Copilot Service admin center."
+        },
+        {
+          "id": "c",
+          "text": "Add the template to the WhatsApp account by using its Content template SID."
+        },
+        {
+          "id": "d",
+          "text": "Create the template in the Twilio Content Template Builder and submit it for WhatsApp approval."
+        },
+        {
+          "id": "e",
+          "text": "Create an outbound configuration that selects the channel number and the template."
+        },
+        {
+          "id": "f",
+          "text": "Set up WhatsApp on a new workstream and select the business number."
+        }
+      ],
+      "correctOrder": [
+        "c",
+        "e",
+        "a"
+      ],
+      "answer": "Add the template to the WhatsApp account by using its Content template SID, create an outbound configuration that selects the channel number and the template, and then set the OutboundConfigurationId variable in the Lab Delay Notice flow to the Configuration ID.",
+      "explanation": "Requirement 2 is a notice sent long after a customer's last message, so WhatsApp needs an approved template. The exhibits settle where the work starts: Lab Delay is approved in Twilio but hasn't been added in Dynamics 365. From there, each step needs what the one before it produces. An outbound configuration selects a template that has already been created, so the template must be on the WhatsApp account first, identified by its Content template SID. The Configuration ID doesn't exist until that configuration is saved, and the flow's OutboundConfigurationId variable is set to that ID.",
+      "sourceIds": [
+        "sim-cb-s04",
+        "sim-cb-s05",
+        "sim-cb-s06"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:outbound-messaging"
+      ],
+      "optionExplanations": {
+        "a": "Correct, and third. The Configuration ID is generated when the outbound configuration is saved, so the flow's variable can't be set before then.",
+        "b": "Not used. That procedure creates templates for SMS. Requirement 2 is a WhatsApp notice, and WhatsApp templates come from Twilio.",
+        "c": "Correct, and first. Microsoft requires WhatsApp approval before a template is added, and Lab Delay has it. The outbound configuration can then select the template.",
+        "d": "Not used. The Current environment exhibit says that Lab Delay was created there and that WhatsApp approved it last week.",
+        "e": "Correct, and second. The configuration selects a previously created template, and saving it generates the Configuration ID that the flow needs.",
+        "f": "Not used. WhatsApp is already live on the WhatsApp Orders workstream with this number."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n13"
+        }
+      ],
+      "revision": 1,
+      "status": "draft"
+    },
+    {
+      "id": "sim-b-q03",
+      "kind": "multiple",
+      "domainId": "channels",
+      "groupId": "sim-case-b",
+      "objectiveIds": [
+        "D2.1.03"
+      ],
+      "conceptId": "whatsapp-business-scoped-id-impact-review",
+      "prompt": "You need to resolve Issue 3.\n\nWhich two actions should you perform? Each correct answer presents part of the solution.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Turn off the Contact Book so that customers are identified only by Business-Scoped User ID."
+        },
+        {
+          "id": "b",
+          "text": "Update Frame Finder so that its logic also handles Business-Scoped User IDs."
+        },
+        {
+          "id": "c",
+          "text": "Add a fallback rule for conversations that have only a Business-Scoped User ID."
+        },
+        {
+          "id": "d",
+          "text": "Move the phone number conditions from route-to-queue rules to work classification rules."
+        },
+        {
+          "id": "e",
+          "text": "Update Loyalty Match so that it also handles Business-Scoped User IDs."
+        }
+      ],
+      "correctOptionIds": [
+        "c",
+        "e"
+      ],
+      "answer": "Add a fallback rule for conversations that have only a Business-Scoped User ID, and update Loyalty Match so that it also handles Business-Scoped User IDs.",
+      "explanation": "When a WhatsApp customer adopts a username, their phone number is no longer sent, and the Business-Scoped User ID becomes the primary identifier. Microsoft lists three places to review: routing rules, flows and other integrations, and AI agents. The exhibits decide which ones apply here. WhatsApp Orders routes on +52 and +1, so these conversations match no rule and need a fallback rule. Loyalty Match finds the contact by phone number, so it must be updated too. No AI agent runs on this workstream, so there's no agent logic to change. The Contact Book stays on, because turning it off would lose the phone number as an identifier for good.",
+      "sourceIds": [
+        "sim-cb-s04",
+        "sim-d4-s07"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:apply",
+        "feature:whatsapp-usernames"
+      ],
+      "optionExplanations": {
+        "a": "Fails. Microsoft says that turning off the Contact Book permanently loses the phone number as an identifier, and the technical requirements keep that ability. It also fixes neither symptom.",
+        "b": "Fails. Frame Finder runs on Shop Chat, and no AI agent runs on WhatsApp Orders, so no agent handles these conversations.",
+        "c": "Correct. Rules on phone number patterns don't match conversations that have only a Business-Scoped User ID, so Microsoft says to add a fallback rule to route them.",
+        "d": "Fails. Microsoft's warning covers any custom routing rule with a phone number pattern, and work classification rules are routing rules too. The condition would still find no phone number.",
+        "e": "Correct. Loyalty Match finds the contact by phone number. Microsoft says to update flows that rely on phone numbers for customer identification so that they handle the Business-Scoped User ID."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n06"
+        }
+      ],
+      "revision": 1,
+      "status": "draft"
+    },
+    {
+      "id": "sim-b-q04",
+      "kind": "single",
+      "domainId": "work-distribution",
+      "groupId": "sim-case-b",
+      "objectiveIds": [
+        "D4.1.04",
+        "D4.1.05"
+      ],
+      "conceptId": "representative-calendar-custom-assignment",
+      "prompt": "You need to resolve Issue 4.\n\nWhat should you do?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Change the Prescription queue's assignment method to Advanced round robin, and keep the workstream's Exact Match setting."
+        },
+        {
+          "id": "b",
+          "text": "Create a custom assignment method whose rule checks presence, capacity, skills and Calendar schedule Is working."
+        },
+        {
+          "id": "c",
+          "text": "Change the Prescription queue's assignment method to Least active, and keep the workstream's Exact Match setting."
+        },
+        {
+          "id": "d",
+          "text": "Shorten the Prescription queue's operating hours, and add an overflow action for the Out of operation hours condition."
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "answer": "Create a custom assignment method whose rule checks presence, capacity, skills and Calendar schedule Is working.",
+      "explanation": "Presence shows whether an optician is Available, not whether they're on shift, and the opticians in Issue 4 stay Available after their shifts. The out-of-the-box assignment methods don't consider a representative's working hours, so Microsoft says to write a custom assignment method that uses the is_working operator. That fits here because each optician's shifts are work hours on their bookable resource calendar, and Wrenfield has no shift bookings for shift-based routing to read. Microsoft also says to configure presence, capacity and skill-matching rules in a custom method, because the workstream's default settings aren't used there.",
+      "sourceIds": [
+        "sim-d4-s05",
+        "sim-cb-s22",
+        "sim-cb-s26",
+        "sim-cb-s27"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:custom-assignment"
+      ],
+      "optionExplanations": {
+        "a": "Fails. Advanced round robin changes the order among representatives who match on skills, presence and capacity. It doesn't check shifts, so an optician who stays Available after a shift still matches.",
+        "b": "Correct. Is working on Calendar schedule limits assignment to opticians who are working according to their calendars, and the rule restates what the workstream defaults would otherwise have supplied.",
+        "c": "Fails. Least active chooses among representatives who match on skills, presence and capacity, using when capacity was last released. It doesn't check shifts.",
+        "d": "Fails. The technical requirements keep the queue open from 07:00 to 21:00, and shifts differ by person, so one queue schedule can't express them. Automated assignment also doesn't consider a queue's operating hours."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n03"
+        }
+      ],
+      "revision": 1,
+      "status": "draft"
+    },
+    {
+      "id": "sim-b-q05",
+      "kind": "match",
+      "domainId": "representative-experience",
+      "groupId": "sim-case-b",
+      "objectiveIds": [
+        "D5.1.02",
+        "D5.1.05",
+        "D5.2.02"
+      ],
+      "conceptId": "session-tab-notification-default-script-layers",
+      "prompt": "You need to meet Requirement 3, Requirement 4 and Requirement 5.\n\nWhat should you configure for each requirement?",
+      "tray": "Configurations",
+      "table": {
+        "title": "Prescription Chat workspace",
+        "rowHeading": "Requirement",
+        "answerHeading": "Configuration"
+      },
+      "tokens": [
+        {
+          "id": "a",
+          "text": "Add a Macro action step to the scripts on the session template, for opticians to run as needed"
+        },
+        {
+          "id": "b",
+          "text": "Turn on Enable build expression on the session template, and set a default script"
+        },
+        {
+          "id": "c",
+          "text": "Add an Entity record application tab template to the session template"
+        },
+        {
+          "id": "d",
+          "text": "Create a notification template with notification fields, and select it on the workstream"
+        },
+        {
+          "id": "e",
+          "text": "Add a Third-party website application tab template to the session template"
+        }
+      ],
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Requirement 3",
+          "correctTokenId": "e"
+        },
+        {
+          "id": "r2",
+          "label": "Requirement 4",
+          "correctTokenId": "d"
+        },
+        {
+          "id": "r3",
+          "label": "Requirement 5",
+          "correctTokenId": "b"
+        }
+      ],
+      "answer": "Requirement 3: add a Third-party website application tab template to the session template. Requirement 4: create a notification template with notification fields, and select it on the workstream. Requirement 5: turn on Enable build expression on the session template, and set a default script.",
+      "explanation": "Each requirement belongs to a different layer of the session. What opens when a session starts comes from the session template. LensLab Tracker is an outside website that allows iframe hosting, so it's a Third-party website tab, and tabs added to a session template open with the session and can't be closed. What an optician sees before accepting comes from the notification template. The out-of-the-box templates can't be customized, so Prescription Chat needs a custom one, with fields that use the visitor language slug and the slug for the Lens type survey question. The starting script also comes from the session template, whose Scripts tab can build an expression that sets the default script from that survey answer. Opticians can still select the other script.",
+      "sourceIds": [
+        "sim-cb-s08",
+        "sim-cb-s07",
+        "sim-cb-s09",
+        "sim-d4-s07",
+        "sim-cb-s10",
+        "sim-cb-s03",
+        "sim-cb-s11"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "task:apply",
+        "feature:session-layers"
+      ],
+      "optionExplanations": {
+        "a": "Not used. A macro step runs when someone runs it from the script, so it can't open a tab automatically, show details before acceptance, or choose which script appears first.",
+        "b": "Correct for Requirement 5. The expression sets a default script from a condition, such as the survey answer, and representatives can still select another script.",
+        "c": "Not used. This page type opens a Dataverse record or a form. LensLab Tracker is an outside website, and a session tab can't show anything before the optician accepts.",
+        "d": "Correct for Requirement 4. A custom template can show the language and any survey answer as fields, and it's selected in the workstream's notification settings. The out-of-the-box templates can't be changed.",
+        "e": "Correct for Requirement 3. This page type hosts websites that allow iframe hosting, and tabs added to a session template open with the session and can't be closed."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n01"
+        },
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n04"
+        },
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n05"
+        }
+      ],
+      "revision": 1,
+      "status": "draft"
+    },
+    {
+      "id": "sim-b-q06",
+      "kind": "match",
+      "domainId": "representative-experience",
+      "groupId": "sim-case-b",
+      "objectiveIds": [
+        "D5.1.01"
+      ],
+      "conceptId": "experience-profile-assignment-mechanisms",
+      "prompt": "You need to resolve Issue 5 and Issue 6, and meet Requirement 6.\n\nWhich action should you perform for each item?",
+      "tray": "Actions",
+      "table": {
+        "title": "Experience profile assignment",
+        "rowHeading": "Item",
+        "answerHeading": "Action"
+      },
+      "tokens": [
+        {
+          "id": "a",
+          "text": "Set the profile as the default"
+        },
+        {
+          "id": "b",
+          "text": "Map the profile to the team that the users belong to"
+        },
+        {
+          "id": "c",
+          "text": "Change the ranks so that the profile ranks higher"
+        },
+        {
+          "id": "d",
+          "text": "Add the users in the profile's Users section"
+        },
+        {
+          "id": "e",
+          "text": "Map the profile to a security role"
+        }
+      ],
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Issue 5",
+          "correctTokenId": "c"
+        },
+        {
+          "id": "r2",
+          "label": "Issue 6",
+          "correctTokenId": "a"
+        },
+        {
+          "id": "r3",
+          "label": "Requirement 6",
+          "correctTokenId": "d"
+        }
+      ],
+      "answer": "Issue 5: change the ranks so that the profile ranks higher. Issue 6: set the profile as the default. Requirement 6: add the users in the profile's Users section.",
+      "explanation": "A profile can reach people through a default, a role or direct assignment, and the exhibits decide which one fits each group. Dispensing team leads hold two mapped roles, so they get the higher-ranked profile, and rank 1 outranks rank 2. Moving Prescription Care above Supervisor Desk fixes that, and other supervisors keep Supervisor Desk because they hold only one mapped role. Issue 6 covers every user without a role-mapped profile, whatever their roles, and the technical requirements rule out name lists, which is the job of a custom default profile. Requirement 6 is a time-limited trial for eight named people who share their role with other CSRs. No existing role can single them out, Wrenfield won't create one, and the technical requirements allow a list for a trial, so direct assignment fits.",
+      "sourceIds": [
+        "sim-cb-s12",
+        "sim-cb-s23"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "task:apply",
+        "feature:experience-profiles"
+      ],
+      "optionExplanations": {
+        "a": "Correct for Issue 6. A custom default profile applies to users who aren't assigned a specific custom profile directly or through a role, whichever other roles they hold.",
+        "b": "Not used. Microsoft doesn't allow experience profiles to be assigned by team membership.",
+        "c": "Correct for Issue 5. Users with several mapped roles get the higher-ranked profile, so Prescription Care must outrank Supervisor Desk.",
+        "d": "Correct for Requirement 6. The eight CSRs are a named trial group, and the technical requirements allow lists for time-limited trials.",
+        "e": "Not used. Prescription Care already has its role. Issue 6 must cover users whatever roles they hold. The eight agency CSRs share their role with other CSRs, and Requirement 6 rules out a new role."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n03"
+        }
+      ],
+      "revision": 1,
+      "status": "draft"
+    },
+    {
+      "id": "sim-b-q07",
+      "kind": "hotspot",
+      "domainId": "representative-experience",
+      "groupId": "sim-case-b",
+      "objectiveIds": [
+        "D5.1.03"
+      ],
+      "conceptId": "inbox-incoming-routing-and-advanced-view",
+      "prompt": "You need to meet Requirement 7 and Requirement 8.\n\nWhat should you configure for each requirement?",
+      "table": {
+        "title": "Inbox configuration",
+        "rowHeading": "Requirement",
+        "answerHeading": "Configuration"
+      },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Requirement 7",
+          "correctOptionId": "r1c",
+          "options": [
+            {
+              "id": "r1a",
+              "text": "Add to inbox, wherever the CSR is working"
+            },
+            {
+              "id": "r1b",
+              "text": "Open in a new session tab every time"
+            },
+            {
+              "id": "r1c",
+              "text": "Add to inbox if the CSR is in the inbox, otherwise open in a new session tab"
+            },
+            {
+              "id": "r1d",
+              "text": "Add to inbox, and set Show desktop notifications to When app is in background"
+            }
+          ]
+        },
+        {
+          "id": "r2",
+          "label": "Requirement 8",
+          "correctOptionId": "r2c",
+          "options": [
+            {
+              "id": "r2a",
+              "text": "Keep the preconfigured views, and add a custom sort on channel to the unassigned view"
+            },
+            {
+              "id": "r2b",
+              "text": "Add a custom view that uses the Simple Unassigned setting for conversations"
+            },
+            {
+              "id": "r2c",
+              "text": "Add a custom view that uses Advanced settings for the conversation record type"
+            }
+          ]
+        }
+      ],
+      "answer": "Requirement 7: add to inbox if the CSR is in the inbox, otherwise open in a new session tab. Requirement 8: add a custom view that uses Advanced settings for the conversation record type.",
+      "explanation": "The Incoming work items setting decides where a new text conversation lands, and Requirement 7 describes two outcomes that depend on where the person is working. Only the conditional option gives both. Requirement 8 is narrower than any built-in filter. The Unassigned filter means a conversation in one of the user's queues with a status of Open, on any channel. Limiting it to WhatsApp takes a custom view with Advanced settings, where you build the conditions yourself. Frontline Messaging is a custom profile, so its inbox can be edited, and setting Representative visibility to Show makes the view appear for its users.",
+      "sourceIds": [
+        "sim-cb-s13",
+        "sim-cb-s14",
+        "sim-cb-s09",
+        "sim-cb-s28"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "task:apply",
+        "feature:inbox"
+      ],
+      "optionExplanations": {
+        "r1a": "Fails. This adds the conversation to the inbox wherever the person is working, so someone outside the inbox doesn't get the session tab that Requirement 7 asks for.",
+        "r1b": "Fails. This opens a tab every time, including for a CSR who's working in the inbox.",
+        "r1c": "Correct. This is the channel-focused inbox option that uses the inbox only when the person is in it and opens a session tab otherwise.",
+        "r1d": "Fails. Show desktop notifications is a notification template setting. It alerts the person, but it doesn't open a session tab.",
+        "r2a": "Fails. A sort changes the order of a view, not its contents, so other channels still appear.",
+        "r2b": "Fails. The Unassigned setting selects conversations in the user's queues with a status of Open, on every channel.",
+        "r2c": "Correct. Advanced settings let you define which conversation records appear when the simple filters don't cover the scenario. They're available on custom profiles such as Frontline Messaging."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n03"
+        }
+      ],
+      "revision": 1,
+      "status": "draft"
+    },
+    {
+      "id": "sim-b-q08",
+      "kind": "hotspot",
+      "domainId": "analytics",
+      "groupId": "sim-case-b",
+      "objectiveIds": [
+        "D6.1.02"
+      ],
+      "conceptId": "evaluation-plan-criteria-swap-and-single-run",
+      "prompt": "You need to meet Requirement 9 and Requirement 10.\n\nWhat should you do for each requirement?",
+      "table": {
+        "title": "Quality evaluation changes",
+        "rowHeading": "Requirement",
+        "answerHeading": "Action"
+      },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Requirement 9",
+          "correctOptionId": "r1c",
+          "options": [
+            {
+              "id": "r1a",
+              "text": "Pause Prescription Review, change its criteria to Dispensing Standards, and activate it again"
+            },
+            {
+              "id": "r1b",
+              "text": "Edit Chat Standards, publish the new version, and leave Prescription Review running"
+            },
+            {
+              "id": "r1c",
+              "text": "Create a plan that uses Dispensing Standards, activate it, and pause Prescription Review"
+            },
+            {
+              "id": "r1d",
+              "text": "Change the criteria on Prescription Review while the plan stays active"
+            }
+          ]
+        },
+        {
+          "id": "r2",
+          "label": "Requirement 10",
+          "correctOptionId": "r2c",
+          "options": [
+            {
+              "id": "r2a",
+              "text": "Create a plan with Frequency type set to Trigger"
+            },
+            {
+              "id": "r2b",
+              "text": "Create a plan with Frequency type set to Recurring"
+            },
+            {
+              "id": "r2c",
+              "text": "Create a plan with Frequency type set to Once"
+            }
+          ]
+        }
+      ],
+      "answer": "Requirement 9: create a plan that uses Dispensing Standards, activate it, and pause Prescription Review. Requirement 10: create a plan with Frequency type set to Once.",
+      "explanation": "An evaluation plan stays tied to its criteria. You can't edit an active plan, and when it's paused, every field can be edited except Record type and Evaluation criteria. Publishing a new version of the same criteria reaches its plans at their next run, but Dispensing Standards is a separate criteria, and rewriting Chat Standards would change Store Review too. So the plan has to be replaced. For the audit, the frequency type decides when a plan runs. Once runs a single evaluation against the conversations that match its conditions, with no ongoing schedule. Trigger evaluates future conversations as they close, and Recurring keeps running on a daily schedule.",
+      "sourceIds": [
+        "sim-cb-s15",
+        "sim-d6-s02"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:evaluation-plans"
+      ],
+      "optionExplanations": {
+        "r1a": "Fails. A paused plan can be edited, but Record type and Evaluation criteria stay locked.",
+        "r1b": "Fails. Dispensing Standards is a separate criteria, so editing Chat Standards does not bring it in. Plans use the latest published version, so Store Review would change too, and Requirement 9 says that the questions in Chat Standards must not change.",
+        "r1c": "Correct. A plan's criteria can't be changed, so a new plan brings in Dispensing Standards, and pausing Prescription Review stops the old evaluations. Store Review isn't touched.",
+        "r1d": "Fails. Microsoft says that you can't edit active evaluation plans.",
+        "r2a": "Fails. A Trigger plan evaluates future conversations when a specified event occurs, so it doesn't reach conversations that closed in June.",
+        "r2b": "Fails. A Recurring plan can evaluate previously closed conversations, but it runs on a daily schedule, which Requirement 10 rules out.",
+        "r2c": "Correct. A Once plan runs a single evaluation against the conversations that match its conditions, without creating an ongoing schedule."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n04"
+        }
+      ],
+      "revision": 1,
+      "status": "draft"
+    },
+    {
+      "id": "sim-b-q09",
+      "kind": "match",
+      "domainId": "analytics",
+      "groupId": "sim-case-b",
+      "objectiveIds": [
+        "D6.1.04"
+      ],
+      "conceptId": "supervisor-action-by-conversation-state",
+      "prompt": "You need to resolve Issue 7, Issue 8 and Issue 9.\n\nWhich action should the supervisor take in the Ongoing conversation report for each issue?",
+      "tray": "Actions",
+      "table": {
+        "title": "Supervisor actions",
+        "rowHeading": "Issue",
+        "answerHeading": "Action"
+      },
+      "tokens": [
+        {
+          "id": "a",
+          "text": "Select Monitor, and then select Join chat in the communication panel"
+        },
+        {
+          "id": "b",
+          "text": "Select Force Close, and then select Proceed"
+        },
+        {
+          "id": "c",
+          "text": "Select Assign, and then choose the CSR"
+        },
+        {
+          "id": "d",
+          "text": "Select Transfer, and then choose the CSR"
+        },
+        {
+          "id": "e",
+          "text": "Select Assign, and then choose a queue"
+        }
+      ],
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Issue 7",
+          "correctTokenId": "c"
+        },
+        {
+          "id": "r2",
+          "label": "Issue 8",
+          "correctTokenId": "d"
+        },
+        {
+          "id": "r3",
+          "label": "Issue 9",
+          "correctTokenId": "b"
+        }
+      ],
+      "answer": "Issue 7: select Assign, and then choose the CSR. Issue 8: select Transfer, and then choose the CSR. Issue 9: select Force Close, and then select Proceed.",
+      "explanation": "A conversation's state decides which action is available, and all four supervisor settings are on. An Open conversation has no CSR yet, so it's assigned, and Issue 7 names a CSR in the same queue. An Active conversation already belongs to a CSR, so it's transferred to another CSR in that queue. A Wrap-up conversation can be neither assigned nor transferred, and with Always block it holds the CSR's capacity until the CSR or a supervisor closes it. Force Close ends it and sets its status to Closed.",
+      "sourceIds": [
+        "sim-cb-s16",
+        "sim-d6-s08",
+        "sim-d6-s22",
+        "sim-d4-s07",
+        "sim-cb-s17"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:supervisor-actions"
+      ],
+      "optionExplanations": {
+        "a": "Not used. Monitoring and joining let a supervisor observe a conversation or speak in it, but they don't move or close it.",
+        "b": "Correct for Issue 9. Wrap-up conversations can't be assigned or transferred, and Force Close sets the status to Closed, which frees the capacity that Always block holds.",
+        "c": "Correct for Issue 7. Assign needs a conversation in the Open state with no CSR, and the target CSR must belong to the current queue.",
+        "d": "Correct for Issue 8. Transfer works on Active conversations, and both CSRs belong to the Orders queue.",
+        "e": "Not used. Issue 7 needs a particular CSR, not a queue, and Assign isn't available for Active or Wrap-up conversations."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n03"
+        }
+      ],
+      "revision": 1,
+      "status": "draft"
+    },
+    {
+      "id": "sim-b-q10",
+      "kind": "single",
+      "domainId": "agents-ai",
+      "groupId": "sim-series-b",
+      "objectiveIds": [
+        "D3.1.03",
+        "D3.1.04"
+      ],
+      "conceptId": "ask-question-copilot-studio-sharepoint-source",
+      "prompt": "Solution: You select Extend agent with Copilot Studio for the Customer Support agent. In the linked Customer Service Copilot Bot, you add the SharePoint library as a knowledge source and publish the agent.\n\nDoes the solution meet the goal?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "Yes"
+        },
+        {
+          "id": "no",
+          "text": "No"
+        }
+      ],
+      "correctOptionIds": [
+        "yes"
+      ],
+      "answer": "Yes. Copilot Studio knowledge sources are supported for Ask a question, and SharePoint is one of them.",
+      "explanation": "With Extend agent with Copilot Studio selected, Copilot sends the question and its context to the managed Customer Service Copilot Bot, which can use knowledge sources such as SharePoint. Microsoft's table of Copilot features shows Copilot Studio knowledge sources as supported for Ask a question. The solution publishes the agent, which is needed because unpublished changes don't reach users. The scenario meets the other conditions: Copilot is on, a Copilot Studio license is available, the CSRs can read the library, and Ashlake accepts production-ready previews, which this feature is.",
+      "sourceIds": [
+        "sim-cb-s19",
+        "sim-cb-s18",
+        "sim-cb-s24",
+        "sim-cb-s25",
+        "sim-cb-s29"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:evaluate",
+        "feature:copilot-extensibility"
+      ],
+      "optionExplanations": {
+        "yes": "Correct. The extended agent answers Ask a question from its Copilot Studio knowledge, and the CSRs have Read permission on the library.",
+        "no": "Incorrect. Copilot Studio knowledge sources are supported for Ask a question, and the scenario's prerequisites are in place."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n04"
+        },
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n03"
+        }
+      ],
+      "revision": 1,
+      "status": "draft"
+    },
+    {
+      "id": "sim-b-q11",
+      "kind": "single",
+      "domainId": "agents-ai",
+      "groupId": "sim-series-b",
+      "objectiveIds": [
+        "D3.1.03"
+      ],
+      "conceptId": "trusted-webpages-not-ask-question-source",
+      "prompt": "Solution: You add the URL of the SharePoint library to Trusted webpages in the Customer Support agent settings.\n\nDoes the solution meet the goal?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "Yes"
+        },
+        {
+          "id": "no",
+          "text": "No"
+        }
+      ],
+      "correctOptionIds": [
+        "no"
+      ],
+      "answer": "No. Trusted webpages are external web resources, which are not a source for Ask a question.",
+      "explanation": "Trusted webpages let Copilot search web domains when it drafts emails. Microsoft's table shows external web resources as not supported for Ask a question, and it says that external websites are used to draft emails and chat replies only. The handbook also sits in a private library, not on the public web.",
+      "sourceIds": [
+        "sim-cb-s18"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:evaluate",
+        "feature:copilot-knowledge-sources"
+      ],
+      "optionExplanations": {
+        "yes": "Incorrect. Trusted webpages feed email drafting. External web resources are not a source for Ask a question.",
+        "no": "Correct. The table of Copilot features shows external web resources as not supported for Ask a question."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n03"
+        }
+      ],
+      "revision": 1,
+      "status": "draft"
+    },
+    {
+      "id": "sim-b-q12",
+      "kind": "single",
+      "domainId": "agents-ai",
+      "groupId": "sim-series-b",
+      "objectiveIds": [
+        "D3.1.03"
+      ],
+      "conceptId": "knowledge-agent-cannot-harvest-sharepoint-files",
+      "prompt": "Solution: You turn on the Customer Knowledge Management Agent and start historical knowledge creation with the SharePoint library as its source.\n\nDoes the solution meet the goal?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "Yes"
+        },
+        {
+          "id": "no",
+          "text": "No"
+        }
+      ],
+      "correctOptionIds": [
+        "no"
+      ],
+      "answer": "No. The agent creates articles from cases, conversations and related records, not from a SharePoint library.",
+      "explanation": "The Customer Knowledge Management Agent harvests knowledge from cases, conversation summaries, emails, notes and conversations. Historical creation has settings for cases, conversations and custom record types in Dynamics 365. A SharePoint library isn't any of these, so this solution can't bring the handbook into the knowledge base.",
+      "sourceIds": [
+        "sim-cb-s20"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:evaluate",
+        "feature:copilot-knowledge-sources"
+      ],
+      "optionExplanations": {
+        "yes": "Incorrect. Historical knowledge creation works from cases, conversations and custom record types, so it has no way to read the library.",
+        "no": "Correct. The agent's sources are records in Dynamics 365, and the handbook is a set of PDF files in SharePoint."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n03"
+        },
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n10"
+        }
+      ],
+      "revision": 1,
+      "status": "draft"
+    },
+    {
+      "id": "sim-b-q13",
+      "kind": "single",
+      "domainId": "agents-ai",
+      "groupId": "sim-series-b",
+      "objectiveIds": [
+        "D3.1.02",
+        "D3.1.03"
+      ],
+      "conceptId": "ask-question-published-article-source",
+      "prompt": "Solution: You recreate the handbook content as knowledge articles in English and publish them. In the Customer Support agent settings, you select Use your organization's knowledge base as knowledge source.\n\nDoes the solution meet the goal?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "Yes"
+        },
+        {
+          "id": "no",
+          "text": "No"
+        }
+      ],
+      "correctOptionIds": [
+        "yes"
+      ],
+      "answer": "Yes. Ask a question can answer from the organization's knowledge base, and these articles meet its conditions.",
+      "explanation": "Copilot can use the organization's knowledge base for Ask a question once that source is selected. It uses the latest version of published articles, in the same language as the user interface, and reads the article's content field. Recreating the handbook as published English articles meets those conditions for CSRs who work in English. The PDFs can stay in SharePoint, because the goal concerns the handbook's content, not where the files are kept.",
+      "sourceIds": [
+        "sim-cb-s18",
+        "sim-cb-s25"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:evaluate",
+        "feature:copilot-knowledge-sources"
+      ],
+      "optionExplanations": {
+        "yes": "Correct. Knowledge base is a supported source for Ask a question, and published English articles fit CSRs who work in English.",
+        "no": "Incorrect. Knowledge management is configured, and the published articles meet the version, state and language conditions."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n03"
+        },
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n01"
+        }
+      ],
+      "revision": 1,
+      "status": "draft"
+    }
+  ],
+  "editorial": [
+    {
+      "id": "sim-b-q01",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "chat-continuity-link-redirect-persistent",
+      "objectiveIds": [
+        "D2.1.01",
+        "D2.1.04"
+      ],
+      "level": "advanced",
+      "author": "case-b-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-cb-s02",
+          "section": "How reconnection to a previous chat works",
+          "claim": "Reconnect with a link is available for both authenticated and unauthenticated chat widget settings, and representatives share the link when they anticipate a need to reconnect. Reconnect through a prompt is presented on chat widgets that have authentication settings configured.",
+          "applicability": "Live chat widgets. The exhibits say that Shop Chat has no authentication setting and that visitors warn the CSR first, which decides Issue 1."
+        },
+        {
+          "sourceId": "sim-cb-s02",
+          "section": "Enable reconnection to a previous chat session",
+          "claim": "Reconnect to previous chat is set on the widget. Time limit blocks the representative's capacity for the specified duration unless the session is closed. Portal URL is the link that the representative can share. Redirect URL is optional and applies when the reconnection timeout occurs; if it's blank, the customer sees the option to start a new chat conversation.",
+          "applicability": "Supports Issue 2, and shows why reconnection does not fit Requirement 1, which forbids tying up capacity."
+        },
+        {
+          "sourceId": "sim-cb-s03",
+          "section": "Slug for reconnection link",
+          "claim": "{ReconnectUrl{ReconnectID}} is used in quick replies to generate the reconnect link.",
+          "applicability": "Supports the quick reply in token b."
+        },
+        {
+          "sourceId": "sim-cb-s01",
+          "section": "Opening table; How persistent chat works; Prerequisites; Set up persistent chat; Display previous conversations to customers",
+          "claim": "Persistent chat lets conversations continue over multiple sessions and outside working hours, and history stays visible. Chats in a waiting stage don't take up capacity. Authentication settings are a prerequisite. Make chats persistent is selected when the chat workstream is created. Live and persistent chat widgets need two separate workstreams. Show previous conversations is turned on for a live chat channel that's enabled for persistent chat.",
+          "applicability": "Authenticated chat widgets. Account Chat meets the prerequisite. Show previous conversations is token a."
+        },
+        {
+          "sourceId": "sim-d4-s07",
+          "section": "Create a workstream; Configure work distribution",
+          "claim": "The Make chats persistent checkbox appears in the Create a workstream dialog when Chat is selected, with a reminder to select Keep same representative for entire conversation.",
+          "applicability": "Messaging workstreams. Token c creates a new workstream because the docs place the choice at creation."
+        },
+        {
+          "sourceId": "sim-cb-s21",
+          "section": "Opening paragraphs; What happens when a chat gets disconnected",
+          "claim": "By default a customer can continue within three minutes. Locking the screen or switching apps can disconnect a mobile chat, and after that time a new chat begins unless reconnection is enabled.",
+          "applicability": "Explains why the 5 to 10 minutes in Issue 1 needs reconnection on Shop Chat."
+        }
+      ],
+      "duplicateCheck": "A keyword search of ab250-bank, 8c-pilot and 8d-analytics for Reconnect, Redirect URL, Portal URL and Show previous conversations found no question. Compared with persistent-returning-autoassign-affinity in ab250-bank, which tests the returning-conversation notification template on a workstream that is already persistent."
+    },
+    {
+      "id": "sim-b-q02",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "whatsapp-outbound-template-config-flow-sequence",
+      "objectiveIds": [
+        "D2.3.07"
+      ],
+      "level": "advanced",
+      "author": "case-b-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-cb-s04",
+          "section": "WhatsApp message types and the 24-hour session rule",
+          "claim": "After 24 hours pass, representatives can send messages only by using a WhatsApp-approved template until the customer responds. Template messages go to customers who opted in.",
+          "applicability": "WhatsApp through Twilio. Explains why a notice sent weeks after the last message uses a template. The case opts customers in at checkout."
+        },
+        {
+          "sourceId": "sim-cb-s04",
+          "section": "Configure WhatsApp message templates",
+          "claim": "You must create message templates in the Twilio account and have them approved by WhatsApp before you add them. A template is added on the Behaviors tab with its Content template SID, default language and approved text.",
+          "applicability": "First step, and the reason token d is already done in the case."
+        },
+        {
+          "sourceId": "sim-cb-s05",
+          "section": "Set up outbound configuration",
+          "claim": "The configuration has Channel type, Channel and Message template fields, where the template is your previously created template. The Configuration ID is generated when you select Save, and you use it later to identify the configuration when you set up the flow.",
+          "applicability": "Pair 1 is a dependency because token e selects the template, which must already exist. Pair 2 is a dependency because the ID does not exist before the save."
+        },
+        {
+          "sourceId": "sim-cb-s05",
+          "section": "Set up a Power Automate flow",
+          "claim": "Initialize an OutboundConfigurationId variable, and then set it to the outbound message configuration ID that you generated.",
+          "applicability": "Third step. The case says that the flow is built apart from this value. A learn.microsoft.com search for these steps returned only this article and its translations, so no page showing a reverse order was found."
+        },
+        {
+          "sourceId": "sim-cb-s05",
+          "section": "Opening paragraphs; Set up message templates",
+          "claim": "Message templates can be configured for SMS and WhatsApp only. The article links SMS to Create message templates and WhatsApp to the channel article.",
+          "applicability": "Separates the SMS path in token b from the WhatsApp path."
+        },
+        {
+          "sourceId": "sim-cb-s06",
+          "section": "To create a message template",
+          "claim": "The Channel value in this procedure is SMS, and localized text is added as new messages.",
+          "applicability": "Token b is real, and the case uses it for reorder reminders, but it does not create a WhatsApp template."
+        }
+      ],
+      "duplicateCheck": "A keyword search of ab250-bank, 8c-pilot and 8d-analytics for OutboundConfigurationId, Content template SID and outbound configuration found no question. Compared with twilio-number-and-optout-boundaries in ab250-bank, which tests SMS number format and consent setup."
+    },
+    {
+      "id": "sim-b-q03",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "whatsapp-business-scoped-id-impact-review",
+      "objectiveIds": [
+        "D2.1.03"
+      ],
+      "level": "advanced",
+      "author": "case-b-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-cb-s04",
+          "section": "Important note at the top of the article",
+          "claim": "When a user adopts a WhatsApp username, their phone number is no longer sent, and their Business-Scoped User ID acts as the primary identifier. Custom routing rules with conditions on phone number patterns won't match those conversations, so add a fallback rule. Flows that rely on phone numbers for customer identification should be updated. If an AI agent uses msdyn_CustomerPhoneNumber, its logic should be updated.",
+          "applicability": "WhatsApp through Twilio, as in the case. The note dates this from June 2026 and points to Meta for the timeline, so Issue 3 states that it has reached these customers. Options c and e apply. Option b does not, because no AI agent runs on WhatsApp Orders."
+        },
+        {
+          "sourceId": "sim-cb-s04",
+          "section": "Important note at the top of the article",
+          "claim": "The Contact Book is enabled by default for the business WhatsApp account. Keeping it enabled preserves the ability to identify customers by phone number. If you disable it, the phone number is permanently lost as an identifier.",
+          "applicability": "Option a. The case says the Contact Book is on, and the Technical requirements exhibit keeps identification by phone number."
+        },
+        {
+          "sourceId": "sim-d4-s07",
+          "section": "Configure routing rules",
+          "claim": "Routing rules for a workstream consist of work classification rules and route-to-queue rules.",
+          "applicability": "Option d. It shows that Microsoft's warning about custom routing rules reaches both rule types."
+        }
+      ],
+      "duplicateCheck": "A keyword search of ab250-bank, 8c-pilot and 8d-analytics for Business-Scoped and Contact Book found no question. Compared with contact-phone-identification in ab250-bank, which tests which contact field standard chat identification reads."
+    },
+    {
+      "id": "sim-b-q04",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "representative-calendar-custom-assignment",
+      "objectiveIds": [
+        "D4.1.04",
+        "D4.1.05"
+      ],
+      "level": "advanced",
+      "author": "case-b-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d4-s05",
+          "section": "Types of assignment methods, Create new, Important list",
+          "claim": "You must configure presence, capacity and skill-matching rules in the custom assignment method because the default settings defined for the workstream aren't used. The default assignment strategies don't consider the representative operating hours, and you must write a custom assignment method by using the is_working operator.",
+          "applicability": "Queues in unified routing. This is the rule that Issue 4 turns on. The Important note also recommends default methods for most cases, and the case needs the exception it describes."
+        },
+        {
+          "sourceId": "sim-d4-s05",
+          "section": "How assignment rulesets work, Components of an assignment rule",
+          "claim": "Calendar schedule with the Is working operator finds representatives who are working according to their service scheduling calendars. Automated assignment considers the representative calendar schedule only and doesn't consider the operating hours defined for the queues. The same table says that the capacity profile check is implicit in custom assignment and that unit-based capacity needs conditions.",
+          "applicability": "The case holds shifts in those calendars. Option b states a capacity condition, which suits either capacity type. Option d fails on the queue hours sentence and on the Technical requirements exhibit."
+        },
+        {
+          "sourceId": "sim-d4-s05",
+          "section": "Highest capacity; Advanced round robin; Least active",
+          "claim": "Each out-of-the-box method matches representatives on skills, presence and capacity. Advanced round robin orders them by assignment history, and Least active uses the time since capacity was last released.",
+          "applicability": "Options a and c. Neither reads a calendar, so opticians who stay Available still match."
+        },
+        {
+          "sourceId": "sim-cb-s22",
+          "section": "Create an assignment method and configure rules",
+          "claim": "The sample assignment rule has conditions for User skills with Exact match, Presence status and Available capacity.",
+          "applicability": "Shows the shape of the rule in option b before the calendar condition is added."
+        },
+        {
+          "sourceId": "sim-cb-s26",
+          "section": "Prerequisites; Configure an assignment rule; How shift-based routing works",
+          "claim": "Shift-based routing needs Workforce Management or an adapter, shift bookings and a custom assignment method. The rule condition is Calendar schedule, with Is working selected automatically. Shift-based routing ignores the work hour calendar and considers shift bookings only.",
+          "applicability": "The strongest alternative. The Current environment exhibit rules it out by saying that Wrenfield has no shift bookings and that the feature is off, so Is working reads the calendars. Option b holds in either setup, because both use a custom method with this condition."
+        },
+        {
+          "sourceId": "sim-cb-s27",
+          "section": "Manage users using the classic experience",
+          "claim": "To use the user schedule for assignment, set up the bookable resource calendar. Work hours for a bookable resource need universal resource scheduling.",
+          "applicability": "The exhibit says that these calendars and work hours already exist, so the question does not test how they are set up."
+        }
+      ],
+      "duplicateCheck": "A keyword search of ab250-bank, 8c-pilot and 8d-analytics for Is working, is_working and Calendar schedule found no question. Compared with custom-assignment-skill-condition, which tests adding a skill condition to an existing custom rule, and least-active-signin-misdiagnosis, which tests the timestamp that Least active reads."
+    },
+    {
+      "id": "sim-b-q05",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "session-tab-notification-default-script-layers",
+      "objectiveIds": [
+        "D5.1.02",
+        "D5.1.05",
+        "D5.2.02"
+      ],
+      "level": "advanced",
+      "author": "case-b-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-cb-s08",
+          "section": "Page types; Third-party website; Entity record",
+          "claim": "The Third-party website page type displays websites that are compatible with iframe hosting. The Entity record page type displays an existing record or opens a form to create one.",
+          "applicability": "Standalone Contact Center. The case states that LensLab Tracker allows iframe hosting."
+        },
+        {
+          "sourceId": "sim-cb-s07",
+          "section": "Associate application tabs, scripts with session templates",
+          "claim": "You can associate application tabs that need to open when a session starts, and representatives can't close these tabs. A session template is then associated with a workstream.",
+          "applicability": "Requirement 3. Prescription Session is already a custom template on the workstream."
+        },
+        {
+          "sourceId": "sim-cb-s09",
+          "section": "Slugs for notification field header; Out-of-the-box notification templates",
+          "claim": "Notification fields use slugs, including {visitorLanguage} and all prechat survey questions configured for a workstream. Out-of-the-box notification templates can't be customized, so you create your own.",
+          "applicability": "Requirement 4. The case says that Prescription Chat uses the out-of-the-box templates and that Lens type is a survey question."
+        },
+        {
+          "sourceId": "sim-d4-s07",
+          "section": "Associate templates",
+          "claim": "Under Advanced settings, a template is selected for each notification type, such as Incoming unauthenticated and Incoming authenticated, and a default session template is selected under Sessions.",
+          "applicability": "Supports the phrase \"select it on the workstream\" in token d."
+        },
+        {
+          "sourceId": "sim-cb-s10",
+          "section": "Set the default script for representatives; Enable and build the expression",
+          "claim": "On the Scripts tab of the session template, Enable build expression is set to Yes and the expression sets a default script from conditions. Representatives can manually select another available script.",
+          "applicability": "Requirement 5. Both scripts are already associated with Prescription Session in the case."
+        },
+        {
+          "sourceId": "sim-cb-s03",
+          "section": "Slugs for productivity tools (macros and scripts)",
+          "claim": "This list is also used to set a script as the default by using the script expression builder, and it includes a slug for the name of each pre-conversation survey question.",
+          "applicability": "Shows that the Lens type answer can drive the condition."
+        },
+        {
+          "sourceId": "sim-cb-s11",
+          "section": "Trigger macros",
+          "claim": "Representatives can run macros from the Productivity pane, and an API call can trigger a macro.",
+          "applicability": "Token a. A macro step in a script is an action someone runs, not a session setting."
+        }
+      ],
+      "duplicateCheck": "A keyword search of ab250-bank, 8c-pilot and 8d-analytics for default script, Build expression and notification field found no question. Third-party website appears only in website-tab-embedding, which tests iframe failure. Compared with session-workstream-composition, which connects templates that already exist, and website-tab-runtime-parameterization, which tests URL and data parameters."
+    },
+    {
+      "id": "sim-b-q06",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "experience-profile-assignment-mechanisms",
+      "objectiveIds": [
+        "D5.1.01"
+      ],
+      "level": "advanced",
+      "author": "case-b-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-cb-s12",
+          "section": "Map security roles to experience profiles",
+          "claim": "A profile mapped to a security role is assigned to all users with that role. Assignment based on team membership isn't allowed. If users have multiple security roles, the profile with the higher rank is linked to the user, and the example gives rank 1 priority over rank 2.",
+          "applicability": "Custom profiles only. Issue 5 and tokens b and e. The page does not state a precedence between direct and role-based assignment for one user, so the case keeps those apart: the eight agency CSRs hold no mapped role, and the Technical requirements exhibit rules out name lists for Issue 5."
+        },
+        {
+          "sourceId": "sim-cb-s12",
+          "section": "Set a custom experience profile as default; Manage users assigned to experience profiles",
+          "claim": "A custom profile set as the default applies to all users, except users who are assigned specific custom profiles and users with a security role mapped to a profile. Out-of-the-box profiles can't be set as the default, and a default profile can't keep security roles.",
+          "applicability": "Issue 6. Frontline Messaging is custom and has no roles, and no default is set today."
+        },
+        {
+          "sourceId": "sim-cb-s12",
+          "section": "Search for users",
+          "claim": "A user can be associated with a profile by Default, Role-based or Direct assignment.",
+          "applicability": "Names the three mechanisms in the question."
+        },
+        {
+          "sourceId": "sim-cb-s23",
+          "section": "Assign users, templates, configure productivity pane, channels",
+          "claim": "In the Users section of a profile, Add Users selects users or searches for them to add to the profile. Set as default and Set rank and roles are on the command menu.",
+          "applicability": "Requirement 6, and the location of the rank setting."
+        }
+      ],
+      "duplicateCheck": "A keyword search of ab250-bank, 8c-pilot and 8d-analytics for Set rank and Set as default found no question. Compared with profile-team-targeting, which tests creating a custom profile instead of editing a supplied one, and profile-assignment-verification, which tests Search by user."
+    },
+    {
+      "id": "sim-b-q07",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "inbox-incoming-routing-and-advanced-view",
+      "objectiveIds": [
+        "D5.1.03"
+      ],
+      "level": "advanced",
+      "author": "case-b-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-cb-s13",
+          "section": "Configure the channel-focused inbox",
+          "claim": "On the Incoming work items tab, the options are Add to inbox if customer service representative is currently in inbox, otherwise open in a new session tab; Add to inbox; and Open in a new session tab.",
+          "applicability": "Text conversations. The page reaches this setting through a selected profile and also says that changes apply to all users, so Requirement 7 is written for everyone and the answer holds at either scope. Option wording is shortened from the product labels."
+        },
+        {
+          "sourceId": "sim-cb-s13",
+          "section": "Configure custom views for the inbox; Simple settings; Advanced settings for conversations",
+          "claim": "Custom views use Simple or Advanced filters per record type. Simple chat settings are Assigned, Unassigned and Resolved. Advanced settings use a condition builder to define which conversation records appear, for custom experience profiles with conversations enabled, when the simple filters don't cover the scenario. The builder is prepopulated with any simple settings you saved.",
+          "applicability": "Requirement 8. Frontline Messaging is custom, and the case states that its inbox and All active channels are on."
+        },
+        {
+          "sourceId": "sim-cb-s13",
+          "section": "Opening paragraphs; Prerequisites; Configure the inbox setting for representatives; Configure custom sort in the inbox",
+          "claim": "Inbox settings can be configured only for custom profiles. All active channels must be On to use the chat setting. Representative visibility has Show and Hide. A custom sort sets the entity, attributes and sort order.",
+          "applicability": "Option r2a, and why the case states the profile type and channel setting. Preconfigured view names differ between this page and Use views and filters in the inbox, so the options name no specific view."
+        },
+        {
+          "sourceId": "sim-cb-s14",
+          "section": "Inbox filters",
+          "claim": "The Conversation Unassigned filter means that Queue is a queue the user is a member of and Status Reason is Open. It has no channel condition.",
+          "applicability": "Option r2b."
+        },
+        {
+          "sourceId": "sim-cb-s09",
+          "section": "Create a notification template",
+          "claim": "Show desktop notifications is a notification template setting with the values Always and When app is in background.",
+          "applicability": "Option r1d."
+        },
+        {
+          "sourceId": "sim-cb-s28",
+          "section": "Customized columns/attributes, msdyn_channel",
+          "claim": "The Conversation table has a msdyn_channel column whose choices include WhatsApp.",
+          "applicability": "Option r2c. Configure the inbox doesn't list which columns the condition builder offers, so this reference is the support for a channel condition on the conversation record type."
+        }
+      ],
+      "duplicateCheck": "A keyword search of ab250-bank, 8c-pilot and 8d-analytics for Incoming work items and Add to inbox found no question. Compared with inbox-view-record-and-visibility, inbox-custom-sort-configuration and inbox-live-voice-session-behavior, which test record types and visibility, sorting, and voice behavior."
+    },
+    {
+      "id": "sim-b-q08",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "evaluation-plan-criteria-swap-and-single-run",
+      "objectiveIds": [
+        "D6.1.02"
+      ],
+      "level": "advanced",
+      "author": "case-b-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-cb-s15",
+          "section": "Edit evaluation plans",
+          "claim": "You can't edit active evaluation plans, or modify the existing record type or evaluation criteria for a plan. After Pause plan and Edit, all fields become editable except Record type and Evaluation criteria.",
+          "applicability": "Options r1a, r1c and r1d. The case states that both plans are active."
+        },
+        {
+          "sourceId": "sim-d6-s02",
+          "section": "Edit your published evaluation criteria; Manage evaluation criteria versions",
+          "claim": "After you publish updated criteria, evaluation plans use the latest criteria in the next run, and each edit and publish increments the version.",
+          "applicability": "Option r1b. It is the right route for revising one criteria, which is why the exhibit says that these are two separate criteria and that Chat Standards must not change."
+        },
+        {
+          "sourceId": "sim-cb-s15",
+          "section": "Create and activate evaluation plan for cases and closed conversations",
+          "claim": "For Conversations, Frequency type is Trigger, Recurring or Once. Trigger automatically evaluates future conversations when a specified event occurs. Recurring runs on a schedule, with Daily as the occurrence, and can evaluate previously closed conversations. Once runs a single evaluation against conversations that match the configured conditions, without creating an ongoing evaluation schedule.",
+          "applicability": "Requirement 10, using conditions to select June and the Prescription queue."
+        },
+        {
+          "sourceId": "sim-cb-s15",
+          "section": "Activate, pause, resume, or delete evaluation plans",
+          "claim": "Plans can be activated, paused, resumed or deleted, and a paused plan stops before the next run.",
+          "applicability": "Supports pausing Prescription Review in option r1c."
+        }
+      ],
+      "duplicateCheck": "A keyword search of ab250-bank, 8c-pilot and 8d-analytics for Frequency type found no question. Compared with trigger-plan-history-interpretation, ivr-only-quality-evaluation-scope and quality-ai-assisted-method-contract in ab250-bank and evaluation-criteria-governance-features in 8d-analytics. Those test run history, participant scope, method choice and criteria capabilities, not changing a plan's criteria or choosing a one-time run."
+    },
+    {
+      "id": "sim-b-q09",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "supervisor-action-by-conversation-state",
+      "objectiveIds": [
+        "D6.1.04"
+      ],
+      "level": "advanced",
+      "author": "case-b-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-cb-s16",
+          "section": "Assign conversations; Transfer conversations; End conversations forcibly",
+          "claim": "To assign a conversation manually, it must be in the Open state and not assigned to any representative. You can transfer conversations in the Active or Waiting states. Forcibly ending a conversation sets its status to Closed.",
+          "applicability": "Digital messaging in standalone Contact Center. Issue 8 uses Active, because the Record rows of the table on the Ongoing conversation report page show Waiting differently from this page."
+        },
+        {
+          "sourceId": "sim-d6-s08",
+          "section": "Assign or transfer conversations; Force close conversations",
+          "claim": "You can assign or transfer conversations only to representatives who are part of the current queue. Assign offers Find an agent or Find a queue. The state table shows both actions as not enabled in Wrap-up. Force Close asks for confirmation with Proceed.",
+          "applicability": "The table is labeled Record. Its Open, Active and Wrap-up rows agree with the steps on this page and with Monitor, assign, transfer, and end conversations. Issues 7 and 8 keep both CSRs in the Orders queue."
+        },
+        {
+          "sourceId": "sim-d6-s22",
+          "section": "Configure supervisor settings",
+          "claim": "Supervisor Monitor, Supervisor Assign, Supervisor Transfer and Force Close are separate toggles.",
+          "applicability": "The case sets all four to Yes."
+        },
+        {
+          "sourceId": "sim-d4-s07",
+          "section": "Configure work distribution",
+          "claim": "With Always block, representative capacity is consumed until the representative or supervisor closes the conversation or the system closes it automatically.",
+          "applicability": "Issue 9. Shows that a supervisor closing the conversation releases capacity."
+        },
+        {
+          "sourceId": "sim-cb-s17",
+          "section": "Open; Active; Wrap up",
+          "claim": "Open means that the conversation is in the queue and not assigned. Active means that a representative picked it up or was assigned it. Wrap-up follows the end of the conversation, with capacity blocked according to the workstream setting.",
+          "applicability": "Defines the states named in Issues 7, 8 and 9."
+        }
+      ],
+      "duplicateCheck": "Compared with supervisor-action-permission-layer, monitor-state-channel-scope and supervisor-transfer-consultant-lifecycle in ab250-bank, and custom-realtime-wallboard-refresh-and-actions in 8d-analytics. Those test which toggles to enable, what can be monitored, what happens after a transfer, and where Force Close is available, not choosing an action from a conversation's state."
+    },
+    {
+      "id": "sim-b-q10",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "ask-question-copilot-studio-sharepoint-source",
+      "objectiveIds": [
+        "D3.1.03",
+        "D3.1.04"
+      ],
+      "level": "advanced",
+      "author": "case-b-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-cb-s19",
+          "section": "Prerequisites; Understand how Copilot extensibility works; Enable Copilot Studio extensibility; Knowledge",
+          "claim": "Extend agent with Copilot Studio is selected on the Extend agent tab of the Customer Support agent. Copilot then sends the request and context to the Copilot Studio agent, and a confident response is shown. Knowledge sources can answer from internal documentation on the organization's SharePoint. The link opens the managed Customer Service Copilot Bot.",
+          "applicability": "Production-ready preview, which the scenario accepts. The prerequisites are stated in the scenario."
+        },
+        {
+          "sourceId": "sim-cb-s18",
+          "section": "Features supported with different knowledge sources",
+          "claim": "The table shows Ask a question as supported for Knowledge base and Knowledge sources in Copilot Studio, and not supported for External web resources.",
+          "applicability": "Copilot help pane."
+        },
+        {
+          "sourceId": "sim-cb-s24",
+          "section": "Opening paragraphs; Advanced authentication scenarios",
+          "claim": "The agent surfaces only content that the user has permission to access, with at least Read permission. If Restricted SharePoint Search is enabled, use of SharePoint is blocked.",
+          "applicability": "The scenario gives CSRs Read permission and says that Restricted SharePoint Search is not in use. This page names Teams, Power Apps and Microsoft Copilot as its default authentication hosts and does not mention the Copilot help pane. Support for SharePoint here rests on the extensibility article, which names SharePoint as an example for this managed agent."
+        },
+        {
+          "sourceId": "sim-cb-s25",
+          "section": "Region availability and data movement",
+          "claim": "The features that answer questions are generally available only in North America and are in preview in other supported regions.",
+          "applicability": "The scenario places the environment in the North America region."
+        },
+        {
+          "sourceId": "sim-cb-s29",
+          "section": "Opening paragraphs; Publish the latest content",
+          "claim": "You need to publish an agent before customers can engage with it, and publish it again after any change. If you make changes but don't publish, customers won't be engaging with the latest content. You publish by selecting Publish with the agent open for editing.",
+          "applicability": "Copilot Studio agents. The extensibility article gives no publishing step of its own and doesn't list publishing among the managed agent's limitations, so this general rule is applied to the Customer Service Copilot Bot. The solution states the step, so the Yes answer doesn't depend on a learner assuming it."
+        }
+      ],
+      "duplicateCheck": "Compared with extensibility-confidence-fallback, managed-agent-change-boundaries and extensibility-context-description in ab250-bank. Those test fallback, what can change in the managed agent and context descriptions, not whether Copilot Studio knowledge reaches Ask a question from SharePoint."
+    },
+    {
+      "id": "sim-b-q11",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "trusted-webpages-not-ask-question-source",
+      "objectiveIds": [
+        "D3.1.03"
+      ],
+      "level": "advanced",
+      "author": "case-b-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-cb-s18",
+          "section": "Features supported with different knowledge sources",
+          "claim": "The table shows External web resources as No for Ask a question and Yes for Write an email.",
+          "applicability": "Copilot help pane."
+        },
+        {
+          "sourceId": "sim-cb-s18",
+          "section": "Email settings tab",
+          "claim": "Trusted webpages add up to five trusted web domains as sources for Copilot, and Bing Search must be enabled. The notes say that external websites are used by Copilot to draft emails and chat replies only.",
+          "applicability": "The solution places the library in this setting. The scenario says that the library is not on the public web."
+        }
+      ],
+      "duplicateCheck": "A keyword search of ab250-bank, 8c-pilot and 8d-analytics for Trusted webpages found no question. Compared with knowledge-readiness-differential, which tests article state and language."
+    },
+    {
+      "id": "sim-b-q12",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "knowledge-agent-cannot-harvest-sharepoint-files",
+      "objectiveIds": [
+        "D3.1.03"
+      ],
+      "level": "advanced",
+      "author": "case-b-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-cb-s20",
+          "section": "Opening paragraph; Enable Customer Knowledge Management Agent",
+          "claim": "The agent turns cases and case-related conversations, emails and notes into knowledge articles. You can harvest articles from cases, conversation summaries associated to the cases, emails, notes and conversations.",
+          "applicability": "Standalone Contact Center with knowledge management configured."
+        },
+        {
+          "sourceId": "sim-cb-s20",
+          "section": "Enable historical knowledge creation; Add custom record types (preview)",
+          "claim": "Historical creation is set on the Cases, Conversations and Custom record types tabs. Custom record types are Dynamics 365 record types that have knowledge management turned on.",
+          "applicability": "The page gives no setting that takes a SharePoint library, and its source settings are all record types in Dynamics 365."
+        }
+      ],
+      "duplicateCheck": "Compared with knowledge-harvest-runtime-readiness, knowledge-historical-harvest-batching and knowledge-sensitive-data-review in ab250-bank. Those test setup, batching and review of harvesting, not which sources it can read."
+    },
+    {
+      "id": "sim-b-q13",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "ask-question-published-article-source",
+      "objectiveIds": [
+        "D3.1.02",
+        "D3.1.03"
+      ],
+      "level": "advanced",
+      "author": "case-b-author",
+      "authoredAt": "2026-11-06",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-cb-s18",
+          "section": "Features supported with different knowledge sources",
+          "claim": "The table shows Knowledge base as supported for Ask a question.",
+          "applicability": "Copilot help pane."
+        },
+        {
+          "sourceId": "sim-cb-s18",
+          "section": "Overview tab, Knowledge sources",
+          "claim": "You select Include a knowledge base or another type of knowledge source, and then Use your organization's knowledge base as knowledge source. Copilot uses the content attribute of the knowledge article table and articles tagged with the same language as the user interface. Articles must be the latest version and Published, and knowledge management must be configured.",
+          "applicability": "The scenario configures knowledge management and has CSRs working in English."
+        },
+        {
+          "sourceId": "sim-cb-s25",
+          "section": "Region availability and data movement",
+          "claim": "The features that answer questions are generally available only in North America and are in preview in other supported regions.",
+          "applicability": "The scenario places the environment in the North America region."
+        }
+      ],
+      "duplicateCheck": "Compared with knowledge-readiness-differential in ab250-bank, which starts from an enabled source and tests article state and language. This item tests whether converting the handbook to articles is a valid route to the goal, beside the three other routes in the series."
+    }
+  ]
+}

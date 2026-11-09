@@ -1,3 +1,4 @@
+import { sel } from '../support/selection';
 import {describe,it,expect} from 'vitest';
 import {readFileSync} from 'node:fs';
 import {validateQuestionBank,validateQuestionBankReferences} from '../../src/questionBankValidation';
@@ -46,9 +47,9 @@ describe('published original AB-250 bank',()=>{
   const source=structuredClone(bank);
   let attempt=createTestAttempt(source,{...options,count:300},[],now,()=>0.37);
   const multiple=attempt.questions.find(q=>q.card.kind==='multiple')!;
-  attempt=answerTestAttempt(attempt,multiple.card.id,[multiple.card.correctOptionIds[0]],now+1);
+  attempt=answerTestAttempt(attempt,multiple.card.id,[sel(multiple.card).correctOptionIds[0]],now+1);
   const partial=completeTestAttempt(attempt,now+2);expect(partial.result).toEqual({correct:0,wrong:1,skipped:299});
-  attempt=answerTestAttempt(attempt,multiple.card.id,multiple.card.correctOptionIds,now+3);
+  attempt=answerTestAttempt(attempt,multiple.card.id,sel(multiple.card).correctOptionIds,now+3);
   const completed=completeTestAttempt(attempt,now+4);expect(completed.result).toEqual({correct:1,wrong:0,skipped:299});
   const before=structuredClone(completed.questions);
   source.questions.forEach(q=>{q.answer='Later catalog edit';q.explanation='Later explanation';});source.sources.forEach(s=>{s.title='Later title';});

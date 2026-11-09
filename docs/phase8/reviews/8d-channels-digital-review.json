@@ -1,0 +1,610 @@
+[
+  {
+    "id": "sim-d2d-q01",
+    "revision": 1,
+    "reviewer": "channels-digital-reviewer",
+    "reviewedAt": "2026-11-07",
+    "decision": "approved",
+    "rationale": "Re-review after edits. Both round 1 fixes are in. The explanation now says the other two steps belong to SMS providers, with Twilio on the phone number and Infobip in a notification profile, and that Teams gives a bot ID instead of a URL. All 24 row and token pairs still hold. The LINE row still turns on a fact the names don't give, because b can't be told from f without knowing the product (check 21). Checks 25 to 31 pass. The Azure bot framework sentence is needed for row 4 and doesn't mark one token, because c and d both mention a bot. No learner-facing statement goes beyond Learn.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2d-s05",
+        "supported": true,
+        "section": "Overview of channels (implementation pattern)",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Handshake data exchanged in both the admin center and the provider experience. Page dated 2026-05-08."
+      },
+      {
+        "sourceId": "sim-d2d-s01",
+        "supported": true,
+        "section": "Create the Facebook channel account",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Callback URL and Verify token configure webhooks; Add subscriptions for the page, Messages. Page dated 2026-09-01."
+      },
+      {
+        "sourceId": "sim-d2d-s02",
+        "supported": true,
+        "section": "Create a LINE channel",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Webhook URL in the Messaging API setting, toggle on, verify. Page dated 2026-04-07."
+      },
+      {
+        "sourceId": "sim-d2d-s03",
+        "supported": true,
+        "section": "Configure a Microsoft Teams channel; Configure Teams details",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Callback information gives Bot ID; App features > Bot > Enter a bot ID; publish. The revised 'bot ID instead' wording matches. Page dated 2026-07-30."
+      },
+      {
+        "sourceId": "sim-d2d-s04",
+        "supported": true,
+        "section": "Configure callback information",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Messaging endpoint (URL) pasted in the bot resource. Azure bot framework method. Page dated 2026-05-08."
+      },
+      {
+        "sourceId": "sim-d2d-s06",
+        "supported": true,
+        "section": "Establish a connection between omnichannel application and Twilio",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Inbound URL goes in the Messaging section of the active number, as the revised explanation says."
+      },
+      {
+        "sourceId": "sim-d2d-s07",
+        "supported": true,
+        "section": "Configure the notification profile",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Callback URL goes in the notification profile's Webhook URL with HMAC, as the revised explanation says."
+      }
+    ],
+    "fingerprint": "eff97f72055c080f050b5aaba46402e70e3b1d68d804381bfef927583f4b0225"
+  },
+  {
+    "id": "sim-d2d-q02",
+    "revision": 1,
+    "reviewer": "channels-digital-reviewer",
+    "reviewedAt": "2026-11-07",
+    "decision": "approved",
+    "rationale": "Stands. The native app takes the mobile SDKs, which Microsoft strongly recommends and which support push through Azure Notification Hub. The back-end relay takes Messaging APIs, which are for service-to-service work and not recommended from a user's device. The website code takes the Live chat SDK, whose getAgentAvailability returns isQueueAvailable and is named for deciding whether the start conversation option is visible. I tested every token on every row. The strongest alternative is Direct Line for the relay. It fails for a documented reason: the custom messaging channel page names Direct Line as a custom channel and lists a Bot Framework agent registered with Azure Bot Service as a prerequisite, and the Direct Line sample needs a Direct Line secret and bot handle. The stem forbids that registration, while Messaging API setup needs only a Microsoft Entra app registration. \"Internally attached\" on the Direct Line page describes the bot inside Contact Center, not an exemption. Checks 16 and 21: both stem constraints need product knowledge to apply, and the native and back-end rows each turn on a fact the token names don't give. The representative availability APIs (GA April 30, 2026 in the archived wave 1 plan) aren't a token and change no row. Distinct from ab250-d2-q14 and ab250-d2-q15, which test how to use one surface. Row 3 shares the getAgentAvailability fact with q10 option b, but the decision differs.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2d-s08",
+        "supported": true,
+        "section": "Introduction; Integrate with the Dynamics 365 Contact Center mobile SDKs; Render the live chat widget using embedded code",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Two options; native SDKs strongly recommended; push via Azure Notification Hub; WebView when SDKs don't meet requirements or timelines, with limitations."
+      },
+      {
+        "sourceId": "sim-d2d-s09",
+        "supported": true,
+        "section": "Introduction and note",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Service-to-service; suited to custom channels; not recommended from the user's device; endpoint table has no availability call. Dated 2025-09-11, updated 2026-07-21."
+      },
+      {
+        "sourceId": "sim-d2d-s04",
+        "supported": true,
+        "section": "Introduction; Prerequisites",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Names custom channels like Direct Line; requires a Bot Framework agent registered with Azure Bot Service."
+      },
+      {
+        "sourceId": "sim-d2d-s10",
+        "supported": true,
+        "section": "Introduction; Message relay processor",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Connector uses Direct Line API 3.0; sample uses a Direct Line secret and bot handle."
+      },
+      {
+        "sourceId": "sim-d2d-s11",
+        "supported": true,
+        "section": "Introduction; Return value",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Can determine whether the start conversation option should be visible; isQueueAvailable true within operating hours."
+      }
+    ],
+    "fingerprint": "7f7b718b00a6e64ead787f77534e88a8b67291ae6011614e95b36f08ea2f5b00"
+  },
+  {
+    "id": "sim-d2d-q03",
+    "revision": 1,
+    "reviewer": "channels-digital-reviewer",
+    "reviewedAt": "2026-11-07",
+    "decision": "approved",
+    "rationale": "Re-review after edits. The evidence fix is in. The sim-d2d-s36 applicability no longer credits that page with the embedded-experience sentence, and it now gives the Customer Service reason from the identification page. No learner-facing text changed. The answer still holds as reviewed in round 1. Row 2 rests tightly on the one-active-case rule plus the more-than-one rule, and the link page allows one contact and one case. Checks 21 to 31 pass. The tokens are results, not names, and nothing in the setup marks an option.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2d-s12",
+        "supported": true,
+        "section": "Introduction and notes; Set up preconversation questions",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "One active case links; more than one account, contact or case isn't linked; case is Customer Service only; active status code. Page dated 2026-05-27."
+      },
+      {
+        "sourceId": "sim-d2d-s13",
+        "supported": true,
+        "section": "Configure a preconversation survey",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Behaviors tab, question name, answer type, Required."
+      },
+      {
+        "sourceId": "sim-d2d-s36",
+        "supported": true,
+        "section": "View customer details; View case details",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Search, link, Add Contact, Add Account, Add Case. The revised applicability makes no claim the page lacks. Page dated 2026-02-09."
+      }
+    ],
+    "fingerprint": "ae2818a24ca4c449f098627e139c8d0a9d156335c00fbce91286944f10b921e6"
+  },
+  {
+    "id": "sim-d2d-q04",
+    "revision": 1,
+    "reviewer": "channels-digital-reviewer",
+    "reviewedAt": "2026-11-07",
+    "decision": "approved",
+    "rationale": "Stands. The Infobip page states each value. The application ID is the organization ID, and Learn names the environment, tenant and Entra IDs as wrong. The HMAC secret is the same API key as the messaging account, and a mismatch is a listed cause of missing messages. The callback URL goes in a notification profile's Webhook URL. Every distractor fails for a documented reason: the verify token is a Facebook value, the Messaging section of the number is Twilio's location, and the application filter selects an application rather than holding a URL. The archived 2026 wave 1 plan lists Use Infobip as an SMS channel as generally available on May 12, 2026, so status isn't a factor. Checks 21 to 24: each row turns on a page fact, options are parallel, and no stem word marks one option. No other bank question tests Infobip, and q01 uses it only as a distractor.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2d-s07",
+        "supported": true,
+        "section": "Prerequisites; Get Infobip account details; Configure HMAC authentication; Configure the notification profile; Configure the SMS subscription",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "All three rows confirmed, including the troubleshooting check that the HMAC secret matches the API key. Dated 2026-09-21, updated 2026-10-14."
+      },
+      {
+        "sourceId": "sim-d2d-s06",
+        "supported": true,
+        "section": "Establish a connection between omnichannel application and Twilio",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Twilio inbound URL goes in the Messaging section of the number."
+      },
+      {
+        "sourceId": "sim-d2d-s01",
+        "supported": true,
+        "section": "Create the Facebook channel account",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Facebook callback information has Callback URL and Verify token."
+      }
+    ],
+    "fingerprint": "ac65774c24ed30950d7377709908c0f560324cec975cc2abec2d0dbaa896a21e"
+  },
+  {
+    "id": "sim-d2d-q05",
+    "revision": 1,
+    "reviewer": "channels-digital-reviewer",
+    "reviewedAt": "2026-11-07",
+    "decision": "approved",
+    "rationale": "Re-review after edits. Row 3 is gone. So are the stem sentence about quiet customers, the reach-those-customers goal, the answer sentence, the explanation's last sentence and the reopen sentence in the evidence. Two rows are within the hotspot rules, and no claim about reopening a conversation remains (check 29). Rows 1 and 2 stand as in round 1. Until pages_messaging is approved, only users with a role can message the page, and the tag must be Yes on the channel instance and on in the Facebook app. Checks 22 and 25: the gaps describe symptoms, and no stem word marks an option. Check 31: r2b and r2c each set the tag in one place only. r2c, which leaves the channel instance at No, is strictly weaker than r2b, so the belief that the channel setting alone is enough still has a home.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2d-s01",
+        "supported": true,
+        "section": "Prerequisites; Roles and permissions; Create a Facebook workstream (User features)",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Revised claim matches the page. The conflicting reopen sentence is no longer used. Page dated 2026-09-01."
+      },
+      {
+        "sourceId": "sim-d2d-s35",
+        "supported": true,
+        "section": "Why aren't representatives able to receive messages that are sent from Facebook?",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Production mode after approval: any user; development mode: roles only."
+      },
+      {
+        "sourceId": "sim-d4-s07",
+        "supported": true,
+        "section": "Configure work distribution",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Auto-close after inactivity closes inactive conversations; persistent chat, SMS, social and Teams."
+      }
+    ],
+    "fingerprint": "e0ca3c8fb53c0852faa50f1b3fb75efed0dc1d79489a9f3d312a525f5dd6bafa"
+  },
+  {
+    "id": "sim-d2d-q06",
+    "revision": 1,
+    "reviewer": "channels-digital-reviewer",
+    "reviewedAt": "2026-11-07",
+    "decision": "approved",
+    "rationale": "Re-review after edits. r1b now points the record's Public key URL at an endpoint that returns only the new key. It fails for a documented reason, because tokens signed with the old key can't validate during the rotation. The editor's new evidence sentence is accurate. The page says the system validates the token with the public key that you specify in the authentication setting record, and that the Public key URL is used to validate the information that comes in from the JWT. r1b is the weakest option in its row, but the row still turns on knowledge between r1a and r1c. Rows 2 and 3 stand as in round 1. Checks 25 to 31 pass. The requirements state goals, and no hotspot row has a mirror pair.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2d-s14",
+        "supported": true,
+        "section": "Authentication compared to customer identification; Create an authentication setting record for chat; Add authentication to chat widget; Setup for custom portals",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Validation with the public key in the record and the Public key URL's purpose both confirmed, along with kid pairs, sub, lwicontexts, the error event and the redirect note. Page dated 2026-10-12."
+      }
+    ],
+    "fingerprint": "7116e8802400e1a240a9f3179e85c38a066fa761b5afae5387e22b7f2475d3cd"
+  },
+  {
+    "id": "sim-d2d-q07",
+    "revision": 1,
+    "reviewer": "channels-digital-reviewer",
+    "reviewedAt": "2026-11-07",
+    "decision": "approved",
+    "rationale": "Re-review after edits. r1c is now 'turn translation back on with More commands after each one-off message'. It fails for a documented reason: More commands is a per-conversation switch, and Learn's fix for one-off messages is score-based detection in the web resource file. Its explanation makes no claim about the widget. The sim-d2v-s21 note now says the enhanced translation feature is planned for public preview in September 2026 with no GA date, which matches the archived plan. Check 22: 'one-off' from the row label appears only in r1c, so word matching leads away from the answer. Check 23: r1c's phrasing differs, but it marks a wrong option, and r1a against r1b still needs the meaning of Default input language. Rows 2 and 3 stand.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2v-s21",
+        "supported": true,
+        "section": "Enable real-time translation for representative and customer conversations; Enable score-based language detection",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Default input language, global endpoint, score-based value and example confirmed. Revised preview note matches the archived plan item (Sep 2026 preview, no GA). Page dated 2026-04-15."
+      },
+      {
+        "sourceId": "sim-d2d-s15",
+        "supported": true,
+        "section": "How language translation of conversations works",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "More commands turns translation on or off for each conversation, which supports r3a and the new r1c. Page dated 2026-05-08."
+      }
+    ],
+    "fingerprint": "b3d525b4ccccb2d4537ce4a8c19754b24ca9a500ecf75e487a3ec9fe6589238a"
+  },
+  {
+    "id": "sim-d2d-q08",
+    "revision": 1,
+    "reviewer": "channels-digital-reviewer",
+    "reviewedAt": "2026-11-07",
+    "decision": "approved",
+    "rationale": "Stands. The conversation state page gives each result. On asynchronous channels, close (X) without End moves the conversation to Waiting and releases capacity. On voice and chat it goes to Open. The disconnected chats page says an Active chat moves to Wrap-up when the customer stays disconnected past the set duration. I tested all 12 row and option pairs. The strongest alternative is Closed for row 3, from the Active to Closed table row. It fails because that row covers a customer who leaves before a representative accepts, and the stem says each conversation starts in Active. The state page and the workstream page disagree about which representative gets a reassigned live chat, but no text in the question takes a side. Checks 21 to 24 pass, because the rows share one option set. Distinct from ab250-d6-q07 (supervisor monitoring by state) and from q12.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-cb-s17",
+        "supported": true,
+        "section": "Active; Waiting; How conversations are handled on close or end",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Active to Waiting on X for channels, not live chat; Active to Open on session close for live chat; Waiting applies to asynchronous and persistent chat only. Page dated 2026-07-13."
+      },
+      {
+        "sourceId": "sim-cb-s21",
+        "supported": true,
+        "section": "Understand disconnected chats (introduction)",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Three-minute default; Active to Wrap-up with capacity update; Open to Closed. Page dated 2026-01-30."
+      }
+    ],
+    "fingerprint": "25f8415f7d404e28bdafb042d0d5d113d17051eeb9df62c21150a3bb76cc023c"
+  },
+  {
+    "id": "sim-d2d-q09",
+    "revision": 1,
+    "reviewer": "channels-digital-reviewer",
+    "reviewedAt": "2026-11-07",
+    "decision": "approved",
+    "rationale": "Re-review after edits. Both fixes are in. Requirement 1 now uses the table's own category, documents (check 28). The setup sentence no longer names a custom channel (check 27), and the explanations follow the tables. The answer set is still unique. Facebook and Direct Line have Document or all types inbound plus suggested actions. LINE has no Document inbound, and Teams and WhatsApp lack suggested actions. WhatsApp fails on suggested actions alone, so the answer doesn't depend on whether PDF counts as a document. The wrong belief that the two Meta channels behave alike still names exactly two options. On the editor's question: keep the concept ID. It isn't learner-facing, it's a stable identifier, and the tested concept (channel fit for inbound attachments plus suggested actions) is unchanged. Renaming it would also break the fingerprint.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2d-s16",
+        "supported": true,
+        "section": "Support for suggested actions; Support for file attachments",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Document is listed inbound for Facebook and Teams; LINE has none; WhatsApp (Twilio) lists PDF; Direct Line accepts all types but blocked, with a client note. Suggested actions confirmed. Page dated 2026-06-17."
+      }
+    ],
+    "fingerprint": "888a39fd3f3ac986cf876bcb6363ba890786597a31e40b1ce369b403e63938ce"
+  },
+  {
+    "id": "sim-d2d-q10",
+    "revision": 1,
+    "reviewer": "channels-digital-rereviewer",
+    "reviewedAt": "2026-11-09",
+    "decision": "approved",
+    "rationale": "Re-review of round 2. Every requested change is in: option c is the isAgentAvailable code decoy, optionExplanations.c and the explanation sentence match the requested text, sim-d2d-s21 is gone from sourceIds and evidence, the s11 claim quotes the isAgentAvailable return value with the requested applicability, and duplicateCheck names the wrong rules. Read as new text: the three setup sentences now serve both code options, so check 27 no longer bites, and the no-AI-agent sentence strengthens decoy c rather than marking b. It also keeps the overflow page's AI agent exception out of d. Overlap (check 22): 'operating' or 'operation hours' appears in a and d, not in exactly the two correct options. b and c are parallel and equal in length, and the correct a is the shortest (checks 12, 23). The wrong rules code-only (b, c) and configuration-only (a, d) each name exactly two options (check 14). Check 31 does not apply: b and c test different return fields. a meets the requirement by the widget's operating hours setting, b by isQueueAvailable; c fails because isAgentAvailable follows representative availability during opening hours, and d acts only after a conversation starts. No unstated setting decides the result (check 30): the stem fixes the modern widget, queue operating hours, no AI agent, code access and traffic under the rate limit. No preview labels on any cited page.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2d-s17",
+        "supported": true,
+        "section": "Introduction; Add operating hours to a chat widget",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Show widget during operation hours with the selected record displays the widget during those hours; Show widget outside of operation hours displays it outside them. Non-business-hours work items are handled by overflow conditions for before a work item is queued. No preview label. Page dated 2026-03-18."
+      },
+      {
+        "sourceId": "sim-d2d-s18",
+        "supported": true,
+        "section": "Set up the modern widget",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Show widget during operation hours: select an operating hour setting and optionally select the checkbox to show the widget outside of operation hours. The classic widget uses a different label, which the stem avoids by naming the modern widget. Page dated 2026-08-07."
+      },
+      {
+        "sourceId": "sim-d2d-s19",
+        "supported": true,
+        "section": "data-hide-chat-button",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Hides the default open chat button so you can use your own. Page dated 2026-02-03."
+      },
+      {
+        "sourceId": "sim-d2d-s11",
+        "supported": true,
+        "section": "Introduction; notes; Return value",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Can be used to decide whether the start conversation option is visible. isQueueAvailable is TRUE within operating hours and FALSE outside. isAgentAvailable is TRUE when agents in the queue are available to take requests, also true when a bot is attached, with a recommendation not to use it when a bot is present. Call after lcw:ready; 100 calls per minute per organization. Page dated 2026-05-08."
+      },
+      {
+        "sourceId": "sim-d2d-s20",
+        "supported": true,
+        "section": "startChat",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Opens an existing chat, if any, and otherwise initiates a new one; call after lcw:ready. Page dated 2023-11-07."
+      },
+      {
+        "sourceId": "sim-d4-s01",
+        "supported": true,
+        "section": "Handle overflow before a work item is queued; Configure overflow conditions for before a work item is queued; Edit automated messages for overflow actions",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Overflow is checked after route-to-queue rules and before queueing. Adding an operating hour record to a queue assigns Out of operation hours, whose action can be changed. End conversation, for messaging queues, routes the conversation to the queue and ends it, and its automated message can be edited. With an AI agent, overflow is checked only after escalation; the stem has none. Page dated 2026-10-30."
+      }
+    ],
+    "fingerprint": "66b300707efb893f609cb70ca62ed7b67be3a73526749d97f66fa0ffd2a1dd1f"
+  },
+  {
+    "id": "sim-d2d-q11",
+    "revision": 1,
+    "reviewer": "channels-digital-reviewer",
+    "reviewedAt": "2026-11-07",
+    "decision": "approved",
+    "rationale": "Re-review after edits. The fix is in. The stem no longer forbids case creation rules, c is a compliant route-to-queue decoy, and option a and the explanation quote 'help determine'. The new c fails for a documented reason. The editor's added s24 sentence is on the page, and the route-to-queue page, which I opened today, says queue routing rules send the work item to the right queue and a workstream has one route-to-queue ruleset. Check 16 holds, because c looks like a and can't be rejected without knowing what intake rules do. Check 14 holds, because the belief that record routing needs only rules names exactly a and c. Check 22: 'email record' appears in a and c, so word matching picks the wrong pair. On the editor's question: 'Flagged for the reviewer' in the sim-d2d-s22 note is still accurate. It records that the author raised step 1's 'converted to a case' sentence, the note correctly says nothing depends on it, and this review resolves the flag. No change needed.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2d-s22",
+        "supported": true,
+        "section": "Route email as a case; Route email as a record",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Record-path steps confirmed. Step 1's 'converted to a case' sentence is no longer touched by any stem or option text."
+      },
+      {
+        "sourceId": "sim-d2d-s23",
+        "supported": true,
+        "section": "Set up custom flow to automatically route records",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Email Messages, Create, msdyn_ApplyRoutingRuleEntityRecord; Route Case applies to cases."
+      },
+      {
+        "sourceId": "sim-d2d-s24",
+        "supported": true,
+        "section": "Configure intake rules; Configure routing rules",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Both sentences in the revised claim are on the page. The route-to-queue page (configure-route-to-queue-rules, opened 2026-11-07) adds that these rules send the work item to the right queue."
+      },
+      {
+        "sourceId": "sim-d4-s07",
+        "supported": true,
+        "section": "Introduction",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Messaging and Record workstream types."
+      }
+    ],
+    "fingerprint": "f61231229af84e5208beb2016f145c47582cead33b7cfbfd9ef7dbe194d19643"
+  },
+  {
+    "id": "sim-d2d-q12",
+    "revision": 1,
+    "reviewer": "channels-digital-rereviewer",
+    "reviewedAt": "2026-11-09",
+    "decision": "approved",
+    "rationale": "Re-review of round 2. Every requested change is in: the push and Keep same representative sentence is gone, bullet 2 reads as requested, optionExplanations.e and the explanation drop the affinity claim, sim-d4-s07 is removed from sourceIds and evidence, and the sim-cb-s17 applicability matches the requested text. Read as new text: bullet 2 now rests on the timeout page's own claim that the representative receives a notification when the customer restarts the conversation, so it no longer depends on an unstated affinity or autoassign setting (checks 30, 32). Bullet 1 rules out d (Active consumes capacity), bullet 2 rules out e (reassigned to a different representative), and the scenario rules out b (the customer, not the representative, is slow). The stem states the goal, not the diagnosis: 'waiting', 'queue' and 'message' don't appear in it (checks 22, 25). Options are parallel label-value pairs (check 23). SMS is asynchronous, so Move active conversation to waiting applies, and the timeout rules page carries no preview label. The b plus e wrong pairing names exactly two options (check 14).",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2d-s25",
+        "supported": true,
+        "section": "Configure the timeout rules",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Customer Non-Response Time is the time a customer stays inactive after the representative's last message. Send a message sends a configured message, with no change of state. Move active conversation to waiting, for asynchronous messaging or persistent chat channels, moves the conversation to waiting, and the representative receives a notification when the customer restarts the conversation. Release reassigns to a different representative in the same queue. Rules are per workstream with an active Status toggle; all messaging channels except voice. No preview label. Page dated 2026-05-29."
+      },
+      {
+        "sourceId": "sim-cb-s17",
+        "supported": true,
+        "section": "Active; Waiting",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "In Active, representative capacity is consumed, and the Active transition table has no message-triggered change. A conversation in waiting doesn't consume capacity, and waiting applies to asynchronous and persistent chats. Page dated 2026-07-13."
+      }
+    ],
+    "fingerprint": "b1532b6d0bd0f4321431ea68e8babb0fd064f4b6afd6d9e3f8fb8b45708df703"
+  },
+  {
+    "id": "sim-d2d-q13",
+    "revision": 1,
+    "reviewer": "channels-digital-reviewer",
+    "reviewedAt": "2026-11-07",
+    "decision": "approved",
+    "rationale": "Stands. The automated messages page describes Estimate Wait Time Notification for Messaging API channel instances, with {QueuePosition}, a Message interval in minutes, and isRecurring repeating until a representative is assigned. Each distractor fails for a documented reason. Customer wait time sends at 30 or 60 second intervals. The average wait time messages apply to live chat and voice only and give a wait time. {$...$} is the context variable syntax, which becomes an empty string when nothing matches, and the interval fields are documented only for the Estimate trigger. I checked the archived wave 1 item Support average wait time in messaging API channels (GA June 19, 2026). It exposes average wait time through the representative availability APIs, not the automated message triggers, and the current automated messages page (2026-10-12) still says those triggers apply to live chat and voice only. The wrong belief that the position settings are the answer names exactly two options, c and e. Checks 21 to 24 pass. Distinct from ab250-d2-q24 and ab250-d2-q15.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2d-s21",
+        "supported": true,
+        "section": "Add a wait time notification for the Messaging API channel; Waiting in queue; Context variables",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Trigger, {QueuePosition}, Message interval, isRecurring, average-wait channel scope, and empty-string rule confirmed. Page dated 2026-10-12."
+      },
+      {
+        "sourceId": "sim-d2d-s26",
+        "supported": true,
+        "section": "Show customers their position in a queue",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "30 seconds below 150 items, 60 seconds above; enabled with Customer wait time on Behaviors. Page dated 2025-11-27."
+      }
+    ],
+    "fingerprint": "0d0c1e947fb2d664fd46a507313dc8ff6d1d1b1c90fb5d48e958468bef621a6e"
+  },
+  {
+    "id": "sim-d2d-q14",
+    "revision": 1,
+    "reviewer": "channels-digital-reviewer",
+    "reviewedAt": "2026-11-07",
+    "decision": "approved",
+    "rationale": "Stands. The proactive chat samples use setContextProvider, which Learn says works for unauthenticated chat only. For authenticated chat, lwicontexts goes in the JWT payload, its keys must match the workstream's context variables, and its values can be used for routing or shown to the representative. Each distractor fails for a documented reason: the header holds alg, typ and kid; SDK methods run after lcw:ready; isDisplayable belongs to setContextProvider; and notificationUIConfig customizes the invitation. Proactive chat applies to Customer Service and Contact Center standalone, which the stem states. The strongest alternative, a startChat customContext, isn't offered. The stem's token sentence narrows the answer to two JWT options, and knowledge decides between them, so checks 22 and 23 hold. Distinct from ab250-d2-q01, ab250-d2-q12 and q06.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2d-s14",
+        "supported": true,
+        "section": "Setup for custom portals (header, payload, notes)",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "lwicontexts for routing or display; header example; setContextProvider not supported for authenticated chat. Page dated 2026-10-12."
+      },
+      {
+        "sourceId": "sim-d2d-s30",
+        "supported": true,
+        "section": "Important",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Serialized custom context; keys must correspond to workstream context variables. Page dated 2026-05-27."
+      },
+      {
+        "sourceId": "sim-d2d-s29",
+        "supported": true,
+        "section": "Important; Example",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Unauthenticated only; invoke after lcw:ready; isDisplayable shows items on the Conversation Summary Control."
+      },
+      {
+        "sourceId": "sim-d2d-s28",
+        "supported": true,
+        "section": "Note",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Samples use setContextProvider for unauthenticated chat only; use the JWT for authenticated chat. Page dated 2026-05-27."
+      },
+      {
+        "sourceId": "sim-d2d-s27",
+        "supported": true,
+        "section": "Applies to; Enable proactive chat",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Customer Service and Contact Center standalone only; Proactive chat toggle; only pages with the widget. Page dated 2026-07-31."
+      },
+      {
+        "sourceId": "sim-d2d-s37",
+        "supported": true,
+        "section": "Parameters",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "notificationUIConfig customizes the notification, including the message."
+      }
+    ],
+    "fingerprint": "69979621d0f612f28e2563f7ea99283712547f81282992ebbfb4b78ca589d0bd"
+  },
+  {
+    "id": "sim-d2d-q15",
+    "revision": 1,
+    "reviewer": "channels-digital-reviewer",
+    "reviewedAt": "2026-11-07",
+    "decision": "approved",
+    "rationale": "Re-review after edits. c is now 'Store the score as a text value in the MCS_CSAT variable', with an explanation that quotes Learn's numeric condition, and the voice sentence is gone from the evidence. Check 26 now holds, because three options (a, b and c) move the score to a variable other than MCS_Rating, so naming the change no longer marks one option. Check 31 doesn't bite: a and c aren't the same steps in another order, and they differ on exactly the documented condition. One is right and one fails because Learn says scores appear in the report if they're stored as numeric values in MCS_CSAT. Check 22: 'variable' appears in a and c for a one-answer question, so matching narrows to the right pair but not to the answer. b and d still fail for documented reasons.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2d-s31",
+        "supported": true,
+        "section": "Things to consider; View the survey results; Create a survey; Enable the post-conversation survey for digital messaging channels",
+        "accessedAt": "2026-11-07",
+        "claimReviewedAt": "2026-11-07",
+        "notes": "Revised claim confirmed: MCS_ prefix, mcs_additionalcontext, Conversation Start only, response table, numeric MCS_CSAT condition."
+      }
+    ],
+    "fingerprint": "3463e63889c5e88c51307f1d96504f629e8a347b4dbc29390778137c9d4c726f"
+  },
+  {
+    "id": "sim-d2d-q16",
+    "revision": 1,
+    "reviewer": "channels-digital-rereviewer",
+    "reviewedAt": "2026-11-09",
+    "decision": "approved",
+    "rationale": "Re-review of round 2. Every requested change is in: the sentences about representatives moving from the English desk and about approved wording are deleted, and the second paragraph and the goal match the requested text. Read as new text: nothing in the stem names the representatives as what changed or clears a single option's caveat (checks 26, 27). The stem fixes the channel language, the reply locale and the workstream, so the language in the representative's personal settings is the only one of Learn's three parameters left, and it decides the language when configured. c is now a real decoy: Default input language defaults to English and reads like a cause, but it is an admin translation setting and not one of the three parameters. b and d change which replies can be found, not the language offered. 'French' appears in a, c and d, so word matching doesn't isolate the answer (check 22). Options are parallel imperative sentences, and the correct a is not the longest (checks 12, 23). Option a uses Learn's own words for the setting (check 24), and the stem states that French is enabled, which covers the language pack dependency (check 30).",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d2d-s32",
+        "supported": true,
+        "section": "Availability of quick replies and language settings; Associate quick replies with a workstream; Create or edit tags",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Three parameters: the language mapped to the channel instance, the language configured in the representative's personal settings, and the workstream. The representative-specific language setting, if configured, determines the language. With no workstream, a reply is available to all representatives. Tags classify quick replies. Page dated 2026-06-30."
+      },
+      {
+        "sourceId": "sim-d2d-s33",
+        "supported": true,
+        "section": "Send quick replies; Search for quick replies and tags",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "In View all, the representative can choose a language and search; tags are searched with /q. Page dated 2026-10-26."
+      },
+      {
+        "sourceId": "sim-d2d-s34",
+        "supported": true,
+        "section": "Languages tab options",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Personal settings has a Languages tab; adding a language other than the base language needs the admin to install and enable language packs. Page dated 2026-10-30."
+      },
+      {
+        "sourceId": "sim-d2v-s21",
+        "supported": true,
+        "section": "Enable real-time translation for representative and customer conversations",
+        "accessedAt": "2026-11-09",
+        "claimReviewedAt": "2026-11-09",
+        "notes": "Default input language on Real Time Translation Settings is the language for representatives to converse with customers, default English (en-us), set in the admin center. Not among the quick reply parameters. Page dated 2026-04-15."
+      }
+    ],
+    "fingerprint": "0c218b868286e7ae092e637ba10609d48cde6eed27a295a47642320537704eec"
+  }
+]

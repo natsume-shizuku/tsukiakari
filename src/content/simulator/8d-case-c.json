@@ -1,0 +1,1250 @@
+{
+  "sources": [
+    {
+      "id": "sim-d1-s01",
+      "title": "Best practices for application lifecycle management",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/alm-best-practices"
+    },
+    {
+      "id": "sim-d1-s02",
+      "title": "Migrate configurations for channels using solutions",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/migrate-channel-config-using-solutions"
+    },
+    {
+      "id": "sim-d1-s09",
+      "title": "Migrate configurations for record routing using solutions",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/migrate-record-routing-config-using-solutions"
+    },
+    {
+      "id": "sim-d1-s10",
+      "title": "Copy an environment with omnichannel capabilities",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/implement/copy-environment-with-omnichannel"
+    },
+    {
+      "id": "sim-d1-s12",
+      "title": "Export and import app configuration data",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/implement/export-import-omnichannel-data"
+    },
+    {
+      "id": "sim-d2-s01",
+      "title": "Plan migration from Azure Communication Services",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/migrate-from-azure-communication-services"
+    },
+    {
+      "id": "sim-d2-s04",
+      "title": "Set up inbound calling for the voice channel",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-inbound-calling"
+    },
+    {
+      "id": "sim-d2v-s04",
+      "title": "Disconnect from Azure Communication Services resources",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-disconnect-from-acs"
+    },
+    {
+      "id": "sim-cb-s12",
+      "title": "Add users to experience profiles",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/add-profile-default"
+    },
+    {
+      "id": "sim-cb-s23",
+      "title": "Configure experience profiles",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-agent-experience-profile"
+    },
+    {
+      "id": "sim-cb-s25",
+      "title": "Configure Copilot features",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-copilot-features"
+    },
+    {
+      "id": "sim-d34-s06",
+      "title": "View Copilot analytics report",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/use/copilot-analytics-report"
+    },
+    {
+      "id": "sim-d6-s09",
+      "title": "Customize visual display",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/customize-reports"
+    },
+    {
+      "id": "sim-d6-s14",
+      "title": "Customize data models of historical and real-time analytics reports",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/model-customize-reports"
+    },
+    {
+      "id": "sim-cc-s01",
+      "title": "Connect to Azure Communication Services",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-acs-resource"
+    },
+    {
+      "id": "sim-cc-s02",
+      "title": "Connect using an existing Azure resource",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-connect-existing-resource"
+    },
+    {
+      "id": "sim-cc-s03",
+      "title": "Sync from Azure Communication Services",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-sync-from-acs"
+    },
+    {
+      "id": "sim-cc-s04",
+      "title": "Export and import agents using solutions",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-solutions-import-export"
+    },
+    {
+      "id": "sim-cc-s05",
+      "title": "Migrate Copilot Studio survey agents configurations",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/migrate-survey-agents"
+    },
+    {
+      "id": "sim-cc-s06",
+      "title": "View and edit managed properties in solutions",
+      "url": "https://learn.microsoft.com/en-us/power-platform/alm/managed-properties-alm"
+    },
+    {
+      "id": "sim-cc-s07",
+      "title": "Configure pipelines using a custom host",
+      "url": "https://learn.microsoft.com/en-us/power-platform/alm/custom-host-pipelines"
+    },
+    {
+      "id": "sim-cc-s08",
+      "title": "FAQs about adding users to experience profile",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/faq-agent-experience-profile"
+    },
+    {
+      "id": "sim-cc-s09",
+      "title": "Export and import visual customizations",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/export-import-visual-customization"
+    },
+    {
+      "id": "sim-cc-s10",
+      "title": "ALM for analytics on data model customizations",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/guidance/resources/analytics-alm-custom-reports"
+    }
+  ],
+  "groups": [
+    {
+      "id": "sim-case-c",
+      "kind": "case-study",
+      "title": "Castlemere Theatres",
+      "exhibits": [
+        {
+          "id": "background",
+          "title": "Background",
+          "body": "Castlemere Theatres runs nine theatres in Ontario and Quebec. Its Box Office sells tickets and gift vouchers, handles refunds, and looks after Castlemere Friends, the membership scheme.\n\nAbout 90 customer service representatives (CSRs) in Toronto and Montréal answer the Box Office line and Ticket Chat, the web chat on the ticketing site. A team of 15 Friends CSRs handles membership, and seasonal gift voucher CSRs join from November to January.\n\nCastlemere has used Dynamics 365 Contact Center in standalone mode for two years, and CSRs work in Copilot Service workspace. The Curtain Up program is putting the contact center on a controlled release process before the winter season goes on sale, and adding reporting that shows how the Box Office performs."
+        },
+        {
+          "id": "current",
+          "title": "Current environment",
+          "body": "Environments and releases\n- Castlemere Dev and Members Dev are sandboxes. The Box Office team builds in Castlemere Dev, in an unmanaged solution named Box Office Core. A project team built the Friends Membership solution in Members Dev.\n- Castlemere UAT is a sandbox that was created at the start of October as a full copy of Castlemere Production. UAT and Production are managed environments. All environments are in the North America region.\n- UAT runs a newer version of Dynamics 365 Contact Center than Production. Production is scheduled to reach the same version on November 21.\n- Solutions leave the development environments as managed solutions and are imported into UAT and then Production. Box Office Core release 4 and Friends Membership are in UAT now. Production has Box Office Core release 3 and doesn't have Friends Membership.\n- Configuration data that solutions don't carry moves with the Configuration Migration tool.\n- Castlemere Hub is a production environment that hosts Power Platform pipelines. The Box Office pipeline there links Castlemere Dev, with stages for UAT and Production. Release managers hold the System Customizer role in Castlemere Dev, UAT and Production, and no role in Castlemere Hub.\n\nRelease 4 configuration data\n- Release 4 adds the Rush Seats queue, which has an operating hours record, and changes the existing Refunds queue. Both are messaging queues for Ticket Chat.\n- Every Box Office queue uses an out-of-the-box assignment method, and none has an overflow condition.\n- The Ticket Chat workstream and its chat widget are in Box Office Core. Ticket Chat is live chat.\n\nVoice\n- The Box Office line is a voice channel through Azure Communication Services, on the acs-castlemere-prod resource. Castlemere plans to move voice to Teams Phone extensibility in 2027.\n- acs-castlemere-uat is a second Azure Communication Services resource in the same tenant. A test number was bought for it in the Azure portal in August, and inbound calling is enabled on that number.\n\nCopilot Studio agents\n- Seat Finder answers Ticket Chat customers first. It calls the Venue Seating API through a custom connector, which is in a separate solution in Castlemere Dev named Venue Connectors. The Seat Finder solution holds the agent and its connection reference.\n- Encore Survey is the Copilot Studio survey agent that sends a feedback survey after Ticket Chat conversations. It's in a solution of its own.\n\nExperience profiles and Copilot\n- Box Office Desk is a custom profile in Box Office Core. It has rank 2 and is mapped to the Box Office Agent role. Its productivity pane has Copilot for questions and emails, Agent scripts and Knowledge search turned on.\n- Castlemere Standard is a custom profile in Box Office Core, set as the default. Its productivity pane has Copilot for questions and emails turned on, with every Copilot AI feature selected.\n- Friends Desk is a custom profile in Friends Membership. It has rank 2 and is mapped to the Friends Agent role. Its productivity pane has Knowledge search turned on.\n- Friends Standard is a custom profile in Friends Membership. The project team set it as the default in Members Dev for testing.\n- Box Office and Friends CSRs hold the Customer Service Representative role, plus Box Office Agent, Friends Agent or both.\n- Gift voucher CSRs hold only Voucher Agent, a custom security role in Box Office Core. It grants access to the voucher tables, workstreams and queues. No profile is mapped to Voucher Agent.\n- Copilot for questions and emails and Summaries are opted in and turned on in UAT and Production. Box Office Desk CSRs use Ask a question in UAT.\n- Copilot analytics is turned on in Production. CSRs use Copilot in Ticket Chat conversations.\n\nAnalytics\n- Omnichannel historical analytics and Omnichannel real-time analytics are turned on in UAT and Production. Historical and real-time data model customization are turned on in both, and each environment has its own customer workspace: Castlemere Analytics UAT and Castlemere Analytics Prod.\n- Season Sales, a historical report, and Rush Seats Monitor, a real-time report, are custom reports that the analytics team built in Power BI Desktop and published to Castlemere Analytics UAT. Both are on UAT's Customized reports site map.\n- Supervisors and the release team hold the Analytics Report Author role in UAT and Production."
+        },
+        {
+          "id": "business",
+          "title": "Business requirements",
+          "body": "Requirement 1: Release managers must be able to run the Box Office pipeline from Castlemere Dev. They must get no more pipeline access than that.\n\nRequirement 2: CSRs who hold both Box Office Agent and Friends Agent must get Box Office Desk.\n\nRequirement 3: Castlemere Standard must be the only default profile.\n\nRequirement 4: Friends CSRs must be able to use Ask a question and Live conversation summary in Copilot. They must not be offered Write an email. Box Office CSRs keep every Copilot feature they have today.\n\nRequirement 5: The Configuration Migration tool import must leave the workstream records as Box Office Core imported them.\n\nRequirement 6: The queue schema must hold only the tables that the Box Office queues need."
+        },
+        {
+          "id": "technical",
+          "title": "Technical requirements",
+          "body": "- Stay on Dynamics 365 Contact Center in standalone mode.\n- Don't change managed components directly in UAT or Production. Changes to them start in their source environment. Connections and other environment-specific values are set in each environment.\n- Voice tests in UAT must use acs-castlemere-uat and its test number. Production must keep acs-castlemere-prod. The Azure team owns Event Grid subscriptions and will add UAT's when the voice setup in Copilot Service admin center is done.\n- Site map entries for custom reports move with the Configuration Migration tool, so that their names and order match UAT.\n- Visual customizations of the out-of-the-box analytics reports move with the export and import APIs, as part of the scripted release."
+        },
+        {
+          "id": "issues",
+          "title": "Issues",
+          "body": "Issue 1: The first queue import into UAT used one data file that held the new Rush Seats queue and the changes to the Refunds queue. The queue records didn't import correctly.\n\nIssue 2: In UAT, Manage Azure Communication Services still shows acs-castlemere-prod, and the copied Box Office Voice workstream still lists the production number.\n\nIssue 3: The import of the Seat Finder solution into UAT fails. The downloaded log file reports a missing component that Seat Finder needs to call the Venue Seating API.\n\nIssue 4: Encore Survey was imported into UAT, and Copilot Service admin center shows it as Ready, but no surveys reach customers after Ticket Chat conversations. In Power Apps, its connection references show no connection.\n\nIssue 5: In UAT, Box Office Desk and Friends Desk both have rank 2.\n\nIssue 6: In UAT, Castlemere Standard and Friends Standard are both marked as default.\n\nIssue 7: Friends CSRs in UAT can't see Copilot in the productivity pane.\n\nIssue 8: In Production, gift voucher CSRs can't use Copilot, although Castlemere Standard has Copilot for questions and emails turned on.\n\nIssue 9: At 11:00 on the first morning of the winter on-sale, a supervisor compared Production's Copilot analytics report, with Duration set to the current day, with the Ongoing conversation report. About 140 Ticket Chat conversations were active, and CSRs were using Copilot in most of them, but Number of conversations using Copilot AI showed 35.\n\nIssue 10: Last week, Season Sales was deployed to Castlemere Analytics Prod, and its site map entry was moved to Production with the Configuration Migration tool. Nothing else was changed. Season Sales appears in Production's Customized reports, but supervisors who open it don't get the report from Castlemere Analytics Prod.\n\nIssue 11: Rush Seats Monitor is ready for Production. So far it's only in Castlemere Analytics UAT. Its site map entry will move after the report is in the production workspace.\n\nIssue 12: UAT supervisors changed the Queue page of Omnichannel historical analytics and selected Save. Nobody has selected Publish yet. The changes must reach Production.\n\nIssue 13: On October 20, Production supervisors published their own changes to the Queue page. The Box Office manager asks what the import will do to them.\n\nIssue 14: The release team plans to import the Queue page customization into Production this week."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "sim-c-q01",
+      "kind": "match",
+      "domainId": "deployment",
+      "groupId": "sim-case-c",
+      "objectiveIds": [
+        "D1.2.02",
+        "D1.2.03"
+      ],
+      "conceptId": "queue-workstream-data-import-settings",
+      "prompt": "You need to resolve Issue 1 and meet Requirement 5 and Requirement 6.\n\nWhat should you do for each item?",
+      "tray": "Actions",
+      "table": {
+        "title": "Configuration data import",
+        "rowHeading": "Item",
+        "answerHeading": "Action"
+      },
+      "tokens": [
+        {
+          "id": "a",
+          "text": "Import both queues together, and select Do not update existing records for the queue table"
+        },
+        {
+          "id": "b",
+          "text": "For the workstream table, keep only the key columns, and select Do not update existing records"
+        },
+        {
+          "id": "c",
+          "text": "Leave out the Operating Hour table, and set each queue's calendar item by hand after the import"
+        },
+        {
+          "id": "d",
+          "text": "Create Rush Seats in an import that keeps Queue type, and update Refunds in one without it"
+        },
+        {
+          "id": "e",
+          "text": "For the Decision contract table only, select Do not update existing records and compare on its key"
+        },
+        {
+          "id": "f",
+          "text": "Leave out the Decision rule set, Assignment configuration and Assignment configuration step tables"
+        }
+      ],
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Issue 1",
+          "correctTokenId": "d"
+        },
+        {
+          "id": "r2",
+          "label": "Requirement 5",
+          "correctTokenId": "b"
+        },
+        {
+          "id": "r3",
+          "label": "Requirement 6",
+          "correctTokenId": "f"
+        }
+      ],
+      "answer": "Issue 1: create Rush Seats in an import that keeps Queue type, and update Refunds in one without it. Requirement 5: for the workstream table, keep only the key columns, and select Do not update existing records. Requirement 6: leave out the Decision rule set, Assignment configuration and Assignment configuration step tables.",
+      "explanation": "Solutions carry the workstream records, and the Configuration Migration tool carries the data that solutions don't. Each item turns on one of Microsoft's import rules. Microsoft says that an import of queue records must either create records or update them, and must not mix the two. The Queue type field stays in the schema when every record is new and comes out when every record is an update. Rush Seats is new and Refunds already exists, so they need separate imports. For the workstream table, Microsoft says to add only the key columns and select Do not update existing records, which stops the data import from updating records that came in through a solution. Every Box Office queue uses an out-of-the-box assignment method and none has an overflow condition, so Microsoft's instruction to skip the decision rule set and assignment configuration tables applies. The Operating Hour table stays, because Rush Seats has an operating hours record. Only its calendar item has to be set after the import.",
+      "sourceIds": [
+        "sim-d1-s09",
+        "sim-d1-s02"
+      ],
+      "tags": [
+        "domain:deployment",
+        "task:apply",
+        "feature:configuration-migration-tool"
+      ],
+      "optionExplanations": {
+        "a": "Not used. Do not update existing records would stop the Refunds changes from being applied, and Microsoft says not to mix creating and updating queue records in one import.",
+        "b": "Correct for Requirement 5. Microsoft gives this setting for the workstream table so that the data import doesn't update records that a solution brought in.",
+        "c": "Not used. Rush Seats has an operating hours record, and the Operating Hour table is part of the queue migration. Microsoft says that only the calendar item can't be migrated and is set after the import.",
+        "d": "Correct for Issue 1. Each queue import must either create or update records, and the Queue type field is kept for an all-new import and removed for an all-update import.",
+        "e": "Not used. Microsoft gives this setting for the Decision contract table in the queue migration. It doesn't apply to the workstream table, so workstream records could still be updated.",
+        "f": "Correct for Requirement 6. Microsoft says to skip these three tables when queues use out-of-the-box assignment methods, and no Box Office queue has an overflow condition that would need a decision ruleset."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n11"
+        },
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n02"
+        }
+      ],
+      "revision": 1,
+      "status": "draft"
+    },
+    {
+      "id": "sim-c-q02",
+      "kind": "order",
+      "domainId": "deployment",
+      "groupId": "sim-case-c",
+      "objectiveIds": [
+        "D1.2.04"
+      ],
+      "conceptId": "copied-sandbox-acs-reconnection-sequence",
+      "prompt": "You need to resolve Issue 2.\n\nWhich four actions should you perform, and in what order?",
+      "tray": "Actions",
+      "tokens": [
+        {
+          "id": "a",
+          "text": "Acquire a new phone number in Copilot Service admin center."
+        },
+        {
+          "id": "b",
+          "text": "Select the test number in the voice settings of the copied Box Office Voice workstream."
+        },
+        {
+          "id": "c",
+          "text": "Connect UAT by using the existing acs-castlemere-uat resource."
+        },
+        {
+          "id": "d",
+          "text": "Disconnect the Azure Communication Services resource in UAT."
+        },
+        {
+          "id": "e",
+          "text": "Sync the phone numbers from Azure on the Phone numbers page."
+        },
+        {
+          "id": "f",
+          "text": "Connect UAT by using a new Azure resource."
+        }
+      ],
+      "correctOrder": [
+        "d",
+        "c",
+        "e",
+        "b"
+      ],
+      "answer": "Disconnect the Azure Communication Services resource in UAT, connect UAT by using the existing acs-castlemere-uat resource, sync the phone numbers from Azure on the Phone numbers page, and then select the test number in the voice settings of the copied Box Office Voice workstream.",
+      "explanation": "A full copy brings the voice channel and its Azure Communication Services resource into the target. Microsoft says that one resource can be used in one environment only, so the copied link to acs-castlemere-prod has to be disconnected in UAT. From there, each step needs the one before it. The Get started button that connects an existing resource appears only after a disconnection. Microsoft says that a connection to a resource must come before you can acquire numbers. Sync from Azure imports numbers that were bought through Azure Communication Services, and the test number belongs to acs-castlemere-uat, so the sync can't bring it in until that resource is connected. A voice workstream can only be given a number that's on the Phone numbers page. The exhibits decide two of the choices: acs-castlemere-uat already exists, and its test number was bought in the Azure portal, so you connect the existing resource and sync instead of creating a resource or buying a number.",
+      "sourceIds": [
+        "sim-d1-s10",
+        "sim-d2v-s04",
+        "sim-cc-s02",
+        "sim-cc-s01",
+        "sim-cc-s03",
+        "sim-d2-s04",
+        "sim-d2-s01"
+      ],
+      "tags": [
+        "domain:deployment",
+        "task:apply",
+        "feature:environment-copy-voice"
+      ],
+      "optionExplanations": {
+        "a": "Not used. The technical requirements say that UAT tests use the test number that was bought for acs-castlemere-uat, so a new number isn't needed.",
+        "b": "Correct, and fourth. Only numbers on the Phone numbers page can be selected for a voice workstream, and editing the voice settings is how a number is reconnected to the voice channel.",
+        "c": "Correct, and second. The Get started button for an existing resource appears only after the current resource is disconnected, and the technical requirements name acs-castlemere-uat.",
+        "d": "Correct, and first. Microsoft says to disconnect the copied resource in the target, because one resource can be used in one environment only.",
+        "e": "Correct, and third. Sync from Azure imports numbers that were bought through Azure Communication Services, and the test number is on acs-castlemere-uat, which must be connected first.",
+        "f": "Not used. acs-castlemere-uat already exists, and the technical requirements say that UAT tests must use it."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n12"
+        }
+      ],
+      "revision": 1,
+      "status": "draft"
+    },
+    {
+      "id": "sim-c-q03",
+      "kind": "match",
+      "domainId": "deployment",
+      "groupId": "sim-case-c",
+      "objectiveIds": [
+        "D1.2.03"
+      ],
+      "conceptId": "agent-and-survey-solution-import-fixes",
+      "prompt": "You need to resolve Issue 3 and Issue 4.\n\nWhat should you do for each issue?",
+      "tray": "Actions",
+      "table": {
+        "title": "Agent solution imports",
+        "rowHeading": "Issue",
+        "answerHeading": "Action"
+      },
+      "tokens": [
+        {
+          "id": "a",
+          "text": "In UAT, turn on Allow customizations for the Conversation Start topic of Encore Survey"
+        },
+        {
+          "id": "b",
+          "text": "Import the Venue Connectors solution first, and then import the Seat Finder solution"
+        },
+        {
+          "id": "c",
+          "text": "In UAT, add the custom connector to the Seat Finder solution, and import the solution again"
+        },
+        {
+          "id": "d",
+          "text": "Connect the connection references to Dataverse in Power Apps, and then publish the agent"
+        },
+        {
+          "id": "e",
+          "text": "In UAT, export the Seat Finder solution as a managed solution, and import it again"
+        },
+        {
+          "id": "f",
+          "text": "In UAT, use Add required objects on Encore Survey, and then publish the agent"
+        }
+      ],
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Issue 3",
+          "correctTokenId": "b"
+        },
+        {
+          "id": "r2",
+          "label": "Issue 4",
+          "correctTokenId": "d"
+        }
+      ],
+      "answer": "Issue 3: import the Venue Connectors solution first, and then import the Seat Finder solution. Issue 4: connect the connection references to Dataverse in Power Apps, and then publish the agent.",
+      "explanation": "Both agents move in solutions, and each issue is a different import dependency. Seat Finder calls the Venue Seating API through a custom connector that's in its own solution. Microsoft says that custom connectors must be imported first, and then the connection reference with the agent solution, so Venue Connectors has to reach UAT before Seat Finder. Encore Survey imported, but a connection is environment-specific and doesn't travel with the solution. Microsoft's survey agent migration steps say to check in Power Apps that the imported connection references are connected to Dataverse, add the connection if it's missing, and then save and publish the agents. Setting a connection in UAT fits the technical requirements, which leave connections to each environment.",
+      "sourceIds": [
+        "sim-cc-s04",
+        "sim-cc-s05",
+        "sim-cc-s06"
+      ],
+      "tags": [
+        "domain:deployment",
+        "task:apply",
+        "feature:agent-solution-alm"
+      ],
+      "optionExplanations": {
+        "a": "Not used. Managed properties are set in the development environment and can't be changed after a managed import. They control customization, not the Dataverse connection.",
+        "b": "Correct for Issue 3. Microsoft says to import custom connectors first, then the connection reference with the agent solution.",
+        "c": "Not used. Seat Finder is a managed solution in UAT, and the technical requirements keep changes to managed components in their source environment. Microsoft's order is to import the connector before the agent solution.",
+        "d": "Correct for Issue 4. Microsoft's survey agent steps say to make sure the connection references are connected to Dataverse, add the connection if it's missing, and then save and publish the agents.",
+        "e": "Not used. Copilot Studio can't export a managed solution, and Seat Finder is managed in UAT. Exporting again wouldn't bring in the missing connector either.",
+        "f": "Not used. Add required objects is used on the agent in the source solution before export. It doesn't connect a connection reference in the target."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n02"
+        }
+      ],
+      "revision": 1,
+      "status": "draft"
+    },
+    {
+      "id": "sim-c-q04",
+      "kind": "multiple",
+      "domainId": "deployment",
+      "groupId": "sim-case-c",
+      "objectiveIds": [
+        "D1.2.03"
+      ],
+      "conceptId": "pipeline-run-only-access",
+      "prompt": "You need to meet Requirement 1.\n\nWhich two actions should you perform? Each correct answer presents part of the solution.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Assign the release managers the Deployment Pipeline User role in Castlemere Hub."
+        },
+        {
+          "id": "b",
+          "text": "Share the Box Office pipeline record with the release managers."
+        },
+        {
+          "id": "c",
+          "text": "Assign the release managers the Deployment Pipeline Administrator role in Castlemere Hub."
+        },
+        {
+          "id": "d",
+          "text": "Install the Power Platform Pipelines app in Castlemere Dev."
+        },
+        {
+          "id": "e",
+          "text": "Assign the release managers the Deployment Pipeline User role in Castlemere Production."
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "answer": "Assign the release managers the Deployment Pipeline User role in Castlemere Hub, and share the Box Office pipeline record with them.",
+      "explanation": "Pipeline security is managed in the host environment, which is Castlemere Hub. Microsoft's steps for letting people run a pipeline are to assign the Deployment Pipeline User role in the host and to share the pipeline record with them, where Read is enough to view and run it. That role runs pipelines that are shared with the user and doesn't grant access to create, edit or delete them, so it gives the release managers nothing beyond what Requirement 1 allows. They also need privileges to export from Castlemere Dev and import to UAT and Production. Microsoft says the System Customizer role has those by default, and they hold it in all three.",
+      "sourceIds": [
+        "sim-cc-s07"
+      ],
+      "tags": [
+        "domain:deployment",
+        "task:apply",
+        "feature:power-platform-pipelines"
+      ],
+      "optionExplanations": {
+        "a": "Correct, and part of the solution. The Deployment Pipeline User role is assigned in the host and lets users run pipelines that are shared with them.",
+        "b": "Correct, and part of the solution. Microsoft says to share the pipeline record with the makers, and Read is enough to view and run it.",
+        "c": "Fails. Deployment Pipeline Administrator has full control over all pipeline configuration, which is more than Requirement 1 allows.",
+        "d": "Fails. Microsoft says the pipelines app is installed only in the host, not in the development or target environments.",
+        "e": "Fails. The pipeline roles come with the pipelines app and are assigned in the host environment, and Castlemere Production is a target."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d1-n02"
+        }
+      ],
+      "revision": 1,
+      "status": "draft"
+    },
+    {
+      "id": "sim-c-q05",
+      "kind": "match",
+      "domainId": "representative-experience",
+      "groupId": "sim-case-c",
+      "objectiveIds": [
+        "D5.1.01"
+      ],
+      "conceptId": "imported-profile-rank-and-default-conflicts",
+      "prompt": "You need to resolve Issue 5 and Issue 6.\n\nWhat should you do for each issue?",
+      "tray": "Actions",
+      "table": {
+        "title": "Experience profile conflicts",
+        "rowHeading": "Issue",
+        "answerHeading": "Action"
+      },
+      "tokens": [
+        {
+          "id": "a",
+          "text": "In UAT, change the ranks of both profiles by using Set rank and roles"
+        },
+        {
+          "id": "b",
+          "text": "In Members Dev, remove the default status from Friends Standard, and import Friends Membership again"
+        },
+        {
+          "id": "c",
+          "text": "In UAT, delete Friends Standard, and keep the rest of Friends Membership"
+        },
+        {
+          "id": "d",
+          "text": "In Castlemere Dev, map Box Office Desk to the Friends Agent role too, and import Box Office Core again"
+        },
+        {
+          "id": "e",
+          "text": "In Castlemere Dev, set Box Office Desk to rank 1, and import Box Office Core again"
+        },
+        {
+          "id": "f",
+          "text": "In UAT, select Remove Default for Friends Standard"
+        }
+      ],
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Issue 5",
+          "correctTokenId": "e"
+        },
+        {
+          "id": "r2",
+          "label": "Issue 6",
+          "correctTokenId": "b"
+        }
+      ],
+      "answer": "Issue 5: in Castlemere Dev, set Box Office Desk to rank 1, and import Box Office Core again. Issue 6: in Members Dev, remove the default status from Friends Standard, and import Friends Membership again.",
+      "explanation": "Experience profiles move between environments in solutions, and a profile imported from a managed solution can't be edited. Copilot Service admin center doesn't let you give two profiles the same rank or mark two as default, but profiles imported from different environments can arrive that way. Microsoft recommends resolving the conflict in the source environments and then importing the profiles. Requirement 2 says that CSRs with both roles get Box Office Desk, and the profile with the higher rank wins, so Box Office Desk moves to rank 1 in Castlemere Dev. Requirement 3 keeps Castlemere Standard as the default, so Friends Standard loses its default status in Members Dev.",
+      "sourceIds": [
+        "sim-cc-s08",
+        "sim-cb-s12",
+        "sim-d1-s01"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "task:apply",
+        "feature:experience-profiles"
+      ],
+      "optionExplanations": {
+        "a": "Not used. Both profiles came from managed solutions, so they can't be edited in UAT, and the technical requirements keep changes in the source environment.",
+        "b": "Correct for Issue 6. Microsoft recommends fixing multiple defaults in the source environment and importing again, and Requirement 3 keeps Castlemere Standard as the default.",
+        "c": "Not used. Records that a managed solution imported can't be deleted in the target. Removing them means deleting the managed solution, which would take Friends Desk with it.",
+        "d": "Not used. Both profiles would still have rank 2, and Friends-only CSRs would also match Box Office Desk.",
+        "e": "Correct for Issue 5. Users with several mapped roles get the profile with the higher rank, and rank 1 outranks rank 2. The change is made where the profile was built.",
+        "f": "Not used. Friends Standard came from a managed solution, so it can't be edited in UAT."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n03"
+        }
+      ],
+      "revision": 1,
+      "status": "draft"
+    },
+    {
+      "id": "sim-c-q06",
+      "kind": "hotspot",
+      "domainId": "representative-experience",
+      "groupId": "sim-case-c",
+      "objectiveIds": [
+        "D5.1.01"
+      ],
+      "conceptId": "copilot-access-by-profile-features-and-role",
+      "prompt": "You need to resolve Issue 7 and Issue 8, and meet Requirement 4.\n\nWhat should you do for each issue?",
+      "table": {
+        "title": "Copilot access",
+        "rowHeading": "Issue",
+        "answerHeading": "Action"
+      },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Issue 7",
+          "correctOptionId": "r1a",
+          "options": [
+            {
+              "id": "r1a",
+              "text": "In Members Dev, turn on Copilot for questions and emails in Friends Desk, select only Ask a question and Live conversation summary, and import it again"
+            },
+            {
+              "id": "r1b",
+              "text": "In UAT, opt in again on the Copilot for questions and emails page, and then turn on Ask a question and Live conversation summary there"
+            },
+            {
+              "id": "r1c",
+              "text": "In UAT, assign the Customer Service Representative role to the Friends CSRs, so that the Copilot features become available to them"
+            }
+          ]
+        },
+        {
+          "id": "r2",
+          "label": "Issue 8",
+          "correctOptionId": "r2a",
+          "options": [
+            {
+              "id": "r2a",
+              "text": "In Castlemere Dev, add the Copilot privileges that Microsoft lists to Voucher Agent, and import Box Office Core again"
+            },
+            {
+              "id": "r2b",
+              "text": "In Castlemere Dev, map Castlemere Standard to the Voucher Agent role, and import Box Office Core again"
+            },
+            {
+              "id": "r2c",
+              "text": "In Castlemere Dev, select every feature in Castlemere Standard's Copilot AI features, and import Box Office Core again"
+            }
+          ]
+        }
+      ],
+      "answer": "Issue 7: in Members Dev, turn on Copilot for questions and emails in Friends Desk, select only Ask a question and Live conversation summary, and import it again. Issue 8: in Castlemere Dev, add the Copilot privileges that Microsoft lists to Voucher Agent, and import Box Office Core again.",
+      "explanation": "Two layers decide whether a CSR can use Copilot: the experience profile and the security role. Users on the out-of-the-box profiles get Copilot by default, but a custom profile shows only the features that are turned on in it. Friends Desk has only Knowledge search, so it needs Copilot for questions and emails on its productivity pane, with just the two features from Requirement 4 selected in Copilot AI features. It's managed in UAT, so the change is made in Members Dev. Selecting features per profile also leaves Box Office Desk as it is. Gift voucher CSRs already get Castlemere Standard with every feature, so their profile isn't the problem. Microsoft says that by default only users with the Customer Service Representative role can use Copilot, and that custom roles need the Copilot privileges it lists. Voucher Agent is their only role and lives in Box Office Core.",
+      "sourceIds": [
+        "sim-cb-s25",
+        "sim-cb-s23",
+        "sim-cc-s08",
+        "sim-cb-s12"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "task:apply",
+        "feature:copilot-profile-access"
+      ],
+      "optionExplanations": {
+        "r1a": "Correct. A custom profile gets Copilot when Copilot for questions and emails is turned on in its productivity pane, and Copilot AI features limits which features its users get. Friends Desk is managed in UAT, so the change starts in Members Dev.",
+        "r1b": "Fails. The opt-in is already done in UAT, where Box Office Desk CSRs use Ask a question. Friends Desk still has Copilot turned off, and features for a profile are chosen in the profile.",
+        "r1c": "Fails. Friends CSRs already hold the Customer Service Representative role. The missing piece is Copilot in Friends Desk's productivity pane.",
+        "r2a": "Correct. Microsoft says that only the Customer Service Representative role can use Copilot by default and lists the privileges that custom roles need. Voucher Agent is a managed component, so the change starts in Castlemere Dev.",
+        "r2b": "Fails. A default profile can't keep security roles, and a profile mapping doesn't grant Copilot privileges.",
+        "r2c": "Fails. Castlemere Standard already has every Copilot AI feature selected. The CSRs' role is what's missing."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n03"
+        },
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n01"
+        }
+      ],
+      "revision": 1,
+      "status": "draft"
+    },
+    {
+      "id": "sim-c-q07",
+      "kind": "single",
+      "domainId": "agents-ai",
+      "groupId": "sim-case-c",
+      "objectiveIds": [
+        "D3.1.05"
+      ],
+      "conceptId": "copilot-report-ended-conversations-only",
+      "prompt": "You need to explain Issue 9 to the supervisor.\n\nWhich statement explains the figure?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Total conversations leaves out the conversations on the email and voice channels."
+        },
+        {
+          "id": "b",
+          "text": "Number of responses used counts only the Copilot responses whose text a CSR copied."
+        },
+        {
+          "id": "c",
+          "text": "Number of conversations using Copilot AI counts only conversations that have ended."
+        },
+        {
+          "id": "d",
+          "text": "Daily active users counts each CSR only once, however often the CSR uses Copilot."
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "answer": "Number of conversations using Copilot AI counts only conversations that have ended.",
+      "explanation": "Each statement is true of a metric in the Copilot analytics report, so the case decides which one explains Issue 9. The supervisor is comparing a count of conversations that used Copilot with conversations that are still active at 11:00. Microsoft defines Number of conversations using Copilot AI as the engaged conversations that used Copilot, and says that it lists only conversations that have ended. The 140 active chats aren't counted until they end, so the report shows only the day's finished conversations. The other statements describe different metrics. Ticket Chat is a chat channel, so leaving out email and voice changes nothing here, and copied responses and daily active users don't count conversations at all.",
+      "sourceIds": [
+        "sim-d34-s06"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:analyze",
+        "feature:copilot-analytics"
+      ],
+      "optionExplanations": {
+        "a": "Incorrect. This is true of Total conversations, but every conversation in Issue 9 is on Ticket Chat, so no email or voice conversation is missing.",
+        "b": "Incorrect. This is true of Number of responses used, but that metric counts responses, not conversations, so it can't explain a conversation count.",
+        "c": "Correct. Microsoft says that this metric lists only conversations that have ended, and most of the chats in Issue 9 were still active.",
+        "d": "Incorrect. This is true of Daily active users, which counts CSRs, not conversations."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n04"
+        }
+      ],
+      "revision": 1,
+      "status": "draft"
+    },
+    {
+      "id": "sim-c-q08",
+      "kind": "match",
+      "domainId": "analytics",
+      "groupId": "sim-case-c",
+      "objectiveIds": [
+        "D6.2.03",
+        "D6.2.04"
+      ],
+      "conceptId": "custom-report-workspace-and-site-map-release",
+      "prompt": "You need to resolve Issue 10 and Issue 11.\n\nWhat should you do for each issue?",
+      "tray": "Actions",
+      "table": {
+        "title": "Custom report release",
+        "rowHeading": "Issue",
+        "answerHeading": "Action"
+      },
+      "tokens": [
+        {
+          "id": "a",
+          "text": "Select Add report on Production's data model customization page, and choose the report"
+        },
+        {
+          "id": "b",
+          "text": "Include the msdyn_analytics table in the Configuration Migration tool export"
+        },
+        {
+          "id": "c",
+          "text": "Update the site map entry's workspace ID and report ID to the production copy"
+        },
+        {
+          "id": "d",
+          "text": "Export the report from Edit mode in UAT, and import the file in Production"
+        },
+        {
+          "id": "e",
+          "text": "Deploy the report to Castlemere Analytics Prod with a Power BI deployment pipeline"
+        }
+      ],
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Issue 10",
+          "correctTokenId": "c"
+        },
+        {
+          "id": "r2",
+          "label": "Issue 11",
+          "correctTokenId": "e"
+        }
+      ],
+      "answer": "Issue 10: update the site map entry's workspace ID and report ID to the production copy. Issue 11: deploy the report to Castlemere Analytics Prod with a Power BI deployment pipeline.",
+      "explanation": "A custom report has two parts that move separately. The report lives in a Power BI workspace, and Microsoft's ALM guidance says that Power BI reports can move across environments by using Power BI deployment pipelines. Its site map entry is a Dataverse row in msdyn_dataanalyticsreport, which moves with the Configuration Migration tool. That row holds the Power BI workspace ID and report ID, and Microsoft says that after the migration you must update those references. Season Sales was moved and nothing else was changed, so its entry still names the UAT workspace and report. Rush Seats Monitor isn't in the production workspace yet, so the report has to be deployed before its entry can point at it.",
+      "sourceIds": [
+        "sim-cc-s10",
+        "sim-d6-s14",
+        "sim-cc-s09",
+        "sim-d1-s12"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:custom-report-alm"
+      ],
+      "optionExplanations": {
+        "a": "Not used. The Add report list shows only reports in the production workspace, which Rush Seats Monitor isn't in yet. For Season Sales, the technical requirements say that site map entries move with the Configuration Migration tool.",
+        "b": "Not used. Microsoft recommends not exporting msdyn_analytics, because it holds organization-specific configuration data.",
+        "c": "Correct for Issue 10. The migrated row still holds UAT's workspace and report IDs, and Microsoft says to update both references after the migration.",
+        "d": "Not used. Export and import in Edit mode moves visual customizations of the out-of-the-box analytics reports, not custom reports in a Power BI workspace.",
+        "e": "Correct for Issue 11. Microsoft's guidance moves Power BI reports across environments with Power BI deployment pipelines, and the entry can follow once the report is there."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n06"
+        }
+      ],
+      "revision": 1,
+      "status": "draft"
+    },
+    {
+      "id": "sim-c-q09",
+      "kind": "hotspot",
+      "domainId": "analytics",
+      "groupId": "sim-case-c",
+      "objectiveIds": [
+        "D6.2.01"
+      ],
+      "conceptId": "visual-customization-export-import-rules",
+      "prompt": "You need to resolve Issue 12, Issue 13 and Issue 14.\n\nWhat should you choose for each issue?",
+      "table": {
+        "title": "Report customization release",
+        "rowHeading": "Issue",
+        "answerHeading": "Choice"
+      },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Issue 12",
+          "correctOptionId": "r1b",
+          "options": [
+            {
+              "id": "r1a",
+              "text": "Export the customization from UAT now, and import it into Production"
+            },
+            {
+              "id": "r1b",
+              "text": "Publish the changes in UAT, and then export and import the customization"
+            },
+            {
+              "id": "r1c",
+              "text": "Move the msdyn_analytics records to Production with the Configuration Migration tool"
+            }
+          ]
+        },
+        {
+          "id": "r2",
+          "label": "Issue 13",
+          "correctOptionId": "r2a",
+          "options": [
+            {
+              "id": "r2a",
+              "text": "The import replaces them with the imported customization"
+            },
+            {
+              "id": "r2b",
+              "text": "The import keeps them, and saves the imported changes as a draft"
+            },
+            {
+              "id": "r2c",
+              "text": "The import fails until they're reset in Production"
+            },
+            {
+              "id": "r2d",
+              "text": "The import merges the imported pages with them"
+            }
+          ]
+        },
+        {
+          "id": "r3",
+          "label": "Issue 14",
+          "correctOptionId": "r3b",
+          "options": [
+            {
+              "id": "r3a",
+              "text": "Import it this week"
+            },
+            {
+              "id": "r3b",
+              "text": "Import it once Production is at the same or a higher version than UAT"
+            },
+            {
+              "id": "r3c",
+              "text": "Import it this week, and select Reset in Production if it doesn't render"
+            }
+          ]
+        }
+      ],
+      "answer": "Issue 12: publish the changes in UAT, and then export and import the customization. Issue 13: the import replaces them with the imported customization. Issue 14: import it once Production is at the same or a higher version than UAT.",
+      "explanation": "Visual customizations of the out-of-the-box reports move between organizations with Export and Import, or with the matching APIs. Three rules decide these issues. The export and import APIs handle published customizations only, so a change that's only saved stays behind until someone publishes it. On import, Microsoft says that existing customizations are replaced, so production's October changes don't survive the API import. Microsoft also says that the target must be at the same or a higher version than the source, because importing a newer report into an older organization might not work. UAT runs a newer version than Production until November 21.",
+      "sourceIds": [
+        "sim-cc-s09",
+        "sim-d6-s09",
+        "sim-d1-s12"
+      ],
+      "tags": [
+        "domain:analytics",
+        "task:apply",
+        "feature:visual-customization-export"
+      ],
+      "optionExplanations": {
+        "r1a": "Fails. Export covers published customizations only, so it would carry UAT's last published version without the saved changes.",
+        "r1b": "Correct. Publishing turns the saved changes into the published customization, which is the only kind that can be exported and imported.",
+        "r1c": "Fails. Microsoft recommends not exporting msdyn_analytics, because it holds organization-specific configuration data. Visual customizations move with Export and Import.",
+        "r2a": "Correct. Microsoft says that the import replaces existing customizations, and the technical requirements say that the import uses the API.",
+        "r2b": "Fails. Only published customizations are imported, and Microsoft says the import replaces existing customizations rather than keeping them.",
+        "r2c": "Fails. Microsoft says the import replaces existing customizations. Reset would only remove production's changes for good.",
+        "r2d": "Fails. Microsoft describes replacement of existing customizations, not a merge.",
+        "r3a": "Fails. UAT is newer than Production this week, and Microsoft says that importing a newer report into an older organization might not work.",
+        "r3b": "Correct. Microsoft requires the target to be at the same or a higher version than the source, which Production reaches on November 21.",
+        "r3c": "Fails. Reset permanently removes the report's customizations, and the version mismatch would still be there."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d6-n05"
+        }
+      ],
+      "revision": 1,
+      "status": "draft"
+    }
+  ],
+  "editorial": [
+    {
+      "id": "sim-c-q01",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "queue-workstream-data-import-settings",
+      "objectiveIds": [
+        "D1.2.02",
+        "D1.2.03"
+      ],
+      "level": "advanced",
+      "author": "case-c-author",
+      "authoredAt": "2026-11-07",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d1-s09",
+          "section": "Migrate configuration for record queues, Important list",
+          "claim": "For every import of queue records, you must create new queue records or update existing queue records, and not mix the actions in the same data import. When all records are for creation, the Queue type field line is present in schema.xml. When all records are for an update, remove that line.",
+          "applicability": "Configuration Migration tool imports of queues. Issue 1 mixes a new queue and an existing one. The page doesn't describe the error that a mixed import shows, so Issue 1 says only that the records didn't import correctly."
+        },
+        {
+          "sourceId": "sim-d1-s09",
+          "section": "Migrate configuration for record queues",
+          "claim": "If you're using out-of-the-box assignment methods for queues, such as highest capacity and round robin, skip Decision rule set, Assignment configuration and Assignment configuration step. When a queue has an overflow condition set, the decision ruleset must be exported and imported first. The Calendar item associated with the Operating Hour table can't be migrated and is set after the Operating Hour table is imported.",
+          "applicability": "Requirement 6 and token c. The exhibit says that no Box Office queue has an overflow condition, so the overflow sequence doesn't bring the decision ruleset back. Rush Seats has an operating hours record."
+        },
+        {
+          "sourceId": "sim-d1-s09",
+          "section": "Migrate configuration for capacity profiles; Migrate configuration for record queues, Configure import settings",
+          "claim": "For the Decision contract entity, select the Do not update existing records checkbox, and select the primary key field of every entity as the field to compare on update.",
+          "applicability": "Token e is a real setting for a different table."
+        },
+        {
+          "sourceId": "sim-d1-s02",
+          "section": "Migrate configuration for queues; Migrate configuration for channel workstreams and channel settings, step 4",
+          "claim": "Channel queues are migrated by the steps in Migrate configuration for queues on the record routing page. For the workstream table, add the key columns only and select the Do not update existing records checkbox to prevent updates to records in a table migrated through solutions.",
+          "applicability": "Applies the record queue rules to the Ticket Chat messaging queues, and supports Requirement 5."
+        }
+      ],
+      "duplicateCheck": "A keyword search of ab250-bank and all simulator bundles for Queue type, Do not update existing records and Assignment configuration step found no question. Compared with channel-migration-dependency-order and channel-migration-excluded-dependencies in ab250-bank, channel-migration-path-by-item in 8d-deployment and capacity-profile-and-playbook-promotion in 8c-pilot. Those test the step sequence, scope and which path each item takes, not the import settings within a Configuration Migration tool run."
+    },
+    {
+      "id": "sim-c-q02",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "copied-sandbox-acs-reconnection-sequence",
+      "objectiveIds": [
+        "D1.2.04"
+      ],
+      "level": "advanced",
+      "author": "case-c-author",
+      "authoredAt": "2026-11-07",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d1-s10",
+          "section": "Voice channel with Azure Communication Services",
+          "claim": "Azure Communication Services resources and phone numbers are specific to an environment. Connect the target environment to its own resource, assign a phone number, and associate the number with the appropriate workstream. When you copy an environment with a configured voice channel, the resource is also copied, and one resource can be used in one environment only, so disconnect it in the target environment.",
+          "applicability": "Full copies. The page's prose mentions connecting before the Important note about disconnecting, but it isn't a numbered procedure. Pair 1 rests on the Get started prerequisite on the existing resource page."
+        },
+        {
+          "sourceId": "sim-cc-s02",
+          "section": "Prerequisites",
+          "claim": "The Get started button that connects to an existing Azure resource appears only when the trial ended, the trial was ended manually, or you disconnected from the Azure resource. The Azure subscription must be in the same tenant.",
+          "applicability": "Pair 1, disconnect before connect, is a dependency. acs-castlemere-uat is in the same tenant."
+        },
+        {
+          "sourceId": "sim-d2v-s04",
+          "section": "Opening paragraph; Important",
+          "claim": "You can disconnect the current resource and later reconnect to a new or existing resource by selecting Get started. Disconnecting releases the resource's phone numbers from Dynamics 365. To reconnect a phone number to the voice channel, you trigger voice channel creation, for example by editing a voice channel setting.",
+          "applicability": "Explains why the copied workstream must be given a number again. The procedure's last step deletes Event Grid subscriptions; it isn't a token, because in this case those subscriptions belong to Production's resource, which must keep working."
+        },
+        {
+          "sourceId": "sim-cc-s01",
+          "section": "Opening paragraphs",
+          "claim": "To acquire phone numbers, you must first establish connection with Azure Communication Services, by a new or an existing resource. You can also import phone numbers.",
+          "applicability": "Pair 2. Sync imports numbers through the connected resource, so it can't bring in the UAT test number before acs-castlemere-uat is connected. That step is an inference from this page and the sync page."
+        },
+        {
+          "sourceId": "sim-cc-s03",
+          "section": "Whole article",
+          "claim": "You can import phone numbers that you purchased or acquired earlier via Azure Communication Services resources by selecting Sync for Sync from Azure, and the numbers then appear on the Phone numbers page.",
+          "applicability": "Third step. The exhibit says that the test number was bought in the Azure portal."
+        },
+        {
+          "sourceId": "sim-d2-s04",
+          "section": "Prerequisites; Configure a voice channel; Add a phone number to the workstream and configure language settings",
+          "claim": "A phone number must be acquired before voice is configured. The phone number page lists only numbers with inbound calls enabled that aren't associated with another workstream. On an existing voice workstream, Edit opens the Voice settings page, where you select the number.",
+          "applicability": "Pair 3, sync before selecting the number, is a dependency. Inbound calling is enabled on the test number."
+        },
+        {
+          "sourceId": "sim-d2-s01",
+          "section": "Review the retirement schedule; Plan for phone numbers",
+          "claim": "Voice through Azure Communication Services remains supported through September 30, 2028. Organizations with an existing resource can continue to acquire phone numbers.",
+          "applicability": "Keeps the scenario current. Castlemere has existing resources and plans a move to Teams Phone extensibility."
+        }
+      ],
+      "duplicateCheck": "Compared with copy-acs-resource-isolation in ab250-bank, which asks only that the copied reference be replaced with target-specific resources, geo-move-and-copy-followups in 8d-deployment, which tests webhook endpoints after a geo move, and phone-number-release-prerequisites in 8d-channels-voice. None of them tests the sequence or the choice between an existing resource and sync versus a new resource and a new number."
+    },
+    {
+      "id": "sim-c-q03",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "agent-and-survey-solution-import-fixes",
+      "objectiveIds": [
+        "D1.2.03"
+      ],
+      "level": "advanced",
+      "author": "case-c-author",
+      "authoredAt": "2026-11-07",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-cc-s04",
+          "section": "Add custom connectors to your solution, Important",
+          "claim": "You must import custom connectors first, then the connection reference with the agent solution.",
+          "applicability": "Copilot Studio agents in the standard harness. Issue 3. The exhibit puts the connector in its own solution and the connection reference in Seat Finder's."
+        },
+        {
+          "sourceId": "sim-cc-s04",
+          "section": "Things to know; Add components to an agent in a custom solution; Import the solution with your agent",
+          "claim": "You can't export managed solutions. Add required objects is used on the agent in your unmanaged solution before you export. If an import fails, Download log file shows the cause, and the most common reason is that the solution doesn't contain some required components.",
+          "applicability": "Tokens e and f, and the log file in Issue 3."
+        },
+        {
+          "sourceId": "sim-cc-s05",
+          "section": "Migrate survey agent configuration, steps 4 to 11",
+          "claim": "Before export, select Properties for the Conversation Start topic and turn on Allow customizations. After import, verify in Copilot Service admin center that the AI agent is Ready, verify in Power Apps that the imported connection references are connected to Dataverse and add a new connection if they're missing, check the agents in Copilot Studio, and save and publish them.",
+          "applicability": "Dynamics 365 Contact Center survey agents. Issue 4 says that Encore Survey is Ready and that its connection references have no connection."
+        },
+        {
+          "sourceId": "sim-cc-s06",
+          "section": "Opening paragraphs",
+          "claim": "Managed properties are applied in the unmanaged layer of the development environment and take effect after the managed solution is installed elsewhere. After import they can be viewed but not changed, except by an update of the solution from the original publisher.",
+          "applicability": "Token a. Allow customizations is the managed property in the survey agent steps."
+        }
+      ],
+      "duplicateCheck": "A keyword search of ab250-bank and all simulator bundles for custom connector, connection reference, survey agent and Add required objects found no question. Compared with copy-agent-validation-and-publication in ab250-bank, which tests agent checks after an environment copy, not import dependencies between solutions."
+    },
+    {
+      "id": "sim-c-q04",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "pipeline-run-only-access",
+      "objectiveIds": [
+        "D1.2.03"
+      ],
+      "level": "advanced",
+      "author": "case-c-author",
+      "authoredAt": "2026-11-07",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-cc-s07",
+          "section": "Prerequisites for custom pipelines host; Create or choose environments for pipelines",
+          "claim": "All target environments used in a pipeline must be managed environments. The host environment stores all pipeline configuration, security and run history.",
+          "applicability": "Power Platform pipelines with a custom host. The exhibit makes UAT and Production managed environments and names Castlemere Hub as the host."
+        },
+        {
+          "sourceId": "sim-cc-s07",
+          "section": "Install the pipelines application in your host environment, Important",
+          "claim": "You only need to install the deployment pipelines application in the host environment, not in development, QA or production environments.",
+          "applicability": "Option d."
+        },
+        {
+          "sourceId": "sim-cc-s07",
+          "section": "Grant access to edit or run pipelines; Share pipelines with makers; Share with pipeline administrators",
+          "claim": "Pipeline security is managed in the host by security roles that the pipelines application adds. Deployment Pipeline User can run pipelines shared with them and isn't granted access to create, edit or delete pipelines. Deployment Pipeline Administrator has full control over all pipeline configuration. To share, assign Deployment Pipeline User in the host and share the pipeline record, where Read is enough to view and run it. Makers also need export privileges in the development environments and import privileges in the targets, which System Customizer has by default.",
+          "applicability": "Options a, b, c and e. The release managers hold System Customizer in Castlemere Dev, UAT and Production. The page also offers Security Teams in the configuration app as a way to assign the roles; that route isn't an option."
+        }
+      ],
+      "duplicateCheck": "A keyword search of ab250-bank and all simulator bundles for Deployment Pipeline and pipelines host found no question. alm-release-preflight and alm-development-release-artifact in ab250-bank test managed releases and version parity, not who can run a pipeline."
+    },
+    {
+      "id": "sim-c-q05",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "imported-profile-rank-and-default-conflicts",
+      "objectiveIds": [
+        "D5.1.01"
+      ],
+      "level": "advanced",
+      "author": "case-c-author",
+      "authoredAt": "2026-11-07",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-cc-s08",
+          "section": "Can I create experience profiles, customize them, and move between environments using solutions; Why can't I edit some of the custom experience profiles; Why do I see multiple profiles with the same rank; Can I have multiple profiles marked as default",
+          "claim": "Profiles can be added to a solution and imported into other environments. Profiles imported from a managed solution can't be edited. Profiles imported from different environments can share a rank or both be marked as default, and Microsoft recommends resolving this in the source environments and then importing the profiles.",
+          "applicability": "Both issues. Box Office Desk and Castlemere Standard come from Castlemere Dev, and Friends Desk and Friends Standard from Members Dev."
+        },
+        {
+          "sourceId": "sim-cb-s12",
+          "section": "Map security roles to experience profiles; Switch default profiles",
+          "claim": "If users have multiple security roles, the profile with the higher rank is linked to the user, and the example gives rank 1 priority over rank 2. Remove Default removes the default status.",
+          "applicability": "Requirement 2 and token d. Token b uses the default status that Remove Default clears, in the source environment."
+        },
+        {
+          "sourceId": "sim-d1-s01",
+          "section": "Deletion of managed configuration records",
+          "claim": "You can't delete managed configuration records in target environments where the managed solution was imported. The correct way is to delete the managed solution that brought in the configuration.",
+          "applicability": "Token c. The page is about Contact Center configuration records, and experience profiles are configuration that a managed solution brought in."
+        }
+      ],
+      "duplicateCheck": "Compared with experience-profile-assignment-mechanisms in 8d-case-b, custom-default-profile-switch-effects in 8d-experience and profile-team-targeting and profile-assignment-verification in ab250-bank. Those test rank, default and direct assignment inside one environment, and switching a default. None tests conflicts from profiles imported from two environments."
+    },
+    {
+      "id": "sim-c-q06",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "conceptId": "copilot-access-by-profile-features-and-role",
+      "objectiveIds": [
+        "D5.1.01"
+      ],
+      "level": "advanced",
+      "author": "case-c-author",
+      "authoredAt": "2026-11-07",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-cb-s25",
+          "section": "Make Copilot available to service representatives",
+          "claim": "For representatives to use Copilot, enable the features in experience profiles. Representatives in the default profiles can use Copilot by default. To limit features, create or edit a custom profile, turn on Copilot for questions and emails on its Productivity pane, and select features such as Ask a question, Write an email, Case summary and Live conversation summary in Copilot AI features.",
+          "applicability": "Standalone Contact Center. Issue 7 and Requirement 4. The page's Default profiles wording refers to the out-of-the-box profiles, so the explanation says out-of-the-box."
+        },
+        {
+          "sourceId": "sim-cb-s25",
+          "section": "Opt in to continue with Copilot setup; Assign roles and privileges",
+          "claim": "Enabling features on the Copilot for questions and emails or Summaries page requires an opt-in. By default, only users with the Customer Service Representative role can use Copilot features, and users with custom roles need the listed privileges, such as prvCreatemsdyn_copilotinteraction and prvReadmsdyn_copilotinteraction.",
+          "applicability": "Option r1b and Issue 8. The exhibit says that the opt-in is done in UAT and Production, and that gift voucher CSRs hold only Voucher Agent."
+        },
+        {
+          "sourceId": "sim-cb-s23",
+          "section": "Assign users, templates, configure productivity pane, channels; Enable Copilot features for experience profiles",
+          "claim": "In the Productivity pane of a profile, select On and then turn on each tool that representatives can use, including Copilot and Knowledge search. Representatives added to the out-of-the-box experience profiles can use the Copilot features by default.",
+          "applicability": "Friends Desk has only Knowledge search turned on."
+        },
+        {
+          "sourceId": "sim-cc-s08",
+          "section": "Why can't I edit some of the custom experience profiles",
+          "claim": "You can't edit profiles that are imported from a managed solution.",
+          "applicability": "Friends Desk is managed in UAT, so the change starts in Members Dev."
+        },
+        {
+          "sourceId": "sim-cb-s12",
+          "section": "Map security roles to experience profiles",
+          "claim": "When you set a custom profile as the default, you can no longer assign security roles to it, and existing security roles are removed.",
+          "applicability": "Option r2b."
+        }
+      ],
+      "duplicateCheck": "Compared with teams-multisession-profile-permissions and custom-role-surface-access in ab250-bank and custom-app-pane-tool-multisession-alm in 8d-experience. Those test Teams permissions, custom role surfaces and pane tools in a custom app. A keyword search for Copilot AI features and prvCreatemsdyn_copilotinteraction found no question."
+    },
+    {
+      "id": "sim-c-q07",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "copilot-report-ended-conversations-only",
+      "objectiveIds": [
+        "D3.1.05"
+      ],
+      "level": "advanced",
+      "author": "case-c-author",
+      "authoredAt": "2026-11-07",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-d34-s06",
+          "section": "Feature availability note; Filter and interpret the report, Usage and Productivity: Conversations tables",
+          "claim": "The report is available in Contact Center standalone. Duration filters by day, week or month. Daily active users is the number of unique representatives who used Copilot at least once in the last day. Number of responses used is the number of times text from a Copilot response was copied. Total conversations doesn't include email and voice. Number of conversations using Copilot AI is the number of engaged conversations that used Copilot and lists only conversations that have ended.",
+          "applicability": "Castlemere is standalone and Copilot analytics is on in Production. Ticket Chat is live chat. The page doesn't say how quickly ended conversations appear, so the explanation claims only that active conversations aren't counted."
+        }
+      ],
+      "duplicateCheck": "Compared with analytics-conversation-channel-scope and analytics-adoption-comparison-design in ab250-bank and copilot-report-copy-versus-rating in 8d-ai-distribution. Those test the email and voice exclusion, daily active users and copies against ratings. analytics-adoption-comparison-design uses the ended-conversation rule only as a distractor. This item uses it to explain a gap against live conversations."
+    },
+    {
+      "id": "sim-c-q08",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "custom-report-workspace-and-site-map-release",
+      "objectiveIds": [
+        "D6.2.03",
+        "D6.2.04"
+      ],
+      "level": "advanced",
+      "author": "case-c-author",
+      "authoredAt": "2026-11-07",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-cc-s10",
+          "section": "Overview of ALM; Migrating the report configuration",
+          "claim": "Power BI reports can move across environments by using Power BI deployment pipelines, or be deployed manually by pointing to the correct data sources. Customized reports added to the site map are stored in msdyn_dataanalyticsreport, with msdyn_reportid and msdyn_workspaceid, and are moved with the Configuration Migration tool. After the migration, you must update the report references: the Power BI workspace and the report ID.",
+          "applicability": "The guidance page applies to Customer Service, dates from 2024 and names Customer Service admin center. The current data model customization page applies to Customer Service and Contact Center standalone and uses the same customized reports site map. The manual deployment route isn't a token."
+        },
+        {
+          "sourceId": "sim-d6-s14",
+          "section": "Step 1: Select a Microsoft Fabric workspace; Step 4: Embed customized reports back to Dynamics 365",
+          "claim": "The selected workspace is the customer workspace. Add report lists the Power BI reports in the workspace configured in Step 1, and the customized reports site map is shared between historical and real-time data model customization.",
+          "applicability": "Token a. Rush Seats Monitor isn't in Castlemere Analytics Prod yet, and the technical requirements move Season Sales' entry with the Configuration Migration tool."
+        },
+        {
+          "sourceId": "sim-cc-s09",
+          "section": "Opening paragraph and dashboard list",
+          "claim": "Export and import move visual customizations of analytics reports between organizations, for Customer Service historical, Omnichannel historical, Omnichannel real-time and Real-time analytics for record routing.",
+          "applicability": "Token d. A custom report in a customer workspace isn't one of these dashboards."
+        },
+        {
+          "sourceId": "sim-d1-s12",
+          "section": "Note",
+          "claim": "Microsoft recommends that you don't export the msdyn_analytics entity because it contains org-specific configuration data.",
+          "applicability": "Token b."
+        }
+      ],
+      "duplicateCheck": "Compared with customized-app-report-navigation-pages and model-customization-provisioning-readiness in 8d-analytics, and custom-report-embedding-consumer-access, custom-report-navigation-origin and managed-versus-customer-update-lifecycle in ab250-bank. Those test site map pages, provisioning, access, where an entry was added and model updates. A keyword search for msdyn_dataanalyticsreport and deployment pipeline found no question."
+    },
+    {
+      "id": "sim-c-q09",
+      "revision": 1,
+      "domainId": "analytics",
+      "conceptId": "visual-customization-export-import-rules",
+      "objectiveIds": [
+        "D6.2.01"
+      ],
+      "level": "advanced",
+      "author": "case-c-author",
+      "authoredAt": "2026-11-07",
+      "status": "source-reviewed",
+      "evidence": [
+        {
+          "sourceId": "sim-cc-s09",
+          "section": "Note; Prerequisites",
+          "claim": "The export and import APIs support published visual customizations only, not drafts. You can import an older report into a newer organization version, but importing a newer report into an older version might not work. The target must be at the same or a higher version than the source, the target must have the out-of-the-box feature enabled, and users need the Analytics Report Author role.",
+          "applicability": "Rows 1 and 3. The exhibit says that Omnichannel historical analytics is on in both environments, that the release team holds Analytics Report Author, and that UAT is newer than Production until November 21."
+        },
+        {
+          "sourceId": "sim-cc-s09",
+          "section": "Import API",
+          "claim": "Existing customizations are replaced. If there are none, a new report record is created and bound to the out-of-box report.",
+          "applicability": "Row 2. The statement is under the Import API, so the technical requirements say that the release uses the API. The Omnichannel feature ID covers the Conversation, Queue, Agent, Bot and Topics pages."
+        },
+        {
+          "sourceId": "sim-d6-s09",
+          "section": "Customize the display of analytics reports",
+          "claim": "When you're done, select Save and then Publish. After publishing, customizations are visible to all users. Reset permanently removes any customizations.",
+          "applicability": "Issue 12 says that the changes were saved and not published. Options r2c and r3c use Reset."
+        },
+        {
+          "sourceId": "sim-d1-s12",
+          "section": "Note",
+          "claim": "Microsoft recommends that you don't export the msdyn_analytics entity because it contains org-specific configuration data.",
+          "applicability": "Option r1c."
+        }
+      ],
+      "duplicateCheck": "A keyword search of ab250-bank and all simulator bundles for Export a dashboard customization and ImportVisualCustomReport found no question. Compared with existing-metric-visual-customization and published-visual-editing-lifecycle in ab250-bank and embedded-editor-delivery-boundary in 8d-analytics, which test editing within one organization."
+    }
+  ]
+}

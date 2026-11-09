@@ -1,0 +1,874 @@
+{
+  "sources": [
+    { "id": "sim-d1-s01", "title": "Best practices for application lifecycle management", "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/alm-best-practices" },
+    { "id": "sim-d1-s02", "title": "Migrate configurations for channels using solutions", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/migrate-channel-config-using-solutions" },
+    { "id": "sim-d1-s03", "title": "Set up the embedded experience in Salesforce for Dynamics 365 Contact Center", "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/set-up-embedded-experience" },
+    { "id": "sim-d1-s04", "title": "Use AI-generated conversations for agentic simulations in Dynamics 365 Contact Center (preview)", "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-simulation-agent" },
+    { "id": "sim-d1-s05", "title": "Use Service Operations Agent in Dynamics 365 Contact Center", "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/use-service-operations-agent" },
+    { "id": "sim-d1-s06", "title": "Create rollout plans to manage AI agents", "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/create-rollout-plans" },
+    { "id": "sim-d1-s07", "title": "Configure the connector for ServiceNow", "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/extend/configure-servicenow-connector" },
+    { "id": "sim-d1-s08", "title": "Configure the connector for Salesforce", "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-salesforce-connector" },
+    { "id": "sim-d1-s09", "title": "Migrate configurations for record routing using solutions", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/migrate-record-routing-config-using-solutions" },
+    { "id": "sim-d1-s10", "title": "Copy an environment with omnichannel capabilities", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/implement/copy-environment-with-omnichannel" },
+    { "id": "sim-d1-s11", "title": "Manage Dynamics 365 Contact Center environments", "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/implement/restore-environment" },
+    { "id": "sim-d1-s12", "title": "Export and import app configuration data", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/implement/export-import-omnichannel-data" },
+    { "id": "sim-d1-s13", "title": "Create and manage capacity profiles in Dynamics 365 Customer Service and Dynamics 365 Contact Center", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/capacity-profiles" },
+    { "id": "sim-d1-s14", "title": "Assign roles, enable users", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/implement/add-users-assign-roles" },
+    { "id": "sim-d1-s15", "title": "Manage personas and custom security roles", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/role-persona-mapping" },
+    { "id": "sim-d1-s16", "title": "Roles and privileges associated with experience profiles", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/security-roles" },
+    { "id": "sim-d1-s17", "title": "Create users - Power Platform", "url": "https://learn.microsoft.com/en-us/power-platform/admin/create-users" },
+    { "id": "sim-d1-s18", "title": "Control user access to environments with security groups and licenses - Power Platform", "url": "https://learn.microsoft.com/en-us/power-platform/admin/control-user-access" },
+    { "id": "sim-d1-s19", "title": "System requirements for Dynamics 365 Contact Center", "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/implement/system-requirements-contact-center" },
+    { "id": "sim-d1-s20", "title": "Use industry templates to set up a contact center (preview)", "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/use-industry-templates" },
+    { "id": "sim-d1-s21", "title": "Solution layers in Power Platform - Power Apps", "url": "https://learn.microsoft.com/en-us/power-apps/maker/data-platform/solution-layers" },
+    { "id": "sim-d1-s22", "title": "Block unmanaged customizations in Dataverse environments - Power Platform", "url": "https://learn.microsoft.com/en-us/power-platform/alm/block-unmanaged-customizations" },
+    { "id": "sim-d1-s23", "title": "Column-level security - Power Platform", "url": "https://learn.microsoft.com/en-us/power-platform/admin/field-level-security" },
+    { "id": "sim-d1-s24", "title": "Understand how unified routing affects queue items and live work items for routed records", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/unified-routing-impact-on-apis" },
+    { "id": "sim-d1-s25", "title": "Configure the connector for any CRM solution", "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/extend/configure-custom-connector" },
+    { "id": "sim-d1-s26", "title": "Copy an environment - Power Platform", "url": "https://learn.microsoft.com/en-us/power-platform/admin/copy-environment" },
+    { "id": "sim-cb-s23", "title": "Configure experience profiles", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-agent-experience-profile" },
+    { "id": "sim-cb-s27", "title": "Create and manage users and user profiles", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/users-user-profiles" }
+  ],
+  "groups": [],
+  "questions": [
+    {
+      "id": "sim-d1-q01",
+      "revision": 1,
+      "kind": "match",
+      "domainId": "deployment",
+      "objectiveIds": ["D1.1.07", "D1.1.05", "D1.2.01"],
+      "conceptId": "admin-task-tool-selection",
+      "prompt": "Larkfield Home Insurance runs Dynamics 365 Contact Center standalone. Before go-live, the implementation lead has four tasks.\n\nEach tool is ready. An Omnichannel administrator can use Service Operations Agent, consumption-based billing is set up, and the agent's Dataverse connection works. Agentic simulation, a preview feature, can use a phone number that's configured on the inbound voice workstream, and representatives and routing are ready to take the calls. Customer Intent Agent is enabled.\n\nThe lead's rule is to use the Conversational Setup experience of Service Operations Agent for any task that its documented operations support. Other tools, including the separate Agentic Simulation tile, are used only where those operations don't support the task.\n\nYou need to choose the tool for each task.\n\nWhat should you use for each task?",
+      "tray": "Tools",
+      "table": { "title": "Go-live tasks", "rowHeading": "Task", "answerHeading": "Tool" },
+      "tokens": [
+        { "id": "a", "text": "Agentic simulation" },
+        { "id": "b", "text": "Ongoing conversation report in Omnichannel real-time analytics" },
+        { "id": "c", "text": "Service Operations Agent" },
+        { "id": "d", "text": "Rollout manager in Agent hub" },
+        { "id": "e", "text": "Route-to-queue configuration in Copilot Service admin center" }
+      ],
+      "rows": [
+        { "id": "r1", "label": "Check that the new SMS workstream is properly configured and ready", "correctTokenId": "c" },
+        { "id": "r2", "label": "Send 70 percent of claims conversations to one queue and 30 percent to a second queue", "correctTokenId": "e" },
+        { "id": "r3", "label": "Try the inbound voice journey with realistic calls before representatives take real customers", "correctTokenId": "a" },
+        { "id": "r4", "label": "Turn on Customer Intent Agent for one line of business automatically on a chosen future date", "correctTokenId": "d" }
+      ],
+      "answer": "SMS workstream check: Service Operations Agent. The 70/30 split: Route-to-queue configuration in Copilot Service admin center. Voice journey trial: Agentic simulation. Future-dated Customer Intent Agent start: Rollout manager in Agent hub.",
+      "explanation": "Each task belongs to a different tool. Service Operations Agent has a Validate operation that checks whether a workstream is properly configured and ready, so the lead's rule sends that task to the agent. The agent can create route-to-queue rules, but percentage-based and multi-queue distribution aren't supported through its tools, so the 70/30 split is configured manually in Copilot Service admin center. Agentic simulation tests configurations, AI agents and routing with AI-generated calls before rollout, which fits the voice journey. In preview it covers inbound voice workstreams only, so it can't check the SMS workstream. Rollout manager creates plans for autonomous agents, and Schedule sets a future date and time for a plan to be enabled automatically.",
+      "sourceIds": ["sim-d1-s05", "sim-d1-s04", "sim-d1-s06"],
+      "tags": ["domain:deployment", "task:apply", "feature:service-operations-agent"],
+      "optionExplanations": {
+        "a": "Correct for the voice journey trial. Simulations test configurations, AI agents and routing with generated calls. In preview they cover inbound voice workstreams only, so this fails for the SMS workstream.",
+        "b": "Fails on every row. This report shows conversations while a simulation is running, so it observes a run and doesn't perform any of these tasks.",
+        "c": "Correct for the SMS workstream check, because the Validate operation checks that a workstream is properly configured and ready. It fails for the 70/30 split, because percentage-based distribution isn't supported through its tools. It also fails for the voice journey trial and the future-dated start, because neither is among the documented Conversational Setup operations.",
+        "d": "Correct for the future-dated start. A rollout plan can cover Customer Intent Agent with a line of business, and Schedule enables the plan automatically at a future date and time.",
+        "e": "Correct for the 70/30 split, which must be configured manually because the agent's tools don't support percentage-based distribution. It isn't where you validate a workstream under the lead's rule, and it doesn't run calls or schedule agent plans."
+      },
+      "relatedNotes": [
+        { "packId": "contact-center-core", "noteId": "cc-d1-n05" },
+        { "packId": "contact-center-core", "noteId": "cc-d1-n04" },
+        { "packId": "contact-center-core", "noteId": "cc-d1-n03" }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d1-q02",
+      "revision": 1,
+      "kind": "match",
+      "domainId": "deployment",
+      "objectiveIds": ["D1.3.02"],
+      "conceptId": "dataverse-user-type-selection",
+      "prompt": "Ostler Freight runs Dynamics 365 Contact Center in an environment that has a Dataverse database. The platform team must set up accounts for three needs. None of these accounts should hold a license once setup is finished.\n\nYou need to choose the account type for each need.\n\nWhich account type should you use for each need?",
+      "tray": "Account types",
+      "table": { "title": "Account plan", "rowHeading": "Need", "answerHeading": "Account type" },
+      "tokens": [
+        { "id": "a", "text": "Stub user" },
+        { "id": "b", "text": "Non-interactive user" },
+        { "id": "c", "text": "Regular user" },
+        { "id": "d", "text": "Application user" },
+        { "id": "e", "text": "Administrative user" }
+      ],
+      "rows": [
+        { "id": "r1", "label": "A middleware service registered in Microsoft Entra ID that connects by server-to-server authentication", "correctTokenId": "d" },
+        { "id": "r2", "label": "An IT operator who maintains user accounts and security roles and must have no access to customer data", "correctTokenId": "e" },
+        { "id": "r3", "label": "A legacy connector that signs in with its own user account and only calls the SDK", "correctTokenId": "b" }
+      ],
+      "answer": "Middleware service: Application user. IT operator: Administrative user. Legacy connector: Non-interactive user.",
+      "explanation": "The decision turns on how the account signs in and what it may reach. Server-to-server authentication runs as an application user, which represents the registered application. An administrative user reaches settings and administration features but has no access to customer data, apps or functionality, and doesn't need a license after setup. A non-interactive user is a user account in that access mode for programmatic access, without a license and with no web interface or admin portal access. That suits a connector that signs in with its own account, but it wouldn't let the IT operator work in the admin settings.",
+      "sourceIds": ["sim-d1-s17"],
+      "tags": ["domain:deployment", "task:apply", "feature:user-accounts"],
+      "optionExplanations": {
+        "a": "Fails on every row. A stub user is a placeholder created through data import. It can't sign in, can't be enabled and can't be synchronized to Microsoft 365.",
+        "b": "Correct for the legacy connector. This access mode lets an application authenticate with its own user account without a license, and it reaches Dataverse only through SDK or API calls. It fails for the IT operator, because it can't reach admin portals.",
+        "c": "Fails on every row. A regular user is a synchronized person who needs a valid license, and the stem rules out a license on these accounts after setup.",
+        "d": "Correct for the middleware service. Operations that use server-to-server authentication run as the application user. It fails for the legacy connector, which signs in with its own user account rather than as a registered application.",
+        "e": "Correct for the IT operator. This access mode reaches settings and administration features for maintenance work, has no access to customer data or functionality, and needs no license after setup. It doesn't suit the two automated services."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d1-n06" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d1-q03",
+      "revision": 1,
+      "kind": "match",
+      "domainId": "deployment",
+      "objectiveIds": ["D1.3.03"],
+      "conceptId": "contact-center-role-least-privilege",
+      "prompt": "Quillon Water Services runs Dynamics 365 Contact Center standalone. Security policy requires the narrowest predefined role that covers each job. Every user already has Basic User, and nobody in these jobs uses a custom role.\n\nYou need to choose the role to add for each job.\n\nWhich role should you add for each job?",
+      "tray": "Roles",
+      "table": { "title": "Role assignments", "rowHeading": "Job", "answerHeading": "Role" },
+      "tokens": [
+        { "id": "a", "text": "Productivity tools user" },
+        { "id": "b", "text": "App Profile Manager Administrator" },
+        { "id": "c", "text": "Omnichannel supervisor" },
+        { "id": "d", "text": "Omnichannel administrator" },
+        { "id": "e", "text": "Productivity tools administrator" },
+        { "id": "f", "text": "Omnichannel agent" }
+      ],
+      "rows": [
+        { "id": "r1", "label": "Team lead: moves representatives between queues, and monitors, assigns and transfers conversations", "correctTokenId": "c" },
+        { "id": "r2", "label": "Routing analyst: adds workstreams and changes routing rules", "correctTokenId": "d" },
+        { "id": "r3", "label": "Content specialist: creates agent scripts and macro actions", "correctTokenId": "e" },
+        { "id": "r4", "label": "Workspace designer: creates experience profiles and session templates", "correctTokenId": "b" }
+      ],
+      "answer": "Team lead: Omnichannel supervisor. Routing analyst: Omnichannel administrator. Content specialist: Productivity tools administrator. Workspace designer: App Profile Manager Administrator.",
+      "explanation": "The narrowest role follows from each job's privileges. Monitoring, assigning and transferring conversations is listed for the Omnichannel supervisor, who can also add and remove representatives from queues. Adding workstreams and changing routing rules is listed only for the Omnichannel administrator. Creating agent scripts and macro actions is listed for the Productivity tools administrator, while the Productivity tools user can only read them. App Profile Manager Administrator holds the privileges for application configurations and session templates. The Omnichannel administrator role also includes those privileges out of the box, but it grants far more than the designer needs.",
+      "sourceIds": ["sim-d1-s14", "sim-d1-s16"],
+      "tags": ["domain:deployment", "task:apply", "feature:security-roles"],
+      "optionExplanations": {
+        "a": "Fails on every row. This role reads agent scripts and macro actions but can't create them, so it doesn't cover the content specialist.",
+        "b": "Correct for the workspace designer. It holds the privileges for application configurations and session templates. Its documented privilege list has no agent script or macro action privileges, so it doesn't fit the content specialist.",
+        "c": "Correct for the team lead. It can add and remove representatives from queues, and it's the role listed for monitoring, assigning and transferring conversations. It can't add workstreams or routing rules.",
+        "d": "Correct for the routing analyst, the only listed role that can add workstreams and routing rules. It also includes the app profile privileges out of the box, but that makes it broader than the workspace designer needs.",
+        "e": "Correct for the content specialist. It's the role listed for creating agent scripts, agent script steps and macro actions.",
+        "f": "Fails on every row. This role can view lists and quick replies, and it's for representative work. None of the four jobs fits it."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d1-n07" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d1-q04",
+      "revision": 1,
+      "kind": "match",
+      "domainId": "deployment",
+      "objectiveIds": ["D1.2.02"],
+      "conceptId": "channel-migration-path-by-item",
+      "prompt": "Dunmere Home Care is moving its channel routing configuration from a development environment to production by using the documented channel configuration migration procedure. Production is live, and its records must stay in place. The custom tables, columns and lookup values that the configuration refers to already exist there.\n\nYou need to follow the documented path for each item.\n\nHow should each item reach production?",
+      "tray": "Paths",
+      "table": { "title": "Migration paths", "rowHeading": "Item", "answerHeading": "Path" },
+      "tokens": [
+        { "id": "a", "text": "Configuration Migration tool" },
+        { "id": "b", "text": "Environment copy" },
+        { "id": "c", "text": "Manual setup in production" },
+        { "id": "d", "text": "Solution export and import" }
+      ],
+      "rows": [
+        { "id": "r1", "label": "Session templates, notification templates and macros", "correctTokenId": "d" },
+        { "id": "r2", "label": "Skills and rating models used by skill-based routing rulesets", "correctTokenId": "a" },
+        { "id": "r3", "label": "Each representative's skills and rating values", "correctTokenId": "c" },
+        { "id": "r4", "label": "The calendar item behind a queue's operating hours", "correctTokenId": "c" }
+      ],
+      "answer": "Session templates, notification templates and macros: Solution export and import. Skills and rating models: Configuration Migration tool. Representatives' skills and ratings: Manual setup in production. Operating hours calendar item: Manual setup in production.",
+      "explanation": "The procedure moves different items by different paths. Session templates, notification templates and macros go into a solution that you export and import. The skill-based routing configuration, including characteristics, rating models and rating values, is exported and imported with the Configuration Migration tool. Neither path finishes the job. After import, you manually link, associate or create the users, bookable resources and bookable resource characteristics that hold each representative's skills and ratings. The calendar item associated with an operating hour can't be migrated either, so you set it correctly after importing the operating hours.",
+      "sourceIds": ["sim-d1-s02", "sim-d1-s09", "sim-d1-s26"],
+      "tags": ["domain:deployment", "task:apply", "feature:channel-migration"],
+      "optionExplanations": {
+        "a": "Correct for skills and rating models, which the procedure exports and imports with this tool. It isn't the documented path for the representative associations or for the calendar item, which can't be migrated.",
+        "b": "Fails on every row. Production environments can't be the target of an environment copy, and a copy deletes and replaces what's in its target.",
+        "c": "Correct for two rows. The representative associations are linked or created manually after import, and the calendar item is set after the operating hours are imported.",
+        "d": "Correct for the session templates, notification templates and macros, which the procedure adds to a solution. The other items don't follow this path in the procedure."
+      },
+      "relatedNotes": [
+        { "packId": "contact-center-core", "noteId": "cc-d1-n11" },
+        { "packId": "contact-center-core", "noteId": "cc-d1-n02" }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d1-q05",
+      "revision": 1,
+      "kind": "order",
+      "domainId": "deployment",
+      "objectiveIds": ["D1.1.02"],
+      "conceptId": "servicenow-incremental-sync-build-sequence",
+      "prompt": "Kestrel Property Management keeps ServiceNow as its CRM and syncs Account and Contact records into Dataverse by using the Power Automate solution for the ServiceNow connector. The ServiceNow and Dataverse connections exist, the Customer Service plugin is available in ServiceNow, and the View-In-CRM field is configured. The flows are downloaded but aren't in Power Automate yet.\n\nYou need to set up incremental sync so that a record created, updated or deleted in ServiceNow reaches Dataverse automatically.\n\nWhich four actions should you perform, and in what order?",
+      "tray": "Actions",
+      "tokens": [
+        { "id": "a", "text": "Create a business rule for each operation that uses the downloaded script." },
+        { "id": "b", "text": "Copy the HTTP URL from the manual trigger of each flow." },
+        { "id": "c", "text": "Create Apex triggers on the Account and Contact objects." },
+        { "id": "d", "text": "Import the downloaded flows into Power Automate." },
+        { "id": "e", "text": "Create a REST message for each operation with the flow URL as its endpoint." },
+        { "id": "f", "text": "Store each flow URL in the Source CRM URL column on Account and Contact records." }
+      ],
+      "correctOrder": ["d", "b", "e", "a"],
+      "answer": "Import the downloaded flows into Power Automate, copy the HTTP URL from the manual trigger of each flow, create a REST message for each operation with the flow URL as its endpoint, and then create a business rule for each operation that uses the downloaded script.",
+      "explanation": "Each step uses what the step before it produced. A flow has to be in Power Automate before you can open its manual trigger and copy its HTTP URL. That URL is the endpoint of the REST message for the same operation. The business rule comes last because its script needs values from the REST message: the REST Message and Name fields, and the baseURL from the HTTP method. Microsoft also says that you must create the REST message before the business rule.",
+      "sourceIds": ["sim-d1-s07", "sim-d1-s25"],
+      "tags": ["domain:deployment", "task:apply", "feature:crm-connector"],
+      "optionExplanations": {
+        "a": "Correct as the fourth step. The script needs the REST Message and Name fields and the baseURL value, so the REST message has to exist first.",
+        "b": "Correct as the second step. The URL comes from the imported flow and becomes the REST message endpoint.",
+        "c": "Fails. Apex triggers are the Salesforce option on the any-CRM page. The ServiceNow procedure uses REST messages and business rules for these notifications.",
+        "d": "Correct as the first step. Until the flows are imported, there's no manual trigger to copy a URL from.",
+        "e": "Correct as the third step. The Endpoint field takes the flow's HTTP URL, and Microsoft requires the REST message before the business rule.",
+        "f": "Fails. The Source CRM URL column stores the full URL of the Account or Contact record so that users can open it. It isn't how ServiceNow reaches the flow."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d1-n09" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d1-q06",
+      "revision": 1,
+      "kind": "order",
+      "domainId": "deployment",
+      "objectiveIds": ["D1.1.03"],
+      "conceptId": "salesforce-call-center-setup-sequence",
+      "prompt": "Alder Street Savings keeps Salesforce Service Console as its representative desktop and is adding the embedded conversation widget from Dynamics 365 Contact Center. Omnichannel capabilities are enabled, and the provisioning user has System Administrator permissions in Salesforce. A colleague is handling the softphone layout and the Open CTI Softphone utility.\n\nYou need to set up the Salesforce call center so that the provisioning user is a member of it.\n\nWhich three actions should you perform, and in what order?",
+      "tray": "Actions",
+      "tokens": [
+        { "id": "a", "text": "Add the user through Manage Call Center Users in Salesforce." },
+        { "id": "b", "text": "Copy the widget URL from the Conversation widget tab in Copilot Service admin center." },
+        { "id": "c", "text": "Import the call center definition in Salesforce with its CTI Adapter URL set to the widget URL." },
+        { "id": "d", "text": "Upload the call center definition on the Data synchronization from external CRMs page in Copilot Service admin center." },
+        { "id": "e", "text": "Paste the customer-facing chat widget script into the call center definition in Salesforce." }
+      ],
+      "correctOrder": ["b", "c", "a"],
+      "answer": "Copy the widget URL from the Conversation widget tab in Copilot Service admin center, import the call center definition in Salesforce with its CTI Adapter URL set to the widget URL, and then add the user through Manage Call Center Users in Salesforce.",
+      "explanation": "The widget URL comes first because the call center definition needs it as its CTI Adapter URL. The call center must then exist in Salesforce before anyone can be added to it, so importing the definition comes before Manage Call Center Users. The definition belongs in Salesforce, because its Call Center setup is where the call center is created. The adapter URL points to the embedded widget for representatives, not to the customer-facing chat script.",
+      "sourceIds": ["sim-d1-s03"],
+      "tags": ["domain:deployment", "task:apply", "feature:embedded-experience"],
+      "optionExplanations": {
+        "a": "Correct as the third step. Manage Call Center Users adds users to a call center, so the imported call center has to exist first.",
+        "b": "Correct as the first step. The URL is listed under Integration into third-party systems on the Conversation widget tab, and the definition needs it.",
+        "c": "Correct as the second step. It needs the widget URL, and it creates the call center that users are added to.",
+        "d": "Fails. The definition is imported through Call Center in Salesforce Setup. The page named here syncs CRM data into Dataverse.",
+        "e": "Fails. The definition carries the embedded widget URL for representatives as its CTI Adapter URL. A customer-facing chat script doesn't belong there."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d1-n10" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d1-q07",
+      "revision": 1,
+      "kind": "hotspot",
+      "domainId": "deployment",
+      "objectiveIds": ["D1.1.07"],
+      "conceptId": "industry-template-number-and-recovery",
+      "prompt": "Tarn Valley Telecom wants to try the Telecom industry template in Service Operations Agent, which is a preview feature, before it decides whether to build an AI-first contact center. The voice channel is provisioned, and consumption-based billing is set up. The number the team will select is on the Trial Support voice workstream.\n\nYou need to plan the template run.\n\nWhat should you choose for each item?",
+      "table": { "title": "Template run plan", "rowHeading": "Item", "answerHeading": "Choice" },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "What the setup does with the selected number",
+          "options": [
+            { "id": "r1a", "text": "Keeps it on Trial Support and shares it with a new workstream" },
+            { "id": "r1b", "text": "Moves it from Trial Support to a new workstream" },
+            { "id": "r1c", "text": "Keeps Trial Support as is and acquires a new number for the setup" }
+          ],
+          "correctOptionId": "r1b"
+        },
+        {
+          "id": "r2",
+          "label": "Roles for the person who runs the setup",
+          "options": [
+            { "id": "r2a", "text": "Omnichannel administrator and Omnichannel supervisor" },
+            { "id": "r2b", "text": "System administrator and App Profile Manager Administrator" },
+            { "id": "r2c", "text": "System administrator and Omnichannel administrator" }
+          ],
+          "correctOptionId": "r2c"
+        },
+        {
+          "id": "r3",
+          "label": "Response if the setup reports LatestPublishedVersionNotFound",
+          "options": [
+            { "id": "r3a", "text": "Republish Transformation Agent Chat Bot in Copilot Studio" },
+            { "id": "r3b", "text": "Delete and recreate the D365 Contact Center MCP Connection" },
+            { "id": "r3c", "text": "Connect Application Insights to Dynamics 365 Contact Center" }
+          ],
+          "correctOptionId": "r3a"
+        }
+      ],
+      "answer": "Selected number: Moves it from Trial Support to a new workstream. Roles: System administrator and Omnichannel administrator. LatestPublishedVersionNotFound: Republish Transformation Agent Chat Bot in Copilot Studio.",
+      "explanation": "The template doesn't leave the selected number where it is. It creates a new workstream, detaches the selected number from its existing workstream settings and attaches it to the new workstream, so anything that still routes through Trial Support loses that number. Service Operations Agent on its own needs the Omnichannel administrator role, but the industry template lists both System administrator and Omnichannel administrator as prerequisites. For the LatestPublishedVersionNotFound error, Microsoft directs you to Copilot Studio to republish Transformation Agent Chat Bot.",
+      "sourceIds": ["sim-d1-s20", "sim-d1-s05"],
+      "tags": ["domain:deployment", "task:apply", "feature:industry-templates"],
+      "optionExplanations": {
+        "r1a": "Fails. The setup detaches the selected number from its existing workstream settings.",
+        "r1b": "Correct. The system creates a new workstream, detaches the selected number from the existing workstream settings and attaches it to the new workstream.",
+        "r1c": "Fails. The administrator selects a configured number in the setup, and that number is attached to the new workstream.",
+        "r2a": "Fails. The Omnichannel administrator role is enough to access Service Operations Agent, but the template's prerequisites also list System administrator.",
+        "r2b": "Fails. The template's prerequisites list Omnichannel administrator, and this pair doesn't include it.",
+        "r2c": "Correct. The template's prerequisites list both roles.",
+        "r3a": "Correct. Microsoft's note for this error says to go to Transformation Agent Chat Bot in Copilot Studio and republish the agent.",
+        "r3b": "Fails. Recreating this connection is the response when the agent can't perform actions or retrieve information, not the documented response to this error.",
+        "r3c": "Fails. Application Insights is a prerequisite for the agent to troubleshoot issues during setup. It isn't the documented response to this error."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d1-n05" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d1-q08",
+      "revision": 1,
+      "kind": "hotspot",
+      "domainId": "deployment",
+      "objectiveIds": ["D1.3.04"],
+      "conceptId": "multi-profile-daily-case-limits",
+      "prompt": "Penhallow Legal Aid routes cases to representatives through unified routing and uses capacity profiles, not capacity units. Each representative must take:\n- No more than three urgent cases a day\n- No more than six standard cases a day\n- No more than seven cases a day in total\n\nThe team will create three capacity profiles with End of day reset: Urgent with a limit of 3, Standard with a limit of 6, and Daily Total with a limit of 7. A case counts as urgent or standard according to its priority.\n\nYou need to configure routing so that every limit is enforced.\n\nWhat should you choose for each item?",
+      "table": { "title": "Capacity design", "rowHeading": "Item", "answerHeading": "Choice" },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Default profile on the workstream",
+          "options": [
+            { "id": "r1a", "text": "Urgent" },
+            { "id": "r1b", "text": "Standard" },
+            { "id": "r1c", "text": "Daily Total" }
+          ],
+          "correctOptionId": "r1c"
+        },
+        {
+          "id": "r2",
+          "label": "Way to add the Urgent or Standard profile to a case",
+          "options": [
+            { "id": "r2a", "text": "A rule output in a classification ruleset" },
+            { "id": "r2b", "text": "A condition in the queue's assignment rules" },
+            { "id": "r2c", "text": "A rule output in a route-to-queue ruleset" }
+          ],
+          "correctOptionId": "r2a"
+        },
+        {
+          "id": "r3",
+          "label": "Profiles assigned to each representative",
+          "options": [
+            { "id": "r3a", "text": "Daily Total only" },
+            { "id": "r3b", "text": "Urgent and Standard only" },
+            { "id": "r3c", "text": "All three profiles" }
+          ],
+          "correctOptionId": "r3c"
+        }
+      ],
+      "answer": "Workstream default: Daily Total. Adding the priority profile: A rule output in a classification ruleset. Representatives: All three profiles.",
+      "explanation": "Every case has to count against the overall limit, so Daily Total is the workstream's default profile. A classification ruleset then appends Urgent or Standard according to the case's priority. Each case now carries two profiles, and unified routing looks for a representative with available capacity in both. Capacity is consumed from both when the case is assigned. That's why representatives need all three profiles, and why no capacity-specific assignment rules are needed at queue level.",
+      "sourceIds": ["sim-d1-s13"],
+      "tags": ["domain:deployment", "task:apply", "feature:capacity-profiles"],
+      "optionExplanations": {
+        "r1a": "Fails. Setting this on the workstream would apply it to every case, so standard cases would consume the urgent limit.",
+        "r1b": "Fails. Setting this on the workstream would apply it to every case, so urgent cases would consume the standard limit.",
+        "r1c": "Correct. The workstream's profile applies to every work item routed through it, which is what the overall limit needs.",
+        "r2a": "Correct. A classification ruleset can set a capacity profile as a rule output, and the profile is appended to the work item alongside the workstream's profile.",
+        "r2b": "Fails. Microsoft says that you needn't define assignment rules specific to capacity profiles at queue level, because the system matches the profile attached to the work item.",
+        "r2c": "Fails. Route-to-queue rules send work to a queue. The documented places to set a capacity profile are the workstream and a classification ruleset.",
+        "r3a": "Fails. A case also carries Urgent or Standard, and the assigned representative must have the matching profile.",
+        "r3b": "Fails. Every case carries Daily Total, so a representative without it wouldn't match.",
+        "r3c": "Correct. Each case carries Daily Total plus one other profile, and the documented design has representatives hold all three."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d1-n08" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d1-q09",
+      "revision": 1,
+      "kind": "hotspot",
+      "domainId": "deployment",
+      "objectiveIds": ["D1.1.02"],
+      "conceptId": "salesforce-data-connector-operations",
+      "prompt": "Sablewood Outfitters keeps Salesforce as its CRM. The connector for Salesforce syncs Contacts and Accounts into Dataverse, and it's active on the Data synchronization from external CRMs page in Copilot Service admin center. The data team is reviewing three items.\n\nYou need to decide how to handle each item.\n\nWhat should you choose for each item?",
+      "table": { "title": "Connector review", "rowHeading": "Item", "answerHeading": "Decision" },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "A representative finds an outdated phone number on a synced contact",
+          "options": [
+            { "id": "r1a", "text": "Update the contact in Dataverse" },
+            { "id": "r1b", "text": "Update the contact in Salesforce" },
+            { "id": "r1c", "text": "Reset the connector's field mappings" }
+          ],
+          "correctOptionId": "r1b"
+        },
+        {
+          "id": "r2",
+          "label": "The security team asks to cut the connector's team to read access on the synced tables",
+          "options": [
+            { "id": "r2a", "text": "Keep read and write, or synchronization fails" },
+            { "id": "r2b", "text": "Accept it, because the connector reads only from Salesforce" },
+            { "id": "r2c", "text": "Accept it, and reactivate the connector afterward" }
+          ],
+          "correctOptionId": "r2a"
+        },
+        {
+          "id": "r3",
+          "label": "Expected result after a mapped field is removed from the connector",
+          "options": [
+            { "id": "r3a", "text": "Its existing values are deleted from Dataverse" },
+            { "id": "r3b", "text": "Its existing values stay, and new data isn't synced" },
+            { "id": "r3c", "text": "All field mappings return to the predefined defaults" }
+          ],
+          "correctOptionId": "r3b"
+        }
+      ],
+      "answer": "Outdated phone number: Update the contact in Salesforce. Read-only request: Keep read and write, or synchronization fails. Removed field: Its existing values stay, and new data isn't synced.",
+      "explanation": "The connector brings data from Salesforce into Dataverse, and changes made to synced data in Dataverse aren't synced back, so corrections belong in Salesforce. The direction of the sync can suggest that the Dataverse side needs little access, but the selected team is what writes the data to Dataverse. It must have read and write permissions on the selected tables, or data synchronization fails. Removing a table or mapped field doesn't clean up what's there: the data remains in Dataverse, and only new data isn't synced.",
+      "sourceIds": ["sim-d1-s08"],
+      "tags": ["domain:deployment", "task:apply", "feature:crm-connector"],
+      "optionExplanations": {
+        "r1a": "Fails. Microsoft recommends against changing synced data in Dataverse, because those changes aren't synced back to Salesforce.",
+        "r1b": "Correct. If synced data must change, Microsoft says to update it in Salesforce only.",
+        "r1c": "Fails. Reset returns the column mappings to the out-of-box mappings. It doesn't correct a value in a record.",
+        "r2a": "Correct. The team is used to write data to Dataverse, so it must have read and write permissions on the selected tables. Otherwise, data synchronization fails.",
+        "r2b": "Fails. Reading from Salesforce is only half of the sync. The connector's team writes to the Dataverse tables.",
+        "r2c": "Fails. The team must keep read and write permissions on the selected tables, and reactivating the connector doesn't remove that requirement.",
+        "r3a": "Fails. Microsoft says that the data remains in Dataverse when a table or mapped field is removed.",
+        "r3b": "Correct. The data remains in Dataverse, and only new data isn't synced.",
+        "r3c": "Fails. Returning to the defaults is what the Reset option does. Removing one field doesn't reset the other mappings."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d1-n09" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d1-q10",
+      "revision": 1,
+      "kind": "hotspot",
+      "domainId": "deployment",
+      "objectiveIds": ["D1.2.04"],
+      "conceptId": "geo-move-and-copy-followups",
+      "prompt": "Lakeshore Rail moved its production Dynamics 365 Contact Center environment to a new geography, and the organization is out of administration mode. Production uses voice on Azure Communication Services and record routing for email. The company then made a full copy of the moved environment to create a user acceptance testing (UAT) environment.\n\nYou need to complete the follow-up work.\n\nWhat should you do for each item?",
+      "table": { "title": "Follow-up work", "rowHeading": "Item", "answerHeading": "Action" },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Production: voice",
+          "options": [
+            { "id": "r1a", "text": "Copy the new webhook endpoints into the Event Grid subscriptions" },
+            { "id": "r1b", "text": "Disconnect the resource and connect a new one in the new geography" },
+            { "id": "r1c", "text": "Turn off the voice channel and provision it again in Copilot Service admin center" }
+          ],
+          "correctOptionId": "r1a"
+        },
+        {
+          "id": "r2",
+          "label": "Production: record routing",
+          "options": [
+            { "id": "r2a", "text": "Enable unified routing again" },
+            { "id": "r2b", "text": "No extra steps" },
+            { "id": "r2c", "text": "Configure and validate it separately" }
+          ],
+          "correctOptionId": "r2b"
+        },
+        {
+          "id": "r3",
+          "label": "UAT: real-time analytics reports",
+          "options": [
+            { "id": "r3a", "text": "Import the msdyn_analytics records from production" },
+            { "id": "r3b", "text": "Turn Enable Omnichannel real-time analytics off, then on" },
+            { "id": "r3c", "text": "None, because the copied reports already read the UAT data" }
+          ],
+          "correctOptionId": "r3b"
+        }
+      ],
+      "answer": "Production voice: Copy the new webhook endpoints into the Event Grid subscriptions. Production record routing: No extra steps. UAT real-time analytics reports: Turn Enable Omnichannel real-time analytics off, then on.",
+      "explanation": "The two operations leave different work. After a geo move, the contact center is recreated. The Azure Communication Services webhook endpoints change, so you copy the new values from Manage Azure Communication Services into the Event Grid subscriptions. Record routing needs no extra steps once the organization is out of administration mode. A copy is different: record routing would need separate configuration in the copy, and to make real-time reports reflect the target environment, you turn off Enable Omnichannel real-time analytics and turn it back on. Exporting msdyn_analytics isn't the way to do this, because that table holds organization-specific configuration.",
+      "sourceIds": ["sim-d1-s11", "sim-d1-s10", "sim-d1-s12"],
+      "tags": ["domain:deployment", "task:apply", "feature:environment-management"],
+      "optionExplanations": {
+        "r1a": "Correct. The webhook endpoints change for the new geography. The new values are in Copilot Service admin center, and you paste them into the corresponding Event Grid subscriptions.",
+        "r1b": "Fails. Connecting a target to its own resource is the guidance for an environment copy. After a geo move, you update the changed endpoints.",
+        "r1c": "Fails. Provisioning channels again is the follow-up for a reset, a restore or a tenant-to-tenant migration. It isn't among the post-move updates for a geo move.",
+        "r2a": "Fails. This is the follow-up for a reset, a restore or a tenant-to-tenant migration. The post-move updates say that no extra steps are needed.",
+        "r2b": "Correct. Record routing works after the organization is removed from administration mode.",
+        "r2c": "Fails. This is the guidance for an environment copy, where copying record-routing configuration isn't supported. It doesn't apply to the geo move.",
+        "r3a": "Fails. Microsoft recommends that you don't export the msdyn_analytics table, because it contains organization-specific configuration data.",
+        "r3b": "Correct. Microsoft says to turn this setting off and back on so that real-time reports reflect the target environment.",
+        "r3c": "Fails. The copy guidance says to turn the setting off and back on to make sure that the reports reflect the target environment."
+      },
+      "relatedNotes": [
+        { "packId": "contact-center-core", "noteId": "cc-d1-n12" },
+        { "packId": "contact-center-core", "noteId": "cc-d1-n02" }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d1-q11",
+      "revision": 1,
+      "kind": "hotspot",
+      "domainId": "deployment",
+      "objectiveIds": ["D1.2.03"],
+      "conceptId": "clear-active-layer-and-block-setting-limits",
+      "prompt": "Wexcombe Mutual releases its Dynamics 365 Contact Center configuration to production in managed solutions. During an incident, someone edited a session template directly in production. The next managed release imported successfully, but the template still shows the direct edit.\n\nThe release manager wants the direct edit gone, and wants the managed release to take effect. A colleague also proposes turning on the Block unmanaged customizations setting in production, which is off today, to stop further direct edits. Production receives Omnichannel upgrades, and Copilot Studio agents are published in it.\n\nYou need to choose how to handle each item.\n\nWhat should you choose for each item?",
+      "table": { "title": "Production ALM decisions", "rowHeading": "Item", "answerHeading": "Decision" },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "The direct edit on the session template",
+          "options": [
+            { "id": "r1a", "text": "Edit the template directly in production so that it matches the release" },
+            { "id": "r1b", "text": "Select Remove active customizations in the template's solution layers" },
+            { "id": "r1c", "text": "Delete the managed solution from production, then import the release again" }
+          ],
+          "correctOptionId": "r1b"
+        },
+        {
+          "id": "r2",
+          "label": "The proposal to turn on Block unmanaged customizations",
+          "options": [
+            { "id": "r2a", "text": "Reject it, because it also blocks removing unmanaged layers" },
+            { "id": "r2b", "text": "Accept it, because Omnichannel upgrades are exempt from the setting" },
+            { "id": "r2c", "text": "Reject it, because Omnichannel upgrades don't work with it on" }
+          ],
+          "correctOptionId": "r2c"
+        }
+      ],
+      "answer": "Direct edit: Select Remove active customizations in the template's solution layers. Proposal: Reject it, because Omnichannel upgrades don't work with it on.",
+      "explanation": "An unmanaged customization sits on the top layer and defines runtime behavior, so a later managed release can import successfully without taking effect. Removing the active customization from the component's solution layers clears that layer and lets the managed value take effect. This can't be undone, so check the edit first. Editing the template again only adds to the unmanaged layer. The Block unmanaged customizations setting looks like the right control, but Microsoft lists Omnichannel install and upgrade, and publishing a Copilot Studio agent, among the known limitations. Microsoft recommends disabling the setting if you must use those features in the environment.",
+      "sourceIds": ["sim-d1-s21", "sim-d1-s01", "sim-d1-s22", "sim-d1-s09"],
+      "tags": ["domain:deployment", "task:apply", "feature:solution-layers"],
+      "optionExplanations": {
+        "r1a": "Fails. Editing a managed configuration directly creates an active customization, so the unmanaged layer stays on the template.",
+        "r1b": "Correct. This command removes the unmanaged layer from a component that also has managed layers, and the managed release then defines the behavior.",
+        "r1c": "Fails. An active customization can make deleting the managed solution fail, and deleting a managed solution removes all of its components and related data.",
+        "r2a": "Fails. The conclusion is right, but this reason is wrong. Removing an unmanaged layer is one of the operations still allowed with the setting on.",
+        "r2b": "Fails. Omnichannel install and upgrade are on the known limitations list. Dataflows are the documented exception to the block, not Omnichannel.",
+        "r2c": "Correct. Omnichannel install and upgrade don't work with the setting on, and neither does publishing a Copilot Studio agent, so Microsoft recommends disabling it where those are needed."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d1-n02" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d1-q12",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "deployment",
+      "objectiveIds": ["D1.1.01"],
+      "conceptId": "workspace-workstation-baseline",
+      "prompt": "Riverbend Credit Union is rolling out Copilot Service workspace and voice through Azure Communication Services to a new branch. The proposed desktop standard for representatives is:\n- Browser: Google Chrome\n- Browser policy: third-party cookies blocked in private browsing windows only\n- Web filter: *.skype.com blocked, because the company has retired Skype\n- Web filter: file-sharing category blocked, and no website on Microsoft's allow list is in that category\n- Network: 6 Mbps upload and 10 Mbps download at each desk\n\nDesktop notifications aren't needed. IT will change only the items that don't meet the stated requirements. An item that meets a minimum stays as it is.\n\nYou need to bring the standard in line with the system requirements for Dynamics 365 Contact Center.\n\nWhich two items should you change? Each correct answer presents part of the solution.",
+      "options": [
+        { "id": "a", "text": "The browser choice" },
+        { "id": "b", "text": "The third-party cookie policy" },
+        { "id": "c", "text": "The network bandwidth at each desk" },
+        { "id": "d", "text": "The *.skype.com filter entry" },
+        { "id": "e", "text": "The file-sharing category filter" }
+      ],
+      "correctOptionIds": ["b", "d"],
+      "answer": "The third-party cookie policy and the *.skype.com filter entry.",
+      "explanation": "Two items break a stated requirement. Dynamics 365 Contact Center uses third-party cookies for authentication, and Microsoft says to make sure they aren't blocked in any mode so that services such as presence work. If a URL filter is in use, the listed websites must be allowed as exceptions for users, and *.skype.com is on that list. The other three items meet the requirements. Google Chrome is a supported browser, 6 Mbps upload and 10 Mbps download are above the 4 and 8 Mbps minimums even though they're below the recommended 8 and 16 Mbps, and the category filter touches none of the listed websites.",
+      "sourceIds": ["sim-d1-s19"],
+      "tags": ["domain:deployment", "task:apply", "feature:copilot-service-workspace"],
+      "optionExplanations": {
+        "a": "Fails. Google Chrome is listed as a supported browser. Microsoft Edge is named for the desktop notifications feature, which isn't needed here.",
+        "b": "Correct, and part of the solution. Third-party cookies are used for authentication and must not be blocked in any mode, or services such as presence might not work. Microsoft's advice to use normal mode doesn't change that.",
+        "c": "Fails. The bandwidth is below the recommended 8 Mbps upload and 16 Mbps download, but it's above the 4 and 8 Mbps minimums, and IT keeps items that meet a minimum.",
+        "d": "Correct, and part of the solution. This domain is on the list of websites to allow as exceptions when a URL filter is in use, whether or not the company uses Skype.",
+        "e": "Fails. A URL filter can block a category as long as the listed websites stay allowed, and none of them is in this category."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d1-n01" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d1-q13",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "deployment",
+      "objectiveIds": ["D1.3.04"],
+      "conceptId": "release-capacity-for-routed-email",
+      "prompt": "Fenwick Water routes email to representatives through record routing and uses capacity profiles. Representatives are reaching their limits because emails they've stopped working on still hold capacity. Some of those emails are finished, and others might need more work from someone else.\n\nThe team lead wants the capacity back today and accepts either outcome for an email: its work item closes, or it goes back to automatic assignment.\n\nYou need to release a representative's capacity from one of these emails.\n\nWhich two actions can you perform? Each correct answer presents a complete solution.",
+      "options": [
+        { "id": "a", "text": "Deactivate the queue item that's assigned to the representative." },
+        { "id": "b", "text": "Close the email's session in Copilot Service workspace after the final reply." },
+        { "id": "c", "text": "Remove the representative's name from the Worked By field on the queue item." },
+        { "id": "d", "text": "Raise the representative's custom limit on the capacity profile that the email uses." },
+        { "id": "e", "text": "Set Assignment blocking to No on the capacity profile that the email uses." }
+      ],
+      "correctOptionIds": ["a", "c"],
+      "answer": "Deactivate the queue item that's assigned to the representative, or remove the representative's name from the Worked By field on the queue item.",
+      "explanation": "Capacity release depends on the type of work. For conversations, capacity is released when the representative ends the conversation and closes the session. For cases, it's released when the case is resolved. Capacity isn't released automatically for activities such as email that are configured for record routing, so someone has to act on the queue item. The capacity page documents two actions. Deactivating the queue item closes the associated work item. Removing the representative from the Worked By field keeps the record open, and automatic assignment then tries to reassign the item. Changing a limit or a blocking setting doesn't release capacity that the email already holds.",
+      "sourceIds": ["sim-d1-s13", "sim-d1-s24"],
+      "tags": ["domain:deployment", "task:apply", "feature:capacity-profiles"],
+      "optionExplanations": {
+        "a": "Correct, and a complete solution. Deactivating the queue item closes the associated work item, and the services that maintain capacity are updated.",
+        "b": "Fails. Closing the session is the release rule for conversations. Capacity isn't released automatically for activities such as email.",
+        "c": "Correct, and a complete solution. This is the documented option when the record needs to stay open, and automatic assignment then tries to reassign the item.",
+        "d": "Fails. A custom limit applies to new work assignments. It raises the ceiling, but the email still holds the capacity it consumed.",
+        "e": "Fails. Assignment blocking controls whether a representative gets new work items once the limit is met. It doesn't release what's already consumed."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d1-n08" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d1-q14",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "deployment",
+      "objectiveIds": ["D1.1.05"],
+      "conceptId": "simulation-run-planning-limits",
+      "prompt": "Northgate Pharmacy wants ten simulated conversations against the inbound voice workstream for its Refills line. It will use agentic simulation in Dynamics 365 Contact Center, which is a preview feature. The voice channel is provisioned, the phone number is configured for simulation, representatives and routing are ready, and the journey has no keypad menu. Two test administrators in the same organization hold the required roles, and every prompt gives the workstream's phone number.\n\nYou need to choose a plan that the simulation can run.\n\nWhich two plans should you choose? Each correct answer presents a complete solution.",
+      "options": [
+        { "id": "a", "text": "Submit one English prompt that requests ten conversations." },
+        { "id": "b", "text": "Have each administrator submit a five-conversation English prompt at the same moment." },
+        { "id": "c", "text": "Submit a five-conversation English prompt, and submit a second one after the first finishes." },
+        { "id": "d", "text": "Submit three English prompts one after another, requesting four, three and three conversations." },
+        { "id": "e", "text": "Submit a five-conversation English prompt, then a five-conversation Spanish prompt after it finishes." }
+      ],
+      "correctOptionIds": ["c", "d"],
+      "answer": "Submit a five-conversation English prompt and a second one after the first finishes, or submit three English prompts one after another, requesting four, three and three conversations.",
+      "explanation": "Three limits shape the plan. A prompt can request up to five conversations, so ten conversations need at least two prompts. Only one simulation can be initiated and run at a time in one organization, so the prompts run in turn even with two administrators. Simulations are in English only. Any set of English prompts of five or fewer, run one after another, meets all three limits. The system also simulates at most two call conversations at once, so a run of five doesn't place all five calls together.",
+      "sourceIds": ["sim-d1-s04"],
+      "tags": ["domain:deployment", "task:apply", "feature:agentic-simulation"],
+      "optionExplanations": {
+        "a": "Fails. A simulation prompt can request up to five conversations.",
+        "b": "Fails. Only one simulation can be initiated and run at a time in one organization, even when different administrators start them.",
+        "c": "Correct, and a complete solution. Each prompt stays within five conversations, the runs don't overlap, and both are in English.",
+        "d": "Correct, and a complete solution. Each prompt stays within five conversations and the runs don't overlap. Using more prompts than the minimum breaks no limit.",
+        "e": "Fails. Simulations are in the English language only, so the Spanish prompt can't run."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d1-n04" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d1-q15",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "deployment",
+      "objectiveIds": ["D1.3.02"],
+      "conceptId": "security-group-association-membership-check",
+      "prompt": "Cobble Hill Insurance has a production Dynamics 365 Contact Center environment with existing users and no associated security group. Administrators will associate a new Microsoft Entra security group with the environment. Five identities use the environment today, and none of them is in the group yet.\n\nYou need to identify the identities that must be added to the group before the association so that they keep working in the environment.\n\nWhich three identities should you add? Each correct answer presents part of the solution.",
+      "options": [
+        { "id": "a", "text": "A licensed representative" },
+        { "id": "b", "text": "A user who holds the Dynamics 365 administrator role" },
+        { "id": "c", "text": "A user who holds the Power Platform Administrator role" },
+        { "id": "d", "text": "A non-interactive user account for a reporting connector" },
+        { "id": "e", "text": "An application user for a server-to-server data integration" }
+      ],
+      "correctOptionIds": ["a", "b", "d"],
+      "answer": "A licensed representative, a user who holds the Dynamics 365 administrator role, and a non-interactive user account for a reporting connector.",
+      "explanation": "Associating a security group with an existing environment disables the users who aren't members, so the question is which identities are exempt. Two are. A user with the Power Platform Administrator role shows as active and can sign in without being a member, and application users can run in any environment that's secured with a security group. The Dynamics 365 administrator role isn't exempt, because that user must be in the group to be enabled. Non-interactive users are also not exempt. Marking a user as non-interactive removes the license-specific provisioning rules, but security group rules still apply.",
+      "sourceIds": ["sim-d1-s18", "sim-d1-s17"],
+      "tags": ["domain:deployment", "task:apply", "feature:security-groups"],
+      "optionExplanations": {
+        "a": "Correct, and part of the solution. Associating the group disables users in the environment who aren't members.",
+        "b": "Correct, and part of the solution. A user with this role must be part of the security group before they're enabled in the environment.",
+        "c": "Fails. A user with this role who isn't in the group still shows as an active user and can sign in.",
+        "d": "Correct, and part of the solution. License-specific provisioning rules don't apply to these users, but security group rules still do.",
+        "e": "Fails. Application users can run in any environment that's secured with a security group, without being a member."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d1-n06" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d1-q16",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": ["D1.3.03"],
+      "conceptId": "secret-column-access-for-administrators",
+      "prompt": "Thornbury Hotels configures its own Dynamics 365 Contact Center channels. Mina holds the Omnichannel administrator role. When she opens the WhatsApp account and Azure Communication Services settings, the secret values are hidden and she can't update them. Company policy doesn't allow her to hold the System Administrator role.\n\nYou need to give Mina access to those values.\n\nWhat should you do?",
+      "options": [
+        { "id": "a", "text": "Set Organization-level Read and Write on those tables in a custom role for her." },
+        { "id": "b", "text": "Add her current security role to the admin persona in Role persona mapping." },
+        { "id": "c", "text": "Grant read, update and create on those columns through a column security profile." },
+        { "id": "d", "text": "Assign the App Profile Manager Administrator role in addition to her current role." }
+      ],
+      "correctOptionIds": ["c"],
+      "answer": "Grant read, update and create on those columns through a column security profile.",
+      "explanation": "Administrators need column-level permissions on secure columns to configure features such as Azure Communication Services and the WhatsApp channel. Table privileges in a security role manage access at the table level, and a secured column has a separate control. Only users with the System Administrator role can reach a secured column unless a column security profile grants access. Microsoft's steps are to create or update a column security profile and give it read, update or create permissions on the columns that hold the secret attributes. The System Administrator role would bypass this, but policy rules it out.",
+      "sourceIds": ["sim-d1-s14", "sim-d1-s23", "sim-d1-s15", "sim-d1-s16"],
+      "tags": ["domain:deployment", "task:apply", "feature:column-security"],
+      "optionExplanations": {
+        "a": "Fails. Security role privileges manage access at the table level. Users who aren't defined in a column security profile don't have access to a secured column.",
+        "b": "Fails. Persona mapping defines user permissions for unified routing by archetype. Column access for secrets comes from a column security profile.",
+        "c": "Correct. Microsoft's steps for secret attributes are to create or update a column security profile and give it permissions on those columns.",
+        "d": "Fails. This role's documented privileges cover profiles, templates and channel providers. Column permissions on secrets come from a column security profile."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d1-n07" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-d1-q17",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "deployment",
+      "objectiveIds": ["D1.3.01"],
+      "conceptId": "contact-center-users-view-listing",
+      "prompt": "Cedar Point Credit Union hires seasonal staff for chat. An administrator copies the Omnichannel agent role to a custom role named Seasonal Rep and assigns it to 30 licensed users. No other configuration has changed. In Enhanced user management, the users appear under All users but not under Contact center users, where the administrator wants to update their queues in bulk.\n\nYou need to make the 30 users appear under Contact center users.\n\nWhat should you do?",
+      "options": [
+        { "id": "a", "text": "Create a bookable resource record for each of the 30 users." },
+        { "id": "b", "text": "Add the Seasonal Rep role to the agent persona in Role persona mapping." },
+        { "id": "c", "text": "Set a default presence on the Omnichannel tab of each of the 30 users." },
+        { "id": "d", "text": "Add the Seasonal Rep role to a custom experience profile for Copilot Service workspace." }
+      ],
+      "correctOptionIds": ["b"],
+      "answer": "Add the Seasonal Rep role to the agent persona in Role persona mapping.",
+      "explanation": "The Contact center users view lists users who are assigned the representative, supervisor or admin persona, while All users lists all the Customer Service users. A persona comes from a role that's mapped to it. Dynamics 365 Contact Center maps its three primary roles by default, but a custom role has to be added to a persona. A copied role is a new role, and Microsoft's seasonal example selects it on the agent persona as a separate step. The other options are real settings that serve routing or the workspace experience, but they don't assign a persona.",
+      "sourceIds": ["sim-cb-s27", "sim-d1-s15", "sim-cb-s23"],
+      "tags": ["domain:deployment", "task:apply", "feature:user-management"],
+      "optionExplanations": {
+        "a": "Fails. A bookable resource is what lets a user be assigned work through unified routing. The view is defined by persona, not by bookable resource.",
+        "b": "Correct. The view lists users who are assigned a persona, and this mapping gives holders of the custom role the agent persona.",
+        "c": "Fails. Default presence sets the status a representative is logged in with. It doesn't assign a persona.",
+        "d": "Fails. Set rank and roles ties a security role to an experience profile, which targets the app experience. It doesn't assign the persona that this view is based on."
+      },
+      "relatedNotes": [
+        { "packId": "contact-center-core", "noteId": "cc-d1-n06" },
+        { "packId": "contact-center-core", "noteId": "cc-d1-n07" }
+      ],
+      "status": "draft"
+    }
+  ],
+  "editorial": [
+    {
+      "id": "sim-d1-q01", "revision": 1, "domainId": "deployment", "conceptId": "admin-task-tool-selection",
+      "objectiveIds": ["D1.1.07", "D1.1.05", "D1.2.01"], "level": "advanced", "author": "deployment-author", "authoredAt": "2026-11-06", "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d1-s05", "section": "Create and manage workstream; Create and manage routing rules (route-to-queue rules)", "claim": "The Validate operation checks that a workstream is properly configured and ready. Classification rulesets, assignment rules, overflow rules, percentage-based or multi-queue distribution, and rule conditions aren't supported through the tools and must be configured manually in Copilot Service admin center.", "applicability": "Dynamics 365 Contact Center only, page dated 2026-07-09 and updated 2026-08-31. The Validate operation names no channel limit. The lead's rule in the stem is what stops a manual check being a second answer on row 1." },
+        { "sourceId": "sim-d1-s04", "section": "Introduction; Run a simulation; Things to consider", "claim": "Agentic simulations test and validate configurations, AI agents and routing flows before rollout. In preview they're available for inbound voice workstreams only. The Ongoing conversation report shows conversations while a simulation is running.", "applicability": "Preview feature, page dated 2026-09-21. The stem states the preview status, a configured number, and that representatives and routing are ready. The use page's operation tables list no simulation operation. A release plan calls simulations a capability of the agent, so the stem names Conversational Setup and the separate tile to keep row 3 to one answer." },
+        { "sourceId": "sim-d1-s06", "section": "Prerequisite; Create rollout plans using rollout manager; Manage rollout plans", "claim": "Autonomous agents must be enabled to create a rollout plan. The wizard lets you select a line of business for Customer Intent Agent, and Schedule sets a future date and time for a plan to be enabled automatically.", "applicability": "Page dated 2026-05-08. The stem states that the agent is enabled. Neither the use page nor its tool tables list rollout plans among Service Operations Agent's operations." }
+      ],
+      "duplicateCheck": "Compared with service-operations-condition-authoring-boundary, the simulation questions (ab250-d1-q14 to q17) and rollout questions (ab250-d1-q21 to q24). Those test one tool at a time. This one tests choosing between tools for different tasks. Percentage-based distribution appears in ab250-d1-q20 only as a distractor, because that question tests rule conditions."
+    },
+    {
+      "id": "sim-d1-q02", "revision": 1, "domainId": "deployment", "conceptId": "dataverse-user-type-selection",
+      "objectiveIds": ["D1.3.02"], "level": "advanced", "author": "deployment-author", "authoredAt": "2026-11-06", "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d1-s17", "section": "User types; Create an administrative user account; Create a non-interactive user account; Create an application user; How stub users are created", "claim": "An administrative user reaches settings and administration features but has no access to customer data, apps or functionality, and needs no license after setup. A non-interactive user authenticates for programmatic access without a license and can reach Dataverse only through SDK or API calls, with no web interface or admin portal. Server-to-server operations run as the application user. A stub user is a placeholder created through data import that can't sign in.", "applicability": "Power Platform, page dated 2026-10-02, for environments with a Dataverse database. The page says application users are created with a non-interactive user account, so rows 1 and 3 are separated by how the account signs in. The page states the no-license point for non-interactive and administrative users, and doesn't state it directly for application users. No explanation claims it for them." }
+      ],
+      "duplicateCheck": "Compared with environment-security-group-onboarding, nested-group-team-provisioning and representative-case-role-set. A keyword search of ab250-bank for non-interactive found nothing. The application user hits (ab250-d3-q15 and q16) concern smart assist setup and don't test account type choice. The phrase administrative access in ab250-d1-q45 means a broad role grant, not this access mode."
+    },
+    {
+      "id": "sim-d1-q03", "revision": 1, "domainId": "deployment", "conceptId": "contact-center-role-least-privilege",
+      "objectiveIds": ["D1.3.03"], "level": "advanced", "author": "deployment-author", "authoredAt": "2026-11-06", "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d1-s14", "section": "Roles in Dynamics 365 Contact Center; Understand roles and their privileges", "claim": "The privilege table lists adding, editing and deleting workstreams and routing rules for the Omnichannel administrator only. It lists adding and removing representatives from a queue for the administrator and supervisor, and monitoring, assigning and transferring conversations for the supervisor. Creating agent scripts, agent script steps and macro actions is listed for the Productivity tools administrator, and reading agent scripts and macro actions for the Productivity tools user. App Profile Manager Administrator is required for creating and assigning app profiles.", "applicability": "Contact Center embedded and standalone and Customer Service, page dated 2026-10-23." },
+        { "sourceId": "sim-d1-s16", "section": "Roles for Copilot Service workspace; Roles for Dynamics 365 Contact Center; Role: App Profile Manager Administrator", "claim": "Out of the box, the Omnichannel administrator role includes the App Profile Manager Administrator privileges. The App Profile Manager Administrator privilege table covers application configurations, session templates, notification templates and application tab templates, with no agent script or macro action privileges.", "applicability": "Page dated 2026-05-08. One sentence says this role is given to the user who creates app profiles, templates, productivity tools and channel provider configurations. Its privilege table has no script or macro entries, so the question names agent scripts and macro actions on row 3, which the other page assigns to Productivity tools administrator, and the option explanation relies only on the privilege list." }
+      ],
+      "duplicateCheck": "Compared with representative-case-role-set, security-cumulative-role-audit, custom-role-surface-access and custom-role-appropriate-baseline. Those test required roles for a representative, cumulative grants, surfaces and copying a role. None tests choosing the narrowest role across jobs. The app profile manager hits in ab250-d5-q34 and q37 concern the JavaScript API, not this role."
+    },
+    {
+      "id": "sim-d1-q04", "revision": 1, "domainId": "deployment", "conceptId": "channel-migration-path-by-item",
+      "objectiveIds": ["D1.2.02"], "level": "advanced", "author": "deployment-author", "authoredAt": "2026-11-06", "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d1-s02", "section": "Channel configuration migration steps; Migrate configuration for session templates and notification templates; Migrate configuration for skill-based routing rulesets; Migrate configuration for queues; Verify your migration", "claim": "The channel procedure sends these items to the steps on the record routing page. After import, if skills and rating values are used in rulesets, you manually link, associate or create the users, bookable resources and bookable resource characteristics records.", "applicability": "Contact Center embedded and standalone and Customer Service, page dated 2026-05-15. The stem names the channel procedure because this page holds the verification step. The stem also states that referenced schema exists." },
+        { "sourceId": "sim-d1-s09", "section": "Migrate configuration for session templates and notification templates; Migrate configuration for skill-based routing rulesets; Migrate configuration for record queues", "claim": "Agent scripts, notification templates, macros and session templates are added to a solution and exported and imported. Characteristic, Rating Model and Rating Value records are exported and imported with the Configuration Migration tool. The Calendar item associated with the Operating Hour table can't be migrated and must be set after the Operating Hour table is imported.", "applicability": "Page dated 2026-06-16. The channel page links to these sections, so they apply to the channel procedure. The stem's instruction to follow the documented path is what rejects other tools that could technically move a record." },
+        { "sourceId": "sim-d1-s26", "section": "Introduction note; How to copy an environment", "claim": "Production environments can't be overwritten by a copy. A target can be a sandbox or preview environment, and its data, components and customizations are deleted and replaced.", "applicability": "Power Platform, page dated 2025-12-04, updated 2026-08-14. Rejects the environment copy token for a documented reason." }
+      ],
+      "duplicateCheck": "Compared with capacity-profile-and-playbook-promotion (sim-p-q09), which tests a new capacity profile and a playbook, and with channel-migration-dependency-order, channel-migration-prerequisites and channel-migration-excluded-dependencies. channel-migration-user-associations (ab250-d1-q31) tests the manual association alone, and row 3 reuses that fact as one item. The question's decision is which path each item takes, which no existing question tests."
+    },
+    {
+      "id": "sim-d1-q05", "revision": 1, "domainId": "deployment", "conceptId": "servicenow-incremental-sync-build-sequence",
+      "objectiveIds": ["D1.1.02"], "level": "advanced", "author": "deployment-author", "authoredAt": "2026-11-06", "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d1-s07", "section": "Import flows to Power Automate; Configure incremental data sync; Create REST message; Create a Business Rule", "claim": "Flows are imported into Power Automate. The Endpoint field in each REST message is updated with the flow's HTTP URL, copied from the Manual step of the flow. Microsoft says you must create the script in this order: create the REST message, then create the business rule. The REST Message and Name fields are required in the Business Rules script, and the script's baseURL comes from the HTTP method in the REST Message. The Source CRM URL column stores the full URL of the record.", "applicability": "Page dated 2026-05-28. Check 1 by pair. Import before URL copy: the flow isn't there to open until it's imported. URL before REST message: the URL is the endpoint value. REST message before business rule: stated as a must and needed by the script. Imported flows are disabled by default and need turning on, but that isn't a token because it has no required position against the URL copy. The stem states that connections exist, so adding them isn't a step." },
+        { "sourceId": "sim-d1-s25", "section": "Add any CRM connector: Add a connector using Business rules; Use Apex triggers", "claim": "The any-CRM page gives the same order, REST Message then Business Rule. Apex triggers link to Salesforce developer documentation.", "applicability": "Page dated 2026-05-28. Reverse check: searched learn.microsoft.com on 2026-11-06 for this sequence. Both pages give REST message first, and no page shows the reverse." }
+      ],
+      "duplicateCheck": "Compared with connector-initial-load-completeness, connector-change-delivery, connector-record-provenance and connector-environment-alignment. A keyword search of ab250-bank and the simulator batches for ServiceNow and REST message found nothing. ab250-d1-q06 tests choosing webhooks for change events, not the ServiceNow build sequence."
+    },
+    {
+      "id": "sim-d1-q06", "revision": 1, "domainId": "deployment", "conceptId": "salesforce-call-center-setup-sequence",
+      "objectiveIds": ["D1.1.03"], "level": "advanced", "author": "deployment-author", "authoredAt": "2026-11-06", "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d1-s03", "section": "Prerequisites; Set up the call center in Salesforce", "claim": "The widget URL is on the Conversation widget tab under Integration into third-party systems. You replace the CTI Adapter URL in the definition file with the embedded widget URL, import the file through Call Center in Salesforce Setup, and then add users through Manage Call Center Users. The page has you select the user record that you're signed in with, so the stem names the provisioning user.", "applicability": "Page dated 2026-05-08, updated 2026-07-21. Check 1 by pair. URL before import: the definition needs the value. Import before membership: the call center has to exist to have users. Setting the URL and importing share one token on purpose. The current page edits the file before import. A learn.microsoft.com search summary described an older Copilot guide that edits the field after import. That guide's URLs now redirect to Service Agent, so it couldn't be opened or confirmed, and the merged token means the question depends on neither order. The stem excludes the softphone layout and utility because the page shows no dependency between them and the call center steps." }
+      ],
+      "duplicateCheck": "Compared with salesforce-adapter-url, salesforce-call-center-membership, salesforce-console-utility and embedded-salesforce-readiness. Those test the adapter URL value, membership, the utility and readiness checks as single facts. This one tests the dependency chain. Option e reuses the idea of the customer-facing script from ab250-d1-q01 as a distractor only."
+    },
+    {
+      "id": "sim-d1-q07", "revision": 1, "domainId": "deployment", "conceptId": "industry-template-number-and-recovery",
+      "objectiveIds": ["D1.1.07"], "level": "advanced", "author": "deployment-author", "authoredAt": "2026-11-06", "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d1-s20", "section": "Prerequisites; How industry template setup works; Use industry template in Service Operations Agent", "claim": "Prerequisites are a provisioned voice channel, System administrator and Omnichannel administrator, and a configured phone number, plus consumption-based billing. Setup stages include choosing a phone number. The system creates a new workstream, detaches the selected phone number from the existing workstream settings and attaches it to the new workstream. For LatestPublishedVersionNotFound, go to Transformation Agent Chat Bot in Copilot Studio and republish the agent.", "applicability": "Preview feature for retail and telecom, page dated 2026-09-21. The stem states the preview status. This is the documented agentic transformation path, so it doesn't rely on the partial-depth gap for D1.1.07. The question avoids environment migration by agents, which remains unestablished." },
+        { "sourceId": "sim-d1-s05", "section": "Prerequisites; Steps to access", "claim": "Omnichannel administrator is required to access Service Operations Agent. Application Insights is needed for the agent to troubleshoot issues during setup. If the agent can't perform actions or retrieve information, you verify the connection, and refreshing it means deleting D365 Contact Center MCP Connection.", "applicability": "Page dated 2026-07-09, updated 2026-08-31. Used to explain why r2a is tempting and what r3b and r3c are for. Neither page says that those two responses can't help, so the option explanations say only that they aren't the documented response to this error." }
+      ],
+      "duplicateCheck": "Compared with service-operations-mcp-diagnosis, service-operations-troubleshooting-observability and service-operations-condition-authoring-boundary. A keyword search of ab250-bank and the simulator batches for industry template, transformation and LatestPublished found nothing. ab250-d1-q18 tests diagnosing the MCP connection, which appears here only as a distractor."
+    },
+    {
+      "id": "sim-d1-q08", "revision": 1, "domainId": "deployment", "conceptId": "multi-profile-daily-case-limits",
+      "objectiveIds": ["D1.3.04"], "level": "advanced", "author": "deployment-author", "authoredAt": "2026-11-06", "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d1-s13", "section": "Set capacity profiles for workstreams; How to set multiple capacity profiles in a single workstream; Runtime behavior of multiple capacity profiles in a single workstream", "claim": "The workstream's profile applies to all work items routed through it. A classification ruleset can set a capacity profile as a rule output, and it's appended to the work item. You needn't define assignment rules specific to capacity profiles at queue level. In the documented design, a total profile is the workstream default, classification rules add the priority profile, representatives have all three profiles, and capacity is consumed from both profiles on a work item.", "applicability": "Contact Center embedded and standalone and Customer Service, page dated 2026-02-03. The stem uses its own numbers and states capacity profiles only, matching the recommendation not to use both models. Route-to-queue isn't named on this page as a place to set a profile, and the option explanation says only what the documented places are." }
+      ],
+      "duplicateCheck": "Compared with capacity-default-change-preserves-overrides, capacity-lower-limit-existing-work, capacity-reset-frequency-recreation, capacity-end-of-day-open-work, capacity-override-return-to-default and capacity-negative-manual-assignment-diagnosis. None tests several profiles on one work item. ab250-d4-q18, q19, q23 and q26 mention classification rules in routing contexts, and a search found none that uses them to add a capacity profile for a layered limit."
+    },
+    {
+      "id": "sim-d1-q09", "revision": 1, "domainId": "deployment", "conceptId": "salesforce-data-connector-operations",
+      "objectiveIds": ["D1.1.02"], "level": "advanced", "author": "deployment-author", "authoredAt": "2026-11-06", "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d1-s08", "section": "Configure the data connector (Important note and step 12); Manage the data connector", "claim": "Changes to synced data in Dataverse aren't synced back to Salesforce, so if data must change, update it in Salesforce only. The team on the Teams permissions page is used to write data to Dataverse and must have read and write permissions on the selected tables, or data synchronization fails. If a table or mapped field is removed, the data remains in Dataverse and only new data isn't synced. Reset returns field mappings to the out-of-box mappings.", "applicability": "Page dated 2026-05-08. This is the admin center connector for Salesforce, not the Power Automate connector solution. The page doesn't say whether reactivating a connector affects permissions, so r2c fails on the stated write requirement." }
+      ],
+      "duplicateCheck": "Compared with connector-initial-load-completeness, connector-change-delivery, connector-record-provenance and connector-environment-alignment. Those test the Power Automate any-CRM connector. No existing question tests the admin center connector for Salesforce."
+    },
+    {
+      "id": "sim-d1-q10", "revision": 1, "domainId": "deployment", "conceptId": "geo-move-and-copy-followups",
+      "objectiveIds": ["D1.2.04"], "level": "advanced", "author": "deployment-author", "authoredAt": "2026-11-06", "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d1-s11", "section": "Introduction; Move contact center from one geo to another; Post-move updates", "claim": "After a reset, a restore or a tenant-to-tenant migration, you provision channels or enable unified routing again. After a geo move, the contact center is recreated. The Azure Communication Services webhook endpoints change, and you copy the new values from Manage Azure Communication Services into the Event Grid subscriptions. Record routing needs no extra steps and works after the organization is removed from administration mode.", "applicability": "Contact Center embedded and standalone and Customer Service, page dated 2026-08-03. The stem states that the organization is out of administration mode. The Power Platform geo migration page was also opened, and it points Contact Center to these Post-move updates." },
+        { "sourceId": "sim-d1-s10", "section": "Configure the target environment after the copy; Voice channel with Azure Communication Services; Configure real-time and historical analytics", "claim": "Copying record-routing configuration isn't supported, so it's configured and validated separately in the target. A copied voice environment connects to its own resource. To make real-time reports reflect the target, you turn off Enable Omnichannel real-time analytics and turn it back on.", "applicability": "Page dated 2026-09-09. Only the third row concerns the copy. The rest of this page supplies the distractors for rows 1 and 2." },
+        { "sourceId": "sim-d1-s12", "section": "Introduction note", "claim": "Microsoft recommends that you don't export the msdyn_analytics entity, because it contains organization-specific configuration data and exporting it might lead to incorrect configuration data.", "applicability": "Page dated 2026-05-08. Rejects option r3a." }
+      ],
+      "duplicateCheck": "Compared with post-restore-readiness, copy-chat-and-record-routing, copy-acs-resource-isolation, copy-teams-channel-cross-environment-link and environment-minimal-copy-scope. A keyword search of ab250-bank found nothing on geo moves or on the analytics reset after a copy. ab250-d1-q33 uses record routing after a copy, which appears here only as a distractor against the geo move."
+    },
+    {
+      "id": "sim-d1-q11", "revision": 1, "domainId": "deployment", "conceptId": "clear-active-layer-and-block-setting-limits",
+      "objectiveIds": ["D1.2.03"], "level": "advanced", "author": "deployment-author", "authoredAt": "2026-11-06", "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d1-s21", "section": "Remove an unmanaged layer", "claim": "Unmanaged customizations reside at the top layer and define runtime behavior. To remove the layer, open See solution layers for the component, select the layer and select Remove active customizations. The removal can't be reversed. The command isn't available when the unmanaged layer is the component's only layer.", "applicability": "Page dated 2026-01-09. The stem's template came from a managed solution, so the unmanaged layer isn't the base layer. Overwrite Customizations is left out of the options on purpose. The update-solutions page says it overwrites or removes unmanaged customizations, and a support article says that the active layer still exists afterward, so the stem's requirement can't rest on that option either way." },
+        { "sourceId": "sim-d1-s01", "section": "Update of configuration and active layers", "claim": "Editing a managed configuration on the target creates an active customization, which can make deleting the managed solution fail and can prevent later updates. The active layer takes precedence over the managed layer.", "applicability": "Page dated 2026-05-08. Rejects r1a and r1c. The update-solutions page was also opened: deleting a managed solution deletes all its components and related data." },
+        { "sourceId": "sim-d1-s22", "section": "Introduction; Dataflows aren't blocked; Enable block unmanaged customizations; Known limitations", "claim": "The setting is off by default and can be turned on in the environment's Features settings. Removing an unmanaged layer stays allowed with it on. Dataflows don't conform to the block. Known limitations list Omnichannel (install or upgrade don't work) and Copilot Studio (publishing an agent doesn't work), and Microsoft recommends disabling the setting if you must use a listed feature.", "applicability": "Power Platform, page dated 2026-09-21. The stem states that the setting is off and that the environment receives Omnichannel upgrades and agent publishing." },
+        { "sourceId": "sim-d1-s09", "section": "Migrate configuration for session templates and notification templates", "claim": "Session templates are added to a solution as components, exported and imported.", "applicability": "Supports treating the template as a solution component whose layers can be viewed." }
+      ],
+      "duplicateCheck": "Compared with alm-active-layer-precedence, alm-release-preflight, alm-managed-configuration-removal and solution-layer-inspection. ab250-d1-q27 explains why an active customization wins, and this question tests how to clear it. ab250-d1-q03 tests viewing layers. A keyword search found no question on Block unmanaged customizations."
+    },
+    {
+      "id": "sim-d1-q12", "revision": 1, "domainId": "deployment", "conceptId": "workspace-workstation-baseline",
+      "objectiveIds": ["D1.1.01"], "level": "advanced", "author": "deployment-author", "authoredAt": "2026-11-06", "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d1-s19", "section": "System requirements; Provision Dynamics 365 Contact Center note; Allow access to websites", "claim": "Supported browsers are Microsoft Edge (Chromium based), required at a stated version for desktop notifications, and Google Chrome. Dynamics 365 Contact Center uses third-party cookies for authentication, and they must not be blocked in any mode so that services such as presence work. A separate note recommends browsers in normal mode for an optimal experience. Bandwidth for voice and video is a minimum of 4 Mbps upload and 8 Mbps download, and a recommended 8 and 16 Mbps. With a URL filter, the listed websites, including *.skype.com, must be allowed as exceptions.", "applicability": "Page dated 2026-01-30, updated 2026-07-21. The stem rules out desktop notifications so that the Edge version note doesn't apply, and it keeps items that meet a minimum so that the recommended figures don't apply. Check 14: the belief that anything blocked must change names three options (b, d and e), so the count doesn't settle it, and the belief that Edge and the recommended bandwidth are required names a and c." }
+      ],
+      "duplicateCheck": "Compared with workspace-session-context-navigation (ab250-d1-q13), the only ab250-bank question mapped to this objective. A keyword search of ab250-bank and the simulator batches for cookies and URL filter found nothing."
+    },
+    {
+      "id": "sim-d1-q13", "revision": 1, "domainId": "deployment", "conceptId": "release-capacity-for-routed-email",
+      "objectiveIds": ["D1.3.04"], "level": "advanced", "author": "deployment-author", "authoredAt": "2026-11-06", "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d1-s13", "section": "Release capacity for representatives; Create a capacity profile and assign to users; How representative-specific limits work", "claim": "Capacity for conversations is released when the representative ends the conversation and closes the session. Capacity isn't released automatically for activities such as email configured for record routing: you deactivate the assigned queue item, which closes the work item, or remove the representative from the Worked By field if the record must stay open, and automatic assignment tries to reassign it. Assignment blocking governs new assignments at the limit. A custom limit applies to new work assignments.", "applicability": "Page dated 2026-02-03. The stem accepts either outcome so that both actions are complete solutions. Check 14: the wrong belief that a capacity setting frees capacity names exactly d and e." },
+        { "sourceId": "sim-d1-s24", "section": "What happens when you delete or deactivate a queue item", "claim": "When a queue item is deactivated, the associated live work item is closed, and the services that maintain presence and capacity are updated. For tables other than incident, Microsoft points to deactivating the queue item to release capacity.", "applicability": "Page dated 2026-08-25. This page also says that closing the underlying record deletes the queue item, and that changing the queue releases capacity. So the question offers no option about completing the email or moving it to another queue, because those are routes this question doesn't test. This page's closing guidance says tables other than incident need the queue item deactivated to release capacity, which agrees with the capacity page. The email routing page also says to make sure capacity is released after work on an email and points to the same section." }
+      ],
+      "duplicateCheck": "Compared with capacity-end-of-day-open-work and capacity-lower-limit-existing-work. A keyword search of ab250-bank and the simulator batches for Worked By found nothing."
+    },
+    {
+      "id": "sim-d1-q14", "revision": 1, "domainId": "deployment", "conceptId": "simulation-run-planning-limits",
+      "objectiveIds": ["D1.1.05"], "level": "advanced", "author": "deployment-author", "authoredAt": "2026-11-06", "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d1-s04", "section": "Prerequisites; Things to consider", "claim": "A simulation prompt can request up to five conversations, and the system can simulate up to two call conversations concurrently. Simulations are in English only. One simulation can be initiated and run at a time in one organization. The prompt must give the phone number associated with the workstream. DTMF isn't supported.", "applicability": "Preview feature, inbound voice only, page dated 2026-09-21. These are preview limits that could change, so the stem states the preview status and the review should reopen this page. The stem states that there's no keypad menu and that every prompt gives the number. Check 14: the wrong belief that neither limit exists names exactly a and b." }
+      ],
+      "duplicateCheck": "Compared with simulation-keypad-acceptance-boundary, simulation-evidence-location, simulation-destination-number and simulation-supported-journey-selection. Those test keypad scope, evidence, the destination number and journey scope. A keyword search found nothing on conversations per prompt or one run at a time. English appears in ab250-d1-q17 as scope, and it's one limit of three here."
+    },
+    {
+      "id": "sim-d1-q15", "revision": 1, "domainId": "deployment", "conceptId": "security-group-association-membership-check",
+      "objectiveIds": ["D1.3.02"], "level": "advanced", "author": "deployment-author", "authoredAt": "2026-11-06", "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d1-s18", "section": "Note the following information about security groups; Review admin roles you need to complete different tasks", "claim": "When you associate a security group with an existing environment that has users, you disable all users in the environment who aren't members. A user with the Power Platform Administrator role who isn't in the group shows as active and can sign in. A Dynamics 365 administrator must be part of the group before being enabled. Application users can run in any environment secured with a security group without being a member.", "applicability": "Power Platform, page dated 2026-08-26, for environments with a Dataverse database." },
+        { "sourceId": "sim-d1-s17", "section": "User types: Non-interactive users; Enable or disable user accounts", "claim": "License-specific provisioning business rules don't apply to non-interactive users, but security group specific rules still apply.", "applicability": "Power Platform, page dated 2026-10-02. The page doesn't describe a non-interactive user being disabled on association. The answer rests on the statement that security group rules still apply, with no exemption listed for non-interactive users. Check 14: two believable wrong rules each name three: all human users (a, b, c) and all non-administrators (a, d, e)." }
+      ],
+      "duplicateCheck": "Compared with environment-security-group-onboarding (ab250-d1-q37), which tests adding one licensed user who is outside the group, and nested-group-team-provisioning (ab250-d1-q38). Neither tests which identity types are exempt when a group is associated with an existing environment."
+    },
+    {
+      "id": "sim-d1-q16", "revision": 1, "domainId": "deployment", "conceptId": "secret-column-access-for-administrators",
+      "objectiveIds": ["D1.3.03"], "level": "advanced", "author": "deployment-author", "authoredAt": "2026-11-06", "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d1-s14", "section": "Configure permissions to access secure columns", "claim": "Administrator users need column-level permissions on secure columns when they configure features including Azure Communication Services and the WhatsApp channel. In Power Platform admin center you create or update the column security profile and provide read, update or create permissions on the columns for the secret attributes.", "applicability": "Page dated 2026-10-23. The page lists msdyn_occommunicationprovidersetting and msdyn_ocwhatsappchannelaccount among the entities with secret attributes." },
+        { "sourceId": "sim-d1-s23", "section": "Introduction; Add teams or users to a column security profile to control access", "claim": "Security role privileges manage access at the table level, and column-level security manages access to specific columns. Column-level security doesn't apply to users with the System Administrator role. Unless a security profile is assigned, only System Administrators can access a secured column, and users not defined in a profile don't have access.", "applicability": "Power Platform, page dated 2026-09-21. The stem rules out System Administrator, which would otherwise be a second way to reach the values." },
+        { "sourceId": "sim-d1-s15", "section": "Introduction", "claim": "Mapping security roles to personas defines user permissions for unified routing.", "applicability": "Page dated 2026-10-23. Rejects option b." },
+        { "sourceId": "sim-d1-s16", "section": "Role: App Profile Manager Administrator", "claim": "The role's privilege table covers channel providers, application configurations, templates and related customization privileges.", "applicability": "Page dated 2026-05-08. Rejects option d, because none of its entries is a column permission." }
+      ],
+      "duplicateCheck": "Compared with security-cumulative-role-audit, custom-role-surface-access and custom-role-appropriate-baseline. A keyword search of ab250-bank and the simulator batches for column security and secure column found nothing."
+    },
+    {
+      "id": "sim-d1-q17", "revision": 1, "domainId": "deployment", "conceptId": "contact-center-users-view-listing",
+      "objectiveIds": ["D1.3.01"], "level": "advanced", "author": "deployment-author", "authoredAt": "2026-11-06", "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-cb-s27", "section": "Introduction; Manage contact center users; Manage users using the classic experience", "claim": "The Contact center users view lists users who are assigned the representative, supervisor or admin persona, and All users lists all the Customer Service users. Users should be configured as a bookable resource so that they can be assigned work items by using unified routing. Default Presence is the status a representative is logged in with.", "applicability": "Page dated 2026-10-23. This source ID was already registered by batch 8d-case-b, so it's reused as the brief requires. The page doesn't list a bookable resource as a condition for this view." },
+        { "sourceId": "sim-d1-s15", "section": "Create custom security roles; Map roles to personas; Manage personas", "claim": "Dynamics 365 Contact Center maps its three primary roles to personas by default. A custom role is added to a persona under Role persona mapping. Microsoft's seasonal representative example copies the Omnichannel agent role and then selects the custom role on the Agent persona.", "applicability": "Page dated 2026-10-23. Assigning Omnichannel agent directly would also map those users, but it isn't an option, and the stem's custom role is the intended grant." },
+        { "sourceId": "sim-cb-s23", "section": "Assign users, templates, configure productivity pane, channels", "claim": "Set rank and roles assigns a rank and security roles to the profile.", "applicability": "Page dated 2026-07-28, updated 2026-11-03. This source ID was already registered by batch 8d-case-b, so it's reused as the brief requires. The page describes experience profiles as creating targeted app experiences and doesn't mention personas, so this feature is a real one used in the wrong place for option d." }
+      ],
+      "duplicateCheck": "Compared with representative-bookable-resource-readiness, representative-sign-in-presence, custom-role-surface-access and custom-role-appropriate-baseline. ab250-d1-q44 tests what persona mapping doesn't grant. This one tests what the mapping does for the user management view, and ab250-d1-q39 mentions contact center users only as an audience."
+    }
+  ]
+}

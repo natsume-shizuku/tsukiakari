@@ -1,0 +1,366 @@
+[
+  {
+    "id": "sim-d6-q01",
+    "revision": 1,
+    "reviewer": "analytics-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands, and the second-review finding is resolved. Priya is now Available, so Emil is the only Busy supervisor. The belief that only Available supervisors get alerts, whatever their queue, now names exactly Emil and Ines, a coherent wrong pair that fits the count of two. Everyone still picks Ines, and the second pick tests whether Busy stops an alert or having no queue does. The key is Ines and Tomas, which the page's only-when wording proves directly, and the question makes no claim that the other three will receive a notification. The explanation, option explanations b and d, and the evidence note were updated to match, and all are true. Checks 8 and 11 hold: nobody is shown to receive a notification, and the stem doesn't carry the answer by contrast. Distinct from the accepted bank, where the only sentiment question tests outbound queue design.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d6-s01",
+        "supported": true,
+        "section": "Supervisor settings",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-08-31, applies to standalone. Confirmed the only-when condition on presence and queue assignment, the field label in the stem, and that a threshold fires at the selected value or lower, so Very negative reaches a Negative threshold. The page doesn't mention Busy - DND, and the question avoids it."
+      }
+    ],
+    "fingerprint": "d4d6cc642c564e1aa1ce3563af7213421c085df3bed16e2a422adab0c8685b69"
+  },
+  {
+    "id": "sim-d6-q02",
+    "revision": 1,
+    "reviewer": "analytics-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands. I tested all 24 row and token pairs and each row has one answer. Row 1: only a critical question fails an evaluation regardless of score, and Allow scoring for question can't fail anything. Row 2: the strongest alternative was Copy. The page describes automatic updates only for extended criteria, and it documents Copy only for the default criteria, so nothing supports a copy that keeps receiving source edits. The option explanation is worded around that and is true. Row 3: Create Simulation works on Draft or Published criteria with real conversations, and the page says results don't affect records or quality metrics. Request evaluation creates a real evaluation record, and those are active by default and count in averages unless someone marks them inactive. Row 4: the page ties Allow scoring for question to weights per question within a section. The extended scoring weight splits source and extended portions, so it doesn't fit row 4. The stem names a new criteria, which matters because the toggle doesn't change earlier criteria, and it gives the QEA Simulation flow prerequisite. Nothing rests on a preview feature: knowledge sources are preview and the stem doesn't use them. Distinct from the accepted bank, which has no question on critical questions, extended criteria, criteria simulation or question weights. Two non-blocking notes. The stem's QEA Simulation flow repeats a word found only in a correct token, which breaks the letter of the brief, but the row already points there and the word adds no information, and it's a prerequisite the stem has to state. The feature names also describe themselves, so this is one of the easier items in the batch.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d6-s02",
+        "supported": true,
+        "section": "Mark a question as critical; Extend your evaluation criteria; Create and run a simulation; Create evaluation criteria; Question-level weightage; Copy the default evaluation criteria for cases and conversations",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-10-23. Confirmed the fail-option behavior and that scoring doesn't change, Published custom source only, automatic updates to extensions, Draft or Published simulation with real data, the QEA Simulation prerequisite, the Allow scoring for question toggle, and every token label except Copy criteria, where the button is Copy. Simulation isn't supported on knowledge criteria, and the stem has none."
+      },
+      {
+        "sourceId": "sim-d6-s03",
+        "supported": true,
+        "section": "Mark an evaluation as inactive",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-10-22. Records are active by default, and marking one inactive excludes it from average quality scores and reports."
+      },
+      {
+        "sourceId": "sim-d6-s04",
+        "supported": true,
+        "section": "On-demand evaluation for closed conversations",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-10-07. Request evaluation produces an evaluation record that can be viewed. Only evaluation for emails is labeled preview, and that doesn't apply here."
+      }
+    ],
+    "fingerprint": "3318a6a0a4b920ef0b373a8bf29ea2ffdafe25fc118ee61fd6344a10935bb439"
+  },
+  {
+    "id": "sim-d6-q03",
+    "revision": 1,
+    "reviewer": "analytics-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands, and both second-review findings are resolved. Check 13: the 24-hour and Today filter statements now sit in a sim-d6-s05 evidence entry for Filter information displayed on dashboard, where Microsoft states them, and the sim-d6-s08 entry keeps only the 2-hour claim. Check 8: row 1 no longer describes a colleague. It says her permissions have been reviewed and are correct, which still rules out token e, and option explanation b and the evidence note match. The first-review fix also stands: the stem says the dashboards are on, so Check 10 holds, and the explanations take no side on the page's conflicting statements about the default. Each row still has one answer against all six tokens. Rows 1 and 2 remain the easier rows because each rules out the other's answer, but Check 3 needs both guards, so that isn't a defect.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d6-s05",
+        "supported": true,
+        "section": "Dashboard details; Filter information displayed on dashboard; Security roles and permissions",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-07-29. Confirmed the queue prefilter, the Entity Record exclusion, the Business Unit filter granting no access, Dataverse security, the 24-hour reach of the time filter and the Today filter's behavior. Release plan cross-check for row 1: Filter chat data by queues in real-time analytics dashboard, GA Jan 21, 2025, archived October 2026."
+      },
+      {
+        "sourceId": "sim-d6-s06",
+        "supported": true,
+        "section": "Security roles and permissions; Dashboard details",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-07-29. The CSR Manager role is required, and the Queue report shows entity record queues only. Enablement is on the separate enable-record-routing page (2026-06-26), and the stem states that the dashboards are on."
+      },
+      {
+        "sourceId": "sim-d6-s07",
+        "supported": true,
+        "section": "Introduction; Key metrics",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-06-26. Open, active and waiting conversations created in the last 30 days. Persistent chats longer than 2 hrs here and 24 hrs on the overview. The nine-day row is past both, and no explanation states a threshold."
+      },
+      {
+        "sourceId": "sim-d6-s08",
+        "supported": true,
+        "section": "Introduction",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-03-11. The corrected evidence entry cites only the last 2 hours, which is on this page."
+      },
+      {
+        "sourceId": "sim-d6-s09",
+        "supported": true,
+        "section": "Introduction note",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-09-30. Published customizations are visible to all users, which rules out token d."
+      },
+      {
+        "sourceId": "sim-d6-s13",
+        "supported": true,
+        "section": "Manage Omnichannel real-time analytics reports",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-09-30. Add real-time analytics for intent adds intent insights."
+      }
+    ],
+    "fingerprint": "d372eb901f8032d2a71a6681ee05ff9abdd821cf91d5ceadb7ac87e3939bf3b3"
+  },
+  {
+    "id": "sim-d6-q04",
+    "revision": 1,
+    "reviewer": "analytics-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands. Option d is directly supported: the customize page names FactSessionParticipant as a source for counting accepted consults, says the Data pane holds metrics beyond those the reports display, and needs no license for Omnichannel historical reports. The data dictionary lists Consult sessions in the Omnichannel model. Option a was the strongest alternative, because the customize page's opening line mentions adding new metrics and the Summary page says metrics can be added. That wording doesn't hold up as a route to a new measure: the same page's note sends new metrics to data model customization, the overview says the models can't be edited, and Microsoft's 150-second service level example is Scenario 1, built in Power BI Desktop. Service levels of 10, 20, 30, 40, 60 and 120 seconds are the ones provided, and 90 isn't among them. Option b fails on explicit text. Option c fails twice: a published change reaches everyone, including a new page for those queues, and the stem limits the analysts to the editor, so a bookmark isn't theirs to deliver. Option e is Scenario 3 almost word for word. The stem's lack of a paid Power BI service is what closes a and e. Distinct from ab250-d6-q15, q21 and q09, each of which tests one path: this tests the boundary across five. One non-blocking note: option d is the longest option, which is covered in the batch report.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d6-s09",
+        "supported": true,
+        "section": "Introduction; Customize the display of analytics reports",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-09-30. Confirmed no license for these reports, no customization of knowledge analytics, visibility to all users after publishing, the Data pane statement and the FactSessionParticipant example."
+      },
+      {
+        "sourceId": "sim-d6-s10",
+        "supported": true,
+        "section": "Scenario-based use cases; How data model customization works",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-07-30. Confirmed the provided service levels, Scenarios 1 and 3, the paid Power BI service requirement, and that visual customization can apply metrics that aren't directly exposed. Also opened Use the out-of-the-box data model, which shows the 150-second measure as a new measure in Power BI Desktop."
+      },
+      {
+        "sourceId": "sim-d6-s11",
+        "supported": true,
+        "section": "Omnichannel analytics; Data dictionary",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-03-30. FactSessionParticipant has Consult sessions, the sessions a user accepts in consult mode."
+      },
+      {
+        "sourceId": "sim-d6-s12",
+        "supported": true,
+        "section": "Introduction; Manage bookmarks",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-06-26. Bookmarks save a personalized view with filters. The page documents no sharing of bookmarks."
+      }
+    ],
+    "fingerprint": "faf91bd4a08c48f4d915767b0179d4aa3358c3683af3c9975981140393dbf4df"
+  },
+  {
+    "id": "sim-d6-q05",
+    "revision": 1,
+    "reviewer": "analytics-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands, and all second-review findings are resolved. Row 1 and the keep-state requirement are gone, so nothing repeats ab250-d6-q18. The stem now requires both custom reports from one navigation entry, and both row 2 distractors fail for documented reasons. r2a names the Omnichannel Realtime analytics table, which sim-d6-s13 shows is the route to the out-of-the-box reports, and the option makes no wider claim about other tables. r2b says it embeds one report, and sim-d6-s25 has you select a report or dashboard for each embedded dashboard, so one such page leaves out the second report. The author's doubt about the selector on the Dashboards page doesn't change that. Several embedded dashboards might share a Dashboards entry, but r2b describes one page embedding one report, the row is the Customized Reports entry, and row 3 places both reports inside that entry through Add report. The evidence note records this limit accurately. r2c stays the correct answer, as sim-d6-s14 shows, and row 3 stands. Check 12 holds in both rows. Distinct from ab250-d6-q20, which tests which page may modify an existing entry.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d6-s13",
+        "supported": true,
+        "section": "View Omnichannel real-time analytics reports",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-09-30. The Dataverse table steps for Omnichannel Realtime analytics are the steps for viewing the out-of-the-box real-time reports, which supports the r2a explanation."
+      },
+      {
+        "sourceId": "sim-d6-s14",
+        "supported": true,
+        "section": "View customized reports; Step 4: Embed customized reports back to Dynamics 365",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-09-29. Confirmed the URL page steps, the ModernReportingControl URL with feature IDs, Add report, the workspace-populated dropdown and the limit of 40 reports, which supports one entry holding many reports."
+      },
+      {
+        "sourceId": "sim-d6-s25",
+        "supported": true,
+        "section": "Create a system dashboard with Power BI embedded; Add a Power BI embedded page to a model-driven app",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-08-06, reopened 2026-11-06. You select a Power BI report or dashboard for the system dashboard, and it's added as a Dashboard page. The display name appears in a selector on the Dashboards page, which is the author's noted doubt. The page doesn't confirm that design for these reports, and the option doesn't describe it."
+      }
+    ],
+    "fingerprint": "c99740f9ba010107dbdfc011dd6d84cdbe408ccd3f8dc457e21fdd586c6162f6"
+  },
+  {
+    "id": "sim-d6-q06",
+    "revision": 1,
+    "reviewer": "analytics-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands. Both correct options rest on explicit text rather than on silence. The Step 2 note ties successful provisioning to having the Dynamics 365 Analytics service account in the security group. The Step 1 note requires the Dynamics administrator who enables customization to be a workspace administrator of an existing workspace, and Save in Step 1 is what starts provisioning, so 'before you start provisioning' is accurate. All the distractors fail on stated conditions. Option a: real-time customization needs real-time analytics, which is on. Option c: Microsoft creates the managed workspace, and the chosen workspace applies only to the customer workspace. Option d: no page lists this role as a provisioning requirement, and the explanation says exactly that instead of claiming more. The stem closes the other routes: licensing is met, tenant settings are on for the group, the service account is available, so the fallback account isn't needed, and an existing workspace is fixed, so 'create new' isn't open. One non-blocking note: the explanation shortens Microsoft's sentence about groups, which also mentions granting access directly to the workspace. No option uses that route, and the Step 2 note supports the explanation as written. Distinct from the accepted bank, which has no question on provisioning prerequisites.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d6-s14",
+        "supported": true,
+        "section": "Create a Microsoft Entra ID security group; Step 1: Select a Microsoft Fabric workspace; Step 2: Provision the data models; Enable insights features in Customer Service",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-09-29. Confirmed the service account membership and the note tying it to provisioning, the workspace administrator note, the customer workspace scope, the real-time analytics prerequisite and the fallback account."
+      },
+      {
+        "sourceId": "sim-d6-s10",
+        "supported": true,
+        "section": "Managed workspace",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-07-30. Dynamics 365 Customer Service provisions and maintains the managed workspace."
+      },
+      {
+        "sourceId": "sim-d6-s09",
+        "supported": true,
+        "section": "Prerequisites",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-09-30. Analytics Report Author is for users who edit analytics reports."
+      }
+    ],
+    "fingerprint": "3006c616d9fadf286565a47a9ca9ca7e01fdcfaf5e6ec8f811a464f6b24b673b"
+  },
+  {
+    "id": "sim-d6-q07",
+    "revision": 1,
+    "reviewer": "analytics-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands, and the flagged weakness is smaller than the author feared. On the current page the 5 or 10 second rule isn't confined to the download steps. It's stated in the section's opening paragraphs, before the steps, about reports in general, and step 5 repeats it. So it applies to a report on the real-time model however that report was started. The strongest alternative was 1 second: Power BI's table allows it for a live-connected semantic model on dedicated capacity, and the stem removes the capacity minimum. It still fails, because Microsoft's Dynamics page says you need to use 5 or 10 seconds. That's a narrower product rule on top of a general platform limit, not a Check 5 conflict, and the explanations state both sides openly. The stem is well built: 'no local model' is what makes change detection fail, because Power BI supports it for composite models but not for live connections to semantic models, and the same requirement removes the Import option. Row 3 holds on two Microsoft pages: Force Close isn't supported in model-customized reports, and the Ongoing report has no autorefresh. The Backlog conversation report also offers force close, but it isn't an option, and the explanation doesn't claim the Ongoing report is the only place. Distinct from the accepted bank, which has no question on automatic page refresh or on supervisor actions in model-customized reports. The stem states the capacity, the portal setting and the Force Close setting that the answer needs.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d6-s14",
+        "supported": true,
+        "section": "Enable automatic page refresh for reports",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-09-29. Available only for real-time reports, enabled first in the Microsoft Fabric Admin portal, and fixed interval with 5 or 10 seconds, stated before the steps and repeated in step 5."
+      },
+      {
+        "sourceId": "sim-d6-s10",
+        "supported": true,
+        "section": "Managed workspace; How data model customization works",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-07-30. Real-time model in Omnichannel Managed Workspace, historical model in Customer Service Managed Workspace and refreshed daily, and supervisor actions not available on model customized reports."
+      },
+      {
+        "sourceId": "sim-d6-s15",
+        "supported": true,
+        "section": "Create a new report based on Dynamics 365 Customer Service dataset",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-06-26. A new report in Power BI Desktop connects to the real-time or historical dataset, selected from managed workspaces."
+      },
+      {
+        "sourceId": "sim-d6-s16",
+        "supported": true,
+        "section": "Change detection; Fixed interval setup; Restrictions on refresh intervals; Considerations and limitations",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2025-12-01, updated 2026-10-01. Live-connected semantic models support fixed interval and not change detection, with a 1 second minimum on dedicated capacity. Composite models do support change detection. Import supports neither. The capacity administrator's fixed interval minimum defaults to five minutes, so the stem's clause is needed."
+      },
+      {
+        "sourceId": "sim-d6-s08",
+        "supported": true,
+        "section": "Introduction notes; Force close conversations",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-03-11. No autorefresh on this report, manual refresh needed, actions not supported in model-customized reports, and the Force Close action confirmed. The real-time overview's Pause updates section agrees about manual refresh."
+      },
+      {
+        "sourceId": "sim-d6-s22",
+        "supported": true,
+        "section": "Configure supervisor settings",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-05-28. Force Close is a Yes or No toggle in the Ongoing conversation insights settings."
+      }
+    ],
+    "fingerprint": "d19ed4d17f2993c920c441a9d99dd12d6f4de9dcaa430b684320286db1aca6a5"
+  },
+  {
+    "id": "sim-d6-q08",
+    "revision": 1,
+    "reviewer": "analytics-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands, and every first-review finding is fixed. The goal now asks for the steps that guided setup leaves for you, which is exactly what the page documents, so the question no longer implies that the test depends on them. The page leaves two actions: review the API permission and grant consent if needed, and assign Monitoring Reader on the resource. Option b fails on explicit text. Option c, the author's first doubt: it fails whichever fields guided setup fills, because the page says setup sets the environment variable and doesn't list it among the remaining steps, and the explanation makes no claim about fields. Option e, the author's second doubt: the manual guide's push-data sentence links straight to the Set up a connection section of sim-d6-s18, whose steps create a data export, so it describes the export itself, not a manual-only connection. The stem's connected resource is that same connection, so 'second' is accurate, and the page's one-export limit rejects the option. Check 12 now holds: the correct options are the two shortest, at 70 and 74 characters against 76 to 97. Check 13 holds: the corrected evidence note is true, and I confirmed the author's keyword search claim against the bank. The stem carries no contrast. The overlap with ab250-d6-q29 is acceptable, because it shares Monitoring Reader but tests the manual route. ab250-d6-q26's one-export fact appears here only as a distractor.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d6-s17",
+        "supported": true,
+        "section": "Set up a connection with Azure Application Insights; Prerequisites",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Reopened 2026-11-06, page dated 2026-10-20. Confirmed that Provision creates the app and federated identity credential and sets the environment variable, the Granted status check and Grant admin consent, the Monitoring Reader assignment in Access Control (IAM), and what a successful test confirms. The stem's Managed environment, commercial cloud and access conditions match the Prerequisites."
+      },
+      {
+        "sourceId": "sim-d6-s18",
+        "supported": true,
+        "section": "Set up a connection with Azure Application Insights",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2025-11-28, updated 2026-08-14. Only one data export configuration per environment. The steps in this section create the data export, which is the connection that sim-d6-s24 links to."
+      },
+      {
+        "sourceId": "sim-d6-s24",
+        "supported": true,
+        "section": "Configure conversation diagnostics and connection; Update Application Insights ID in environment variable",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Reopened 2026-11-06, page dated 2026-05-06, updated 2026-07-21. The connection, linked to sim-d6-s18, pushes data into Application Insights. The guide has you update the ID in Default Value and Current Value. It has no API permission or admin consent step, as the corrected evidence note says."
+      }
+    ],
+    "fingerprint": "cc7854ee43fc68045669248d1e862ba92d8e959938855bef3b00cf91787c1823"
+  },
+  {
+    "id": "sim-d6-q09",
+    "revision": 1,
+    "reviewer": "analytics-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands. Rows 1 and 2 follow the Diagnose page closely: the double count is described as a rejection followed by a later attempt that finds nobody eligible, and Assignment event details is the view for finding out why a representative wasn't selected in a particular run, by comparing presence, skills, capacity and capacity profile with the requirements. Each distractor shows a real view used for the wrong question, and the page's own description of Route To Queue and View by time to assign backs the explanations. Row 3's strongest alternative is the Debug experience's raw event access, which isn't offered. The author noted that, and no explanation rules it out. The two distractors are insight views, which the page says don't support consult data. Application Insights is the right place: the Consult subscenario tracks whether a voice consult succeeded and logs an error if not, and the sample queries page shows how to list consult attempts. That isn't a Check 5 conflict, because the limit concerns the diagnostics views and the telemetry is separately documented, the same structure as ab250-d6-q25. The stem states the conditions the answer needs: out-of-the-box assignment methods, the role, real-time analytics, the configured dashboard and Read access. Distinct from the accepted bank, which has no question on the double count or Assignment event details, and the transfer and consult limit is a different limit from q25's. One non-blocking note: the stem says the engineer finds three items on the Debug tab, which is loose for the consult item because the diagnostics don't support consult data. It isn't false, because raw events are reachable from there, and I wouldn't send it back for that alone.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d6-s19",
+        "supported": true,
+        "section": "Prerequisites; Things to keep in mind; Key debug capabilities; Use the Debug tab to view assignment data",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-05-04. Confirmed the double count note, Assignment event details, Route To Queue event details, View by time to assign, out-of-the-box methods only, the transfer and consult limit, and the roles and prerequisites. No preview label, and the answer doesn't depend on status."
+      },
+      {
+        "sourceId": "sim-d6-s20",
+        "supported": true,
+        "section": "Transfer and consult",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-06-04. The Consult subscenario tracks whether a voice consult is successful and logs an error if it isn't."
+      },
+      {
+        "sourceId": "sim-d6-s21",
+        "supported": true,
+        "section": "Consults with other assignment attempts",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-07-15. The sample query reads traces and filters on the conversation ID to view consult attempts between representatives."
+      }
+    ],
+    "fingerprint": "ee73e87a84b210464ce457ba15b19205922f0d88cc24ff266202926f39b885b7"
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "bankId": "ab250-simulator",
+  "releaseVersion": "1.0.0",
+  "release": false,
+  "title": "AB-250 — Exam Simulator",
+  "description": "Original practice in exam-style formats, assembled fresh for each test. This is independent practice material, not Microsoft exam content.",
+  "blueprint": {
+    "defaultCount": 50,
+    "caseStudyEvery": 50,
+    "seriesEvery": 100,
+    "shares": { "match": 25, "order": 5, "hotspot": 27, "multiple": 21, "single": 16, "series": 6 }
+  },
+  "batches": [
+    { "id": "8c-pilot", "bundle": "src/content/simulator/8c-pilot.json", "review": "docs/phase8/reviews/8c-pilot-review.json" },
+    { "id": "8d-analytics", "bundle": "src/content/simulator/8d-analytics.json", "review": "docs/phase8/reviews/8d-analytics-review.json" },
+    { "id": "8d-case-b", "bundle": "src/content/simulator/8d-case-b.json", "review": "docs/phase8/reviews/8d-case-b-review.json" },
+    { "id": "8d-deployment", "bundle": "src/content/simulator/8d-deployment.json", "review": "docs/phase8/reviews/8d-deployment-review.json" },
+    { "id": "8d-channels-voice", "bundle": "src/content/simulator/8d-channels-voice.json", "review": "docs/phase8/reviews/8d-channels-voice-review.json" },
+    { "id": "8d-channels-digital", "bundle": "src/content/simulator/8d-channels-digital.json", "review": "docs/phase8/reviews/8d-channels-digital-review.json" }
+  ]
+}

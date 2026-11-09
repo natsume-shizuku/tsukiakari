@@ -1,0 +1,781 @@
+{
+  "sources": [
+    { "id": "sim-d1-s01", "title": "Best practices for application lifecycle management", "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/alm-best-practices" },
+    { "id": "sim-d1-s02", "title": "Migrate configurations for channels using solutions", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/migrate-channel-config-using-solutions" },
+    { "id": "sim-d2-s01", "title": "Plan migration from Azure Communication Services", "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/migrate-from-azure-communication-services" },
+    { "id": "sim-d2-s02", "title": "Migrate from Azure Communication Services Direct Routing to Teams Direct Routing", "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/migrate-azure-communication-services-direct-routing-to-teams-direct-routing" },
+    { "id": "sim-d2-s03", "title": "Configure Teams Phone in voice channel", "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-teams-phone-in-voice-channel" },
+    { "id": "sim-d2-s04", "title": "Set up inbound calling for the voice channel", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-inbound-calling" },
+    { "id": "sim-d2-s05", "title": "Transfer calls and consult with users", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/voice-channel-transfer-consult" },
+    { "id": "sim-d2-s06", "title": "Enable voice call experiences", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-voice-call-experiences" },
+    { "id": "sim-d2-s07", "title": "Configure voicemail to manage inbound calls in Dynamics 365 Contact Center", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-voicemail" },
+    { "id": "sim-d2-s08", "title": "Manage - Resource accounts for voice applications", "url": "https://learn.microsoft.com/en-us/microsoftteams/aa-cq-manage-resource-accounts" },
+    { "id": "sim-d2-s09", "title": "Configure call recording, transcription, and real-time translation", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/voice-channel-configure-transcripts" },
+    { "id": "sim-d3-s01", "title": "Configure real-time agents", "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-realtime-configure" },
+    { "id": "sim-d3-s02", "title": "Configure basic voice agents", "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-configuration" },
+    { "id": "sim-d3-s03", "title": "Configure multilingual voice agents", "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-multilingual-agents" },
+    { "id": "sim-d4-s01", "title": "Manage overflow of work items in queues", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/manage-overflow" },
+    { "id": "sim-d4-s02", "title": "Configure route-to-queue rules", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-route-to-queue-rules" },
+    { "id": "sim-d4-s03", "title": "Configure conversation orchestration in Dynamics 365 Contact Center", "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-conversation-orchestration" },
+    { "id": "sim-d4-s04", "title": "Configure bullseye routing using conversation orchestration playbooks", "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-bullseye-routing" },
+    { "id": "sim-d4-s05", "title": "Assignment methods for queues", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/assignment-methods" },
+    { "id": "sim-d4-s06", "title": "Create and manage queues for unified routing", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/queues-omnichannel" },
+    { "id": "sim-d4-s07", "title": "Create and manage workstreams", "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/create-workstreams" },
+    { "id": "sim-d4-s08", "title": "Handle waiting conversations when queues close or become unstaffed", "url": "https://learn.microsoft.com/en-us/dynamics365/release-plan/2026wave1/service/dynamics365-contact-center/handle-waiting-conversations-when-queues-close-or-become-unstaffed" }
+  ],
+  "groups": [
+    {
+      "id": "sim-case-a",
+      "kind": "case-study",
+      "title": "Marram Bay Utilities",
+      "exhibits": [
+        {
+          "id": "background",
+          "title": "Background",
+          "body": "Marram Bay Utilities supplies electricity and water to about 410,000 homes and small businesses along Canada's Atlantic coast. A provincial regulator audits how outage calls are handled, and the company must serve customers in English and French.\n\nCustomer care has 190 customer service representatives (CSRs) at sites in Port Ansel and Cape Harlow, and 14 commercial account managers in regional offices. An outsourced partner, Corvane Contact Services, supplies extra CSRs for billing calls. Storm season runs from October to March, and outage calls can rise tenfold within an hour.\n\nMarram Bay is replacing a ten-year-old on-premises call center platform with Dynamics 365 Contact Center in standalone mode. CSRs work in Copilot Service workspace. The program has these phases:\n- Phase 1 moves the Outage line and the commercial numbers from the legacy platform to Dynamics 365 Contact Center before storm season.\n- Phase 2 follows next spring. It moves the Billing and Collections lines, which already run on Dynamics 365 Contact Center, to their long-term telephony platform."
+        },
+        {
+          "id": "current",
+          "title": "Current environment",
+          "body": "Telephony\n- All numbers come from one carrier over SIP trunks to a customer-managed session border controller (SBC). The SBC's fully qualified domain name is sbc1.marrambay.example, and its public certificate names only that domain.\n- The Billing and Collections numbers reach Dynamics 365 Contact Center through Azure Communication Services Direct Routing, using sbc1.marrambay.example.\n- The Outage number, the commercial main number and the account managers' personal numbers still terminate on the legacy platform.\n\nRouting\n- Voice workstreams exist for Billing, Collections, Outage and Commercial. Channel operating hours is turned off on all of them.\n- The Billing queue is open Monday to Saturday, 07:00 to 20:00. Its overflow conditions Out of operation hours and Work item limit exceeds both use the Voicemail action.\n- Queues use out-of-the-box assignment methods. Skill-based routing isn't in use.\n\nAI agents\n- Billing Assistant is a Real-time voice agent on the Billing workstream. It uses GPT-Realtime, with English as its primary language and French as a secondary language. It asks each caller to choose a language. The Billing voice channel has the same languages.\n- Outage Reporter is a Basic voice agent with classic orchestration on the Outage workstream. Staff are piloting it on an internal test number. Its first message is the regulator's safety notice, followed by a menu that callers can answer by speech or keypad.\n\nEnvironments\n- Marram Bay has development, test and production environments. Configuration is authored in an unmanaged solution in development.\n- Conversation orchestration and consumption-based billing are set up in all environments. No playbooks are published. A wait-time priority playbook for the outage queues is in development."
+        },
+        {
+          "id": "business",
+          "title": "Business requirements",
+          "body": "Collections card payments\nA CSR transfers a customer who wants to pay by card to the automated line of Marram Bay's payment provider, which is an external number. The CSR leaves the call. The customer enters the card details on the phone keypad. The provider's fraud screening needs the customer's own number as the caller ID. Marram Bay must not record or transcribe this part of the call.\n\nOutage escalations\nFor dangerous conditions, a CSR transfers the caller to the on-call line of a contracted line crew, which is an external number. That line accepts only calls that show a Marram Bay number. The regulator requires recording and transcription to continue after the transfer.\n\nVoicemail\n- A missed call to an account manager's personal number must become a voicemail assigned to that manager.\n- Voicemails left when the Billing or Collections queues overflow must be triaged by the Billing Back Office team, with no additional queues or routing rules to maintain.\n- Voicemails left on the commercial main number must go to the Commercial Desk team, not to Billing Back Office.\n\nRouting\n- Corvane must handle 30 percent of Billing calls in its own queue.\n- When the Billing queue is over its work item limit, customers on the medical-priority register must be transferred to the Priority Care queue. Other callers keep the voicemail offer.\n- English-speaking and French-speaking CSRs are separate teams with separate service-level targets. Each published line keeps one phone number.\n- An outage call that matches no route-to-queue rule must go to the Storm Desk queue, not to the default voice queue."
+        },
+        {
+          "id": "technical",
+          "title": "Technical requirements",
+          "body": "- Keep the current carrier contract and the customer-managed SBC. Every number must end up on Teams Phone extensibility with Teams Direct Routing.\n- The Outage and commercial numbers use a new Teams Direct Routing trunk in Phase 1.\n- Billing and Collections must stay in service on Azure Communication Services Direct Routing throughout Phase 1. Planned downtime isn't allowed on any line.\n- Author configuration in development. Use managed solutions wherever the documented migration procedure supports them.\n- Production records must not be edited directly, and production must not be overwritten by an environment copy."
+        },
+        {
+          "id": "issues",
+          "title": "Issues",
+          "body": "Issue 1: During the Outage Reporter pilot, staff who know the menu press a key during the safety notice and skip it. The notice must always play in full.\n\nIssue 2: When Billing Assistant has an orchestration failure, callers hear an apology and then nothing else happens. A failure must always lead to a definite next step.\n\nIssue 3: Billing Assistant balance lookups can take several seconds. Callers hear nothing during that time, and some hang up.\n\nIssue 4: All Billing Assistant escalations go to the single Billing queue, so French-speaking callers often reach CSRs who speak only English.\n\nIssue 5: Callers who arrive after 20:00 and ask for a CSR are offered voicemail as intended. Callers who are still waiting in the Billing queue at 20:00 stay on hold after it closes."
+        }
+      ]
+    },
+    {
+      "id": "sim-series-a",
+      "kind": "series",
+      "title": "Bramwell Pet Insurance: claim call assignment",
+      "exhibits": [
+        {
+          "id": "scenario",
+          "title": "Scenario",
+          "body": "Bramwell Pet Insurance takes claim calls in a Dynamics 365 Contact Center voice queue named Claims Voice. The queue uses the least active assignment method and has no custom prioritization rules. Two user groups, Claims Specialists and General Service, are associated with the queue. Conversation orchestration is available in the environment, and no playbooks are published yet.\n\nBramwell has these requirements:\n- Each call must be offered to claims specialists first.\n- If no specialist has taken a call after 60 seconds, general service CSRs must also become eligible, and specialists must stay ahead of them.\n- Every call must stay in Claims Voice so that the queue's service-level reporting isn't split.\n\nYou need to implement the assignment behavior."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "sim-p-q01",
+      "revision": 1,
+      "kind": "hotspot",
+      "domainId": "channels",
+      "objectiveIds": ["D2.3.23", "D2.2.01"],
+      "conceptId": "sbc-domain-coexistence-phased-migration",
+      "prompt": "Selwick Freight's Dynamics 365 Contact Center voice numbers use Azure Communication Services Direct Routing on a customer-managed session border controller (SBC). The SBC's fully qualified domain name is sbc1.selwickfreight.example, and its public certificate names only that domain.\n\nSelwick is adding a Teams Direct Routing trunk to the same SBC and will move its numbers to that trunk in groups over several weeks. Numbers that haven't moved must stay in service on Azure Communication Services Direct Routing, and planned downtime isn't allowed on any line. At the end of the migration, Azure Communication Services Direct Routing is retired and Teams Direct Routing becomes the only path.\n\nYou need to plan the SBC transition so that it meets these requirements.\n\nWhat should you choose for each planning item?",
+      "table": { "title": "SBC transition plan", "rowHeading": "Planning item", "answerHeading": "Decision" },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Domain name for the Teams trunk during the migration",
+          "options": [
+            { "id": "r1a", "text": "Use sbc1.selwickfreight.example on both services" },
+            { "id": "r1b", "text": "Move sbc1.selwickfreight.example from Azure Communication Services to Teams" },
+            { "id": "r1c", "text": "Use a separate domain name or alias for the Teams trunk" }
+          ],
+          "correctOptionId": "r1c"
+        },
+        {
+          "id": "r2",
+          "label": "SBC certificate during the migration",
+          "options": [
+            { "id": "r2a", "text": "Use a certificate that covers both names, or separate certificates" },
+            { "id": "r2b", "text": "Keep the current certificate unchanged" },
+            { "id": "r2c", "text": "Add a self-signed certificate for the Teams trunk" }
+          ],
+          "correctOptionId": "r2a"
+        },
+        {
+          "id": "r3",
+          "label": "Removal of the Azure Communication Services SBC trunk",
+          "options": [
+            { "id": "r3a", "text": "As soon as the last numbers sync from Teams" },
+            { "id": "r3b", "text": "After validation confirms that no workload depends on it" },
+            { "id": "r3c", "text": "During the final migration window, before carrier routing changes" }
+          ],
+          "correctOptionId": "r3b"
+        }
+      ],
+      "answer": "Domain name: use a separate domain name or alias for the Teams trunk. Certificate: use a certificate that covers both names, or separate certificates. Trunk removal: after validation confirms that no workload depends on it.",
+      "explanation": "Selwick needs one SBC to serve two platforms at once, which is the coexistence approach. An SBC fully qualified domain name can't be assigned to Azure Communication Services and Teams Direct Routing at the same time, so the Teams trunk gets a different name or alias. The SBC certificate must then cover both names, or separate certificates are used. A full cutover would reuse the same name, but it can cause downtime and would remove the numbers that haven't moved from the trunk they still need. The old configuration is removed only after post-cutover validation confirms that the migration is stable and that no workload depends on it.",
+      "sourceIds": ["sim-d2-s02", "sim-d2-s01"],
+      "tags": ["domain:channels", "task:apply", "feature:teams-direct-routing"],
+      "optionExplanations": {
+        "r1a": "Fails. An SBC fully qualified domain name can't be assigned to both services at the same time.",
+        "r1b": "Fails. Moving the name is the full cutover approach. It can cause downtime, and numbers that haven't moved must stay on Azure Communication Services Direct Routing.",
+        "r1c": "Correct. The coexistence approach configures a different fully qualified domain name or alias for the Teams trunk.",
+        "r2a": "Correct. For coexistence, the SBC certificate must cover both domain names, or separate certificates are used.",
+        "r2b": "Fails. The current certificate names only sbc1.selwickfreight.example, so it doesn't cover the new domain name.",
+        "r2c": "Fails. The public certificate must come from an accepted certificate authority.",
+        "r3a": "Fails. Syncing a number doesn't show that the migration is stable or that nothing still depends on the old configuration.",
+        "r3b": "Correct. Microsoft says to confirm that the migration is stable and that no workload depends on the previous configuration before removing old routes.",
+        "r3c": "Fails. Removing the SBC before carrier routing changes belongs to a full cutover that reuses the same domain name. With coexistence, the old trunk stays until validation is complete."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d2-n16" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-p-q02",
+      "revision": 1,
+      "kind": "order",
+      "domainId": "channels",
+      "groupId": "sim-case-a",
+      "objectiveIds": ["D2.2.01", "D2.2.03"],
+      "conceptId": "teams-number-onboarding-sequence",
+      "prompt": "The Outage number is ready in Microsoft Teams. The administrators have the roles and the Graph permission that the number sync requires.\n\nYou need to bring the Outage number into service on the Outage voice workstream.\n\nWhich four actions should you perform, and in what order?",
+      "tray": "Actions",
+      "tokens": [
+        { "id": "a", "text": "Select Sync from Teams on the Manage telephony page." },
+        { "id": "b", "text": "Assign the number to the resource account as a Calling Plan service number." },
+        { "id": "c", "text": "Add the number to the Outage voice workstream." },
+        { "id": "d", "text": "Assign the number to the resource account as an Operator Connect number." },
+        { "id": "e", "text": "Create a Teams resource account for the Dynamics 365 application and assign its license." },
+        { "id": "f", "text": "Assign the number to the resource account as a Direct Routing number." }
+      ],
+      "correctOrder": ["e", "f", "a", "c"],
+      "answer": "Create a Teams resource account for the Dynamics 365 application and assign its license, assign the number to the resource account as a Direct Routing number, select Sync from Teams on the Manage telephony page, and then add the number to the Outage voice workstream.",
+      "explanation": "Each step produces what the next one needs. A number can only be assigned to a resource account that already exists. The technical requirements put the Outage number on a Teams Direct Routing trunk, so it's assigned as a Direct Routing number. Sync from Teams then creates the phone number record from that assignment. The workstream's voice setup selects from the phone number records, so adding the number comes last.",
+      "sourceIds": ["sim-d2-s02", "sim-d2-s03", "sim-d2-s04", "sim-d2-s08", "sim-d2-s01"],
+      "tags": ["domain:channels", "task:apply", "feature:teams-phone-extensibility"],
+      "optionExplanations": {
+        "a": "Correct, and third. Sync from Teams creates the phone number record for the number on the resource account, so the number must be assigned first.",
+        "b": "Not used. A Calling Plan number comes from Microsoft-managed telephony, and the technical requirements keep the current carrier and SBC.",
+        "c": "Correct, and last. The workstream's voice setup selects from the phone number records, so the number must be synced first.",
+        "d": "Not used. The technical requirements put the Outage number on a Teams Direct Routing trunk and keep the customer-managed SBC.",
+        "e": "Correct, and first. Each number needs a resource account, and a number can't be assigned to an account that doesn't exist yet.",
+        "f": "Correct, and second. The technical requirements put the Outage number on a Teams Direct Routing trunk, so this is the assignment type."
+      },
+      "relatedNotes": [
+        { "packId": "contact-center-core", "noteId": "cc-d2-n16" },
+        { "packId": "contact-center-core", "noteId": "cc-d2-n17" }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "sim-p-q03",
+      "revision": 1,
+      "kind": "hotspot",
+      "domainId": "channels",
+      "groupId": "sim-case-a",
+      "objectiveIds": ["D2.3.04", "D2.2.05"],
+      "conceptId": "bridged-transfer-capture-and-caller-id",
+      "prompt": "External phone number transfer is turned on for the Collections and Outage voice channels.\n\nYou need to configure the external transfers so that they meet the business requirements.\n\nWhat should you configure for each item?",
+      "table": { "title": "External transfer design", "rowHeading": "Item", "answerHeading": "Configuration" },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Collections voice channel: transfer to the payment provider",
+          "options": [
+            { "id": "r1a", "text": "Select Use bridged transfers" },
+            { "id": "r1b", "text": "Clear Use bridged transfers" },
+            { "id": "r1c", "text": "Select Use bridged transfers and add a secure external contact" }
+          ],
+          "correctOptionId": "r1b"
+        },
+        {
+          "id": "r2",
+          "label": "Outage voice channel: transfer to the line crew",
+          "options": [
+            { "id": "r2a", "text": "Select Use bridged transfers" },
+            { "id": "r2b", "text": "Clear Use bridged transfers" },
+            { "id": "r2c", "text": "Clear Use bridged transfers and set Start setting to Automatic" }
+          ],
+          "correctOptionId": "r2a"
+        },
+        {
+          "id": "r3",
+          "label": "SBC change for the Collections design",
+          "options": [
+            { "id": "r3a", "text": "Send the customer's number in a SIP UUI header" },
+            { "id": "r3b", "text": "No change, because the carrier handles the transfer" },
+            { "id": "r3c", "text": "Accept REFER-TO for sip.pstnhub.microsoft.com and convert it to an INVITE" }
+          ],
+          "correctOptionId": "r3c"
+        }
+      ],
+      "answer": "Collections: clear Use bridged transfers. Outage: select Use bridged transfers. SBC: accept REFER-TO for sip.pstnhub.microsoft.com, convert it to an INVITE and send it back to that host.",
+      "explanation": "Use bridged transfers changes who sees which number and whether capture continues. With it cleared, a new call begins: the external party sees the customer's number, the customer's keypad input reaches the external number, and recording and transcription stop. That fits every Collections requirement. With it selected, the original call continues: the external party sees the Dynamics phone number, and recording and transcription continue. That fits the Outage requirements. Collections is on Direct Routing, so clearing the setting also means that the SBC must accept the REFER-TO, convert it to an INVITE and send it back to complete the transfer.",
+      "sourceIds": ["sim-d2-s04", "sim-d2-s05", "sim-d2-s06", "sim-d2-s09"],
+      "tags": ["domain:channels", "task:apply", "feature:bridged-transfer"],
+      "optionExplanations": {
+        "r1a": "Fails. A bridged transfer shows the Dynamics phone number as the caller ID and keeps recording and transcription running, so the fraud screening and no-capture requirements both fail.",
+        "r1b": "Correct. A new call begins, the provider sees the customer's number, the customer's keypad input reaches the provider, and recording and transcription stop.",
+        "r1c": "Fails. Secure settings can stop capture on a bridged transfer, but the call is still bridged, so the provider sees the Dynamics phone number instead of the customer's number.",
+        "r2a": "Correct. The original call continues, the line crew sees the Dynamics phone number, and recording and transcription continue.",
+        "r2b": "Fails. Without bridged transfers the external line sees the customer's number, and recording and transcription stop.",
+        "r2c": "Fails. Start setting controls whether capture starts automatically when a call begins. It doesn't carry capture onto the new call that an unbridged transfer creates.",
+        "r3a": "Fails. Clearing the setting already passes the customer's number as the caller ID. The documented SBC change concerns how the transfer request is handled.",
+        "r3b": "Fails. Microsoft says that Direct Routing customers who don't use bridged transfers must configure the SBC for this transfer.",
+        "r3c": "Correct. Direct Routing customers without bridged transfers must configure the SBC to accept this REFER-TO, convert it to an INVITE and send it back to sip.pstnhub.microsoft.com."
+      },
+      "relatedNotes": [
+        { "packId": "contact-center-core", "noteId": "cc-d2-n21" },
+        { "packId": "contact-center-core", "noteId": "cc-d2-n20" }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "sim-p-q04",
+      "revision": 1,
+      "kind": "match",
+      "domainId": "channels",
+      "groupId": "sim-case-a",
+      "objectiveIds": ["D2.2.01", "D2.2.04"],
+      "conceptId": "voicemail-individual-group-routing",
+      "prompt": "Voicemail is an overflow action on the Billing, Collections and commercial queues, and the account managers have inbound profiles.\n\nYou need to make sure that voicemails reach the people named in the business requirements.\n\nWhich action should you use for each group of voicemails?",
+      "tray": "Actions",
+      "table": { "title": "Voicemail handling", "rowHeading": "Voicemails", "answerHeading": "Action" },
+      "tokens": [
+        { "id": "a", "text": "Route them to a dedicated voicemail queue by using an Organization phone number rule" },
+        { "id": "b", "text": "Add the users to the default voice queue" },
+        { "id": "c", "text": "Add the users to the default individual voicemail queue" },
+        { "id": "d", "text": "Add a sentiment rule that targets a voice queue" },
+        { "id": "e", "text": "Add the users to the default group voicemail queue" }
+      ],
+      "rows": [
+        { "id": "r1", "label": "Account manager voicemails", "correctTokenId": "c" },
+        { "id": "r2", "label": "Billing Back Office voicemails", "correctTokenId": "e" },
+        { "id": "r3", "label": "Commercial Desk voicemails", "correctTokenId": "a" }
+      ],
+      "answer": "Account manager voicemails: add the users to the default individual voicemail queue. Billing Back Office voicemails: add the users to the default group voicemail queue. Commercial Desk voicemails: route them to a dedicated voicemail queue by using an Organization phone number rule.",
+      "explanation": "Voicemails are split by how they were created. A missed direct inward call becomes an individual voicemail, and the representative must be in the default individual voicemail queue before the system can assign it to them. A queue overflow creates a group voicemail. It goes to the default group voicemail queue, which has no representatives until the triage team is added, and which needs no extra queues or rules. Every voice queue's voicemails arrive there, so separating commercial voicemails needs more routing: a voicemail queue for that team, and rules that use Organization phone number as the condition. That target can't be a voice queue, because voicemails are categorized as records.",
+      "sourceIds": ["sim-d2-s07"],
+      "tags": ["domain:channels", "task:apply", "feature:voicemail"],
+      "optionExplanations": {
+        "a": "Correct for Commercial Desk. A voicemail recorded on an organization number can be routed on the Organization phone number condition, and more elaborate routing uses voicemail queues that you configure.",
+        "b": "Fails. The default voice queue handles voice calls. Voicemails are records, and they use the voicemail workstreams and queues.",
+        "c": "Correct for account managers. Representatives must be in the default individual voicemail queue for the system to assign their voicemails.",
+        "d": "Fails. Voicemails can't be routed to voice queues, and Microsoft advises against sentiment-based rules for this routing.",
+        "e": "Correct for Billing Back Office. Queue overflow voicemails go to the default group voicemail queue, which has no representatives by default and needs no extra queues or rules."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d2-n19" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-p-q05",
+      "revision": 1,
+      "kind": "match",
+      "domainId": "agents-ai",
+      "groupId": "sim-case-a",
+      "objectiveIds": ["D3.2.09", "D3.2.07"],
+      "conceptId": "voice-agent-basic-and-realtime-fixes",
+      "prompt": "The team is working through the voice agent issues in Copilot Studio.\n\nYou need to resolve Issue 1, Issue 2 and Issue 3.\n\nWhich configuration should you use for each issue?",
+      "tray": "Configurations",
+      "table": { "title": "Voice agent fixes", "rowHeading": "Issue", "answerHeading": "Configuration" },
+      "tokens": [
+        { "id": "a", "text": "Configure latency messaging" },
+        { "id": "b", "text": "Turn on Increase accuracy with agent data" },
+        { "id": "c", "text": "Turn off barge-in for the message" },
+        { "id": "d", "text": "Add an explicit action to the On Error topic" },
+        { "id": "e", "text": "Set speech sensitivity to Based on sentence context" }
+      ],
+      "rows": [
+        { "id": "r1", "label": "Issue 1", "correctTokenId": "c" },
+        { "id": "r2", "label": "Issue 2", "correctTokenId": "d" },
+        { "id": "r3", "label": "Issue 3", "correctTokenId": "a" }
+      ],
+      "answer": "Issue 1: turn off barge-in for the message. Issue 2: add an explicit action to the On Error topic. Issue 3: configure latency messaging.",
+      "explanation": "Each issue has its own cause. In Issue 1, barge-in lets callers interrupt a message by speech or keypad, and Microsoft lists compliance messages that shouldn't be interrupted as a reason to turn it off. In Issue 2, a message on its own isn't enough error handling for a real-time agent: the On Error topic needs an explicit action, such as a transfer or an end-call step, or callers can be left in silence. In Issue 3, latency messaging covers background operations that take longer than expected by playing a message or music.",
+      "sourceIds": ["sim-d3-s02", "sim-d3-s01"],
+      "tags": ["domain:agents-ai", "task:apply", "feature:voice-agent-behavior"],
+      "optionExplanations": {
+        "a": "Correct for Issue 3. Latency messaging plays a message or music when background operations take longer than expected.",
+        "b": "Fails. This setting improves speech recognition. None of these issues is caused by the agent misunderstanding what a caller says.",
+        "c": "Correct for Issue 1. Barge-in covers keypad and voice interruptions, and Microsoft recommends turning it off for a compliance message that shouldn't be interrupted.",
+        "d": "Correct for Issue 2. The On Error topic handles orchestration errors, and Microsoft says that it needs an explicit action, such as a transfer or end call, because a message alone isn't sufficient.",
+        "e": "Fails. Speech sensitivity decides when a caller's turn has ended. It doesn't stop key presses, handle orchestration failures or fill a pause during a lookup."
+      },
+      "relatedNotes": [
+        { "packId": "contact-center-core", "noteId": "cc-d3-n09" },
+        { "packId": "contact-center-core", "noteId": "cc-d3-n06" },
+        { "packId": "contact-center-core", "noteId": "cc-d2-n29" }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "sim-p-q06",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "agents-ai",
+      "groupId": "sim-case-a",
+      "objectiveIds": ["D3.2.10"],
+      "conceptId": "multilingual-escalation-language-queues",
+      "prompt": "You need to resolve Issue 4.\n\nWhich two actions should you perform? Each correct answer presents part of the solution.",
+      "options": [
+        { "id": "a", "text": "Create a second voice agent for French callers." },
+        { "id": "b", "text": "Create a voice queue for each language and add the matching CSRs." },
+        { "id": "c", "text": "Set the default skill matching algorithm to Closest Match." },
+        { "id": "d", "text": "Add route-to-queue rules that use Conversation.CustomerLanguage." },
+        { "id": "e", "text": "Add a French phone number to a second voice workstream." }
+      ],
+      "correctOptionIds": ["b", "d"],
+      "answer": "Create a voice queue for each language and add the matching CSRs. Add route-to-queue rules that use Conversation.CustomerLanguage.",
+      "explanation": "A single multilingual voice agent can serve both languages on one number, so the problem isn't in the agent. The problem starts at escalation, when every call lands in one queue. Microsoft's pattern for escalating to a language-specific queue has two parts: a queue for each language, staffed by representatives who speak it, and route-to-queue rules that use Conversation.CustomerLanguage. This also suits Marram Bay's separate teams and service-level targets.",
+      "sourceIds": ["sim-d3-s03"],
+      "tags": ["domain:agents-ai", "task:apply", "feature:multilingual-voice-agent"],
+      "optionExplanations": {
+        "a": "Fails. A single voice agent can handle several languages, and the language setup is already complete. The fault is in where escalated calls are routed.",
+        "b": "Correct, and part of the solution. Escalating to a language-specific queue needs a queue for each supported language.",
+        "c": "Fails. Skill-based routing isn't in use, so there are no language skills to match. The algorithm wouldn't separate the queues either.",
+        "d": "Correct, and part of the solution. Conversation.CustomerLanguage is the documented criterion for sending calls to language queues.",
+        "e": "Fails. The business requires one phone number for each published line, and a single voice channel can serve several languages."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d3-n10" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-p-q07",
+      "revision": 1,
+      "kind": "match",
+      "domainId": "work-distribution",
+      "groupId": "sim-case-a",
+      "objectiveIds": ["D4.2.01", "D4.1.03"],
+      "conceptId": "route-to-queue-policy-selection",
+      "prompt": "You are finalizing the routing design for the Billing and Outage workstreams.\n\nYou need to meet the routing requirements.\n\nWhich routing option should you use for each item?",
+      "tray": "Routing options",
+      "table": { "title": "Routing design", "rowHeading": "Item", "answerHeading": "Routing option" },
+      "tokens": [
+        { "id": "a", "text": "Queue priority number" },
+        { "id": "b", "text": "Percentage-based allocation" },
+        { "id": "c", "text": "Rule-specific overflow" },
+        { "id": "d", "text": "Queue overflow condition" },
+        { "id": "e", "text": "Fallback queue" }
+      ],
+      "rows": [
+        { "id": "r1", "label": "Corvane", "correctTokenId": "b" },
+        { "id": "r2", "label": "Medical-priority customers", "correctTokenId": "c" },
+        { "id": "r3", "label": "Storm Desk", "correctTokenId": "e" }
+      ],
+      "answer": "Corvane: percentage-based allocation. Medical-priority customers: rule-specific overflow. Storm Desk: fallback queue.",
+      "explanation": "Each requirement applies at a different point in routing. Percentage-based allocation splits matched work across queues, including vendor queues, and it can include up to five queues that total 100 percent. Rule-specific overflow overrides a queue's overflow action for the work items that match one route-to-queue rule, which is how one group of callers gets different treatment while the others keep the queue's action. A fallback queue catches work that matches no rule. The default choice is the out-of-the-box queue for the channel type, so Storm Desk must be set as the fallback queue.",
+      "sourceIds": ["sim-d4-s02", "sim-d4-s01", "sim-d4-s06", "sim-d4-s07"],
+      "tags": ["domain:work-distribution", "task:apply", "feature:route-to-queue"],
+      "optionExplanations": {
+        "a": "Fails. Queue priority orders work across queues for representatives who belong to more than one queue. It doesn't choose the queue that a call is routed to.",
+        "b": "Correct for Corvane. Percentage-based allocation distributes work across queues, and Microsoft describes its use across contact center vendors.",
+        "c": "Correct for medical-priority customers. It lets one route-to-queue rule use its own overflow action, while other callers keep the queue's action.",
+        "d": "Fails. A condition set on the queue applies to every caller routed to that queue, so it can't treat medical-priority customers differently, and it can't act on a call that reached no queue.",
+        "e": "Correct for Storm Desk. If no rule matches, the work item goes to the workstream's fallback queue."
+      },
+      "relatedNotes": [
+        { "packId": "contact-center-core", "noteId": "cc-d4-n04" },
+        { "packId": "contact-center-core", "noteId": "cc-d4-n05" }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "sim-p-q08",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "groupId": "sim-case-a",
+      "objectiveIds": ["D4.1.03", "D4.1.05"],
+      "conceptId": "closing-time-overflow-for-waiting-calls",
+      "prompt": "The Billing queue keeps its current hours.\n\nYou need to resolve Issue 5 without changing the experience of any other caller.\n\nWhat should you do?",
+      "options": [
+        { "id": "a", "text": "Add a Waiting time in queue exceeds condition to the Billing queue, with Voicemail as the action." },
+        { "id": "b", "text": "Change the action for the Out of operation hours condition on the Billing queue to Transfer to a different queue." },
+        { "id": "c", "text": "Add an Out of operation hours condition to the Billing route-to-queue rule as a rule-specific overflow." },
+        { "id": "d", "text": "Publish an overflow playbook for the Billing queue that offers voicemail when the queue goes out of operating hours." }
+      ],
+      "correctOptionIds": ["d"],
+      "answer": "Publish an overflow playbook for the Billing queue that offers voicemail when the queue goes out of operating hours.",
+      "explanation": "The existing Out of operation hours condition works for new callers because it runs before a call enters the queue. That check happens only once, so it can't affect a caller who was already waiting at 20:00. A conversation orchestration playbook is evaluated continuously, including when a queue goes out of operating hours while conversations are waiting, and voicemail is one of its voice actions. The case states that orchestration and consumption-based billing are already set up.",
+      "sourceIds": ["sim-d4-s01", "sim-d4-s03", "sim-d4-s08"],
+      "tags": ["domain:work-distribution", "task:apply", "feature:conversation-orchestration"],
+      "optionExplanations": {
+        "a": "Fails. This condition depends on how long a caller has waited, at any time of day, so it would also send daytime callers to voicemail. It doesn't respond to the queue closing.",
+        "b": "Fails. This condition is checked once, before a call enters the queue, so it misses calls already waiting when the queue closes. It also removes the voicemail offer from callers who arrive after hours.",
+        "c": "Fails. Rule-specific overflow is a before-queue setting, and the before-queue check runs only once, before the call enters the queue.",
+        "d": "Correct. Playbook conditions are evaluated continuously, so they can act when a queue goes out of operating hours while conversations are waiting."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d4-n04" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-p-q09",
+      "revision": 1,
+      "kind": "match",
+      "domainId": "deployment",
+      "groupId": "sim-case-a",
+      "objectiveIds": ["D1.2.02", "D1.2.03"],
+      "conceptId": "capacity-profile-and-playbook-promotion",
+      "prompt": "Phase 1 adds a new capacity profile named Storm Surge. The wait-time priority playbook is finished in development, and the queues and context variables that it references already exist in production.\n\nYou need to promote these items in a way that meets the technical requirements.\n\nWhich method should you use for each item?",
+      "tray": "Methods",
+      "table": { "title": "Promotion to production", "rowHeading": "Item", "answerHeading": "Method" },
+      "tokens": [
+        { "id": "a", "text": "Solution containing CC User Prompt" },
+        { "id": "b", "text": "Direct edit in production" },
+        { "id": "c", "text": "Configuration Migration tool" },
+        { "id": "d", "text": "Solution containing the capacity profile" },
+        { "id": "e", "text": "Environment copy to production" }
+      ],
+      "rows": [
+        { "id": "r1", "label": "First promotion of the Storm Surge profile", "correctTokenId": "c" },
+        { "id": "r2", "label": "A later change to the Storm Surge profile", "correctTokenId": "d" },
+        { "id": "r3", "label": "The wait-time priority playbook", "correctTokenId": "a" }
+      ],
+      "answer": "First promotion of the profile: Configuration Migration tool. Later change to the profile: solution containing the capacity profile. Playbook: solution containing CC User Prompt.",
+      "explanation": "Microsoft's migration table says that new capacity profile records must be migrated with the Configuration Migration tool. After that, updates can be migrated with solutions, which meets Marram Bay's requirement to use managed solutions where the procedure supports them. Conversation orchestration playbooks also move in a solution, by adding CC User Prompt from the other tables. A playbook's solution import fails if a queue or context variable that it uses doesn't exist in the destination, which is why the case confirms that they're already there. Direct edits are ruled out because they create an active layer that can hide later managed updates.",
+      "sourceIds": ["sim-d1-s02", "sim-d4-s03", "sim-d1-s01"],
+      "tags": ["domain:deployment", "task:apply", "feature:application-lifecycle"],
+      "optionExplanations": {
+        "a": "Correct for the playbook. Playbooks move by adding CC User Prompt to a solution, then exporting and importing it.",
+        "b": "Fails. The case prohibits direct production edits, and an active customization can stop later managed updates from taking effect.",
+        "c": "Correct for the first promotion. New capacity profile records must be migrated with the Configuration Migration tool.",
+        "d": "Correct for the later change. After the first migration, capacity profile updates can be migrated with solutions.",
+        "e": "Fails. The case doesn't allow production to be overwritten by an environment copy."
+      },
+      "relatedNotes": [
+        { "packId": "contact-center-core", "noteId": "cc-d1-n02" },
+        { "packId": "contact-center-core", "noteId": "cc-d1-n11" }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "sim-p-q10",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "groupId": "sim-series-a",
+      "objectiveIds": ["D4.1.03"],
+      "conceptId": "wait-overflow-splits-queue-reporting",
+      "prompt": "Solution: You add a When work items are queued overflow condition to Claims Voice. When Waiting time in queue exceeds 1 minute, the action transfers the call to a new General Claims queue.\n\nDoes the solution meet the goal?",
+      "options": [
+        { "id": "yes", "text": "Yes" },
+        { "id": "no", "text": "No" }
+      ],
+      "correctOptionIds": ["no"],
+      "answer": "No. The call leaves Claims Voice, which breaks the reporting requirement.",
+      "explanation": "This overflow action does widen the pool of CSRs after a minute, but it does so by moving the call to another queue. Bramwell requires every call to stay in Claims Voice so that its service-level reporting isn't split, so the solution fails. It also takes the call away from the specialists, who must stay ahead of general service CSRs.",
+      "sourceIds": ["sim-d4-s01", "sim-d4-s04"],
+      "tags": ["domain:work-distribution", "task:evaluate", "feature:queue-overflow"],
+      "optionExplanations": {
+        "yes": "Incorrect. Transfer to a different queue moves the call out of Claims Voice, and the specialists are no longer preferred for it.",
+        "no": "Correct. The call must stay in Claims Voice. Overflow reroutes a queued work item to another queue."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d4-n04" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-p-q11",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "groupId": "sim-series-a",
+      "objectiveIds": ["D4.1.04"],
+      "conceptId": "bullseye-level-expansion-same-queue",
+      "prompt": "Solution: You publish a Bullseye routing playbook for Claims Voice. Level 0 is Claims Specialists, and Level 1 is General Service with a 60-second wait time.\n\nDoes the solution meet the goal?",
+      "options": [
+        { "id": "yes", "text": "Yes" },
+        { "id": "no", "text": "No" }
+      ],
+      "correctOptionIds": ["yes"],
+      "answer": "Yes. Bullseye routing widens the eligible pool over time and keeps the call in the same queue.",
+      "explanation": "Bullseye routing starts with the Level 0 user group and adds later groups as wait time increases. Earlier groups stay active and keep priority over groups added later, and the conversation stays in the same queue throughout. That matches all three requirements. The prerequisites are in place: orchestration is available, the user groups are associated with the queue, and least active is a supported assignment strategy.",
+      "sourceIds": ["sim-d4-s04"],
+      "tags": ["domain:work-distribution", "task:evaluate", "feature:bullseye-routing"],
+      "optionExplanations": {
+        "yes": "Correct. Specialists are tried first, general service CSRs join after 60 seconds behind the specialists, and the call stays in Claims Voice.",
+        "no": "Incorrect. This configuration meets all three requirements, and its prerequisites are in place."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d4-n03" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-p-q12",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "groupId": "sim-series-a",
+      "objectiveIds": ["D4.1.04"],
+      "conceptId": "custom-assignment-rule-order-no-wait",
+      "prompt": "Solution: You replace the assignment method of Claims Voice with a custom assignment method. Its first assignment rule matches claims specialists, and its second assignment rule matches any CSR in the queue.\n\nDoes the solution meet the goal?",
+      "options": [
+        { "id": "yes", "text": "Yes" },
+        { "id": "no", "text": "No" }
+      ],
+      "correctOptionIds": ["no"],
+      "answer": "No. General service CSRs can receive a call before the 60 seconds have passed.",
+      "explanation": "Assignment rules run in order, and when a rule finds no match, the next rule is evaluated. That is how a ruleset relaxes its conditions. These rules contain no wait condition, so when no specialist matches, a general service CSR can receive the call straight away instead of after 60 seconds. Specialists are tried first and the call stays in Claims Voice, but the second requirement isn't met.",
+      "sourceIds": ["sim-d4-s05"],
+      "tags": ["domain:work-distribution", "task:evaluate", "feature:custom-assignment"],
+      "optionExplanations": {
+        "yes": "Incorrect. Rule order puts specialists first, but nothing makes general service CSRs wait 60 seconds.",
+        "no": "Correct. When the first rule finds no match, the second rule is evaluated, so general service CSRs can become eligible immediately."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d4-n03" }],
+      "status": "draft"
+    },
+    {
+      "id": "sim-p-q13",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "groupId": "sim-series-a",
+      "objectiveIds": ["D4.1.02"],
+      "conceptId": "dynamic-priority-does-not-change-eligibility",
+      "prompt": "Solution: You publish an Escalate priority based on conversation wait time playbook for Claims Voice that raises a call's priority after 60 seconds.\n\nDoes the solution meet the goal?",
+      "options": [
+        { "id": "yes", "text": "Yes" },
+        { "id": "no", "text": "No" }
+      ],
+      "correctOptionIds": ["no"],
+      "answer": "No. Priority changes the order in which calls are offered, not who is eligible for them.",
+      "explanation": "A wait-time playbook raises a call's priority score, so the system offers that call ahead of lower-priority calls. It doesn't change who can take the call. Both user groups are associated with Claims Voice, so their members are part of the queue from the start. General service CSRs are therefore eligible immediately, and specialists get no preference.",
+      "sourceIds": ["sim-d4-s05", "sim-d4-s04", "sim-d4-s03"],
+      "tags": ["domain:work-distribution", "task:evaluate", "feature:dynamic-prioritization"],
+      "optionExplanations": {
+        "yes": "Incorrect. The playbook reorders waiting calls, but it doesn't offer them to specialists first or hold back general service CSRs.",
+        "no": "Correct. Dynamic prioritization affects which call is offered next. Both user groups are already part of the queue, so eligibility doesn't change."
+      },
+      "relatedNotes": [{ "packId": "contact-center-core", "noteId": "cc-d4-n03" }],
+      "status": "draft"
+    }
+  ],
+  "editorial": [
+    {
+      "id": "sim-p-q01",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "sbc-domain-coexistence-phased-migration",
+      "objectiveIds": ["D2.3.23", "D2.2.01"],
+      "level": "advanced",
+      "author": "pilot-author",
+      "authoredAt": "2026-11-05",
+      "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d2-s02", "section": "Choose a domain transition approach", "claim": "An SBC fully qualified domain name can't be assigned to both Azure Communication Services and Teams Direct Routing at the same time. Coexistence uses a different name or alias for the Teams trunk, and the SBC certificate must cover both names or separate certificates are used. A full cutover can cause downtime.", "applicability": "Azure Communication Services Direct Routing moving to Teams Direct Routing. The scenario keeps both trunks live on one SBC, so coexistence applies." },
+        { "sourceId": "sim-d2-s02", "section": "Update the SBC", "claim": "The public certificate must come from an accepted certificate authority and include the domain name in the Subject Alternative Name or Common Name.", "applicability": "Teams Direct Routing SBC configuration. Rules out the self-signed option." },
+        { "sourceId": "sim-d2-s02", "section": "Validate the migration; Decommission the Azure Communication Services configuration", "claim": "Before removing old routes, confirm that the migration is stable and no workload depends on the previous configuration. After validation, remove the migrated SBC trunks or disable the migrated route patterns.", "applicability": "Post-cutover stage of this migration path." },
+        { "sourceId": "sim-d2-s01", "section": "Choose a voice migration path", "claim": "Teams Direct Routing is the path for keeping existing carrier relationships and SBC investments.", "applicability": "Supports the scenario's target platform. Confirms that the design is a supported path." }
+      ],
+      "duplicateCheck": "Compared with operator-connect-portability-review, sbc-dns-region-latency and teams-dr-external-call-policy in ab250-bank. Those test the carrier path, DNS placement and voice routing policy. A keyword search for coexistence and FQDN found no question on the shared-domain decision."
+    },
+    {
+      "id": "sim-p-q02",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "teams-number-onboarding-sequence",
+      "objectiveIds": ["D2.2.01", "D2.2.03"],
+      "level": "advanced",
+      "author": "pilot-author",
+      "authoredAt": "2026-11-05",
+      "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d2-s02", "section": "Connect the migrated numbers to Dynamics 365 Contact Center", "claim": "Each service number needs a Teams resource account. The steps create the resource account, assign a license, assign the phone number, then sync the number and configure the voice channel.", "applicability": "Numbers on a Teams path. The account and its license are one token because the order of the license and the number isn't a dependency: the Azure Communication Services Teams Phone extensibility quickstart (https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/tpe/teams-phone-extensibility-quickstart) assigns the number first. The account must still exist before the number, so the combined token comes first. Account before number, number before sync and sync before workstream are real dependencies." },
+        { "sourceId": "sim-d2-s03", "section": "Create a Teams resource account; Assign service number to Teams resource account", "claim": "A resource account is required for every number used with Dynamics 365 Contact Center and is associated with the Dynamics 365 application. Numbers are assigned to the resource account, with PhoneNumberType DirectRouting for Direct Routing and OperatorConnect for Operator Connect.", "applicability": "Teams Phone in the voice channel, page updated 2026-10-30. An April 2026 voice FAQ line says that native Teams numbers can't be brought to the voice channel. That line isn't a conflict: it sits in an answer about bringing numbers into Azure Communication Services, and the release plan shows Teams Phone released on Sep 2, 2025. This newer page and the migration article document the Teams Phone path." },
+        { "sourceId": "sim-d2-s03", "section": "Configure Teams Phone in the voice channel", "claim": "Sync from Teams creates the phone number record for the Teams service number. Adding a voice channel to the workstream for that number follows.", "applicability": "Copilot Service admin center. Shows that the sync depends on the assigned number and comes before the workstream step." },
+        { "sourceId": "sim-d2-s03", "section": "Prerequisites", "claim": "Sync needs a Teams Administrator or Teams Telephony Administrator role and the TeamsResourceAccount.Read.All permission. The stem states that these are in place.", "applicability": "Removes permission setup from the tested sequence." },
+        { "sourceId": "sim-d2-s04", "section": "Configure a voice channel", "claim": "To configure the voice channel, you select a number from the list on the Phone number page. Only numbers with inbound calls enabled that aren't associated with another workstream are displayed.", "applicability": "Voice workstreams. Shows that the workstream step depends on the phone number record." },
+        { "sourceId": "sim-d2-s08", "section": "Assign a license", "claim": "For each resource account, you must assign a Microsoft Teams Phone Resource Account license.", "applicability": "Teams resource accounts. Supports including the license in the first token. It doesn't show a required order against the number." },
+        { "sourceId": "sim-d2-s01", "section": "Choose a voice migration path", "claim": "A Teams Calling Plan fits organizations that don't need a separate carrier relationship or a customer-managed SBC. Teams Direct Routing fits organizations that keep them. Operator Connect has a participating certified carrier manage PSTN connectivity.", "applicability": "Explains why the Calling Plan and Operator Connect tokens fail. The Technical requirements exhibit decides this, not the stem." }
+      ],
+      "duplicateCheck": "Compared with teams-sync-delegated-permission, teams-calling-plan-service-number and teams-dr-external-call-policy in ab250-bank. Those each test one prerequisite. None tests the full onboarding sequence."
+    },
+    {
+      "id": "sim-p-q03",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "bridged-transfer-capture-and-caller-id",
+      "objectiveIds": ["D2.3.04", "D2.2.05"],
+      "level": "advanced",
+      "author": "pilot-author",
+      "authoredAt": "2026-11-05",
+      "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d2-s04", "section": "Transfer calls to external numbers and Teams users, Enhanced voice tab", "claim": "With Use bridged transfers selected, the caller ID is the Dynamics phone number, the original call continues, and recording and transcription continue. With it cleared, the caller ID is the customer's number, a new call begins, the customer can send DTMF to external numbers, and recording and transcription stop.", "applicability": "Enhanced voice, which is the only option in embedded and standalone Contact Center." },
+        { "sourceId": "sim-d2-s04", "section": "Transfer calls to external numbers and Teams users, note after the Enhanced voice steps", "claim": "Direct Routing customers who don't select Use bridged transfers must configure the SBC to accept REFER-TO: sip.pstnhub.microsoft.com, convert the request to an INVITE and send it back to that host.", "applicability": "Collections is on Azure Communication Services Direct Routing in the case, which is the path that the linked SIP specification describes." },
+        { "sourceId": "sim-d2-s05", "section": "Transfer calls, Enhanced voice tab; Consult with external contacts and transfer a call securely (preview)", "claim": "Confirms the enabled and disabled behaviors. Use bridged transfer is described as enabled for the workstream.", "applicability": "Shows that the choice is made per voice workstream, so Collections and Outage can differ." },
+        { "sourceId": "sim-d2-s06", "section": "Set up secure consult with and transfer to external contacts (preview)", "claim": "Secure settings can stop recording and transcription during a bridged transfer to an external contact.", "applicability": "Option r1c fails on caller ID, because the call is still bridged. The answer doesn't depend on this feature's preview status. The page is labeled production-ready preview, and the archived release plan shows a planned September 2026 general availability with no released mark." },
+        { "sourceId": "sim-d2-s09", "section": "Enable call recording and transcription for voice", "claim": "Start setting Automatic means that calls are recorded and transcribed automatically when they begin.", "applicability": "Explains why the Start setting distractor doesn't address capture after an unbridged transfer." }
+      ],
+      "duplicateCheck": "Compared with secure-bridged-transfer-origin-scope, external-contact-capture-phase-split and inbound-forwarding-external-transfer-toggle in ab250-bank. Those cover the secure contact preview and profile forwarding. None tests the standard choice between bridged and unbridged transfer."
+    },
+    {
+      "id": "sim-p-q04",
+      "revision": 1,
+      "domainId": "channels",
+      "conceptId": "voicemail-individual-group-routing",
+      "objectiveIds": ["D2.2.01", "D2.2.04"],
+      "level": "advanced",
+      "author": "pilot-author",
+      "authoredAt": "2026-11-05",
+      "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d2-s07", "section": "Use voicemail to manage direct inbound calls to service representatives; Individual voicemails", "claim": "A missed call to an inbound profile number can become an individual voicemail. The representative must be added to the default individual voicemail queue for the system to assign it. That queue has no representatives by default.", "applicability": "Direct inward dialing through inbound profiles." },
+        { "sourceId": "sim-d2-s07", "section": "Group voicemails", "claim": "A queue overflow voicemail goes to the default group voicemail workstream and queue. The queue has no representatives by default, and voicemails left for every voice queue are routed to it.", "applicability": "Overflow-triggered voicemail on voice queues." },
+        { "sourceId": "sim-d2-s07", "section": "Configure voicemail to manage overflow of voice calls; Group voicemails", "claim": "A voicemail recorded on an organization phone number can be routed with Organization phone number in Work classification or an intake rule. For more elaborate routing, configure the required voicemail queues and route-to-queues rules. Voicemails can't be routed to voice queues because they're categorized as records. Rules based on skills or sentiment category might not work as expected.", "applicability": "Custom voicemail routing. The token names no rule type, because the condition sits in work classification or intake rules, and route-to-queue rules target the queue. The business requirement rules out extra routing for Billing Back Office, so token a fits only Commercial Desk." }
+      ],
+      "duplicateCheck": "A keyword search of ab250-bank for voicemail found no question that tests voicemail assignment. Compared with inbound-profile-personal-number-prerequisites, which tests number setup rather than where voicemails go."
+    },
+    {
+      "id": "sim-p-q05",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "voice-agent-basic-and-realtime-fixes",
+      "objectiveIds": ["D3.2.09", "D3.2.07"],
+      "level": "advanced",
+      "author": "pilot-author",
+      "authoredAt": "2026-11-05",
+      "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d3-s02", "section": "Turn on barge-in; When to turn off barge-in; Specifications", "claim": "Barge-in lets a user interrupt the agent and supports DTMF and voice interruptions. Turn it off for a compliance message that shouldn't be interrupted and for the first agent message.", "applicability": "Basic voice agents, which is Outage Reporter's type in the case." },
+        { "sourceId": "sim-d3-s02", "section": "Customized automatic speech recognition", "claim": "Increase accuracy with agent data improves speech recognition accuracy.", "applicability": "Explains why this distractor misses all three issues, none of which is a recognition problem." },
+        { "sourceId": "sim-d3-s01", "section": "Topics, Best practices; System trigger support", "claim": "Include an explicit action in the On Error topic, such as transfer or end call. Message-only error handling isn't sufficient, and without a next step voice customers might experience silence. The On Error trigger handles orchestration errors.", "applicability": "Real-time agents, which is Billing Assistant's type in the case." },
+        { "sourceId": "sim-d3-s01", "section": "Latency messaging", "claim": "Add a latency message or music when background operations take longer than expected.", "applicability": "Real-time agents in the voice channel." },
+        { "sourceId": "sim-d3-s01", "section": "Speech sensitivity", "claim": "Speech sensitivity determines when the agent should respond after the caller finishes speaking.", "applicability": "Explains why this distractor misses all three issues." }
+      ],
+      "duplicateCheck": "Compared with silence-detection-versus-turn-vad, dtmf-test-input-semantics and realtime-first-turn-static-content in ab250-bank. A keyword search found no question on barge-in, the On Error topic or latency messaging. Silence detection was removed as a distractor because it could be argued for Issue 2."
+    },
+    {
+      "id": "sim-p-q06",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "conceptId": "multilingual-escalation-language-queues",
+      "objectiveIds": ["D3.2.10"],
+      "level": "advanced",
+      "author": "pilot-author",
+      "authoredAt": "2026-11-05",
+      "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d3-s03", "section": "Escalate the call to a representative", "claim": "To escalate to a language-specific queue, create a queue for each language and add representatives who speak it. In the route-to-queues ruleset, use Conversation.CustomerLanguage to route calls based on what customers select.", "applicability": "Voice agents with multilingual workstreams. Page updated 2026-07-29. The case states that the caller chooses a language." },
+        { "sourceId": "sim-d3-s03", "section": "Opening paragraphs; Prerequisites", "claim": "A single voice agent can communicate in different languages, and a single voice channel with one number can support multiple languages. The agent must support all the languages of the voice channel.", "applicability": "Rules out the second agent and second number options. The case states that the languages already match." }
+      ],
+      "duplicateCheck": "Compared with single-number-multilanguage-design, explicit-language-menu-switch and multilingual-hybrid-content-responsibility in ab250-bank. Those test channel setup, in-call language switching and translated content. A keyword search for CustomerLanguage found no question on routing escalated calls by language."
+    },
+    {
+      "id": "sim-p-q07",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "route-to-queue-policy-selection",
+      "objectiveIds": ["D4.2.01", "D4.1.03"],
+      "level": "advanced",
+      "author": "pilot-author",
+      "authoredAt": "2026-11-05",
+      "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d4-s02", "section": "Opening section; Percentage-based allocation of work to queues", "claim": "If no rules are defined or no rules match, the work item goes to the workstream's fallback queue. Percentage allocation in a route-to-queue rule distributes work across queues, including across contact center vendors, for up to five queues that total 100 percent.", "applicability": "Route-to-queue rules. Hit-all and hit-first were removed: hit-all is automatic, and the page shows no way to select hit-first." },
+        { "sourceId": "sim-d4-s01", "section": "Configure overflow conditions for before a work item is queued", "claim": "Condition-action pairs are set on the queue.", "applicability": "Before-queue overflow. A queue-level pair applies to the calls routed to that queue, which is why the queue overflow token fails for one group of callers." },
+        { "sourceId": "sim-d4-s01", "section": "Configure rule-specific overflow conditions for before a work item is queued", "claim": "Rule-specific overflow conditions are set on a queue in a route-to-queue rule, for cases such as priority customers who shouldn't receive the queue's normal overflow action.", "applicability": "Before-queue overflow. Transfer to a different queue is a listed action for Work item limit exceeds." },
+        { "sourceId": "sim-d4-s06", "section": "Configure queue prioritization; How fallback queues work", "claim": "Queue priority orders work across queues. Work that matches no route-to-queue rule goes to the fallback queue, which can be set per workstream.", "applicability": "Supports the fallback row and explains why queue priority fails." },
+        { "sourceId": "sim-d4-s07", "section": "Create a workstream, Fallback queue", "claim": "Fallback queue offers Create new or Choose existing. By default, the out-of-the-box queue for the selected channel type is selected.", "applicability": "Explains why Storm Desk must be set on the workstream instead of relying on the default." }
+      ],
+      "duplicateCheck": "Compared with overflow-transfer-check-boundary, fallback-path-overflow-expectation and cross-queue-business-priority in ab250-bank. A keyword search found no question on percentage allocation or rule-specific overflow."
+    },
+    {
+      "id": "sim-p-q08",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "closing-time-overflow-for-waiting-calls",
+      "objectiveIds": ["D4.1.03", "D4.1.05"],
+      "level": "advanced",
+      "author": "pilot-author",
+      "authoredAt": "2026-11-05",
+      "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d4-s01", "section": "Use natural language playbooks to configure overflow actions for work items in queue", "claim": "Playbook conditions include a queue going out of operating hours while conversations are waiting, and actions include Send to voicemail for voice. Queue overflow rules are evaluated once before the item joins the queue, whereas the playbook condition is evaluated continuously.", "applicability": "Voice queues with conversation orchestration. The case has no preview restriction, so the answer doesn't depend on this feature's release status." },
+        { "sourceId": "sim-d4-s01", "section": "Overflow condition and actions when work items are queued", "claim": "The only condition for queued voice work items is Waiting time in queue exceeds.", "applicability": "Confirms that the queue page has no closing-time option for calls already queued." },
+        { "sourceId": "sim-d4-s01", "section": "Handle overflow before a work item is queued; Configure overflow conditions for before a work item is queued", "claim": "The system does the prequeue check once only for each work item, before it enters a queue. The Out of operation hours condition can't be edited, but its action can be changed, and Transfer to a different queue is a listed action for voice queues.", "applicability": "Applies to options b and c, which both act before a call enters the queue, so neither reaches a call already waiting at closing time. Option b also replaces the Voicemail action that the Current environment exhibit sets for after-hours callers." },
+        { "sourceId": "sim-d4-s03", "section": "Prerequisites; Supported trigger events, conditions, and actions", "claim": "Conversation orchestration needs consumption-based billing and unified routing. Queue is out of operating hours includes the transition while conversations are waiting, and Offer voicemail is an action.", "applicability": "The case states that orchestration and billing are set up." },
+        { "sourceId": "sim-d4-s08", "section": "Release table; Feature details", "claim": "The system continuously monitors conversations that entered a queue before closing time. If the queue goes out of operating hours while they're waiting, it applies the configured overflow actions, which can guide customers to leave a voicemail. Administrators configure this in conversation orchestration. Public preview is marked released on Jun 20, 2026. General availability shows Oct 2026 with no released mark.", "applicability": "Supports the keyed behavior. General availability isn't proven: the plan is archived as of October 2026, and the Update 26102 release notes (2026-10-19) don't announce it. Reopen the status before publishing." }
+      ],
+      "duplicateCheck": "Compared with afterhours-default-action-diagnosis and queued-overflow-versus-prequeue-average in ab250-bank. Those test a default after-hours action and wait-based overflow. A keyword search found no question on playbooks or on calls already queued at closing."
+    },
+    {
+      "id": "sim-p-q09",
+      "revision": 1,
+      "domainId": "deployment",
+      "conceptId": "capacity-profile-and-playbook-promotion",
+      "objectiveIds": ["D1.2.02", "D1.2.03"],
+      "level": "advanced",
+      "author": "pilot-author",
+      "authoredAt": "2026-11-05",
+      "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d1-s02", "section": "Migrate configuration for new capacity profiles; Migrate configuration for channel workstreams and channel settings", "claim": "The table of tables added to a solution states that new capacity profile records must be migrated using the Configuration Migration tool. The tip states that after that migration, updates can be migrated using solutions.", "applicability": "Channel configuration migration, including voice." },
+        { "sourceId": "sim-d4-s03", "section": "Migrate conversation orchestration playbooks", "claim": "Playbooks move in a solution by adding CC User Prompt from other tables. Every related entity must exist in the destination first, or the import fails.", "applicability": "Conversation orchestration playbooks. The stem states that the dependencies exist." },
+        { "sourceId": "sim-d1-s01", "section": "Managed vs. unmanaged solutions; Update of configuration and active layers", "claim": "Package configuration in an unmanaged solution, export it as managed and import it into the target. Editing a managed configuration on the target creates an active layer that can prevent later updates.", "applicability": "Supports the case's managed solution policy and rules out direct edits." }
+      ],
+      "duplicateCheck": "Compared with channel-migration-dependency-order, channel-migration-excluded-dependencies, channel-migration-user-associations and alm-release-preflight in ab250-bank. Those cover sequence, scope, user links and version parity. None tests the first promotion versus a later update of a capacity profile, or playbook migration."
+    },
+    {
+      "id": "sim-p-q10",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "wait-overflow-splits-queue-reporting",
+      "objectiveIds": ["D4.1.03"],
+      "level": "advanced",
+      "author": "pilot-author",
+      "authoredAt": "2026-11-05",
+      "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d4-s01", "section": "Handle overflow when a work item is queued; Overflow condition and actions when work items are queued; Things to keep in mind", "claim": "Queued overflow reroutes a work item to another queue. Waiting time in queue exceeds with Transfer to a different queue is available for voice, with a wait time of 1 to 60 minutes.", "applicability": "Voice queues. The configuration is valid, and it fails only because the scenario requires the call to stay in the queue." },
+        { "sourceId": "sim-d4-s04", "section": "Opening paragraphs", "claim": "Bullseye routing expands the pool while the conversation stays in the same queue, which is the behavior the overflow option lacks.", "applicability": "Used for contrast in the explanation." }
+      ],
+      "duplicateCheck": "Compared with queued-overflow-versus-prequeue-average in ab250-bank, where this same transfer is the right answer. Here the decision differs: a reporting constraint makes it fail."
+    },
+    {
+      "id": "sim-p-q11",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "bullseye-level-expansion-same-queue",
+      "objectiveIds": ["D4.1.04"],
+      "level": "advanced",
+      "author": "pilot-author",
+      "authoredAt": "2026-11-05",
+      "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d4-s04", "section": "Opening paragraphs; Prerequisites; How bullseye routing works; Configure wait times", "claim": "Bullseye routing starts with a Level 0 user group and expands as wait time increases. Earlier groups stay active with higher priority, and the conversation stays in the same queue. It requires conversation orchestration and a user and queue associated with a user group. Wait times start at 30 seconds or more, and Level 1 also supports 0 seconds.", "applicability": "Voice and messaging queues with conversation orchestration. The page shows no preview marking." }
+      ],
+      "duplicateCheck": "A keyword search of ab250-bank for playbook and orchestration found no bullseye question. Compared with highest-capacity-exact-ordering, which tests an out-of-the-box method with skills."
+    },
+    {
+      "id": "sim-p-q12",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "custom-assignment-rule-order-no-wait",
+      "objectiveIds": ["D4.1.04"],
+      "level": "advanced",
+      "author": "pilot-author",
+      "authoredAt": "2026-11-05",
+      "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d4-s05", "section": "How assignment rulesets work; Components of an assignment rule", "claim": "The assignment rule with the top order is evaluated first. If no representatives are matched, the next assignment rule in the ruleset is evaluated, which gradually relaxes the constraints. If a rule matches a user, the next rules aren't evaluated.", "applicability": "Custom assignment methods. The solution's rules contain no wait condition, so nothing delays the second rule by 60 seconds." }
+      ],
+      "duplicateCheck": "Compared with custom-assignment-skill-condition in ab250-bank, which tests skill conditions inside custom assignment. A keyword search found no question on assignment rule order against a timed requirement."
+    },
+    {
+      "id": "sim-p-q13",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "conceptId": "dynamic-priority-does-not-change-eligibility",
+      "objectiveIds": ["D4.1.02"],
+      "level": "advanced",
+      "author": "pilot-author",
+      "authoredAt": "2026-11-05",
+      "status": "source-reviewed",
+      "evidence": [
+        { "sourceId": "sim-d4-s05", "section": "How dynamic prioritization works; Scenario: Wait time escalation", "claim": "Dynamic prioritization raises a conversation's priority score as it waits, and higher-priority conversations are offered to representatives first.", "applicability": "Voice and live chat. Claims Voice has no custom prioritization rules, so the playbook would apply. The minimum wait time interval is 30 seconds." },
+        { "sourceId": "sim-d4-s04", "section": "How bullseye routing works, step 7", "claim": "If a user group is associated with the queue, the system considers all users in that user group as part of the queue.", "applicability": "Both groups are associated with Claims Voice in the scenario, so general service CSRs are eligible from the start without a bullseye playbook." },
+        { "sourceId": "sim-d4-s03", "section": "Supported scenarios", "claim": "Escalate priority based on conversation wait time is a dynamic prioritization playbook template.", "applicability": "Confirms the template name in the solution." }
+      ],
+      "duplicateCheck": "Compared with cross-queue-business-priority and equal-custom-queue-priority-tiebreak in ab250-bank, which test queue priority numbers. A keyword search found no question on dynamic prioritization."
+    }
+  ]
+}

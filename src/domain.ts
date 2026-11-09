@@ -21,17 +21,49 @@ export interface StudyCuration {
   topics: Topic[]; cards: (CanonicalCardRef & { topicId: string })[];
   notes: CanonicalNoteRef[]; questionBankIds: string[];
 }
-export interface ExamQuestion {
-  id: string; revision: number; kind: 'single' | 'multiple'; domainId: string;
+interface ExamQuestionBase {
+  id: string; revision: number; domainId: string;
   objectiveIds: string[]; conceptId: string; prompt: string; answer: string; explanation: string;
-  sourceIds: string[]; tags: string[]; options: Option[]; correctOptionIds: string[];
-  optionExplanations: Record<string, string>; relatedNotes: CanonicalNoteRef[];
-  status: 'draft' | 'approved';
+  sourceIds: string[]; tags: string[]; optionExplanations: Record<string, string>;
+  relatedNotes: CanonicalNoteRef[]; status: 'draft' | 'approved';
+  /** Case study or series this question belongs to. Grouped questions are delivered whole. */
+  groupId?: string;
+}
+export interface SelectionQuestion extends ExamQuestionBase {
+  kind: 'single' | 'multiple'; options: Option[]; correctOptionIds: string[];
+}
+/** Heading text for the two-column answer area shared by match and hotspot questions. */
+export interface AnswerTable { title: string; rowHeading: string; answerHeading: string; }
+/** Tokens stay in the tray, so one token can fill several rows or none. */
+export interface MatchQuestion extends ExamQuestionBase {
+  kind: 'match'; tray: string; table: AnswerTable; tokens: Option[];
+  rows: { id: string; label: string; correctTokenId: string }[];
+}
+/** The answer area has exactly correctOrder.length positions; other tokens are distractors. */
+export interface OrderQuestion extends ExamQuestionBase {
+  kind: 'order'; tray: string; tokens: Option[]; correctOrder: string[];
+}
+export interface HotspotQuestion extends ExamQuestionBase {
+  kind: 'hotspot'; table: AnswerTable;
+  rows: { id: string; label: string; options: Option[]; correctOptionId: string }[];
+}
+export type ExamQuestion = SelectionQuestion | MatchQuestion | OrderQuestion | HotspotQuestion;
+/** Blueprint formats. A series is single-answer content delivered as a one-way group. */
+export type QuestionFormat = 'single' | 'multiple' | 'match' | 'order' | 'hotspot' | 'series';
+export interface QuestionGroup {
+  id: string; kind: 'case-study' | 'series'; title: string;
+  exhibits: { id: string; title: string; body: string }[];
+}
+/** Declaring a blueprint opts a bank into assembled exams, per-selection scoring and exam delivery. */
+export interface BankBlueprint {
+  defaultCount: number; caseStudyEvery: number; seriesEvery: number;
+  shares: Record<QuestionFormat, number>;
 }
 export interface QuestionBank {
   id: string; version: string; title: string; description: string; fixture: boolean;
   domains: { id: string; title: string; weight: number }[];
   sources: Source[]; questions: ExamQuestion[];
+  groups?: QuestionGroup[]; blueprint?: BankBlueprint;
 }
 export interface TestExposure { id: string; bankId: string; questionId: string; lastSeenAt: number; }
 export interface DeckSettings {
@@ -66,12 +98,26 @@ export interface ReviewSession {
 export interface TestQuestionSnapshot {
   bankId: string; card: ExamQuestion; sources: Source[]; domainTitle: string;
 }
+export interface TestResponse {
+  cardId: string; selectedOptionIds: string[]; revealed: boolean;
+  /** Match and hotspot: row ID to chosen ID. Order: position ID to token ID. */
+  placements?: Record<string, string>;
+}
+export interface TestSection { id: string; kind: 'general' | 'case-study' | 'series'; title: string; groupId?: string; cardIds: string[]; }
+export interface TestDelivery {
+  sections: TestSection[]; position: number; flaggedCardIds: string[];
+  /** Questions before this index are closed in Exam Mode. A single watermark covers sections and series. */
+  lockedBefore: number;
+}
 export interface TestAttempt {
   id: string; bankId: string; mode: 'practice' | 'exam'; startedAt: number;
   bankTitle?: string; bankVersion?: string; fixture?: boolean; durationMinutes?: number; retryOf?: string;
   deadlineAt: number | null; completedAt: number | null; questions: TestQuestionSnapshot[];
-  responses: { cardId: string; selectedOptionIds: string[]; revealed: boolean }[];
-  result: { correct: number; wrong: number; skipped: number } | null;
+  responses: TestResponse[];
+  result: { correct: number; wrong: number; skipped: number; points?: { earned: number; possible: number } } | null;
+  /** Absent on every attempt before Phase 8, which keeps one point per question and exact-set scoring. */
+  scoring?: 'per-selection';
+  groups?: QuestionGroup[]; delivery?: TestDelivery;
 }
 export interface Preferences {
   id: 'preferences'; theme: Theme; timeZone: string; dayStartsAtHour: number;

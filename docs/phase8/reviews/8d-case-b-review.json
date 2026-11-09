@@ -1,0 +1,502 @@
+[
+  {
+    "id": "sim-b-q01",
+    "revision": 1,
+    "reviewer": "case-b-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands. Issue 1: Shop Chat has no authentication setting and won't get one, so the prompt (token d) and persistent chat (token c) are both out. The page says the link works on authenticated and unauthenticated widgets and is shared when the representative anticipates a need to reconnect, and the visitor's warning supplies that. Issue 2: Lens Consult already reconnects, and Redirect URL is the documented setting for the timeout. Blank gives the new-chat option the issue describes. Requirement 1: days away, messages outside hours and free capacity rule out reconnection, whose time limit blocks capacity, and Account Chat meets the authentication prerequisite. I tested all 15 row and token pairs, and each row has one answer. Strongest alternative: token a for Requirement 1 because of the word history, but Show previous conversations sits on a channel that's already persistent, so it can't stand alone. Check 2: the row labels carry nothing and the tokens can't be matched without the exhibits. Token d's explanation says the prompt appears only on authenticated widgets. The page doesn't use the word only, but it sets the prompt against the link in a way that supports it. Distinct from ab250-d2-q33, which tests a returning-conversation template on an existing persistent workstream. Neither bank has a reconnection question.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-cb-s02",
+        "supported": true,
+        "section": "How reconnection to a previous chat works; Enable reconnection to a previous chat session",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-05-08, applies to embedded and standalone. Confirmed the link is for both authenticated and unauthenticated widgets, the prompt is for widgets with authentication settings, Time limit blocks capacity, Portal URL is the shared link, and a blank Redirect URL leaves the option to start a new chat."
+      },
+      {
+        "sourceId": "sim-cb-s03",
+        "supported": true,
+        "section": "Slug for reconnection link",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed {ReconnectUrl{ReconnectID}} is used in quick replies to generate the link."
+      },
+      {
+        "sourceId": "sim-cb-s01",
+        "supported": true,
+        "section": "Opening table; How persistent chat works; Prerequisites; Set up persistent chat; Display previous conversations to customers",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-03-10. Confirmed outside-hours contact, history, waiting chats using no capacity, the authentication prerequisite, the choice at creation, two workstreams for live and persistent widgets, and the Show previous conversations setting."
+      },
+      {
+        "sourceId": "sim-d4-s07",
+        "supported": true,
+        "section": "Create a workstream; Configure work distribution",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed the Make chats persistent checkbox appears when Chat is selected, with the reminder about Keep same representative for entire conversation."
+      },
+      {
+        "sourceId": "sim-cb-s21",
+        "supported": true,
+        "section": "Opening paragraphs; What happens when a chat gets disconnected",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed the three-minute default, that locking or switching apps can disconnect a mobile chat, and that a new chat begins after that unless reconnection is enabled."
+      }
+    ],
+    "fingerprint": "0bd222e809342846943168a0c5ff81f6fe1585c035e040fd7dc624d35c4f0808"
+  },
+  {
+    "id": "sim-b-q02",
+    "revision": 1,
+    "reviewer": "case-b-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands, and the author's weak point 6 holds. Pair c then e: the table on Configure outbound messaging gives Message template the value 'Your previously created template', and token e says the configuration selects the template, so it can't be saved as described before the template exists. Pair e then a: the page says the Configuration ID is generated when you select Save, and the flow variable is set to that generated ID. Both pairs are true dependencies, not page order. I searched learn.microsoft.com for these steps and got only this article and its translations, so I found no page showing the reverse. The exhibits settle the start: Lab Delay is approved in Twilio but not added, which removes token d. WhatsApp is live, which removes token f. Token b's procedure has Channel set to SMS. Check 2: with the exhibits hidden, the natural chain is d, c, e, a, and a learner can't tell which end to drop for three steps. Tray order doesn't reveal the sequence. The 24-hour rule explains why the notice needs a template, and the exhibit covers opt-in. No question in either bank tests this sequence.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-cb-s04",
+        "supported": true,
+        "section": "WhatsApp message types and the 24-hour session rule; Configure WhatsApp message templates; Production setup checklist",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-10-30. Confirmed templates after 24 hours, approval before adding, the Behaviors tab, Content template SID, and the checklist wording that token c uses."
+      },
+      {
+        "sourceId": "sim-cb-s05",
+        "supported": true,
+        "section": "Set up outbound configuration; Set up a Power Automate flow; Opening paragraphs",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-07-28. Confirmed Channel type, Channel and Message template fields, 'Your previously created template', the Configuration ID generated on Save, and the OutboundConfigurationId variable set to that ID."
+      },
+      {
+        "sourceId": "sim-cb-s06",
+        "supported": true,
+        "section": "To create a message template",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed the procedure says Channel: Select SMS and adds localized text as new messages."
+      }
+    ],
+    "fingerprint": "94cf1502a4d9c46ba52e4869e87e0367e32a7c708b01706402a47644caae14bd"
+  },
+  {
+    "id": "sim-b-q03",
+    "revision": 1,
+    "reviewer": "case-b-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands, and the author's weak point 5 holds. Rollout date: the page, updated 2026-10-30, still says from June 2026 and defers to Meta for timing. Issue 3 states as fact that these customers have adopted usernames, so the answer doesn't depend on the date. Contact Book: the page says keeping it on preserves the ability to identify customers by phone number, and the exhibit has it on, but Issue 3 is limited to some customers where only the ID reaches Dynamics 365. Microsoft's action list applies to conversations that have only that ID, so the answer holds whichever customers the Contact Book covers. Microsoft lists three places to review, and the exhibits remove one: no AI agent runs on WhatsApp Orders, and Frame Finder is on Shop Chat. Option d fails on the same warning, because routing rules include work classification rules. Option a fails on a documented permanent loss and on the technical requirement. Check 2: a learner who knows the list still needs the exhibits to choose between Frame Finder and Loyalty Match. Check 14: believable wrong pairs exist, such as the flow and the agent. Neither bank covers this.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-cb-s04",
+        "supported": true,
+        "section": "Important note at the top of the article; Production setup checklist",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed each quoted claim: phone number no longer sent, ID as primary identifier, Contact Book on by default and permanent loss if disabled, fallback rule, update flows, update AI agent logic. The checklist repeats the fallback rule. Time-sensitive, so reopen before release."
+      },
+      {
+        "sourceId": "sim-d4-s07",
+        "supported": true,
+        "section": "Configure routing rules",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed that routing rules for a workstream consist of work classification rules and route-to-queue rules."
+      }
+    ],
+    "fingerprint": "e141c31241e857659317f2a87c6cfd9c11ef39b6d81ea48bfc0d4adee05e59f8"
+  },
+  {
+    "id": "sim-b-q04",
+    "revision": 1,
+    "reviewer": "case-b-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands. The opticians are Available and Highest capacity picks whoever has free capacity, which explains the issue. Assignment methods says the default strategies don't consider representative operating hours and that you must write a custom method with is_working. Its component table says Calendar schedule with Is working uses the service scheduling calendars. It also says presence, capacity and skill rules must be configured in a custom method, which option b does. Strongest alternative: shift-based routing, which the page also ties to Calendar schedule. It isn't an option, the exhibit says no shift bookings exist, and option b holds either way. Option d: the technical requirement keeps the queue open, and per-person shifts can't be a queue schedule. I checked the statement that automated assignment doesn't consider queue operating hours against Manage overflow and Create and manage operating hours. Those pages handle out-of-hours items through overflow before queuing, with a default action of Assign to queue anyway, so they don't contradict it. Check 2: the two parallel options don't fall to elimination, because with the exhibits hidden the issue could be about fairness, in which case they'd be the leading candidates. Exhibits are consistent, including at least one optician on shift throughout. Distinct from custom-assignment-skill-condition and sim-p-q12, which test skill conditions and rule order.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-d4-s05",
+        "supported": true,
+        "section": "Create new; Components of an assignment rule; Highest capacity; Advanced round robin; Least active",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-10-30. Confirmed the Important list, the Calendar schedule row, the implicit capacity profile check, and that each default method matches skills, presence and capacity without reading a calendar."
+      },
+      {
+        "sourceId": "sim-cb-s22",
+        "supported": true,
+        "section": "Create an assignment method and configure rules",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed the sample rule with User skills, Presence status and Available capacity."
+      },
+      {
+        "sourceId": "sim-cb-s26",
+        "supported": true,
+        "section": "Prerequisites; Configure an assignment rule; How shift-based routing works",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed the prerequisites, that Is working is selected automatically, and that shift-based routing ignores the work hour calendar."
+      },
+      {
+        "sourceId": "sim-cb-s27",
+        "supported": true,
+        "section": "Manage users using the classic experience",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed that the user schedule for assignment uses the bookable resource calendar, and that work hours need universal resource scheduling. The exhibit states the work hours exist."
+      }
+    ],
+    "fingerprint": "a7c0b651291a0a20fcbdec282f536773b0cfafefeb66c04d42318ec0734daaad"
+  },
+  {
+    "id": "sim-b-q05",
+    "revision": 1,
+    "reviewer": "case-b-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands. Requirement 3: a session template opens its associated application tabs when a session starts, and the Third-party website page type hosts sites compatible with iframe hosting, which the exhibit states. Requirement 4: notification fields take {visitorLanguage} and any prechat survey question as slugs, and out-of-the-box templates can't be customized, so a custom one is selected on the workstream. Requirement 5: Enable build expression on the session template sets a default from conditions, the productivity slugs include survey questions and are named for the script expression builder, and representatives can still select another script. I tested all 15 row and token pairs and each row has one answer. Check 2: the labels carry nothing. One judgement call for the lead: Manage session templates says flatly that representatives can't close these tabs, and that's what Requirement 3 and the explanation rely on. A second page, Manage applications in Omnichannel for Customer Service, says that you can close an application tab by selecting its close icon and names only the anchor tab as not closable. I don't treat that as a check 5 conflict. That page says 'at least one' tab isn't closable, it doesn't discuss session template tabs, and the canClose API reference shows closability varies by tab. Manage session templates is the page on this exact subject and is current. No token depends on the point, so the answer stands either way. Distinct from ab250-d5-q04, which connects templates that already exist, ab250-d5-q20, which tests manual script choice, and ab250-d5-q01, which tests iframe failure.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-cb-s08",
+        "supported": true,
+        "section": "Page types; Third-party website; Entity record",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-06-17, applies to Customer Service and standalone only. Confirmed both page type definitions."
+      },
+      {
+        "sourceId": "sim-cb-s07",
+        "supported": true,
+        "section": "Associate application tabs, scripts with session templates",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-07-30. Confirmed 'Representative can't close these application tabs' and that out-of-the-box session templates can't be customized. See the rationale for the adjacent page on closing tabs."
+      },
+      {
+        "sourceId": "sim-cb-s09",
+        "supported": true,
+        "section": "Slugs for notification field header; Out-of-the-box notification templates",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed {visitorLanguage}, survey question slugs, and that out-of-the-box templates can't be customized."
+      },
+      {
+        "sourceId": "sim-d4-s07",
+        "supported": true,
+        "section": "Associate templates",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed a template is selected per notification type on the workstream."
+      },
+      {
+        "sourceId": "sim-cb-s10",
+        "supported": true,
+        "section": "Set the default script for representatives; Enable and build the expression",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed the toggle, the expression builder and that representatives can manually switch scripts."
+      },
+      {
+        "sourceId": "sim-cb-s03",
+        "supported": true,
+        "section": "Slugs; Slugs for productivity tools (macros and scripts)",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed the list applies to the script expression builder and includes pre-conversation survey questions."
+      },
+      {
+        "sourceId": "sim-cb-s11",
+        "supported": true,
+        "section": "Trigger macros",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed macros are run from the Productivity pane or by an API call. Token a says opticians run it as needed, so it isn't automatic."
+      }
+    ],
+    "fingerprint": "d0d0fb1dce55b092f344acc360b036eb24894770e59b543a4f6a228ebe5d017a"
+  },
+  {
+    "id": "sim-b-q06",
+    "revision": 1,
+    "reviewer": "case-b-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands. Issue 5: dispensing team leads hold both mapped roles, the page gives the higher-ranked profile to users with several roles, and its example shows rank 1 winning, so Prescription Care must outrank Supervisor Desk. Other supervisors hold no Dispensing Reviewer role, so they keep Supervisor Desk. Issue 6: a custom default reaches users without a specific profile or a mapped role, and Frontline Messaging has no roles to lose. Requirement 6: direct assignment fits a named time-limited group whose role is shared. I tested all 15 row and token pairs. The strongest alternative is direct assignment for Issue 5 or Issue 6, which the technical requirement rules out, so the question never needs the precedence between direct and role-based assignment that the page doesn't state. Mapping Frontline Messaging to Omnichannel agent fails 'whichever roles they hold'. Team mapping fails on a documented prohibition. Default on Frontline Messaging and direct assignment on Returns Pilot work together, because the page says a default doesn't apply to users with a specific custom profile. Exhibits agree across roles, ranks and profiles. Distinct from ab250-d5-q05 and ab250-d5-q06.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-cb-s12",
+        "supported": true,
+        "section": "Search for users; Set a custom experience profile as default; Map security roles to experience profiles; Manage users assigned to experience profiles",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-05-27. Confirmed role mapping, no team assignment, the higher-rank rule with rank 1 winning, default scope, roles removed from a default profile, and the three assignment methods."
+      },
+      {
+        "sourceId": "sim-cb-s23",
+        "supported": true,
+        "section": "Assign users, templates, configure productivity pane, channels",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page updated 2026-11-03. Confirmed Set as default, Set rank and roles, and Add Users in the Users section."
+      }
+    ],
+    "fingerprint": "3bec343a0c98482ce8696a90f5885affdc4c5538957c5fad80a24036c27646ce"
+  },
+  {
+    "id": "sim-b-q07",
+    "revision": 1,
+    "reviewer": "case-b-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands, and the author's weak point 3 holds. Requirement 7 describes two outcomes that only the conditional option gives. The page says the setting applies to all users, so Prescription Care's inbox being off doesn't change the answer: opticians get the session tab. Requirement 8: the Unassigned filter has only queue and Open conditions, so a Simple setting can't limit a channel, and a sort doesn't change a view's contents. On the inference: Configure the inbox doesn't list the columns in the condition builder, and I searched for a Microsoft page that does and found none. But the page says Advanced settings define which conversation records appear when simple filters don't cover the scenario, and the Conversation table reference shows a msdyn_channel column with a WhatsApp choice. Filtering a record on a column of its own table is what a condition builder does, and the All ongoing conversations view filters conversations by channel. I couldn't verify this in a live environment. Nothing I found contradicts it, and both other options fail on documented reasons, so no better answer exists. The evidence note is open about the inference. Check 10: the exhibit states that the inbox and All active channels are on. Distinct from ab250-d5-q07, q08 and q09.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-cb-s13",
+        "supported": true,
+        "section": "Configure the channel-focused inbox; Configure custom views for the inbox; Simple settings; Advanced settings for conversations; Prerequisites",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-10-29. Confirmed the three Incoming work items options, that changes apply to all users, Show and Hide, the Chat simple settings, and the condition builder for custom profiles."
+      },
+      {
+        "sourceId": "sim-cb-s14",
+        "supported": true,
+        "section": "Inbox filters",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed Unassigned means queue membership and Status Reason Open, with no channel condition."
+      },
+      {
+        "sourceId": "sim-cb-s09",
+        "supported": true,
+        "section": "Create a notification template",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed Show desktop notifications has Always and When app is in background."
+      },
+      {
+        "sourceId": "sim-cb-s28",
+        "supported": true,
+        "section": "Customized columns/attributes; msdyn_channel Choices/Options",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed the msdyn_channel column and its WhatsApp choice. This supports the column, not the condition builder's column list."
+      }
+    ],
+    "fingerprint": "a231bb7222c6f490fdced89e616291cb3c4cd22ebbe76d73ce40a8c012d3e377"
+  },
+  {
+    "id": "sim-b-q08",
+    "revision": 1,
+    "reviewer": "case-b-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands. The Edit evaluation plans section says active plans can't be edited, and that after pausing every field can be edited except Record type and Evaluation criteria, so replacing the plan is the only listed route. Editing Chat Standards fails twice: Dispensing Standards is a separate criteria, and new versions reach plans at the next run, which would change Store Review and break Requirement 9. Pause is a documented action. Requirement 10: Once runs a single evaluation against matching conversations without an ongoing schedule. Strongest alternative: a Recurring plan with an end date, which can reach closed conversations, but it runs daily and Once is the option built for this. Trigger only reaches future conversations. The exhibit's statement that all questions are AI-enabled keeps a new AI agent plan valid. Check 2: the first row can be worked out from the rule, which is the point of that row, and the second can't be answered without the exhibits. Distinct from ab250-d6-q13, sim-d6-q02 and the other quality items.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-cb-s15",
+        "supported": true,
+        "section": "Create and activate evaluation plan for cases and closed conversations; Activate, pause, resume, or delete evaluation plans; Edit evaluation plans",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-10-23. Confirmed the three frequency types as described, the edit limits, the pause behavior, and that AI agent mode needs all questions AI-enabled."
+      },
+      {
+        "sourceId": "sim-d6-s02",
+        "supported": true,
+        "section": "Edit your published evaluation criteria; Manage evaluation criteria versions",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed plans use the latest criteria in the next run, and that each edit and publish increments the version."
+      }
+    ],
+    "fingerprint": "71ac126867f6707e8aed8cd23156f0b886193a931e8f027ae381e9726e9841d0"
+  },
+  {
+    "id": "sim-b-q09",
+    "revision": 1,
+    "reviewer": "case-b-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands, and the author's weak point 1 is stronger than the author thought. Issue 7: Assign needs Open and unassigned, and the target must be in the queue. Issue 8: Transfer works on Active, and Assign doesn't. Issue 9: Wrap-up rules out Assign and Transfer. For Force Close, the report's procedure has no state limit, the report includes wrap-up conversations, and Always block names the supervisor as someone who closes the conversation to release capacity. I also searched for a state limit and found the reverse: Manage all ongoing conversations lists wrap-up among the states for Force Close on persistent and live chat. That's the bulk view, so it isn't a direct statement about this report, but it shows wrap-up isn't excluded. It isn't a cited source, so the lead may add it in a later revision. Nothing needs changing. I tested all 15 row and token pairs. Token e fails because Issue 7 needs a person. The explanation shortens the Always block text by leaving out automatic closure, which doesn't change the decision, because Issue 9 says the supervisor must act now. Exhibit check: Issue 7's weekend wording looked at odds with the report's 2-hour line, but the dashboards overview says the default is 2 hours and the filter reaches 24 hours, so it's consistent. Distinct from ab250-d6-q05, q06 and q07, and from sim-d6-q07.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-cb-s16",
+        "supported": true,
+        "section": "Assign conversations; Transfer conversations; End conversations forcibly",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-04-28, applies to Customer Service and standalone only. Confirmed Open for assign, Active or Waiting for transfer, and status set to Closed after forcibly ending."
+      },
+      {
+        "sourceId": "sim-d6-s08",
+        "supported": true,
+        "section": "Assign or transfer conversations; Assign conversations; Transfer conversations; Force close conversations",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-03-11. Confirmed the queue membership rule, Find an agent or Find a queue, both actions not enabled in Wrap-up, Proceed, and that the report shows wrap-up conversations. The table is labeled Record, and the evidence note says so accurately."
+      },
+      {
+        "sourceId": "sim-d6-s22",
+        "supported": true,
+        "section": "Configure supervisor settings",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed the four separate toggles."
+      },
+      {
+        "sourceId": "sim-d4-s07",
+        "supported": true,
+        "section": "Configure work distribution",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed Always block consumes capacity until the representative or supervisor closes the conversation or the system closes it automatically."
+      },
+      {
+        "sourceId": "sim-cb-s17",
+        "supported": true,
+        "section": "Open; Active; Wrap up",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed the three state definitions and capacity handling in Wrap-up."
+      }
+    ],
+    "fingerprint": "95b7d8fceeb92b016d3e466eac36677132871adfe11af15700bc7faa7a62473c"
+  },
+  {
+    "id": "sim-b-q10",
+    "revision": 1,
+    "reviewer": "case-b-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Re-review of the revised text. The first-pass finding is resolved and the Yes answer stands. The solution now ends 'and publish the agent', so a careful learner no longer has an omission to read as the catch. Correction to my first pass: I wrote that Microsoft says this step is required, which overstated it. The publish page gives a general rule for Copilot Studio agents, under a note scoping the article to the standard harness, and the extensibility article doesn't mention publishing. Neither says outright that the managed Customer Service Copilot Bot must be published. The new evidence note says the rule is applied by inference, and that's accurate. The extensibility article calls this bot a managed Copilot Studio agent, and its limitations list doesn't exempt publishing. The Customer Knowledge Management Agent setup also has a Copilot Studio Publish step, which fits that reading. The explanation's sentence that publishing is needed states the same inference plainly. I accept it because it's Microsoft's general rule, nothing contradicts it, and the Yes answer no longer depends on it. Unchanged from the first pass: the help pane not being a named authentication host doesn't hold up as a reason for No, because the Copilot Studio page says 'such as', the extensibility article names SharePoint for this agent, and the help pane table says Yes. Preview status is stated and accepted. The word publish now appears in the two Yes items of this series, but it isn't a tell: the items are delivered one at a time, and accepted Series A uses it on both a Yes and a No.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-cb-s19",
+        "supported": true,
+        "section": "Prerequisites; Understand how Copilot extensibility works; Enable Copilot Studio extensibility; Type of Copilot Studio extensibility; Knowledge",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page updated 2026-10-17. Confirmed production-ready preview, the prerequisites, the check box, and the SharePoint example for the managed agent connected to Ask a question. The page doesn't mention publishing."
+      },
+      {
+        "sourceId": "sim-cb-s18",
+        "supported": true,
+        "section": "Features supported with different knowledge sources; Extend agent tab",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-09-10. Confirmed Ask a question is Yes for Knowledge sources in Copilot Studio, and that Extend agent with Copilot Studio is on this page, which applies to standalone."
+      },
+      {
+        "sourceId": "sim-cb-s24",
+        "supported": true,
+        "section": "Opening paragraphs; Advanced authentication scenarios",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed Read permission and the Restricted SharePoint Search block. The evidence note's statement about the authentication hosts is accurate. The page also says generative answers run on behalf of the user when you publish the agent."
+      },
+      {
+        "sourceId": "sim-cb-s25",
+        "supported": true,
+        "section": "Region availability and data movement",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed general availability only in North America, and that the scenario places the environment there."
+      },
+      {
+        "sourceId": "sim-cb-s29",
+        "supported": true,
+        "section": "Opening paragraphs; Publish the latest content",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page updated 2026-10-16. Confirmed each claim in the evidence note: publish before customers can engage, publish again after changes, unpublished changes don't reach customers, and select Publish with the agent open for editing. The article carries a note scoping it to the standard harness, which the evidence note doesn't repeat. It describes the rule as general and applied by inference, so I don't treat that as an error."
+      }
+    ],
+    "fingerprint": "15a6de67a7e674131b5ed80174d571c5c158f6dcc1974f866590db09cf2d04af"
+  },
+  {
+    "id": "sim-b-q11",
+    "revision": 1,
+    "reviewer": "case-b-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Re-review of the revised text. The leak is resolved and the No answer stands. The solution now says 'in the Customer Support agent settings', which is true, because Email settings is a tab of those settings, and the word Email no longer gives the answer. A learner now has to know that Trusted webpages are external web resources, and that those aren't a source for Ask a question. The help pane table shows External web resources as No for Ask a question and Yes for Write an email, and the note says external websites are used to draft emails and chat replies only. The scenario's line that the library isn't on the public web is still a clue, but using it takes knowing how Trusted webpages work, so it's a fact to apply, not a contrast in the wording. Only the prompt changed. The answer, explanations and evidence notes are accurate, and the evidence note 'The solution places the library in this setting' still holds. Distinct from ab250-d3-q08.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-cb-s18",
+        "supported": true,
+        "section": "Features supported with different knowledge sources; Email settings tab",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed the table values, five trusted web domains, the Bing Search requirement, and the note on external websites."
+      }
+    ],
+    "fingerprint": "c7e69168254c46ec4ab58397ebcb0fd86eaef24216327d4cbb64aafa2a5caee0"
+  },
+  {
+    "id": "sim-b-q12",
+    "revision": 1,
+    "reviewer": "case-b-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands, and the author's weak point 4 holds. This isn't a rejection from silence, which is what checks 5 and 9 guard against. The page positively defines the inputs: the agent turns cases and related conversations, emails and notes into articles, and the prerequisites require case or conversation entities or a custom Dynamics entity. Historical creation is configured only on the Cases, Conversations and Custom record types tabs, and a custom record type is chosen from a dropdown of record types with knowledge management turned on. A library of PDF files isn't a record type, and the solution's 'as its source' can't be configured. Strongest alternative: a custom record type, which fails because that route maps Dataverse attributes, not file content. I also searched learn.microsoft.com, including release plans, for this agent reading SharePoint or files and found nothing. Check 7: it's a real alternative route, into the knowledge base rather than past it. Distinct from ab250-d5-q45, q47 and q49.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-cb-s20",
+        "supported": true,
+        "section": "Opening paragraph; Prerequisites; Enable Customer Knowledge Management Agent; Enable historical knowledge creation; Add custom record types (preview)",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Page dated 2026-07-29. Confirmed the listed sources, the three tabs, and record type selection. No setting on the page accepts a SharePoint library."
+      }
+    ],
+    "fingerprint": "2250bf12bba6c91bc4e888bf6449fd0bea5f571174ebf3143cf205867e5711ce"
+  },
+  {
+    "id": "sim-b-q13",
+    "revision": 1,
+    "reviewer": "case-b-reviewer",
+    "reviewedAt": "2026-11-06",
+    "decision": "approved",
+    "rationale": "Stands. The table shows Knowledge base as Yes for Ask a question, and the Overview tab gives the exact checkbox and option the solution names. The conditions are met: knowledge management is configured, and the solution publishes the articles. Strongest alternative for No: the page ties articles to the language of the user interface, and the scenario says CSRs answer chats in English rather than naming the interface language. I read 'in Copilot Service workspace, in English' as covering that, and nothing in the scenario suggests otherwise. The goal asks for answers based on the handbook content, so recreating it as articles counts, and the scenario doesn't require the PDFs to be the source. Check 7: this is a real alternative to q10, with no shared design and no add-on. The series reads Yes, No, No, Yes and each solution stands alone. Distinct from ab250-d3-q08, which starts from an enabled source and tests article state and language, while this tests whether conversion is a valid route.",
+    "findings": [],
+    "sourceChecks": [
+      {
+        "sourceId": "sim-cb-s18",
+        "supported": true,
+        "section": "Features supported with different knowledge sources; Overview tab, Knowledge sources",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed the table, the checkbox and option labels, the content attribute, language tagging, latest version and Published state."
+      },
+      {
+        "sourceId": "sim-cb-s25",
+        "supported": true,
+        "section": "Region availability and data movement",
+        "accessedAt": "2026-11-06",
+        "claimReviewedAt": "2026-11-06",
+        "notes": "Confirmed general availability only in North America."
+      }
+    ],
+    "fingerprint": "5ca652a3054f9238dec60d0fedc4368f90331e40ab88a81fc66ff5ea1764c314"
+  }
+]

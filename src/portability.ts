@@ -41,7 +41,7 @@ export const workspaceBackupSchema = z.strictObject({
   }
   if (w.testAttempts.filter(attempt => attempt.completedAt === null).length > 1) issue('Only one unfinished test is allowed.');
 });
-const envelope = { format: z.literal('tsukiakari'), version: z.literal(2), exportedAt: timestamp };
+const envelope = { format: z.literal('tsukiakari'), version: z.literal(3), exportedAt: timestamp };
 const fullSchema = z.strictObject({ ...envelope, kind: z.literal('full'), workspace: workspaceBackupSchema });
 const deckSchemaExport = z.strictObject({ ...envelope, kind: z.literal('deck'), deck: z.strictObject({
   name: z.string().trim().min(1), settings: deckSettingsSchema,
@@ -62,29 +62,31 @@ const legacyBackupSchema = z.discriminatedUnion('kind', [
   settingsSchema.extend({ version: z.literal(1) }),
 ]);
 export function parseBackup(input: unknown): Backup {
-  const { version } = z.object({ version: z.union([z.literal(1), z.literal(2)]) }).parse(input);
-  if (version === 2) return backupSchema.parse(input);
+  const { version } = z.object({ version: z.union([z.literal(1), z.literal(2), z.literal(3)]) }).parse(input);
+  if (version === 3) return backupSchema.parse(input);
+  // Version 3 only adds optional records, so every version 2 file is valid as it stands.
+  if (version === 2) return backupSchema.parse({ ...(input as object), version: 3 });
   const legacy = legacyBackupSchema.parse(input);
-  if (legacy.kind !== 'full') return backupSchema.parse({ ...legacy, version: 2 });
+  if (legacy.kind !== 'full') return backupSchema.parse({ ...legacy, version: 3 });
   const testAttempts = legacy.workspace.testAttempts.map(migrateLegacyTestAttempt);
-  return backupSchema.parse({ ...legacy, version: 2, workspace: {
+  return backupSchema.parse({ ...legacy, version: 3, workspace: {
     ...legacy.workspace, testAttempts, testExposures: collectTestExposures(testAttempts),
   } });
 }
 export function createFullBackup(workspace: WorkspaceSnapshot, now = Date.now()): Extract<Backup, {kind:'full'}> {
-  return fullSchema.parse({ format:'tsukiakari', version:2, exportedAt:now, kind:'full', workspace });
+  return fullSchema.parse({ format:'tsukiakari', version:3, exportedAt:now, kind:'full', workspace });
 }
 export function createDeckBackup(workspace: WorkspaceSnapshot, deckId: string, now = Date.now()): Extract<Backup, {kind:'deck'}> {
   const checked = workspaceBackupSchema.parse(workspace);
   const deck = checked.decks.find(item => item.id === deckId);
   if (!deck) throw new Error('Choose an existing deck to export.');
-  return deckSchemaExport.parse({ format:'tsukiakari', version:2, exportedAt:now, kind:'deck', deck:{ name:deck.name, settings:deck.settings,
+  return deckSchemaExport.parse({ format:'tsukiakari', version:3, exportedAt:now, kind:'deck', deck:{ name:deck.name, settings:deck.settings,
     cards:checked.copies.filter(copy => copy.deckId === deckId && !copy.removed).map(({packId,cardId,contentRevision}) => ({packId,cardId,contentRevision})),
   } });
 }
 export function createSettingsBackup(workspace: WorkspaceSnapshot, now = Date.now()): Extract<Backup, {kind:'settings'}> {
   const checked = workspaceBackupSchema.parse(workspace);
-  return settingsSchema.parse({ format:'tsukiakari', version:2, exportedAt:now, kind:'settings', preferences:checked.preferences,
+  return settingsSchema.parse({ format:'tsukiakari', version:3, exportedAt:now, kind:'settings', preferences:checked.preferences,
     decks:checked.decks.map(({id,name,settings}) => ({id,name,settings})),
   });
 }

@@ -1,3 +1,4 @@
+import { sel } from '../support/selection';
 import 'fake-indexeddb/auto';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { engineeringQuestionBank as bank } from '../../src/content/engineeringQuestionBank';
@@ -8,9 +9,9 @@ import { answerTestAttempt, completeTestAttempt, createTestAttempt, questionOutc
 const start = 1_800_000_000_000;
 function finished(mode: 'practice' | 'exam', count: number, correctAnswers: number, wrongAnswers: number): TestAttempt {
   let attempt = createTestAttempt(bank, { mode, count, durationMinutes: 120, fixturePreview: true }, [], start, () => 0.5);
-  attempt.questions.slice(0, correctAnswers).forEach(question => { attempt = answerTestAttempt(attempt, question.card.id, question.card.correctOptionIds, start + 1); });
+  attempt.questions.slice(0, correctAnswers).forEach(question => { attempt = answerTestAttempt(attempt, question.card.id, sel(question.card).correctOptionIds, start + 1); });
   attempt.questions.slice(correctAnswers, correctAnswers + wrongAnswers).forEach(question => {
-    const wrong = question.card.options.filter(option => !question.card.correctOptionIds.includes(option.id)).slice(0, 1).map(option => option.id);
+    const wrong = sel(question.card).options.filter(option => !sel(question.card).correctOptionIds.includes(option.id)).slice(0, 1).map(option => option.id);
     attempt = answerTestAttempt(attempt, question.card.id, wrong, start + 1);
   });
   return completeTestAttempt(attempt, start + 2);

@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import type { StudyPack } from './domain';
+import { gradeQuestion, responseProblem } from './testGrading.ts';
 
 /** IDs are preserved verbatim. Never normalize or regenerate imported identities. */
 export const idSchema = z.string().min(1).refine(value => value.trim() === value && value.trim().length > 0, 'Identity must not be blank or padded.');
@@ -125,23 +126,76 @@ export const reviewLogSchema = z.strictObject({
 });
 
 /** Exam questions have their own contract; they are never installed as flashcards. */
-export const examQuestionSchema = z.strictObject({
+const examQuestionBase = {
+  id: idSchema, revision: z.number().int().positive(), domainId: idSchema,
+  objectiveIds: identifiers, conceptId: idSchema, prompt: text, answer: text, explanation: text,
+  sourceIds: identifiers.min(1), tags, optionExplanations: z.record(idSchema, text),
+  relatedNotes: z.array(z.strictObject({ packId: idSchema, noteId: idSchema })),
+  status: z.enum(['draft', 'approved']), groupId: idSchema.optional(),
+};
+const answerTableSchema = z.strictObject({ title: text, rowHeading: text, answerHeading: text });
+type Issue = (message: string) => void;
+function checkExplanations(question: { optionExplanations: Record<string, string>; relatedNotes: { packId: string; noteId: string }[] }, options: string[], issue: Issue) {
+  if (options.some(id => !question.optionExplanations[id]) || Object.keys(question.optionExplanations).some(id => !options.includes(id))) issue('Every option needs its own explanation and no unknown option explanations.');
+  if (!unique(question.relatedNotes.map(note => JSON.stringify([note.packId, note.noteId])))) issue('Related note references must be unique.');
+}
+// Parsed key order feeds the accepted bank's exact bytes and review fingerprints, so it must not change.
+const selectionQuestionSchema = z.strictObject({
   id: idSchema, revision: z.number().int().positive(), kind: z.enum(['single', 'multiple']),
   domainId: idSchema, objectiveIds: identifiers, conceptId: idSchema,
   prompt: text, answer: text, explanation: text,
   sourceIds: identifiers.min(1), tags, options: z.array(optionSchema).min(2),
   correctOptionIds: identifiers.min(1), optionExplanations: z.record(idSchema, text),
   relatedNotes: z.array(z.strictObject({ packId: idSchema, noteId: idSchema })),
-  status: z.enum(['draft', 'approved']),
+  status: z.enum(['draft', 'approved']), groupId: idSchema.optional(),
 }).superRefine((question, ctx) => {
-  const issue = (message: string) => ctx.addIssue({ code: 'custom', message });
+  const issue: Issue = message => ctx.addIssue({ code: 'custom', message });
   const options = question.options.map(option => option.id);
   if (!unique(options)) issue('Question option identities must be unique.');
   if (question.correctOptionIds.some(id => !options.includes(id))) issue('Correct answers must belong to the question.');
   if (question.kind === 'single' && question.correctOptionIds.length !== 1) issue('Single-answer questions need exactly one correct option.');
   if (question.kind === 'multiple' && question.correctOptionIds.length < 2) issue('Multiple-answer questions need at least two correct options.');
-  if (options.some(id => !question.optionExplanations[id]) || Object.keys(question.optionExplanations).some(id => !options.includes(id))) issue('Every option needs its own explanation and no unknown option explanations.');
-  if (!unique(question.relatedNotes.map(note => JSON.stringify([note.packId, note.noteId])))) issue('Related note references must be unique.');
+  checkExplanations(question, options, issue);
+});
+const matchQuestionSchema = z.strictObject({
+  ...examQuestionBase, kind: z.literal('match'), tray: text, table: answerTableSchema,
+  tokens: z.array(optionSchema).min(3),
+  rows: z.array(z.strictObject({ id: idSchema, label: text, correctTokenId: idSchema })).min(2),
+}).superRefine((question, ctx) => {
+  const issue: Issue = message => ctx.addIssue({ code: 'custom', message });
+  const tokens = question.tokens.map(token => token.id);
+  if (!unique(tokens)) issue('Question option identities must be unique.');
+  if (!unique(question.rows.map(row => row.id))) issue('Answer row identities must be unique.');
+  if (question.rows.some(row => !tokens.includes(row.correctTokenId))) issue('Correct answers must belong to the question.');
+  checkExplanations(question, tokens, issue);
+});
+const orderQuestionSchema = z.strictObject({
+  ...examQuestionBase, kind: z.literal('order'), tray: text,
+  tokens: z.array(optionSchema).min(3), correctOrder: identifiers.min(2),
+}).superRefine((question, ctx) => {
+  const issue: Issue = message => ctx.addIssue({ code: 'custom', message });
+  const tokens = question.tokens.map(token => token.id);
+  if (!unique(tokens)) issue('Question option identities must be unique.');
+  if (question.correctOrder.some(id => !tokens.includes(id))) issue('Correct answers must belong to the question.');
+  checkExplanations(question, tokens, issue);
+});
+const hotspotQuestionSchema = z.strictObject({
+  ...examQuestionBase, kind: z.literal('hotspot'), table: answerTableSchema,
+  rows: z.array(z.strictObject({ id: idSchema, label: text, options: z.array(optionSchema).min(2), correctOptionId: idSchema })).min(1),
+}).superRefine((question, ctx) => {
+  const issue: Issue = message => ctx.addIssue({ code: 'custom', message });
+  const options = question.rows.flatMap(row => row.options.map(option => option.id));
+  if (!unique(options)) issue('Question option identities must be unique.');
+  if (!unique(question.rows.map(row => row.id))) issue('Answer row identities must be unique.');
+  if (question.rows.some(row => !row.options.some(option => option.id === row.correctOptionId))) issue('Correct answers must belong to the question.');
+  checkExplanations(question, options, issue);
+});
+export const examQuestionSchema = z.discriminatedUnion('kind', [selectionQuestionSchema, matchQuestionSchema, orderQuestionSchema, hotspotQuestionSchema]);
+export const questionGroupSchema = z.strictObject({
+  id: idSchema, kind: z.enum(['case-study', 'series']), title: text,
+  exhibits: z.array(z.strictObject({ id: idSchema, title: text, body: text })).min(1),
+}).superRefine((group, ctx) => {
+  if (!unique(group.exhibits.map(exhibit => exhibit.id))) ctx.addIssue({ code: 'custom', message: 'Group exhibit identities must be unique.' });
 });
 export const testExposureSchema = z.strictObject({
   id: idSchema, bankId: idSchema, questionId: idSchema, lastSeenAt: timestamp,
@@ -156,8 +210,14 @@ export const testAttemptSchema = z.strictObject({
   durationMinutes: z.number().int().min(1).max(1440).optional(),
   deadlineAt: timestamp.nullable(), completedAt: timestamp.nullable(),
   questions: z.array(z.strictObject({ bankId: idSchema, card: examQuestionSchema, sources: z.array(sourceSchema).min(1), domainTitle: text })).min(1),
-  responses: z.array(z.strictObject({ cardId: idSchema, selectedOptionIds: identifiers, revealed: z.boolean() })),
-  result: z.strictObject({ correct: count, wrong: count, skipped: count }).nullable(),
+  responses: z.array(z.strictObject({ cardId: idSchema, selectedOptionIds: identifiers, revealed: z.boolean(), placements: z.record(idSchema, idSchema).optional() })),
+  result: z.strictObject({ correct: count, wrong: count, skipped: count, points: z.strictObject({ earned: count, possible: count }).optional() }).nullable(),
+  scoring: z.literal('per-selection').optional(),
+  groups: z.array(questionGroupSchema).optional(),
+  delivery: z.strictObject({
+    sections: z.array(z.strictObject({ id: idSchema, kind: z.enum(['general', 'case-study', 'series']), title: text, groupId: idSchema.optional(), cardIds: identifiers.min(1) })).min(1),
+    position: count, flaggedCardIds: identifiers, lockedBefore: count,
+  }).optional(),
 }).superRefine((attempt, ctx) => {
   const issue = (message: string) => ctx.addIssue({ code: 'custom', message });
   if (!unique(attempt.questions.map(question => question.card.id))) issue('Test questions must be unique.');
@@ -168,16 +228,30 @@ export const testAttemptSchema = z.strictObject({
     if (!unique(question.sources.map(source => source.id)) || question.card.sourceIds.some(id => !question.sources.some(source => source.id === id))) issue('Snapshot sources must be unique and include every question reference.');
   }
   if (!unique(attempt.responses.map(response => response.cardId)) || attempt.responses.length !== attempt.questions.length) issue('Each test question needs exactly one response.');
-  let correct = 0; let wrong = 0; let skipped = 0;
+  let correct = 0; let wrong = 0; let skipped = 0; let earned = 0; let possible = 0;
   for (const response of attempt.responses) {
     const card = attempt.questions.find(question => question.card.id === response.cardId)?.card;
     if (!card) { issue('Response refers to an unknown question.'); continue; }
-    if (response.selectedOptionIds.some(id => !card.options.some(option => option.id === id))) issue('Response option must belong to its question.');
-    if (response.selectedOptionIds.length > card.correctOptionIds.length) issue('Response exceeds the question selection count.');
+    const problem = responseProblem(card, response);
+    if (problem) { issue(problem); continue; }
     if (attempt.mode === 'exam' && response.revealed) issue('Exam responses cannot be revealed individually.');
-    if (!response.selectedOptionIds.length) skipped++;
-    else if (response.selectedOptionIds.length === card.correctOptionIds.length && response.selectedOptionIds.every(id => card.correctOptionIds.includes(id))) correct++;
+    const grade = gradeQuestion(card, response, attempt.scoring);
+    earned += grade.earned; possible += grade.possible;
+    if (grade.state === 'skipped') skipped++;
+    else if (grade.state === 'correct') correct++;
     else wrong++;
+  }
+  const groupIds = new Set((attempt.groups ?? []).map(group => group.id));
+  if (groupIds.size !== (attempt.groups ?? []).length) issue('Saved question groups must be unique.');
+  if (attempt.questions.some(question => question.card.groupId !== undefined && !groupIds.has(question.card.groupId))) issue('Every grouped question needs its saved group.');
+  const { delivery } = attempt;
+  if (delivery) {
+    const order = delivery.sections.flatMap(section => section.cardIds);
+    if (JSON.stringify(order) !== JSON.stringify(attempt.questions.map(question => question.card.id))) issue('Test sections must list every question once, in order.');
+    if (delivery.sections.some(section => section.groupId !== undefined && !groupIds.has(section.groupId))) issue('A test section refers to a missing group.');
+    if (delivery.position >= attempt.questions.length) issue('The saved question position is outside this test.');
+    if (delivery.lockedBefore > attempt.questions.length || (attempt.mode === 'practice' && delivery.lockedBefore !== 0)) issue('The saved section lock is invalid.');
+    if (delivery.flaggedCardIds.some(id => !order.includes(id))) issue('A flagged question is not part of this test.');
   }
   if (attempt.mode === 'practice' && attempt.deadlineAt !== null) issue('Practice tests cannot have deadlines.');
   if (attempt.mode === 'exam') {
@@ -191,5 +265,6 @@ export const testAttemptSchema = z.strictObject({
   } else {
     if (attempt.completedAt < attempt.startedAt) issue('Completion cannot precede the start.');
     if (!attempt.result || attempt.result.correct !== correct || attempt.result.wrong !== wrong || attempt.result.skipped !== skipped) issue('Results must match the saved responses and answer snapshots.');
+    if (attempt.scoring && (attempt.result?.points?.earned !== earned || attempt.result?.points?.possible !== possible)) issue('Results must match the saved responses and answer snapshots.');
   }
 });

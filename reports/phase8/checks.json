@@ -1,0 +1,27 @@
+{
+  "stage": "8B",
+  "completedAtUtc": "2026-11-06T01:56:30Z",
+  "lint": "passed",
+  "unit": {
+    "status": "passed",
+    "tests": 382,
+    "files": 30
+  },
+  "build": "passed, including all content approval and publication gates",
+  "browser": {
+    "status": "passed",
+    "tests": 162,
+    "origin": "http://localhost:4187",
+    "workers": 4,
+    "simulatorSuite": "26 tests, also passed three consecutive repeats",
+    "intermittent": "notes-redesign inline save and phase4 abandon focus each failed once at 8 workers straight after a heavy run, then passed 8 of 8 alone, 18 of 18 in their specs, and in the final full run. Neither test covers simulator code, but the cause was not proven."
+  },
+  "acceptedContent": "No changes under src/content/published, pilot, exams or batches, or docs/phase7",
+  "dumpScan": "No dump text, watermark or personal email in changed or new files",
+  "notRun": [
+    "Lighthouse, scheduled for 8E",
+    "Fresh clone install, scheduled for 8E",
+    "Real phone or tablet; touch was exercised through Edge touch emulation only",
+    "Screen reader; announcements were written but not heard with one"
+  ]
+}

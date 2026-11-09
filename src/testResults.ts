@@ -1,4 +1,5 @@
 import type { CanonicalNoteRef, StudyPack, TestAttempt } from './domain';
+import { gradeQuestion } from './testGrading';
 
 export interface TestDomainResult {
   domainId: string; title: string; total: number; correct: number; wrong: number; skipped: number;
@@ -27,11 +28,10 @@ export function getTestDomainResults(attempt: TestAttempt): TestDomainResult[] {
       notesByDomain.set(card.domainId, new Set());
     }
     const response = responses.get(card.id);
-    const selected = response?.selectedOptionIds ?? [];
-    const correct = selected.length === card.correctOptionIds.length && selected.every(id => card.correctOptionIds.includes(id));
+    const { state } = gradeQuestion(card, response, attempt.scoring);
     group.total++;
-    if (!selected.length) group.skipped++;
-    else if (correct) {
+    if (state === 'skipped') group.skipped++;
+    else if (state === 'correct') {
       group.correct++;
       if (!response?.revealed) group.correctWithoutReveal++;
     } else group.wrong++;

@@ -1,3 +1,4 @@
+import { sel } from '../support/selection';
 import { test, expect, type Locator, type Page } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 import type { Deck, LearningCopy, ReviewLog, SchedulerState, StudyCuration, StudyPack, TestAttempt } from '../../src/domain';
@@ -154,7 +155,7 @@ test('one learner goes from choosing packs through study, feedback and tests to 
   const practice = await startTest(page, 'practice', 50);
   expect(new Set(practice.questions.map(question => question.card.id)).size).toBe(50);
   const firstQuestion = practice.questions[0].card;
-  await chooseAnswer(page, practice, 0, firstQuestion.correctOptionIds);
+  await chooseAnswer(page, practice, 0, sel(firstQuestion).correctOptionIds);
   const panel = page.locator('.test-question').first();
   await panel.getByRole('button', { name: 'Reveal answer', exact: true }).click();
   await finish(page);
@@ -178,8 +179,8 @@ test('one learner goes from choosing packs through study, feedback and tests to 
   await expect(page.getByRole('region', { name: 'Results by domain', exact: true })).toHaveCount(0);
   const multiple = exam.questions.findIndex(question => question.card.kind === 'multiple');
   const single = exam.questions.findIndex(question => question.card.kind === 'single');
-  await chooseAnswer(page, exam, multiple, exam.questions[multiple].card.correctOptionIds.slice(0, 1));
-  await chooseAnswer(page, exam, single, exam.questions[single].card.correctOptionIds);
+  await chooseAnswer(page, exam, multiple, sel(exam.questions[multiple].card).correctOptionIds.slice(0, 1));
+  await chooseAnswer(page, exam, single, sel(exam.questions[single].card).correctOptionIds);
   await finish(page);
   const dialog = page.getByRole('dialog', { name: 'Test results', exact: true });
   await expect(dialog).toContainText('1/50 (2%)');

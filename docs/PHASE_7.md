@@ -1,6 +1,6 @@
 # Phase 7: sourced learning and certification practice
 
-Started 2026-10-28 after Phase 6 acceptance. 7A through 7F are accepted. The user accepted [7F](PHASE_7F.md) and authorized 7G on 2026-11-04. [7G](PHASE_7G.md), the final integrated acceptance, is ready and stops for the user's final Phase 7 acceptance. The accepted 235-card/78-note study collection, 300-question original bank and frozen 24-question pilot objects are unchanged. Earlier reports retain historical inventories.
+Started 2026-10-28 after Phase 6 acceptance. 7A through 7G are accepted; the user gave final Phase 7 acceptance on 2026-11-05 and authorized [Phase 8](PHASE_8.md). The accepted 235-card/78-note study collection, 300-question original bank and frozen 24-question pilot objects are unchanged. Earlier reports retain historical inventories.
 
 ## Learner outcome
 
@@ -11,7 +11,7 @@ Choose a pack, assemble a personal deck, study sourced cards, understand difficu
 - Three curated packs: practical D365 Contact Center implementation; AB-250 certification preparation; AB-250 advanced scenarios.
 - One canonical source/card/note registry, with pack-specific curation. Shared cards cannot be duplicated into the same deck through different pack views. Different decks retain independent learning copies.
 - One separate AB-250 bank of at least 300 approved, substantively distinct questions, shared by both certification packs. This supersedes the earlier 300 embedded MCQs per pack requirement.
-- Single-answer and explicitly counted multiple-answer questions; one point per question and exact-set scoring. Long scenarios supported. Requirement-to-answer matching is deferred; later implementation should offer accessible selects rather than require dragging.
+- Single-answer and explicitly counted multiple-answer questions; one point per question and exact-set scoring. Long scenarios supported. Requirement-to-answer matching was deferred here. Superseded on 2026-11-05 by [Phase 8](PHASE_8.md): the simulator bank uses real drag and drop, and every drag has a non-drag path. One point per question and exact-set scoring still apply to `ab250-original`.
 - Microsoft study guide governs exam coverage; product documentation governs behavior; Learn modules provide teaching sequence; community material supplies independently checked ideas.
 - Keep content in versioned repository files, distributed by the website. No CMS, cloud learner storage, accounts, telemetry, PWA, or deployment in this work.
 - Personal JSON import/export remains supported. New persisted contracts require versioned compatibility with current Tsukiakari v1 exports, not migration from the old website.

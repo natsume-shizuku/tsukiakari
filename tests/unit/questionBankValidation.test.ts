@@ -1,3 +1,4 @@
+import { sel } from '../support/selection';
 import { fixturePack } from '../../src/content/fixtures';
 import { describe, expect, it } from 'vitest';
 import { engineeringQuestionBank as bank } from '../../src/content/engineeringQuestionBank';
@@ -15,12 +16,12 @@ describe('question-bank publication structure', () => {
     if (variant === 'duplicate-domain') input.domains[1].id = input.domains[0].id;
     if (variant === 'weight-total') input.domains[0].weight++;
     if (variant === 'weight-zero') input.domains[0].weight = 0;
-    if (variant === 'missing-rationale') delete single.optionExplanations[single.options[0].id];
-    if (variant === 'wrong-answer') single.correctOptionIds = ['unknown'];
-    if (variant === 'single-multiple') single.correctOptionIds = single.options.slice(0, 2).map(option => option.id);
-    if (variant === 'multiple-single') multi.correctOptionIds = [multi.correctOptionIds[0]];
-    if (variant === 'duplicate-answer') multi.correctOptionIds[1] = multi.correctOptionIds[0];
-    if (variant === 'duplicate-option') single.options[1].id = single.options[0].id;
+    if (variant === 'missing-rationale') delete single.optionExplanations[sel(single).options[0].id];
+    if (variant === 'wrong-answer') sel(single).correctOptionIds = ['unknown'];
+    if (variant === 'single-multiple') sel(single).correctOptionIds = sel(single).options.slice(0, 2).map(option => option.id);
+    if (variant === 'multiple-single') sel(multi).correctOptionIds = [sel(multi).correctOptionIds[0]];
+    if (variant === 'duplicate-answer') sel(multi).correctOptionIds[1] = sel(multi).correctOptionIds[0];
+    if (variant === 'duplicate-option') sel(single).options[1].id = sel(single).options[0].id;
     expect(() => validateQuestionBank(input)).toThrow();
   });
   it('permits a draft inventory without mistaking it for exam eligibility', () => {

@@ -1,6 +1,6 @@
 # 月明かり / Tsukiakari — comprehensive project and agent handoff
 
-**Prepared: 2026-11-04 UTC.** This document consolidates the user's requests, approved decisions, implementation, phase history, design, content and operational constraints. It is not a verbatim transcript or a repository copy. It contains the important context needed to continue with another agent; implementation files and detailed evidence should accompany actual coding work.
+**Prepared: 2026-11-04 UTC. Status updated 2026-11-05.** This document consolidates the user's requests, approved decisions, implementation, phase history, design, content and operational constraints. It is not a verbatim transcript or a repository copy. It contains the important context needed to continue with another agent; implementation files and detailed evidence should accompany actual coding work.
 
 ## 1. Read first: correct project, authorization and status
 
@@ -9,8 +9,7 @@
 - **D:/Coding/d365-pa-study-desk is the OLD application.** Do not work there, copy its code/design/content, or mutate its learner data.
 - The environment sometimes starts in the old directory and supplies its AGENTS.md. Explicitly set the new repository as working directory and read **D:/Coding/tsukiakari/AGENTS.md**. The projects have different contracts and content.
 - The user requested a fresh project, repository, design, theme and implementation. The old site was based on the user's brother's interview study site; that is background, not a template to reuse.
-- **Phases 1–6 and 7A–7F are accepted. Phase 7G is implemented and awaiting the user's final Phase 7 acceptance.** See docs/PHASE_7G.md, which supersedes the 7F status and test counts below.
-- This document does **not** accept Phase 7. Continue requested 7G corrections, then let the user decide.
+- **Phases 1–6 and 7A–7G are accepted.** The user accepted 7G and authorized Phase 8, the AB-250 exam simulator, on 2026-11-05. See docs/PHASE_8.md, which is the current status. docs/PHASE_7G.md supersedes the 7F status and test counts below.
 - Each commit or push needs explicit user authorization, and no deployment is authorized. Keep the repository private.
 - Git was resolved on 2026-11-04. Git for Windows is installed, and `main` tracks `origin/main`. The earlier “must be run in a work tree” error came from Git being absent, not from the repository. `.gitattributes` stores files byte for byte, and `reports/` tracks only compact per-phase results.
 - The new repository is outside this session's default writable roots. Writes/builds/browser processes have used the execution tool's escalation mechanism. That is an environment permission boundary, not a reason to move the project into the old repository.
@@ -575,13 +574,7 @@ npm run test:e2e -- --workers=4
 
 Lint is TypeScript no-emit, not separate ESLint. Edge must be installed. E2E tests use existing dist, so build first. Playwright refuses reuse of an occupied 4187 server.
 
-This host sometimes has no valid default Intl timezone. Verified unit runs used this **process-local** workaround:
-
-~~~powershell
-$env:TZ = 'UTC'
-~~~
-
-Do not change learner preferences to fix a host test environment.
+This host's `Alberta Standard Time` setting gives no default Intl timezone in Node or in browsers with older time data. Edge 156 names it. The app falls back to the reported offset, so don't set `TZ` for checks: it hides this path.
 
 npm run content:check verifies generated study/pilot/bank. npm run check:browser is a separate foundation FSRS probe, not replacement for regressions.
 

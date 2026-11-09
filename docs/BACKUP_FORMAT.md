@@ -1,6 +1,6 @@
-# Tsukiakari JSON format, version 2
+# Tsukiakari JSON format, version 3
 
-Every file has format: "tsukiakari", version: 2, exportedAt (Unix milliseconds), and kind (full, deck, or settings). Unknown versions, fields, invalid identities and invalid relationships are rejected before writing. Both file import and export support up to 100 MB. JSON is not encrypted; full backups include private notes and learning history.
+Every file has format: "tsukiakari", version: 3, exportedAt (Unix milliseconds), and kind (full, deck, or settings). Unknown versions, fields, invalid identities and invalid relationships are rejected before writing. Both file import and export support up to 100 MB. JSON is not encrypted; full backups include private notes and learning history.
 
 ## Full
 
@@ -26,6 +26,22 @@ Changed deck settings retain progress/history but end that deck's active review 
 
 Version 1 Tsukiakari JSON remains importable for full backups, deck selections, and settings. Validation runs against the strict original shape before migration. Legacy single-answer test snapshots become independent bank snapshots with a one-element correctOptionIds array; selectedOptionId becomes selectedOptionIds (empty when unanswered). Original question identities, answer keys, sources, results, deadlines, and learner annotations are retained. Legacy domains are explicitly unclassified and missing per-option explanations are identified rather than invented. No migration from the old website or Anki packages is supported. No online services, uploads or synchronization are involved.
 
+
+## Version 3 test records
+
+Version 3 adds optional records for the exam simulator. Versions 1 and 2 stay importable and are upgraded on import; every version 2 file is already a valid version 3 file apart from its version number. A file from a newer version is rejected, as before.
+
+Question snapshots can now also be `match`, `order` or `hotspot`, and can carry a `groupId`. Single and multiple-answer snapshots keep their exact shape and field order.
+
+Simulator attempts add:
+
+- `scoring: "per-selection"`. Attempts without it keep one point per question and exact-set scoring.
+- `groups`: the case studies and series used, frozen with their full text so results stay reviewable after the bank changes.
+- `delivery`: `sections` in order, the current `position`, `flaggedCardIds`, and `lockedBefore`, a single index below which Exam Mode questions are closed.
+- `placements` on each response. For match and hotspot it maps a row to the chosen ID. For order it maps a position such as `position-1` to a token, so gaps are allowed while answering.
+- `result.points`, with `earned` and `possible`. A partly correct question counts as wrong in the correct, wrong and skipped totals, and earns its partial points here.
+
+The browser database schema does not change, because no indexes changed.
 
 ## Version 2 test records
 
