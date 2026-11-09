@@ -1,7 +1,7 @@
 {
   "version": 1,
   "bankId": "ab250-simulator",
-  "releaseVersion": "1.0.0",
+  "releaseVersion": "0.9.0",
   "release": false,
   "title": "AB-250 — Exam Simulator",
   "description": "Original practice in exam-style formats, assembled fresh for each test. This is independent practice material, not Microsoft exam content.",
@@ -17,6 +17,8 @@
     { "id": "8d-case-b", "bundle": "src/content/simulator/8d-case-b.json", "review": "docs/phase8/reviews/8d-case-b-review.json" },
     { "id": "8d-deployment", "bundle": "src/content/simulator/8d-deployment.json", "review": "docs/phase8/reviews/8d-deployment-review.json" },
     { "id": "8d-channels-voice", "bundle": "src/content/simulator/8d-channels-voice.json", "review": "docs/phase8/reviews/8d-channels-voice-review.json" },
-    { "id": "8d-channels-digital", "bundle": "src/content/simulator/8d-channels-digital.json", "review": "docs/phase8/reviews/8d-channels-digital-review.json" }
+    { "id": "8d-channels-digital", "bundle": "src/content/simulator/8d-channels-digital.json", "review": "docs/phase8/reviews/8d-channels-digital-review.json" },
+    { "id": "8d-experience", "bundle": "src/content/simulator/8d-experience.json", "review": "docs/phase8/reviews/8d-experience-review.json", "partial": true },
+    { "id": "8d-ai-distribution", "bundle": "src/content/simulator/8d-ai-distribution.json", "review": "docs/phase8/reviews/8d-ai-distribution-review.json", "partial": true }
   ]
 }

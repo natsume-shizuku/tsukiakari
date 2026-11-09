@@ -84,10 +84,22 @@ export function simulatorFingerprint(question,bundle){
  return contentFingerprint({...question,group},bundle.editorial.find(item=>item.id===question.id),bundle.sources);
 }
 
+// A preview may publish the approved questions of a batch still in review. Unapproved questions, their editorial
+// entries and sources nothing else cites are left out, so approvals and fingerprints are checked exactly as for a full batch.
+export function approvedPart(bundle,reviews){
+ const approved=new Set(reviews.filter(review=>review.decision==='approved').map(review=>review.id));
+ const questions=bundle.questions.filter(question=>approved.has(question.id));
+ const groupIds=new Set(questions.map(question=>question.groupId).filter(Boolean));
+ if(bundle.groups.some(group=>groupIds.has(group.id)&&bundle.questions.some(question=>question.groupId===group.id&&!approved.has(question.id))))fail('A partial batch cannot split a case study or series');
+ const cited=new Set(questions.flatMap(question=>question.sourceIds));
+ return {bundle:{...bundle,sources:bundle.sources.filter(source=>cited.has(source.id)),questions,editorial:bundle.editorial.filter(item=>approved.has(item.id)),groups:bundle.groups.filter(group=>groupIds.has(group.id))},reviews:reviews.filter(review=>approved.has(review.id))};
+}
+
 export function validateSimulatorManifest(manifest){
  if(manifest?.version!==1||!text(manifest.bankId)||!text(manifest.releaseVersion)||!text(manifest.title)||!text(manifest.description)||typeof manifest.release!=='boolean'||!manifest.blueprint)fail('Invalid simulator manifest');
  ids(manifest.batches,'simulator batches');
  for(const batch of manifest.batches)if(!batch.bundle?.startsWith('src/content/simulator/')||!batch.review?.startsWith('docs/phase8/reviews/'))fail('Batch outside the simulator folders: '+batch.id);
+ if(manifest.release&&manifest.batches.some(batch=>batch.partial))fail('A release cannot include partial batches');
  return manifest;
 }
 export function validateSimulatorBatch({bundle,reviews,pack,objectiveIds,blockedIds,base}){

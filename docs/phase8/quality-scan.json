@@ -1,20 +1,20 @@
 {
-  "questions": 85,
+  "questions": 108,
   "formats": {
-    "hotspot": 21,
-    "order": 5,
-    "match": 20,
-    "multiple": 18,
-    "single": 13,
+    "hotspot": 29,
+    "order": 6,
+    "match": 23,
+    "multiple": 24,
+    "single": 18,
     "series": 8
   },
   "domains": {
-    "channels": 40,
-    "agents-ai": 6,
-    "work-distribution": 7,
+    "channels": 41,
+    "agents-ai": 12,
+    "work-distribution": 12,
     "deployment": 18,
     "analytics": 11,
-    "representative-experience": 3
+    "representative-experience": 14
   },
   "groups": [
     {
@@ -43,7 +43,7 @@
   "singleAnswerPositions": [
     {
       "position": 1,
-      "count": 4
+      "count": 9
     },
     {
       "position": 2,

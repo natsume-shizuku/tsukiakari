@@ -472,3 +472,18 @@ test.describe('touch', () => {
     await expect.poll(() => placements(page, card.id)).toEqual({ [card.rows[0].id]: card.tokens[0].id });
   });
 });
+
+test('the published simulator preview starts a 50-question exam', async ({ page }) => {
+  await page.goto('/#tests');
+  await expect(page.getByText('Saved in this browser', { exact: true }).first()).toBeVisible();
+  await page.getByLabel('Question bank', { exact: true }).selectOption('ab250-simulator');
+  await expect(page.getByText(/\d+ available questions/)).toBeVisible();
+  await page.getByLabel('Test mode', { exact: true }).selectOption('exam');
+  await page.getByLabel('Number of questions', { exact: true }).fill('50');
+  await page.getByRole('button', { name: 'Start exam', exact: true }).click();
+  await expect(page.locator('.test-session-bar')).toContainText('of 50 answered');
+  const attempt = await active(page);
+  expect(attempt.bankId).toBe('ab250-simulator');
+  expect(attempt.fixture).toBe(false);
+  expect(attempt.delivery!.sections.some(section => section.kind === 'case-study')).toBe(true);
+});

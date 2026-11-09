@@ -1,6 +1,6 @@
 {
   "id": "ab250-simulator",
-  "version": "1.0.0",
+  "version": "0.9.0",
   "title": "AB-250 — Exam Simulator",
   "description": "Original practice in exam-style formats, assembled fresh for each test. This is independent practice material, not Microsoft exam content.",
   "fixture": false,
@@ -683,6 +683,51 @@
       "url": "https://learn.microsoft.com/en-us/dynamics365/contact-center/administer/configure-multilingual-agents"
     },
     {
+      "id": "sim-d34-s01",
+      "title": "Turn on DTMF support for your voice-enabled agent",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-dtmf"
+    },
+    {
+      "id": "sim-d34-s03",
+      "title": "Consent-based recording",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/voice-consent-based-record"
+    },
+    {
+      "id": "sim-d34-s04",
+      "title": "Work with variables",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-variables"
+    },
+    {
+      "id": "sim-d34-s05",
+      "title": "Variables overview",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-variables-about"
+    },
+    {
+      "id": "sim-d34-s09",
+      "title": "Best practices for configuring AI agents",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-bot-best-practices"
+    },
+    {
+      "id": "sim-d34-s10",
+      "title": "Integrate a Copilot agent in Dynamics 365 Contact Center",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-bot-virtual-agent"
+    },
+    {
+      "id": "sim-d34-s11",
+      "title": "Configure work classification rulesets",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/configure-work-classification"
+    },
+    {
+      "id": "sim-d34-s12",
+      "title": "Work with global variables",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-variables-bot"
+    },
+    {
+      "id": "sim-d34-s13",
+      "title": "Use system topics",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-system-topics"
+    },
+    {
       "id": "sim-d4-s01",
       "title": "Manage overflow of work items in queues",
       "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/manage-overflow"
@@ -721,6 +766,76 @@
       "id": "sim-d4-s08",
       "title": "Handle waiting conversations when queues close or become unstaffed",
       "url": "https://learn.microsoft.com/en-us/dynamics365/release-plan/2026wave1/service/dynamics365-contact-center/handle-waiting-conversations-when-queues-close-or-become-unstaffed"
+    },
+    {
+      "id": "sim-d5-s01",
+      "title": "Create productivity automation macros",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/macros-productivity-automation"
+    },
+    {
+      "id": "sim-d5-s02",
+      "title": "Use session connector macros",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/macros-session-action"
+    },
+    {
+      "id": "sim-d5-s03",
+      "title": "Use Omnichannel connector macros",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/macros-omnichannel-action"
+    },
+    {
+      "id": "sim-d5-s04",
+      "title": "Manage integrated search providers",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/add-search-provider"
+    },
+    {
+      "id": "sim-d5-s05",
+      "title": "Configure knowledge management",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/set-up-knowledge-management-embedded-knowledge-search"
+    },
+    {
+      "id": "sim-d5-s06",
+      "title": "Search knowledge articles",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/use/search-knowledge-articles-csh"
+    },
+    {
+      "id": "sim-d5-s09",
+      "title": "Manage custom productivity tools for service representatives",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/manage-custom-productivity-tools"
+    },
+    {
+      "id": "sim-d5-s10",
+      "title": "Enable multisession experience and productivity tools in custom apps",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/enable-multisession-custom-apps"
+    },
+    {
+      "id": "sim-d5-s11",
+      "title": "createSession method (app profile manager) JavaScript API Reference",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/reference/methods/createsession"
+    },
+    {
+      "id": "sim-d5-s12",
+      "title": "canCreateSession method (app profile manager) JavaScript API Reference",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/reference/methods/cancreatesession"
+    },
+    {
+      "id": "sim-d5-s13",
+      "title": "createTab method (app profile manager) JavaScript API Reference",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/reference/methods/createtab"
+    },
+    {
+      "id": "sim-d5-s14",
+      "title": "linkToConversation (Omnichannel JavaScript API reference)",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/reference/methods/linktoconversation"
+    },
+    {
+      "id": "sim-d5-s15",
+      "title": "Create and manage data masking rules",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/administer/data-masking-settings"
+    },
+    {
+      "id": "sim-d5-s17",
+      "title": "App profile manager JavaScript API Reference",
+      "url": "https://learn.microsoft.com/en-us/dynamics365/customer-service/develop/microsoft-apm"
     },
     {
       "id": "sim-d6-s01",
@@ -7436,6 +7551,1868 @@
         {
           "packId": "contact-center-core",
           "noteId": "cc-d2-n05"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "sim-d5-q05",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.3.02"
+      ],
+      "conceptId": "integrated-provider-trial-activate-backfill",
+      "prompt": "Wyndale Cycles runs Dynamics 365 Contact Center standalone. Its public support site is a static website, and its site map includes a lastmod tag for each article. Integrated search providers are already provisioned, and the Integrated Search API trigger flow is turned on. Nothing has been set up for the support site yet.\n\nWyndale requires:\n- No support-site article appears in representatives' search results until a sample ingestion has been checked for crawl failures.\n- After that check, a one-off ingestion picks up articles updated during the past 30 days.\n\nYou need to add the support site as an integrated search provider.\n\nWhich four actions should you perform in sequence?",
+      "answer": "Complete the wizard and select Save and close, run a trial ingestion, activate the search provider, and then run a time-range based ingestion.",
+      "explanation": "Each step needs the status that the step before it produces. Save and close saves the provider as Inactive with status reason Validated, and a trial ingestion can run only in that state. The trial has to come before activation, both because it runs on an inactive, validated provider and because activating starts ingestion and puts articles into search results. A time-range based ingestion runs only when the provider is Active with status reason Ingestion Ready, so activation comes before it, as Microsoft states after the trial.",
+      "sourceIds": [
+        "sim-d5-s04"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "task:apply",
+        "feature:integrated-search-providers"
+      ],
+      "optionExplanations": {
+        "a": "Correct as the fourth step. It needs the provider to be Active with status reason Ingestion Ready, and it picks up updated articles from the date range you specify.",
+        "b": "Fails. Save as draft leaves the provider Inactive with status reason Draft, and you can't run any ingestion in that state.",
+        "c": "Correct as the third step. Activating starts ingestion of new and updated articles and makes articles appear in search results, so it has to wait for the trial check.",
+        "d": "Correct as the second step. A trial ingestion runs when the provider is Inactive with status reason Validated, and its errors show in the Crawl failures column on the Insights tab.",
+        "e": "Correct as the first step. Save and close puts the new provider in Inactive status with status reason Validated, which the trial ingestion needs.",
+        "f": "Fails. A search filter limits results to selected providers when Dataverse search is on. It doesn't ingest articles or control when they appear."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n09"
+        }
+      ],
+      "status": "approved",
+      "kind": "order",
+      "tray": "Actions",
+      "tokens": [
+        {
+          "id": "a",
+          "text": "Run a time-range based ingestion."
+        },
+        {
+          "id": "b",
+          "text": "Select Save as draft in the wizard's Summary section."
+        },
+        {
+          "id": "c",
+          "text": "Activate the search provider."
+        },
+        {
+          "id": "d",
+          "text": "Run a trial ingestion."
+        },
+        {
+          "id": "e",
+          "text": "Complete the wizard, and then select Save and close."
+        },
+        {
+          "id": "f",
+          "text": "Add Integrated Search Dataprovider Id as a search filter."
+        }
+      ],
+      "correctOrder": [
+        "e",
+        "d",
+        "c",
+        "a"
+      ]
+    },
+    {
+      "id": "sim-d5-q07",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.1.04"
+      ],
+      "conceptId": "generic-session-template-anchor-icon-title",
+      "prompt": "Harrowgate Ferries runs Dynamics 365 Contact Center standalone and is creating a custom session template for its WhatsApp workstream in Copilot Service workspace. Requirements:\n- A custom Passenger summary application tab opens as the anchor tab.\n- The session shows a ferry icon that the design team supplied as an .ico image file.\n- The session title that representatives see shows the customer's name.\n\nYou need to configure the session template.\n\nWhat should you configure for each setting?",
+      "answer": "Type: Generic. Session Icon: the ferry image deployed as a web resource. Title: {customerName}.",
+      "explanation": "Two requirements decide the type. The Anchor tab option is displayed only when Type is Generic, and Session Icon is available for Generic templates only, so an Entity template can't meet either. The icon must be a deployed web resource file: slugs can't customize it, and GIF files aren't supported. Session and notification titles take template slugs in the {Slug} format, as in the page's {customerName} title example. The ${Slug} format belongs to macros and scripts, and ${$session.<slug>} to the session connector context.",
+      "sourceIds": [
+        "sim-cb-s07",
+        "sim-cb-s03"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "task:apply",
+        "feature:session-templates"
+      ],
+      "optionExplanations": {
+        "r1a": "Correct. Generic is the type for templates assigned to any channel, and only a Generic template shows the Anchor tab option and supports a session icon.",
+        "r1b": "Fails. Contact is a user-owned table that the Entity list offers, but an Entity template doesn't show the Anchor tab option and can't use a session icon.",
+        "r1c": "Fails. An Entity template for cases doesn't show the Anchor tab option and can't use a session icon.",
+        "r2a": "Correct. A web resource file for the icon must be deployed, and only a web resource file can be used. GIF files aren't supported, and Microsoft's own example is an .ico file.",
+        "r2b": "Fails. You can use a web resource file only, not slugs, to customize the session icon.",
+        "r2c": "Fails. The icon has to be a deployed web resource file, not an outside address.",
+        "r3a": "Correct. Templates use the {Slug} format, and {customerName} is Microsoft's own example for a session title.",
+        "r3b": "Fails. The ${Slug} format is for macros and scripts. Templates use {Slug}.",
+        "r3c": "Fails. The ${$session.<slug>} format runs a slug in the session connector context of a macro. It isn't a template format."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n04"
+        }
+      ],
+      "status": "approved",
+      "kind": "hotspot",
+      "table": {
+        "title": "WhatsApp session template",
+        "rowHeading": "Setting",
+        "answerHeading": "Value"
+      },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Type",
+          "options": [
+            {
+              "id": "r1a",
+              "text": "Generic"
+            },
+            {
+              "id": "r1b",
+              "text": "Entity, with Contact as the entity"
+            },
+            {
+              "id": "r1c",
+              "text": "Entity, with Case as the entity"
+            }
+          ],
+          "correctOptionId": "r1a"
+        },
+        {
+          "id": "r2",
+          "label": "Session Icon",
+          "options": [
+            {
+              "id": "r2a",
+              "text": "The ferry image deployed as a web resource"
+            },
+            {
+              "id": "r2b",
+              "text": "A slug that resolves to the ferry image's URL"
+            },
+            {
+              "id": "r2c",
+              "text": "The ferry image's address on the company website"
+            }
+          ],
+          "correctOptionId": "r2a"
+        },
+        {
+          "id": "r3",
+          "label": "Title",
+          "options": [
+            {
+              "id": "r3a",
+              "text": "{customerName}"
+            },
+            {
+              "id": "r3b",
+              "text": "${customerName}"
+            },
+            {
+              "id": "r3c",
+              "text": "${$session.customerName}"
+            }
+          ],
+          "correctOptionId": "r3a"
+        }
+      ]
+    },
+    {
+      "id": "sim-d5-q08",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.1.05"
+      ],
+      "conceptId": "desktop-alert-icon-timer-countdown-limits",
+      "prompt": "Ashcombe Energy runs Dynamics 365 Contact Center standalone. Representatives use supported browsers that allow notifications from the app, and their Windows notification settings permit them. The administrator is testing three custom notification templates, each with Show desktop notifications set to Always:\n- Billing chat: the icon is an SVG web resource, and Countdown (seconds) is 120.\n- Outage chat: Countdown (seconds) is 4.\n- Moving home chat: Show Countdown is Yes, and Countdown (seconds) is 90.\n\nYou need to set the expected result for each test.\n\nWhat should each test expect?",
+      "answer": "Billing chat: the alert appears without the icon. Outage chat: no desktop alert appears. Moving home chat: the alert shows no timer and disappears after 90 seconds.",
+      "explanation": "Desktop alerts have their own limits. An SVG icon isn't shown in desktop notifications. If the countdown is set to less than 5 seconds, the desktop notification doesn't appear. The timer isn't shown in desktop notifications even when Show Countdown is Yes, but it still runs, and the notification disappears when the countdown ends.",
+      "sourceIds": [
+        "sim-cb-s09"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "task:evaluate",
+        "feature:notification-templates"
+      ],
+      "optionExplanations": {
+        "r1a": "Correct. With Show desktop notifications on, an SVG icon isn't shown in the desktop notification. The limit concerns the icon.",
+        "r1b": "Fails. Microsoft notes that an SVG icon won't be shown in desktop notifications.",
+        "r1c": "Fails. The SVG limit is that the icon isn't shown in the desktop notification. This template's countdown is 120 seconds, so the under-5-second rule doesn't apply.",
+        "r2a": "Fails. A countdown of less than 5 seconds stops the desktop notification from appearing at all.",
+        "r2b": "Correct. If the countdown setting is less than 5 seconds, the desktop notification doesn't appear.",
+        "r2c": "Fails. 120 seconds is the default value, but this template sets 4 seconds, which is less than the 5 seconds a desktop notification needs.",
+        "r3a": "Fails. With Show desktop notifications on, the timer won't be shown in desktop notifications, even though Show Countdown is Yes.",
+        "r3b": "Fails. The timer runs whether or not it's shown, and the notification disappears after the timeout.",
+        "r3c": "Correct. The desktop alert doesn't show the timer, but the timer still runs and the notification disappears after the countdown."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n04"
+        }
+      ],
+      "status": "approved",
+      "kind": "hotspot",
+      "table": {
+        "title": "Desktop alert tests",
+        "rowHeading": "Template",
+        "answerHeading": "Expected desktop alert"
+      },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Billing chat",
+          "options": [
+            {
+              "id": "r1a",
+              "text": "It appears without the icon"
+            },
+            {
+              "id": "r1b",
+              "text": "It appears with the SVG icon"
+            },
+            {
+              "id": "r1c",
+              "text": "It doesn't appear"
+            }
+          ],
+          "correctOptionId": "r1a"
+        },
+        {
+          "id": "r2",
+          "label": "Outage chat",
+          "options": [
+            {
+              "id": "r2a",
+              "text": "It appears for 4 seconds"
+            },
+            {
+              "id": "r2b",
+              "text": "It doesn't appear"
+            },
+            {
+              "id": "r2c",
+              "text": "It appears for the default 120 seconds"
+            }
+          ],
+          "correctOptionId": "r2b"
+        },
+        {
+          "id": "r3",
+          "label": "Moving home chat",
+          "options": [
+            {
+              "id": "r3a",
+              "text": "It shows the timer and disappears after 90 seconds"
+            },
+            {
+              "id": "r3b",
+              "text": "It shows no timer and stays until answered"
+            },
+            {
+              "id": "r3c",
+              "text": "It shows no timer and disappears after 90 seconds"
+            }
+          ],
+          "correctOptionId": "r3c"
+        }
+      ]
+    },
+    {
+      "id": "sim-d5-q09",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.2.03"
+      ],
+      "conceptId": "macro-stale-context-versus-stale-form",
+      "prompt": "Petrel Bay Telecom runs Dynamics 365 Contact Center standalone. In Copilot Service workspace, case sessions open the case as the anchor tab. Representatives run two macros from the productivity pane:\n- Escalate: Update an existing record adds [Escalated] to the start of the anchor case's title. Open a new form to create a record then opens a task whose subject is built from ${anchor.title}. The task subject shows the title without [Escalated].\n- Close out: Resolve a case resolves the anchor case. When the macro finishes, the case form still shows the case as active.\n\nYou need to add actions so that each macro shows current data.\n\nWhat should you add to each macro?",
+      "answer": "Escalate: add Refresh the session context between the update and the new form. Close out: add Get the current tab, then Refresh the tab, after the case is resolved.",
+      "explanation": "The two macros go stale in different places. Session context variables for an entity session are set when the session starts, so after a macro updates the case title, ${anchor.title} still returns the cached value until Refresh the session context runs. Resolving the case through a macro doesn't refresh the tab, so the form keeps showing the old state until the macro gets the tab's ID with Get the current tab and passes it to Refresh the tab.",
+      "sourceIds": [
+        "sim-d5-s02",
+        "sim-d5-s01"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "task:apply",
+        "feature:macros"
+      ],
+      "optionExplanations": {
+        "r1a": "Correct. Microsoft's example for this case adds Refresh the session context after Update an existing record, so the next action uses the updated title rather than the cached one.",
+        "r1b": "Fails. Refreshing the tab reloads the form, but the slug comes from the session context, which isn't updated when the case title changes.",
+        "r1c": "Fails. Set session context creates a session variable of your own. It doesn't update the value that ${anchor.title} returns.",
+        "r1d": "Fails. Focusing a tab doesn't change the cached session context that the slug reads.",
+        "r2a": "Fails. This action refreshes the session context that macros read. Microsoft's resolve-case example refreshes the tab instead, because resolving a case through a macro doesn't refresh the tab.",
+        "r2b": "Correct. When a macro resolves a case, the tab isn't refreshed automatically. Get the current tab returns the Tab ID, and Refresh the tab uses it.",
+        "r2c": "Fails. Creating a session variable doesn't refresh the case form.",
+        "r2d": "Fails. Focus on the tab moves focus to a tab. It doesn't refresh the form, which is already the tab in view."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n05"
+        }
+      ],
+      "status": "approved",
+      "kind": "hotspot",
+      "table": {
+        "title": "Macro fixes",
+        "rowHeading": "Macro",
+        "answerHeading": "Actions to add"
+      },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Escalate, between the update and the new form",
+          "options": [
+            {
+              "id": "r1a",
+              "text": "Refresh the session context"
+            },
+            {
+              "id": "r1b",
+              "text": "Get the current tab, then Refresh the tab"
+            },
+            {
+              "id": "r1c",
+              "text": "Set session context"
+            },
+            {
+              "id": "r1d",
+              "text": "Get the current tab, then Focus on the tab"
+            }
+          ],
+          "correctOptionId": "r1a"
+        },
+        {
+          "id": "r2",
+          "label": "Close out, after the case is resolved",
+          "options": [
+            {
+              "id": "r2a",
+              "text": "Refresh the session context"
+            },
+            {
+              "id": "r2b",
+              "text": "Get the current tab, then Refresh the tab"
+            },
+            {
+              "id": "r2c",
+              "text": "Set session context"
+            },
+            {
+              "id": "r2d",
+              "text": "Get the current tab, then Focus on the tab"
+            }
+          ],
+          "correctOptionId": "r2b"
+        }
+      ]
+    },
+    {
+      "id": "sim-d5-q10",
+      "revision": 1,
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.2.06"
+      ],
+      "conceptId": "link-to-conversation-override-refresh-active",
+      "prompt": "Marlpit Outdoor Gear runs Dynamics 365 Contact Center standalone. A custom extension in Copilot Service workspace finds a warranty case and calls Microsoft.Omnichannel.linkToConversation with incident as the entity, the case ID and the conversation ID. Two tests use an active conversation that already has a different case linked. A third test uses a conversation that was closed before the call.\n\nYou need to write the expected result for each item.\n\nWhat should each test expect?",
+      "answer": "Existing case: replaced by the new case. New link: shown after the extension refreshes the tab. Closed conversation: not supported.",
+      "explanation": "linkToConversation writes the link only in the database. One account or contact and one case can be linked to a conversation at a time, so linking a new case overrides the previous case link. The link is reflected after the page is refreshed, and the caller is responsible for that refresh, which is why Microsoft's example calls Microsoft.Apm.refreshTab when the promise resolves. Linking is supported only for active conversations.",
+      "sourceIds": [
+        "sim-d5-s14"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "task:evaluate",
+        "feature:omnichannel-javascript-api"
+      ],
+      "optionExplanations": {
+        "r1a": "Correct. Only one case can be linked to a conversation at a time, and linking a new case overrides the previous record link.",
+        "r1b": "Fails. A conversation holds one case link at a time, so the old link doesn't stay.",
+        "r1c": "Fails. The new link overrides the previous one rather than being rejected.",
+        "r2a": "Fails. The method only links the records in the database. The link shows after the page is refreshed.",
+        "r2b": "Correct. The link is reflected after the page is refreshed, and the caller is responsible for the UI refresh, as in Microsoft's refreshTab example.",
+        "r2c": "Fails. The link is already written to the database. What's missing is a page refresh, which the caller triggers.",
+        "r3a": "Fails. Linking is supported only to active conversations.",
+        "r3b": "Fails. The method links records to a conversation, and linking is supported only for active conversations.",
+        "r3c": "Correct. Microsoft notes that linking is supported only to active conversations."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n07"
+        }
+      ],
+      "status": "approved",
+      "kind": "hotspot",
+      "table": {
+        "title": "Link tests",
+        "rowHeading": "Item",
+        "answerHeading": "Expected result"
+      },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "The case that was already linked",
+          "options": [
+            {
+              "id": "r1a",
+              "text": "It's replaced by the new case"
+            },
+            {
+              "id": "r1b",
+              "text": "It stays linked beside the new case"
+            },
+            {
+              "id": "r1c",
+              "text": "It stays linked, and the call is rejected"
+            }
+          ],
+          "correctOptionId": "r1a"
+        },
+        {
+          "id": "r2",
+          "label": "When the representative sees the new link",
+          "options": [
+            {
+              "id": "r2a",
+              "text": "As soon as the call resolves"
+            },
+            {
+              "id": "r2b",
+              "text": "After the extension refreshes the tab"
+            },
+            {
+              "id": "r2c",
+              "text": "After the representative saves the form"
+            }
+          ],
+          "correctOptionId": "r2b"
+        },
+        {
+          "id": "r3",
+          "label": "The call for the closed conversation",
+          "options": [
+            {
+              "id": "r3a",
+              "text": "It links the case to the closed conversation"
+            },
+            {
+              "id": "r3b",
+              "text": "It reopens the conversation and links the case"
+            },
+            {
+              "id": "r3c",
+              "text": "It isn't supported, because the conversation isn't active"
+            }
+          ],
+          "correctOptionId": "r3c"
+        }
+      ]
+    },
+    {
+      "id": "sim-d5-q11",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.2.01"
+      ],
+      "conceptId": "custom-app-pane-tool-multisession-alm",
+      "prompt": "Lowther Appliance Care built Claims Desk, a custom model-driven app, in an unmanaged solution in its development environment, and it deploys the solution to production as a managed solution. A custom page named Parts Lookup and its pane tool configuration, with Global set to Yes, already exist in both environments. In production, claims representatives are assigned a custom experience profile named Claims Reps and have the Productivity tools user role.\n\nRepresentatives must see Parts Lookup in the productivity pane while they work multiple sessions in Claims Desk in production.\n\nYou need to complete the setup.\n\nWhich two actions should you perform? Each correct answer presents part of the solution.",
+      "answer": "Enable Multisession with productivity tools for Claims Desk in development and carry it to production with the solution, and turn on the productivity pane and Parts Lookup in the Claims Reps profile.",
+      "explanation": "Two layers are missing. The app itself needs the multisession and productivity tools setting, and Microsoft supports enabling it only for a model-driven app in an unmanaged solution. Claims Desk is managed in production, so you enable it in development and carry it over by exporting and importing the solution, which includes the multisession settings in the app module. A registered pane tool also isn't visible until it's enabled in the productivity pane of the representatives' experience profile.",
+      "sourceIds": [
+        "sim-d5-s10",
+        "sim-d5-s09",
+        "sim-cb-s23"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "task:apply",
+        "feature:productivity-pane"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "In development, select Multisession with productivity tools for Claims Desk, then export the solution and import it to production."
+        },
+        {
+          "id": "b",
+          "text": "In production, select Multisession with productivity tools for Claims Desk in Productivity setting for model-driven apps."
+        },
+        {
+          "id": "c",
+          "text": "In the Claims Reps profile, turn on the productivity pane and the Parts Lookup tool, and save."
+        },
+        {
+          "id": "d",
+          "text": "In the Claims Reps profile, add an entity session template that opens Parts Lookup as an additional tab."
+        },
+        {
+          "id": "e",
+          "text": "Assign the Productivity tools administrator role to the claims representatives in production."
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "c"
+      ],
+      "optionExplanations": {
+        "a": "Correct, and part of the solution. Multisession can be enabled only for an app in an unmanaged solution, and the setting travels in the app module when you export and import the solution. Selecting it also selects Productivity tool.",
+        "b": "Fails. In production Claims Desk is part of a managed solution, which shows a lock icon and can't be edited there.",
+        "c": "Correct, and part of the solution. A configured custom tool appears to representatives only after it's enabled in the Productivity pane of their experience profile.",
+        "d": "Fails. An additional tab opens in the session's tab panel, not in the productivity pane. Custom tools are enabled through the profile's Productivity pane instead.",
+        "e": "Fails. Productivity tools administrator is the role for configuring tools. Representatives need Productivity tools user, which they already have."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n06"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "sim-d5-q12",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.2.05"
+      ],
+      "conceptId": "apm-background-session-creation-guard",
+      "prompt": "Kinloch Building Society runs Dynamics 365 Contact Center standalone. A custom control in Copilot Service workspace opens a mortgage case in a new session by calling Microsoft.Apm.createSession with a custom case session template. The template is in the representatives' experience profile. Requirements:\n- The representative's current session stays in focus when the new session opens.\n- If the workspace already has its maximum number of sessions open, the control shows its own message instead of trying to open a session.\n\nYou need to update the control.\n\nWhich two actions should you perform? Each correct answer presents part of the solution.",
+      "answer": "Check canCreateSession before calling createSession, and pass isFocused set to false.",
+      "explanation": "Copilot Service workspace allows up to 10 open sessions, and canCreateSession returns false when a new session can't be created, so the control can show its own message instead. The createSession input has an optional isFocused property, and Microsoft's example of a session that isn't in focus sets it to false. requestFocus only shows a notification indicator on a session that isn't in focus, and createTab and canCreateTab work on tabs within a session rather than on sessions.",
+      "sourceIds": [
+        "sim-d5-s11",
+        "sim-d5-s12",
+        "sim-d5-s13",
+        "sim-d5-s17"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "task:apply",
+        "feature:app-profile-manager-api"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Call canCreateSession first, and call createSession only when it returns true."
+        },
+        {
+          "id": "b",
+          "text": "Pass isFocused set to false in the createSession input."
+        },
+        {
+          "id": "c",
+          "text": "Call canCreateTab first, and call createSession only when it returns true."
+        },
+        {
+          "id": "d",
+          "text": "Call requestFocus on the current session after createSession returns."
+        },
+        {
+          "id": "e",
+          "text": "Call createTab with isFocused set to false instead of createSession."
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "optionExplanations": {
+        "a": "Correct, and part of the solution. canCreateSession returns false when a new session can't be created, and Microsoft's example uses it to check whether the maximum has been reached before calling createSession.",
+        "b": "Correct, and part of the solution. isFocused sets whether the new session takes focus, and Microsoft's example of a session that isn't in focus passes false.",
+        "c": "Fails. canCreateTab reports whether a new tab can be created for a session. It doesn't check the session limit.",
+        "d": "Fails. requestFocus shows a notification indicator on a session that isn't in focus. It doesn't keep the current session in front.",
+        "e": "Fails. createTab creates a tab in the focused session, so it doesn't open the case in a new session."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n07"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "sim-d5-q14",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.3.04"
+      ],
+      "conceptId": "ckm-custom-record-type-harvest-trigger",
+      "prompt": "Hollybank Facilities Services runs Dynamics 365 Contact Center standalone. Engineers record completed site repairs in a custom Repair visit table. The company wants Customer Knowledge Management Agent to create an article from a single repair visit when an engineer asks for one from that record. The agent's prerequisites show Ready, and Repair visit has been added as a knowledge record type. The agent has no custom record types yet, and the company accepts production-ready preview features. After this task, the team will configure the record type's creation rules and attributes.\n\nYou need to make Repair visit available to the agent and give engineers a way to start article creation from a record.\n\nWhich two actions should you perform? Each correct answer presents part of the solution.",
+      "answer": "Add Repair visit with Add record type on the agent's page, and add a Trigger Harvesting command to the Repair visit main form.",
+      "explanation": "Custom record types are a production-ready preview in Customer Knowledge Management Agent. Once knowledge management is on for the table, you add it on the agent's page with Add record type, up to five types. For real-time creation from one record of a custom type, Microsoft's procedure adds a trigger harvesting command button to the table's main form, and selecting it triggers harvesting for the current record. Case real-time creation runs when a case is resolved, and historical creation works through the records that match its rules after you start it, so neither gives an engineer a trigger on one record.",
+      "sourceIds": [
+        "sim-cb-s20"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "task:apply",
+        "feature:customer-knowledge-management-agent"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "On the Customer Knowledge Management Agent page, select Add record type, and add Repair visit."
+        },
+        {
+          "id": "b",
+          "text": "Add a Trigger Harvesting command to the Repair visit main form by using Microsoft's sample script, and publish it."
+        },
+        {
+          "id": "c",
+          "text": "On the Case tab, select Let Copilot use information from current case to create knowledge articles."
+        },
+        {
+          "id": "d",
+          "text": "Turn on Track changes for Repair visit, and add Repair visit to the Entity Analytics Config table."
+        },
+        {
+          "id": "e",
+          "text": "In the Custom record type section, select the option to use historical custom record types to create knowledge articles."
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "optionExplanations": {
+        "a": "Correct, and part of the solution. Add record type on the agent page adds a custom record type that the agent can use to create articles, after knowledge management is turned on for it.",
+        "b": "Correct, and part of the solution. Microsoft's procedure adds a trigger harvesting button to the custom table's main form with Command Designer, and the button triggers harvesting for the current record. The script is a sample that you can adapt.",
+        "c": "Fails. This option creates articles in real time when a representative resolves a case. Repair visit isn't a case.",
+        "d": "Fails. Microsoft recommends this to avoid issues when creating articles from historical data. It doesn't give engineers a trigger on a record.",
+        "e": "Fails. Historical creation works through the records that match its rules once you select Start. It isn't started from one record."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n10"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "sim-d5-q15",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.2.02",
+        "D5.2.03"
+      ],
+      "conceptId": "script-focus-requires-session-association",
+      "prompt": "Quarry Lane Veterinary runs Dynamics 365 Contact Center standalone. Chat sessions use a custom session template, and representatives start each chat on the Standard visit script. One step in that script runs a macro that raises the case priority and then uses Set Script focus with the unique name of a separate Urgent visit script. Both must happen in a single macro run. In testing, the priority changes, but the Scripts list on the app side pane stays on Standard visit. The unique name in the action is correct.\n\nYou need representatives to move to the Urgent visit script when the macro runs.\n\nWhat should you do?",
+      "answer": "Associate the Urgent visit script with the chat session template.",
+      "explanation": "Set Script focus puts a script in focus in the Scripts list on the app side pane, but the script in focus must be associated with the session template. Scripts load for representatives according to the scripts associated with their session's template, so Urgent visit has to be added on the template's Scripts tab. A default-script expression only picks the script when a representative accepts a conversation, and a Script-type step would open the script without running the macro.",
+      "sourceIds": [
+        "sim-d5-s01",
+        "sim-cb-s10"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "task:apply",
+        "feature:scripts"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Associate the Urgent visit script with the chat session template."
+        },
+        {
+          "id": "b",
+          "text": "Build an expression on the chat session template that sets Urgent visit as the default script."
+        },
+        {
+          "id": "c",
+          "text": "Add Refresh the session context to the macro before Set Script focus."
+        },
+        {
+          "id": "d",
+          "text": "Change the step's action type to Script, with Urgent visit as the target script."
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "optionExplanations": {
+        "a": "Correct. Microsoft states that the script set in focus must be associated with the session template.",
+        "b": "Fails. The expression chooses the default script when a representative accepts a conversation. It doesn't move the representative to another script partway through a session.",
+        "c": "Fails. Refresh the session context updates cached session values for entity sessions. It doesn't make a script available to the session.",
+        "d": "Fails. A Script-type step opens its target script instead of running a macro, so the priority change wouldn't happen in the same run."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n05"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "sim-d5-q16",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.3.01"
+      ],
+      "conceptId": "suggest-as-you-type-title-phrase-match",
+      "prompt": "Fenbridge Broadband runs Dynamics 365 Contact Center standalone with Dataverse search turned on. In the knowledge General settings, Enable suggest as you type and Set search mode as all are both set to Yes. During a test, a representative types router firmware rollback into the knowledge search box on the app side pane of Copilot Service workspace.\n\nYou need to define what the suggestion flyout should show.\n\nWhat should the test expect?",
+      "answer": "Up to six articles whose titles contain the full phrase router firmware rollback.",
+      "explanation": "Suggest-as-you-type matches the search term against article titles. For a term of more than one word, it returns only titles that contain the full string, not titles that contain the individual words, and it suggests up to six articles. Set search mode as all is the search logic for knowledge search results, which then match all keywords, and the app side pane shows up to 10 results by default. Those settings describe the results list, while the flyout follows its own title rule.",
+      "sourceIds": [
+        "sim-d5-s06",
+        "sim-d5-s05"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "task:evaluate",
+        "feature:knowledge-search"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Up to six articles whose titles contain the full phrase router firmware rollback"
+        },
+        {
+          "id": "b",
+          "text": "Up to six articles whose titles contain all three words in any order"
+        },
+        {
+          "id": "c",
+          "text": "Up to 10 articles whose title or content contains any of the three words"
+        },
+        {
+          "id": "d",
+          "text": "Up to 10 articles whose title or content contains all three words"
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "optionExplanations": {
+        "a": "Correct. Suggestions match the full string against article titles, and up to six articles are suggested.",
+        "b": "Fails. Matching all keywords is the Set search mode as all logic for search results. Suggestions match the full phrase in the title.",
+        "c": "Fails. Any-keyword matching is the default search logic for results, and the app side pane shows up to 10 results. Suggestions match titles only, up to six.",
+        "d": "Fails. That's closer to the search results with Set search mode as all, shown up to 10 on the app side pane. The flyout matches the full phrase in titles and suggests up to six."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n08"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "sim-d5-q17",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "representative-experience",
+      "objectiveIds": [
+        "D5.3.05",
+        "D5.2.03"
+      ],
+      "conceptId": "chat-article-link-macro-portal-setting",
+      "prompt": "Linthorpe Travel Insurance runs Dynamics 365 Contact Center standalone. Its customer portal shows published knowledge articles at public URLs, and the articles that representatives share are published. Representatives want a macro that finds an article from the case title and posts the article's public link into the customer's chat.\n\nYou need to design the macro and the knowledge setting that it relies on.\n\nWhat should you do?",
+      "answer": "Use Search the knowledge base for the populated phrase, then Send knowledge base article link in chat, and set Use an external portal to Yes with the portal's URL format.",
+      "explanation": "Send knowledge base article link in chat is an Omnichannel connector action that sends an article link to the conversation's chat window. Microsoft states that it must be used with the action that searches the knowledge base for the populated phrase, and that Use an external portal must be set to Yes. That portal setting includes the URL format, in which {kbnum} is replaced by the article number to build the public link. Sync attachments to portal concerns article attachments on the portal, and the relevance search action isn't the search action that the send action works with.",
+      "sourceIds": [
+        "sim-d5-s03",
+        "sim-d5-s05",
+        "sim-d5-s01"
+      ],
+      "tags": [
+        "domain:representative-experience",
+        "task:apply",
+        "feature:knowledge-portal"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Use Search the knowledge base for the populated phrase, then Send knowledge base article link in chat, and set Use an external portal to Yes with the portal's URL format."
+        },
+        {
+          "id": "b",
+          "text": "Use Search the knowledge base for the populated phrase, then Send knowledge base article link in chat, and set Sync attachments to portal to Yes."
+        },
+        {
+          "id": "c",
+          "text": "Use Do a relevance search based on the phrase, then Send knowledge base article link in chat, and set Use an external portal to Yes with the portal's URL format."
+        },
+        {
+          "id": "d",
+          "text": "Use Do a relevance search based on the phrase, then Send knowledge base article link in chat, and set Sync attachments to portal to Yes."
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "optionExplanations": {
+        "a": "Correct. The send action must be used with Search the knowledge base for the populated phrase, and Use an external portal must be Yes, with the URL format that builds the article's public link.",
+        "b": "Fails. The search action is right, but Sync attachments to portal syncs article attachments. The send action needs Use an external portal set to Yes.",
+        "c": "Fails. The portal setting is right, but the send action must be used with Search the knowledge base for the populated phrase, not with the relevance search action.",
+        "d": "Fails. The send action needs the Search the knowledge base for the populated phrase action and Use an external portal, and this design has neither."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d5-n09"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "sim-d5-q18",
+      "revision": 1,
+      "domainId": "channels",
+      "objectiveIds": [
+        "D2.3.05"
+      ],
+      "conceptId": "automated-masking-sender-and-channel-scope",
+      "prompt": "Oakhurst Motor Finance runs Dynamics 365 Contact Center standalone with a live chat channel and a WhatsApp channel, which is asynchronous. In data masking, the out-of-the-box Credit Card rule is active, and both Mask private agent data from the customer and Mask private customer data from the agent are turned on.\n\nYou need to tell the compliance team where card numbers are masked.\n\nWhat happens in each case?",
+      "answer": "Customer in live chat: masked for the customer and the representative. Customer in WhatsApp: masked only in the representative's view. Representative in WhatsApp: masked for the customer and the representative.",
+      "explanation": "The two settings cover different senders, and one of them behaves differently on asynchronous channels. Mask private agent data from the customer masks what a representative sends for both the customer and the representative, in live chat and in asynchronous messages. Mask private customer data from the agent masks what a customer sends for both people in live chat, but only in the representative's user interface on asynchronous channels such as WhatsApp. Text masked in a message is also masked in the conversation transcript.",
+      "sourceIds": [
+        "sim-d5-s15",
+        "sim-cb-s13"
+      ],
+      "tags": [
+        "domain:channels",
+        "task:evaluate",
+        "feature:data-masking"
+      ],
+      "optionExplanations": {
+        "r1a": "Correct. For live chat, data the customer sends is masked for both the customer and the representative.",
+        "r1b": "Fails. The representative-only result applies to customer data on asynchronous channels. Live chat masks it for both people.",
+        "r1c": "Fails. For live chat, the customer's data is masked for both people, not only for the customer.",
+        "r1d": "Fails. The Credit Card rule is active and customer data masking is on, so the number is masked.",
+        "r2a": "Fails. On asynchronous channels, data the customer sends is masked only in the representative's user interface.",
+        "r2b": "Correct. For asynchronous channels, customer data is masked only in the representative's user interface, so the customer's own view isn't covered.",
+        "r2c": "Fails. Customer data on asynchronous channels is masked in the representative's view, not the customer's.",
+        "r2d": "Fails. The number is masked in the representative's view, because the Credit Card rule is active and customer data masking is on.",
+        "r3a": "Correct. Data a representative sends is masked for both the customer and the representative in live chat and asynchronous messages.",
+        "r3b": "Fails. The representative-only result is for customer data on asynchronous channels. Representative data is masked for both people.",
+        "r3c": "Fails. Representative data is masked for the representative too, not only for the customer.",
+        "r3d": "Fails. Mask private agent data from the customer is on and applies to asynchronous messages."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d2-n12"
+        }
+      ],
+      "status": "approved",
+      "kind": "hotspot",
+      "table": {
+        "title": "Card number masking",
+        "rowHeading": "Message",
+        "answerHeading": "Result"
+      },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "A customer types a card number in live chat",
+          "options": [
+            {
+              "id": "r1a",
+              "text": "Masked for the customer and the representative"
+            },
+            {
+              "id": "r1b",
+              "text": "Masked only in the representative's view"
+            },
+            {
+              "id": "r1c",
+              "text": "Masked only in the customer's view"
+            },
+            {
+              "id": "r1d",
+              "text": "Not masked"
+            }
+          ],
+          "correctOptionId": "r1a"
+        },
+        {
+          "id": "r2",
+          "label": "A customer types a card number in WhatsApp",
+          "options": [
+            {
+              "id": "r2a",
+              "text": "Masked for the customer and the representative"
+            },
+            {
+              "id": "r2b",
+              "text": "Masked only in the representative's view"
+            },
+            {
+              "id": "r2c",
+              "text": "Masked only in the customer's view"
+            },
+            {
+              "id": "r2d",
+              "text": "Not masked"
+            }
+          ],
+          "correctOptionId": "r2b"
+        },
+        {
+          "id": "r3",
+          "label": "A representative types a card number in a WhatsApp reply",
+          "options": [
+            {
+              "id": "r3a",
+              "text": "Masked for the customer and the representative"
+            },
+            {
+              "id": "r3b",
+              "text": "Masked only in the representative's view"
+            },
+            {
+              "id": "r3c",
+              "text": "Masked only in the customer's view"
+            },
+            {
+              "id": "r3d",
+              "text": "Not masked"
+            }
+          ],
+          "correctOptionId": "r3a"
+        }
+      ]
+    },
+    {
+      "id": "sim-d34-q01",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.07",
+        "D3.2.08"
+      ],
+      "conceptId": "basic-voice-dtmf-input-precedence",
+      "prompt": "Halden Water Services is building a Basic voice agent in Copilot Studio that uses classic orchestration. Enable voice is turned on, and the agent is published to the Telephony channel of Dynamics 365 Contact Center.\n\nThe design says that pressing 0 opens the Operator topic from any point in a call. Key 5 isn't assigned to anything in the agent. Testers are writing the expected result for three key presses.\n\nYou need to identify what handles each key press.\n\nWhat handles each key press?",
+      "answer": "No question waiting, key 0: the DTMF global command received trigger. No question waiting, key 5: the Unknown dial pad press system topic. Question with an option on 0, key 0: the Question node that's waiting for input.",
+      "explanation": "A topic whose trigger is DTMF global command received runs when the caller presses its single key during the conversation, so the Operator topic needs that trigger on 0. A key that isn't mapped to any DTMF global trigger runs the Unknown dial pad press system topic instead. A waiting Question node changes the result. Microsoft says the DTMF received trigger isn't called when the caller is answering a Question node that accepts single-digit DTMF and one of its allowed options maps to the same key. So in row 3 the Question node's own option takes 0, and the design's \"from any point\" doesn't hold while that question is waiting.",
+      "sourceIds": [
+        "sim-d34-s01",
+        "sim-d3-s02",
+        "sim-d34-s13"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:dtmf"
+      ],
+      "optionExplanations": {
+        "a": "Correct for row 1. With no Question node waiting, a single key that a DTMF global command received trigger listens for starts that topic, here the Operator topic. It fails row 2, because no global trigger uses 5, and row 3, because the trigger isn't called while a single-digit Question node has an option on the same key.",
+        "b": "Correct for row 2. Microsoft says a key that isn't mapped to the DTMF global triggers runs the Unknown dial pad press system topic. It fails row 1, where 0 is mapped to a global trigger, and row 3, where the key matches one of the waiting Question node's options.",
+        "c": "Correct for row 3. The Question node accepts single-digit DTMF and one of its options is mapped to 0, so the DTMF received trigger isn't called and the option is selected instead. It fails rows 1 and 2, because no Question node is waiting.",
+        "d": "Fails on every row. Silence detection sets how long the agent waits when the caller gives no input, and every row is a key press.",
+        "e": "Fails on every row. Escalate triggers when \"talk to agent\" is matched or the Escalate system event is called. Pressing 0 starts it only if a trigger is built for that, and the rows are handled by the DTMF trigger, the Unknown dial pad press topic and the Question node."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n06"
+        }
+      ],
+      "status": "approved",
+      "kind": "match",
+      "tray": "Handlers",
+      "table": {
+        "title": "Keypad input handling",
+        "rowHeading": "Key press",
+        "answerHeading": "Handled by"
+      },
+      "tokens": [
+        {
+          "id": "a",
+          "text": "The DTMF global command received trigger"
+        },
+        {
+          "id": "b",
+          "text": "The Unknown dial pad press system topic"
+        },
+        {
+          "id": "c",
+          "text": "The Question node that's waiting for input"
+        },
+        {
+          "id": "d",
+          "text": "The Silence detection system topic"
+        },
+        {
+          "id": "e",
+          "text": "The Escalate system topic"
+        }
+      ],
+      "rows": [
+        {
+          "id": "r1",
+          "label": "No Question node is waiting for input, and the caller presses 0",
+          "correctTokenId": "a"
+        },
+        {
+          "id": "r2",
+          "label": "No Question node is waiting for input, and the caller presses 5",
+          "correctTokenId": "b"
+        },
+        {
+          "id": "r3",
+          "label": "A Question node waits for one key, its options are mapped to 1, 2 and 0, and the caller presses 0",
+          "correctTokenId": "c"
+        }
+      ]
+    },
+    {
+      "id": "sim-d34-q02",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.06",
+        "D3.2.09"
+      ],
+      "conceptId": "realtime-speech-sensitivity-selection",
+      "prompt": "Ashgrove Building Supplies has four real-time agents in Copilot Studio. Each uses the GPT-Realtime model, is deployed to the voice channel of Dynamics 365 Contact Center, and has its own Speech sensitivity setting.\n\nThe Depot and Claims agents are new, so you're choosing how they detect the end of a caller's turn. The Yard and Parts agents already use Based on sound (silence), and each has one problem to tune.\n\nYou need to choose the Speech sensitivity setting for each agent.\n\nWhich setting should you use for each agent?",
+      "answer": "Depot: Based on sound (silence). Claims: Based on sentence context, Eagerness Low. Yard: raise Threshold. Parts: raise Prefix padding.",
+      "explanation": "Microsoft recommends server-based detection, Based on sound (silence), when interactions are structured, responses are short, background noise is a concern and turn-taking must be fast. It notes that semantic detection might wait too long in noise, so the noisy Depot line uses sound even though it sounds counterintuitive. Semantic detection, Based on sentence context, suits open-ended explanations with hesitation and filler words, and Low eagerness waits longer for callers who pause. Within Based on sound, a higher Threshold makes detection less sensitive and reduces false triggers from background noise, and a higher Prefix padding captures more audio before speech is detected, so the first word isn't cut off.",
+      "sourceIds": [
+        "sim-d3-s01"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:real-time-voice"
+      ],
+      "optionExplanations": {
+        "a": "Correct for Depot. Short, menu-style answers, background noise and fast turn-taking are the conditions Microsoft gives for server-based detection. It doesn't fit Claims, where callers pause mid-explanation, and it isn't a change for Yard or Parts, which already use it.",
+        "b": "Correct for Claims. Sentence context adapts to pauses and filler words, and Low eagerness waits longer for callers who think out loud. It fails Depot, because semantic detection might wait too long in noise, and it doesn't address Yard's false triggers or Parts' missed first word.",
+        "c": "Fails on every row. High eagerness responds quickly, which risks cutting off Claims callers, and semantic detection might wait too long on Depot's noisy line.",
+        "d": "Correct for Yard. A higher Threshold is less sensitive and needs louder speech, which reduces false triggers. It doesn't recover a missed first word for Parts, because it makes quiet speech less likely to register.",
+        "e": "Correct for Parts. Prefix padding is the audio captured before speech starts, and a higher value is safer capture that prevents cutting off the first word. It doesn't stop noise from triggering a response for Yard.",
+        "f": "Fails on every row. A lower Silence duration gives faster turn-taking but might interrupt callers who pause, and it doesn't address noise or the first word."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n09"
+        }
+      ],
+      "status": "approved",
+      "kind": "match",
+      "tray": "Settings",
+      "table": {
+        "title": "Speech sensitivity",
+        "rowHeading": "Agent",
+        "answerHeading": "Setting"
+      },
+      "tokens": [
+        {
+          "id": "a",
+          "text": "Based on sound (silence)"
+        },
+        {
+          "id": "b",
+          "text": "Based on sentence context, Eagerness Low"
+        },
+        {
+          "id": "c",
+          "text": "Based on sentence context, Eagerness High"
+        },
+        {
+          "id": "d",
+          "text": "Raise Threshold"
+        },
+        {
+          "id": "e",
+          "text": "Raise Prefix padding"
+        },
+        {
+          "id": "f",
+          "text": "Lower Silence duration"
+        }
+      ],
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Depot: callers on loud loading docks answer menu questions in one or two words, and turns must be quick",
+          "correctTokenId": "a"
+        },
+        {
+          "id": "r2",
+          "label": "Claims: callers explain incidents at length, pause to think and say \"um\", and mustn't be cut off",
+          "correctTokenId": "b"
+        },
+        {
+          "id": "r3",
+          "label": "Yard: engine noise makes the agent respond when nobody has spoken",
+          "correctTokenId": "d"
+        },
+        {
+          "id": "r4",
+          "label": "Parts: the agent often misses the first word of each answer",
+          "correctTokenId": "e"
+        }
+      ]
+    },
+    {
+      "id": "sim-d34-q04",
+      "revision": 1,
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.04"
+      ],
+      "conceptId": "consent-recording-runtime-outcomes",
+      "prompt": "Pemberton Dental Partners takes appointment calls through an inbound voice workstream in Dynamics 365 Contact Center. A voice-enabled agent built in Copilot Studio answers every call. The workstream's Transcription and recording setting is Transcription and recording, and the team is rolling out consent-based recording.\n\nThe compliance lead has asked about three situations.\n\nYou need to identify the outcome of each situation.\n\nWhat is the outcome of each situation?",
+      "answer": "Setting on, topic not connected: no prompt, and calls are recorded and transcribed. Declined consent with escalation and transfer: nothing more is captured, and neither CSR can start recording. Consent audio: customers can't access it, and Microsoft deletes it within two hours.",
+      "explanation": "Request for User Consent doesn't prompt anyone by itself. The agent must redirect Conversation Start to the User Consent topic. With the workstream setting on and the topic off, Microsoft says all customers are treated as having opted in, and recording and transcription proceed. When a caller declines, the decision follows the call: after escalation, the transcript isn't shown and representatives can't start or pause recording and transcripts, and a transfer or consult inside Dynamics 365 Contact Center keeps the original choice. Microsoft records the consent prompt and response for compliance in Microsoft-managed storage that customers can't access, and deletes it automatically within two hours.",
+      "sourceIds": [
+        "sim-d34-s03"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:consent-based-recording"
+      ],
+      "optionExplanations": {
+        "r1a": "Correct. The behavior table lists workstream On with topic Off as defining all customers as having opted in, so the system proceeds with recording and transcription without a prompt.",
+        "r1b": "Fails. That is the result when Request for User Consent is off, not when it's on without the topic. With the setting on and the topic off, calls are still recorded and transcribed.",
+        "r1c": "Fails. Microsoft says turning on Request for User Consent doesn't automatically prompt the user. The prompt comes from the User Consent topic that Conversation Start redirects to.",
+        "r2a": "Correct. If the caller doesn't consent, recording stops, the call isn't recorded at any point during a transfer or the rest of the interaction, and representatives can't start or pause recording and transcripts.",
+        "r2b": "Fails. Representatives can't start recording when the caller declined through the agent, so a CSR can't restart capture.",
+        "r2c": "Fails. The caller's choice is honored after escalation to a CSR. The transcript isn't displayed and the call progresses without recording.",
+        "r2d": "Fails. Transfers and consults inside Dynamics 365 Contact Center keep the caller's original consent choice, so recording doesn't start after the transfer.",
+        "r3a": "Correct. The system records the consent prompt and response to support compliance, stores the recording in Microsoft-managed storage that customers can't access, and deletes it automatically within two hours.",
+        "r3b": "Fails. The consent audio isn't kept with the customer's call recording. Microsoft stores it separately and deletes it within two hours.",
+        "r3c": "Fails. The consent audio isn't stored in Dataverse for an administrator to manage. It's in Microsoft-managed storage that customers can't access."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n07"
+        }
+      ],
+      "status": "approved",
+      "kind": "hotspot",
+      "table": {
+        "title": "Consent-based recording",
+        "rowHeading": "Situation",
+        "answerHeading": "Outcome"
+      },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Request for User Consent is on, but the Conversation Start topic doesn't redirect to the User Consent topic",
+          "options": [
+            {
+              "id": "r1a",
+              "text": "Callers hear no consent prompt, and calls are recorded and transcribed"
+            },
+            {
+              "id": "r1b",
+              "text": "Callers hear no consent prompt, and calls aren't recorded or transcribed"
+            },
+            {
+              "id": "r1c",
+              "text": "Callers hear a consent prompt that the workstream setting provides"
+            }
+          ],
+          "correctOptionId": "r1a"
+        },
+        {
+          "id": "r2",
+          "label": "A caller declines consent, and the agent escalates to a CSR, who then transfers the call to another CSR in Dynamics 365 Contact Center",
+          "options": [
+            {
+              "id": "r2a",
+              "text": "Nothing more is recorded or transcribed, and neither CSR can start recording"
+            },
+            {
+              "id": "r2b",
+              "text": "Nothing more is recorded until a CSR starts recording after asking the caller"
+            },
+            {
+              "id": "r2c",
+              "text": "Recording starts when the first CSR joins, because consent covers only the agent"
+            },
+            {
+              "id": "r2d",
+              "text": "Recording stays off for the first CSR and starts after the transfer completes"
+            }
+          ],
+          "correctOptionId": "r2a"
+        },
+        {
+          "id": "r3",
+          "label": "An auditor asks for the audio of one caller's consent prompt and response",
+          "options": [
+            {
+              "id": "r3a",
+              "text": "Customers can't access it, and Microsoft deletes it within two hours"
+            },
+            {
+              "id": "r3b",
+              "text": "It's kept with the call recording for the workstream's retention period"
+            },
+            {
+              "id": "r3c",
+              "text": "It's stored in Dataverse until an administrator deletes the record"
+            }
+          ],
+          "correctOptionId": "r3a"
+        }
+      ]
+    },
+    {
+      "id": "sim-d34-q05",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.2.02"
+      ],
+      "conceptId": "topic-value-reuse-without-reprompt",
+      "prompt": "Cedar Hollow Veterinary Clinics has a Basic voice agent in Copilot Studio. In the Verify Pet topic, a Question node uses the Number entity to store the caller's pet ID in a topic variable named PetId. Verify Pet then asks two more questions, and a Redirect node sends the call to the Book Visit topic. Book Visit currently asks for the pet ID again.\n\nCallers mustn't be asked for the pet ID twice in the same call.\n\nYou need to make the pet ID available in Book Visit.\n\nWhich two actions should you perform? Each correct answer presents a complete solution.",
+      "answer": "Make PetId global and use it in Book Visit, or set Book Visit's variable to receive values from other topics and pass PetId in the Redirect node.",
+      "explanation": "A topic variable is usable only in the topic that creates it. Microsoft gives two ways to reuse it. Changing the variable to Global (any topic can access) makes it available in every topic for the rest of the session. Passing it between topics works when one topic redirects to another: the destination topic's variable is set to Receive values from other topics, the source topic's Redirect node passes the value, and the destination skips its question. Environment variables are read-only in Copilot Studio. LastMessage.Text holds the caller's previous message, which after two more questions isn't the pet ID, and Recognizer.TriggeringMessage.Text holds the message that triggered the current topic, but a redirect started Book Visit.",
+      "sourceIds": [
+        "sim-d34-s04",
+        "sim-d34-s12",
+        "sim-d34-s05"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:variables"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Change PetId to a global variable, and then use Global.PetId in Book Visit instead of asking the caller"
+        },
+        {
+          "id": "b",
+          "text": "In Book Visit, set the pet ID variable to Receive values from other topics, and pass PetId in the Redirect node"
+        },
+        {
+          "id": "c",
+          "text": "In Verify Pet, store PetId in an environment variable with a Set variable value node, and read it in Book Visit"
+        },
+        {
+          "id": "d",
+          "text": "In Book Visit, read the pet ID from the LastMessage.Text system variable instead of asking the caller"
+        },
+        {
+          "id": "e",
+          "text": "In Book Visit, read the pet ID from the Recognizer.TriggeringMessage.Text system variable instead of asking"
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "optionExplanations": {
+        "a": "Correct, a complete solution. A global variable is available in all topics during the user session, so Book Visit can use Global.PetId and skip the question.",
+        "b": "Correct, a complete solution. When a topic redirects to another, it can pass a variable's value to a destination variable set to Receive values from other topics, and the destination skips its question. The Number entity can be passed between topics.",
+        "c": "Fails. Environment variables are read-only in Copilot Studio, so Verify Pet can't store the pet ID in one.",
+        "d": "Fails. LastMessage.Text is the previous message sent by the user. After two more questions, that message is an answer to a later question, not the pet ID.",
+        "e": "Fails. Recognizer.TriggeringMessage.Text is the user message that triggered the current topic, and Book Visit is started by a Redirect node, not by the pet ID message."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n02"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "sim-d34-q06",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.1.04"
+      ],
+      "conceptId": "managed-copilot-bot-model-via-connected-agent",
+      "prompt": "Ironvale Appliance Care uses Ask a question in Copilot Service workspace. Extend agent with Copilot Studio is selected for the Customer Support agent, so questions go first to the managed Customer Service Copilot Bot. Microsoft labels this extensibility a production-ready preview, and Ironvale has accepted its terms.\n\nWarranty-law questions must be answered by an agent that uses a different model from the one in the Customer Service Copilot Bot.\n\nYou need to use that model for warranty-law questions.\n\nWhich two actions should you perform? Each correct answer presents part of the solution.",
+      "answer": "Build a separate warranty-law agent that uses the required model, and connect it to the Customer Service Copilot Bot.",
+      "explanation": "The Customer Service Copilot Bot is a managed agent with limitations. Microsoft says you can't update its model, its instructions or its topics whose names start with msdyn_. The same limitation says that if you connect this agent to other agents, you can use a different model in those agents. Microsoft's example of a connected agent is one that specializes in questions about one area of the business, which is the warranty-law agent here.",
+      "sourceIds": [
+        "sim-cb-s19"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:copilot-extensibility"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Build a Copilot Studio agent for warranty law that uses the required model"
+        },
+        {
+          "id": "b",
+          "text": "Connect the warranty-law agent to the Customer Service Copilot Bot as an agent"
+        },
+        {
+          "id": "c",
+          "text": "Change the agent model of the Customer Service Copilot Bot to the required model"
+        },
+        {
+          "id": "d",
+          "text": "Add warranty-law routing guidance to the agent instructions of the Customer Service Copilot Bot"
+        },
+        {
+          "id": "e",
+          "text": "Edit the bot's msdyn_ topics so that warranty-law questions call the required model"
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "optionExplanations": {
+        "a": "Correct, part of the solution. A separate agent can use a different model, and it can specialize in one area of the business.",
+        "b": "Correct, part of the solution. Connecting other agents to the Customer Service Copilot Bot is how Microsoft says a different model can be used, because the bot's own model can't change.",
+        "c": "Fails. The agent model is the first item in the list of components you can't update in the Customer Service Copilot Bot.",
+        "d": "Fails. Instructions are listed among the components you can't update in the Customer Service Copilot Bot.",
+        "e": "Fails. Topics with names that start with msdyn_ can't be modified in the Customer Service Copilot Bot."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n04"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "sim-d34-q08",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "agents-ai",
+      "objectiveIds": [
+        "D3.1.02",
+        "D3.1.03"
+      ],
+      "conceptId": "customer-support-instructions-source-dependency",
+      "prompt": "Wrenfield Mutual is choosing how Ask a question will answer policy questions in Copilot Service workspace. Its policies exist as current, published knowledge articles in the representatives' language, and also as documents that could be added as knowledge in the Customer Service Copilot Bot.\n\nCompliance requires every Ask a question answer to follow a house style and to tell the representative to escalate when no clear answer exists. The team wants to write this guidance once.\n\nYou need to choose a design in which that guidance shapes the answers.\n\nWhich design should you use?",
+      "answer": "Use only the organization's knowledge base, and put the guidance in the Customer Support agent's Instructions field.",
+      "explanation": "The Instructions field on the Customer Support agent's Overview tab guides tone, style, escalation guidance and compliance reminders for Ask a question, and applies to every response. Microsoft adds a condition: custom instructions are applied only when the organization's Dynamics 365 knowledge base is selected as a knowledge source, and aren't applied with other sources such as Copilot Studio. The Customer Service Copilot Bot's own instructions can't be updated, and Deterministic response makes outputs repeatable without adding any guidance.",
+      "sourceIds": [
+        "sim-cb-s18",
+        "sim-cb-s19"
+      ],
+      "tags": [
+        "domain:agents-ai",
+        "task:apply",
+        "feature:ask-a-question"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Use only the organization's knowledge base as the knowledge source, and put the guidance in the Customer Support agent's Instructions field"
+        },
+        {
+          "id": "b",
+          "text": "Use only the bot's Copilot Studio knowledge as the knowledge source, and put the guidance in the Customer Support agent's Instructions field"
+        },
+        {
+          "id": "c",
+          "text": "Use only the bot's Copilot Studio knowledge as the knowledge source, and put the guidance in the Customer Service Copilot Bot's instructions"
+        },
+        {
+          "id": "d",
+          "text": "Use only the organization's knowledge base as the knowledge source, and turn on Deterministic response on the Customer Support agent's Overview tab"
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "optionExplanations": {
+        "a": "Correct. With the organization's knowledge base as the source, the custom instructions apply to the responses that Copilot generates for Ask a question.",
+        "b": "Fails. Microsoft says custom instructions aren't applied when you use other sources, such as Copilot Studio.",
+        "c": "Fails. Instructions are one of the components that you can't update in the managed Customer Service Copilot Bot.",
+        "d": "Fails. Deterministic response returns consistent, repeatable outputs for the same input. It doesn't apply a house style or escalation guidance."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d3-n03"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "sim-d34-q10",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.02",
+        "D4.2.08",
+        "D4.1.02"
+      ],
+      "conceptId": "routing-rule-layer-selection",
+      "prompt": "Hollis Opticians is redesigning routing in Dynamics 365 Contact Center. Cases arrive through two record workstreams, Lens Orders and Repairs. Live chats arrive through one messaging workstream that sends chats to several queues, and a published conversation orchestration playbook raises a chat's priority score while it waits.\n\nYou need to choose the type of rule that meets each requirement.\n\nWhich type of rule should you use for each requirement?",
+      "answer": "Workstream for each case: an intake rule. Starting priority score: a work classification rule. Refunds queue: a route-to-queue rule. Spanish skill: a work classification rule.",
+      "explanation": "Each layer answers a different question. Intake rules decide which workstream an incoming record uses. Inside a workstream, classification rules run first and enrich the work item, for example by attaching skills. Route-to-queue rules then pick the queue. Dynamic prioritization adds to a priority score, and Microsoft says the initial or base score is set with classification rules. A prioritization rule is the wrong tool here, even though its name fits: dynamic prioritization doesn't apply to queues with custom prioritization rules, so adding one would stop the playbook. Assignment rules choose a representative after the queue is known.",
+      "sourceIds": [
+        "sim-d2d-s24",
+        "sim-d34-s11",
+        "sim-d4-s02",
+        "sim-d4-s05",
+        "sim-d4-s03"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:routing-rules"
+      ],
+      "optionExplanations": {
+        "a": "Correct for the case workstreams. Intake rules determine the workstream that an incoming record work item uses.",
+        "b": "Correct for the starting score and the Spanish skill. Classification rules set the initial or base priority score, and logical skill classification rules attach skills.",
+        "c": "Correct for refunds. Route-to-queue rules send the work item to the queue whose conditions it meets.",
+        "d": "Fails on every row. Prioritization rules order work inside a queue with a custom assignment method, and dynamic prioritization playbooks don't apply to queues with custom prioritization rules. That would stop the playbook from raising the score.",
+        "e": "Fails on every row. Assignment rules select and sort representatives after the queue is chosen. They don't pick a workstream or queue, attach skills or set a starting score."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n01"
+        },
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n08"
+        }
+      ],
+      "status": "approved",
+      "kind": "match",
+      "tray": "Rule types",
+      "table": {
+        "title": "Routing rule layers",
+        "rowHeading": "Requirement",
+        "answerHeading": "Rule type"
+      },
+      "tokens": [
+        {
+          "id": "a",
+          "text": "An intake rule"
+        },
+        {
+          "id": "b",
+          "text": "A work classification rule"
+        },
+        {
+          "id": "c",
+          "text": "A route-to-queue rule"
+        },
+        {
+          "id": "d",
+          "text": "A prioritization rule"
+        },
+        {
+          "id": "e",
+          "text": "An assignment rule"
+        }
+      ],
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Each new case goes to the Lens Orders workstream or the Repairs workstream, depending on its category",
+          "correctTokenId": "a"
+        },
+        {
+          "id": "r2",
+          "label": "Chats from Platinum members start with a higher priority score than other chats, before the playbook raises it",
+          "correctTokenId": "b"
+        },
+        {
+          "id": "r3",
+          "label": "Chats about refunds go to the Refunds queue",
+          "correctTokenId": "c"
+        },
+        {
+          "id": "r4",
+          "label": "Chats from customers who chose Spanish in the pre-chat survey get the Spanish skill",
+          "correctTokenId": "b"
+        }
+      ]
+    },
+    {
+      "id": "sim-d34-q12",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.1.02",
+        "D4.1.04"
+      ],
+      "conceptId": "prioritization-bucket-offer-order",
+      "prompt": "Stonegate Lettings routes tenant cases to the Tenant Cases record queue. The queue uses a custom assignment method with this prioritization ruleset:\n1. Leaks: Case type equals Water leak. Order by: first in, first out.\n2. Premier: Tenant tier equals Premier. Order by: first in, first out.\n\nFour cases are waiting, listed from first routed to last routed:\n- Case A: Standard tier, Billing\n- Case B: Premier tier, Billing\n- Case C: Standard tier, Water leak\n- Case D: Premier tier, Water leak\n\nOne CSR who meets the queue's assignment rules for all four cases becomes available.\n\nYou need to predict the order in which the cases are offered.\n\nWhat is the answer to each question?",
+      "answer": "First: Case C. Last: Case A. After Case C becomes a Billing case: Case D first.",
+      "explanation": "Prioritization rules run in order, and each one forms a priority bucket. The Leaks rule takes Cases C and D, oldest first, so Case C is offered first. Matching both rules doesn't move Case D ahead, because a case belongs to the first bucket it matches and buckets are sorted by the rule's Order by. The Premier rule then takes Case B from the remaining cases. Case A matches no rule, so it goes to the last bucket, ordered first in, first out, even though it was routed first. Prioritization rules run in every assignment cycle, and a changed attribute counts in the next cycle. So once Case C is a Billing case, it matches no rule and drops to the last bucket, and Case D, now the only Leaks case, is offered first.",
+      "sourceIds": [
+        "sim-d4-s05"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:evaluate",
+        "feature:queue-prioritization"
+      ],
+      "optionExplanations": {
+        "r1a": "Fails. Case A was routed first, but it matches no prioritization rule, so it goes to the last bucket.",
+        "r1b": "Fails. Case B matches only the second rule, so its bucket comes after the Leaks bucket.",
+        "r1c": "Correct. Case C is in the Leaks bucket, which is the top bucket, and it was routed before Case D.",
+        "r1d": "Fails. Case D matches both rules, but it's placed in the Leaks bucket, where first in, first out puts the older Case C ahead of it.",
+        "r2a": "Correct. Work items that don't match any prioritization rule go to the last priority bucket, ordered first in, first out, so Case A is offered last.",
+        "r2b": "Fails. Case B is in the Premier bucket, which comes before the bucket of unmatched cases.",
+        "r2c": "Fails. Case C is in the top bucket and is offered first.",
+        "r2d": "Fails. Case D is in the Leaks bucket, so it's offered second, after Case C.",
+        "r3a": "Fails. Case A still matches no rule, so it stays in the last bucket.",
+        "r3b": "Fails. Case B stays in the Premier bucket, which still comes after the Leaks bucket, and Case D is still a Leaks case.",
+        "r3c": "Fails. Once its type is Billing, Case C matches no rule, so it moves to the last bucket, behind Case A.",
+        "r3d": "Correct. The changed attribute counts in the next cycle. Case C no longer matches Leaks, so Case D is the only case in the top bucket."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n03"
+        }
+      ],
+      "status": "approved",
+      "kind": "hotspot",
+      "table": {
+        "title": "Tenant Cases offer order",
+        "rowHeading": "Question",
+        "answerHeading": "Case"
+      },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Which case is offered first?",
+          "options": [
+            {
+              "id": "r1a",
+              "text": "Case A"
+            },
+            {
+              "id": "r1b",
+              "text": "Case B"
+            },
+            {
+              "id": "r1c",
+              "text": "Case C"
+            },
+            {
+              "id": "r1d",
+              "text": "Case D"
+            }
+          ],
+          "correctOptionId": "r1c"
+        },
+        {
+          "id": "r2",
+          "label": "Which case is offered last?",
+          "options": [
+            {
+              "id": "r2a",
+              "text": "Case A"
+            },
+            {
+              "id": "r2b",
+              "text": "Case B"
+            },
+            {
+              "id": "r2c",
+              "text": "Case C"
+            },
+            {
+              "id": "r2d",
+              "text": "Case D"
+            }
+          ],
+          "correctOptionId": "r2a"
+        },
+        {
+          "id": "r3",
+          "label": "Instead, before the next assignment cycle, Case C's case type is changed to Billing. Which case is offered first in that cycle?",
+          "options": [
+            {
+              "id": "r3a",
+              "text": "Case A"
+            },
+            {
+              "id": "r3b",
+              "text": "Case B"
+            },
+            {
+              "id": "r3c",
+              "text": "Case C"
+            },
+            {
+              "id": "r3d",
+              "text": "Case D"
+            }
+          ],
+          "correctOptionId": "r3d"
+        }
+      ]
+    },
+    {
+      "id": "sim-d34-q13",
+      "revision": 1,
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.1.03",
+        "D4.2.01"
+      ],
+      "conceptId": "prequeue-overflow-evaluation-order",
+      "prompt": "Redcliff Rail Travel runs a voice workstream in Dynamics 365 Contact Center. Its route-to-queue ruleset uses the default rule-hit policy, and each queue has overflow conditions in Before work items are queued.\n\nYou need to predict how unified routing handles each call.\n\nWhat happens in each situation?",
+      "answer": "Two matching queues: the call goes to Service. Two overflow conditions: the Out of operation hours action runs first. AI agent: overflow is checked after the first escalation only.",
+      "explanation": "Before a work item is queued, unified routing checks overflow once. With the default hit-all policy, if several queues match the route-to-queue rules, the work item goes to the first one that isn't overflowing, so Service takes the call. If the matched queue is overflowing for more than one reason, the action for the operating hours condition runs first, followed by the other conditions in the order they're defined. The listing order doesn't move Work item limit exceeds ahead. When an AI agent is configured for the workstream, overflow is checked only after the AI agent escalates to a representative. If it escalates more than once, the check and action happen after the first escalation.",
+      "sourceIds": [
+        "sim-d4-s01",
+        "sim-d4-s02"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:evaluate",
+        "feature:overflow"
+      ],
+      "optionExplanations": {
+        "r1a": "Correct. Under hit-all, the system evaluates rule conditions and queue overflow, and routes to the first matched queue that isn't overflowing.",
+        "r1b": "Fails. Sales gets the call and runs its overflow action only if every matched queue is overflowing. Service isn't.",
+        "r1c": "Fails. The fallback queue is used for errors or when no route-to-queue rule matches. Here two rules match.",
+        "r2a": "Correct. When several conditions are true, the action defined for the operating hours condition runs first, and the other conditions follow in their defined order.",
+        "r2b": "Fails. Definition order applies only to the other conditions. The operating hours condition's action runs first wherever it's listed.",
+        "r2c": "Fails. Both conditions are true for the matched queue, so overflow actions run, and the operating hours action runs first.",
+        "r3a": "Correct. With an AI agent on the workstream, overflow is checked after the agent escalates, and with multiple escalations the check and action follow the first one.",
+        "r3b": "Fails. The AI agent is engaged first, and overflow isn't checked until it escalates to a representative.",
+        "r3c": "Fails. Microsoft says that with multiple escalations, the system checks overflow and triggers an action after the first one only."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n04"
+        }
+      ],
+      "status": "approved",
+      "kind": "hotspot",
+      "table": {
+        "title": "Overflow before queueing",
+        "rowHeading": "Situation",
+        "answerHeading": "Result"
+      },
+      "rows": [
+        {
+          "id": "r1",
+          "label": "Two route-to-queue rules match a call. The first rule's queue, Sales, is over its work item limit. The second rule's queue, Service, isn't overflowing.",
+          "options": [
+            {
+              "id": "r1a",
+              "text": "The call goes to Service"
+            },
+            {
+              "id": "r1b",
+              "text": "The call goes to Sales, and the Sales overflow action runs"
+            },
+            {
+              "id": "r1c",
+              "text": "The call goes to the fallback queue, not to Sales or Service"
+            }
+          ],
+          "correctOptionId": "r1a"
+        },
+        {
+          "id": "r2",
+          "label": "A call reaches Bookings while it's out of operating hours and over its work item limit. The Work item limit exceeds pair is listed before the Out of operation hours pair.",
+          "options": [
+            {
+              "id": "r2a",
+              "text": "The Out of operation hours action runs first"
+            },
+            {
+              "id": "r2b",
+              "text": "The Work item limit exceeds action runs first"
+            },
+            {
+              "id": "r2c",
+              "text": "Neither the Out of operation hours nor the Work item limit exceeds action runs"
+            }
+          ],
+          "correctOptionId": "r2a"
+        },
+        {
+          "id": "r3",
+          "label": "An AI agent is configured for the workstream. A call arrives while its target queue is over its work item limit, and the AI agent escalates the call more than once.",
+          "options": [
+            {
+              "id": "r3a",
+              "text": "Overflow is checked after the first escalation only"
+            },
+            {
+              "id": "r3b",
+              "text": "Overflow is checked when the call arrives, before the AI agent"
+            },
+            {
+              "id": "r3c",
+              "text": "Overflow is checked again after each escalation"
+            }
+          ],
+          "correctOptionId": "r3a"
+        }
+      ]
+    },
+    {
+      "id": "sim-d34-q15",
+      "revision": 1,
+      "kind": "multiple",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.03",
+        "D4.2.01"
+      ],
+      "conceptId": "ai-agent-first-placement-options",
+      "prompt": "Thornbury Outfitters has a Copilot Studio agent that's connected to Dynamics 365 Contact Center and has an escalation topic for handoff to CSRs. Live chats arrive through a push messaging workstream, and its route-to-queue rules send every chat to the Orders queue. Orders uses the Highest capacity assignment method, and its members use unit-based capacity.\n\nEvery chat must be handled by the AI agent before any CSR receives it.\n\nYou need to decide where the AI agent receives chats.\n\nWhich two actions should you perform? Each correct answer presents a complete solution.",
+      "answer": "Add the AI agent in the Bot area of the push workstream, or add it to Orders with more capacity than any CSR.",
+      "explanation": "Microsoft documents two places for an AI agent. Added to a push workstream, it receives every incoming work item first, after classification runs. Added to a queue alongside CSRs, it should have more capacity than all of them, because its capacity isn't reduced after an assignment, so any conversation routed to the queue is picked up by the agent first. Equal capacity leaves ties to the assignment method, so some chats would reach CSRs first. Agents aren't in a default queue unless you add them, and a default queue gets only the work routed to it, while these chats all go to Orders. Agents receive conversations only from push workstreams. For an agent that presents the greeting, Microsoft prefers the workstream because engagement is quicker, but either placement meets this goal.",
+      "sourceIds": [
+        "sim-d4-s07",
+        "sim-d34-s09",
+        "sim-d34-s10",
+        "sim-d4-s05"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:engagement-agent"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Add the AI agent in the Bot area of the push messaging workstream"
+        },
+        {
+          "id": "b",
+          "text": "Add the AI agent to the Orders queue, with more capacity than any CSR in Orders"
+        },
+        {
+          "id": "c",
+          "text": "Add the AI agent to the Orders queue, with the same capacity as the CSRs in Orders"
+        },
+        {
+          "id": "d",
+          "text": "Add the AI agent to the default messaging queue, and leave it out of Orders"
+        },
+        {
+          "id": "e",
+          "text": "Add the AI agent in the Bot area of a new pick messaging workstream for these chats"
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "optionExplanations": {
+        "a": "Correct, a complete solution. After an agent is added to a workstream, the incoming work item is first routed to that agent at runtime, and the workstream is push-based.",
+        "b": "Correct, a complete solution. In a queue with both agents and CSRs, setting the agent's capacity higher than all CSRs ensures that any conversation routed to the queue is picked up by the agent first.",
+        "c": "Fails. Microsoft's guidance is to set the agent's capacity higher than all representatives. With equal capacity, Highest capacity breaks ties by round robin, so some chats reach CSRs first.",
+        "d": "Fails. The route-to-queue rules send every chat to Orders, so the default messaging queue doesn't receive these chats. Agents also aren't in a default queue until you add them.",
+        "e": "Fails. Agents can receive conversations only if they're added to push-based workstreams, and the distribution mode can't be changed after a workstream is created."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n05"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "sim-d34-q16",
+      "revision": 1,
+      "kind": "single",
+      "domainId": "work-distribution",
+      "objectiveIds": [
+        "D4.2.08"
+      ],
+      "conceptId": "supervisor-case-assign-capacity-tracking",
+      "prompt": "Oakline Medical Billing routes cases through a record workstream in Dynamics 365 Contact Center, and its CSRs use capacity profiles. Supervisors often move a routed case from one CSR to another by selecting Assign.\n\nWhen a supervisor reassigns a case this way, unified routing rules must apply, and the capacity that the case uses must move from the previous CSR to the new CSR.\n\nYou need to configure this behavior.\n\nWhat should you do?",
+      "answer": "Turn on Consume capacity on supervisor case assignment for the case record type on the Record routing page.",
+      "explanation": "For case records, the Record routing page has a setting, Consume capacity on supervisor case assignment, that applies unified routing rules and tracks representative capacity when supervisors use Assign. The system then transfers capacity from the previous representative to the new one. The setting is off by default, so it must be turned on. Wrap-up blocking, assignment blocking, custom assignment rules and representative affinity all shape how automated assignment uses capacity. None of them makes a supervisor's Assign move the case's capacity.",
+      "sourceIds": [
+        "sim-d2d-s24",
+        "sim-d1-s13",
+        "sim-d4-s07"
+      ],
+      "tags": [
+        "domain:work-distribution",
+        "task:apply",
+        "feature:record-routing"
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "On the Record routing page, turn on Consume capacity on supervisor case assignment for cases"
+        },
+        {
+          "id": "b",
+          "text": "In the case workstream's work distribution settings, set Block capacity for wrap up to Always block for routed cases"
+        },
+        {
+          "id": "c",
+          "text": "In the CSRs' capacity profile, set Assignment blocking to Yes so that supervisor assignments respect limits"
+        },
+        {
+          "id": "d",
+          "text": "Give the case queue a custom assignment method whose rules check available capacity for cases"
+        },
+        {
+          "id": "e",
+          "text": "In the record routing workstream, set Keep same representative for entire conversation to Yes"
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "optionExplanations": {
+        "a": "Correct. This setting applies unified routing rules and tracks capacity when supervisors use Assign, and transfers capacity from the previous representative to the new one. It's off by default.",
+        "b": "Fails. Block capacity for wrap up controls how long capacity stays consumed after a conversation enters wrap-up. It doesn't move capacity when a supervisor reassigns a case.",
+        "c": "Fails. Assignment blocking stops automatic assignment of new work once the work item limit is met. Microsoft also says a supervisor can override capacity and assign work manually.",
+        "d": "Fails. Assignment rules select representatives for automated assignment. They don't move a case's capacity when a supervisor picks the representative with Assign.",
+        "e": "Fails. Keep same representative for entire conversation keeps a conversation with its original representative, which is the opposite of moving a case to a new CSR."
+      },
+      "relatedNotes": [
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n08"
+        },
+        {
+          "packId": "contact-center-core",
+          "noteId": "cc-d4-n02"
         }
       ],
       "status": "approved"

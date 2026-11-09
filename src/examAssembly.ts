@@ -24,7 +24,7 @@ function shareSlots(weights: Map<StandaloneFormat, number>, slots: number): Map<
  * Whole groups go first because they cannot be trimmed. Standalone formats then take the
  * remaining slots, scarcest first, always from the domain furthest below its quota.
  */
-export function assembleBlueprintExam(bank: QuestionBank, count: number, lastSeen: ReadonlyMap<string, number>, random: () => number): AssembledExam {
+function assembleOnce(bank: QuestionBank, count: number, lastSeen: ReadonlyMap<string, number>, random: () => number): AssembledExam {
   const blueprint = bank.blueprint;
   if (!blueprint) throw new Error('This question bank has no exam blueprint.');
   const seen = (question: ExamQuestion) => lastSeen.get(question.id) ?? -1;
@@ -104,11 +104,27 @@ export function assembleBlueprintExam(bank: QuestionBank, count: number, lastSee
   return { questions: [...general, ...chosenGroups.flatMap(members)], groups: chosenGroups, sections };
 }
 
-/** The largest exam the pool supports, so setup can state it instead of failing on start. */
+// A small pool can fail on one draw (a case study that leaves a domain short) and succeed on the next,
+// so a few fresh draws are tried before refusing. Nothing is ever substituted.
+const ATTEMPTS = 12;
+export function assembleBlueprintExam(bank: QuestionBank, count: number, lastSeen: ReadonlyMap<string, number>, random: () => number): AssembledExam {
+  let failure: unknown;
+  for (let attempt = 0; attempt < ATTEMPTS; attempt++) {
+    try { return assembleOnce(bank, count, lastSeen, random); } catch (error) { failure = error; if (!bank.blueprint) break; }
+  }
+  throw failure;
+}
+
+function seeded(seed: number): () => number {
+  let state = seed * 9301 + 49297;
+  return () => { state = (state * 9301 + 49297) % 233280; return state / 233280; };
+}
+
+/** The largest exam the pool reliably supports, so setup can state it instead of failing on start. */
 export function maxBlueprintCount(bank: QuestionBank, minimum = 50): number {
   const approved = bank.questions.filter(question => question.status === 'approved').length;
   for (let count = approved; count >= minimum; count--) {
-    try { assembleBlueprintExam(bank, count, new Map(), () => 0); return count; } catch { /* Try a smaller exam. */ }
+    try { for (let seed = 0; seed < 20; seed++) assembleBlueprintExam(bank, count, new Map(), seeded(seed)); return count; } catch { /* Try a smaller exam. */ }
   }
   return 0;
 }

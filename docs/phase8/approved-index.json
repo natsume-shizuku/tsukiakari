@@ -1306,5 +1306,360 @@
     "reviewer": "channels-digital-rereviewer",
     "reviewedAt": "2026-11-09",
     "fingerprint": "0c218b868286e7ae092e637ba10609d48cde6eed27a295a47642320537704eec"
+  },
+  {
+    "id": "sim-d5-q05",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "integrated-provider-trial-activate-backfill",
+    "objectiveIds": [
+      "D5.3.02"
+    ],
+    "kind": "order",
+    "groupId": null,
+    "author": "experience-author",
+    "reviewer": "experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "b8f0e564dc6f4a12f652e89efb096a5a8c29a1bf30dc89b97988a2d721682d22"
+  },
+  {
+    "id": "sim-d5-q07",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "generic-session-template-anchor-icon-title",
+    "objectiveIds": [
+      "D5.1.04"
+    ],
+    "kind": "hotspot",
+    "groupId": null,
+    "author": "experience-author",
+    "reviewer": "experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "ccbe26dc1df4d149d3dc23888fcdbc392462141e01c896641e2990e6935025a6"
+  },
+  {
+    "id": "sim-d5-q08",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "desktop-alert-icon-timer-countdown-limits",
+    "objectiveIds": [
+      "D5.1.05"
+    ],
+    "kind": "hotspot",
+    "groupId": null,
+    "author": "experience-author",
+    "reviewer": "experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "9e13f3198fa35838e3f499e52bdb445a0c8e8fced72de4aeddad7dc40f82fa04"
+  },
+  {
+    "id": "sim-d5-q09",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "macro-stale-context-versus-stale-form",
+    "objectiveIds": [
+      "D5.2.03"
+    ],
+    "kind": "hotspot",
+    "groupId": null,
+    "author": "experience-author",
+    "reviewer": "experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "a1312c6f895e2bc4c494b7621e740362b424aa3ca46643d58e7e769e4c0740a0"
+  },
+  {
+    "id": "sim-d5-q10",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "link-to-conversation-override-refresh-active",
+    "objectiveIds": [
+      "D5.2.06"
+    ],
+    "kind": "hotspot",
+    "groupId": null,
+    "author": "experience-author",
+    "reviewer": "experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "2ff805188d0b3ac48c43e2d7a164c30243b576d2dab31d464e6a3315eb24d2cc"
+  },
+  {
+    "id": "sim-d5-q11",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "custom-app-pane-tool-multisession-alm",
+    "objectiveIds": [
+      "D5.2.01"
+    ],
+    "kind": "multiple",
+    "groupId": null,
+    "author": "experience-author",
+    "reviewer": "experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "e629f1985126ed35c1c3c6df6596d4adf3396ecb5578f931f0680642d3a082ea"
+  },
+  {
+    "id": "sim-d5-q12",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "apm-background-session-creation-guard",
+    "objectiveIds": [
+      "D5.2.05"
+    ],
+    "kind": "multiple",
+    "groupId": null,
+    "author": "experience-author",
+    "reviewer": "experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "f48981622e61ebbfbb5814bc5cc3603606ba070b15071a628c9ca549a22641d7"
+  },
+  {
+    "id": "sim-d5-q14",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "ckm-custom-record-type-harvest-trigger",
+    "objectiveIds": [
+      "D5.3.04"
+    ],
+    "kind": "multiple",
+    "groupId": null,
+    "author": "experience-author",
+    "reviewer": "experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "5f93013e33fd0f62ff00dc344f12e965faf578992370f715e39cff4c42904218"
+  },
+  {
+    "id": "sim-d5-q15",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "script-focus-requires-session-association",
+    "objectiveIds": [
+      "D5.2.02",
+      "D5.2.03"
+    ],
+    "kind": "single",
+    "groupId": null,
+    "author": "experience-author",
+    "reviewer": "experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "ff13e8e6c9a2ff058650f51fb862f2e71d6c94e036f375d2ae7d68d4b34211d3"
+  },
+  {
+    "id": "sim-d5-q16",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "suggest-as-you-type-title-phrase-match",
+    "objectiveIds": [
+      "D5.3.01"
+    ],
+    "kind": "single",
+    "groupId": null,
+    "author": "experience-author",
+    "reviewer": "experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "40917baedeebb85cbd5d4583c31f0cf8f6926089d30511cefefd645e8be85362"
+  },
+  {
+    "id": "sim-d5-q17",
+    "revision": 1,
+    "domainId": "representative-experience",
+    "conceptId": "chat-article-link-macro-portal-setting",
+    "objectiveIds": [
+      "D5.3.05",
+      "D5.2.03"
+    ],
+    "kind": "single",
+    "groupId": null,
+    "author": "experience-author",
+    "reviewer": "experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "c3ca3cfd1591119fd6315f5290f920385e0a5505c6a538d19de6e0d5572e4b83"
+  },
+  {
+    "id": "sim-d5-q18",
+    "revision": 1,
+    "domainId": "channels",
+    "conceptId": "automated-masking-sender-and-channel-scope",
+    "objectiveIds": [
+      "D2.3.05"
+    ],
+    "kind": "hotspot",
+    "groupId": null,
+    "author": "experience-author",
+    "reviewer": "experience-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "f4d32f56640ff88d728e5d69f59ce3d51d7475b62fa111b3427067f8254186f4"
+  },
+  {
+    "id": "sim-d34-q01",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "basic-voice-dtmf-input-precedence",
+    "objectiveIds": [
+      "D3.2.07",
+      "D3.2.08"
+    ],
+    "kind": "match",
+    "groupId": null,
+    "author": "ai-distribution-author",
+    "reviewer": "ai-distribution-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "def1d6a6f3b1390fdde1d008d0c445c6e46bd764ba98f4474be609421e879724"
+  },
+  {
+    "id": "sim-d34-q02",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "realtime-speech-sensitivity-selection",
+    "objectiveIds": [
+      "D3.2.06",
+      "D3.2.09"
+    ],
+    "kind": "match",
+    "groupId": null,
+    "author": "ai-distribution-author",
+    "reviewer": "ai-distribution-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "31f02945500aa1de1f5c44e4038473f91958baf25dab567b1b72a3df6c722159"
+  },
+  {
+    "id": "sim-d34-q04",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "consent-recording-runtime-outcomes",
+    "objectiveIds": [
+      "D3.2.04"
+    ],
+    "kind": "hotspot",
+    "groupId": null,
+    "author": "ai-distribution-author",
+    "reviewer": "ai-distribution-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "6ddc83c555a2d58f19d11149b90f173af58de3f17cd60cd896ffa23f3a146626"
+  },
+  {
+    "id": "sim-d34-q05",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "topic-value-reuse-without-reprompt",
+    "objectiveIds": [
+      "D3.2.02"
+    ],
+    "kind": "multiple",
+    "groupId": null,
+    "author": "ai-distribution-author",
+    "reviewer": "ai-distribution-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "60fb526de506e57efd4152bf762d992b5926d894cae0e5c30f1e9f0ca1aadf62"
+  },
+  {
+    "id": "sim-d34-q06",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "managed-copilot-bot-model-via-connected-agent",
+    "objectiveIds": [
+      "D3.1.04"
+    ],
+    "kind": "multiple",
+    "groupId": null,
+    "author": "ai-distribution-author",
+    "reviewer": "ai-distribution-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "374489027d13daf96665675de6b99c0043954d026e212246c1e6a170cb06c5c0"
+  },
+  {
+    "id": "sim-d34-q08",
+    "revision": 1,
+    "domainId": "agents-ai",
+    "conceptId": "customer-support-instructions-source-dependency",
+    "objectiveIds": [
+      "D3.1.02",
+      "D3.1.03"
+    ],
+    "kind": "single",
+    "groupId": null,
+    "author": "ai-distribution-author",
+    "reviewer": "ai-distribution-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "90157ecd03bf4e8dab860de82caa62393a4fad5471257ae178e82e195b733d56"
+  },
+  {
+    "id": "sim-d34-q10",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "routing-rule-layer-selection",
+    "objectiveIds": [
+      "D4.2.02",
+      "D4.2.08",
+      "D4.1.02"
+    ],
+    "kind": "match",
+    "groupId": null,
+    "author": "ai-distribution-author",
+    "reviewer": "ai-distribution-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "3610286c46191dc495e4b464e70fc849802c1c9de190a76405d8e716f27aafd9"
+  },
+  {
+    "id": "sim-d34-q12",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "prioritization-bucket-offer-order",
+    "objectiveIds": [
+      "D4.1.02",
+      "D4.1.04"
+    ],
+    "kind": "hotspot",
+    "groupId": null,
+    "author": "ai-distribution-author",
+    "reviewer": "ai-distribution-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "acb503273c78adaf00e10a44db3fd9fa92a389d488b07af63ac527f196a1bf05"
+  },
+  {
+    "id": "sim-d34-q13",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "prequeue-overflow-evaluation-order",
+    "objectiveIds": [
+      "D4.1.03",
+      "D4.2.01"
+    ],
+    "kind": "hotspot",
+    "groupId": null,
+    "author": "ai-distribution-author",
+    "reviewer": "ai-distribution-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "030ae6abb084bead13dce5d2081875bf382590bed90f012a8646791035334426"
+  },
+  {
+    "id": "sim-d34-q15",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "ai-agent-first-placement-options",
+    "objectiveIds": [
+      "D4.2.03",
+      "D4.2.01"
+    ],
+    "kind": "multiple",
+    "groupId": null,
+    "author": "ai-distribution-author",
+    "reviewer": "ai-distribution-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "ba01997f3601057dde47ff79ca1ad269dc3ac5bb2fe75cf05dcc1a24409171b4"
+  },
+  {
+    "id": "sim-d34-q16",
+    "revision": 1,
+    "domainId": "work-distribution",
+    "conceptId": "supervisor-case-assign-capacity-tracking",
+    "objectiveIds": [
+      "D4.2.08"
+    ],
+    "kind": "single",
+    "groupId": null,
+    "author": "ai-distribution-author",
+    "reviewer": "ai-distribution-reviewer",
+    "reviewedAt": "2026-11-09",
+    "fingerprint": "62510c605c30486e68e5ff579d56b708b4c82cbf66a07dd9dec04692449ab17e"
   }
 ]

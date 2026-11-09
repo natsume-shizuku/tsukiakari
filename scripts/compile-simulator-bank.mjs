@@ -5,7 +5,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {validatePack} from '../src/validation.ts';
-import {combineSimulatorBank,simulatorFingerprint,validateSimulatorBatch,validateSimulatorDraft,validateSimulatorManifest} from './simulator-review-utils.mjs';
+import {approvedPart,combineSimulatorBank,simulatorFingerprint,validateSimulatorBatch,validateSimulatorDraft,validateSimulatorManifest} from './simulator-review-utils.mjs';
 
 const root=fileURLToPath(new URL('../',import.meta.url));
 const [mode,target]=process.argv.slice(2);
@@ -44,7 +44,8 @@ if(mode==='--stamp'){
 
 const batches=[];
 for(const spec of manifest.batches){
- const bundle=await read(spec.bundle),reviews=await read(spec.review);
+ const full={bundle:await read(spec.bundle),reviews:await read(spec.review)};
+ const {bundle,reviews}=spec.partial?approvedPart(full.bundle,full.reviews):full;
  batches.push({id:spec.id,bundle,approvals:validateSimulatorBatch({...context,bundle,reviews})});
 }
 if(!batches.length){console.log('Simulator bank: no approved batches yet.');process.exit(0)}

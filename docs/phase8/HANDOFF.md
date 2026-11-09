@@ -6,8 +6,10 @@ Written 2026-11-09 for an agent that picks up this work, such as Codex running o
 
 The target is 128 original questions. The owner chose to keep all 128 rather than ship fewer.
 
-- **Published: 85.** These are approved and compiled into `src/content/published/ab250-simulator-bank.json`. The batches are 8c-pilot, 8d-analytics, 8d-case-b, 8d-deployment, 8d-channels-voice and 8d-channels-digital.
-- **Not published: 43.** Every one is written and passes the draft structure check.
+- **Live preview: 108.** On 2026-11-09 the owner asked to publish the approved questions early. The site at https://natsume-shizuku.github.io/tsukiakari/ now offers **AB-250 — Exam Simulator** as preview version 0.9.0, with exams of 50 to 81 questions.
+  - Complete batches: 8c-pilot, 8d-analytics, 8d-case-b, 8d-deployment, 8d-channels-voice and 8d-channels-digital, 85 questions in all.
+  - Approved part of each unfinished batch: 12 from 8d-experience and 11 from 8d-ai-distribution. Both carry `"partial": true` in `src/content/simulator/manifest.json`, so the compiler publishes only their approved questions and the sources those cite. A partial batch may never split a case study or series.
+- **Not published: 20.** That is the 11 questions sent back for fixes and the 9 in case study C. Every one is written and passes the draft structure check.
 
 | Batch file (`src/content/simulator/`) | Questions | State at handoff (2026-11-09) | Next step |
 |---|---|---|---|
@@ -28,7 +30,8 @@ When you re-review a fixed question, update only its entry: write a new reviewer
 3. **Approval is tied to exact content.** Any change to an approved question, including its editorial entry or the sources it cites, voids its fingerprint, and the compiler then rejects the batch. Do not touch approved questions.
 4. **Bounded files.** Edit only the file your task names. Never edit `src/content/published/` by hand, or `dist/`.
 5. **Repository rules.** Do not commit, push or deploy without the owner's explicit say-so. Leave ports 4173, 4174 and 5173 alone.
-6. **Revisions stay at 1** while a batch is unpublished.
+6. **Live questions are frozen.** The 108 published questions are live, so treat them like the accepted banks: do not edit them. If one really must change, raise its `revision`, have it re-reviewed, and record why in `docs/PHASE_8.md`. Questions not yet published stay at revision 1.
+7. **Every push to `main` deploys the site.** `.github/workflows/deploy-pages.yml` runs the tests and the build, then publishes. Only push when the owner asks, and only with all checks green.
 
 ## The loop for each batch
 
@@ -42,13 +45,17 @@ When you re-review a fixed question, update only its entry: write a new reviewer
 
 The experience so far: no review has found a wrong answer key. 30–70% of each batch came back for leaks, ambiguity or unsupported sentences, usually needing one or two fix rounds.
 
-## Publishing, once all 128 are approved
+## Publishing more as batches finish
 
-1. Add each finished batch to `batches` in `src/content/simulator/manifest.json`, following the existing entries.
-2. Set `"release": true` in that manifest. The compiler then holds the format and domain mix within 3 points of the blueprint.
+When a partial batch has every question approved, remove its `"partial": true`. For case study C, add a new manifest entry once all 9 are approved: a case study can't be published in part. Then run `node scripts/compile-simulator-bank.mjs --write` and `--check`, and `npm test`. The app picks up the new count from `src/content/published/simulator-manifest.json`, because the bank is already registered in `src/content/questionBanks.ts`.
+
+## Final release, once all 128 are approved
+
+1. Make sure no batch in the manifest is still marked `"partial"`.
+2. Set `"release": true` and `"releaseVersion": "1.0.0"` in that manifest. The compiler then refuses partial batches and holds the format and domain mix within 3 points of the blueprint.
 3. Run `node scripts/compile-simulator-bank.mjs --write`, then `--check`.
-4. Register `ab250-simulator` in `src/content/questionBanks.ts`: import `./published/ab250-simulator-bank.json?url` and `./published/simulator-manifest.json`, add the manifest to `questionBankManifests`, and add the URL to `assets`.
-5. Add unit tests for the real bank, modeled on `tests/unit/examAssembly.test.ts` and `realExamBank.test.ts`:
+4. The bank is already registered in the app. Nothing changes in `src/content/questionBanks.ts`.
+5. Extend `tests/unit/simulatorBank.test.ts`, which already checks the published bank, assembly at 50 and at the largest size, and partial batches. Pin the release counts:
    - 128 approved questions
    - formats: match 32, order 7, hotspot 34, multiple 26, single 21, series 8 (check against the compiled bank)
    - domains, in manifest order: 22, 41, 15, 15, 22, 13
@@ -66,11 +73,17 @@ The experience so far: no review has found a wrong answer key. 30–70% of each 
 
 ## Checks at handoff
 
-- `node scripts/compile-simulator-bank.mjs --check`: 85 questions, 85 independent approvals, 4 groups.
-- `npm run lint`: passed. `npm test`: 402 tests in 32 files passed.
-- `npm run build` and `npm run test:e2e` were not run at handoff. They last passed at 190/190 before the content batches.
+- `node scripts/compile-simulator-bank.mjs --check`: 108 questions, 108 independent approvals, 4 groups.
+- `npm run lint` passed. `npm test`: 406 tests passed. `npm run build` passed. `npm run test:e2e`: 191 passed.
 - Last dump similarity run (2026-11-08): 123 items, 0 flagged. Highest scores: phrase 0.125, stem words 0.155, options 0.111. It must be rerun on the final bank.
 - `docs/phase8/AUTHORING_BRIEF.md` now has 32 numbered checks, added as reviews turned up new leak patterns. Add new ones there.
+
+## Engine changes made for the preview
+
+- `assembleBlueprintExam` now tries up to 12 fresh draws before refusing. With a smaller pool, a single draw could fail when the chosen case study left a domain short, about 1 in 9 times at 50 questions. Nothing is substituted.
+- `maxBlueprintCount` now reports a count only if 20 seeded draws all succeed, so setup never offers a size that fails at random. It reports 81 for the 108-question preview.
+- The compiler and `scripts/simulator-review-utils.mjs` support `"partial": true` batches through `approvedPart`. A release refuses them.
+- Record these in `docs/PHASE_8.md` with the final results, along with the q14 change from multiple to single and the owner's 2026-11-09 decisions to deploy and to publish the preview.
 
 ## Reference
 

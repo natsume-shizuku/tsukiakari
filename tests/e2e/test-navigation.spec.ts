@@ -139,7 +139,7 @@ test.describe('without the developer flag', () => {
     await expect(page.getByRole('heading', { name: 'Flashcard topics', exact: true })).toBeVisible();
     await expect(page.getByText('Engineering fixture', { exact: false })).toHaveCount(0);
     await page.goto('/#tests');
-    await expect(page.getByLabel('Question bank', { exact: true }).locator('option')).toHaveText(['Choose a question bank', 'AB-250 — Original Practice']);
+    await expect(page.getByLabel('Question bank', { exact: true }).locator('option')).toHaveText(['Choose a question bank', 'AB-250 — Original Practice', 'AB-250 — Exam Simulator']);
   });
 
   test('fixture cards already saved in a deck stay usable once the flag is gone', async ({ page }) => {

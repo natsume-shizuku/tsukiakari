@@ -5,6 +5,8 @@ import fixtureUrl from './engineering-question-bank.json?url';
 import simulatorFixtureUrl from './simulator-fixture-bank.json?url';
 import ab250Url from './published/ab250-bank.json?url';
 import ab250Manifest from './published/bank-manifest.json';
+import simulatorUrl from './published/ab250-simulator-bank.json?url';
+import simulatorManifest from './published/simulator-manifest.json';
 
 export interface QuestionBankManifest {
   id: string; version: string; title: string; description: string; fixture: boolean; questionCount: number;
@@ -24,10 +26,10 @@ export const questionBankManifests: QuestionBankManifest[] = [{
   domains: [17, 32, 12, 12, 17, 10].map((weight, index) => ({
     id: 'fixture-domain-' + (index + 1), title: 'Fixture domain ' + (index + 1), weight,
   })),
-}, ab250Manifest];
+}, ab250Manifest, simulatorManifest];
 // The simulator preview is listed on the development server so its formats can be tried; production builds hide it.
 export const visibleBankManifests = fixturesVisible ? questionBankManifests : questionBankManifests.filter(bank => !bank.fixture || (import.meta.env.DEV && bank.id === 'simulator-test-fixture'));
-const assets: Record<string, string> = { 'developer-test-fixture': fixtureUrl, 'simulator-test-fixture': simulatorFixtureUrl, 'ab250-original': ab250Url };
+const assets: Record<string, string> = { 'developer-test-fixture': fixtureUrl, 'simulator-test-fixture': simulatorFixtureUrl, 'ab250-original': ab250Url, 'ab250-simulator': simulatorUrl };
 const pending = new Map<string, Promise<QuestionBank>>();
 
 /** Only successful/ongoing loads are cached. Retry after a network or validation failure refetches. */
