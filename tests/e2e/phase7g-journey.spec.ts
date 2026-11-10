@@ -1,5 +1,6 @@
 import { sel } from '../support/selection';
 import { test, expect, type Locator, type Page } from '@playwright/test';
+import { followSiteLink } from './siteNavigation';
 import { readFileSync } from 'node:fs';
 import type { Deck, LearningCopy, ReviewLog, SchedulerState, StudyCuration, StudyPack, TestAttempt } from '../../src/domain';
 import type { Backup } from '../../src/portability';
@@ -29,7 +30,7 @@ async function ready(page: Page, path = '/') {
   await page.goto(path);
   await expect(page.getByText('Saved in this browser', { exact: true }).first()).toBeVisible();
 }
-const nav = (page: Page, label: string) => page.getByRole('link', { name: label, exact: true }).click();
+const nav = (page: Page, label: string) => followSiteLink(page, label);
 const go = (page: Page, hash: string) => page.evaluate(value => { location.hash = value; }, hash);
 const fits = (page: Page) => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth);
 const stat = (row: Locator, label: string) => row.locator('dt').filter({ hasText: new RegExp('^' + label + '$') }).locator('..').locator('dd');

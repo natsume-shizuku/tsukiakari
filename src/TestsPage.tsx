@@ -8,6 +8,7 @@ import { QuestionAnswer } from './QuestionAnswer';
 import { SelectionOptions } from './SelectionOptions';
 import { isAnswered, isSelection, requiredSelections } from './testGrading';
 import { timeText, useNow } from './useNow';
+import { useStickyHeight } from './useStickyHeight';
 import type { useWorkspace } from './useWorkspace';
 import { questionBankManifests, visibleBankManifests, loadQuestionBank } from './content/questionBanks';
 import { abandonTestAttempt, expireTestAttempts, finishTestAttempt, revealTestAnswer, retryMissedQuestions, retryTestAttempt, saveTestAnswer, startTest } from './testStorage';
@@ -47,7 +48,7 @@ function ScaledNote({ attempt }: { attempt: TestAttempt }) {
   return <p className="fine-print test-scaled-note">Roughly {percent(attempt) * 10} out of 1000, where 700 is the published passing score. This is an estimate: real exams report a scaled score, not a raw percentage.</p>;
 }
 
-export function TestsPage({ desk, onDirtyChange, initialBankId, initialAttemptId }: { desk: Desk; onDirtyChange?: (dirty: boolean) => void; initialBankId?: string; initialAttemptId?: string }) {
+export function TestsPage({ desk, onDirtyChange, initialBankId, initialAttemptId, navigationControl, onActiveAttemptChange }: { navigationControl?: ReactNode; onActiveAttemptChange?: (active: boolean) => void; desk: Desk; onDirtyChange?: (dirty: boolean) => void; initialBankId?: string; initialAttemptId?: string }) {
   const attempts = desk.workspace?.testAttempts ?? [];
   const active = attempts.find(attempt => attempt.completedAt === null);
   const [selectedId, setSelectedId] = useState<string | null>(initialAttemptId ?? active?.id ?? null);
@@ -153,8 +154,8 @@ export function TestsPage({ desk, onDirtyChange, initialBankId, initialAttemptId
     const saved = await desk.mutate(() => abandonTestAttempt(attempt.id), 'Test abandoned.');
     if (saved) { setSetupNotice('Test abandoned. You can start a new test.'); goSetup(); }
   };
-  if (selected?.delivery && selected.completedAt === null) return <Suspense fallback={<p role="status">Loading test…</p>}><ExamRunner key={selected.id} desk={desk} attempt={selected} onDirtyChange={onDirtyChange} onSetup={goSetup} onAbandon={() => { void abandon(selected); }}/></Suspense>;
-  if (selected) return <AttemptReader key={selected.id} desk={desk} attempt={selected} onDirtyChange={onDirtyChange} onSetup={goSetup} onAbandon={() => { void abandon(selected); }} onRetry={() => { void retry(selected); }} onRetryMissed={() => { void retry(selected, true); }} hasOtherActive={Boolean(active && active.id !== selected.id)}/>;
+  if (selected?.delivery && selected.completedAt === null) return <Suspense fallback={<p role="status">Loading test…</p>}><ExamRunner onActiveAttemptChange={onActiveAttemptChange} navigationControl={navigationControl} key={selected.id} desk={desk} attempt={selected} onDirtyChange={onDirtyChange} onSetup={goSetup} onAbandon={() => { void abandon(selected); }}/></Suspense>;
+  if (selected) return <AttemptReader onActiveAttemptChange={onActiveAttemptChange} navigationControl={navigationControl} key={selected.id} desk={desk} attempt={selected} onDirtyChange={onDirtyChange} onSetup={goSetup} onAbandon={() => { void abandon(selected); }} onRetry={() => { void retry(selected); }} onRetryMissed={() => { void retry(selected, true); }} hasOtherActive={Boolean(active && active.id !== selected.id)}/>;
   if (previewing && currentBank) return <PilotQuestionPreview bank={currentBank} onClose={() => { setPreviewing(false); requestAnimationFrame(() => previewButton.current?.focus()); }}/>;
   return <section className="tests-page">
     <header className="page-header"><p className="eyebrow">Put it into practice</p><h1 ref={heading} tabIndex={-1}>Tests</h1><p>Practice at your pace or take a timed exam. Test results stay separate from flashcard study.</p></header>
@@ -196,9 +197,10 @@ function PilotQuestionPreview({ bank, onClose }: { bank: QuestionBank; onClose: 
   </section>;
 }
 
-function AttemptReader({ desk, attempt, onDirtyChange, onSetup, onAbandon, onRetry, onRetryMissed, hasOtherActive }: { desk: Desk; attempt: TestAttempt; onDirtyChange?: (dirty: boolean) => void; onSetup: () => void; onAbandon: () => void; onRetry: () => void; onRetryMissed: () => void; hasOtherActive: boolean }) {
+function AttemptReader({ desk, attempt, onDirtyChange, onSetup, onAbandon, onRetry, onRetryMissed, hasOtherActive, navigationControl, onActiveAttemptChange }: { onActiveAttemptChange?: (active: boolean) => void; navigationControl?: ReactNode; desk: Desk; attempt: TestAttempt; onDirtyChange?: (dirty: boolean) => void; onSetup: () => void; onAbandon: () => void; onRetry: () => void; onRetryMissed: () => void; hasOtherActive: boolean }) {
   const now = useNow(attempt.completedAt === null && attempt.deadlineAt !== null);
   const completed = attempt.completedAt !== null;
+  useEffect(() => { onActiveAttemptChange?.(!completed); return () => onActiveAttemptChange?.(false); }, [completed, onActiveAttemptChange]);
   const expired = !completed && attempt.deadlineAt !== null && attempt.deadlineAt <= now;
   const [drafts, setDrafts] = useState<Record<string, string[]>>({});
   const [reviewingExam, setReviewingExam] = useState(() => new URLSearchParams(window.location.hash.split('?')[1] ?? '').get('review') === '1');
@@ -211,6 +213,7 @@ function AttemptReader({ desk, attempt, onDirtyChange, onSetup, onAbandon, onRet
   const pending = Object.keys(drafts).length > 0 && !completed;
   const heading = useRef<HTMLHeadingElement>(null);
   const resultsDialog = useRef<HTMLDialogElement>(null);
+  const toolbar = useStickyHeight<HTMLElement>('--test-toolbar-height');
   const canAnswer = desk.access === 'writer' && !completed && !expired;
   const showExamResult = completed && attempt.mode === 'exam' && !reviewingExam;
   useEffect(() => { heading.current?.focus({ preventScroll: true }); window.scrollTo({ top: 0 }); }, []);
@@ -291,9 +294,12 @@ function AttemptReader({ desk, attempt, onDirtyChange, onSetup, onAbandon, onRet
       </Question>;
   };
   return <section className="tests-page test-attempt">
-    <header className="test-attempt-heading"><div><p className="eyebrow">{attempt.fixture ? 'Engineering preview · ' : ''}{attempt.mode === 'exam' ? 'Exam Mode' : 'Practice Mode'}</p><h1 ref={heading} tabIndex={-1}>{attemptTitle(attempt)}</h1></div><div className="test-actions"><button className="button secondary" onClick={leave}>Back to Tests</button>{!completed && <button className="button secondary" disabled={!desk.canWrite || expired} onClick={onAbandon}>Abandon test</button>}</div></header>
+    <header ref={toolbar} className="test-session-bar test-toolbar">
+      <div className="test-toolbar-title">{!completed && navigationControl}<div><p className="eyebrow">{attempt.fixture ? 'Engineering preview · ' : ''}{attempt.mode === 'exam' ? 'Exam Mode' : 'Practice Mode'}</p><h1 ref={heading} tabIndex={-1}>{attemptTitle(attempt)}</h1></div></div>
+      <div className="test-toolbar-progress"><span role="status" aria-live="polite">{answered} of {attempt.questions.length} answered{completed ? ' · Completed' : ''}</span>{attempt.deadlineAt !== null && !completed && <strong className={expired ? 'test-time-ended' : ''} aria-label="Time remaining">{expired ? 'Time ended' : timeText(attempt.deadlineAt - now)}</strong>}<span className="fine-print">{completed ? new Date(attempt.completedAt!).toLocaleString('en') : 'Selections save automatically'}</span></div>
+      <div className="test-actions"><button className="button secondary" onClick={leave}>Back to Tests</button>{!completed && <><button className="button secondary" disabled={!desk.canWrite || expired} onClick={onAbandon}>Abandon test</button><button className="button primary test-finish-button" disabled={!desk.canWrite || pending || expired} onClick={() => { void finish(); }}>Finish test</button></>}</div>
+    </header>
     {attempt.fixture && <p className="test-fixture-notice">Sample questions for trying the test tools. These results are marked as engineering preview data.</p>}
-    <div className="test-session-bar"><span role="status" aria-live="polite">{answered} of {attempt.questions.length} answered{completed ? ' · Completed' : ''}</span>{attempt.deadlineAt !== null && !completed && <strong className={expired ? 'test-time-ended' : ''} aria-label="Time remaining">{expired ? 'Time ended' : timeText(attempt.deadlineAt - now)}</strong>}<span className="fine-print">{completed ? new Date(attempt.completedAt!).toLocaleString('en') : 'Selections save automatically'}</span>{!completed && <button className="button primary test-finish-button" disabled={!desk.canWrite || pending || expired} onClick={() => { void finish(); }}>Finish test</button>}</div>
     {expired && <div className="notice error" role="alert"><p>Time has ended. Responses are locked. Only answers saved before the deadline count.</p><button className="button secondary" disabled={!desk.canWrite} onClick={() => { void finish(); }}>Retry finalization</button></div>}
     {pending && !desk.busy && !answerSaving && <div className="notice error" role="status"><p>An answer has not been saved. Retry or discard the pending answer before finishing.</p><button className="button secondary" onClick={() => { const cardId = Object.keys(drafts)[0]; goTo(attempt.questions.findIndex(question => question.card.id === cardId)); requestAnimationFrame(() => document.getElementById("test-pending-" + cardId)?.querySelector<HTMLButtonElement>("button")?.focus({ preventScroll: true })); }}>Go to unsaved answer</button></div>}
     {answerNotice && <p className="notice error" role="alert">{answerNotice}</p>}

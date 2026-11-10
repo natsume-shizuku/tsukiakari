@@ -1,26 +1,25 @@
-import type { ExamQuestion, TestAttempt, TestQuestionSnapshot } from './domain';
-import { gradeQuestion, isSelection, type Answer } from './testGrading';
+import type { TestAttempt, TestQuestionSnapshot } from './domain';
+import { gradeQuestion, type Answer } from './testGrading';
+import { answerReasoning, type AnswerReason } from './answerReasoning';
 import { QuestionLearningResources } from './TestDomainResults';
+import './test-answer-details.css';
 
-/** Every option a question explains, labelled the way the learner saw it. */
-function explainedOptions(card: ExamQuestion): { id: string; label: string }[] {
-  if (isSelection(card)) return card.options.map((option, index) => ({ id: option.id, label: `${String.fromCharCode(65 + index)}. ${option.text}` }));
-  if (card.kind === 'hotspot') return card.rows.flatMap(row => row.options.map(option => ({ id: option.id, label: option.text })));
-  return card.tokens.map(token => ({ id: token.id, label: token.text }));
+function Reasons({ reasons }: { reasons: AnswerReason[] }) {
+  return <dl className="test-option-explanations">{reasons.map(reason => <div key={reason.id}><dt>{reason.label}{reason.contexts.map(context => <span key={context} className="test-reason-context">{context}</span>)}</dt><dd>{reason.explanation}</dd></div>)}</dl>;
 }
 
 export function QuestionAnswer({ question, answer, scoring, completed, preview = false }: { question: TestQuestionSnapshot; answer: Answer | undefined; scoring: TestAttempt['scoring']; completed: boolean; preview?: boolean }) {
   const { card } = question;
   const grade = gradeQuestion(card, answer, scoring);
   const status = preview ? 'Answer preview' : grade.state === 'skipped' ? 'Skipped' : grade.state === 'correct' ? 'Correct' : grade.state === 'partial' ? `Partly correct · ${grade.earned} of ${grade.possible} points` : 'Incorrect';
-  const explained = explainedOptions(card).filter(option => card.optionExplanations[option.id]);
-  const reasons = <dl className="test-option-explanations">{explained.map(option => <div key={option.id}><dt>{option.label}</dt><dd>{card.optionExplanations[option.id]}</dd></div>)}</dl>;
+  const { incorrect, remaining } = answerReasoning(card, preview ? undefined : answer);
+  // Native disclosure state survives saves on this question, but resets for a different snapshot identity.
+  const identity = JSON.stringify([question.bankId, card.id, card.revision]);
   return <div id={'test-answer-' + card.id} tabIndex={-1} className="test-answer"><p className="test-answer-status">{status}{!completed ? ' · Response locked after reveal' : ''}</p><h3>Answer</h3><p>{card.answer}</p><p>{card.explanation}</p>
     {card.kind === 'multiple' && <p className="fine-print">{scoring ? 'Each correct selection is worth one point.' : 'All correct options are required for one point. Partial selections receive no points.'}</p>}
-    {explained.length > 0 && (completed && !preview
-      ? <details className="test-why"><summary>Why these choices?</summary>{reasons}</details>
-      : <><h3>Why these choices?</h3>{reasons}</>)}
-    <QuestionLearningResources question={question}/>
-    <h3>References</h3><ul>{question.sources.map(source => <li key={source.id}><a href={source.url} target="_blank" rel="noreferrer">{source.title} ↗</a></li>)}</ul>
+    {incorrect.length > 0 && <section className="test-selected-reasons" aria-label="About your answer"><h3>About your answer</h3><Reasons reasons={incorrect}/></section>}
+    {remaining.length > 0 && <details key={'why-' + identity} className="test-why test-answer-details"><summary>Why these choices?</summary><Reasons reasons={remaining}/></details>}
+    <QuestionLearningResources key={'learning-' + identity} question={question}/>
+    <details key={'references-' + identity} className="test-references test-answer-details"><summary>References ({question.sources.length})</summary><ul>{question.sources.map(source => <li key={source.id}><a href={source.url} target="_blank" rel="noreferrer">{source.title} ↗</a></li>)}</ul></details>
   </div>;
 }

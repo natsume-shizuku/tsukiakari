@@ -132,7 +132,7 @@ test('multiple answers retain failed drafts, persist on reload, and require the 
   await expect(panel.getByRole('checkbox', { checked: true })).toHaveCount(2);
   await panel.getByRole('button', { name: 'Reveal answer', exact: true }).click();
   await expect(panel.getByText('Correct · Response locked after reveal', { exact: true })).toBeVisible();
-  await expect(panel.getByRole('heading', { name: 'Why these choices?', exact: true })).toBeVisible();
+  await expect(panel.locator('.test-why > summary')).toBeVisible();
   await expect(panel.getByRole('checkbox').first()).toBeDisabled();
   const partialIndex = indices[1];
   const partial = attempt.questions[partialIndex].card;

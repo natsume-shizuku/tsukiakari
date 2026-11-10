@@ -32,6 +32,7 @@ test('real practice offers small domains, never reduces a typed count and starts
  const attempt=await active(page);expect(attempt.fixture).toBe(false);expect(attempt.questions.every(q=>q.card.domainId==='deployment'&&q.sources.length&&q.card.relatedNotes.length)).toBe(true);
  const first=attempt.questions[0];await choose(page,0,sel(first.card).correctOptionIds[0]);await saved(page,first.card.id,[sel(first.card).correctOptionIds[0]]);
  await page.locator('.test-question').first().getByRole('button',{name:'Reveal answer',exact:true}).click();
+ await page.locator('.test-question').first().locator('.test-references > summary').click();
  for(const s of first.sources)await expect(page.locator('.test-question').first().locator('a[href="'+s.url+'"]').first()).toBeVisible();
  expect(await rows(page,'reviewLogs')).toEqual([]);expect(await rows(page,'schedulerStates')).toEqual([]);
 });
@@ -58,7 +59,7 @@ for(const theme of ['dark','light'])test('real long answers, multiple-choice exp
  const input=panel.locator('input[value="'+sel(card).correctOptionIds[0]+'"]');await input.focus();await page.keyboard.press('Space');await saved(page,card.id,[sel(card).correctOptionIds[0]]);
  for(const id of sel(card).correctOptionIds.slice(1)){await choose(page,index,id);await saved(page,card.id,sel(card).correctOptionIds.slice(0,sel(card).correctOptionIds.indexOf(id)+1));}
  await panel.getByRole('button',{name:'Reveal answer',exact:true}).click();await expect(panel.getByText('Correct · Response locked after reveal',{exact:true})).toBeVisible();
- await expect(panel.getByRole('heading',{name:'Why these choices?',exact:true})).toBeVisible();
+ await expect(panel.locator('.test-why > summary')).toBeVisible();await panel.locator('.test-why > summary').click();await panel.locator('.test-references > summary').click();
  for(const width of [320,768,1440,1920,2560]){await page.setViewportSize({width,height:1000});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await panel.scrollIntoViewIfNeeded();const clipped=await panel.evaluate(el=>[...el.querySelectorAll('p,h2,dd,dt,a')].some(item=>item.scrollWidth>item.clientWidth+1));expect(clipped).toBe(false);await page.screenshot({path:'test-results/phase7e-'+theme+'-'+width+'.png'});}
  await page.reload();await expect(panel.getByRole('checkbox',{checked:true})).toHaveCount(sel(card).correctOptionIds.length);await expect(panel.getByRole('checkbox').first()).toBeDisabled();
 });

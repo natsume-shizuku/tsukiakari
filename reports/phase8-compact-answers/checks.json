@@ -1,0 +1,95 @@
+{
+  "date": "2026-11-10",
+  "status": "verified locally; commit and push authorized by owner",
+  "baseCommit": "5235e631dee509668698a3420a8a4dd1eabfb372",
+  "scope": [
+    "Compact supporting references and source disclosures in Cards and study review",
+    "Immediate existing reasoning for incorrectly chosen test answers; other choice reasoning collapsed",
+    "Mobile spacing and guarded More actions menu with direct Again/Right and Undo",
+    "Active-test site navigation auto-hide; revealing pushes content down and reserves measured space above sticky controls",
+    "Smooth 240ms navigation height transition with mobile-only Close and reduced-motion support",
+    "Desktop Menu removed from normal layout; top-edge hover and keyboard focus reveal navigation, with visible Menu retained for narrow and touch layouts",
+    "Restore Card browser and Mistakes page scrolling and footer while preserving independent pane scrolling",
+    "Click header background to pin navigation through page interactions; click again to collapse"
+  ],
+  "checks": {
+    "lint": "passed",
+    "unit": {
+      "passed": 424,
+      "files": 35
+    },
+    "build": "passed; existing dynamic-import and chunk-size warnings remain",
+    "content": {
+      "studyCards": 235,
+      "notes": 78,
+      "originalQuestions": 300,
+      "simulatorQuestions": 128,
+      "frozenCollection": "preserved"
+    },
+    "e2e": {
+      "passed": 244,
+      "failed": 0,
+      "workers": 4,
+      "browser": "Microsoft Edge",
+      "origin": "http://localhost:4187"
+    },
+    "whitespace": "passed"
+  },
+  "verification": [
+    "Full answers, main explanations, recorded choice reasoning and all source links preserved",
+    "All five question formats; reused tokens; wrong, skipped, partial and omitted selections",
+    "Manual disclosures survive saves and flags; card/question changes reset defaults",
+    "Native disclosure keyboard interaction does not rate or advance study cards",
+    "Hover, conventional mouse click, keyboard, Escape, touch and outside navigation dismissal",
+    "Revealed header pushes content down; hidden header reserves zero height; original and simulator practice and exams",
+    "Setup/results/unrelated routes keep normal navigation; lazy-loading runner keeps it until mounting",
+    "Both themes at 320,390,768,1280,1920px; existing whole-site checks include 2560px",
+    "Independent reference reading and fixed actions; visible save errors; failed-write, backup, expiry and single-writer regressions",
+    "Expanded and scrolled site navigation, test toolbar and question navigator do not overlap; Finish and Back remain clickable",
+    "Outside answer click is saved before the navigation collapses and reflows the page",
+    "Expand/collapse passes through intermediate heights while sticky controls remain below the header",
+    "Close hidden above 900px and visible in compact mobile layout; reduced-motion removes animation",
+    "Desktop Menu is clipped and removed from flow; real Tab reveals a44px control; top-edge hover opens navigation; wide touch devices retain visible Menu",
+    "Both themes: reachable footer on desktop, short desktop and mobile, with filters and card selection",
+    "Header pinning survives answering and pointer leave; keyboard, Escape, mobile Close/Menu and route reset verified"
+  ],
+  "visualReview": {
+    "completed": true,
+    "artifacts": [
+      "test-results/compact-card-dark-320.png",
+      "test-results/compact-card-light-320.png",
+      "test-results/compact-test-answer-dark-320.png",
+      "test-results/compact-test-answer-light-1920.png",
+      "test-results/test-focus-dark-expanded-desktop.png",
+      "test-results/test-focus-light-expanded-desktop.png"
+    ]
+  },
+  "preservation": {
+    "unchanged": [
+      "src/content",
+      "src/domain.ts",
+      "src/storage.ts",
+      "src/testStorage.ts",
+      "src/testEngine.ts",
+      "src/testGrading.ts",
+      "src/examAssembly.ts",
+      "src/validation.ts",
+      "src/reviewStorage.ts",
+      "src/scheduling.ts",
+      "src/portability.ts"
+    ],
+    "learnerData": "Existing learner storage untouched; browser checks use isolated contexts on 4187"
+  },
+  "preview": {
+    "url": "http://localhost:5186/#tests",
+    "httpStatus": 200
+  },
+  "publication": "Owner authorized commit and push to origin/main; existing GitHub Pages workflow deploys on push",
+  "developmentRuntimeCheck": {
+    "url": "http://localhost:5186/#tests",
+    "passed": true,
+    "pageErrors": [],
+    "geometry": "Closed header 0px; open header 81px pushes toolbar and question down by 81px at 1360px; scrolled toolbar stays below header and navigator below toolbar",
+    "controls": "Desktop Menu has1px clipped box outside layout; Tab reveals keyboard control; hover opensheader; mobile visibleMenu retained. No runtime errors."
+  }
+}

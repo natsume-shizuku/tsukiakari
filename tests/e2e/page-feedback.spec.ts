@@ -2,7 +2,7 @@ import { test, expect, type Page } from '@playwright/test';
 
 async function ready(page: Page) {
   await page.goto('/');
-  await expect(page.locator('.sidebar').getByText('Saved in this browser', { exact: true })).toBeVisible();
+  await expect(page.locator('.site-header').getByText('Saved in this browser', { exact: true })).toBeVisible();
 }
 async function startTest(page: Page) {
   await page.getByRole('link', { name: 'Tests', exact: true }).click();

@@ -15,8 +15,8 @@ for (const theme of ['dark','light']) {
     const list=page.getByRole('region',{name:'Card list',exact:true});
     const inspector=page.getByRole('region',{name:'Card details',exact:true});
     const toolbar=page.getByRole('region',{name:'Card selection controls',exact:true});
-    let previousWidth=0;
-    for (const width of [320,768,1440,1920,2560]) {
+    let previousDesktop: { content: number; inspector: number } | undefined;
+    for (const width of [320,768,1024,1440,1920,2560]) {
       await page.setViewportSize({width,height:1000});
       expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
       expect(await page.evaluate(()=>document.documentElement.scrollHeight<=Math.max(innerHeight,document.body.scrollHeight)+1)).toBe(true);
@@ -27,11 +27,26 @@ for (const theme of ['dark','light']) {
         expect(l!.width).toBeLessThanOrEqual(560);
         expect(l!.width).toBeCloseTo(Math.min(560, Math.max(300, (l!.width+r!.width+16)*.32)),0);
         expect(r!.x-l!.x-l!.width).toBeCloseTo(16,0);
-        expect(width-(r!.x+r!.width)).toBeCloseTo(24,0);
-        expect(r!.width).toBeGreaterThan(previousWidth);
-        previousWidth=r!.width;
-        expect(r!.y+r!.height).toBeLessThanOrEqual(1000);
-        expect(await page.evaluate(()=>document.documentElement.scrollHeight)).toBeLessThanOrEqual(1001);
+        const frame=await page.locator('main').evaluate(el=>{
+          const box=el.getBoundingClientRect(),style=getComputedStyle(el);
+          return { left:box.left,right:box.right,width:box.width,paddingLeft:parseFloat(style.paddingLeft),paddingRight:parseFloat(style.paddingRight),viewport:document.documentElement.clientWidth };
+        });
+        const contentWidth=frame.width-frame.paddingLeft-frame.paddingRight;
+        expect(frame.width).toBeCloseTo(Math.min(frame.viewport,1288),0);
+        expect(Math.abs(frame.left-(frame.viewport-frame.right))).toBeLessThanOrEqual(1);
+        expect(contentWidth).toBeLessThanOrEqual(1240);
+        expect(l!.x).toBeCloseTo(frame.left+frame.paddingLeft,0);
+        expect(frame.right-(r!.x+r!.width)).toBeCloseTo(frame.paddingRight,0);
+        expect(l!.width+r!.width+16).toBeCloseTo(contentWidth,0);
+        if(previousDesktop){
+          if(contentWidth>previousDesktop.content+1) expect(r!.width).toBeGreaterThan(previousDesktop.inspector);
+          else expect(r!.width).toBeCloseTo(previousDesktop.inspector,0);
+        }
+        previousDesktop={content:contentWidth,inspector:r!.width};
+        expect(r!.height).toBeLessThanOrEqual(800);
+        const footer=(await page.locator('.page-footer').boundingBox())!;
+        expect(footer.y).toBeGreaterThanOrEqual(r!.y+r!.height);
+        expect(await page.evaluate(()=>document.documentElement.scrollHeight)).toBeGreaterThan(1000);
         expect(r!.y).toBeGreaterThanOrEqual(t!.y+t!.height);
         expect(await inspector.evaluate(el=>el.scrollHeight<=el.clientHeight)).toBe(true);
       }
@@ -51,12 +66,21 @@ for (const theme of ['dark','light']) {
     await page.getByLabel('Search cards',{exact:true}).fill('no matching card anywhere');
     await expect(list).toContainText('No cards match these filters.');
     await expect(page.getByRole('region',{name:'Selection summary'})).toContainText('Select a card to read');
+    await page.evaluate(()=>scrollTo(0,0));
     const headingStyle=await page.locator('.page-header').evaluate(el=>({size:getComputedStyle(el.querySelector('h1')!).fontSize,height:el.getBoundingClientRect().height,top:el.getBoundingClientRect().top}));
     for (const section of ['Study packs','Notes','Mistakes']) {
       await page.getByRole('link',{name:section,exact:true}).click();
       const bounds=(await page.locator('.library-page').boundingBox())!;
-      expect(2560-bounds.x-bounds.width).toBeCloseTo(24,0);
-      expect(bounds.width).toBeGreaterThan(2000);
+      const frame=await page.locator('main').evaluate(el=>{
+        const box=el.getBoundingClientRect(),style=getComputedStyle(el);
+        return { left:box.left,right:box.right,width:box.width,paddingLeft:parseFloat(style.paddingLeft),paddingRight:parseFloat(style.paddingRight),viewport:document.documentElement.clientWidth };
+      });
+      expect(frame.width).toBeCloseTo(1288,0);
+      expect(Math.abs(frame.left-(frame.viewport-frame.right))).toBeLessThanOrEqual(1);
+      expect(bounds.x).toBeCloseTo(frame.left+frame.paddingLeft,0);
+      expect(frame.right-bounds.x-bounds.width).toBeCloseTo(frame.paddingRight,0);
+      expect(bounds.width).toBeCloseTo(1240,0);
+      expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
       expect(await page.locator('.page-header').evaluate(el=>({size:getComputedStyle(el.querySelector('h1')!).fontSize,height:el.getBoundingClientRect().height,top:el.getBoundingClientRect().top}))).toEqual(headingStyle);
     }
   });

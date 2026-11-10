@@ -4,6 +4,10 @@ A quiet place for daily learning. Tsukiakari is a small-group study website with
 
 The first subject is **Dynamics 365 Contact Center** and the **AB-250** certification.
 
+Study, Library, Tests, Statistics and Settings are available in the top navigation across the website. Card answers and test feedback keep the full answer and main explanation visible. Reference notes and source lists expand on request; test answers immediately explain incorrect selections, with the remaining choice reasoning under Why these choices? Study review keeps Again/Right and Undo accessible, with Suspend under More actions. Card browser and Mistakes allow normal page scrolling to the footer while their desktop card list and answer panes scroll independently.
+
+Content stays centered, with up to 1240px of reading/workspace width. Tests combine their title, progress and actions in one compact bar; question navigation stays on the right while scrolling on desktop and below the questions on mobile. During an active test the site header hides to recover reading space: hover the top edge on desktop, or activate Menu on mobile and touch screens. Desktop keeps Menu out of the layout; tabbing to it reveals a keyboard-accessible control. Opening and closing navigation smoothly moves the content while keeping the test toolbar and question navigation below it; reduced-motion settings make this immediate. Click the revealed header background to keep it open while answering questions; click it again to collapse it. Navigation links work normally. Escape or Menu can also close it, and mobile provides a Close button. Until pinned, it dismisses on outside clicks or after the pointer leaves when focus is outside navigation. Pinning lasts only for the displayed active test. Setup and results keep the normal header.
+
 > **Status:** Phases 1–6 and 7A–7G are accepted. [Phase 8](docs/PHASE_8.md), the AB-250 exam simulator, is at Stage 8D with all 128 questions independently approved. GitHub Pages deployment is enabled; the final owner/Claude similarity check remains open. [AGENTS.md](AGENTS.md) holds the current gate.
 
 ## What it does

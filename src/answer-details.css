@@ -1,0 +1,35 @@
+.answer-details { margin-top: 16px; border-top: 1px solid var(--line); min-width: 0; }
+.answer-details > summary { min-height: 44px; padding: 11px 4px; cursor: pointer; font-size: .95rem; font-weight: 600; line-height: 1.5; color: var(--text); overflow-wrap: anywhere; }
+.answer-details > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; border-radius: 4px; }
+.answer-details > .answer-details-body { padding: 0 4px 12px; }
+.answer-reference-note { min-width: 0; overflow-wrap: anywhere; }
+.answer-reference-note + .answer-reference-note { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
+.answer-reference-note h3, .answer-reference-note h4 { margin: 0 0 8px; font-size: 1rem; line-height: 1.5; }
+.answer-reference-note p { margin: 0 0 8px; white-space: pre-wrap; }
+.answer-details .source-links { margin: 4px 0 0; padding-left: 20px; }
+.answer-details .source-links a { display: inline-block; min-height: 44px; padding-block: 10px; line-height: 1.5; overflow-wrap: anywhere; }
+.card-inspector-references > .answer-details { margin-top: 0; border-top: 0; }
+.card-inspector .card-inspector-references > .answer-details > summary { font-size: .95rem; }
+.card-inspector .answer-reference-note h4 { font-size: 1rem; }
+.review-more-actions { position: relative; min-width: 0; }
+.review-more-actions > summary { min-height: 44px; cursor: pointer; list-style: none; }
+.review-more-actions > summary::-webkit-details-marker { display: none; }
+.review-more-actions-menu { position: absolute; right: 0; bottom: calc(100% + 8px); z-index: 4; width: min(220px, calc(100vw - 48px)); padding: 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); box-shadow: 0 8px 24px var(--shadow); max-height: min(240px, 40dvh); overflow-y: auto; }
+.review-more-actions-menu .button { width: 100%; min-height: 44px; }
+@media (max-width: 600px) {
+  .answer-details { margin-top: 12px; }
+  .answer-details > summary { padding-block: 9px; }
+  .answer-details > .answer-details-body { padding-bottom: 8px; }
+  .answer-reference-note + .answer-reference-note { margin-top: 10px; padding-top: 10px; }
+  .review-panel .review-heading { padding: 12px 14px 10px; gap: 10px; }
+  .review-panel .review-queue { padding: 0 14px 10px; gap: 6px 12px; }
+  .review-panel .review-content { padding: 14px; }
+  .review-panel .review-actions { padding: 10px 14px; }
+  .review-panel .review-tools { gap: 8px; }
+  .card-inspector .card-inspector-panel { padding: 14px; }
+  .card-inspector .library-detail-question { margin: 12px 0 14px; }
+  .card-inspector .card-inspector-answer { margin-block: 14px; padding: 12px 14px; }
+}
+@media (hover: none), (pointer: coarse) {
+  .review-shortcuts { display: none; }
+}

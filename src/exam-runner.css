@@ -1,11 +1,8 @@
-.exam-runner .test-attempt-heading { margin-bottom: 6px; }
-.exam-runner .test-attempt-heading h1 { font-size: 1.2rem; }
-.exam-runner .test-attempt-heading .eyebrow { margin-bottom: 2px; }
 .exam-runner .test-fixture-notice { margin: 0 0 6px; }
 .exam-section-label { font-size: .82rem; font-weight: 600; margin: 0 0 10px; overflow-wrap: anywhere; }
 .exam-stage { min-width: 0; }
 .exam-stage.has-case { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1fr); gap: 16px; align-items: start; }
-.exam-cases { position: sticky; top: 88px; display: grid; gap: 12px; min-width: 0; }
+.exam-cases { position: sticky; top: calc(var(--site-header-height, 77px) + var(--test-toolbar-height, 88px) + 16px); display: grid; gap: 12px; min-width: 0; }
 .exam-stage.has-case .drag-board { grid-template-columns: minmax(0, 1fr); gap: 8px; }
 .exam-stage.has-case .drag-tray { padding: 0; }
 .exam-stage.has-case .drag-board .answer-table { border-left: 0; border-top: 1px solid var(--line); padding: 12px 0 0; }
@@ -70,6 +67,11 @@
 .answer-right { color: var(--success); }
 .answer-wrong { color: var(--danger); }
 
+@media (min-width: 1241px) {
+  .case-pane { display: flex; flex-direction: column; max-height: calc(100dvh - var(--site-header-height, 77px) - var(--test-toolbar-height, 88px) - 32px); }
+  .case-pane > .eyebrow, .case-pane-title, .case-tabs { flex-shrink: 0; }
+  .case-panel { flex: 1; min-height: 0; max-height: none; }
+}
 @media (max-width: 1240px) {
   .exam-stage.has-case { grid-template-columns: minmax(0, 1fr); }
   .exam-cases { position: static; }

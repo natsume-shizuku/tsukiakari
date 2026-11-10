@@ -6,6 +6,7 @@ import { skipUnavailableReview, refreshReview, revealReview, setCopySuspended, s
 import type { useWorkspace } from './useWorkspace';
 import { createActiveTimer } from './activeTime';
 import { CopyAnnotations } from './CopyAnnotations';
+import './answer-details.css';
 
 type Desk = ReturnType<typeof useWorkspace>;
 
@@ -109,6 +110,8 @@ function ReviewCard({ desk, workspace, session, now, undoable, undo, onPause, on
   useEffect(() => { panel.current?.focus({ preventScroll: true }); }, [session.revealed]);
   if (!copy || !published || !deck) return <section className="notice error"><p>This card's published content is unavailable. Your progress is preserved.</p>{copy && deck && <button className="button secondary" disabled={!canWrite} onClick={() => void mutate(() => skipUnavailableReview(session.turnId), 'Unavailable card skipped. Its saved data is preserved.')}>Continue with available cards</button>}</section>;
   const { card, pack } = published;
+  const referenceNotes = pack.notes.filter(note => card.noteIds.includes(note.id));
+  const sources = pack.sources.filter(source => card.sourceIds.includes(source.id) || referenceNotes.some(note => note.sourceIds.includes(source.id)));
   const chosen = session.revealed ? session.selectedOptionId : selected;
   const wasGuessed = session.revealed ? session.guessed : guessed;
   const wrong = card.kind === 'mcq' && chosen !== card.correctOptionId;
@@ -127,7 +130,7 @@ function ReviewCard({ desk, workspace, session, now, undoable, undo, onPause, on
     catch { return 'After saving'; }
   };
   const onKey = (event: React.KeyboardEvent<HTMLElement>) => {
-    if (!canWrite || event.repeat || event.altKey || event.ctrlKey || event.metaKey || event.target instanceof Element && event.target.closest('input,textarea,select,button,a,[contenteditable="true"],[role="dialog"]')) return;
+    if (!canWrite || event.repeat || event.altKey || event.ctrlKey || event.metaKey || event.target instanceof Element && event.target.closest('input,textarea,select,button,a,summary,[contenteditable="true"],[role="dialog"]')) return;
     const key = event.key.toLowerCase();
     if (card.kind === 'mcq' && !session.revealed) {
       const index = ['1', '2', '3', '4'].includes(key) ? Number(key) - 1 : ['a', 'b', 'c', 'd'].indexOf(key);
@@ -149,17 +152,17 @@ function ReviewCard({ desk, workspace, session, now, undoable, undo, onPause, on
       {card.options && <div className="review-options" role="radiogroup" aria-label="Answer choices">{card.options.map((option, index) => <button key={option.id} type="button" role="radio" aria-checked={chosen === option.id} className={'review-option' + (session.revealed && option.id === card.correctOptionId ? ' correct' : '') + (session.revealed && chosen === option.id && wrong ? ' incorrect' : '')} disabled={!canWrite || session.revealed} onClick={() => { setSelected(option.id); panel.current?.focus({ preventScroll: true }); }}><span className="option-letter">{String.fromCharCode(65 + index)}</span><span>{option.text}{session.revealed && option.id === card.correctOptionId && <strong className="option-result">Correct answer</strong>}{session.revealed && chosen === option.id && wrong && <strong className="option-result">Your answer</strong>}</span></button>)}</div>}
       {card.kind === 'mcq' && <label className="guessed-control"><input type="checkbox" checked={wasGuessed} disabled={!canWrite || session.revealed} onChange={event => { setGuessed(event.target.checked); panel.current?.focus({ preventScroll: true }); }}/>I guessed this answer</label>}
       {session.revealed && <div className="review-answer" data-testid="revealed-answer"><p className="eyebrow">Answer</p><p className="answer">{card.answer}</p><p>{card.explanation}</p>{card.kind === 'mcq' && <p className={wrong ? 'answer-feedback incorrect-text' : 'answer-feedback'}>{wrong ? 'This answer needs another look. Choose Again to relearn it.' : wasGuessed ? 'Correct, but guessed. Choose Again if you want another look.' : 'Correct. Choose Right when you are ready.'}</p>}
-        {card.noteIds.length > 0 && <div className="linked-notes"><p className="eyebrow">Reference notes</p>{pack.notes.filter(note => card.noteIds.includes(note.id)).map(note => <p key={note.id}><strong>{note.title}</strong> — {note.body}</p>)}</div>}
+        {referenceNotes.length > 0 && <details key={card.id + '-references'} className="answer-details review-reference-notes"><summary>Reference notes ({referenceNotes.length})</summary><div className="answer-details-body">{referenceNotes.map(note => <article key={note.id} className="answer-reference-note"><h3>{note.title}</h3><p className="personal-prose">{note.body}</p><ul className="source-links">{pack.sources.filter(source => note.sourceIds.includes(source.id)).map(source => <li key={source.id}><a href={source.url} target="_blank" rel="noreferrer">{source.title} ↗</a></li>)}</ul></article>)}</div></details>}
         {copy.personalNote && <div className="linked-notes"><p className="eyebrow">Your note</p><p className="personal-prose">{copy.personalNote}</p></div>}
         <details className="review-annotations"><summary>Personal notes and tags</summary><CopyAnnotations desk={desk} copy={copy} onDirtyChange={annotationDirty}/></details>
-        <p className="eyebrow">Sources</p><ul className="source-links">{pack.sources.filter(source => card.sourceIds.includes(source.id) || pack.notes.some(note => card.noteIds.includes(note.id) && note.sourceIds.includes(source.id))).map(source => <li key={source.id}><a href={source.url} target="_blank" rel="noreferrer">{source.title} ↗</a></li>)}</ul>
+        <details key={card.id + '-sources'} className="answer-details review-sources"><summary>Sources ({sources.length})</summary><div className="answer-details-body"><ul className="source-links">{sources.map(source => <li key={source.id}><a href={source.url} target="_blank" rel="noreferrer">{source.title} ↗</a></li>)}</ul></div></details>
       </div>}
     </div>
     <footer className="review-actions">
       {notesDirty && <p className="fine-print" role="status">Save or discard your note changes before continuing.</p>}
       {session.revealed ? <div className="rating-actions"><button className="button secondary again-button" aria-label="Again" disabled={!canWrite || notesDirty} onClick={() => void rate('again')}>Again <span aria-hidden="true">{preview('again')}</span></button><button className="button" aria-label="Right" disabled={!canWrite || notesDirty || wrong} onClick={() => void rate('right')}>Right <span aria-hidden="true">{preview('right')}</span></button></div> : <button className="button reveal-button" disabled={!canWrite || (card.kind === 'mcq' && !selected)} onClick={() => void reveal()}>Reveal answer</button>}
       <p className="review-shortcuts">{card.kind === 'mcq' && !session.revealed ? '1–4 / A–D choose · G guessed · ' : ''}Space / Enter {session.revealed ? wrong ? 'Again' : 'Right' : 'reveal'}</p>
-      <div className="review-tools"><button className="button secondary" disabled={!canWrite || notesDirty || !undoable} onClick={() => void undo()}>Undo last review</button><button className="button secondary" disabled={!canWrite || notesDirty} onClick={() => void mutate(() => setCopySuspended(copy.id, true), 'Card suspended. Resume it from Manage deck or Library when you are ready.')}>Suspend card</button></div>
+      <div className="review-tools"><button className="button secondary" disabled={!canWrite || notesDirty || !undoable} onClick={() => void undo()}>Undo last review</button><details className="review-more-actions"><summary className="button secondary">More actions</summary><div className="review-more-actions-menu"><button className="button secondary" disabled={!canWrite || notesDirty} onClick={() => void mutate(() => setCopySuspended(copy.id, true), 'Card suspended. Resume it from Manage deck or Library when you are ready.')}>Suspend card</button></div></details></div>
     </footer>
   </section>;
 }

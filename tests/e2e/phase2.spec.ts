@@ -75,6 +75,7 @@ test('reveals with sources, survives reload, reviews atomically, and undoes the 
   await page.setViewportSize({ width: 1440, height: 1000 });
   const question = await page.locator('.review-question').innerText();
   await revealCorrect(page);
+  await page.locator('.review-sources > summary').click();
   await expect(page.getByRole('region', { name: 'Review session' }).getByRole('link', { name: /Wolfram MathWorld/ }).first()).toBeVisible();
   await page.locator('.review-panel').screenshot({ path: 'test-results/phase2-desktop.png' });
   await page.reload();
@@ -208,6 +209,7 @@ test('review controls are read-only in a second tab', async ({ page, context }) 
   await expect(second.getByRole('button', { name: 'Right', exact: true })).toBeDisabled();
   await expect(second.getByRole('button', { name: 'Again', exact: true })).toBeDisabled();
   await inspectorActions(page);
+  await second.locator('.review-more-actions > summary').click();
   await expect(second.getByRole('button', { name: 'Suspend card', exact: true })).toBeDisabled();
   await second.getByRole('region', { name: 'Review session' }).focus();
   await second.keyboard.press('Enter');
@@ -219,6 +221,7 @@ test('review and editable settings fit a 320px screen and use touch-sized action
   await ready(page); await createDeck(page, 'A deck with a long name for small screens'); await addFixtures(page);
   await start(page, 'A deck with a long name for small screens'); await revealCorrect(page);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+  await page.locator('.review-more-actions > summary').click();
   for (const name of ['Again', 'Right', 'Undo last review', 'Suspend card']) {
     const box = await page.getByRole('button', { name, exact: true }).boundingBox();
     expect(box?.height).toBeGreaterThanOrEqual(44);

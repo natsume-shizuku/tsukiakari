@@ -65,6 +65,7 @@ test('all four areas and library sections have honest foundation states', async 
   await expect(page.getByText('Engineering fixture · not a study pack').first()).toBeVisible();
   await page.getByRole('link', { name: 'Card browser', exact: true }).click();
   await page.getByRole('button', { name: 'Select card: Fixture: What is 2 + 3?', exact: true }).click();
+  await page.locator('.card-inspector-sources > summary').click();
   await expect(page.getByRole('link', { name: /Wolfram MathWorld: Addition/ }).first()).toHaveAttribute('href', 'https://mathworld.wolfram.com/Addition.html');
   await page.getByRole('button', { name: 'Close details' }).click();
   await page.getByRole('link', { name: 'Notes', exact: true }).click();

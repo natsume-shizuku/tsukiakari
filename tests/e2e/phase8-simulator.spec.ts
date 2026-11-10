@@ -452,9 +452,15 @@ test.describe('touch', () => {
     const { card: raw } = await open(page, attempt, isPlainMatch);
     const card = raw as MatchQuestion;
     // Keep the token below the sticky bar and the row clear of the bottom edge.
-    await tray(page, card.tokens[0].id).evaluate(element => window.scrollBy(0, element.getBoundingClientRect().top - 180));
+    await tray(page, card.tokens[0].id).evaluate(element => {
+      const bar = document.querySelector('.test-session-bar')!.getBoundingClientRect();
+      window.scrollBy(0, element.getBoundingClientRect().top - bar.bottom - 16);
+    });
     const a = (await tray(page, card.tokens[0].id).boundingBox())!;
     const b = (await target(page, card.rows[0].id).boundingBox())!;
+    const bar = (await page.locator('.test-session-bar').boundingBox())!;
+    expect(a.y).toBeGreaterThanOrEqual(bar.y + bar.height);
+    expect(b.y + b.height / 2).toBeLessThan(page.viewportSize()!.height);
     const client = await page.context().newCDPSession(page);
     const touch = (type: string, x?: number, y?: number) => client.send('Input.dispatchTouchEvent', { type: type as 'touchStart', touchPoints: x === undefined ? [] : [{ x, y: y! }] });
     await touch('touchStart', a.x + a.width / 2, a.y + a.height / 2);

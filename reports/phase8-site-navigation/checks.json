@@ -1,0 +1,59 @@
+{
+  "date": "2026-11-09",
+  "status": "verified locally; uncommitted",
+  "scope": [
+    "Site-wide sticky top navigation; centered 1240px content",
+    "One compact test toolbar for original practice and simulator, with title, progress, save status, timer and actions",
+    "216px sticky right question navigation with independent scrolling on desktop; below content on narrow screens",
+    "Responsive sticky clearance and viewport-fitting desktop case reference pane"
+  ],
+  "checks": {
+    "lint": "passed",
+    "unit": {
+      "passed": 411,
+      "files": 34
+    },
+    "build": "passed; original dynamic-import/chunk-size warnings remain",
+    "content": {
+      "studyCards": 235,
+      "notes": 78,
+      "originalQuestions": 300,
+      "simulatorQuestions": 128,
+      "frozenCollection": "preserved"
+    },
+    "e2e": {
+      "passed": 203,
+      "failed": 0,
+      "workers": 4,
+      "browser": "Microsoft Edge",
+      "origin": "http://localhost:4187"
+    },
+    "focusedTouchDrag": {
+      "passed": 3,
+      "failed": 0
+    },
+    "diffWhitespace": "passed"
+  },
+  "verification": [
+    "Both themes and site-wide layouts from 320px through 2560px",
+    "Original and simulator practice/exam controls, timers, page jumps and keyboard focus",
+    "Sticky right navigator viewport fit and independent scrolling",
+    "Real case tabs, reference scrolling and viewport fit at 1920x640",
+    "Saved attempts, scoring, persistence, backup and review regressions included in full suite"
+  ],
+  "preservation": {
+    "unchanged": [
+      "src/content",
+      "src/domain.ts",
+      "src/storage.ts",
+      "src/testStorage.ts",
+      "src/testEngine.ts",
+      "src/examAssembly.ts",
+      "src/validation.ts"
+    ],
+    "answerExplanations": "unchanged",
+    "learnerData": "No existing learner storage modified; tests use isolated contexts on 4187"
+  },
+  "preview": "http://localhost:5186/#tests",
+  "publication": "No commit, push, deployment or phase advance performed"
+}

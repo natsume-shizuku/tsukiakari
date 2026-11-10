@@ -6,6 +6,7 @@ import { removeCardsFromDeck } from './collectionStorage';
 import { setCopySuspended } from './reviewStorage';
 import { CopyAnnotations } from './CopyAnnotations';
 import './card-inspector.css';
+import './answer-details.css';
 
 export type CardDetailRef = { packId: string; cardId: string; copyId?: string };
 type InspectorTab = 'answer' | 'notes' | 'history';
@@ -103,7 +104,7 @@ export function CardDetails({ desk, detail, onDirtyChange, fixedCopy = false, on
     {desk.error && <div className="notice error card-inspector-notice" role="alert">{desk.error}</div>}
     {feedback && <div className="card-inspector-notice" role="status" aria-live="polite">{feedback}</div>}
     <section className="card-inspector-panel" role="tabpanel" id={id + '-panel-answer'} aria-labelledby={id + '-tab-answer'} hidden={tab !== 'answer'} tabIndex={0}>
-      {published ? <PublishedDetails pack={published.pack} card={published.card}/> : <div className="notice"><h3>Published card unavailable</h3><p>Your saved notes, schedule, and review history are retained.</p></div>}
+      {published ? <PublishedDetails key={published.pack.id + ":" + published.card.id} pack={published.pack} card={published.card}/> : <div className="notice"><h3>Published card unavailable</h3><p>Your saved notes, schedule, and review history are retained.</p></div>}
     </section>
     <section className="card-inspector-panel" role="tabpanel" id={id + '-panel-notes'} aria-labelledby={id + '-tab-notes'} hidden={tab !== 'notes'} tabIndex={0}>
       {copy ? <CopyAnnotations key={copy.id} desk={desk} copy={copy} onDirtyChange={onDirty}/> : <div className="notice"><h3>Personal notes unavailable</h3><p>{unavailable}</p></div>}
@@ -117,14 +118,16 @@ export function CardDetails({ desk, detail, onDirtyChange, fixedCopy = false, on
   </div>;
 }
 function PublishedDetails({ pack, card }: { pack: StudyPack; card: PublishedCard }) {
+  const referenceNotes = pack.notes.filter(note => card.noteIds.includes(note.id));
+  const sources = pack.sources.filter(source => card.sourceIds.includes(source.id));
   return <section className="library-published">
     <div className="card-inspector-metadata"><span>{cardCurations({ packId: pack.id, cardId: card.id }).map(curation => curation.title).join(' · ') || pack.title} · {pack.topics.find(topic => topic.id === card.topicId)?.title} · Revision {card.revision}</span>{pack.fixture && <span className="fixture-badge">Engineering fixture</span>}</div>
     <h3 className="library-detail-question">{card.prompt}</h3>
     {card.options && <ol className="options-preview" type="A">{card.options.map(option => <li key={option.id} className={option.id === card.correctOptionId ? 'card-inspector-correct' : undefined}>{option.text}{option.id === card.correctOptionId && <strong> — Correct</strong>}</li>)}</ol>}
     <div className="card-inspector-answer"><p className="eyebrow">Answer</p><p className="library-prose">{card.answer}</p></div>
     {card.explanation && <p className="library-prose">{card.explanation}</p>}
-    <div className="card-inspector-sources"><h3>Sources</h3><Sources sources={pack.sources.filter(source => card.sourceIds.includes(source.id))}/></div>
-    {card.noteIds.length > 0 && <div className="card-inspector-references"><h3>Reference notes</h3>{pack.notes.filter(note => card.noteIds.includes(note.id)).map(note => <details key={note.id}><summary>{note.title}</summary><div><p className="library-prose">{note.body}</p><Sources sources={pack.sources.filter(source => note.sourceIds.includes(source.id))}/></div></details>)}</div>}
+    <details className="answer-details card-inspector-sources"><summary>Sources ({sources.length})</summary><div className="answer-details-body"><Sources sources={sources}/></div></details>
+    {referenceNotes.length > 0 && <div className="card-inspector-references"><details className="answer-details"><summary>Reference notes ({referenceNotes.length})</summary><div className="answer-details-body">{referenceNotes.map(note => <article key={note.id} className="answer-reference-note"><h4>{note.title}</h4><p className="library-prose">{note.body}</p><Sources sources={pack.sources.filter(source => note.sourceIds.includes(source.id))}/></article>)}</div></details></div>}
     {card.tags.length > 0 && <div className="card-badges" aria-label="Published tags">{card.tags.map(tag => <span key={tag} className="card-badge badge-tag">#{tag}</span>)}</div>}
   </section>;
 }

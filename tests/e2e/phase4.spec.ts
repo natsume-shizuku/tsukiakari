@@ -1,3 +1,4 @@
+import { followSiteLink } from './siteNavigation';
 import { sel } from '../support/selection';
 import { test, expect, type Page } from '@playwright/test';
 import type { TestAttempt } from '../../src/domain';
@@ -22,7 +23,7 @@ async function ready(page: Page) {
   await expect(page.getByText('Saved in this browser', { exact: true }).first()).toBeVisible();
 }
 async function start(page: Page, mode: 'practice' | 'exam' = 'practice', count = 50, minutes = 120) {
-  await page.getByRole('link', { name: 'Tests', exact: true }).click();
+  await followSiteLink(page, 'Tests');
   await page.getByLabel('Question bank', { exact: true }).selectOption('developer-test-fixture');
   await expect(page.getByText(/300 available questions/)).toBeVisible();
   await page.getByLabel('Test mode', { exact: true }).selectOption(mode);
@@ -76,7 +77,7 @@ test('practice freezes revealed responses, persists reloads and isolates test re
   await create.getByLabel('Deck name', { exact: true }).fill('Unchanged by tests');
   await create.getByRole('button', { name: 'Create deck', exact: true }).click();
   await expect(create).not.toBeVisible();
-  await page.getByRole('link', { name: 'Library', exact: true }).click();
+  await followSiteLink(page, 'Library');
   await page.getByLabel('Destination deck', { exact: true }).selectOption({ label: 'Unchanged by tests' });
   const pack = page.locator('.library-pack').filter({ has: page.getByRole('heading', { name: 'Foundation fixtures', exact: true }) });
   await pack.getByRole('button', { name: 'Add entire pack', exact: true }).click();
@@ -89,6 +90,7 @@ test('practice freezes revealed responses, persists reloads and isolates test re
   await confirmButton(page, 'Reveal answer', 1);
   await expect((await question(page, 1)).getByText('Incorrect · Response locked after reveal', { exact: true })).toBeVisible();
   await expect((await question(page, 1)).locator('input[type="radio"], input[type="checkbox"]').first()).toBeDisabled();
+  await (await question(page, 1)).locator('.test-references > summary').click();
   await expect((await question(page, 1)).getByRole('link', { name: /Wolfram MathWorld: Addition/ })).toHaveAttribute('href', 'https://mathworld.wolfram.com/Addition.html');
   await confirmButton(page, 'Reveal answer', 2);
   await expect((await question(page, 2)).getByText('Skipped · Response locked after reveal', { exact: true })).toBeVisible();
@@ -102,7 +104,7 @@ test('practice freezes revealed responses, persists reloads and isolates test re
   expect(completed.result).toEqual({ correct: 1, wrong: 1, skipped: 48 });
   for (const index of [0, 1, 2, 49]) await expect((await question(page, index)).locator('input[type="radio"], input[type="checkbox"]').first()).toBeDisabled();
   expect(await Promise.all(['decks', 'copies', 'schedulerStates', 'reviewLogs'].map(table => rows(page, table)))).toEqual(before);
-  await page.getByRole('link', { name: 'Library', exact: true }).click();
+  await followSiteLink(page, 'Library');
   await page.getByRole('link', { name: 'Mistakes', exact: true }).click();
   await expect(page.getByRole('button', { name: /^Select mistake:/ })).toHaveCount(0);
 });
@@ -119,7 +121,7 @@ test('failed answer writes retain the draft, block finish and protect navigation
   await page.getByRole('button', { name: 'Go to unsaved answer', exact: true }).click();
   await expect((await question(page, 20)).getByRole('button', { name: 'Retry saving answer', exact: true })).toBeFocused();
   page.once('dialog', dialog => dialog.dismiss());
-  await page.getByRole('link', { name: 'Library', exact: true }).click();
+  await followSiteLink(page, 'Library');
   await expect((await question(page, 20)).locator('input[type="radio"], input[type="checkbox"]').nth(1)).toBeChecked();
   await (await question(page, 20)).getByRole('button', { name: 'Retry saving answer', exact: true }).click();
   await expect((await question(page, 20)).getByRole('button', { name: 'Retry saving answer', exact: true })).toHaveCount(0);
@@ -171,7 +173,7 @@ test('exam hides answers until submission and opens a scored dialog before froze
   const attempt = await start(page, 'exam');
   await expect(page.getByLabel('Time remaining', { exact: true })).toHaveText(/0[12]:[0-5][0-9]:[0-5][0-9]/);
   await expect(page.getByRole('button', { name: 'Reveal answer', exact: true })).toHaveCount(0);
-  await expect(page.getByRole('heading', { name: 'References', exact: true })).toHaveCount(0);
+  await expect(page.locator('.test-references > summary')).toHaveCount(0);
   await choose(page, attempt, 0, true);
   await finish(page);
   const dialog = page.getByRole('dialog', { name: 'Test results', exact: true });
@@ -184,7 +186,7 @@ test('exam hides answers until submission and opens a scored dialog before froze
   await expect(dialog).toHaveCount(0);
   await expect(page.locator('.test-question')).toHaveCount(50);
   await expect((await question(page, 0)).locator('input[type="radio"], input[type="checkbox"]').first()).toBeDisabled();
-  await expect((await question(page, 0)).getByRole('heading', { name: 'References', exact: true })).toBeVisible();
+  await expect((await question(page, 0)).locator('.test-references > summary')).toBeVisible();
 });
 
 test('absolute exam deadline survives reload and finalizes while another page is open', async ({ page }) => {
@@ -195,11 +197,11 @@ test('absolute exam deadline survives reload and finalizes while another page is
   await page.reload();
   await expect(page.locator('.test-session-bar')).toContainText(`of ${50} answered`);
   expect((await attempts(page))[0].deadlineAt).toBe(attempt.deadlineAt);
-  await page.getByRole('link', { name: 'Library', exact: true }).click();
+  await followSiteLink(page, 'Library');
   await page.clock.fastForward(61_000);
   await expect.poll(async () => (await attempts(page))[0].completedAt).toBe(attempt.deadlineAt);
   expect((await attempts(page))[0].result).toEqual({ correct: 1, wrong: 0, skipped: 49 });
-  await page.getByRole('link', { name: 'Tests', exact: true }).click();
+  await followSiteLink(page, 'Tests');
   await page.getByLabel('Question bank', { exact: true }).selectOption('developer-test-fixture');
   await expect(page.getByRole('button', { name: 'Start practice', exact: true })).toBeEnabled();
   await expect(page.getByRole('heading', { name: 'Attempt history', exact: true })).toHaveCount(0);
@@ -240,9 +242,9 @@ test('a secondary tab can inspect but cannot mutate a saved test', async ({ page
 for (const theme of ['dark', 'light']) {
   test(`test form supports keyboard and responsive touch targets in ${theme} theme`, async ({ page }) => {
     await ready(page);
-    await page.getByRole('link', { name: 'Settings', exact: true }).click();
+    await followSiteLink(page, 'Settings');
     await page.getByLabel('Appearance', { exact: true }).selectOption(theme);
-    await page.getByRole('link', { name: 'Tests', exact: true }).click();
+    await followSiteLink(page, 'Tests');
     await expect(page.getByLabel('Number of questions', { exact: true })).toHaveValue('20');
     await page.getByLabel('Test mode', { exact: true }).selectOption('exam');
     await expect(page.getByLabel('Number of questions', { exact: true })).toHaveValue('100');

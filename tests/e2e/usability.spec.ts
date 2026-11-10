@@ -355,7 +355,7 @@ test('selection controls stay with aligned card panes and management has visible
   const boxes = await Promise.all([toolbar, list, detail].map(item => item.boundingBox()));
   expect(boxes[2]!.width).toBeGreaterThan(boxes[1]!.width * 1.6);
   expect(boxes[2]!.height).toBeGreaterThan(160);
-  expect(boxes[2]!.y + boxes[2]!.height).toBeCloseTo(page.viewportSize()!.height - 16, 0);
+  expect((await page.locator('.page-footer').boundingBox())!.y).toBeGreaterThan(boxes[2]!.y + boxes[2]!.height);
   expect(Math.abs(boxes[1]!.height - boxes[2]!.height)).toBeLessThanOrEqual(2);
   expect(boxes[1]!.y - boxes[0]!.y - boxes[0]!.height).toBeLessThanOrEqual(20);
   await list.evaluate(el => { el.scrollTop = el.scrollHeight; });

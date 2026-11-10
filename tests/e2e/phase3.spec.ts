@@ -229,20 +229,20 @@ test('Mistakes shows saved Again reviews and removes an undone review', async ({
   await expect(page.getByText('No flashcard mistakes match these filters.')).toBeVisible();
 });
 
-test('desktop sidebar and mobile top navigation fit the overview, dialogs, management and review', async ({ page }) => {
+test('site-wide top navigation fits the overview, dialogs, management and review', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 1000 });
   await ready(page); await create(page, 'Mobile studies'); await addPack(page, 'Mobile studies');
   if (await page.getByRole('button', { name: 'Close deck settings', exact: true }).isVisible()) await page.getByRole('button', { name: 'Close deck settings', exact: true }).click();
   await page.getByRole('link', { name: 'Study', exact: true }).click();
-  const sidebar = await page.locator('.sidebar').boundingBox();
+  const siteHeader = await page.locator('.site-header').boundingBox();
   const main = await page.locator('main').boundingBox();
-  expect(sidebar!.x + sidebar!.width).toBeLessThanOrEqual(main!.x + 1);
+  expect(siteHeader!.y + siteHeader!.height).toBeLessThanOrEqual(main!.y + 1);
   await page.screenshot({ path: 'test-results/phase3-study-desktop.png', fullPage: true });
   await page.setViewportSize({ width: 320, height: 740 });
-  const mobileSidebar = await page.locator('.sidebar').boundingBox();
+  const mobileHeader = await page.locator('.site-header').boundingBox();
   const mobileMain = await page.locator('main').boundingBox();
-  // With the global bar removed, main starts directly after mobile navigation.
-  expect(mobileSidebar!.y + mobileSidebar!.height).toBeLessThanOrEqual(mobileMain!.y);
+  // Main content starts after the shared website header at every width.
+  expect(mobileHeader!.y + mobileHeader!.height).toBeLessThanOrEqual(mobileMain!.y);
   const noOverflow = async () => expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
   await noOverflow();
   await page.getByRole('button', { name: 'Create a deck', exact: true }).click();

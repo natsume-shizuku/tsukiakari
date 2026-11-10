@@ -1,8 +1,9 @@
 import { test, expect, type Page } from '@playwright/test';
+import { followSiteLink } from './siteNavigation';
 import type { Backup } from '../../src/portability';
 
-async function ready(page:Page) { await page.goto('/'); await expect(page.locator('.sidebar').getByText('Saved in this browser',{exact:true})).toBeVisible(); }
-async function nav(page:Page,name:string) { await page.getByRole('link',{name,exact:true}).click(); }
+async function ready(page:Page) { await page.goto('/'); await expect(page.locator('.site-header').getByText('Saved in this browser',{exact:true})).toBeVisible(); }
+async function nav(page:Page,name:string) { await followSiteLink(page, name); }
 async function create(page:Page,name='Transfer deck') {
   await nav(page,'Study'); await page.getByRole('button',{name:'Create a deck',exact:true}).click();
   const dialog=page.getByRole('dialog',{name:'Create a deck',exact:true});

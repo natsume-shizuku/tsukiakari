@@ -38,7 +38,9 @@ for (const theme of ['dark','light']) test('compact reviews keep long content cl
     expect(await content.evaluate(el=>el.scrollHeight>el.clientHeight)).toBe(true);
     const cb=(await content.boundingBox())!;
     expect(cb.y+cb.height).toBeLessThanOrEqual(after.y+1);
+    await page.locator('.review-more-actions > summary').click();
     for(const label of ['Again','Right','Undo last review','Suspend card'])expect((await page.getByRole('button',{name:label,exact:true}).boundingBox())!.height).toBeGreaterThanOrEqual(44);
+    await page.locator('.review-more-actions > summary').click();
     await content.evaluate(el=>{el.scrollTop=0;});
     await page.screenshot({path:'test-results/phase6-review-'+theme+'-'+width+'.png',fullPage:true});
   }

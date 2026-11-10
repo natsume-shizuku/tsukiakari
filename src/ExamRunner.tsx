@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import type { ReactNode } from 'react';
 import type { ExamQuestion, QuestionGroup, TestAttempt, TestSection } from './domain';
 import type { useWorkspace } from './useWorkspace';
 import { CaseStudyPane } from './CaseStudyPane';
@@ -9,6 +10,7 @@ import { QUESTIONS_PER_PAGE } from './testEngine';
 import { isAnswered, isComplete, isSelection, requiredSelections, type Answer } from './testGrading';
 import { closeSeriesQuestion, closeTestSection, finishTestAttempt, revealTestAnswer, savePlacedAnswer, saveTestAnswer, saveTestFlag, saveTestPosition } from './testStorage';
 import { timeText, useNow } from './useNow';
+import { useStickyHeight } from './useStickyHeight';
 
 type Desk = ReturnType<typeof useWorkspace>;
 type Write = () => Promise<unknown>;
@@ -43,7 +45,8 @@ function centerCurrentButton() {
   navigator.scrollTop += target.top - column.top - (column.height - target.height) / 2;
 }
 
-export default function ExamRunner({ desk, attempt, onDirtyChange, onSetup, onAbandon }: { desk: Desk; attempt: TestAttempt; onDirtyChange?: (dirty: boolean) => void; onSetup: () => void; onAbandon: () => void }) {
+export default function ExamRunner({ desk, attempt, onDirtyChange, onSetup, onAbandon, navigationControl, onActiveAttemptChange }: { onActiveAttemptChange?: (active: boolean) => void; navigationControl?: ReactNode; desk: Desk; attempt: TestAttempt; onDirtyChange?: (dirty: boolean) => void; onSetup: () => void; onAbandon: () => void }) {
+  useEffect(() => { onActiveAttemptChange?.(true); return () => onActiveAttemptChange?.(false); }, [onActiveAttemptChange]);
   const delivery = attempt.delivery!;
   const total = attempt.questions.length;
   const exam = attempt.mode === 'exam';
@@ -55,6 +58,7 @@ export default function ExamRunner({ desk, attempt, onDirtyChange, onSetup, onAb
   const [flags, setFlags] = useState(delivery.flaggedCardIds);
   const [unsaved, setUnsaved] = useState(false);
   const heading = useRef<HTMLHeadingElement>(null);
+  const toolbar = useStickyHeight<HTMLElement>('--test-toolbar-height');
   const deskRef = useRef(desk);
   deskRef.current = desk;
 
@@ -201,9 +205,12 @@ export default function ExamRunner({ desk, attempt, onDirtyChange, onSetup, onAb
   };
 
   return <section className="tests-page test-attempt exam-runner">
-    <header className="test-attempt-heading"><div><p className="eyebrow">{attempt.fixture ? 'Engineering preview · ' : ''}{exam ? 'Exam Mode' : 'Practice Mode'}</p><h1 ref={heading} tabIndex={-1}>{attempt.bankTitle ?? attempt.bankId}</h1></div><div className="test-actions"><button className="button secondary" onClick={leave}>Back to Tests</button><button className="button secondary" disabled={!desk.canWrite || expired} onClick={onAbandon}>Abandon test</button></div></header>
+    <header ref={toolbar} className="test-session-bar test-toolbar">
+      <div className="test-toolbar-title">{navigationControl}<div><p className="eyebrow">{attempt.fixture ? 'Engineering preview · ' : ''}{exam ? 'Exam Mode' : 'Practice Mode'}</p><h1 ref={heading} tabIndex={-1}>{attempt.bankTitle ?? attempt.bankId}</h1></div></div>
+      <div className="test-toolbar-progress"><span role="status" aria-live="polite">{done} of {total} answered</span>{attempt.deadlineAt !== null && <strong className={expired ? 'test-time-ended' : ''} aria-label="Time remaining">{expired ? 'Time ended' : timeText(attempt.deadlineAt - now)}</strong>}<span className="fine-print">Selections save automatically</span></div>
+      <div className="test-actions"><button className="button secondary" onClick={leave}>Back to Tests</button><button className="button secondary" disabled={!desk.canWrite || expired} onClick={onAbandon}>Abandon test</button><button className="button primary test-finish-button" disabled={desk.access !== 'writer' || expired} onClick={() => { void finish(); }}>Finish test</button></div>
+    </header>
     {attempt.fixture && <p className="test-fixture-notice">Sample questions for trying the test tools. These results are marked as engineering preview data.</p>}
-    <div className="test-session-bar"><span role="status" aria-live="polite">{done} of {total} answered</span>{attempt.deadlineAt !== null && <strong className={expired ? 'test-time-ended' : ''} aria-label="Time remaining">{expired ? 'Time ended' : timeText(attempt.deadlineAt - now)}</strong>}<span className="fine-print">Selections save automatically</span><button className="button primary" disabled={desk.access !== 'writer' || expired} onClick={() => { void finish(); }}>Finish test</button></div>
     {expired && <div className="notice error" role="alert"><p>Time has ended. Responses are locked. Only answers saved before the deadline count.</p><button className="button secondary" disabled={!desk.canWrite} onClick={() => { void finish(); }}>Retry finalization</button></div>}
     {unsaved && <div className="notice error" role="alert"><p>A change has not been saved yet.</p><button className="button secondary" onClick={() => { setUnsaved(false); void drain(); }}>Retry saving</button></div>}
     <div className="test-focus">

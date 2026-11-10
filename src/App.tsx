@@ -2,6 +2,8 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import type { Deck, Theme } from './domain';
 import { savePreferences } from './storage';
 import { useWorkspace } from './useWorkspace';
+import { useStickyHeight } from './useStickyHeight';
+import { useTestNavigation } from './useTestNavigation';
 import { startReview, refreshReview } from './reviewStorage';
 import { StudyReview, useStudyClock } from './StudyReview';
 import { Study } from './Study';
@@ -53,6 +55,10 @@ function App() {
   const feedbackScope = useRef(0);
   const now = useStudyClock();
   const mainRef = useRef<HTMLElement>(null);
+  const [displayedActiveAttempt, setDisplayedActiveAttempt] = useState(false);
+  const testFocused = route.page === 'tests' && displayedActiveAttempt;
+  const siteHeader = useStickyHeight<HTMLElement>('--site-header-height');
+  const navigation = useTestNavigation(testFocused, siteHeader);
   const errorRef = useRef<HTMLDivElement>(null);
   const dirty = useRef(false);
   const setDirty = useCallback((value: boolean) => { dirty.current = value; }, []);
@@ -124,14 +130,19 @@ function App() {
     if (workspace) await mutate(() => savePreferences({ ...workspace.preferences, theme }), 'Appearance saved.');
   };
   const status = access === 'loading' ? 'Opening browser storage…' : busy ? 'Saving…' : access === 'readonly' ? 'Read-only tab' : access === 'unavailable' ? 'Saving unavailable' : desk.error ? 'Save needs attention' : 'Saved in this browser';
-  return <div className="app-shell">
+  const navigationControl = <button ref={navigation.trigger} type="button" className="button secondary site-nav-trigger" aria-label="Site navigation" aria-expanded={navigation.revealed} aria-controls="site-navigation-header" onClick={navigation.toggle} onPointerEnter={navigation.enter} onPointerLeave={navigation.leave}><span aria-hidden="true">☰</span><span>Menu</span></button>;
+  return <div className={'app-shell' + (testFocused ? ' is-test-focused' : '')}>
     <a className="skip-link" href="#main-content" onClick={event => { event.preventDefault(); mainRef.current?.focus(); }}>Skip to content</a>
-    <aside className="sidebar">
-      <a className="brand" href="#study" aria-label="月明かり · Tsukiakari home"><Moon small/><span><span className="brand-jp" lang="ja">月明かり</span><span className="brand-en">TSUKIAKARI</span></span></a>
-      <p className="sidebar-label">Your study space</p>
-      <nav className="primary-nav" aria-label="Main navigation">{pages.map(page => <a key={page.id} href={'#' + page.id} aria-current={route.page === page.id ? 'page' : undefined}><span className="nav-mark" aria-hidden="true">{page.mark}</span><span>{page.label}</span></a>)}</nav>
-      <div className="sidebar-bottom"><a className="settings-link" href="#settings" aria-current={route.page === 'settings' ? 'page' : undefined}><span aria-hidden="true">⚙</span> Settings</a><span className={'save-status ' + (desk.error || access === 'unavailable' ? 'warning' : access === 'writer' && !busy ? 'ready' : '')} role="status"><span className="status-dot" aria-hidden="true"/>{status}</span><p>One small step,<br/>then another.</p></div>
-    </aside>
+    {testFocused && <div className="site-nav-edge" aria-hidden="true" onPointerEnter={navigation.enter} onPointerLeave={navigation.leave}/>}
+    <header ref={siteHeader} id="site-navigation-header" className={'site-header' + (navigation.revealed ? ' is-revealed' : '')} inert={testFocused && !navigation.revealed} aria-hidden={testFocused && !navigation.revealed ? true : undefined} onPointerEnter={navigation.enter} onPointerLeave={navigation.leave} onFocus={navigation.cancelClose} onBlur={navigation.scheduleClose}>
+      <div className="site-header-content">
+        {testFocused && <button type="button" className="site-nav-pin" aria-label={navigation.pinned ? 'Collapse site navigation' : 'Keep site navigation open'} aria-pressed={navigation.pinned} title={navigation.pinned ? 'Click to collapse navigation' : 'Click to keep navigation open'} onClick={navigation.togglePin}/>}
+        <div className="site-header-inner">
+        <a className="brand" href="#study" aria-label="月明かり · Tsukiakari home"><Moon small/><span><span className="brand-jp" lang="ja">月明かり</span><span className="brand-en">TSUKIAKARI</span></span></a>
+        <nav className="primary-nav" aria-label="Main navigation">{pages.map(page => <a key={page.id} href={'#' + page.id} aria-current={route.page === page.id ? 'page' : undefined}>{page.label}</a>)}</nav>
+        <div className="site-tools"><a className="settings-link" href="#settings" aria-current={route.page === 'settings' ? 'page' : undefined}><span aria-hidden="true">⚙</span> Settings</a><span className={'save-status ' + (desk.error || access === 'unavailable' ? 'warning' : access === 'writer' && !busy ? 'ready' : '')} role="status"><span className="status-dot" aria-hidden="true"/>{status}</span>{testFocused && <button type="button" className="button secondary site-nav-close" aria-label="Close site navigation" onClick={navigation.toggle}>Close</button>}</div>
+      </div></div>
+    </header>
     <div className="workspace">
       {workspace && <TestDeadlineMonitor key={restoreEpoch} desk={desk} onExpired={onExamExpired}/> }
       <main id="main-content" ref={mainRef} tabIndex={-1} className={route.view === 'review' ? 'review-page' : route.page === 'library' ? 'library-wide' + ((route.section === 'cards' || route.section === 'mistakes') ? ' card-browser-page' : '') : route.page === 'tests' ? 'tests-page' : undefined}>
@@ -147,7 +158,7 @@ function App() {
             {workspace.session ? <StudyReview desk={desk} now={now} paused={false} onPause={() => { window.location.hash = '#study'; }} onResume={() => {}} onDirtyChange={setDirty}/> : <EmptyPanel title="Choose a deck to begin"><p>Your review session will open here.</p><a className="button" href="#study">Go to decks</a></EmptyPanel>}
           </>}
           {route.page === 'library' && <Library desk={desk} section={route.section} initialCopyId={route.copyId} initialDeckId={route.destination} initialCardRef={route.cardId === undefined ? undefined : {packId:route.ownerId ?? '',cardId:route.cardId}} initialNoteRef={route.noteId === undefined ? undefined : {packId:route.ownerId ?? '',noteId:route.noteId}} initialTopic={route.topicId === undefined ? undefined : {ownerId:route.ownerId,curationId:route.curationId,topicId:route.topicId}} onDirtyChange={setDirty}/>}
-          {route.page === 'tests' && <TestsPage initialAttemptId={route.attemptId} initialBankId={route.bankId} desk={desk} onDirtyChange={setDirty}/>}
+          {route.page === 'tests' && <TestsPage navigationControl={navigationControl} onActiveAttemptChange={setDisplayedActiveAttempt} initialAttemptId={route.attemptId} initialBankId={route.bankId} desk={desk} onDirtyChange={setDirty}/>}
           {route.page === 'statistics' && <StatisticsPage workspace={workspace} now={now}/>}
           {route.page === 'settings' && <>
             <PageHeader eyebrow="Make it comfortable" title="Settings">Preferences for your study space.</PageHeader>

@@ -1,0 +1,9 @@
+.test-answer-details { margin-top: 12px; border-top: 1px solid var(--line); }
+.test-answer-details > summary { min-height: 44px; padding: 12px 0; cursor: pointer; font-size: .85rem; font-weight: 600; }
+.test-answer-details > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.test-answer-details > ul { margin-top: 0; }
+.test-reason-context { display: block; margin-top: 4px; color: var(--muted); font-size: .8rem; font-weight: 400; }
+.test-why > summary { list-style: none; }
+.test-why > summary::-webkit-details-marker { display: none; }
+.test-why > summary::before { content: ''; width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 7px solid currentColor; flex: 0 0 auto; }
+.test-why[open] > summary::before { transform: rotate(90deg); }

@@ -3,7 +3,7 @@ import { test, expect, type Page, type Locator } from '@playwright/test';
 const longDeck = 'An intentionally long deck name for reviewing the compact Library layout';
 async function ready(page: Page) {
   await page.goto('/');
-  await expect(page.locator('.sidebar').getByText('Saved in this browser', { exact: true })).toBeVisible();
+  await expect(page.locator('.site-header').getByText('Saved in this browser', { exact: true })).toBeVisible();
 }
 async function createDeck(page: Page) {
   await page.getByRole('button', { name: 'Create a deck', exact: true }).click();
@@ -56,7 +56,7 @@ for (const theme of ['dark', 'light']) {
         await expect(page.getByText('Phase 3 · Study and Library', { exact: true })).toHaveCount(0);
         await expect(page.getByRole('heading', { name: 'Library', exact: true })).toBeVisible();
         await expect(page.getByText('Keep knowledge close', { exact: true })).toBeVisible();
-        await expect(page.locator('.sidebar .save-status')).toBeVisible();
+        await expect(page.locator('.site-header .save-status')).toBeVisible();
         await noHorizontalOverflow(page);
         const current = await page.locator('.page-header').evaluate(el => ({
           size: getComputedStyle(el.querySelector('h1')!).fontSize,
@@ -66,14 +66,15 @@ for (const theme of ['dark', 'light']) {
         if (headingStyle) expect(current).toEqual(headingStyle);
         headingStyle = current;
         if (width >= 900) {
-          expect(current.top).toBeCloseTo(20, 0);
+          expect(current.top).toBeCloseTo((await page.locator('.site-header').boundingBox())!.height + 20, 0);
           if (section === 'Card browser' || section === 'Mistakes') {
             const list = page.getByRole('region', { name: section === 'Card browser' ? 'Card list' : 'Mistake list', exact: true });
             const header = (await page.locator('.page-header').boundingBox())!;
             expect(await paneTop(list)).toBeGreaterThanOrEqual(header.y + header.height);
             const bounds = (await list.boundingBox())!;
             expect(bounds.height).toBeGreaterThan(300);
-            expect(bounds.y + bounds.height).toBeLessThanOrEqual(1000);
+            expect(bounds.height).toBeLessThanOrEqual(800);
+            expect((await page.locator('.page-footer').boundingBox())!.y).toBeGreaterThanOrEqual(bounds.y + bounds.height);
           }
           if (section === 'Notes') {
             const header = (await page.locator('.page-header').boundingBox())!;
@@ -130,11 +131,11 @@ test('storage status remains visible by Settings for read-only and failed writes
   await createDeck(page);
   const second = await context.newPage();
   await second.goto('/#library/cards');
-  await expect(second.locator('.sidebar .save-status')).toHaveText('Read-only tab');
+  await expect(second.locator('.site-header .save-status')).toHaveText('Read-only tab');
   await expect(second.getByText('This is a read-only tab.', { exact: true })).toBeVisible();
   for (const width of [320, 1440]) {
     await second.setViewportSize({ width, height: 1000 });
-    await expect(second.locator('.sidebar .save-status')).toBeVisible();
+    await expect(second.locator('.site-header .save-status')).toBeVisible();
     await noHorizontalOverflow(second);
   }
   await second.close();
@@ -151,7 +152,7 @@ test('storage status remains visible by Settings for read-only and failed writes
   });
   await page.getByRole('region', { name: 'Card list', exact: true }).getByRole('button', { name: /^Select card:/ }).first().click();
   await page.getByRole('button', { name: 'Add selected cards (1)', exact: true }).click();
-  await expect(page.locator('.sidebar .save-status')).toHaveText('Save needs attention');
+  await expect(page.locator('.site-header .save-status')).toHaveText('Save needs attention');
   await expect(page.getByRole('alert').filter({ hasText: 'Storage needs attention' })).toBeVisible();
   await noHorizontalOverflow(page);
 });
